@@ -1,0 +1,32 @@
+\select@language {english}
+\select@language {english}
+\contentsline {section}{\numberline {1}Introduction}{}
+\contentsline {section}{\numberline {2}Building GNU Bayonne}{}
+\contentsline {subsection}{\numberline {2.1}Before you begin}{}
+\contentsline {subsection}{\numberline {2.2}Bayonne User and Group}{}
+\contentsline {subsection}{\numberline {2.3}Building from Source}{}
+\contentsline {subsection}{\numberline {2.4}Compile-time configure options}{}
+\contentsline {subsection}{\numberline {2.5}Using pre-built packages}{}
+\contentsline {subsection}{\numberline {2.6}Building from cvs}{}
+\contentsline {section}{\numberline {3}Installing your new server}{}
+\contentsline {subsection}{\numberline {3.1}Testing your Bayonne Drivers}{}
+\contentsline {subsection}{\numberline {3.2}Editing config files}{}
+\contentsline {subsection}{\numberline {3.3}Installing on GNU/Linux}{}
+\contentsline {subsection}{\numberline {3.4}Installing under Mac OS/X}{}
+\contentsline {subsection}{\numberline {3.5}Installing under Free/Net/OpenBSD}{}
+\contentsline {subsection}{\numberline {3.6}Installing under Solaris, AIX, HP/UX, etc..}{}
+\contentsline {subsection}{\numberline {3.7}Installing under Microsoft Windows}{}
+\contentsline {subsection}{\numberline {3.8}Notes on SMP and multi-core systems}{}
+\contentsline {section}{\numberline {4}Hardware support}{}
+\contentsline {subsection}{\numberline {4.1}Using OpenH323 Driver}{}
+\contentsline {subsection}{\numberline {4.2}Using SIP Driver}{}
+\contentsline {subsection}{\numberline {4.3}Using Intel/Dialogic Hardware}{}
+\contentsline {subsubsection}{\numberline {4.3.1}Before You Begin; know your hardware}{}
+\contentsline {subsubsection}{\numberline {4.3.2}Testing your system}{}
+\contentsline {subsubsection}{\numberline {4.3.3}Driver Options}{}
+\contentsline {subsection}{\numberline {4.4}Using Voicetronix Hardware}{}
+\contentsline {subsubsection}{\numberline {4.4.1}About the OpenSwitch12 Card}{}
+\contentsline {subsection}{\numberline {4.5}CAPI4Linux and GNU Bayonne}{}
+\contentsline {subsection}{\numberline {4.6}Using Soundcards}{}
+\contentsline {subsection}{\numberline {4.7}Hardware Quick Reference}{}
+\contentsline {section}{\numberline {5}Copyright}{}

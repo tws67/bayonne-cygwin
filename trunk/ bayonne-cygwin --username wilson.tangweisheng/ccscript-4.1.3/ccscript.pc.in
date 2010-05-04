@@ -1,0 +1,7 @@
+Name: ccscript
+Description: Non-blocking Script Engine for ucommon library
+Version: @VERSION@
+Requires: ucommon >= @UCOMMON_REQUIRES@
+Libs:  -lccscript @EXPORT_LIBS@ 
+Cflags: @EXPORT_FLAGS@ 
+ 

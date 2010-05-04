@@ -1,0 +1,58 @@
+%% Copyright (C) 2005 Tycho Softworks.
+%%
+%% This file is free software; as a special exception the author gives
+%% unlimited permission to copy and/or distribute it, with or without
+%% modifications, as long as this notice is preserved.
+%%
+%% This program is distributed in the hope that it will be useful, but
+%% WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
+%% implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+%%
+%% This is xml support script definitions
+
+use url
+
+macro xml-parse
+	keywords from goto query
+	define %convert:96 %cookies:96 %path:96 %goto="_main_" %query=""
+	const %temp "tmp:url-" %session.index 
+
+	if !defined %from
+	then
+		error "xml-missing"
+		return
+	endif
+		
+	writepath %path %temp extension={.xml}
+
+	if !defined %session.cookies
+	then
+                const %cfile "tmp:url-" %session.index {.dat}
+                writepath %cookies %cfile
+                const %session.cookies %cookies
+                erase %cfile
+
+	endif
+
+	urlprotocol %from http https ftp
+	error "xml-invalid"
+	return
+
+@url:protocol-missing
+	string %url size=512
+	url %url url.prefix / %from
+	libexec limit=$url.limit lib::url_fetch.sh %url \
+		%path %session.cookies %query
+	parsexml %path %goto
+	return
+
+@url:protocol-http
+@url:protocol-https
+@url:protocol-ftp
+	const %url %from
+        libexec limit=$url.limit lib::url_fetch.sh %url \
+                %path %session.cookies %query
+	parsexml %path %goto
+        return
+
+

@@ -1,0 +1,77 @@
+.TH "ost::MutexCounter" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::MutexCounter \- 
+.PP
+The \fBMutex\fP \fBCounter\fP is a counter variable which can safely be incremented or decremented by multiple threads.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <thread.h>\fP
+.PP
+Inherits \fBost::Mutex\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMutexCounter\fP (const char *id=NULL)"
+.br
+.RI "\fICreate and optionally name a mutex protected counter. \fP"
+.ti -1c
+.RI "\fBMutexCounter\fP (int initial, const char *id=NULL)"
+.br
+.RI "\fICreate and optionally name a mutex protected counter with an initial value. \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "int \fBoperator++\fP (\fBMutexCounter\fP &mc)"
+.br
+.ti -1c
+.RI "int \fBoperator--\fP (\fBMutexCounter\fP &mc)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBMutex\fP \fBCounter\fP is a counter variable which can safely be incremented or decremented by multiple threads. 
+
+A \fBMutex\fP is used to protect access to the counter variable (an integer). An initial value can be specified for the counter, and it can be manipulated with the ++ and -- operators.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> \fBThread\fP protected integer counter. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::MutexCounter::MutexCounter (const char * id = \fCNULL\fP)"
+.PP
+Create and optionally name a mutex protected counter. \fBParameters:\fP
+.RS 4
+\fIid\fP name for mutex counter, optional for deadlock testing. 
+.RE
+.PP
+
+.SS "ost::MutexCounter::MutexCounter (int initial, const char * id = \fCNULL\fP)"
+.PP
+Create and optionally name a mutex protected counter with an initial value. \fBParameters:\fP
+.RS 4
+\fIinitial\fP value of counter. 
+.br
+\fIid\fP name of counter, optional for deadlock testing. 
+.RE
+.PP
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "int operator++ (\fBMutexCounter\fP & mc)\fC [friend]\fP"
+.SS "int operator-- (\fBMutexCounter\fP & mc)\fC [friend]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

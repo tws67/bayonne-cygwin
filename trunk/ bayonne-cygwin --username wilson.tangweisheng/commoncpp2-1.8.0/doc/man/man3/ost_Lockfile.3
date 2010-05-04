@@ -1,0 +1,101 @@
+.TH "ost::Lockfile" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::Lockfile \- 
+.PP
+This class is used to create a 'named' lock entity that can be used to control access to a resource between multiple processes.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <process.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLockfile\fP (const char *name)"
+.br
+.RI "\fICreate a lock under a known name. \fP"
+.ti -1c
+.RI "\fBLockfile\fP ()"
+.br
+.RI "\fICreate a new lock object that can be used to make locks. \fP"
+.ti -1c
+.RI "\fB~Lockfile\fP ()"
+.br
+.RI "\fIDestroy the current lock and release it. \fP"
+.ti -1c
+.RI "bool \fBlock\fP (const char *name)"
+.br
+.RI "\fILock a system-wide name for this process. \fP"
+.ti -1c
+.RI "void \fBunlock\fP (void)"
+.br
+.RI "\fIRelease an acquired lock. \fP"
+.ti -1c
+.RI "bool \fBisLocked\fP (void)"
+.br
+.RI "\fIFlag if the current process has aqcuired a lock. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class is used to create a 'named' lock entity that can be used to control access to a resource between multiple processes. 
+
+The posix implimentation uses a pidfile and the win32 version uses a globally visible mutex.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> System-wide named lock 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::Lockfile::Lockfile (const char * name)"
+.PP
+Create a lock under a known name. \fBParameters:\fP
+.RS 4
+\fIname\fP of system-wide lock to create. 
+.RE
+.PP
+
+.SS "ost::Lockfile::Lockfile ()"
+.PP
+Create a new lock object that can be used to make locks. 
+.SS "ost::Lockfile::~Lockfile ()\fC [inline]\fP"
+.PP
+Destroy the current lock and release it. 
+.SH "Member Function Documentation"
+.PP 
+.SS "bool ost::Lockfile::isLocked (void)"
+.PP
+Flag if the current process has aqcuired a lock. \fBReturns:\fP
+.RS 4
+true if we have the lock. 
+.RE
+.PP
+
+.SS "bool ost::Lockfile::lock (const char * name)"
+.PP
+Lock a system-wide name for this process. If the lock is successful, return true. If an existing lock was already acquired, release it first.
+.PP
+\fBReturns:\fP
+.RS 4
+true if lock successful. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP system-wide lock to use. 
+.RE
+.PP
+
+.SS "void ost::Lockfile::unlock (void)"
+.PP
+Release an acquired lock. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

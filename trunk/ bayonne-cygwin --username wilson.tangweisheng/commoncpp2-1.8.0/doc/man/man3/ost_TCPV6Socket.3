@@ -1,0 +1,178 @@
+.TH "ost::TCPV6Socket" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::TCPV6Socket \- 
+.PP
+TCPV6 sockets are used for stream based connected sessions between two ipv6 sockets.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <socket.h>\fP
+.PP
+Inherits \fBost::Socket\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual bool \fBonAccept\fP (const \fBIPV6Host\fP &ia, \fBtpport_t\fP port)"
+.br
+.RI "\fIA method to call in a derived \fBTCPSocket\fP class that is acting as a server when a connection request is being accepted. \fP"
+.ti -1c
+.RI "\fBSOCKET\fP \fBgetSocket\fP (void)"
+.br
+.RI "\fIFetch out the socket. \fP"
+.ti -1c
+.RI "int \fBgetSegmentSize\fP (void)"
+.br
+.ti -1c
+.RI "\fBTCPV6Socket\fP (const \fBIPV6Address\fP &bind, \fBtpport_t\fP port, unsigned backlog=5, unsigned mss=536)"
+.br
+.RI "\fIA TCP 'server' is created as a TCP socket that is bound to a hardware address and port number on the local machine and that has a backlog queue to listen for remote connection requests. \fP"
+.ti -1c
+.RI "\fBTCPV6Socket\fP (const char *name, unsigned backlog=5, unsigned mss=536)"
+.br
+.RI "\fICreate a TCP server for a named host interface and service port. \fP"
+.ti -1c
+.RI "\fBIPV6Host\fP \fBgetRequest\fP (\fBtpport_t\fP *port=NULL) const "
+.br
+.RI "\fIReturn address and port of next connection request. \fP"
+.ti -1c
+.RI "void \fBreject\fP (void)"
+.br
+.RI "\fIUsed to reject the next incoming connection request. \fP"
+.ti -1c
+.RI "\fBIPV6Host\fP \fBgetLocal\fP (\fBtpport_t\fP *port=NULL) const "
+.br
+.RI "\fIUsed to get local bound address. \fP"
+.ti -1c
+.RI "bool \fBisPendingConnection\fP (\fBtimeout_t\fP timeout=TIMEOUT_INF)"
+.br
+.RI "\fIUsed to wait for pending connection requests. \fP"
+.ti -1c
+.RI "virtual \fB~TCPV6Socket\fP ()"
+.br
+.RI "\fIUse base socket handler for ending this socket. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+TCPV6 sockets are used for stream based connected sessions between two ipv6 sockets. 
+
+Both error recovery and flow control operate transparently for a TCP socket connection. The TCP socket base class is primary used to bind a TCP 'server' for accepting TCP streams.
+.PP
+An implicit and unique \fBTCPV6Socket\fP object exists in Common C++ to represent a bound ipv6 TCP socket acting as a 'server' for receiving connection requests. This class is not part of \fBTCPStream\fP because such objects normally perform no physical I/O (read or write operations) other than to specify a listen backlog queue and perform 'accept' operations for pending connections. The Common C++ \fBTCPV6Socket\fP offers a Peek method to examine where the next pending connection is coming from, and a Reject method to flush the next request from the queue without having to create a session.
+.PP
+The \fBTCPV6Socket\fP also supports a 'OnAccept' method which can be called when a \fBTCPStream\fP related object is created from a \fBTCPSocket\fP. By creating a \fBTCPStream\fP from a \fBTCPV6Socket\fP, an accept operation automatically occurs, and the \fBTCPV6Socket\fP can then still reject the client connection through the return status of it's OnAccept method.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@tycho.com> bound server for TCP streams and sessions. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::TCPV6Socket::TCPV6Socket (const \fBIPV6Address\fP & bind, \fBtpport_t\fP port, unsigned backlog = \fC5\fP, unsigned mss = \fC536\fP)"
+.PP
+A TCP 'server' is created as a TCP socket that is bound to a hardware address and port number on the local machine and that has a backlog queue to listen for remote connection requests. If the server cannot be created, an exception is thrown.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbind\fP local ip address or interface to use. 
+.br
+\fIport\fP number to bind socket under. 
+.br
+\fIbacklog\fP size of connection request queue. 
+.br
+\fImss\fP maximum segment size of streaming buffer. 
+.RE
+.PP
+
+.SS "ost::TCPV6Socket::TCPV6Socket (const char * name, unsigned backlog = \fC5\fP, unsigned mss = \fC536\fP)"
+.PP
+Create a TCP server for a named host interface and service port. We use [host/]port for specifying the optional host name and service port since ':' is a valid char for ipv6 addresses.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP of host interface and service to use. 
+.br
+\fIbacklog\fP size of connection request queue. 
+.br
+\fImss\fP maximum segment size of streaming buffers. 
+.RE
+.PP
+
+.SS "virtual ost::TCPV6Socket::~TCPV6Socket ()\fC [virtual]\fP"
+.PP
+Use base socket handler for ending this socket. 
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBIPV6Host\fP ost::TCPV6Socket::getLocal (\fBtpport_t\fP * port = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Used to get local bound address. 
+.PP
+Reimplemented from \fBost::Socket\fP.
+.PP
+References ost::Socket::getIPV6Local().
+.SS "\fBIPV6Host\fP ost::TCPV6Socket::getRequest (\fBtpport_t\fP * port = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Return address and port of next connection request. This can be used instead of OnAccept() to pre-evaluate connection requests.
+.PP
+\fBReturns:\fP
+.RS 4
+host requesting a connection. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIport\fP number of requestor. 
+.RE
+.PP
+
+.PP
+References ost::Socket::getIPV6Sender().
+.SS "int ost::TCPV6Socket::getSegmentSize (void)\fC [inline]\fP"
+.SS "\fBSOCKET\fP ost::TCPV6Socket::getSocket (void)\fC [inline]\fP"
+.PP
+Fetch out the socket. 
+.SS "bool ost::TCPV6Socket::isPendingConnection (\fBtimeout_t\fP timeout = \fCTIMEOUT_INF\fP)\fC [inline]\fP"
+.PP
+Used to wait for pending connection requests. \fBReturns:\fP
+.RS 4
+true if data packets available. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimeout\fP in milliseconds. TIMEOUT_INF if not specified. 
+.RE
+.PP
+
+.PP
+References ost::Socket::isPending(), and ost::Socket::pendingInput.
+.SS "virtual bool ost::TCPV6Socket::onAccept (const \fBIPV6Host\fP & ia, \fBtpport_t\fP port)\fC [virtual]\fP"
+.PP
+A method to call in a derived \fBTCPSocket\fP class that is acting as a server when a connection request is being accepted. The server can implement protocol specific rules to exclude the remote socket from being accepted by returning false. The Peek method can also be used for this purpose.
+.PP
+\fBReturns:\fP
+.RS 4
+true if client should be accepted. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIia\fP internet host address of the client. 
+.br
+\fIport\fP number of the client. 
+.RE
+.PP
+
+.SS "void ost::TCPV6Socket::reject (void)"
+.PP
+Used to reject the next incoming connection request. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

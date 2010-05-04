@@ -1,0 +1,103 @@
+.TH "ost::MIMEFormData" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::MIMEFormData \- 
+.PP
+This is a document part type for use in submitting multipart form data to a web server.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <mime.h>\fP
+.PP
+Inherits \fBost::MIMEItemPart\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBhead\fP (std::ostream *output)"
+.br
+.RI "\fIStream header, Content-Disposition form-data. \fP"
+.ti -1c
+.RI "void \fBbody\fP (std::ostream *output)"
+.br
+.RI "\fIStream content (value) of this form data field. \fP"
+.ti -1c
+.RI "\fBMIMEFormData\fP (\fBMIMEMultipartForm\fP *top, const char *\fBname\fP, const char *\fBcontent\fP)"
+.br
+.RI "\fIConstruct form data field part of multipart form. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~MIMEFormData\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBcontent\fP"
+.br
+.ti -1c
+.RI "const char * \fBname\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This is a document part type for use in submitting multipart form data to a web server. 
+
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> multipart document part for web form data field. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual ost::MIMEFormData::~MIMEFormData ()\fC [protected, virtual]\fP"
+.SS "ost::MIMEFormData::MIMEFormData (\fBMIMEMultipartForm\fP * top, const char * name, const char * content)"
+.PP
+Construct form data field part of multipart form. \fBParameters:\fP
+.RS 4
+\fItop\fP multipart form this is part of 
+.br
+\fIname\fP of form data field 
+.br
+\fIcontent\fP of form data field 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::MIMEFormData::body (std::ostream * output)\fC [virtual]\fP"
+.PP
+Stream content (value) of this form data field. \fBParameters:\fP
+.RS 4
+\fIoutput\fP stream to send body to. 
+.RE
+.PP
+
+.PP
+Implements \fBost::MIMEItemPart\fP.
+.SS "void ost::MIMEFormData::head (std::ostream * output)\fC [virtual]\fP"
+.PP
+Stream header, Content-Disposition form-data. \fBParameters:\fP
+.RS 4
+\fIoutput\fP stream to send header to. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBost::MIMEItemPart\fP.
+.SH "Member Data Documentation"
+.PP 
+.SS "const char* \fBost::MIMEFormData::content\fP\fC [protected]\fP"
+.SS "const char* \fBost::MIMEFormData::name\fP\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

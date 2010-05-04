@@ -1,0 +1,60 @@
+.TH "ost::ReadLock" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::ReadLock \- 
+.PP
+The \fBReadLock\fP class is used to protect a section of code through a \fBThreadLock\fP for 'read' access to the member function.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <thread.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBReadLock\fP (\fBThreadLock\fP &_tl)"
+.br
+.RI "\fIWait for read access. \fP"
+.ti -1c
+.RI "\fB~ReadLock\fP ()"
+.br
+.RI "\fIPost the semaphore automatically. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBReadLock\fP class is used to protect a section of code through a \fBThreadLock\fP for 'read' access to the member function. 
+
+The \fBThreadLock\fP is automatically released when the object falls out of scope.
+.PP
+A common use is
+.PP
+void func_to_protect() { \fBReadLock\fP lock(threadlock); ... operation ... }
+.PP
+NOTE: do not declare variable as 'ReadLock (threadlock)', the mutex will be released at statement end.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@gnu.org> Read mode automatic locker for protected access. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::ReadLock::ReadLock (\fBThreadLock\fP & _tl)\fC [inline]\fP"
+.PP
+Wait for read access. \fBParameters:\fP
+.RS 4
+\fI_tl\fP reference to lock to aquire. 
+.RE
+.PP
+
+.SS "ost::ReadLock::~ReadLock ()\fC [inline]\fP"
+.PP
+Post the semaphore automatically. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

@@ -1,0 +1,79 @@
+.TH "ost::CommandOptionNoArg" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::CommandOptionNoArg \- 
+.PP
+\fBCommandOption\fP type for flags.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cmdoptns.h>\fP
+.PP
+Inherits \fBost::CommandOption\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCommandOptionNoArg\fP (const char *inOptionName, const char *inOptionLetter, const char *inDescription, bool inRequired=false, \fBCommandOption\fP **ppNext=&\fBdefaultCommandOptionList\fP)"
+.br
+.RI "\fI\fBCommandOptionArg\fP contructor. \fP"
+.ti -1c
+.RI "virtual void \fBfoundOption\fP (\fBCommandOptionParse\fP *cop, const char *value=0)"
+.br
+.RI "\fI\fBCommandOptionNoArg::foundOption\fP will evpect a nil 'value' passed in. \fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBnumSet\fP"
+.br
+.RI "\fIThe number of times this value has been set. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBCommandOption\fP type for flags. 
+.PP
+\fBExamples: \fP
+.in +1c
+.PP
+\fBcmdlineopt.cpp\fP.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::CommandOptionNoArg::CommandOptionNoArg (const char * inOptionName, const char * inOptionLetter, const char * inDescription, bool inRequired = \fCfalse\fP, \fBCommandOption\fP ** ppNext = \fC&\fBdefaultCommandOptionList\fP\fP)"
+.PP
+\fBCommandOptionArg\fP contructor. This sets the optionType for this object to NoArg.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinOptionName\fP long option name 
+.br
+\fIinOptionLetter\fP short letter name 
+.br
+\fIinDescription\fP short description of the option 
+.br
+\fIinRequired\fP true if option is required 
+.br
+\fIppNext\fP the linked list header 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void ost::CommandOptionNoArg::foundOption (\fBCommandOptionParse\fP * cop, const char * value = \fC0\fP)\fC [virtual]\fP"
+.PP
+\fBCommandOptionNoArg::foundOption\fP will evpect a nil 'value' passed in. 
+.PP
+Reimplemented from \fBost::CommandOption\fP.
+.SH "Member Data Documentation"
+.PP 
+.SS "int \fBost::CommandOptionNoArg::numSet\fP"
+.PP
+The number of times this value has been set. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

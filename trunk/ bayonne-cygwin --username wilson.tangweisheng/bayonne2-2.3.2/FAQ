@@ -1,0 +1,28 @@
+GENERAL QUESTIONS
+
+SCRIPT QUESTIONS
+
+SIP QUESTIONS
+
+Q: Which version of exosip do I use with Bayonne 2?
+
+A: The exosip-1 release, 0.9.0 or later, is currently used.  exosip-2
+   will be supported in future releases of Bayonne 2.
+
+Q: How do I register my script with an authenticating proxy?
+
+A: You will use the secret and user id of the proxy as part of your
+   registration statement, for example:
+
+        register.sip proxy=192.168.1.95 userid=290 secret=XXX timeout=60
+
+        play &number 123
+        sleep 500ms
+        play &number 123
+        exit
+
+   ^2
+        echo "interrupt"
+        exit
+               
+

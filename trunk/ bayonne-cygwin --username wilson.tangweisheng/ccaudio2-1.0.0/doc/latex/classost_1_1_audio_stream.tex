@@ -1,0 +1,372 @@
+\section{ost::AudioStream Class Reference}
+\label{classost_1_1_audio_stream}\index{ost::AudioStream@{ost::AudioStream}}
+
+
+\doxyref{AudioStream}{p.}{classost_1_1_audio_stream} accesses \doxyref{AudioFile}{p.}{classost_1_1_audio_file} base class content as fixed frames of streaming linear samples.  
+
+
+{\ttfamily \#include $<$audio2.h$>$}Inheritance diagram for ost::AudioStream::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{classost_1_1_audio_stream}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf AudioStream} ()
+\begin{DoxyCompactList}\small\item\em Create a new audiostream object. \item\end{DoxyCompactList}\item 
+{\bf AudioStream} (const char $\ast$name, {\bf Mode} {\bf mode}=modeRead, {\bf timeout\_\-t} framing=0)
+\begin{DoxyCompactList}\small\item\em Create an audio stream object and open an existing audio file. \item\end{DoxyCompactList}\item 
+{\bf AudioStream} (const char $\ast$name, {\bf Info} $\ast${\bf info}, bool exclusive=false, {\bf timeout\_\-t} framing=0)
+\begin{DoxyCompactList}\small\item\em Create an audio stream object and a new audio file. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$AudioStream} ()
+\item 
+ssize\_\-t {\bf getBuffer} ({\bf Encoded} data, size\_\-t count)
+\begin{DoxyCompactList}\small\item\em Virtual for packet i/o intercept. \item\end{DoxyCompactList}\item 
+void {\bf open} (const char $\ast$name, {\bf Mode} {\bf mode}=modeRead, {\bf timeout\_\-t} framing=0)
+\begin{DoxyCompactList}\small\item\em Open existing audio file for streaming. \item\end{DoxyCompactList}\item 
+void {\bf create} (const char $\ast$name, {\bf Info} $\ast${\bf info}, bool exclusive=false, {\bf timeout\_\-t} framing=0)
+\begin{DoxyCompactList}\small\item\em Create a new audio file for streaming. \item\end{DoxyCompactList}\item 
+void {\bf close} (void)
+\begin{DoxyCompactList}\small\item\em Close the currently open audio file for streaming. \item\end{DoxyCompactList}\item 
+void {\bf flush} (void)
+\begin{DoxyCompactList}\small\item\em flush any unsaved buffered data to disk. \item\end{DoxyCompactList}\item 
+bool {\bf isStreamable} (void)
+\begin{DoxyCompactList}\small\item\em Check if the audio file may be streamed. \item\end{DoxyCompactList}\item 
+unsigned {\bf getCount} (void)
+\begin{DoxyCompactList}\small\item\em Get the number of samples expected in a frame. \item\end{DoxyCompactList}\item 
+unsigned {\bf getEncoded} ({\bf AudioCodec} $\ast${\bf codec}, {\bf Encoded} address, unsigned frames=1)
+\begin{DoxyCompactList}\small\item\em Stream audio data from the file and convert into an alternate encoding based on the codec supplied. \item\end{DoxyCompactList}\item 
+unsigned {\bf putEncoded} ({\bf AudioCodec} $\ast${\bf codec}, {\bf Encoded} address, unsigned frames=1)
+\begin{DoxyCompactList}\small\item\em Stream audio data in an alternate codec into the currently opened file. \item\end{DoxyCompactList}\item 
+unsigned {\bf getEncoded} ({\bf Encoded} address, unsigned frames=1)
+\begin{DoxyCompactList}\small\item\em Get data from the streamed file in it's native encoding. \item\end{DoxyCompactList}\item 
+unsigned {\bf putEncoded} ({\bf Encoded} address, unsigned frames=1)
+\begin{DoxyCompactList}\small\item\em Put data encoded in the native format of the stream file. \item\end{DoxyCompactList}\item 
+ssize\_\-t {\bf getPacket} ({\bf Encoded} data)
+\begin{DoxyCompactList}\small\item\em Get a packet of data from the file. \item\end{DoxyCompactList}\item 
+unsigned {\bf getMono} ({\bf Linear} buffer, unsigned frames=1)
+\begin{DoxyCompactList}\small\item\em Get and automatically convert audio file data into mono linear audio samples. \item\end{DoxyCompactList}\item 
+unsigned {\bf getStereo} ({\bf Linear} buffer, unsigned frames=1)
+\begin{DoxyCompactList}\small\item\em Get and automatically convert audio file data into stereo (two channel) linear audio samples. \item\end{DoxyCompactList}\item 
+unsigned {\bf putMono} ({\bf Linear} buffer, unsigned frames=1)
+\begin{DoxyCompactList}\small\item\em Automatically convert and put mono linear audio data into the audio file. \item\end{DoxyCompactList}\item 
+unsigned {\bf putStereo} ({\bf Linear} buffer, unsigned frames=1)
+\begin{DoxyCompactList}\small\item\em Automatically convert and put stereo linear audio data into the audio file. \item\end{DoxyCompactList}\item 
+unsigned {\bf bufMono} ({\bf Linear} buffer, unsigned count)
+\begin{DoxyCompactList}\small\item\em Automatically convert and put arbitrary linear mono data into the audio file. \item\end{DoxyCompactList}\item 
+unsigned {\bf bufStereo} ({\bf Linear} buffer, unsigned count)
+\begin{DoxyCompactList}\small\item\em Automatically convert and put arbitrary linear stereo data into the audio file. \item\end{DoxyCompactList}\item 
+{\bf AudioCodec} $\ast$ {\bf getCodec} (void)
+\begin{DoxyCompactList}\small\item\em Return the codec being used if there is one. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned {\bf bufAudio} ({\bf Linear} samples, unsigned count, unsigned size)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf AudioCodec} $\ast$ {\bf codec}
+\item 
+{\bf Encoded} {\bf framebuf}
+\item 
+bool {\bf streamable}
+\item 
+{\bf Linear} {\bf bufferFrame}
+\item 
+unsigned {\bf bufferPosition}
+\item 
+unsigned {\bf bufferChannels}
+\item 
+{\bf Linear} {\bf encBuffer}
+\item 
+{\bf Linear} {\bf decBuffer}
+\item 
+unsigned {\bf encSize}
+\item 
+unsigned {\bf decSize}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{AudioStream}{p.}{classost_1_1_audio_stream} accesses \doxyref{AudioFile}{p.}{classost_1_1_audio_file} base class content as fixed frames of streaming linear samples. If a codec must be assigned to perform conversion to/from linear data, \doxyref{AudioStream}{p.}{classost_1_1_audio_stream} will handle conversion automatically. \doxyref{AudioStream}{p.}{classost_1_1_audio_stream} will also convert between mono and stereo audio content. \doxyref{AudioStream}{p.}{classost_1_1_audio_stream} uses linear samples in the native machine endian format and perform endian byte swapping as needed.
+
+\begin{DoxyAuthor}{Author}
+David Sugar $<${\tt dyfet@ostel.com}$>$ \doxyref{Audio}{p.}{classost_1_1_audio} Streaming with Linear Conversion 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::AudioStream@{ost::AudioStream}!AudioStream@{AudioStream}}
+\index{AudioStream@{AudioStream}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{AudioStream}]{\setlength{\rightskip}{0pt plus 5cm}ost::AudioStream::AudioStream ()}\label{classost_1_1_audio_stream_ae7c476840e97627aec743f0224aad1fe}
+
+
+Create a new audiostream object. \index{ost::AudioStream@{ost::AudioStream}!AudioStream@{AudioStream}}
+\index{AudioStream@{AudioStream}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{AudioStream}]{\setlength{\rightskip}{0pt plus 5cm}ost::AudioStream::AudioStream (const char $\ast$ {\em name}, \/  {\bf Mode} {\em mode} = {\ttfamily modeRead}, \/  {\bf timeout\_\-t} {\em framing} = {\ttfamily 0})}\label{classost_1_1_audio_stream_ab67af760e72849a25898e18e2edf8fea}
+
+
+Create an audio stream object and open an existing audio file. 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]of file to open. \item[{\em mode}]of file access. \item[{\em framing}]time in milliseconds. \end{DoxyParams}
+\index{ost::AudioStream@{ost::AudioStream}!AudioStream@{AudioStream}}
+\index{AudioStream@{AudioStream}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{AudioStream}]{\setlength{\rightskip}{0pt plus 5cm}ost::AudioStream::AudioStream (const char $\ast$ {\em name}, \/  {\bf Info} $\ast$ {\em info}, \/  bool {\em exclusive} = {\ttfamily false}, \/  {\bf timeout\_\-t} {\em framing} = {\ttfamily 0})}\label{classost_1_1_audio_stream_a3ca0f83adf5bd721a86fa26710c6e338}
+
+
+Create an audio stream object and a new audio file. 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]of file to open. \item[{\em info}]source description for properties of new file. \item[{\em exclusive}]access if true. \item[{\em framing}]time in milliseconds. \end{DoxyParams}
+\index{ost::AudioStream@{ost::AudioStream}!$\sim$AudioStream@{$\sim$AudioStream}}
+\index{$\sim$AudioStream@{$\sim$AudioStream}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{$\sim$AudioStream}]{\setlength{\rightskip}{0pt plus 5cm}virtual ost::AudioStream::$\sim$AudioStream ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_audio_stream_a2224c65e284690dd924af3f1f2f24630}
+
+
+\subsection{Member Function Documentation}
+\index{ost::AudioStream@{ost::AudioStream}!bufAudio@{bufAudio}}
+\index{bufAudio@{bufAudio}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{bufAudio}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::AudioStream::bufAudio ({\bf Linear} {\em samples}, \/  unsigned {\em count}, \/  unsigned {\em size})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_stream_adab79077d903b00da35240fdeaeadf16}
+\index{ost::AudioStream@{ost::AudioStream}!bufMono@{bufMono}}
+\index{bufMono@{bufMono}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{bufMono}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::AudioStream::bufMono ({\bf Linear} {\em buffer}, \/  unsigned {\em count})}\label{classost_1_1_audio_stream_aa4c33abc46eedf00c9a061130185bffe}
+
+
+Automatically convert and put arbitrary linear mono data into the audio file. Convert to stereo and buffer incomplete frames as needed by the streaming file.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]to save linear audio from. \item[{\em count}]of linear audio to write. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of linear audio samples written to file. 
+\end{DoxyReturn}
+\index{ost::AudioStream@{ost::AudioStream}!bufStereo@{bufStereo}}
+\index{bufStereo@{bufStereo}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{bufStereo}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::AudioStream::bufStereo ({\bf Linear} {\em buffer}, \/  unsigned {\em count})}\label{classost_1_1_audio_stream_afd95f7a2df57101f7773920528c61abb}
+
+
+Automatically convert and put arbitrary linear stereo data into the audio file. Convert to mono and buffer incomplete frames as needed by the streaming file.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]to save linear audio from. \item[{\em count}]of linear audio to write. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of linear audio samples written to file. 
+\end{DoxyReturn}
+\index{ost::AudioStream@{ost::AudioStream}!close@{close}}
+\index{close@{close}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}void ost::AudioStream::close (void)}\label{classost_1_1_audio_stream_a823bf9a3d64dbae7117b6c29681017d3}
+
+
+Close the currently open audio file for streaming. 
+
+Reimplemented from {\bf ost::AudioFile} \doxyref{}{p.}{classost_1_1_audio_file_aba0e5a66e006c61aef1ddbd018e2e7ed}.\index{ost::AudioStream@{ost::AudioStream}!create@{create}}
+\index{create@{create}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}void ost::AudioStream::create (const char $\ast$ {\em name}, \/  {\bf Info} $\ast$ {\em info}, \/  bool {\em exclusive} = {\ttfamily false}, \/  {\bf timeout\_\-t} {\em framing} = {\ttfamily 0})}\label{classost_1_1_audio_stream_a58fd6f03aff924fdd330919caf543623}
+
+
+Create a new audio file for streaming. 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]of file to create. \item[{\em info}]source description for file properties. \item[{\em exclusive}]true for exclusive access. \item[{\em framing}]timing in milliseconds. \end{DoxyParams}
+
+
+Reimplemented from {\bf ost::AudioFile} \doxyref{}{p.}{classost_1_1_audio_file_af536da5d45926c3f75075c76f12ecb51}.\index{ost::AudioStream@{ost::AudioStream}!flush@{flush}}
+\index{flush@{flush}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{flush}]{\setlength{\rightskip}{0pt plus 5cm}void ost::AudioStream::flush (void)}\label{classost_1_1_audio_stream_a0c1c16d1db4e4a9d6d6a06eb0fa98f71}
+
+
+flush any unsaved buffered data to disk. \index{ost::AudioStream@{ost::AudioStream}!getBuffer@{getBuffer}}
+\index{getBuffer@{getBuffer}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{getBuffer}]{\setlength{\rightskip}{0pt plus 5cm}ssize\_\-t ost::AudioStream::getBuffer ({\bf Encoded} {\em data}, \/  size\_\-t {\em count})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_audio_stream_a32945278bd2fcb2b03c97f15d78f571b}
+
+
+Virtual for packet i/o intercept. \begin{DoxyReturn}{Returns}
+bytes read. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]encoding buffer. \item[{\em count}]requested. \end{DoxyParams}
+
+
+Reimplemented from {\bf ost::AudioFile} \doxyref{}{p.}{classost_1_1_audio_file_a40e6fcddf43df289fef2f66ccbe84bbd}.\index{ost::AudioStream@{ost::AudioStream}!getCodec@{getCodec}}
+\index{getCodec@{getCodec}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{getCodec}]{\setlength{\rightskip}{0pt plus 5cm}{\bf AudioCodec}$\ast$ ost::AudioStream::getCodec (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_audio_stream_a47823d4a7bc81c6fd488af7df15ed755}
+
+
+Return the codec being used if there is one. \begin{DoxyReturn}{Returns}
+codec used. 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf ost::AudioFile} \doxyref{}{p.}{classost_1_1_audio_file_a5a2a7d99d0b81e72b88cea73294de33b}.\index{ost::AudioStream@{ost::AudioStream}!getCount@{getCount}}
+\index{getCount@{getCount}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{getCount}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::AudioStream::getCount (void)}\label{classost_1_1_audio_stream_a3aa469beded2aed7ce2e6931171db597}
+
+
+Get the number of samples expected in a frame. \index{ost::AudioStream@{ost::AudioStream}!getEncoded@{getEncoded}}
+\index{getEncoded@{getEncoded}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{getEncoded}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::AudioStream::getEncoded ({\bf Encoded} {\em address}, \/  unsigned {\em frames} = {\ttfamily 1})}\label{classost_1_1_audio_stream_a2da57851f76ca5a358638d46d6e6887e}
+
+
+Get data from the streamed file in it's native encoding. 
+\begin{DoxyParams}{Parameters}
+\item[{\em address}]to save encoded audio. \item[{\em frames}]of audio to load. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of frames read. 
+\end{DoxyReturn}
+\index{ost::AudioStream@{ost::AudioStream}!getEncoded@{getEncoded}}
+\index{getEncoded@{getEncoded}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{getEncoded}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::AudioStream::getEncoded ({\bf AudioCodec} $\ast$ {\em codec}, \/  {\bf Encoded} {\em address}, \/  unsigned {\em frames} = {\ttfamily 1})}\label{classost_1_1_audio_stream_a98d814ef2eb3e646f22f3ef36fa47f34}
+
+
+Stream audio data from the file and convert into an alternate encoding based on the codec supplied. 
+\begin{DoxyParams}{Parameters}
+\item[{\em codec}]to apply before saving. \item[{\em address}]of data to save. \item[{\em frames}]to stream by the codec. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of frames processed. 
+\end{DoxyReturn}
+\index{ost::AudioStream@{ost::AudioStream}!getMono@{getMono}}
+\index{getMono@{getMono}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{getMono}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::AudioStream::getMono ({\bf Linear} {\em buffer}, \/  unsigned {\em frames} = {\ttfamily 1})}\label{classost_1_1_audio_stream_a6d17c9a029b0ac28148eb9107acff751}
+
+
+Get and automatically convert audio file data into mono linear audio samples. 
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]to save linear audio into. \item[{\em frames}]of audio to read. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of frames read from file. 
+\end{DoxyReturn}
+\index{ost::AudioStream@{ost::AudioStream}!getPacket@{getPacket}}
+\index{getPacket@{getPacket}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{getPacket}]{\setlength{\rightskip}{0pt plus 5cm}ssize\_\-t ost::AudioStream::getPacket ({\bf Encoded} {\em data})}\label{classost_1_1_audio_stream_aab3a8568a6e1b3c9660a6c63b049ccd6}
+
+
+Get a packet of data from the file. This uses the codec to determine what a true packet boundry is.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]to save encoded data. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of bytes read as packet. 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf ost::AudioBase} \doxyref{}{p.}{classost_1_1_audio_base_a26a26fef0bcc5a158dab9cdf5a0d772e}.\index{ost::AudioStream@{ost::AudioStream}!getStereo@{getStereo}}
+\index{getStereo@{getStereo}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{getStereo}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::AudioStream::getStereo ({\bf Linear} {\em buffer}, \/  unsigned {\em frames} = {\ttfamily 1})}\label{classost_1_1_audio_stream_a287e2a936022552de4f8bc7731df3bba}
+
+
+Get and automatically convert audio file data into stereo (two channel) linear audio samples. 
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]to save linear audio into. \item[{\em frames}]of audio to read. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of frames read from file. 
+\end{DoxyReturn}
+\index{ost::AudioStream@{ost::AudioStream}!isStreamable@{isStreamable}}
+\index{isStreamable@{isStreamable}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{isStreamable}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::AudioStream::isStreamable (void)}\label{classost_1_1_audio_stream_aaf520ef6e2e3da00c0d0cfc4eee781ea}
+
+
+Check if the audio file may be streamed. Files can be streamed if a codec is available or if they are linear.
+
+\begin{DoxyReturn}{Returns}
+true if streamable. 
+\end{DoxyReturn}
+\index{ost::AudioStream@{ost::AudioStream}!open@{open}}
+\index{open@{open}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}void ost::AudioStream::open (const char $\ast$ {\em name}, \/  {\bf Mode} {\em mode} = {\ttfamily modeRead}, \/  {\bf timeout\_\-t} {\em framing} = {\ttfamily 0})}\label{classost_1_1_audio_stream_a2dba2a15630314e4eb6a134ca82b5a60}
+
+
+Open existing audio file for streaming. 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]of file to open. \item[{\em mode}]to use file. \item[{\em framing}]timer in milliseconds. \end{DoxyParams}
+
+
+Reimplemented from {\bf ost::AudioFile} \doxyref{}{p.}{classost_1_1_audio_file_a6aa46c6af42e7155be4f92d1b7e0109b}.\index{ost::AudioStream@{ost::AudioStream}!putEncoded@{putEncoded}}
+\index{putEncoded@{putEncoded}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{putEncoded}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::AudioStream::putEncoded ({\bf Encoded} {\em address}, \/  unsigned {\em frames} = {\ttfamily 1})}\label{classost_1_1_audio_stream_a4b6bd9cfec637f8717956a307a29c3cc}
+
+
+Put data encoded in the native format of the stream file. 
+\begin{DoxyParams}{Parameters}
+\item[{\em address}]to load encoded audio. \item[{\em frames}]of audio to save. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of frames written. 
+\end{DoxyReturn}
+\index{ost::AudioStream@{ost::AudioStream}!putEncoded@{putEncoded}}
+\index{putEncoded@{putEncoded}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{putEncoded}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::AudioStream::putEncoded ({\bf AudioCodec} $\ast$ {\em codec}, \/  {\bf Encoded} {\em address}, \/  unsigned {\em frames} = {\ttfamily 1})}\label{classost_1_1_audio_stream_a80bdb4f5e1b1f21206305592745b4556}
+
+
+Stream audio data in an alternate codec into the currently opened file. 
+\begin{DoxyParams}{Parameters}
+\item[{\em codec}]to convert incoming data from. \item[{\em address}]of data to convert and stream. \item[{\em frames}]of audio to stream. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of frames processed. 
+\end{DoxyReturn}
+\index{ost::AudioStream@{ost::AudioStream}!putMono@{putMono}}
+\index{putMono@{putMono}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{putMono}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::AudioStream::putMono ({\bf Linear} {\em buffer}, \/  unsigned {\em frames} = {\ttfamily 1})}\label{classost_1_1_audio_stream_a1dc042d6cdea238dd371d447103dca3a}
+
+
+Automatically convert and put mono linear audio data into the audio file. Convert to stereo as needed by file format.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]to save linear audio from. \item[{\em frames}]of audio to write. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of frames written to file. 
+\end{DoxyReturn}
+\index{ost::AudioStream@{ost::AudioStream}!putStereo@{putStereo}}
+\index{putStereo@{putStereo}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{putStereo}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::AudioStream::putStereo ({\bf Linear} {\em buffer}, \/  unsigned {\em frames} = {\ttfamily 1})}\label{classost_1_1_audio_stream_a5f9d1dbc5dce59b1307546931718f561}
+
+
+Automatically convert and put stereo linear audio data into the audio file. Convert to mono as needed by file format.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]to save linear audio from. \item[{\em frames}]of audio to write. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of frames written to file. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\index{ost::AudioStream@{ost::AudioStream}!bufferChannels@{bufferChannels}}
+\index{bufferChannels@{bufferChannels}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{bufferChannels}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::AudioStream::bufferChannels}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_stream_a523ae30758d099f93c2d4036fcb25fdf}
+\index{ost::AudioStream@{ost::AudioStream}!bufferFrame@{bufferFrame}}
+\index{bufferFrame@{bufferFrame}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{bufferFrame}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Linear} {\bf ost::AudioStream::bufferFrame}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_stream_a0735cc187829f8cb3f4b44df94db5ed2}
+\index{ost::AudioStream@{ost::AudioStream}!bufferPosition@{bufferPosition}}
+\index{bufferPosition@{bufferPosition}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{bufferPosition}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::AudioStream::bufferPosition}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_stream_ac43e4053dba97120a826df030025e767}
+\index{ost::AudioStream@{ost::AudioStream}!codec@{codec}}
+\index{codec@{codec}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{codec}]{\setlength{\rightskip}{0pt plus 5cm}{\bf AudioCodec}$\ast$ {\bf ost::AudioStream::codec}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_stream_a36d87f56ca6a25e8e477cf98c559c5a6}
+\index{ost::AudioStream@{ost::AudioStream}!decBuffer@{decBuffer}}
+\index{decBuffer@{decBuffer}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{decBuffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Linear} {\bf ost::AudioStream::decBuffer}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_stream_aabc88921668e15b9eb20baa6906b4fdf}
+\index{ost::AudioStream@{ost::AudioStream}!decSize@{decSize}}
+\index{decSize@{decSize}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{decSize}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::AudioStream::decSize}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_stream_a587b93ce80081042f0d49bc93b8afd1e}
+\index{ost::AudioStream@{ost::AudioStream}!encBuffer@{encBuffer}}
+\index{encBuffer@{encBuffer}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{encBuffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Linear} {\bf ost::AudioStream::encBuffer}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_stream_aa602b11f03414d79135c93fde44c3e01}
+\index{ost::AudioStream@{ost::AudioStream}!encSize@{encSize}}
+\index{encSize@{encSize}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{encSize}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::AudioStream::encSize}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_stream_a2efa96f577a5c2cfd9013b2dec4c17b1}
+\index{ost::AudioStream@{ost::AudioStream}!framebuf@{framebuf}}
+\index{framebuf@{framebuf}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{framebuf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Encoded} {\bf ost::AudioStream::framebuf}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_stream_afddcd59bb4f012dc5bb7d565750a1e5d}
+\index{ost::AudioStream@{ost::AudioStream}!streamable@{streamable}}
+\index{streamable@{streamable}!ost::AudioStream@{ost::AudioStream}}
+\subsubsection[{streamable}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::AudioStream::streamable}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_stream_a2457cfcde22eed8ee32152dd60039bd3}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf audio2.h}\end{DoxyCompactItemize}

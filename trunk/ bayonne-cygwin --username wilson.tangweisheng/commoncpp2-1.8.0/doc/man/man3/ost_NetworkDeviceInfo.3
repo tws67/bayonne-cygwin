@@ -1,0 +1,101 @@
+.TH "ost::NetworkDeviceInfo" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::NetworkDeviceInfo \- 
+.PP
+Network device information class.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <network.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBNetworkDeviceInfo\fP (const \fBNetworkDeviceInfo\fP &ndi)"
+.br
+.ti -1c
+.RI "\fB~NetworkDeviceInfo\fP ()"
+.br
+.ti -1c
+.RI "const \fBString\fP & \fBname\fP () const "
+.br
+.RI "\fIReturns the Name of the network device. \fP"
+.ti -1c
+.RI "const \fBIPV4Host\fP & \fBaddress\fP () const "
+.br
+.RI "\fIReturns the Address of the network device. \fP"
+.ti -1c
+.RI "const \fBIPV4Broadcast\fP & \fBbroadcast\fP () const "
+.br
+.RI "\fIReturns the Broadcast address of the network device. \fP"
+.ti -1c
+.RI "const \fBIPV4Mask\fP & \fBnetmask\fP () const "
+.br
+.RI "\fIReturns the Netmask of the network device. \fP"
+.ti -1c
+.RI "const int \fBmtu\fP () const "
+.br
+.RI "\fIReturns the MTU. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBNetworkDeviceInfo\fP (const \fBString\fP &name, const \fBIPV4Host\fP &addr, const \fBIPV4Broadcast\fP &broadcast, const \fBIPV4Mask\fP &netmask, int mtu)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "bool \fBenumNetworkDevices\fP (std::vector< \fBNetworkDeviceInfo\fP > &devs)"
+.br
+.RI "\fIEnumerate all available network devices. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Network device information class. 
+
+This class is used to hold various informations about a TCP/IP network device. Which can be obtained by a call to \fBenumNetworkDevices()\fP 
+.PP
+\fBAuthor:\fP
+.RS 4
+Christian Prochnow <cproch@seculogix.de> 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::NetworkDeviceInfo::NetworkDeviceInfo (const \fBString\fP & name, const \fBIPV4Host\fP & addr, const \fBIPV4Broadcast\fP & broadcast, const \fBIPV4Mask\fP & netmask, int mtu)\fC [protected]\fP"
+.SS "ost::NetworkDeviceInfo::NetworkDeviceInfo (const \fBNetworkDeviceInfo\fP & ndi)"
+.SS "ost::NetworkDeviceInfo::~NetworkDeviceInfo ()"
+.SH "Member Function Documentation"
+.PP 
+.SS "const \fBIPV4Host\fP& ost::NetworkDeviceInfo::address () const\fC [inline]\fP"
+.PP
+Returns the Address of the network device. 
+.SS "const \fBIPV4Broadcast\fP& ost::NetworkDeviceInfo::broadcast () const\fC [inline]\fP"
+.PP
+Returns the Broadcast address of the network device. 
+.SS "const int ost::NetworkDeviceInfo::mtu () const\fC [inline]\fP"
+.PP
+Returns the MTU. 
+.SS "const \fBString\fP& ost::NetworkDeviceInfo::name () const\fC [inline]\fP"
+.PP
+Returns the Name of the network device. 
+.SS "const \fBIPV4Mask\fP& ost::NetworkDeviceInfo::netmask () const\fC [inline]\fP"
+.PP
+Returns the Netmask of the network device. 
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "bool enumNetworkDevices (std::vector< \fBNetworkDeviceInfo\fP > & devs)\fC [friend]\fP"
+.PP
+Enumerate all available network devices. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

@@ -1,0 +1,42 @@
+.TH "ost::IPV6Broadcast" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::IPV6Broadcast \- 
+.PP
+The broadcast address object is used to store the broadcast address for a specific subnet.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <address.h>\fP
+.PP
+Inherits \fBost::IPV6Address\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIPV6Broadcast\fP (const char *net='255.255.255.255')"
+.br
+.RI "\fISpecify the physical broadcast address to use and create a new broadcast address object based on a null terminated ASCII string. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The broadcast address object is used to store the broadcast address for a specific subnet. 
+
+This is commonly used for UDP broadcast operations. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::IPV6Broadcast::IPV6Broadcast (const char * net = \fC'255.255.255.255'\fP)"
+.PP
+Specify the physical broadcast address to use and create a new broadcast address object based on a null terminated ASCII string. \fBParameters:\fP
+.RS 4
+\fInet\fP null terminated ASCII network address. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

@@ -1,0 +1,62 @@
+.TH "ost::IPV6MulticastValidator" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::IPV6MulticastValidator \- 
+.PP
+Class for the function object that validates multicast addresses.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <address.h>\fP
+.PP
+Inherits \fBost::IPV6Validator\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIPV6MulticastValidator\fP ()"
+.br
+.RI "\fIConstructor. \fP"
+.ti -1c
+.RI "virtual \fB~IPV6MulticastValidator\fP ()"
+.br
+.RI "\fIKeeps compilers happy. \fP"
+.ti -1c
+.RI "void \fBoperator()\fP (const in6_addr address) const "
+.br
+.RI "\fIApplication operator. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class for the function object that validates multicast addresses. 
+
+Implements a specific application operator to validate multicast addresses.
+.PP
+\fBAuthor:\fP
+.RS 4
+Federico Montesino <p5087@quintero.fie.us.es> Validating class specialized for multicast addresses. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::IPV6MulticastValidator::IPV6MulticastValidator ()\fC [inline]\fP"
+.PP
+Constructor. Does not deal with any state. 
+.SS "virtual ost::IPV6MulticastValidator::~IPV6MulticastValidator ()\fC [inline, virtual]\fP"
+.PP
+Keeps compilers happy. .. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::IPV6MulticastValidator::operator() (const in6_addr address) const\fC [virtual]\fP"
+.PP
+Application operator. Apply the validation algorithm specific to multicast addresses 
+.PP
+Implements \fBost::IPV6Validator\fP.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

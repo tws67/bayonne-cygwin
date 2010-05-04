@@ -1,0 +1,72 @@
+\section{ost::Bayonne::Ring Class Reference}
+\label{classost_1_1_bayonne_1_1_ring}\index{ost::Bayonne::Ring@{ost::Bayonne::Ring}}
+
+
+This is an internal ring class for synchronized ringing.  
+
+
+{\ttfamily \#include $<$bayonne.h$>$}\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf Ring} $\ast$ {\bf attach} ({\bf BayonneDriver} $\ast$d, const char $\ast$id, {\bf Ring} $\ast$list)
+\item 
+static void {\bf detach} ({\bf Ring} $\ast$list)
+\item 
+static {\bf Ring} $\ast$ {\bf find} ({\bf Ring} $\ast$list, {\bf BayonneSession} $\ast$s)
+\item 
+static void {\bf start} ({\bf Ring} $\ast$list, {\bf BayonneSession} $\ast$s)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf BayonneDriver} $\ast$ {\bf driver}
+\item 
+const char $\ast$ {\bf ring\_\-id}
+\item 
+unsigned {\bf count}
+\item 
+{\bf BayonneSession} $\ast$ {\bf session}
+\item 
+Script::Name $\ast$ {\bf script}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is an internal ring class for synchronized ringing. 
+
+\subsection{Member Function Documentation}
+\index{ost::Bayonne::Ring@{ost::Bayonne::Ring}!attach@{attach}}
+\index{attach@{attach}!ost::Bayonne::Ring@{ost::Bayonne::Ring}}
+\subsubsection[{attach}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Ring}$\ast$ ost::Bayonne::Ring::attach ({\bf BayonneDriver} $\ast$ {\em d}, \/  const char $\ast$ {\em id}, \/  {\bf Ring} $\ast$ {\em list})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_1_1_ring_a712bd8a49315250c6e22992a33a8b16c}
+\index{ost::Bayonne::Ring@{ost::Bayonne::Ring}!detach@{detach}}
+\index{detach@{detach}!ost::Bayonne::Ring@{ost::Bayonne::Ring}}
+\subsubsection[{detach}]{\setlength{\rightskip}{0pt plus 5cm}static void ost::Bayonne::Ring::detach ({\bf Ring} $\ast$ {\em list})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_1_1_ring_afd82b7fc46afa17130e08769c5e832ad}
+\index{ost::Bayonne::Ring@{ost::Bayonne::Ring}!find@{find}}
+\index{find@{find}!ost::Bayonne::Ring@{ost::Bayonne::Ring}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Ring}$\ast$ ost::Bayonne::Ring::find ({\bf Ring} $\ast$ {\em list}, \/  {\bf BayonneSession} $\ast$ {\em s})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_1_1_ring_a762444c59ebd598d56ac616aee49d43b}
+\index{ost::Bayonne::Ring@{ost::Bayonne::Ring}!start@{start}}
+\index{start@{start}!ost::Bayonne::Ring@{ost::Bayonne::Ring}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}static void ost::Bayonne::Ring::start ({\bf Ring} $\ast$ {\em list}, \/  {\bf BayonneSession} $\ast$ {\em s})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_1_1_ring_a6b0b758000d1de99eeee4d864278c25a}
+
+
+\subsection{Member Data Documentation}
+\index{ost::Bayonne::Ring@{ost::Bayonne::Ring}!count@{count}}
+\index{count@{count}!ost::Bayonne::Ring@{ost::Bayonne::Ring}}
+\subsubsection[{count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::Bayonne::Ring::count}}\label{classost_1_1_bayonne_1_1_ring_af87fa07144ed547e4cb1c48141bc8d05}
+\index{ost::Bayonne::Ring@{ost::Bayonne::Ring}!driver@{driver}}
+\index{driver@{driver}!ost::Bayonne::Ring@{ost::Bayonne::Ring}}
+\subsubsection[{driver}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneDriver}$\ast$ {\bf ost::Bayonne::Ring::driver}}\label{classost_1_1_bayonne_1_1_ring_a47b7f26dc925c478c27ecb7e0e124447}
+\index{ost::Bayonne::Ring@{ost::Bayonne::Ring}!ring\_\-id@{ring\_\-id}}
+\index{ring\_\-id@{ring\_\-id}!ost::Bayonne::Ring@{ost::Bayonne::Ring}}
+\subsubsection[{ring\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::Ring::ring\_\-id}}\label{classost_1_1_bayonne_1_1_ring_ae5a7bfa3312bfee51ad236da0f4c33f8}
+\index{ost::Bayonne::Ring@{ost::Bayonne::Ring}!script@{script}}
+\index{script@{script}!ost::Bayonne::Ring@{ost::Bayonne::Ring}}
+\subsubsection[{script}]{\setlength{\rightskip}{0pt plus 5cm}Script::Name$\ast$ {\bf ost::Bayonne::Ring::script}}\label{classost_1_1_bayonne_1_1_ring_a8f9462359f13fd0b065ebbe563104892}
+\index{ost::Bayonne::Ring@{ost::Bayonne::Ring}!session@{session}}
+\index{session@{session}!ost::Bayonne::Ring@{ost::Bayonne::Ring}}
+\subsubsection[{session}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneSession}$\ast$ {\bf ost::Bayonne::Ring::session}}\label{classost_1_1_bayonne_1_1_ring_a0041eb5e0d2a88b67e5bb3ba9d4596a8}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf bayonne.h}\end{DoxyCompactItemize}

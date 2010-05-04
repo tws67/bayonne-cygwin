@@ -1,0 +1,105 @@
+\section{ost::MFTones Class Reference}
+\label{classost_1_1_m_f_tones}\index{ost::MFTones@{ost::MFTones}}
+
+
+\doxyref{MFTones}{p.}{classost_1_1_m_f_tones} is used to generate a series of mf audio data from a \char`\"{}telephone\char`\"{} number passed as an ASCII string.  
+
+
+{\ttfamily \#include $<$audio2.h$>$}Inheritance diagram for ost::MFTones::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classost_1_1_m_f_tones}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf MFTones} (const char $\ast${\bf digits}, {\bf Level} {\bf level}, {\bf timeout\_\-t} duration=20, {\bf timeout\_\-t} interdigit=60)
+\begin{DoxyCompactList}\small\item\em Generate a mf dialer for a specified dialing string. \item\end{DoxyCompactList}\item 
+{\bf $\sim$MFTones} ()
+\item 
+{\bf Linear} {\bf getFrame} (void)
+\item 
+bool {\bf isComplete} (void)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned {\bf remaining}
+\item 
+unsigned {\bf mfframes}
+\item 
+{\bf timeout\_\-t} {\bf frametime}
+\item 
+const char $\ast$ {\bf digits}
+\item 
+{\bf Level} {\bf level}
+\item 
+bool {\bf complete}
+\item 
+bool {\bf kflag}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{MFTones}{p.}{classost_1_1_m_f_tones} is used to generate a series of mf audio data from a \char`\"{}telephone\char`\"{} number passed as an ASCII string. Each time \doxyref{getFrame()}{p.}{classost_1_1_m_f_tones_a1e3cb8bbbbe783bc7f4f40a2162ad713} is called, the next audio frame of dtmf audio will be created and pulled.
+
+\begin{DoxyAuthor}{Author}
+David Sugar $<${\tt dyfet@ostel.com}$>$ Generate MF audio 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::MFTones@{ost::MFTones}!MFTones@{MFTones}}
+\index{MFTones@{MFTones}!ost::MFTones@{ost::MFTones}}
+\subsubsection[{MFTones}]{\setlength{\rightskip}{0pt plus 5cm}ost::MFTones::MFTones (const char $\ast$ {\em digits}, \/  {\bf Level} {\em level}, \/  {\bf timeout\_\-t} {\em duration} = {\ttfamily 20}, \/  {\bf timeout\_\-t} {\em interdigit} = {\ttfamily 60})}\label{classost_1_1_m_f_tones_ae9d48c4d9de53b7e1b861548c8c07b38}
+
+
+Generate a mf dialer for a specified dialing string. 
+\begin{DoxyParams}{Parameters}
+\item[{\em digits}]to generate tone dialing for. \item[{\em level}]for mf. \item[{\em duration}]timing for generated audio. \item[{\em interdigit}]timing, should be multiple of frame. \end{DoxyParams}
+\index{ost::MFTones@{ost::MFTones}!$\sim$MFTones@{$\sim$MFTones}}
+\index{$\sim$MFTones@{$\sim$MFTones}!ost::MFTones@{ost::MFTones}}
+\subsubsection[{$\sim$MFTones}]{\setlength{\rightskip}{0pt plus 5cm}ost::MFTones::$\sim$MFTones ()}\label{classost_1_1_m_f_tones_a43b51accde7cd36306565325a44895bc}
+
+
+\subsection{Member Function Documentation}
+\index{ost::MFTones@{ost::MFTones}!getFrame@{getFrame}}
+\index{getFrame@{getFrame}!ost::MFTones@{ost::MFTones}}
+\subsubsection[{getFrame}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Linear} ost::MFTones::getFrame (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_m_f_tones_a1e3cb8bbbbe783bc7f4f40a2162ad713}
+
+
+Reimplemented from {\bf ost::AudioTone} \doxyref{}{p.}{classost_1_1_audio_tone_a943d31930ce0f1318f42d6dc825200cb}.\index{ost::MFTones@{ost::MFTones}!isComplete@{isComplete}}
+\index{isComplete@{isComplete}!ost::MFTones@{ost::MFTones}}
+\subsubsection[{isComplete}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::MFTones::isComplete (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_m_f_tones_a1a889d81dba1bdbc01d55c25d0b348b1}
+
+
+Reimplemented from {\bf ost::AudioTone} \doxyref{}{p.}{classost_1_1_audio_tone_afd2f4d74c504ff9f1638ac0097f7df8d}.
+
+\subsection{Member Data Documentation}
+\index{ost::MFTones@{ost::MFTones}!complete@{complete}}
+\index{complete@{complete}!ost::MFTones@{ost::MFTones}}
+\subsubsection[{complete}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::MFTones::complete}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_m_f_tones_a454e89ef50ff60437542c3aa9eb6dd32}
+\index{ost::MFTones@{ost::MFTones}!digits@{digits}}
+\index{digits@{digits}!ost::MFTones@{ost::MFTones}}
+\subsubsection[{digits}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::MFTones::digits}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_m_f_tones_a7040ba98563c1c07b1b259db2c70f7b6}
+\index{ost::MFTones@{ost::MFTones}!frametime@{frametime}}
+\index{frametime@{frametime}!ost::MFTones@{ost::MFTones}}
+\subsubsection[{frametime}]{\setlength{\rightskip}{0pt plus 5cm}{\bf timeout\_\-t} {\bf ost::MFTones::frametime}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_m_f_tones_a1ab0b75fcd4a6c2b6307293f418536cc}
+\index{ost::MFTones@{ost::MFTones}!kflag@{kflag}}
+\index{kflag@{kflag}!ost::MFTones@{ost::MFTones}}
+\subsubsection[{kflag}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::MFTones::kflag}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_m_f_tones_aa7f10829db96089ad0078a07b55621c6}
+\index{ost::MFTones@{ost::MFTones}!level@{level}}
+\index{level@{level}!ost::MFTones@{ost::MFTones}}
+\subsubsection[{level}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Level} {\bf ost::MFTones::level}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_m_f_tones_aa2dbf77e15507a7b7c14d3b66d7c991e}
+\index{ost::MFTones@{ost::MFTones}!mfframes@{mfframes}}
+\index{mfframes@{mfframes}!ost::MFTones@{ost::MFTones}}
+\subsubsection[{mfframes}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::MFTones::mfframes}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_m_f_tones_abc6f3c983a816cf8a69b25ed90eb65cc}
+\index{ost::MFTones@{ost::MFTones}!remaining@{remaining}}
+\index{remaining@{remaining}!ost::MFTones@{ost::MFTones}}
+\subsubsection[{remaining}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::MFTones::remaining}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_m_f_tones_a9057503a5760fb278c0a461d9b786043}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf audio2.h}\end{DoxyCompactItemize}

@@ -1,0 +1,96 @@
+.TH "ost::AtomicCounter" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::AtomicCounter \- 
+.PP
+The \fBAtomicCounter\fP class offers thread-safe manipulation of an integer counter.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <thread.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAtomicCounter\fP ()"
+.br
+.RI "\fIInitialize an atomic counter to 0. \fP"
+.ti -1c
+.RI "\fBAtomicCounter\fP (int value)"
+.br
+.RI "\fIInitialize an atomic counter to a known value. \fP"
+.ti -1c
+.RI "\fB~AtomicCounter\fP ()"
+.br
+.ti -1c
+.RI "int \fBoperator++\fP (void)"
+.br
+.ti -1c
+.RI "int \fBoperator--\fP (void)"
+.br
+.ti -1c
+.RI "int \fBoperator+=\fP (int change)"
+.br
+.ti -1c
+.RI "int \fBoperator-=\fP (int change)"
+.br
+.ti -1c
+.RI "int \fBoperator+\fP (int change)"
+.br
+.ti -1c
+.RI "int \fBoperator-\fP (int change)"
+.br
+.ti -1c
+.RI "int \fBoperator=\fP (int value)"
+.br
+.ti -1c
+.RI "bool \fBoperator!\fP (void)"
+.br
+.ti -1c
+.RI "\fBoperator int\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBAtomicCounter\fP class offers thread-safe manipulation of an integer counter. 
+
+These are commonly used for building thread-safe 'reference' counters for C++ classes. The \fBAtomicCounter\fP depends on the platforms support for 'atomic' integer operations, and can alternately substitute a 'mutex' if no atomic support exists.
+.PP
+\fBAuthor:\fP
+.RS 4
+Sean Cavanaugh <sean@dimensionalrift.com> atomic counter operation. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::AtomicCounter::AtomicCounter ()"
+.PP
+Initialize an atomic counter to 0. 
+.SS "ost::AtomicCounter::AtomicCounter (int value)"
+.PP
+Initialize an atomic counter to a known value. \fBParameters:\fP
+.RS 4
+\fIvalue\fP initial value. 
+.RE
+.PP
+
+.SS "ost::AtomicCounter::~AtomicCounter ()"
+.SH "Member Function Documentation"
+.PP 
+.SS "ost::AtomicCounter::operator int ()"
+.SS "bool ost::AtomicCounter::operator! (void)"
+.SS "int ost::AtomicCounter::operator+ (int change)"
+.SS "int ost::AtomicCounter::operator++ (void)"
+.SS "int ost::AtomicCounter::operator+= (int change)"
+.SS "int ost::AtomicCounter::operator- (int change)"
+.SS "int ost::AtomicCounter::operator-- (void)"
+.SS "int ost::AtomicCounter::operator-= (int change)"
+.SS "int ost::AtomicCounter::operator= (int value)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

@@ -1,0 +1,110 @@
+.TH "misc.h" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+misc.h \- 
+.PP
+Memory management, configuration keydata objects and string tokenizer.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cc++/missing.h>\fP
+.br
+\fC#include <cc++/thread.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBost::MemPager\fP"
+.br
+.RI "\fIThe memory pager is used to allocate cumulative memory pages for storing object specific 'persistant' data that is presumed to persist during the life of a given derived object. \fP"
+.ti -1c
+.RI "struct \fBost::MemPager::_page\fP"
+.br
+.ti -1c
+.RI "class \fBost::StackPager\fP"
+.br
+.RI "\fIThe \fBStackPager\fP provides a repository to stash and retrieve working data in last-in-first-out order. \fP"
+.ti -1c
+.RI "struct \fBost::StackPager::frame\fP"
+.br
+.ti -1c
+.RI "class \fBost::SharedMemPager\fP"
+.br
+.RI "\fIThe shared mempager uses a mutex to protect key access methods. \fP"
+.ti -1c
+.RI "class \fBost::Keydata\fP"
+.br
+.RI "\fI\fBKeydata\fP objects are used to load and hold 'configuration' data for a given application. \fP"
+.ti -1c
+.RI "struct \fBost::Keydata::Keyval\fP"
+.br
+.ti -1c
+.RI "struct \fBost::Keydata::Keysym\fP"
+.br
+.ti -1c
+.RI "struct \fBost::Keydata::Define\fP"
+.br
+.ti -1c
+.RI "class \fBost::MemPagerObject\fP"
+.br
+.RI "\fIThis class is used to create derived classes which are constructed within a memory pager pool. \fP"
+.ti -1c
+.RI "class \fBost::Assoc\fP"
+.br
+.RI "\fIThis class is used to associate (object) pointers with named strings. \fP"
+.ti -1c
+.RI "struct \fBost::Assoc::entry\fP"
+.br
+.ti -1c
+.RI "class \fBost::Runlist\fP"
+.br
+.RI "\fIA runlist is used to restrict concurrent exection to a limited set of concurrent sessions, much like a semaphore. \fP"
+.ti -1c
+.RI "class \fBost::Runable\fP"
+.br
+.RI "\fIA container for objects that can be queued against a runlist. \fP"
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBost\fP"
+.br
+.in -1c
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBKEYDATA_INDEX_SIZE\fP   97"
+.br
+.ti -1c
+.RI "#define \fBKEYDATA_PAGER_SIZE\fP   512"
+.br
+.ti -1c
+.RI "#define \fBKEYDATA_PATH_SIZE\fP   PATH_MAX"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBost::endKeydata\fP (void)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Memory management, configuration keydata objects and string tokenizer. 
+
+
+.SH "Define Documentation"
+.PP 
+.SS "#define KEYDATA_INDEX_SIZE   97"
+.SS "#define KEYDATA_PAGER_SIZE   512"
+.SS "#define KEYDATA_PATH_SIZE   PATH_MAX"
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

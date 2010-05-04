@@ -1,0 +1,36 @@
+#!/bin/sh
+ETC="$1"
+CONF="$2"
+INIT="$3"
+LOGD="$4"
+SYS=`uname`
+
+case "$SYS" in
+Linux|linux)
+	if test ! -d ${CONF} ; then
+		mkdir -p ${CONF}
+		cp -f *.conf ${CONF}
+	fi
+	if test -f ${ETC}/passwd ; then
+		bayonne=`grep ^bayonne: ${ETC}/passwd`
+		if test -z "$bayonne" ; then
+			adduser -d /var/lib/bayonne -c "Bayonne User" -r bayonne
+		fi
+		chown bayonne ${CONF}
+		chgrp bayonne ${CONF}
+		chmod 0770 ${CONF}
+	fi
+	if test ! -d ${LOGD} ; then mkdir -p ${LOGD} ; fi
+	cp -f bayonne.log ${LOGD}/bayonne
+	if test ! -d ${INIT} ; then mkdir -p ${INIT} ; fi
+	cp -f bayonne.init ${INIT}/bayonne
+	chmod +x ${INIT}/bayonne
+	;;
+*)
+	if test ! -d ${CONF} ; then
+		mkdir -p ${CONF}
+		cp -f *.conf ${CONF}
+	fi
+	;;
+esac
+

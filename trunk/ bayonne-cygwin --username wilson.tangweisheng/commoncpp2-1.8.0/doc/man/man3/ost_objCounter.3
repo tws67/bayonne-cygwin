@@ -1,0 +1,61 @@
+.TH "ost::objCounter" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::objCounter \- 
+.PP
+Generic template class for creating classes which maintain an active count of the number of instances currently in active use.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <objcount.h>\fP
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBobjCounter\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~objCounter\fP ()"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static unsigned \fBobjCount\fP = 0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class T> class ost::objCounter< T >"
+Generic template class for creating classes which maintain an active count of the number of instances currently in active use. 
+
+This is a form of global reference count.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@gnutelephony.org> Object instance global reference count. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class T > \fBost::objCounter\fP< T >::\fBobjCounter\fP ()\fC [inline, protected]\fP"
+.PP
+References ost::objCounter< T >::objCount.
+.SS "template<class T > virtual \fBost::objCounter\fP< T >::~\fBobjCounter\fP ()\fC [inline, protected, virtual]\fP"
+.PP
+References ost::objCounter< T >::objCount.
+.SH "Member Data Documentation"
+.PP 
+.SS "template<class T > unsigned \fBost::objCounter\fP< T >::\fBobjCount\fP = 0\fC [inline, static, protected]\fP"
+.PP
+Referenced by ost::objCounter< T >::objCounter(), and ost::objCounter< T >::~objCounter().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

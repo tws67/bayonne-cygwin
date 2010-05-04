@@ -1,0 +1,17 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+modflags=-module -shared -avoid-version -no-undefined
+modpath=${libdir}/ccscript3-1.1
+scriptdir=${libdir}/ccscript3-1.1
+
+Name: libccscript3
+Description: GNU ccScript runtime library
+Version: 1.1.7
+Requires: libccgnu2 >= 1.3.0
+Libs:  -lccscript3 
+ 
+
+ 

@@ -1,0 +1,38 @@
+.TH "ost::SockException" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::SockException \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <socket.h>\fP
+.PP
+Inherits \fBost::IOException\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSockException\fP (const \fBString\fP &str, \fBSocket::Error\fP socketError, long systemError=0)"
+.br
+.ti -1c
+.RI "\fBSocket::Error\fP \fBgetSocketError\fP () const "
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBExamples: \fP
+.in +1c
+.PP
+\fBtcp.cpp\fP.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::SockException::SockException (const \fBString\fP & str, \fBSocket::Error\fP socketError, long systemError = \fC0\fP)\fC [inline]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBSocket::Error\fP ost::SockException::getSocketError () const\fC [inline]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

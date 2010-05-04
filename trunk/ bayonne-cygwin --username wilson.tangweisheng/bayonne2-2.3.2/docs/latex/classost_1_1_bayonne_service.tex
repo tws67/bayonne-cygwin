@@ -1,0 +1,114 @@
+\section{ost::BayonneService Class Reference}
+\label{classost_1_1_bayonne_service}\index{ost::BayonneService@{ost::BayonneService}}
+
+
+\doxyref{Bayonne}{p.}{classost_1_1_bayonne} services are used for threaded modules which may be installed at runtime.  
+
+
+{\ttfamily \#include $<$bayonne.h$>$}\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf start} (void)
+\begin{DoxyCompactList}\small\item\em Start all service threads. \item\end{DoxyCompactList}\item 
+static void {\bf stop} (void)
+\begin{DoxyCompactList}\small\item\em Stop all service threads. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf BayonneService} (int pri, size\_\-t stack)
+\item 
+virtual void {\bf stopService} (void)
+\begin{DoxyCompactList}\small\item\em Used for stop call interface. \item\end{DoxyCompactList}\item 
+virtual void {\bf startService} (void)
+\begin{DoxyCompactList}\small\item\em Used for start call interface. \item\end{DoxyCompactList}\item 
+virtual void {\bf detachSession} ({\bf BayonneSession} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Used at end of call. \item\end{DoxyCompactList}\item 
+virtual void {\bf attachSession} ({\bf BayonneSession} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Used at running state. \item\end{DoxyCompactList}\item 
+virtual void {\bf enteringCall} ({\bf BayonneSession} $\ast$child)
+\begin{DoxyCompactList}\small\item\em Used to notify when call is joined. \item\end{DoxyCompactList}\item 
+virtual void {\bf exitingCall} ({\bf BayonneSession} $\ast$child)
+\begin{DoxyCompactList}\small\item\em Used to notify when exiting join. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \_\-\_\-EXPORT {\bf BayonneSession}
+\item 
+void {\bf startServices} (void)
+\item 
+void {\bf stopServices} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Bayonne}{p.}{classost_1_1_bayonne} services are used for threaded modules which may be installed at runtime. These exist to integrate plugins with server managed startup and shutdown.
+
+threaded server service. \begin{DoxyAuthor}{Author}
+David Sugar $<${\tt dyfet@gnutelephony.org}$>$ 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::BayonneService@{ost::BayonneService}!BayonneService@{BayonneService}}
+\index{BayonneService@{BayonneService}!ost::BayonneService@{ost::BayonneService}}
+\subsubsection[{BayonneService}]{\setlength{\rightskip}{0pt plus 5cm}ost::BayonneService::BayonneService (int {\em pri}, \/  size\_\-t {\em stack})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_service_aa2ce7c3a0601e918127c1140b5045f47}
+
+
+\subsection{Member Function Documentation}
+\index{ost::BayonneService@{ost::BayonneService}!attachSession@{attachSession}}
+\index{attachSession@{attachSession}!ost::BayonneService@{ost::BayonneService}}
+\subsubsection[{attachSession}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::BayonneService::attachSession ({\bf BayonneSession} $\ast$ {\em s})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_service_ace1c7706c1f1bdac6be4ee039469e71a}
+
+
+Used at running state. \index{ost::BayonneService@{ost::BayonneService}!detachSession@{detachSession}}
+\index{detachSession@{detachSession}!ost::BayonneService@{ost::BayonneService}}
+\subsubsection[{detachSession}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::BayonneService::detachSession ({\bf BayonneSession} $\ast$ {\em s})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_service_a71bb111bd51dbc106cd7e98c636177df}
+
+
+Used at end of call. \index{ost::BayonneService@{ost::BayonneService}!enteringCall@{enteringCall}}
+\index{enteringCall@{enteringCall}!ost::BayonneService@{ost::BayonneService}}
+\subsubsection[{enteringCall}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::BayonneService::enteringCall ({\bf BayonneSession} $\ast$ {\em child})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_service_ad966bff7ff26563c9fad30c8dc903ce2}
+
+
+Used to notify when call is joined. \index{ost::BayonneService@{ost::BayonneService}!exitingCall@{exitingCall}}
+\index{exitingCall@{exitingCall}!ost::BayonneService@{ost::BayonneService}}
+\subsubsection[{exitingCall}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::BayonneService::exitingCall ({\bf BayonneSession} $\ast$ {\em child})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_service_a01a7005f4d0c825e5fa14fa1ec51ae94}
+
+
+Used to notify when exiting join. \index{ost::BayonneService@{ost::BayonneService}!start@{start}}
+\index{start@{start}!ost::BayonneService@{ost::BayonneService}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}static void ost::BayonneService::start (void)\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_service_a71ae2b37e7409271e697872364eba05e}
+
+
+Start all service threads. \index{ost::BayonneService@{ost::BayonneService}!startService@{startService}}
+\index{startService@{startService}!ost::BayonneService@{ost::BayonneService}}
+\subsubsection[{startService}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::BayonneService::startService (void)\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_service_a6ae064bba8919d7dbe32616203936a34}
+
+
+Used for start call interface. \index{ost::BayonneService@{ost::BayonneService}!stop@{stop}}
+\index{stop@{stop}!ost::BayonneService@{ost::BayonneService}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}static void ost::BayonneService::stop (void)\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_service_a2c0ee379a4dcbd57744d01cd542622ee}
+
+
+Stop all service threads. \index{ost::BayonneService@{ost::BayonneService}!stopService@{stopService}}
+\index{stopService@{stopService}!ost::BayonneService@{ost::BayonneService}}
+\subsubsection[{stopService}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::BayonneService::stopService (void)\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_service_a025eaa4cc62f84f32622a54d9f4845d0}
+
+
+Used for stop call interface. 
+
+\subsection{Friends And Related Function Documentation}
+\index{ost::BayonneService@{ost::BayonneService}!BayonneSession@{BayonneSession}}
+\index{BayonneSession@{BayonneSession}!ost::BayonneService@{ost::BayonneService}}
+\subsubsection[{BayonneSession}]{\setlength{\rightskip}{0pt plus 5cm}friend class \_\-\_\-EXPORT {\bf BayonneSession}\hspace{0.3cm}{\ttfamily  [friend]}}\label{classost_1_1_bayonne_service_a59728bba507bfe559a76d72b50766072}
+\index{ost::BayonneService@{ost::BayonneService}!startServices@{startServices}}
+\index{startServices@{startServices}!ost::BayonneService@{ost::BayonneService}}
+\subsubsection[{startServices}]{\setlength{\rightskip}{0pt plus 5cm}void startServices (void)\hspace{0.3cm}{\ttfamily  [friend]}}\label{classost_1_1_bayonne_service_a75b96b312a848f7037bc039ea05c2a8a}
+\index{ost::BayonneService@{ost::BayonneService}!stopServices@{stopServices}}
+\index{stopServices@{stopServices}!ost::BayonneService@{ost::BayonneService}}
+\subsubsection[{stopServices}]{\setlength{\rightskip}{0pt plus 5cm}void stopServices (void)\hspace{0.3cm}{\ttfamily  [friend]}}\label{classost_1_1_bayonne_service_a32b081316cf7ff550be867c4377c35bf}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf bayonne.h}\end{DoxyCompactItemize}

@@ -1,0 +1,233 @@
+.TH "ost::PosixThread" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::PosixThread \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <thread.h>\fP
+.PP
+Inherits \fBost::Thread\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPosixThread\fP (int pri=0, size_t stack=0)"
+.br
+.ti -1c
+.RI "void \fBsignalThread\fP (int signo)"
+.br
+.RI "\fIDelivers a Posix signal to the current thread. \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBsigInstall\fP (int signo)"
+.br
+.RI "\fIInstall a signal handler for use by threads and the OnSignal() event notification handler. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsignalParent\fP (\fBsigno_t\fP signo)"
+.br
+.RI "\fIIn the Posix version of Common C++, this can be used to send a signal into the parent thread of the current object. \fP"
+.ti -1c
+.RI "void \fBsignalMain\fP (\fBsigno_t\fP signo)"
+.br
+.RI "\fIIn the Posix version of Common C++, this can be used to send a signal into the main application thread. \fP"
+.ti -1c
+.RI "virtual void \fBonTimer\fP (void)"
+.br
+.RI "\fIA derivable method to call when a SIGALRM is being delivered to a specific thread. \fP"
+.ti -1c
+.RI "virtual void \fBonHangup\fP (void)"
+.br
+.RI "\fIA derived method to handle hangup events being delivered to a specific thread. \fP"
+.ti -1c
+.RI "virtual void \fBonException\fP (void)"
+.br
+.RI "\fIA derived method to call when a SIGABRT is being delivered to a specific thread. \fP"
+.ti -1c
+.RI "virtual void \fBonDisconnect\fP (void)"
+.br
+.RI "\fIA derived method to call when a SIGPIPE is being delivered to a specific thread. \fP"
+.ti -1c
+.RI "virtual void \fBonPolling\fP (void)"
+.br
+.RI "\fIA derived method to handle asynchronous I/O requests delivered to the specified thread. \fP"
+.ti -1c
+.RI "virtual void \fBonSignal\fP (int)"
+.br
+.RI "\fIA derivable method to call for delivering a signal event to a specified thread. \fP"
+.ti -1c
+.RI "void \fBsetTimer\fP (\fBtimeout_t\fP timer, bool periodic=false)"
+.br
+.RI "\fIUsed to specify a timeout event that can be delivered to the current thread via SIGALRM. \fP"
+.ti -1c
+.RI "\fBtimeout_t\fP \fBgetTimer\fP (void) const "
+.br
+.RI "\fIGets the time remaining for the current threads timer before it expires. \fP"
+.ti -1c
+.RI "void \fBendTimer\fP (void)"
+.br
+.RI "\fITerminates the timer before the timeout period has expired. \fP"
+.ti -1c
+.RI "void \fBwaitSignal\fP (\fBsigno_t\fP signo)"
+.br
+.RI "\fIUsed to wait on a Posix signal from another thread. \fP"
+.ti -1c
+.RI "void \fBsetSignal\fP (int signo, bool active)"
+.br
+.RI "\fIUsed to enable or disable a signal within the current thread. \fP"
+.ti -1c
+.RI "pthread_attr_t * \fBgetPthreadAttrPtr\fP (void)"
+.br
+.RI "\fIAccess to pthread_attr structure this allows setting/modifying pthread attributes not covered in the platform independant \fBThread\fP constructor, e.g. \fP"
+.ti -1c
+.RI "pthread_t \fBgetPthreadId\fP (void)"
+.br
+.RI "\fIGet pthread_t of underlying posix thread (useful for debugging/logging). \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBThreadImpl\fP"
+.br
+.ti -1c
+.RI "class \fBThread\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::PosixThread::PosixThread (int pri = \fC0\fP, size_t stack = \fC0\fP)"
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::PosixThread::endTimer (void)\fC [protected]\fP"
+.PP
+Terminates the timer before the timeout period has expired. This prevents the timer from sending it's SIGALRM and makes the timer available to other threads. 
+.SS "pthread_attr_t* ost::PosixThread::getPthreadAttrPtr (void)\fC [protected]\fP"
+.PP
+Access to pthread_attr structure this allows setting/modifying pthread attributes not covered in the platform independant \fBThread\fP constructor, e.g. contention scope or scheduling policy 
+.SS "pthread_t ost::PosixThread::getPthreadId (void)\fC [protected]\fP"
+.PP
+Get pthread_t of underlying posix thread (useful for debugging/logging). 
+.SS "\fBtimeout_t\fP ost::PosixThread::getTimer (void) const\fC [protected]\fP"
+.PP
+Gets the time remaining for the current threads timer before it expires. \fBReturns:\fP
+.RS 4
+time remaining before timer expires in milliseconds. 
+.RE
+.PP
+
+.SS "virtual void ost::PosixThread::onDisconnect (void)\fC [protected, virtual]\fP"
+.PP
+A derived method to call when a SIGPIPE is being delivered to a specific thread. 
+.SS "virtual void ost::PosixThread::onException (void)\fC [protected, virtual]\fP"
+.PP
+A derived method to call when a SIGABRT is being delivered to a specific thread. 
+.SS "virtual void ost::PosixThread::onHangup (void)\fC [protected, virtual]\fP"
+.PP
+A derived method to handle hangup events being delivered to a specific thread. 
+.SS "virtual void ost::PosixThread::onPolling (void)\fC [protected, virtual]\fP"
+.PP
+A derived method to handle asynchronous I/O requests delivered to the specified thread. 
+.SS "virtual void ost::PosixThread::onSignal (int)\fC [protected, virtual]\fP"
+.PP
+A derivable method to call for delivering a signal event to a specified thread. \fBParameters:\fP
+.RS 4
+\fI-\fP posix signal id. 
+.RE
+.PP
+
+.SS "virtual void ost::PosixThread::onTimer (void)\fC [protected, virtual]\fP"
+.PP
+A derivable method to call when a SIGALRM is being delivered to a specific thread. 
+.SS "void ost::PosixThread::setSignal (int signo, bool active)\fC [protected]\fP"
+.PP
+Used to enable or disable a signal within the current thread. \fBParameters:\fP
+.RS 4
+\fIsigno\fP posix signal id. 
+.br
+\fIactive\fP set to true to enable. 
+.RE
+.PP
+
+.SS "void ost::PosixThread::setTimer (\fBtimeout_t\fP timer, bool periodic = \fCfalse\fP)\fC [protected]\fP"
+.PP
+Used to specify a timeout event that can be delivered to the current thread via SIGALRM. When the timer expires, the \fBonTimer()\fP method is called for the thread. At present, only one thread timer can be active at any given time. On some operating systems (including Linux) a timer can be active on each thread.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimer\fP timeout in milliseconds. 
+.br
+\fIperiodic\fP should the timer be periodic. 
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+currently, periodic timers are only available on systems with a working setitimer call. 
+.RE
+.PP
+
+.SS "static void ost::PosixThread::sigInstall (int signo)\fC [static]\fP"
+.PP
+Install a signal handler for use by threads and the OnSignal() event notification handler. \fBParameters:\fP
+.RS 4
+\fIsigno\fP posix signal id. 
+.RE
+.PP
+
+.SS "void ost::PosixThread::signalMain (\fBsigno_t\fP signo)\fC [inline, protected]\fP"
+.PP
+In the Posix version of Common C++, this can be used to send a signal into the main application thread. \fBParameters:\fP
+.RS 4
+\fIsigno\fP a posix signal id. 
+.RE
+.PP
+
+.SS "void ost::PosixThread::signalParent (\fBsigno_t\fP signo)\fC [inline, protected]\fP"
+.PP
+In the Posix version of Common C++, this can be used to send a signal into the parent thread of the current object. \fBParameters:\fP
+.RS 4
+\fIsigno\fP a posix signal id. 
+.RE
+.PP
+
+.SS "void ost::PosixThread::signalThread (int signo)\fC [inline]\fP"
+.PP
+Delivers a Posix signal to the current thread. \fBParameters:\fP
+.RS 4
+\fIsigno\fP a posix signal id. 
+.RE
+.PP
+
+.PP
+References signalThread().
+.PP
+Referenced by signalThread().
+.SS "void ost::PosixThread::waitSignal (\fBsigno_t\fP signo)\fC [protected]\fP"
+.PP
+Used to wait on a Posix signal from another thread. This can be used as a crude rondevious/synchronization method between threads.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsigno\fP a posix signal id. 
+.RE
+.PP
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBThread\fP\fC [friend]\fP"
+.SS "friend class ThreadImpl\fC [friend]\fP"
+.PP
+Reimplemented from \fBost::Thread\fP.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

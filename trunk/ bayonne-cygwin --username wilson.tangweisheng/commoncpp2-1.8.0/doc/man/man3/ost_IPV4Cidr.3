@@ -1,0 +1,174 @@
+.TH "ost::IPV4Cidr" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::IPV4Cidr \- 
+.PP
+The CIDR class is used to support routing tables and validate address policies.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <address.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "struct in_addr \fBgetNetwork\fP (void) const "
+.br
+.RI "\fIGet network address associated with this cidr. \fP"
+.ti -1c
+.RI "struct in_addr \fBgetNetmask\fP (void) const "
+.br
+.RI "\fIGet network mask associated with this cidr. \fP"
+.ti -1c
+.RI "struct in_addr \fBgetBroadcast\fP (void) const "
+.br
+.RI "\fICompute the broadcast address associated with this cidr. \fP"
+.ti -1c
+.RI "void \fBset\fP (const char *cidr)"
+.br
+.RI "\fISet the cidr from a full or partial hostname, or from an address/mask, or a host/bits specification. \fP"
+.ti -1c
+.RI "\fBIPV4Cidr\fP (const char *cidr)"
+.br
+.RI "\fIConstruct a new cidr from a string. \fP"
+.ti -1c
+.RI "\fBIPV4Cidr\fP ()"
+.br
+.RI "\fIConstruct an empty cidr. \fP"
+.ti -1c
+.RI "\fBIPV4Cidr\fP (\fBIPV4Cidr\fP &)"
+.br
+.RI "\fIConstruct a copy of a cidr. \fP"
+.ti -1c
+.RI "bool \fBisMember\fP (const struct sockaddr *saddr) const "
+.br
+.RI "\fISee if a socket address is a member of this cidr's network. \fP"
+.ti -1c
+.RI "bool \fBisMember\fP (const struct in_addr &inaddr) const "
+.br
+.RI "\fISee if a low level address object is a member of this cidr's net. \fP"
+.ti -1c
+.RI "bool \fBoperator==\fP (const struct sockaddr *a) const "
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const struct in_addr &a) const "
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "unsigned \fBgetMask\fP (const char *cp) const "
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "struct in_addr netmask \fBnetwork\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The CIDR class is used to support routing tables and validate address policies. 
+
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@gnutelephony.org> Classless Internet Domain Routing 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::IPV4Cidr::IPV4Cidr (const char * cidr)"
+.PP
+Construct a new cidr from a string. \fBParameters:\fP
+.RS 4
+\fIcidr\fP string to use. 
+.RE
+.PP
+
+.SS "ost::IPV4Cidr::IPV4Cidr ()"
+.PP
+Construct an empty cidr. 
+.SS "ost::IPV4Cidr::IPV4Cidr (\fBIPV4Cidr\fP &)"
+.PP
+Construct a copy of a cidr. \fBParameters:\fP
+.RS 4
+\fIcidr\fP to copy from. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "struct in_addr ost::IPV4Cidr::getBroadcast (void) const\fC [read]\fP"
+.PP
+Compute the broadcast address associated with this cidr. \fBReturns:\fP
+.RS 4
+system binary coded network address. 
+.RE
+.PP
+
+.SS "unsigned ost::IPV4Cidr::getMask (const char * cp) const\fC [protected]\fP"
+.SS "struct in_addr ost::IPV4Cidr::getNetmask (void) const\fC [inline, read]\fP"
+.PP
+Get network mask associated with this cidr. \fBReturns:\fP
+.RS 4
+system binary coded network mask. 
+.RE
+.PP
+
+.SS "struct in_addr ost::IPV4Cidr::getNetwork (void) const\fC [inline, read]\fP"
+.PP
+Get network address associated with this cidr. \fBReturns:\fP
+.RS 4
+system binary coded address. 
+.RE
+.PP
+
+.SS "bool ost::IPV4Cidr::isMember (const struct in_addr & inaddr) const"
+.PP
+See if a low level address object is a member of this cidr's net. \fBParameters:\fP
+.RS 4
+\fIinaddr\fP object to test. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if member of cidr. 
+.RE
+.PP
+
+.SS "bool ost::IPV4Cidr::isMember (const struct sockaddr * saddr) const"
+.PP
+See if a socket address is a member of this cidr's network. \fBParameters:\fP
+.RS 4
+\fIsaddr\fP pointer to test. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if member of cidr. 
+.RE
+.PP
+
+.SS "bool ost::IPV4Cidr::operator== (const struct in_addr & a) const\fC [inline]\fP"
+.SS "bool ost::IPV4Cidr::operator== (const struct sockaddr * a) const\fC [inline]\fP"
+.SS "void ost::IPV4Cidr::set (const char * cidr)"
+.PP
+Set the cidr from a full or partial hostname, or from an address/mask, or a host/bits specification. \fBParameters:\fP
+.RS 4
+\fIcidr\fP string to use. 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "struct in_addr netmask \fBost::IPV4Cidr::network\fP\fC [read, protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

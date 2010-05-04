@@ -1,0 +1,60 @@
+.TH "ost::WriteLock" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::WriteLock \- 
+.PP
+The \fBWriteLock\fP class is used to protect a section of code through a \fBThreadLock\fP for 'write' access to the member function.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <thread.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWriteLock\fP (\fBThreadLock\fP &_tl)"
+.br
+.RI "\fIWait for write access. \fP"
+.ti -1c
+.RI "\fB~WriteLock\fP ()"
+.br
+.RI "\fIPost the semaphore automatically. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBWriteLock\fP class is used to protect a section of code through a \fBThreadLock\fP for 'write' access to the member function. 
+
+The \fBThreadLock\fP is automatically released when the object falls out of scope.
+.PP
+A common use is
+.PP
+void func_to_protect() { \fBWriteLock\fP lock(threadlock); ... operation ... }
+.PP
+NOTE: do not declare variable as 'WriteLock (threadlock)', the mutex will be released at statement end.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@gnu.org> Read mode automatic locker for protected access. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::WriteLock::WriteLock (\fBThreadLock\fP & _tl)\fC [inline]\fP"
+.PP
+Wait for write access. \fBParameters:\fP
+.RS 4
+\fI_tl\fP reference to threadlock to aquire. 
+.RE
+.PP
+
+.SS "ost::WriteLock::~WriteLock ()\fC [inline]\fP"
+.PP
+Post the semaphore automatically. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

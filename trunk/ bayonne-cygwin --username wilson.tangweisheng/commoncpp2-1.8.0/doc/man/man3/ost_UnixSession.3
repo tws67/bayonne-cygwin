@@ -1,0 +1,114 @@
+.TH "ost::UnixSession" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::UnixSession \- 
+.PP
+The Unix domain session is used to primarily to represent a client connection that can be managed on a seperate thread.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <unix.h>\fP
+.PP
+Inherits \fBost::Thread\fP, and \fBost::UnixStream\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUnixSession\fP (const char *pathname, int size=512, int pri=0, int stack=0)"
+.br
+.RI "\fICreate a Unix domain socket that will be connected to a local server server and that will execute under it's own thread. \fP"
+.ti -1c
+.RI "\fBUnixSession\fP (\fBUnixSocket\fP &server, int size=512, int pri=0, int stack=0)"
+.br
+.RI "\fICreate a Unix domain socket from a bound Unix domain server by accepting a pending connection from that server and execute a thread for the accepted connection. \fP"
+.ti -1c
+.RI "virtual \fB~UnixSession\fP ()"
+.br
+.RI "\fIVirtual destructor. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBwaitConnection\fP (\fBtimeout_t\fP \fBtimeout\fP=~((\fBtimeout_t\fP) 0))"
+.br
+.RI "\fINormally called during the thread Initial() method by default, this will wait for the socket connection to complete when connecting to a remote socket. \fP"
+.ti -1c
+.RI "void \fBinitial\fP (void)"
+.br
+.RI "\fIThe initial method is used to esablish a connection when delayed completion is used. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The Unix domain session is used to primarily to represent a client connection that can be managed on a seperate thread. 
+
+The Unix domain session also supports a non-blocking connection scheme which prevents blocking during the constructor and moving the process of completing a connection into the thread that executes for the session.
+.PP
+\fBAuthor:\fP
+.RS 4
+Alex Pavloff <alex@pavloff.net> Threaded streamable unix domain socket with non-blocking constructor. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::UnixSession::UnixSession (const char * pathname, int size = \fC512\fP, int pri = \fC0\fP, int stack = \fC0\fP)"
+.PP
+Create a Unix domain socket that will be connected to a local server server and that will execute under it's own thread. \fBParameters:\fP
+.RS 4
+\fIpathname\fP path to socket 
+.br
+\fIsize\fP of streaming buffer. 
+.br
+\fIpri\fP execution priority relative to parent. 
+.br
+\fIstack\fP allocation needed on some platforms. 
+.RE
+.PP
+
+.SS "ost::UnixSession::UnixSession (\fBUnixSocket\fP & server, int size = \fC512\fP, int pri = \fC0\fP, int stack = \fC0\fP)"
+.PP
+Create a Unix domain socket from a bound Unix domain server by accepting a pending connection from that server and execute a thread for the accepted connection. \fBParameters:\fP
+.RS 4
+\fIserver\fP unix domain socket to accept a connection from. 
+.br
+\fIsize\fP of streaming buffer. 
+.br
+\fIpri\fP execution priority relative to parent. 
+.br
+\fIstack\fP allocation needed on some platforms. 
+.RE
+.PP
+
+.SS "virtual ost::UnixSession::~UnixSession ()\fC [virtual]\fP"
+.PP
+Virtual destructor. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::UnixSession::initial (void)\fC [protected, virtual]\fP"
+.PP
+The initial method is used to esablish a connection when delayed completion is used. This assures the constructor terminates without having to wait for a connection request to complete. 
+.PP
+Reimplemented from \fBost::Thread\fP.
+.SS "int ost::UnixSession::waitConnection (\fBtimeout_t\fP timeout = \fC~((\fBtimeout_t\fP) 0)\fP)\fC [protected]\fP"
+.PP
+Normally called during the thread Initial() method by default, this will wait for the socket connection to complete when connecting to a remote socket. One might wish to use \fBsetCompletion()\fP to change the socket back to blocking I/O calls after the connection completes. To implement the session one must create a derived class which implements Run().
+.PP
+\fBReturns:\fP
+.RS 4
+0 if successful, -1 if timed out. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimeout\fP to wait for completion in milliseconds. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

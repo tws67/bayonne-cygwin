@@ -1,0 +1,431 @@
+.TH "ost::TCPStream" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::TCPStream \- 
+.PP
+TCP streams are used to represent TCP client connections to a server by TCP protocol servers for accepting client connections.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <socket.h>\fP
+.PP
+Inherits \fBost::Socket\fP.
+.PP
+Inherited by \fBost::SSLStream\fP, \fBost::TCPSession\fP, and \fBost::URLStream\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTCPStream\fP (\fBFamily\fP \fBfamily\fP=IPV4, bool throwflag=true, \fBtimeout_t\fP to=0)"
+.br
+.RI "\fIThe constructor required for building other classes or to start an unconnected \fBTCPStream\fP for connect. \fP"
+.ti -1c
+.RI "void \fBdisconnect\fP (void)"
+.br
+.RI "\fIDisconnect the current session and prepare for a new one. \fP"
+.ti -1c
+.RI "int \fBgetSegmentSize\fP (void)"
+.br
+.RI "\fIGet protocol segment size. \fP"
+.ti -1c
+.RI "\fBTCPStream\fP (\fBTCPSocket\fP &server, bool throwflag=true, \fBtimeout_t\fP \fBtimeout\fP=0)"
+.br
+.RI "\fICreate a TCP stream by accepting a connection from a bound TCP socket acting as a server. \fP"
+.ti -1c
+.RI "\fBTCPStream\fP (\fBTCPV6Socket\fP &server, bool throwflag=true, \fBtimeout_t\fP \fBtimeout\fP=0)"
+.br
+.ti -1c
+.RI "void \fBconnect\fP (\fBTCPSocket\fP &server)"
+.br
+.RI "\fIAccept a connection from a TCP Server. \fP"
+.ti -1c
+.RI "void \fBconnect\fP (\fBTCPV6Socket\fP &server)"
+.br
+.ti -1c
+.RI "\fBTCPStream\fP (const \fBIPV4Host\fP &host, \fBtpport_t\fP port, unsigned mss=536, bool throwflag=true, \fBtimeout_t\fP \fBtimeout\fP=0)"
+.br
+.RI "\fICreate a TCP stream by connecting to a TCP socket (on a remote machine). \fP"
+.ti -1c
+.RI "\fBTCPStream\fP (const \fBIPV6Host\fP &host, \fBtpport_t\fP port, unsigned mss=536, bool throwflag=true, \fBtimeout_t\fP \fBtimeout\fP=0)"
+.br
+.ti -1c
+.RI "\fBTCPStream\fP (const char *name, \fBFamily\fP \fBfamily\fP=IPV4, unsigned mss=536, bool throwflag=false, \fBtimeout_t\fP timer=0)"
+.br
+.RI "\fIConstruct a named TCP \fBSocket\fP connected to a remote machine. \fP"
+.ti -1c
+.RI "void \fBsetTimeout\fP (\fBtimeout_t\fP timer)"
+.br
+.RI "\fISet the I/O operation timeout for socket I/O operations. \fP"
+.ti -1c
+.RI "\fBTCPStream\fP (const \fBTCPStream\fP &source)"
+.br
+.RI "\fIA copy constructor creates a new stream buffer. \fP"
+.ti -1c
+.RI "virtual \fB~TCPStream\fP ()"
+.br
+.RI "\fIFlush and empty all buffers, and then remove the allocated buffers. \fP"
+.ti -1c
+.RI "int \fBsync\fP (void)"
+.br
+.RI "\fIFlushes the stream input and output buffers, writes pending output. \fP"
+.ti -1c
+.RI "size_t \fBprintf\fP (const char *format,...)"
+.br
+.RI "\fIPrint content into a socket. \fP"
+.ti -1c
+.RI "bool \fBisPending\fP (\fBPending\fP pend, \fBtimeout_t\fP \fBtimeout\fP=TIMEOUT_INF)"
+.br
+.RI "\fIGet the status of pending stream data. \fP"
+.ti -1c
+.RI "ssize_t \fBpeek\fP (void *buf, size_t len)"
+.br
+.RI "\fIExamine contents of next waiting packet. \fP"
+.ti -1c
+.RI "size_t \fBgetBufferSize\fP (void) const "
+.br
+.RI "\fIReturn the size of the current stream buffering used. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBallocate\fP (size_t size)"
+.br
+.RI "\fIUsed to allocate the buffer space needed for iostream operations. \fP"
+.ti -1c
+.RI "void \fBendStream\fP (void)"
+.br
+.RI "\fIUsed to terminate the buffer space and cleanup the socket connection. \fP"
+.ti -1c
+.RI "int \fBunderflow\fP ()"
+.br
+.RI "\fIThis streambuf method is used to load the input buffer through the established tcp socket connection. \fP"
+.ti -1c
+.RI "int \fBuflow\fP ()"
+.br
+.RI "\fIThis streambuf method is used for doing unbuffered reads through the establish tcp socket connection when in interactive mode. \fP"
+.ti -1c
+.RI "int \fBoverflow\fP (int ch)"
+.br
+.RI "\fIThis streambuf method is used to write the output buffer through the established tcp connection. \fP"
+.ti -1c
+.RI "void \fBconnect\fP (const \fBIPV4Host\fP &host, \fBtpport_t\fP port, unsigned mss=536)"
+.br
+.RI "\fICreate a TCP stream by connecting to a TCP socket (on a remote machine). \fP"
+.ti -1c
+.RI "void \fBconnect\fP (const \fBIPV6Host\fP &host, \fBtpport_t\fP port, unsigned mss=536)"
+.br
+.ti -1c
+.RI "void \fBconnect\fP (const char *name, unsigned mss=536)"
+.br
+.RI "\fIConnect a TCP stream to a named destination host and port number, using getaddrinfo interface if available. \fP"
+.ti -1c
+.RI "std::iostream * \fBtcp\fP (void)"
+.br
+.RI "\fIUsed in derived classes to refer to the current object via it's iostream. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBtimeout_t\fP \fBtimeout\fP"
+.br
+.ti -1c
+.RI "size_t \fBbufsize\fP"
+.br
+.ti -1c
+.RI "\fBFamily\fP \fBfamily\fP"
+.br
+.ti -1c
+.RI "char * \fBgbuf\fP"
+.br
+.ti -1c
+.RI "char * \fBpbuf\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "\fBTCPStream\fP & \fBcrlf\fP (\fBTCPStream\fP &)"
+.br
+.ti -1c
+.RI "\fBTCPStream\fP & \fBlfcr\fP (\fBTCPStream\fP &)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+TCP streams are used to represent TCP client connections to a server by TCP protocol servers for accepting client connections. 
+
+The TCP stream is a C++ 'stream' class, and can accept streaming of data to and from other C++ objects using the << and >> operators.
+.PP
+\fBTCPStream\fP itself can be formed either by connecting to a bound network address of a TCP server, or can be created when 'accepting' a network connection from a TCP server.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> streamable TCP socket connection. 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+.PP
+\fBtcp.cpp\fP, and \fBtcpstr1.cpp\fP.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::TCPStream::TCPStream (\fBFamily\fP family = \fCIPV4\fP, bool throwflag = \fCtrue\fP, \fBtimeout_t\fP to = \fC0\fP)"
+.PP
+The constructor required for building other classes or to start an unconnected \fBTCPStream\fP for connect. 
+.SS "ost::TCPStream::TCPStream (\fBTCPSocket\fP & server, bool throwflag = \fCtrue\fP, \fBtimeout_t\fP timeout = \fC0\fP)"
+.PP
+Create a TCP stream by accepting a connection from a bound TCP socket acting as a server. This performs an 'accept' call.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIserver\fP socket listening 
+.br
+\fIthrowflag\fP flag to throw errors. 
+.br
+\fItimeout\fP for all operations. 
+.RE
+.PP
+
+.SS "ost::TCPStream::TCPStream (\fBTCPV6Socket\fP & server, bool throwflag = \fCtrue\fP, \fBtimeout_t\fP timeout = \fC0\fP)"
+.SS "ost::TCPStream::TCPStream (const \fBIPV4Host\fP & host, \fBtpport_t\fP port, unsigned mss = \fC536\fP, bool throwflag = \fCtrue\fP, \fBtimeout_t\fP timeout = \fC0\fP)"
+.PP
+Create a TCP stream by connecting to a TCP socket (on a remote machine). \fBParameters:\fP
+.RS 4
+\fIhost\fP address of remote TCP server. 
+.br
+\fIport\fP number to connect. 
+.br
+\fImss\fP maximum segment size of streaming buffers. 
+.br
+\fIthrowflag\fP flag to throw errors. 
+.br
+\fItimeout\fP for all operations. 
+.RE
+.PP
+
+.SS "ost::TCPStream::TCPStream (const \fBIPV6Host\fP & host, \fBtpport_t\fP port, unsigned mss = \fC536\fP, bool throwflag = \fCtrue\fP, \fBtimeout_t\fP timeout = \fC0\fP)"
+.SS "ost::TCPStream::TCPStream (const char * name, \fBFamily\fP family = \fCIPV4\fP, unsigned mss = \fC536\fP, bool throwflag = \fCfalse\fP, \fBtimeout_t\fP timer = \fC0\fP)"
+.PP
+Construct a named TCP \fBSocket\fP connected to a remote machine. \fBParameters:\fP
+.RS 4
+\fIname\fP of remote service. 
+.br
+\fIfamily\fP of protocol. 
+.br
+\fImss\fP maximum segment size of streaming buffers. 
+.br
+\fIthrowflag\fP flag to throw errors. 
+.br
+\fItimer\fP for timeout for all operations. 
+.RE
+.PP
+
+.SS "ost::TCPStream::TCPStream (const \fBTCPStream\fP & source)"
+.PP
+A copy constructor creates a new stream buffer. \fBParameters:\fP
+.RS 4
+\fIsource\fP reference of stream to copy from. 
+.RE
+.PP
+
+.SS "virtual ost::TCPStream::~TCPStream ()\fC [virtual]\fP"
+.PP
+Flush and empty all buffers, and then remove the allocated buffers. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::TCPStream::allocate (size_t size)\fC [protected]\fP"
+.PP
+Used to allocate the buffer space needed for iostream operations. This function is called by the constructor.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsize\fP of stream buffers from constructor. 
+.RE
+.PP
+
+.SS "void ost::TCPStream::connect (\fBTCPV6Socket\fP & server)"
+.SS "void ost::TCPStream::connect (\fBTCPSocket\fP & server)"
+.PP
+Accept a connection from a TCP Server. \fBParameters:\fP
+.RS 4
+\fIserver\fP socket listening 
+.RE
+.PP
+
+.SS "void ost::TCPStream::connect (const char * name, unsigned mss = \fC536\fP)\fC [protected]\fP"
+.PP
+Connect a TCP stream to a named destination host and port number, using getaddrinfo interface if available. \fBParameters:\fP
+.RS 4
+\fIname\fP of host and service to connect 
+.br
+\fImss\fP maximum segment size of stream buffer 
+.RE
+.PP
+
+.SS "void ost::TCPStream::connect (const \fBIPV6Host\fP & host, \fBtpport_t\fP port, unsigned mss = \fC536\fP)\fC [protected]\fP"
+.SS "void ost::TCPStream::connect (const \fBIPV4Host\fP & host, \fBtpport_t\fP port, unsigned mss = \fC536\fP)\fC [protected]\fP"
+.PP
+Create a TCP stream by connecting to a TCP socket (on a remote machine). \fBParameters:\fP
+.RS 4
+\fIhost\fP address of remote TCP server. 
+.br
+\fIport\fP number to connect. 
+.br
+\fImss\fP maximum segment size of streaming buffers. 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+\fBtcp.cpp\fP.
+.SS "void ost::TCPStream::disconnect (void)"
+.PP
+Disconnect the current session and prepare for a new one. 
+.PP
+Reimplemented in \fBost::SSLStream\fP.
+.PP
+\fBExamples: \fP
+.in +1c
+\fBtcp.cpp\fP, and \fBtcpstr1.cpp\fP.
+.SS "void ost::TCPStream::endStream (void)\fC [protected]\fP"
+.PP
+Used to terminate the buffer space and cleanup the socket connection. This fucntion is called by the destructor. 
+.PP
+Reimplemented in \fBost::SSLStream\fP.
+.SS "size_t ost::TCPStream::getBufferSize (void) const\fC [inline]\fP"
+.PP
+Return the size of the current stream buffering used. \fBReturns:\fP
+.RS 4
+size of stream buffers. 
+.RE
+.PP
+
+.SS "int ost::TCPStream::getSegmentSize (void)"
+.PP
+Get protocol segment size. 
+.PP
+\fBExamples: \fP
+.in +1c
+\fBtcp.cpp\fP.
+.SS "bool ost::TCPStream::isPending (\fBPending\fP pend, \fBtimeout_t\fP timeout = \fCTIMEOUT_INF\fP)\fC [virtual]\fP"
+.PP
+Get the status of pending stream data. This can be used to examine if input or output is waiting, or if an error or disconnect has occured on the stream. If a read buffer contains data then input is ready and if write buffer contains data it is first flushed and then checked. 
+.PP
+Reimplemented from \fBost::Socket\fP.
+.PP
+\fBExamples: \fP
+.in +1c
+\fBtcp.cpp\fP.
+.SS "int ost::TCPStream::overflow (int ch)\fC [protected]\fP"
+.PP
+This streambuf method is used to write the output buffer through the established tcp connection. \fBParameters:\fP
+.RS 4
+\fIch\fP char to push through. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+char pushed through. 
+.RE
+.PP
+
+.SS "ssize_t ost::TCPStream::peek (void * buf, size_t len)\fC [inline]\fP"
+.PP
+Examine contents of next waiting packet. \fBParameters:\fP
+.RS 4
+\fIbuf\fP pointer to packet buffer for contents. 
+.br
+\fIlen\fP of packet buffer. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+number of bytes examined. 
+.RE
+.PP
+
+.SS "size_t ost::TCPStream::printf (const char * format,  ...)"
+.PP
+Print content into a socket. \fBReturns:\fP
+.RS 4
+count of bytes sent. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIformat\fP string 
+.RE
+.PP
+
+.SS "void ost::TCPStream::setTimeout (\fBtimeout_t\fP timer)\fC [inline]\fP"
+.PP
+Set the I/O operation timeout for socket I/O operations. \fBParameters:\fP
+.RS 4
+\fItimer\fP to change timeout. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBost::URLStream\fP.
+.SS "int ost::TCPStream::sync (void)"
+.PP
+Flushes the stream input and output buffers, writes pending output. \fBReturns:\fP
+.RS 4
+0 on success. 
+.RE
+.PP
+
+.SS "std::iostream* ost::TCPStream::tcp (void)\fC [inline, protected]\fP"
+.PP
+Used in derived classes to refer to the current object via it's iostream. For example, to send a set of characters in a derived method, one might use *tcp() << 'test'.
+.PP
+\fBReturns:\fP
+.RS 4
+stream pointer of this object. 
+.RE
+.PP
+
+.SS "int ost::TCPStream::uflow ()\fC [protected]\fP"
+.PP
+This streambuf method is used for doing unbuffered reads through the establish tcp socket connection when in interactive mode. Also this method will handle proper use of buffers if not in interative mode.
+.PP
+\fBReturns:\fP
+.RS 4
+char from tcp socket connection, EOF if not connected. 
+.RE
+.PP
+
+.SS "int ost::TCPStream::underflow ()\fC [protected]\fP"
+.PP
+This streambuf method is used to load the input buffer through the established tcp socket connection. \fBReturns:\fP
+.RS 4
+char from get buffer, EOF if not connected. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBost::URLStream\fP.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "\fBTCPStream\fP& crlf (\fBTCPStream\fP &)\fC [friend]\fP"
+.SS "\fBTCPStream\fP& lfcr (\fBTCPStream\fP &)\fC [friend]\fP"
+.SH "Member Data Documentation"
+.PP 
+.SS "size_t \fBost::TCPStream::bufsize\fP\fC [protected]\fP"
+.SS "\fBFamily\fP \fBost::TCPStream::family\fP\fC [protected]\fP"
+.SS "char* \fBost::TCPStream::gbuf\fP\fC [protected]\fP"
+.SS "char * \fBost::TCPStream::pbuf\fP\fC [protected]\fP"
+.SS "\fBtimeout_t\fP \fBost::TCPStream::timeout\fP\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

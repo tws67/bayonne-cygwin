@@ -1,0 +1,246 @@
+.TH "ost::IPV6Address" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::IPV6Address \- 
+.PP
+The network name and address objects are all derived from a common \fBIPV6Address\fP base class.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <address.h>\fP
+.PP
+Inherited by \fBost::IPV6Broadcast\fP, \fBost::IPV6Host\fP, \fBost::IPV6Mask\fP, and \fBost::IPV6Multicast\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIPV6Address\fP (const \fBIPV6Validator\fP *validator=NULL)"
+.br
+.RI "\fICreate an Internet Address object with an empty (0.0.0.0) address. \fP"
+.ti -1c
+.RI "\fBIPV6Address\fP (struct in6_addr addr, const \fBIPV6Validator\fP *validator=NULL)"
+.br
+.RI "\fIConvert the system internet address data type (struct in_addr) into a Common C++ \fBIPV6Address\fP object. \fP"
+.ti -1c
+.RI "\fBIPV6Address\fP (const char *address, const \fBIPV6Validator\fP *validator=NULL)"
+.br
+.RI "\fIConvert a null terminated ASCII host address string (example: '127.0.0.1') or host address name (example: 'www.voxilla.org') directly into a Common C++ \fBIPV6Address\fP object. \fP"
+.ti -1c
+.RI "\fBIPV6Address\fP (const \fBIPV6Address\fP &rhs)"
+.br
+.RI "\fICopy constructor. \fP"
+.ti -1c
+.RI "virtual \fB~IPV6Address\fP ()"
+.br
+.RI "\fIDestructor. \fP"
+.ti -1c
+.RI "const char * \fBgetHostname\fP (void) const "
+.br
+.RI "\fIProvide a string representation of the value (Internet Address) held in the \fBIPV6Address\fP object. \fP"
+.ti -1c
+.RI "bool \fBisInetAddress\fP (void) const "
+.br
+.RI "\fIMay be used to verify if a given \fBIPV6Address\fP returned by another function contains a 'valid' address, or '0.0.0.0' which is often used to mark 'invalid' \fBIPV6Address\fP values. \fP"
+.ti -1c
+.RI "struct in6_addr \fBgetAddress\fP (void) const "
+.br
+.RI "\fIProvide a low level system usable struct in_addr object from the contents of \fBIPV6Address\fP. \fP"
+.ti -1c
+.RI "struct in6_addr \fBgetAddress\fP (size_t i) const "
+.br
+.RI "\fIProvide a low level system usable struct in_addr object from the contents of \fBIPV6Address\fP. \fP"
+.ti -1c
+.RI "size_t \fBgetAddressCount\fP () const "
+.br
+.RI "\fIReturns the number of internet addresses that an \fBIPV6Address\fP object contains. \fP"
+.ti -1c
+.RI "\fBIPV6Address\fP & \fBoperator=\fP (const char *str)"
+.br
+.ti -1c
+.RI "\fBIPV6Address\fP & \fBoperator=\fP (struct in6_addr addr)"
+.br
+.ti -1c
+.RI "\fBIPV6Address\fP & \fBoperator=\fP (const \fBIPV6Address\fP &rhs)"
+.br
+.ti -1c
+.RI "bool \fBoperator!\fP () const "
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBIPV6Address\fP &a) const "
+.br
+.RI "\fICompare two internet addresses to see if they are equal (if they specify the physical address of the same internet host). \fP"
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBIPV6Address\fP &a) const "
+.br
+.RI "\fICompare two internet addresses to see if they are not equal (if they each refer to unique and different physical ip addresses). \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBsetIPAddress\fP (const char *host)"
+.br
+.RI "\fISets the IP address from a string representation of the numeric address, ie '127.0.0.1'. \fP"
+.ti -1c
+.RI "void \fBsetAddress\fP (const char *host)"
+.br
+.RI "\fIUsed to specify a host name or numeric internet address. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "struct in6_addr * \fBipaddr\fP"
+.br
+.ti -1c
+.RI "size_t \fBaddr_count\fP"
+.br
+.ti -1c
+.RI "char * \fBhostname\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static \fBMutex\fP \fBmutex\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The network name and address objects are all derived from a common \fBIPV6Address\fP base class. 
+
+Specific classes, such as \fBIPV4Host\fP, \fBIPV6Mask\fP, etc, are defined from \fBIPV6Address\fP entirely so that the manner a network address is being used can easily be documented and understood from the code and to avoid common errors and accidental misuse of the wrong address object. For example, a 'connection' to something that is declared as a 'IPV6Host' can be kept type-safe from a 'connection' accidently being made to something that was declared a 'IPV6Broadcast'.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> Internet Address binary data type. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::IPV6Address::IPV6Address (const \fBIPV6Validator\fP * validator = \fCNULL\fP)"
+.PP
+Create an Internet Address object with an empty (0.0.0.0) address. \fBParameters:\fP
+.RS 4
+\fIvalidator\fP optional validator function object, intended for derived classes. 
+.RE
+.PP
+
+.SS "ost::IPV6Address::IPV6Address (struct in6_addr addr, const \fBIPV6Validator\fP * validator = \fCNULL\fP)"
+.PP
+Convert the system internet address data type (struct in_addr) into a Common C++ \fBIPV6Address\fP object. \fBParameters:\fP
+.RS 4
+\fIaddr\fP struct of system used binary internet address. 
+.br
+\fIvalidator\fP optional validator function object, intended for derived classes. 
+.RE
+.PP
+
+.SS "ost::IPV6Address::IPV6Address (const char * address, const \fBIPV6Validator\fP * validator = \fCNULL\fP)"
+.PP
+Convert a null terminated ASCII host address string (example: '127.0.0.1') or host address name (example: 'www.voxilla.org') directly into a Common C++ \fBIPV6Address\fP object. \fBParameters:\fP
+.RS 4
+\fIaddress\fP null terminated C string. 
+.br
+\fIvalidator\fP optional validator function object, intended for derived classes. 
+.RE
+.PP
+
+.SS "ost::IPV6Address::IPV6Address (const \fBIPV6Address\fP & rhs)"
+.PP
+Copy constructor. 
+.SS "virtual ost::IPV6Address::~IPV6Address ()\fC [virtual]\fP"
+.PP
+Destructor. 
+.SH "Member Function Documentation"
+.PP 
+.SS "struct in6_addr ost::IPV6Address::getAddress (size_t i) const\fC [read]\fP"
+.PP
+Provide a low level system usable struct in_addr object from the contents of \fBIPV6Address\fP. This is needed for services such as bind() and connect().
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi\fP for IPV6Addresses with multiple addresses, returns the address at this index. User should call \fBgetAddressCount()\fP to determine the number of address the object contains. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+system binary coded internet address. If parameter i is out of range, the first address is returned. 
+.RE
+.PP
+
+.SS "struct in6_addr ost::IPV6Address::getAddress (void) const\fC [read]\fP"
+.PP
+Provide a low level system usable struct in_addr object from the contents of \fBIPV6Address\fP. This is needed for services such as bind() and connect().
+.PP
+\fBReturns:\fP
+.RS 4
+system binary coded internet address. 
+.RE
+.PP
+
+.SS "size_t ost::IPV6Address::getAddressCount () const\fC [inline]\fP"
+.PP
+Returns the number of internet addresses that an \fBIPV6Address\fP object contains. This usually only happens with \fBIPV6Host\fP objects where multiple IP addresses are returned for a DNS lookup 
+.SS "const char* ost::IPV6Address::getHostname (void) const"
+.PP
+Provide a string representation of the value (Internet Address) held in the \fBIPV6Address\fP object. \fBReturns:\fP
+.RS 4
+string representation of \fBIPV6Address\fP. 
+.RE
+.PP
+
+.SS "bool ost::IPV6Address::isInetAddress (void) const"
+.PP
+May be used to verify if a given \fBIPV6Address\fP returned by another function contains a 'valid' address, or '0.0.0.0' which is often used to mark 'invalid' \fBIPV6Address\fP values. \fBReturns:\fP
+.RS 4
+true if address != 0.0.0.0. 
+.RE
+.PP
+
+.SS "bool ost::IPV6Address::operator! () const\fC [inline]\fP"
+.SS "bool ost::IPV6Address::operator!= (const \fBIPV6Address\fP & a) const"
+.PP
+Compare two internet addresses to see if they are not equal (if they each refer to unique and different physical ip addresses). This is implimented in terms of operator== 
+.SS "\fBIPV6Address\fP& ost::IPV6Address::operator= (const \fBIPV6Address\fP & rhs)"
+.SS "\fBIPV6Address\fP& ost::IPV6Address::operator= (struct in6_addr addr)"
+.SS "\fBIPV6Address\fP& ost::IPV6Address::operator= (const char * str)"
+.SS "bool ost::IPV6Address::operator== (const \fBIPV6Address\fP & a) const"
+.PP
+Compare two internet addresses to see if they are equal (if they specify the physical address of the same internet host). If there is more than one IP address in either \fBIPV6Address\fP object, this will return true if all of the IP addresses in the smaller are in the larger in any order. 
+.SS "void ost::IPV6Address::setAddress (const char * host)\fC [protected]\fP"
+.PP
+Used to specify a host name or numeric internet address. \fBParameters:\fP
+.RS 4
+\fIhost\fP The string representation of the IP address or a hostname, , if NULL, it will default to INADDR_ANY 
+.RE
+.PP
+
+.SS "bool ost::IPV6Address::setIPAddress (const char * host)\fC [protected]\fP"
+.PP
+Sets the IP address from a string representation of the numeric address, ie '127.0.0.1'. \fBParameters:\fP
+.RS 4
+\fIhost\fP The string representation of the IP address 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if successful 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "size_t \fBost::IPV6Address::addr_count\fP\fC [protected]\fP"
+.SS "char* \fBost::IPV6Address::hostname\fP\fC [mutable, protected]\fP"
+.SS "struct in6_addr* \fBost::IPV6Address::ipaddr\fP\fC [read, protected]\fP"
+.SS "\fBMutex\fP \fBost::IPV6Address::mutex\fP\fC [static, protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

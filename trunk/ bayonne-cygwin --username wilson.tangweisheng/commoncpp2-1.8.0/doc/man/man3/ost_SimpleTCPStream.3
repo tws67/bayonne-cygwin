@@ -1,0 +1,220 @@
+.TH "ost::SimpleTCPStream" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::SimpleTCPStream \- 
+.PP
+Simple TCP Stream, to be used with Common C++ Library.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <socket.h>\fP
+.PP
+Inherits \fBost::Socket\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSimpleTCPStream\fP (\fBTCPSocket\fP &server, size_t size=512)"
+.br
+.RI "\fICreate a TCP stream by accepting a connection from a bound TCP socket acting as a server. \fP"
+.ti -1c
+.RI "\fBSimpleTCPStream\fP (const \fBIPV4Host\fP &host, \fBtpport_t\fP port, size_t size=512)"
+.br
+.RI "\fICreate a TCP stream by connecting to a TCP socket (on a remote machine). \fP"
+.ti -1c
+.RI "\fBSimpleTCPStream\fP (const \fBSimpleTCPStream\fP &source)"
+.br
+.RI "\fIA copy constructor creates a new stream buffer. \fP"
+.ti -1c
+.RI "virtual \fB~SimpleTCPStream\fP ()"
+.br
+.RI "\fIFlush and empty all buffers, and then remove the allocated buffers. \fP"
+.ti -1c
+.RI "bool \fBisPending\fP (\fBPending\fP pend, \fBtimeout_t\fP timeout=TIMEOUT_INF)"
+.br
+.RI "\fIGet the status of pending stream data. \fP"
+.ti -1c
+.RI "void \fBflush\fP ()"
+.br
+.ti -1c
+.RI "ssize_t \fBread\fP (char *bytes, size_t length, \fBtimeout_t\fP timeout=0)"
+.br
+.RI "\fIRead bytes into a buffer. \fP"
+.ti -1c
+.RI "ssize_t \fBwrite\fP (const char *bytes, size_t length, \fBtimeout_t\fP timeout=0)"
+.br
+.RI "\fIWrite bytes to buffer. \fP"
+.ti -1c
+.RI "ssize_t \fBpeek\fP (char *bytes, size_t length, \fBtimeout_t\fP timeout=0)"
+.br
+.RI "\fIPeek at the incoming data. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSimpleTCPStream\fP ()"
+.br
+.RI "\fIThe constructor required for 'SimpleTCPStream', a more C++ style version of the \fBSimpleTCPStream\fP class. \fP"
+.ti -1c
+.RI "void \fBendStream\fP (void)"
+.br
+.RI "\fIUsed to terminate the buffer space and cleanup the socket connection. \fP"
+.ti -1c
+.RI "void \fBConnect\fP (const \fBIPV4Host\fP &host, \fBtpport_t\fP port, size_t size)"
+.br
+.RI "\fICreate a TCP stream by connecting to a TCP socket (on a remote machine). \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Simple TCP Stream, to be used with Common C++ Library. 
+
+This source is derived from a proposal made by Ville Vainio (vvainio@tp.spt.fi).
+.PP
+\fBAuthor:\fP
+.RS 4
+Mark S. Millard (msm@wizzer.com) 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2002-08-15 Copyright (C) 2002 Wizzer Works. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::SimpleTCPStream::SimpleTCPStream ()\fC [protected]\fP"
+.PP
+The constructor required for 'SimpleTCPStream', a more C++ style version of the \fBSimpleTCPStream\fP class. 
+.SS "ost::SimpleTCPStream::SimpleTCPStream (\fBTCPSocket\fP & server, size_t size = \fC512\fP)"
+.PP
+Create a TCP stream by accepting a connection from a bound TCP socket acting as a server. This performs an 'accept' call.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIserver\fP bound server tcp socket. 
+.br
+\fIsize\fP of streaming input and output buffers. 
+.RE
+.PP
+
+.SS "ost::SimpleTCPStream::SimpleTCPStream (const \fBIPV4Host\fP & host, \fBtpport_t\fP port, size_t size = \fC512\fP)"
+.PP
+Create a TCP stream by connecting to a TCP socket (on a remote machine). \fBParameters:\fP
+.RS 4
+\fIhost\fP address of remote TCP server. 
+.br
+\fIport\fP number to connect. 
+.br
+\fIsize\fP of streaming input and output buffers. 
+.RE
+.PP
+
+.SS "ost::SimpleTCPStream::SimpleTCPStream (const \fBSimpleTCPStream\fP & source)"
+.PP
+A copy constructor creates a new stream buffer. \fBParameters:\fP
+.RS 4
+\fIsource\fP A reference to the \fBSimpleTCPStream\fP to copy. 
+.RE
+.PP
+
+.SS "virtual ost::SimpleTCPStream::~SimpleTCPStream ()\fC [virtual]\fP"
+.PP
+Flush and empty all buffers, and then remove the allocated buffers. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::SimpleTCPStream::Connect (const \fBIPV4Host\fP & host, \fBtpport_t\fP port, size_t size)\fC [protected]\fP"
+.PP
+Create a TCP stream by connecting to a TCP socket (on a remote machine). \fBParameters:\fP
+.RS 4
+\fIhost\fP address of remote TCP server. 
+.br
+\fIport\fP number to connect. 
+.br
+\fIsize\fP of streaming input and output buffers. 
+.RE
+.PP
+
+.SS "void ost::SimpleTCPStream::endStream (void)\fC [protected]\fP"
+.PP
+Used to terminate the buffer space and cleanup the socket connection. This fucntion is called by the destructor. 
+.SS "void ost::SimpleTCPStream::flush ()\fC [inline]\fP"
+.SS "bool ost::SimpleTCPStream::isPending (\fBPending\fP pend, \fBtimeout_t\fP timeout = \fCTIMEOUT_INF\fP)\fC [virtual]\fP"
+.PP
+Get the status of pending stream data. This method can be used to examine if input or output is waiting, or if an error or disconnect has occured on the stream. If a read buffer contains data then input is ready. If write buffer contains data, it is first flushed and then checked.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpend\fP Flag indicating means to pend. 
+.br
+\fItimeout\fP The length of time to wait. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBost::Socket\fP.
+.SS "ssize_t ost::SimpleTCPStream::peek (char * bytes, size_t length, \fBtimeout_t\fP timeout = \fC0\fP)"
+.PP
+Peek at the incoming data. The data is copied into the buffer but is not removed from the input queue. The function then returns the number of bytes currently pending to receive.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbytes\fP A pointer to buffer that will contain the bytes read. 
+.br
+\fIlength\fP The number of bytes to read (exactly). 
+.br
+\fItimeout\fP Period to time out, in milleseconds.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The number of bytes pending on the input queue, 0 on EOF. 
+.RE
+.PP
+
+.SS "ssize_t ost::SimpleTCPStream::read (char * bytes, size_t length, \fBtimeout_t\fP timeout = \fC0\fP)"
+.PP
+Read bytes into a buffer. <long-description>
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbytes\fP A pointer to buffer that will contain the bytes read. 
+.br
+\fIlength\fP The number of bytes to read (exactly). 
+.br
+\fItimeout\fP Period to time out, in milleseconds.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The number of bytes actually read, 0 on EOF. 
+.RE
+.PP
+
+.SS "ssize_t ost::SimpleTCPStream::write (const char * bytes, size_t length, \fBtimeout_t\fP timeout = \fC0\fP)"
+.PP
+Write bytes to buffer. <long-description>
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbytes\fP A pointer to a buffer containing the bytes to write. 
+.br
+\fIlength\fP The number of bytes to write (exactly). 
+.br
+\fItimeout\fP Period to time out, in milleseconds.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The number of bytes actually written. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

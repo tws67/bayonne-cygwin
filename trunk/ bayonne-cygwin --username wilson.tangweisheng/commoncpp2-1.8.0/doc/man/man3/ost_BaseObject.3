@@ -1,0 +1,76 @@
+.TH "ost::BaseObject" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::BaseObject \- 
+.PP
+\fBBaseObject\fP.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <persist.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBaseObject\fP ()"
+.br
+.RI "\fIThis constructor is used in serialisation processes. \fP"
+.ti -1c
+.RI "virtual \fB~BaseObject\fP ()"
+.br
+.RI "\fIDefault destructor. \fP"
+.ti -1c
+.RI "virtual const char * \fBgetPersistenceID\fP () const "
+.br
+.RI "\fIThis returns the ID of the persistent object (Its type). \fP"
+.ti -1c
+.RI "virtual bool \fBwrite\fP (\fBEngine\fP &archive) const "
+.br
+.RI "\fIThis method is used to write to the Persistence::Engine It is not equivalent to the << operator as it writes only the data and not the object type etc. \fP"
+.ti -1c
+.RI "virtual bool \fBread\fP (\fBEngine\fP &archive)"
+.br
+.RI "\fIThis method is used to read from a Persistence::Engine It is not equivalent to the >> operator as it does no typesafety or anything. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBBaseObject\fP. 
+
+This object is the base for all Persistent data which is not natively serialised by the Persistence::Engine
+.PP
+It registers itself with the Persistence::TypeManager using a global constructor function. A matching deregister call is made in a global destructor, to allow DLL's to use the Persistence::Engine in a main executable.
+.PP
+Persistable objects must never maintain bad pointers. If a pointer doesn't point to something valid, it must be NULL. This is so the persistence engine knows whether to allocate memory for an object or whether the memory has been pre-allocated.
+.PP
+\fBAuthor:\fP
+.RS 4
+Daniel Silverstone Base class for classes that will be persistent. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::BaseObject::BaseObject ()"
+.PP
+This constructor is used in serialisation processes. It is called in CreateNewInstance in order to create an instance of the class to have Read() called on it. 
+.SS "virtual ost::BaseObject::~BaseObject ()\fC [virtual]\fP"
+.PP
+Default destructor. 
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual const char* ost::BaseObject::getPersistenceID () const\fC [virtual]\fP"
+.PP
+This returns the ID of the persistent object (Its type). 
+.SS "virtual bool ost::BaseObject::read (\fBEngine\fP & archive)\fC [virtual]\fP"
+.PP
+This method is used to read from a Persistence::Engine It is not equivalent to the >> operator as it does no typesafety or anything. 
+.SS "virtual bool ost::BaseObject::write (\fBEngine\fP & archive) const\fC [virtual]\fP"
+.PP
+This method is used to write to the Persistence::Engine It is not equivalent to the << operator as it writes only the data and not the object type etc. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

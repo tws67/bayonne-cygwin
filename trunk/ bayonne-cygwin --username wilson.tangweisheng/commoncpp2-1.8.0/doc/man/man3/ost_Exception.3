@@ -1,0 +1,57 @@
+.TH "ost::Exception" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::Exception \- 
+.PP
+Mainline exception handler, this is the root for all Common C++ exceptions and assures the ansi C++ exception class hierarchy is both followed and imported into the gnu Common C++ class hierarchy.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <exception.h>\fP
+.PP
+Inherited by \fBost::AppLogException\fP, \fBost::IOException\fP, \fBost::PersistException\fP, and \fBost::ThrException\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBException\fP (const \fBString\fP &what_arg)  throw ()"
+.br
+.ti -1c
+.RI "virtual \fB~Exception\fP ()  throw ()"
+.br
+.ti -1c
+.RI "virtual const char * \fBgetString\fP () const "
+.br
+.ti -1c
+.RI "virtual const char * \fBwhat\fP () const   throw ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Mainline exception handler, this is the root for all Common C++ exceptions and assures the ansi C++ exception class hierarchy is both followed and imported into the gnu Common C++ class hierarchy. 
+
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> Base exception class for all Common C++ exceptions. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::Exception::Exception (const \fBString\fP & what_arg)  throw ()"
+.SS "virtual ost::Exception::~Exception ()  throw ()\fC [virtual]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual const char* ost::Exception::getString () const\fC [virtual]\fP"
+.PP
+\fBExamples: \fP
+.in +1c
+\fBtcp.cpp\fP.
+.SS "virtual const char* ost::Exception::what () const  throw ()\fC [virtual]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

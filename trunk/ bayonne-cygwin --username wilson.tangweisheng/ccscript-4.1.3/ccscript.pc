@@ -1,0 +1,7 @@
+Name: ccscript
+Description: Non-blocking Script Engine for ucommon library
+Version: 4.1.3
+Requires: ucommon >= 2.0.0
+Libs:  -lccscript  
+Cflags:  
+ 

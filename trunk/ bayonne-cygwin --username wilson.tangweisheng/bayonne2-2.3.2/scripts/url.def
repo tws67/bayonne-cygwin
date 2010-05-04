@@ -1,0 +1,272 @@
+%% Copyright (C) 2005 Tycho Softworks.
+%%
+%% This file is free software; as a special exception the author gives
+%% unlimited permission to copy and/or distribute it, with or without
+%% modifications, as long as this notice is preserved.
+%%
+%% This program is distributed in the hope that it will be useful, but
+%% WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
+%% implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+%%
+%% This is url script definitions
+
+use url
+
+%% play a file from a url
+macro url-play
+	keywords from
+	define %convert:96 %cookies:96 %path:96
+	const %temp "tmp:url-" %session.index
+
+	if !defined %from
+	then
+		error "url-missing"
+		return
+	endif
+
+	urlextension %from au al gsm wav mp3 ogg
+	return
+
+@url:extension-missing
+@url:extension-invalid
+	const %extension {.auto}
+	throw @url:process
+@url:extension-au
+	const %extension {.au}
+	throw @url:process
+@url:extension-al
+	const %extension {.al}
+	throw @url:process
+@url:extension-gsm
+	const %extension {.gsm}
+	throw @url:process
+@url:extension-wav
+	const %extension {.wav}
+	throw @url:process
+@url:extension-mp3
+	const %extension {.mp3}
+	throw @url:process
+@url:extension-ogg
+	const %extension {.ogg}
+	throw @url:process
+		
+@url:process
+	writepath %convert %temp extension=%session.extension
+	const %file "tmp:tmp-" %session.index %extension
+	writepath %path %file
+	const %encoding %session.encoding
+
+	if !defined %session.cookies
+	then
+                const %cfile "tmp:url-" %session.index {.dat}
+                writepath %cookies %cfile
+                const %session.cookies %cookies
+                erase %cfile
+
+	endif
+
+	urlprotocol %from http https ftp
+	error "url-invalid"
+	return
+
+@url:playfile
+	play %temp
+	erase %temp
+	return
+
+@url:protocol-missing
+	string %url size=512
+	url %url url.prefix / %from
+	libexec limit=$url.limit lib::url_fetch.sh %url \
+		%path %session.cookies %convert %encoding
+	throw @url:playfile
+
+@url:protocol-http
+@url:protocol-https
+@url:protocol-ftp
+	const %url %from
+        libexec limit=$url.limit lib::url_fetch.sh %url \
+                %path %session.cookies %convert %encoding
+        throw @url:playfile
+
+%% play a file from a url
+macro url-prompt
+	keywords from
+	define %convert:96 %cookies:96 %path:96
+	const %temp "tmp:url-" %session.index
+
+	if !defined %from
+	then
+		error "url-missing"
+		return
+	endif
+
+	urlextension %from au al gsm wav mp3 ogg
+	return
+
+@url:extension-missing
+@url:extension-invalid
+	const %extension {.auto}
+	throw @url:process
+@url:extension-au
+	const %extension {.au}
+	throw @url:process
+@url:extension-al
+	const %extension {.al}
+	throw @url:process
+@url:extension-gsm
+	const %extension {.gsm}
+	throw @url:process
+@url:extension-wav
+	const %extension {.wav}
+	throw @url:process
+@url:extension-mp3
+	const %extension {.mp3}
+	throw @url:process
+@url:extension-ogg
+	const %extension {.ogg}
+	throw @url:process
+		
+@url:process
+	writepath %convert %temp extension=%session.extension
+	const %file "tmp:tmp-" %session.index %extension
+	writepath %path %file
+	const %encoding %session.encoding
+
+	if !defined %session.cookies
+	then
+                const %cfile "tmp:url-" %session.index {.dat}
+                writepath %cookies %cfile
+                const %session.cookies %cookies
+                erase %cfile
+
+	endif
+
+	urlprotocol %from http https ftp
+	error "url-invalid"
+	return
+
+@url:playfile
+	prompt %temp
+	erase %temp
+	return
+
+@url:protocol-missing
+	string %url size=512
+	url %url url.prefix / %from
+	libexec limit=$url.limit lib::url_fetch.sh %url \
+		%path %session.cookies %convert %encoding
+	throw @url:playfile
+
+@url:protocol-http
+@url:protocol-https
+@url:protocol-ftp
+	const %url %from
+        libexec limit=$url.limit lib::url_fetch.sh %url \
+                %path %session.cookies %convert %encoding
+        throw @url:playfile
+
+^dtmf
+	return
+
+%% file a file from a url
+macro url-fetch
+	keywords from file extension prefix 
+	define %extension="" %prefix="" %cookies:96 
+	begin
+	case !defined %from
+		error "url-missing"
+		return
+	case !defined %file
+		error "file-missing"
+		return
+	case !defined %session.cookies
+		const %cfile "tmp:url-" %session.index {.dat}
+		writepath %cookies %cfile
+		const %session.cookies %cookies
+		erase %cfile
+	endcase
+	writepath %test %file prefix=%prefix extension=%extension
+	if -empty %test then return
+	urlextension %test au gsm al ul wav
+	const %path %test
+	urlprotocol %from http https ftp
+	error "url-invalid"
+	return
+
+@url:protocol-missing
+	string %url size=512
+	url %url $url.prefix / %from 
+	libexec limit=$url.limit lib::url_fetch.sh %url %path %session.cookies
+	return
+
+@url:protocol-http
+@url:protocol-https
+@url:protocol-ftp
+	const %url %from
+	libexec limit=$url.limit lib::url_fetch.sh %url %path %session.cookies
+	return
+
+@url:extension-missing
+@url:extension-au
+@url:extension-wav
+@url:extension-al
+@url:extension-ul
+@url:extension-gsm
+	goto url-audio encoding=%session.encoding
+
+%% local macro to perform audio convert
+local	url-audio
+	writepath %convert %file prefix=%prefix extension=%extension
+	if -empty %convert then return
+	urlextension %from au al gsm wav mp3 ogg ul
+	return
+
+@url:extension-missing
+@url:extension-invalid
+	const %audioext {.auto}
+	throw @url:process
+@url:extension-au
+        const %audioext {.au}
+        throw @url:process
+@url:extension-al
+        const %audioext {.al}
+        throw @url:process
+@url:extension-ul
+	const %audioext {.ul}
+	throw @url:process
+@url:extension-gsm
+	const %audioext {.gsm}
+        throw @url:process
+@url:extension-wav
+	const %audioext {.wav}
+	throw @url:process
+@url:extension-mp3
+	const %audioext {.mp3}
+	throw @url:process
+@url:extension-ogg
+	const %audioext {.ogg}
+	throw @url:process
+
+@url:process
+	const %temp "tmp:tmp-" %session.index %audioext
+	writepath %path %temp
+		
+	urlprotocol %from http https ftp
+	error "url-invalid"
+	return
+
+@url:protocol-http
+@url:protocol-https
+@url:protocol-ftp
+        const %url %from
+        libexec limit=$url.limit lib::url_fetch.sh %url \
+                %path %session.cookies %convert %encoding
+	return
+
+@url:protocol-missing
+        string %url size=512
+        url %url url.prefix / %from
+        libexec limit=$url.limit lib::url_fetch.sh %url \
+                %path %session.cookies %convert %encoding
+	return

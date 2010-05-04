@@ -1,0 +1,29 @@
+.TH "export.h" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+export.h \- 
+.PP
+export/import definitions for DLL's on Win32.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fB__EXPORT\fP   __DLLRTL"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+export/import definitions for DLL's on Win32. 
+
+This is used to swap rtl definitions for export vs import on Win32 machines when building a dll so that the remaining headers for my new dll are all 'exports', while the headers for the included ccxx dll are all 'imports'. 
+.SH "Define Documentation"
+.PP 
+.SS "#define __EXPORT   __DLLRTL"
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

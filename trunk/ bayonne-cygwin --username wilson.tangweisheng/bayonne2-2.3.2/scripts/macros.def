@@ -1,0 +1,61 @@
+%% Copyright (C) 2005 Tycho Softworks.
+%%
+%% This file is free software; as a special exception the author gives
+%% unlimited permission to copy and/or distribute it, with or without
+%% modifications, as long as this notice is preserved.
+%%
+%% This program is distributed in the hope that it will be useful, but
+%% WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
+%% implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+%%
+%% This defines some general case and convenience macros
+
+	use time
+
+%% record a file with rename and include a date stamp
+macro record-stamp
+	keywords limit name prefix extension exitkey min intro
+	define limit="600s" min="0" extension={.au} exitkey={#} stamp="date"
+	begin
+	date %dnow
+	time %tnow 
+	case !defined %prefix
+		const %tmp tmp- %session.timeslot %extension
+		const %ren %name %extension
+	otherwise
+		const %tmp %prefix / tmp- %session.timeslot %extension
+		const %ren %prefix / %name %extension
+	endcase
+	erase %tmp
+	case %stamp == "date"
+		if -defined %intro
+		then
+			build %tmp %intro &date %dnow
+		else
+			build %tmp &date %dnow
+		endif
+	case %stamp == "time"
+		if -defined %intro
+		then
+			build %tmp %intro &time %tnow
+		else
+			build %tmp &time %tnow
+		endif
+	otherwise
+                if -defined %intro
+                then
+                        build %tmp %intro &date %dnow &time %tnow
+                else
+                        build %tmp &date %dnow &time %tnow
+                endif
+
+	endcase
+	beep 
+	cleardigits
+	timer %audiotimer
+	append %tmp %ren exit=%exitkey timeout=%limit
+	if %min > 0 and %audiotimer < %min then erase %ren
+	return
+
+
+

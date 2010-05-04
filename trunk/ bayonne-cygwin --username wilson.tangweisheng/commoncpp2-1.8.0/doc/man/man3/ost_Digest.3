@@ -1,0 +1,131 @@
+.TH "ost::Digest" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::Digest \- 
+.PP
+The digest base class is used for implementing and deriving one way hashing functions.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <digest.h>\fP
+.PP
+Inherited by \fBost::ChecksumDigest\fP, \fBost::CRC16Digest\fP, \fBost::CRC32Digest\fP, and \fBost::MD5Digest\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBinitDigest\fP (void)=0"
+.br
+.RI "\fIReset the digest table to an initial default value. \fP"
+.ti -1c
+.RI "virtual \fB~Digest\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDigest\fP ()"
+.br
+.ti -1c
+.RI "virtual unsigned \fBgetSize\fP (void)=0"
+.br
+.RI "\fIGet the size of a digest in octets. \fP"
+.ti -1c
+.RI "virtual unsigned \fBgetDigest\fP (unsigned char *buffer)=0"
+.br
+.RI "\fICopy the binary digest buffer to user memory. \fP"
+.ti -1c
+.RI "virtual void \fBputDigest\fP (const unsigned char *buffer, unsigned length)=0"
+.br
+.RI "\fIPut data into the digest bypassing the stream subsystem. \fP"
+.ti -1c
+.RI "virtual std::ostream & \fBstrDigest\fP (std::ostream &os)=0"
+.br
+.RI "\fIprint a digest string for export. \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, \fBDigest\fP &ia)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The digest base class is used for implementing and deriving one way hashing functions. 
+
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> base class for hashing services. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::Digest::Digest ()\fC [protected]\fP"
+.SS "virtual ost::Digest::~Digest ()\fC [virtual]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual unsigned ost::Digest::getDigest (unsigned char * buffer)\fC [protected, pure virtual]\fP"
+.PP
+Copy the binary digest buffer to user memory. \fBReturns:\fP
+.RS 4
+number of bytes in digest. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuffer\fP to write into. 
+.RE
+.PP
+
+.PP
+Implemented in \fBost::ChecksumDigest\fP, \fBost::CRC16Digest\fP, \fBost::CRC32Digest\fP, and \fBost::MD5Digest\fP.
+.SS "virtual unsigned ost::Digest::getSize (void)\fC [protected, pure virtual]\fP"
+.PP
+Get the size of a digest in octets. \fBReturns:\fP
+.RS 4
+number of bytes in digest. 
+.RE
+.PP
+
+.PP
+Implemented in \fBost::ChecksumDigest\fP, \fBost::CRC16Digest\fP, \fBost::CRC32Digest\fP, and \fBost::MD5Digest\fP.
+.SS "virtual void ost::Digest::initDigest (void)\fC [pure virtual]\fP"
+.PP
+Reset the digest table to an initial default value. 
+.PP
+Implemented in \fBost::ChecksumDigest\fP, \fBost::CRC16Digest\fP, \fBost::CRC32Digest\fP, and \fBost::MD5Digest\fP.
+.SS "virtual void ost::Digest::putDigest (const unsigned char * buffer, unsigned length)\fC [protected, pure virtual]\fP"
+.PP
+Put data into the digest bypassing the stream subsystem. \fBParameters:\fP
+.RS 4
+\fIbuffer\fP to read from. 
+.br
+\fIlength\fP of data. 
+.RE
+.PP
+
+.PP
+Implemented in \fBost::ChecksumDigest\fP, \fBost::CRC16Digest\fP, \fBost::CRC32Digest\fP, and \fBost::MD5Digest\fP.
+.SS "virtual std::ostream& ost::Digest::strDigest (std::ostream & os)\fC [protected, pure virtual]\fP"
+.PP
+print a digest string for export. \fBReturns:\fP
+.RS 4
+string representation of digest. 
+.RE
+.PP
+
+.PP
+Implemented in \fBost::ChecksumDigest\fP, \fBost::CRC16Digest\fP, \fBost::CRC32Digest\fP, and \fBost::MD5Digest\fP.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream & os, \fBDigest\fP & ia)\fC [friend]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

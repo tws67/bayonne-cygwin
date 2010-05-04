@@ -1,0 +1,216 @@
+.TH "ost::UDPReceive" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::UDPReceive \- 
+.PP
+Representing half of a two-way UDP connection, the UDP receiver can receive data from another peer host or subnet.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <socket.h>\fP
+.PP
+Inherits \fBost::UDPSocket\fP.
+.PP
+Inherited by \fBost::UDPDuplex\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "ssize_t \fBreceive\fP (void *buf, size_t len)"
+.br
+.RI "\fIReceive a data packet from the connected peer host. \fP"
+.ti -1c
+.RI "bool \fBisInputReady\fP (\fBtimeout_t\fP timeout=TIMEOUT_INF)"
+.br
+.RI "\fISee if input queue has data packets available. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUDPReceive\fP (const \fBIPV4Address\fP &bind, \fBtpport_t\fP port)"
+.br
+.RI "\fICreate a UDP receiver, bind it to a specific interface and port address so that other UDP sockets on remote machines (or the same host) may find and send UDP messages to it, and associate it with a given port on a peer host. \fP"
+.ti -1c
+.RI "\fBUDPReceive\fP (const \fBIPV6Address\fP &bind, \fBtpport_t\fP port)"
+.br
+.ti -1c
+.RI "\fBError\fP \fBconnect\fP (const \fBIPV4Host\fP &host, \fBtpport_t\fP port)"
+.br
+.RI "\fIAssociate this socket with a specified peer host. \fP"
+.ti -1c
+.RI "\fBError\fP \fBconnect\fP (const \fBIPV6Host\fP &host, \fBtpport_t\fP port)"
+.br
+.ti -1c
+.RI "bool \fBisPendingReceive\fP (\fBtimeout_t\fP timeout)"
+.br
+.RI "\fICheck for pending data. \fP"
+.ti -1c
+.RI "void \fBendReceiver\fP (void)"
+.br
+.RI "\fIEnd receiver. \fP"
+.ti -1c
+.RI "\fBSOCKET\fP \fBgetReceiver\fP (void) const "
+.br
+.ti -1c
+.RI "\fBError\fP \fBsetRouting\fP (bool enable)"
+.br
+.ti -1c
+.RI "\fBError\fP \fBsetMulticast\fP (bool enable)"
+.br
+.ti -1c
+.RI "\fBError\fP \fBjoin\fP (const \fBIPV4Multicast\fP &ia)"
+.br
+.ti -1c
+.RI "\fBError\fP \fBjoin\fP (const \fBIPV6Multicast\fP &ia)"
+.br
+.ti -1c
+.RI "\fBError\fP \fBdrop\fP (const \fBIPV4Multicast\fP &ia)"
+.br
+.ti -1c
+.RI "\fBError\fP \fBdrop\fP (const \fBIPV6Multicast\fP &ia)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Representing half of a two-way UDP connection, the UDP receiver can receive data from another peer host or subnet. 
+
+This class is used exclusivily to derive the \fBUDPDuplex\fP.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> Unreliable Datagram Peer Associations. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::UDPReceive::UDPReceive (const \fBIPV4Address\fP & bind, \fBtpport_t\fP port)\fC [protected]\fP"
+.PP
+Create a UDP receiver, bind it to a specific interface and port address so that other UDP sockets on remote machines (or the same host) may find and send UDP messages to it, and associate it with a given port on a peer host. On failure to bind, an exception is thrown.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbind\fP address to bind this socket to. 
+.br
+\fIport\fP number to bind this socket to. 
+.RE
+.PP
+
+.SS "ost::UDPReceive::UDPReceive (const \fBIPV6Address\fP & bind, \fBtpport_t\fP port)\fC [protected]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBError\fP ost::UDPReceive::connect (const \fBIPV6Host\fP & host, \fBtpport_t\fP port)\fC [protected]\fP"
+.PP
+Reimplemented from \fBost::UDPSocket\fP.
+.PP
+Reimplemented in \fBost::UDPDuplex\fP.
+.SS "\fBError\fP ost::UDPReceive::connect (const \fBIPV4Host\fP & host, \fBtpport_t\fP port)\fC [protected]\fP"
+.PP
+Associate this socket with a specified peer host. The port number from the constructor will be used. All UDP packets will be sent received from the specified host.
+.PP
+\fBReturns:\fP
+.RS 4
+0 on success, -1 on error. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIhost\fP host network address to connect socket to. 
+.br
+\fIport\fP host transport port to connect socket to. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBost::UDPSocket\fP.
+.PP
+Reimplemented in \fBost::UDPDuplex\fP.
+.SS "\fBError\fP ost::UDPReceive::drop (const \fBIPV6Multicast\fP & ia)\fC [inline, protected]\fP"
+.PP
+Reimplemented from \fBost::Socket\fP.
+.PP
+References ost::Socket::drop().
+.SS "\fBError\fP ost::UDPReceive::drop (const \fBIPV4Multicast\fP & ia)\fC [inline, protected]\fP"
+.PP
+Reimplemented from \fBost::Socket\fP.
+.PP
+References ost::Socket::drop().
+.SS "void ost::UDPReceive::endReceiver (void)\fC [inline, protected]\fP"
+.PP
+End receiver. 
+.PP
+References ost::Socket::endSocket().
+.SS "\fBSOCKET\fP ost::UDPReceive::getReceiver (void) const\fC [inline, protected]\fP"
+.SS "bool ost::UDPReceive::isInputReady (\fBtimeout_t\fP timeout = \fCTIMEOUT_INF\fP)\fC [inline]\fP"
+.PP
+See if input queue has data packets available. \fBReturns:\fP
+.RS 4
+true if data packets available. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimeout\fP in milliseconds. 
+.RE
+.PP
+
+.PP
+References ost::Socket::isPending(), and ost::Socket::pendingInput.
+.SS "bool ost::UDPReceive::isPendingReceive (\fBtimeout_t\fP timeout)\fC [inline, protected]\fP"
+.PP
+Check for pending data. \fBReturns:\fP
+.RS 4
+true if data is waiting. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimeout\fP in milliseconds. 
+.RE
+.PP
+
+.PP
+References ost::Socket::isPending(), and ost::Socket::pendingInput.
+.SS "\fBError\fP ost::UDPReceive::join (const \fBIPV6Multicast\fP & ia)\fC [inline, protected]\fP"
+.PP
+Reimplemented from \fBost::Socket\fP.
+.PP
+References ost::Socket::join().
+.SS "\fBError\fP ost::UDPReceive::join (const \fBIPV4Multicast\fP & ia)\fC [inline, protected]\fP"
+.PP
+Reimplemented from \fBost::Socket\fP.
+.PP
+References ost::Socket::join().
+.SS "ssize_t ost::UDPReceive::receive (void * buf, size_t len)\fC [inline]\fP"
+.PP
+Receive a data packet from the connected peer host. \fBReturns:\fP
+.RS 4
+num of bytes actually received. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuf\fP address of data receive buffer. 
+.br
+\fIlen\fP size of data receive buffer. 
+.RE
+.PP
+
+.SS "\fBError\fP ost::UDPReceive::setMulticast (bool enable)\fC [inline, protected]\fP"
+.PP
+Reimplemented from \fBost::UDPSocket\fP.
+.PP
+References ost::Socket::setMulticastByFamily().
+.SS "\fBError\fP ost::UDPReceive::setRouting (bool enable)\fC [inline, protected]\fP"
+.PP
+Reimplemented from \fBost::Socket\fP.
+.PP
+References ost::Socket::setRouting().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

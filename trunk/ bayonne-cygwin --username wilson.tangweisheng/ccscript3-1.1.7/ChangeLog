@@ -1,0 +1,192 @@
+From ccScript3 1.1.5 to 1.1.6
+- minor preproc fix and dupString export
+
+From ccScript3 1.1.4 to 1.1.5
+- fix for some kinds of call argument parsing
+- support for passing traditional positional arguments into calls
+- addition of bool type
+- positional argument expansion in sub with %*
+
+From ccScript3 1.1.3 to 1.1.4
+- packed structs
+- contruct packing, deconstruct unpacking, ? expr for member search
+
+From ccScript3 1.1.2 to 1.1.3
+- fix fatel bug on _keydata_ method setting
+
+From ccScript3 1.1.1 to 1.1.2
+- exit token for keydata...
+
+From ccScript3 1.1.0 to 1.1.1
+- new embedded keydata support
+
+From ccScript3 1.0.9 to 1.1.0
+- fix for slog check levels
+- standardization of arguments
+
+From ccScript3 1.0.8 to 1.0.9
+- dsp project build changes for Cape 1.4.
+
+From ccScript3 1.0.7 to 1.0.8
+- fix odbc row count return again...
+- other changes for correctness
+- fix in math format
+- fix for 64bit lib path
+
+From ccScript3 1.0.6 to 1.0.7
+- fix odbc row count return.
+
+From ccScript3 1.0.5 to 1.0.6
+- fix for consts for compile cleanness.
+- url module added.
+- %_names for variables
+
+From ccScript3 1.0.4 to 1.0.5
+- move script. initialization to base.
+- add %script.authorized timer.
+- basic user authorization module.
+- modules can alias to "none".
+- disuse to disable modules in .defs
+- module test supports .def macros
+
+From ccScript3 1.0.3 to 1.0.4
+- fix for throw command if no target.
+
+From ccScript3 1.0.2 to 1.0.3
+- new definitions support for token aliasing to compiled macros.
+- new timer type behaviors and optional "clear" state.
+- -expired conditional for testing script timer symbols.
+- -active for determining if symbol has "active" content, related to empty.
+- #timer now used for timer interval remaining.
+- timer command has offset and expires option.
+- module use aliasing and defaults for sql.
+- exiting notification from script thread for named event.
+- case block fix for confusion with init segment loop marking
+- can now set "empty" consts 
+- fix for define with {...} literals
+
+From ccScript3 1.0.1 to 1.0.2
+- new rpm spec file...
+- fix for pathing of plugins
+- property objects
+- prefix paths for server filespaces
+- csv module to write comma delimited log files
+- property sheet system
+- more file type extensions for compile mode and .def stuff
+- local and global quick var stuff
+- use string resize now uses - sizes for offset from end as shortcut
+- offset= and better use of size= for "set" related commands
+- new "define" command to use in place of internal fconst for scripting
+- new "timer" type to save and report time change
+- documentation quality improved
+
+From ccScript3 1.0.0 to 1.0.1
+- some fixes for '/' vs `\\' parsing win32 pathnames...
+
+From ccScript3 1.0.0-rc1 to 1.0.0
+- virtual checkSegment() added to compiler for external validators
+- "local" added for local macros that are not exported.
+- "function" and "macro" synonym.
+- "pset" to set parent (base) local symbols from macros and locals
+- "goto" with var setting, it's just so convenient...
+- new "use check" for validating numbers, ccn's, etc...
+
+From ccScript3 0.8.1 to 1.0.0-rc1
+- -modify and -array test conditionals.
+- var keyword as string
+- vartype/type keyword to copy var as type to new vars...
+- new "use string" for string manipulations...
+- correct compilation of ripple initializer sections...
+- move expression code into interp base...
+
+From ccScript3 0.8.0 to 0.8.1
+- make sure shutdown is only hit once...
+- select mechanism in binder...
+
+From ccScript3 0.7.3 to 0.8.0
+- better ripple support and use_macros option
+- virtual can also assign default
+- ripple scripts optionally by namespace
+- fix for things which should be static
+- new "include" statement for merging event handlers
+
+From ccScript3 0.7.2 to 0.7.3
+- virtual macros
+- virtual command to assure "xxx_none" option exists
+
+From ccScript3 0.7.1 to 0.7.2
+- got rid of some compatibility mode stuff with labels.
+- keywords prototypes for callable functions.
+- compiler fix for keywords embeded function calls.
+
+From ccScript3 0.7.0 to 0.7.1
+- apps/exec control script compiler support.
+
+From ccScript3 0.6.3 to 0.7.0
+- pack control
+- command embedding inside other script languages.
+- fix library release versioning.
+
+From ccScript3 0.6.2 to 0.6.3
+- sort dso module added.
+
+From ccScript3 0.6.1 to 0.6.2
+- options executed on slow start.
+- make sure setConst wont take null.
+
+From ccScript3 0.6.0 to 0.6.1
+- new getTempSize() method.
+
+From ccScript3 0.5.0 to 0.6.0
+- better sym lookup and use of _ in sym name.
+- isInput command virtual.
+- new storage member to return space available to save values.
+- get symbolic trap name.
+- chkType for adding user defined type declarations.
+- date & time data types module added.
+- changes in branching support.
+
+From ccScript3 0.4.1 to 0.5.0
+- improvements in rpl mode
+- changes in script event handling.
+
+From ccScript3 0.4.0 to 0.4.1
+- support for script registration records
+- useKeywords now public static
+
+From ccScript3 0.3.1 to 0.4.0
+- public access to cmd active script, thread getTimeout...
+- access to image refcount.
+- server, user, etc moved into access vars...
+- getExternal in getSymbol()
+- signal exit has redirect
+- getLogname() added
+
+From ccScript3 0.3.0 to 0.3.1
+- ScriptImage constructors and methods now public
+- .mod changed to .mac...
+- normalization of error messages in compiler
+- fix for build outside source dir...
+- CAPE framework common files merged under GNU Telephony
+- when we exit into ^exit handler or ::exit redirect, only accept 
+  once...special case with exiting flag!
+
+From ccScript3 0.2.0 to 0.3.0
+- stuff for ripple subset
+- fixed configure for SQLConnect detect and --without-odbc
+- new virtuals for error logging
+- lots of api changes.
+
+From ccScript3 0.1.2 to 0.2.0
+- alternate attach interface
+- race condition in testscript fixed
+- odbc manager failure reporting fixed
+- improvements in non-blocking persistant db connection management
+
+From ccScript3 0.1.1 to 0.1.2
+- CAPE debug library build support
+
+From ccScript3 0.1.0 to 0.1.1
+- spec files for RPM generation
+- fix for registry base
+- vs.net generation support

@@ -1,0 +1,1297 @@
+.TH "ost::String" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::String \- 
+.PP
+This is a generic and portable string class.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <string.h>\fP
+.PP
+Inherited by \fBost::SString\fP.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef size_t \fBsize_type\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBString\fP ()"
+.br
+.RI "\fIConstruct an empty string. \fP"
+.ti -1c
+.RI "\fBString\fP (const \fBString\fP &original)"
+.br
+.RI "\fICopy constructor. \fP"
+.ti -1c
+.RI "\fBString\fP (const char *str)"
+.br
+.RI "\fICreate a string from a cstring. \fP"
+.ti -1c
+.RI "\fBString\fP (std::string string)"
+.br
+.RI "\fICreate a \fBString\fP from std::string. \fP"
+.ti -1c
+.RI "\fBString\fP (const \fBString\fP &str, size_t offset, size_t len=\fBnpos\fP)"
+.br
+.RI "\fICreate a new string from a subset of another string. \fP"
+.ti -1c
+.RI "\fBString\fP (size_t \fBsize\fP, const char *format,...)"
+.br
+.RI "\fICreate a string from formatted text input. \fP"
+.ti -1c
+.RI "\fBString\fP (size_t count, const char fill= ' ')"
+.br
+.RI "\fIFill a new string with character data. \fP"
+.ti -1c
+.RI "virtual \fB~String\fP ()"
+.br
+.RI "\fIDestroy the string. \fP"
+.ti -1c
+.RI "const char * \fBgetIndex\fP (size_t index) const "
+.br
+.RI "\fIGet a string pointer to string content based on an indexed offset. \fP"
+.ti -1c
+.RI "char * \fBgetText\fP (void) const "
+.br
+.RI "\fIGet the text of a string. \fP"
+.ti -1c
+.RI "long \fBgetValue\fP (long defvalue=0l) const "
+.br
+.RI "\fIGet the value of a string. \fP"
+.ti -1c
+.RI "bool \fBgetBool\fP (bool defbool=false) const "
+.br
+.RI "\fIGet the bool flag of a string. \fP"
+.ti -1c
+.RI "const size_t \fBgetLength\fP (void) const "
+.br
+.RI "\fIGet the assigned length of string. \fP"
+.ti -1c
+.RI "const size_t \fBgetSize\fP (void) const "
+.br
+.RI "\fIGet the allocation size of the string variable. \fP"
+.ti -1c
+.RI "bool \fBisEmpty\fP (void) const "
+.br
+.RI "\fIReturn true if string is empty. \fP"
+.ti -1c
+.RI "void \fBresize\fP (size_t \fBsize\fP)"
+.br
+.RI "\fIRe-allocate buffer space for string. \fP"
+.ti -1c
+.RI "void \fBclear\fP (void)"
+.br
+.RI "\fIClear the contents of the entire string. \fP"
+.ti -1c
+.RI "char \fBat\fP (ssize_t offset) const "
+.br
+.RI "\fIReturn a character at a known offset. \fP"
+.ti -1c
+.RI "unsigned \fBcount\fP (const \fBString\fP &s, size_t offset=0) const "
+.br
+.RI "\fICount the number of occurences of a specific string within our string. \fP"
+.ti -1c
+.RI "unsigned \fBcount\fP (const char *s, size_t offset=0, size_t len=0) const "
+.br
+.RI "\fICount the number of occurrences of a specific text pattern within our string. \fP"
+.ti -1c
+.RI "\fBString\fP \fBtoken\fP (const char *delim=' \\t\\n\\r', size_t offset=0)"
+.br
+.RI "\fIExtract a new string as a token from the current string. \fP"
+.ti -1c
+.RI "size_t \fBfind\fP (const \fBString\fP &s, size_t offset=0, unsigned instance=1) const "
+.br
+.RI "\fIFind the index to the nth instance of a substring in our string. \fP"
+.ti -1c
+.RI "size_t \fBrfind\fP (const \fBString\fP &s, size_t offset=0) const "
+.br
+.RI "\fIFind last occurence of a substring in our string. \fP"
+.ti -1c
+.RI "size_t \fBfind\fP (const char *s, size_t offset=0, size_t len=0, unsigned count=1) const "
+.br
+.RI "\fIFind the index to the nth instance of text in our string. \fP"
+.ti -1c
+.RI "size_t \fBrfind\fP (const char *s, size_t offset=0, size_t len=0) const "
+.br
+.RI "\fIFind last occurence of a text in our string. \fP"
+.ti -1c
+.RI "void \fBtrim\fP (const char *cs)"
+.br
+.RI "\fITrim trailing characters from a string. \fP"
+.ti -1c
+.RI "void \fBchop\fP (const char *cs)"
+.br
+.RI "\fIChop leading characters from a string. \fP"
+.ti -1c
+.RI "void \fBstrip\fP (const char *cs)"
+.br
+.RI "\fIStrip lead and trailing characters from a string. \fP"
+.ti -1c
+.RI "void \fBchop\fP (size_t chars)"
+.br
+.RI "\fIChop n leading characters from a string. \fP"
+.ti -1c
+.RI "void \fBtrim\fP (size_t count)"
+.br
+.RI "\fITrim n trailing characters from a string. \fP"
+.ti -1c
+.RI "void \fBerase\fP (size_t start, size_t len=\fBnpos\fP)"
+.br
+.RI "\fIErase a portion of string. \fP"
+.ti -1c
+.RI "void \fBinsert\fP (size_t start, const char *\fBtext\fP, size_t len=0)"
+.br
+.RI "\fIInsert text into a string. \fP"
+.ti -1c
+.RI "void \fBinsert\fP (size_t start, const \fBString\fP &str)"
+.br
+.RI "\fIInsert other string into our string. \fP"
+.ti -1c
+.RI "void \fBreplace\fP (size_t start, size_t len, const char *\fBtext\fP, size_t count=0)"
+.br
+.RI "\fIReplace text at a specific position in the string with new text. \fP"
+.ti -1c
+.RI "void \fBreplace\fP (size_t start, size_t len, const \fBString\fP &string)"
+.br
+.RI "\fIReplace text at a specific position in the string with new string,. \fP"
+.ti -1c
+.RI "size_t \fBfind\fP (unsigned instance, const char *\fBtext\fP, size_t offset=0, size_t len=0) const "
+.br
+.RI "\fIA more convenient version of find for nth occurences, by putting the instance first. \fP"
+.ti -1c
+.RI "size_t \fBfind\fP (unsigned instance, const \fBString\fP &string, size_t offset=0) const "
+.br
+.RI "\fIA more convenient version of find for nth occurences, by putting the instance first. \fP"
+.ti -1c
+.RI "\fBString\fP \fBsubstr\fP (size_t start, size_t len) const "
+.br
+.RI "\fIReturn a new string that contains a specific substring of the current string. \fP"
+.ti -1c
+.RI "const char *() \fBindex\fP (size_t ind) const "
+.br
+.RI "\fIReturn an indexed string based on the index, such as from a find. \fP"
+.ti -1c
+.RI "void \fBcompact\fP (void)"
+.br
+.RI "\fIReduce the size of the string allocation to the minimum needed based on the current effective length. \fP"
+.ti -1c
+.RI "char * \fBc_str\fP (void) const "
+.br
+.RI "\fIOld ANSI C++ compatible string pointer extraction. \fP"
+.ti -1c
+.RI "\fBoperator char *\fP () const "
+.br
+.RI "\fIGet our string data through dereference operator. \fP"
+.ti -1c
+.RI "bool \fBoperator!\fP (void) const "
+.br
+.RI "\fILogical test for string empty. \fP"
+.ti -1c
+.RI "char * \fBtext\fP (void) const "
+.br
+.RI "\fIAlternate get text method. \fP"
+.ti -1c
+.RI "char * \fBdata\fP (void) const "
+.br
+.RI "\fIAlternate get text method. \fP"
+.ti -1c
+.RI "size_t \fBlength\fP (void) const "
+.br
+.RI "\fIGet length as if null terminated string. \fP"
+.ti -1c
+.RI "size_t \fBsize\fP (void) const "
+.br
+.RI "\fIGet actual length of string data. \fP"
+.ti -1c
+.RI "size_t \fBcapacity\fP (void) const "
+.br
+.RI "\fIGet space allocated to hold current string. \fP"
+.ti -1c
+.RI "bool \fBempty\fP (void) const "
+.br
+.RI "\fIReturn true if string is empty. \fP"
+.ti -1c
+.RI "void \fBappend\fP (const char *str, size_t count=0)"
+.br
+.RI "\fIAppend text to the end of the current string. \fP"
+.ti -1c
+.RI "void \fBappend\fP (size_t \fBsize\fP, const char *format,...)"
+.br
+.RI "\fIAppend formatted text to the end of the current string. \fP"
+.ti -1c
+.RI "void \fBappend\fP (const char *str, size_t offset, size_t count)"
+.br
+.RI "\fIAppend text into the current string. \fP"
+.ti -1c
+.RI "void \fBadd\fP (char c)"
+.br
+.RI "\fIAdd a character to the end of a string. \fP"
+.ti -1c
+.RI "void \fBappend\fP (const \fBString\fP &str)"
+.br
+.RI "\fIAppend string to the end of the current string. \fP"
+.ti -1c
+.RI "const char \fBoperator[]\fP (unsigned ind) const "
+.br
+.RI "\fIExtract a character by array indexing. \fP"
+.ti -1c
+.RI "const char * \fBoperator=\fP (const char *str)"
+.br
+.RI "\fIAssign our string for c string. \fP"
+.ti -1c
+.RI "\fBString\fP & \fBoperator+=\fP (const \fBString\fP &str)"
+.br
+.RI "\fIAppend operator. \fP"
+.ti -1c
+.RI "\fBString\fP & \fBoperator+=\fP (char c)"
+.br
+.RI "\fIAppend operator. \fP"
+.ti -1c
+.RI "\fBString\fP & \fBoperator+=\fP (const char *str)"
+.br
+.RI "\fIAppend operator. \fP"
+.ti -1c
+.RI "\fBString\fP & \fBoperator+=\fP (const std::string &str)"
+.br
+.RI "\fIAppend operator. \fP"
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBString\fP &str) const "
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const char *str) const "
+.br
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBString\fP &str) const "
+.br
+.ti -1c
+.RI "bool \fBoperator>\fP (const char *str) const "
+.br
+.ti -1c
+.RI "bool \fBoperator<=\fP (const \fBString\fP &str) const "
+.br
+.ti -1c
+.RI "bool \fBoperator<=\fP (const char *str) const "
+.br
+.ti -1c
+.RI "bool \fBoperator>=\fP (const \fBString\fP &str) const "
+.br
+.ti -1c
+.RI "bool \fBoperator>=\fP (const char *str) const "
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBString\fP &str) const "
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const char *str) const "
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBString\fP &str) const "
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const char *str) const "
+.br
+.ti -1c
+.RI "\fBString\fP & \fBoperator+=\fP (int i)"
+.br
+.RI "\fIAppend operator. \fP"
+.ti -1c
+.RI "\fBString\fP & \fBoperator+=\fP (unsigned int i)"
+.br
+.ti -1c
+.RI "\fBString\fP & \fBoperator+=\fP (long l)"
+.br
+.ti -1c
+.RI "\fBString\fP & \fBoperator+=\fP (unsigned long l)"
+.br
+.ti -1c
+.RI "\fBString\fP & \fBoperator+=\fP (float f)"
+.br
+.ti -1c
+.RI "\fBString\fP & \fBoperator+=\fP (double d)"
+.br
+.ti -1c
+.RI "\fBString\fP & \fBoperator+=\fP (short s)"
+.br
+.ti -1c
+.RI "\fBString\fP & \fBoperator+=\fP (unsigned short s)"
+.br
+.ti -1c
+.RI "\fBString\fP & \fBoperator=\fP (int i)"
+.br
+.RI "\fIAssignment operator. \fP"
+.ti -1c
+.RI "\fBString\fP & \fBoperator=\fP (unsigned int i)"
+.br
+.ti -1c
+.RI "\fBString\fP & \fBoperator=\fP (long l)"
+.br
+.ti -1c
+.RI "\fBString\fP & \fBoperator=\fP (unsigned long l)"
+.br
+.ti -1c
+.RI "\fBString\fP & \fBoperator=\fP (float f)"
+.br
+.ti -1c
+.RI "\fBString\fP & \fBoperator=\fP (double d)"
+.br
+.ti -1c
+.RI "\fBString\fP & \fBoperator=\fP (short s)"
+.br
+.ti -1c
+.RI "\fBString\fP & \fBoperator=\fP (unsigned short s)"
+.br
+.ti -1c
+.RI "\fBString\fP & \fBoperator=\fP (const \fBString\fP &original)"
+.br
+.ti -1c
+.RI "bool \fBoperator*=\fP (const \fBString\fP &str) const "
+.br
+.RI "\fITest if string is contained in our string. \fP"
+.ti -1c
+.RI "bool \fBoperator*=\fP (const char *str) const "
+.br
+.RI "\fITest if text is contained in our string. \fP"
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const size_t \fBnpos\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBisBig\fP (void) const "
+.br
+.RI "\fIDetermine if string is allocated in local variable or an external reference. \fP"
+.ti -1c
+.RI "const char * \fBset\fP (const char *str, size_t len=0)"
+.br
+.RI "\fISet the content of the string variable to the specified string value, and use smart re-allocation strategies if appropriate to shrink the size of the variable. \fP"
+.ti -1c
+.RI "void \fBset\fP (const \fBString\fP &str)"
+.br
+.RI "\fISet the content of the string variable to that of another variable. \fP"
+.ti -1c
+.RI "const char * \fBset\fP (size_t \fBsize\fP, const char *format,...)"
+.br
+.RI "\fISet the content of the string variable to that of a formatted printf style string. \fP"
+.ti -1c
+.RI "void \fBcopy\fP (const \fBString\fP &str)"
+.br
+.RI "\fIImpliment the copy constructor, used internally. \fP"
+.ti -1c
+.RI "void \fBinit\fP (void)"
+.br
+.RI "\fIUsed to initialize a string object. \fP"
+.ti -1c
+.RI "size_t \fBsetSize\fP (size_t \fBsize\fP)"
+.br
+.RI "\fISet the size of allocated space in the string variable (capacity) to a known value. \fP"
+.ti -1c
+.RI "void \fBsetLength\fP (size_t len)"
+.br
+.RI "\fISet the length value of the string content. \fP"
+.ti -1c
+.RI "virtual int \fBcompare\fP (const char *\fBtext\fP, size_t len=0, size_t index=0) const "
+.br
+.RI "\fIA derivable low level comparison operator. \fP"
+.ti -1c
+.RI "size_t \fBsearch\fP (const char *\fBtext\fP, size_t clen=0, size_t offset=0) const "
+.br
+.RI "\fIAn internal method used to search for a substring starting at a known offset. \fP"
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static char * \fBgetSpace\fP (size_t \fBsize\fP)"
+.br
+.RI "\fIUsed to fetch memory, if needed, based on the size, from the pager, or the system heap. \fP"
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const unsigned \fBminsize\fP"
+.br
+.ti -1c
+.RI "static const unsigned \fBslotsize\fP"
+.br
+.ti -1c
+.RI "static const unsigned \fBpagesize\fP"
+.br
+.ti -1c
+.RI "static const unsigned \fBslotlimit\fP"
+.br
+.ti -1c
+.RI "static const unsigned \fBslotcount\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBStringObject\fP"
+.br
+.ti -1c
+.RI "class \fBMemPager\fP"
+.br
+.ti -1c
+.RI "\fBString\fP \fBoperator+\fP (const \fBString\fP &s1, const \fBString\fP &s2)"
+.br
+.RI "\fIAdd two strings and return a temporary object. \fP"
+.ti -1c
+.RI "\fBString\fP \fBoperator+\fP (const \fBString\fP &s1, const char *s2)"
+.br
+.ti -1c
+.RI "\fBString\fP \fBoperator+\fP (const char *s1, const \fBString\fP &s2)"
+.br
+.ti -1c
+.RI "\fBString\fP \fBoperator+\fP (const \fBString\fP &s1, const char c2)"
+.br
+.ti -1c
+.RI "\fBString\fP \fBoperator+\fP (const char c1, const \fBString\fP &s2)"
+.br
+.ti -1c
+.RI "std::istream & \fBgetline\fP (std::istream &is, \fBString\fP &str, char delim= '\\n', size_t \fBsize\fP=0)"
+.br
+.RI "\fIFetch input from a std::istream into the current string variable until either the string variable is filled (based on current length) or the deliminator is read. \fP"
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBString\fP &str)"
+.br
+.RI "\fIStream the content of our string variable directly to a C++ streaming source. \fP"
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, \fBString\fP &str)"
+.br
+.RI "\fIStream input into our variable. \fP"
+.ti -1c
+.RI "int \fBstrprintf\fP (\fBString\fP &str, size_t \fBsize\fP, const char *format,...)"
+.br
+.RI "\fIPrint values directly into a string variable. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+This is a generic and portable string class. 
+
+It uses optimized memory allocation strategies to efficiently handle smaller string content by grouping strings into 32 byte aligned slots that can be re-allocated from a free list directly.
+.PP
+While meant to cover the basic functionality of the ANSI C++ string class in form and function, this class offers some important enhancements, including the ability to derive class type specific versions of itself. The latter might be used to derive a unicode string, a string for data and time data types, or to add case insensitive comparisons, for example.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> Generic string class. 
+.RE
+.PP
+
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef size_t \fBost::String::size_type\fP"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::String::String ()"
+.PP
+Construct an empty string. 
+.SS "ost::String::String (const \fBString\fP & original)"
+.PP
+Copy constructor. \fBParameters:\fP
+.RS 4
+\fIoriginal\fP string to copy from. 
+.RE
+.PP
+
+.SS "ost::String::String (const char * str)"
+.PP
+Create a string from a cstring. \fBParameters:\fP
+.RS 4
+\fIstr\fP text to set with. 
+.RE
+.PP
+
+.SS "ost::String::String (std::string string)"
+.PP
+Create a \fBString\fP from std::string. \fBParameters:\fP
+.RS 4
+\fIstring\fP from std::string to copy from. 
+.RE
+.PP
+
+.SS "ost::String::String (const \fBString\fP & str, size_t offset, size_t len = \fC\fBnpos\fP\fP)"
+.PP
+Create a new string from a subset of another string. \fBParameters:\fP
+.RS 4
+\fIstr\fP reference of source string. 
+.br
+\fIoffset\fP offset to start of data in prior string. 
+.br
+\fIlen\fP length of our substring. 
+.RE
+.PP
+
+.SS "ost::String::String (size_t size, const char * format,  ...)"
+.PP
+Create a string from formatted text input. \fBParameters:\fP
+.RS 4
+\fIsize\fP to allocate for our new string. 
+.br
+\fIformat\fP of data to input. 
+.RE
+.PP
+
+.SS "ost::String::String (size_t count, const char fill = \fC' '\fP)"
+.PP
+Fill a new string with character data. \fBParameters:\fP
+.RS 4
+\fIcount\fP size of new string. 
+.br
+\fIfill\fP char to fill string with. 
+.RE
+.PP
+
+.SS "virtual ost::String::~String ()\fC [virtual]\fP"
+.PP
+Destroy the string. .. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::String::add (char c)"
+.PP
+Add a character to the end of a string. \fBParameters:\fP
+.RS 4
+\fIc\fP char to add. 
+.RE
+.PP
+
+.SS "void ost::String::append (const \fBString\fP & str)"
+.PP
+Append string to the end of the current string. \fBParameters:\fP
+.RS 4
+\fIstr\fP string to append. 
+.RE
+.PP
+
+.SS "void ost::String::append (const char * str, size_t offset, size_t count)"
+.PP
+Append text into the current string. \fBParameters:\fP
+.RS 4
+\fIstr\fP text to append. 
+.br
+\fIoffset\fP offset to overlay. 
+.br
+\fIcount\fP size of text to append. 
+.RE
+.PP
+
+.SS "void ost::String::append (size_t size, const char * format,  ...)"
+.PP
+Append formatted text to the end of the current string. \fBParameters:\fP
+.RS 4
+\fIsize\fP size of text to append. 
+.br
+\fIformat\fP of data to append. 
+.RE
+.PP
+
+.SS "void ost::String::append (const char * str, size_t count = \fC0\fP)"
+.PP
+Append text to the end of the current string. \fBParameters:\fP
+.RS 4
+\fIstr\fP text to append. 
+.br
+\fIcount\fP size of text to append. 
+.RE
+.PP
+
+.SS "char ost::String::at (ssize_t offset) const"
+.PP
+Return a character at a known offset. \fBReturns:\fP
+.RS 4
+character at offset. 
+.RE
+.PP
+
+.SS "char* ost::String::c_str (void) const\fC [inline]\fP"
+.PP
+Old ANSI C++ compatible string pointer extraction. \fBReturns:\fP
+.RS 4
+string data. 
+.RE
+.PP
+
+.SS "size_t ost::String::capacity (void) const\fC [inline]\fP"
+.PP
+Get space allocated to hold current string. \fBReturns:\fP
+.RS 4
+space of memory buffer from heap or local. 
+.RE
+.PP
+
+.SS "void ost::String::chop (size_t chars)\fC [inline]\fP"
+.PP
+Chop n leading characters from a string. \fBParameters:\fP
+.RS 4
+\fIchars\fP count to chop. 
+.RE
+.PP
+
+.SS "void ost::String::chop (const char * cs)\fC [inline]\fP"
+.PP
+Chop leading characters from a string. \fBParameters:\fP
+.RS 4
+\fIcs\fP list of chars to chop. 
+.RE
+.PP
+
+.PP
+References ost::strchop().
+.SS "void ost::String::clear (void)"
+.PP
+Clear the contents of the entire string. 
+.SS "void ost::String::compact (void)\fC [inline]\fP"
+.PP
+Reduce the size of the string allocation to the minimum needed based on the current effective length. 
+.SS "virtual int ost::String::compare (const char * text, size_t len = \fC0\fP, size_t index = \fC0\fP) const\fC [protected, virtual]\fP"
+.PP
+A derivable low level comparison operator. This can be used to create custom comparison data types in derived string classes.
+.PP
+\fBReturns:\fP
+.RS 4
+0 if match, or value for ordering. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItext\fP text to compare. 
+.br
+\fIlen\fP length of text to compare. 
+.br
+\fIindex\fP offset from start of string, used in searchs. 
+.RE
+.PP
+
+.SS "void ost::String::copy (const \fBString\fP & str)\fC [protected]\fP"
+.PP
+Impliment the copy constructor, used internally. Will always create a minimum sized string allocation.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP string to copy from. 
+.RE
+.PP
+
+.SS "unsigned ost::String::count (const char * s, size_t offset = \fC0\fP, size_t len = \fC0\fP) const"
+.PP
+Count the number of occurrences of a specific text pattern within our string. \fBReturns:\fP
+.RS 4
+count of instances. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIs\fP text pattern to find 
+.br
+\fIoffset\fP offset to start from. 
+.br
+\fIlen\fP length of text pattern if specified. 
+.RE
+.PP
+
+.SS "unsigned ost::String::count (const \fBString\fP & s, size_t offset = \fC0\fP) const"
+.PP
+Count the number of occurences of a specific string within our string. \fBReturns:\fP
+.RS 4
+count of instances. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIs\fP string to test. 
+.br
+\fIoffset\fP offset to start from. 
+.RE
+.PP
+
+.SS "char* ost::String::data (void) const\fC [inline]\fP"
+.PP
+Alternate get text method. \fBReturns:\fP
+.RS 4
+string data. 
+.RE
+.PP
+
+.SS "bool ost::String::empty (void) const\fC [inline]\fP"
+.PP
+Return true if string is empty. 
+.SS "void ost::String::erase (size_t start, size_t len = \fC\fBnpos\fP\fP)"
+.PP
+Erase a portion of string. \fBParameters:\fP
+.RS 4
+\fIstart\fP starting index to erase from. 
+.br
+\fIlen\fP number of characters to erase. 
+.RE
+.PP
+
+.SS "size_t ost::String::find (unsigned instance, const \fBString\fP & string, size_t offset = \fC0\fP) const\fC [inline]\fP"
+.PP
+A more convenient version of find for nth occurences, by putting the instance first. \fBParameters:\fP
+.RS 4
+\fIinstance\fP nth instance to look for. 
+.br
+\fIstring\fP reference to look for. 
+.br
+\fIoffset\fP offset to start at. 
+.RE
+.PP
+
+.PP
+References find().
+.PP
+Referenced by find().
+.SS "size_t ost::String::find (unsigned instance, const char * text, size_t offset = \fC0\fP, size_t len = \fC0\fP) const\fC [inline]\fP"
+.PP
+A more convenient version of find for nth occurences, by putting the instance first. \fBParameters:\fP
+.RS 4
+\fIinstance\fP nth instance to look for. 
+.br
+\fItext\fP text to look for. 
+.br
+\fIoffset\fP offset to start at. 
+.br
+\fIlen\fP length of text. 
+.RE
+.PP
+
+.PP
+References find().
+.PP
+Referenced by find().
+.SS "size_t ost::String::find (const char * s, size_t offset = \fC0\fP, size_t len = \fC0\fP, unsigned count = \fC1\fP) const"
+.PP
+Find the index to the nth instance of text in our string. \fBReturns:\fP
+.RS 4
+index of found substring. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIs\fP string to search for. 
+.br
+\fIoffset\fP offset to start at. 
+.br
+\fIlen\fP size of string text. 
+.br
+\fIcount\fP instance to look for. 
+.RE
+.PP
+
+.SS "size_t ost::String::find (const \fBString\fP & s, size_t offset = \fC0\fP, unsigned instance = \fC1\fP) const"
+.PP
+Find the index to the nth instance of a substring in our string. \fBReturns:\fP
+.RS 4
+index of found substring. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIs\fP string to search for. 
+.br
+\fIoffset\fP offset to start at. 
+.br
+\fIinstance\fP instance to look for. 
+.RE
+.PP
+
+.SS "bool ost::String::getBool (bool defbool = \fCfalse\fP) const"
+.PP
+Get the bool flag of a string. \fBReturns:\fP
+.RS 4
+boolean value. 
+.RE
+.PP
+
+.SS "const char* ost::String::getIndex (size_t index) const"
+.PP
+Get a string pointer to string content based on an indexed offset. A NULL is returned if the index is outsize of range.
+.PP
+\fBReturns:\fP
+.RS 4
+string content or NULL if invalid index. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP 
+.RE
+.PP
+
+.SS "const size_t ost::String::getLength (void) const"
+.PP
+Get the assigned length of string. \fBReturns:\fP
+.RS 4
+string length. 
+.RE
+.PP
+
+.SS "const size_t ost::String::getSize (void) const"
+.PP
+Get the allocation size of the string variable. \fBReturns:\fP
+.RS 4
+allocation size. 
+.RE
+.PP
+
+.SS "static char* ost::String::getSpace (size_t size)\fC [static, protected]\fP"
+.PP
+Used to fetch memory, if needed, based on the size, from the pager, or the system heap. \fBReturns:\fP
+.RS 4
+string pointer to space. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsize\fP of space needed. 
+.RE
+.PP
+
+.SS "char* ost::String::getText (void) const"
+.PP
+Get the text of a string. \fBReturns:\fP
+.RS 4
+string content. 
+.RE
+.PP
+
+.SS "long ost::String::getValue (long defvalue = \fC0l\fP) const"
+.PP
+Get the value of a string. \fBReturns:\fP
+.RS 4
+string value as number. 
+.RE
+.PP
+
+.SS "const char*() ost::String::index (size_t ind) const\fC [inline]\fP"
+.PP
+Return an indexed string based on the index, such as from a find. If out of range, a NULL string is returned.
+.PP
+\fBReturns:\fP
+.RS 4
+pointer to string data from our string, 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIind\fP index or offset to use. 
+.RE
+.PP
+
+.SS "void ost::String::init (void)\fC [protected]\fP"
+.PP
+Used to initialize a string object. 
+.SS "void ost::String::insert (size_t start, const \fBString\fP & str)"
+.PP
+Insert other string into our string. \fBParameters:\fP
+.RS 4
+\fIstart\fP string offset to insert at. 
+.br
+\fIstr\fP string to insert. 
+.RE
+.PP
+
+.SS "void ost::String::insert (size_t start, const char * text, size_t len = \fC0\fP)"
+.PP
+Insert text into a string. \fBParameters:\fP
+.RS 4
+\fIstart\fP starting offset to insert at. 
+.br
+\fItext\fP text to insert. 
+.br
+\fIlen\fP size of text to insert. 
+.RE
+.PP
+
+.SS "bool ost::String::isBig (void) const\fC [inline, protected]\fP"
+.PP
+Determine if string is allocated in local variable or an external reference. \fBReturns:\fP
+.RS 4
+true if external heap is used. 
+.RE
+.PP
+
+.SS "bool ost::String::isEmpty (void) const"
+.PP
+Return true if string is empty. \fBReturns:\fP
+.RS 4
+true if string is empty string. 
+.RE
+.PP
+
+.SS "size_t \fBost::String::length\fP (void) const\fC [inline]\fP"
+.PP
+Get length as if null terminated string. \fBReturns:\fP
+.RS 4
+cstring length. 
+.RE
+.PP
+
+.SS "ost::String::operator char * () const\fC [inline]\fP"
+.PP
+Get our string data through dereference operator. \fBReturns:\fP
+.RS 4
+string data. 
+.RE
+.PP
+
+.SS "bool ost::String::operator! (void) const\fC [inline]\fP"
+.PP
+Logical test for string empty. \fBReturns:\fP
+.RS 4
+true if is empty. 
+.RE
+.PP
+
+.SS "bool ost::String::operator!= (const char * str) const"
+.SS "bool ost::String::operator!= (const \fBString\fP & str) const"
+.SS "bool ost::String::operator*= (const char * str) const"
+.PP
+Test if text is contained in our string. 
+.SS "bool ost::String::operator*= (const \fBString\fP & str) const"
+.PP
+Test if string is contained in our string. 
+.SS "\fBString\fP& ost::String::operator+= (unsigned short s)\fC [inline]\fP"
+.SS "\fBString\fP& ost::String::operator+= (short s)\fC [inline]\fP"
+.SS "\fBString\fP& ost::String::operator+= (double d)\fC [inline]\fP"
+.SS "\fBString\fP& ost::String::operator+= (float f)\fC [inline]\fP"
+.SS "\fBString\fP& ost::String::operator+= (unsigned long l)\fC [inline]\fP"
+.SS "\fBString\fP& ost::String::operator+= (long l)\fC [inline]\fP"
+.SS "\fBString\fP& ost::String::operator+= (unsigned int i)\fC [inline]\fP"
+.SS "\fBString\fP& ost::String::operator+= (int i)\fC [inline]\fP"
+.PP
+Append operator. 
+.SS "\fBString\fP& ost::String::operator+= (const std::string & str)\fC [inline]\fP"
+.PP
+Append operator. 
+.SS "\fBString\fP& ost::String::operator+= (const char * str)\fC [inline]\fP"
+.PP
+Append operator. 
+.SS "\fBString\fP& ost::String::operator+= (char c)\fC [inline]\fP"
+.PP
+Append operator. 
+.SS "\fBString\fP& ost::String::operator+= (const \fBString\fP & str)\fC [inline]\fP"
+.PP
+Append operator. 
+.SS "bool ost::String::operator< (const char * str) const"
+.SS "bool ost::String::operator< (const \fBString\fP & str) const"
+.SS "bool ost::String::operator<= (const char * str) const"
+.SS "bool ost::String::operator<= (const \fBString\fP & str) const"
+.SS "\fBString\fP& ost::String::operator= (const \fBString\fP & original)\fC [inline]\fP"
+.SS "\fBString\fP& ost::String::operator= (unsigned short s)\fC [inline]\fP"
+.SS "\fBString\fP& ost::String::operator= (short s)\fC [inline]\fP"
+.SS "\fBString\fP& ost::String::operator= (double d)\fC [inline]\fP"
+.SS "\fBString\fP& ost::String::operator= (float f)\fC [inline]\fP"
+.SS "\fBString\fP& ost::String::operator= (unsigned long l)\fC [inline]\fP"
+.SS "\fBString\fP& ost::String::operator= (long l)\fC [inline]\fP"
+.SS "\fBString\fP& ost::String::operator= (unsigned int i)\fC [inline]\fP"
+.SS "\fBString\fP& ost::String::operator= (int i)\fC [inline]\fP"
+.PP
+Assignment operator. 
+.SS "const char* ost::String::operator= (const char * str)\fC [inline]\fP"
+.PP
+Assign our string for c string. 
+.SS "bool ost::String::operator== (const char * str) const"
+.SS "bool ost::String::operator== (const \fBString\fP & str) const"
+.SS "bool ost::String::operator> (const char * str) const"
+.SS "bool ost::String::operator> (const \fBString\fP & str) const"
+.SS "bool ost::String::operator>= (const char * str) const"
+.SS "bool ost::String::operator>= (const \fBString\fP & str) const"
+.SS "const char ost::String::operator[] (unsigned ind) const\fC [inline]\fP"
+.PP
+Extract a character by array indexing. \fBReturns:\fP
+.RS 4
+character code. 
+.RE
+.PP
+
+.SS "void ost::String::replace (size_t start, size_t len, const \fBString\fP & string)"
+.PP
+Replace text at a specific position in the string with new string,. \fBParameters:\fP
+.RS 4
+\fIstart\fP starting offset to replace at. 
+.br
+\fIlen\fP length of text to remove. 
+.br
+\fIstring\fP reference to replace with. 
+.RE
+.PP
+
+.SS "void ost::String::replace (size_t start, size_t len, const char * text, size_t count = \fC0\fP)"
+.PP
+Replace text at a specific position in the string with new text. \fBParameters:\fP
+.RS 4
+\fIstart\fP starting offset to replace at. 
+.br
+\fIlen\fP length of text to remove. 
+.br
+\fItext\fP text to replace with. 
+.br
+\fIcount\fP size of replacement text. 
+.RE
+.PP
+
+.SS "void ost::String::resize (size_t size)"
+.PP
+Re-allocate buffer space for string. \fBParameters:\fP
+.RS 4
+\fIsize\fP new size to use. 
+.RE
+.PP
+
+.SS "size_t ost::String::rfind (const char * s, size_t offset = \fC0\fP, size_t len = \fC0\fP) const"
+.PP
+Find last occurence of a text in our string. \fBReturns:\fP
+.RS 4
+index of last instance found, 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIs\fP string to search for. 
+.br
+\fIoffset\fP offset to start from. 
+.br
+\fIlen\fP size of string to look for. 
+.RE
+.PP
+
+.SS "size_t ost::String::rfind (const \fBString\fP & s, size_t offset = \fC0\fP) const"
+.PP
+Find last occurence of a substring in our string. \fBReturns:\fP
+.RS 4
+index of last instance found, 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIs\fP string to search for. 
+.br
+\fIoffset\fP offset to start from. 
+.RE
+.PP
+
+.SS "size_t ost::String::search (const char * text, size_t clen = \fC0\fP, size_t offset = \fC0\fP) const\fC [protected]\fP"
+.PP
+An internal method used to search for a substring starting at a known offset. Used by find and count methods.
+.PP
+\fBReturns:\fP
+.RS 4
+npos if fails, or offset to text found. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItext\fP text to search for. 
+.br
+\fIclen\fP length of search text. 
+.br
+\fIoffset\fP offset to start from. 
+.RE
+.PP
+
+.SS "const char* ost::String::set (size_t size, const char * format,  ...)\fC [protected]\fP"
+.PP
+Set the content of the string variable to that of a formatted printf style string. \fBParameters:\fP
+.RS 4
+\fIsize\fP of string data to set. 
+.br
+\fIformat\fP of string to write into object. 
+.RE
+.PP
+
+.SS "void ost::String::set (const \fBString\fP & str)\fC [protected]\fP"
+.PP
+Set the content of the string variable to that of another variable. Uses the string set method.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP string to copy from. 
+.RE
+.PP
+
+.SS "const char* ost::String::set (const char * str, size_t len = \fC0\fP)\fC [protected]\fP"
+.PP
+Set the content of the string variable to the specified string value, and use smart re-allocation strategies if appropriate to shrink the size of the variable. \fBParameters:\fP
+.RS 4
+\fIstr\fP string to set. 
+.br
+\fIlen\fP length of string if passed. 
+.RE
+.PP
+
+.SS "void ost::String::setLength (size_t len)\fC [protected]\fP"
+.PP
+Set the length value of the string content. \fBParameters:\fP
+.RS 4
+\fIlen\fP size in bytes. 
+.RE
+.PP
+
+.SS "size_t ost::String::setSize (size_t size)\fC [protected]\fP"
+.PP
+Set the size of allocated space in the string variable (capacity) to a known value. The value is recomputed and adjusted based on allocation method.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsize\fP in bytes. 
+.RE
+.PP
+
+.SS "size_t \fBost::String::size\fP (void) const\fC [inline]\fP"
+.PP
+Get actual length of string data. \fBReturns:\fP
+.RS 4
+actual size of string. 
+.RE
+.PP
+
+.SS "void ost::String::strip (const char * cs)"
+.PP
+Strip lead and trailing characters from a string. \fBParameters:\fP
+.RS 4
+\fIcs\fP list of chars to strip. 
+.RE
+.PP
+
+.SS "\fBString\fP ost::String::substr (size_t start, size_t len) const\fC [inline]\fP"
+.PP
+Return a new string that contains a specific substring of the current string. \fBReturns:\fP
+.RS 4
+new string. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstart\fP starting offset for extracted substring. 
+.br
+\fIlen\fP length of substring. 
+.RE
+.PP
+
+.SS "char* \fBost::String::text\fP (void) const\fC [inline]\fP"
+.PP
+Alternate get text method. \fBReturns:\fP
+.RS 4
+string data. 
+.RE
+.PP
+
+.SS "\fBString\fP ost::String::token (const char * delim = \fC' \\t\\n\\r'\fP, size_t offset = \fC0\fP)"
+.PP
+Extract a new string as a token from the current string. \fBReturns:\fP
+.RS 4
+string containing token. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdelim\fP deliminator characters. 
+.br
+\fIoffset\fP offset to start from. 
+.RE
+.PP
+
+.SS "void ost::String::trim (size_t count)"
+.PP
+Trim n trailing characters from a string. \fBParameters:\fP
+.RS 4
+\fIcount\fP number of bytes to trim. 
+.RE
+.PP
+
+.SS "void ost::String::trim (const char * cs)\fC [inline]\fP"
+.PP
+Trim trailing characters from a string. \fBParameters:\fP
+.RS 4
+\fIcs\fP list of chars to trim. 
+.RE
+.PP
+
+.PP
+References ost::strtrim().
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "std::istream& getline (std::istream & is, \fBString\fP & str, char delim = \fC'\\n'\fP, size_t size = \fC0\fP)\fC [friend]\fP"
+.PP
+Fetch input from a std::istream into the current string variable until either the string variable is filled (based on current length) or the deliminator is read. \fBParameters:\fP
+.RS 4
+\fIis\fP stream to read. 
+.br
+\fIstr\fP string to save into. 
+.br
+\fIdelim\fP deliminator to use. 
+.br
+\fIsize\fP optional size limitor. 
+.RE
+.PP
+
+.SS "friend class \fBMemPager\fP\fC [friend]\fP"
+.SS "\fBString\fP operator+ (const char c1, const \fBString\fP & s2)\fC [friend]\fP"
+.SS "\fBString\fP operator+ (const \fBString\fP & s1, const char c2)\fC [friend]\fP"
+.SS "\fBString\fP operator+ (const char * s1, const \fBString\fP & s2)\fC [friend]\fP"
+.SS "\fBString\fP operator+ (const \fBString\fP & s1, const char * s2)\fC [friend]\fP"
+.SS "\fBString\fP operator+ (const \fBString\fP & s1, const \fBString\fP & s2)\fC [friend]\fP"
+.PP
+Add two strings and return a temporary object. 
+.SS "std::ostream& operator<< (std::ostream & os, const \fBString\fP & str)\fC [friend]\fP"
+.PP
+Stream the content of our string variable directly to a C++ streaming source. 
+.SS "std::istream& operator>> (std::istream & is, \fBString\fP & str)\fC [friend]\fP"
+.PP
+Stream input into our variable. 
+.SS "friend class \fBStringObject\fP\fC [friend]\fP"
+.SS "int strprintf (\fBString\fP & str, size_t size, const char * format,  ...)\fC [friend]\fP"
+.PP
+Print values directly into a string variable. \fBReturns:\fP
+.RS 4
+character count. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP object reference to use. 
+.br
+\fIsize\fP of string required. 
+.br
+\fIformat\fP of data. 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "bool \fBost::String::big\fP"
+.SS "struct { ... } 	 \fBost::String::bigstring\fP"
+.SS "char \fBost::String::length\fP"
+.SS "size_t \fBost::String::length\fP"
+.SS "struct { ... } 	 \fBost::String::ministring\fP"
+.SS "const unsigned \fBost::String::minsize\fP\fC [static, protected]\fP"
+.SS "const size_t \fBost::String::npos\fP\fC [static]\fP"
+.SS "const unsigned \fBost::String::pagesize\fP\fC [static, protected]\fP"
+.SS "size_t \fBost::String::size\fP"
+.SS "const unsigned \fBost::String::slotcount\fP\fC [static, protected]\fP"
+.SS "const unsigned \fBost::String::slotlimit\fP\fC [static, protected]\fP"
+.SS "const unsigned \fBost::String::slotsize\fP\fC [static, protected]\fP"
+.SS "char \fBost::String::text\fP[(sizeof(char *)+(sizeof(size_t)*2)+1)]"
+.SS "char* \fBost::String::text\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

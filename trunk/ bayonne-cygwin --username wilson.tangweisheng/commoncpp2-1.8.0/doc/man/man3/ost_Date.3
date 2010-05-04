@@ -1,0 +1,224 @@
+.TH "ost::Date" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::Date \- 
+.PP
+The \fBDate\fP class uses a julian date representation of the current year, month, and day.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <numbers.h>\fP
+.PP
+Inherited by \fBost::DateNumber\fP, and \fBost::Datetime\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDate\fP (time_t tm)"
+.br
+.ti -1c
+.RI "\fBDate\fP (tm *dt)"
+.br
+.ti -1c
+.RI "\fBDate\fP (char *str, size_t size=0)"
+.br
+.ti -1c
+.RI "\fBDate\fP (int year, unsigned month, unsigned day)"
+.br
+.ti -1c
+.RI "\fBDate\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Date\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetYear\fP (void) const "
+.br
+.ti -1c
+.RI "unsigned \fBgetMonth\fP (void) const "
+.br
+.ti -1c
+.RI "unsigned \fBgetDay\fP (void) const "
+.br
+.ti -1c
+.RI "unsigned \fBgetDayOfWeek\fP (void) const "
+.br
+.ti -1c
+.RI "char * \fBgetDate\fP (char *buffer) const "
+.br
+.ti -1c
+.RI "time_t \fBgetDate\fP (void) const "
+.br
+.ti -1c
+.RI "time_t \fBgetDate\fP (tm *buf) const "
+.br
+.ti -1c
+.RI "long \fBgetValue\fP (void) const "
+.br
+.ti -1c
+.RI "void \fBsetDate\fP (const char *str, size_t size=0)"
+.br
+.ti -1c
+.RI "bool \fBisValid\fP (void) const "
+.br
+.ti -1c
+.RI "\fBoperator long\fP () const "
+.br
+.ti -1c
+.RI "\fBString\fP \fBoperator()\fP () const "
+.br
+.ti -1c
+.RI "\fBDate\fP & \fBoperator++\fP ()"
+.br
+.ti -1c
+.RI "\fBDate\fP & \fBoperator--\fP ()"
+.br
+.ti -1c
+.RI "\fBDate\fP & \fBoperator+=\fP (const long val)"
+.br
+.ti -1c
+.RI "\fBDate\fP & \fBoperator-=\fP (const long val)"
+.br
+.ti -1c
+.RI "int \fBoperator==\fP (const \fBDate\fP &date)"
+.br
+.ti -1c
+.RI "int \fBoperator!=\fP (const \fBDate\fP &date)"
+.br
+.ti -1c
+.RI "int \fBoperator<\fP (const \fBDate\fP &date)"
+.br
+.ti -1c
+.RI "int \fBoperator<=\fP (const \fBDate\fP &date)"
+.br
+.ti -1c
+.RI "int \fBoperator>\fP (const \fBDate\fP &date)"
+.br
+.ti -1c
+.RI "int \fBoperator>=\fP (const \fBDate\fP &date)"
+.br
+.ti -1c
+.RI "bool \fBoperator!\fP () const "
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBtoJulian\fP (long year, long month, long day)"
+.br
+.ti -1c
+.RI "void \fBfromJulian\fP (char *buf) const "
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP (void)"
+.br
+.RI "\fIA method to use to 'post' any changed values when shadowing a mixed object class. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "long \fBjulian\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "\fBDate\fP \fBoperator+\fP (const \fBDate\fP &date, const long val)"
+.br
+.ti -1c
+.RI "\fBDate\fP \fBoperator-\fP (const \fBDate\fP &date, const long val)"
+.br
+.ti -1c
+.RI "\fBDate\fP \fBoperator+\fP (const long val, const \fBDate\fP &date)"
+.br
+.ti -1c
+.RI "\fBDate\fP \fBoperator-\fP (const long val, const \fBDate\fP &date)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBDate\fP class uses a julian date representation of the current year, month, and day. 
+
+This is then manipulated in several forms and may be exported as needed.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> julian number based date class. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::Date::Date (time_t tm)"
+.SS "ost::Date::Date (tm * dt)"
+.SS "ost::Date::Date (char * str, size_t size = \fC0\fP)"
+.SS "ost::Date::Date (int year, unsigned month, unsigned day)"
+.SS "ost::Date::Date ()"
+.SS "virtual ost::Date::~Date ()\fC [virtual]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::Date::fromJulian (char * buf) const\fC [protected]\fP"
+.SS "time_t ost::Date::getDate (tm * buf) const"
+.SS "time_t ost::Date::getDate (void) const"
+.SS "char* ost::Date::getDate (char * buffer) const"
+.SS "unsigned ost::Date::getDay (void) const"
+.SS "unsigned ost::Date::getDayOfWeek (void) const"
+.SS "unsigned ost::Date::getMonth (void) const"
+.SS "long ost::Date::getValue (void) const"
+.SS "int ost::Date::getYear (void) const"
+.SS "bool ost::Date::isValid (void) const"
+.PP
+Reimplemented in \fBost::Datetime\fP.
+.SS "ost::Date::operator long () const\fC [inline]\fP"
+.SS "bool ost::Date::operator! (void) const\fC [inline]\fP"
+.PP
+Reimplemented in \fBost::Datetime\fP.
+.SS "int ost::Date::operator!= (const \fBDate\fP & date)"
+.PP
+Reimplemented in \fBost::Datetime\fP.
+.SS "\fBString\fP ost::Date::operator() () const"
+.SS "\fBDate\fP& ost::Date::operator++ ()"
+.SS "\fBDate\fP& ost::Date::operator+= (const long val)"
+.SS "\fBDate\fP& ost::Date::operator-- ()"
+.SS "\fBDate\fP& ost::Date::operator-= (const long val)"
+.SS "int ost::Date::operator< (const \fBDate\fP & date)"
+.PP
+Reimplemented in \fBost::Datetime\fP.
+.SS "int ost::Date::operator<= (const \fBDate\fP & date)"
+.PP
+Reimplemented in \fBost::Datetime\fP.
+.SS "int ost::Date::operator== (const \fBDate\fP & date)"
+.PP
+Reimplemented in \fBost::Datetime\fP.
+.SS "int ost::Date::operator> (const \fBDate\fP & date)"
+.PP
+Reimplemented in \fBost::Datetime\fP.
+.SS "int ost::Date::operator>= (const \fBDate\fP & date)"
+.PP
+Reimplemented in \fBost::Datetime\fP.
+.SS "void ost::Date::setDate (const char * str, size_t size = \fC0\fP)"
+.SS "void ost::Date::toJulian (long year, long month, long day)\fC [protected]\fP"
+.SS "virtual void ost::Date::update (void)\fC [protected, virtual]\fP"
+.PP
+A method to use to 'post' any changed values when shadowing a mixed object class. This is used by \fBDateNumber\fP. 
+.PP
+Reimplemented in \fBost::DateNumber\fP.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "\fBDate\fP operator+ (const long val, const \fBDate\fP & date)\fC [friend]\fP"
+.SS "\fBDate\fP operator+ (const \fBDate\fP & date, const long val)\fC [friend]\fP"
+.SS "\fBDate\fP operator- (const long val, const \fBDate\fP & date)\fC [friend]\fP"
+.SS "\fBDate\fP operator- (const \fBDate\fP & date, const long val)\fC [friend]\fP"
+.SH "Member Data Documentation"
+.PP 
+.SS "long \fBost::Date::julian\fP\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

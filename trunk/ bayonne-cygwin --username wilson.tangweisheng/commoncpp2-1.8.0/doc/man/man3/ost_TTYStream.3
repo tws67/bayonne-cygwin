@@ -1,0 +1,90 @@
+.TH "ost::ttystream" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::ttystream \- 
+.PP
+A more natural C++ 'ttystream' class for use by non-threaded applications.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <serial.h>\fP
+.PP
+Inherits \fBost::TTYStream\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBttystream\fP ()"
+.br
+.RI "\fIConstruct an unopened 'ttystream' object. \fP"
+.ti -1c
+.RI "\fBttystream\fP (const char *name)"
+.br
+.RI "\fIConstruct and 'open' a tty stream object. \fP"
+.ti -1c
+.RI "void \fBopen\fP (const char *name)"
+.br
+.RI "\fIOpen method for a tty stream. \fP"
+.ti -1c
+.RI "void \fBclose\fP (void)"
+.br
+.RI "\fIClose method for a tty stream. \fP"
+.ti -1c
+.RI "bool \fBoperator!\fP ()"
+.br
+.RI "\fITest to see if stream is opened. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A more natural C++ 'ttystream' class for use by non-threaded applications. 
+
+This class behaves a lot more like fstream and similar classes.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> C++ 'fstream' style \fBttystream\fP class. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::ttystream::ttystream ()"
+.PP
+Construct an unopened 'ttystream' object. 
+.SS "ost::ttystream::ttystream (const char * name)"
+.PP
+Construct and 'open' a tty stream object. A filename in the form 'device:options[,options]' may be used to pass device options as part of the open.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP of file and serial options. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::ttystream::close (void)"
+.PP
+Close method for a tty stream. 
+.PP
+Reimplemented from \fBost::Serial\fP.
+.SS "void ost::ttystream::open (const char * name)"
+.PP
+Open method for a tty stream. \fBParameters:\fP
+.RS 4
+\fIname\fP filename to open. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBost::Serial\fP.
+.SS "bool ost::ttystream::operator! (void)\fC [inline]\fP"
+.PP
+Test to see if stream is opened. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

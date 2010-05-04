@@ -1,0 +1,249 @@
+/* private.h.in.  Generated from configure.ac by autoheader.  */
+
+#ifndef W32
+#if defined(_WIN32) && defined(_MSC_VER)
+#define W32
+#endif
+#if defined(__BORLANDC__) && defined(__Windows)
+#define W32
+#endif
+#endif
+
+#if !defined(__EXPORT) && defined(W32)
+#define __EXPORT __declspec(dllexport)
+#endif
+
+#ifdef	W32
+#include "w32/private.h"
+#else	// w32 uses hardcoded config
+
+
+
+/* linking flags */
+#undef AUDIO_LIBRARY
+
+/* define codec path */
+#undef CODEC_LIBPATH
+
+/* module flags */
+#undef CODEC_MODFLAGS
+
+/* Define to 1 if you have the <alloca.h> header file. */
+#undef HAVE_ALLOCA_H
+
+/* Define to 1 if you have the <CoreAudio/CoreAudio.h> header file. */
+#undef HAVE_COREAUDIO_COREAUDIO_H
+
+/* Define to 1 if you have the <dlfcn.h> header file. */
+#undef HAVE_DLFCN_H
+
+/* have endian header */
+#undef HAVE_ENDIAN_H
+
+/* gsm header found */
+#undef HAVE_GSM_GSM_H
+
+/* gsm default header */
+#undef HAVE_GSM_H
+
+/* Define to 1 if you have the <inttypes.h> header file. */
+#undef HAVE_INTTYPES_H
+
+/* Define to 1 if you have the `malloc' library (-lmalloc). */
+#undef HAVE_LIBMALLOC
+
+/* mach dybloader */
+#undef HAVE_MACH_DYLD
+
+/* Define to 1 if you have the <mach-o/dyld.h> header file. */
+#undef HAVE_MACH_O_DYLD_H
+
+/* Define to 1 if you have the <memory.h> header file. */
+#undef HAVE_MEMORY_H
+
+/* support for plugin modules */
+#undef HAVE_MODULES
+
+/* posix threading header */
+#undef HAVE_PTHREAD_H
+
+/* have shload plugins */
+#undef HAVE_SHL_LOAD
+
+/* Define to 1 if you have the <stdint.h> header file. */
+#undef HAVE_STDINT_H
+
+/* Define to 1 if you have the <stdlib.h> header file. */
+#undef HAVE_STDLIB_H
+
+/* Define to 1 if you have the `strcasecmp' function. */
+#undef HAVE_STRCASECMP
+
+/* Define to 1 if you have the <strings.h> header file. */
+#undef HAVE_STRINGS_H
+
+/* Define to 1 if you have the <string.h> header file. */
+#undef HAVE_STRING_H
+
+/* solaris endian */
+#undef HAVE_SYS_ISA_DEFS_H
+
+/* Define to 1 if you have the <sys/soundcard.h> header file. */
+#undef HAVE_SYS_SOUNDCARD_H
+
+/* Define to 1 if you have the <sys/stat.h> header file. */
+#undef HAVE_SYS_STAT_H
+
+/* Define to 1 if you have the <sys/types.h> header file. */
+#undef HAVE_SYS_TYPES_H
+
+/* Define to 1 if you have the <unistd.h> header file. */
+#undef HAVE_UNISTD_H
+
+/* Define to the sub-directory in which libtool stores uninstalled libraries.
+   */
+#undef LT_OBJDIR
+
+/* OSX Core Audio */
+#undef OSX_AUDIO
+
+/* Name of package */
+#undef PACKAGE
+
+/* Define to the address where bug reports for this package should be sent. */
+#undef PACKAGE_BUGREPORT
+
+/* Define to the full name of this package. */
+#undef PACKAGE_NAME
+
+/* Define to the full name and version of this package. */
+#undef PACKAGE_STRING
+
+/* Define to the one symbol short name of this package. */
+#undef PACKAGE_TARNAME
+
+/* Define to the version of this package. */
+#undef PACKAGE_VERSION
+
+/* Define to 1 if you have the ANSI C header files. */
+#undef STDC_HEADERS
+
+/* Version number of package */
+#undef VERSION
+
+/* endian byte order */
+#undef __BYTE_ORDER
+
+/* Define to `__inline__' or `__inline' if that's what the C compiler
+   calls it, or to nothing if 'inline' is not supported under any name.  */
+#ifndef __cplusplus
+#undef inline
+#endif
+
+/* Define to equivalent of C99 restrict keyword, or to nothing if this is not
+   supported. Do not define if restrict is supported directly. */
+#undef restrict
+
+/* Define to empty if the keyword `volatile' does not work. Warning: valid
+   code using `volatile' can become incorrect without. Disable with care. */
+#undef volatile
+
+#ifndef	NO_CPP
+
+// hidden mutex class
+
+#ifdef	HAVE_PTHREAD_H
+#include <pthread.h>
+#endif
+
+class ccAudio_Mutex_
+{
+private:
+#ifdef	HAVE_PTHREAD_H
+        pthread_mutex_t mutex;
+#endif
+
+public:
+        ccAudio_Mutex_();
+        ~ccAudio_Mutex_();
+        void enter(void);
+        void leave(void);
+}; 
+
+#endif
+#endif // end of internal configures
+
+
+
+
+#if defined(HAVE_ENDIAN_H)
+ #include <endian.h>
+#elif defined(HAVE_SYS_ISA_DEFS_H)
+ #include <sys/isa_defs.h>
+ #ifdef	_LITTLE_ENDIAN
+  #define	__BYTE_ORDER 1234
+ #else
+  #define	__BYTE_ORDER 4321
+ #endif
+ #if _ALIGNMENT_REQUIRED > 0
+  #define	__BYTE_ALIGNMENT _MAX_ALIGNMENT
+ #else
+  #define	__BYTE_ALIGNMENT 1
+ #endif
+#endif
+
+#ifndef	__LITTLE_ENDIAN
+#define __LITTLE_ENDIAN 1234
+#define __BIG_ENDIAN 4321
+#endif
+
+#ifndef	__BYTE_ORDER
+#define	__BYTE_ORDER 1234
+#endif
+
+#ifndef	__BYTE_ALIGNMENT
+#if defined(SPARC) || defined(sparc)
+#if defined(__arch64__) || defined(__sparcv9)
+#define	__BYTE_ALIGNMENT 8
+#else
+#define	__BYTE_ALIGNMENT 4
+#endif
+#endif
+#endif
+
+#ifndef	__BYTE_ALIGNMENT
+#define	__BYTE_ALIGNMENT 1
+#endif
+
+	
+
+
+#ifndef	NO_CPP
+#include <cstring>
+#endif
+#ifdef HAVE_STRINGS_H
+#include <strings.h>
+#endif
+
+#ifdef HAVE_ALLOCA_H
+#include <alloca.h>
+#endif
+
+#ifndef HAVE_SNPRINTF
+#ifdef  WIN32
+#define snprintf        _snprintf
+#define vsnprintf       _vsnprintf
+#endif
+#endif
+
+#ifdef HAVE_STRCASECMP
+#ifndef stricmp
+#define stricmp(x,y) strcasecmp(x,y)
+#endif
+#ifndef strnicmp
+#define strnicmp(x,y,n) strncasecmp(x,y,n)
+#endif
+#endif
+
+
+	

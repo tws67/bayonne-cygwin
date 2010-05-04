@@ -1,0 +1,950 @@
+.TH "ost" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBIPV4Validator\fP"
+.br
+.RI "\fIClasses derived from \fBIPV4Address\fP would require an specific validator to pass to the \fBIPV4Address\fP constructor. \fP"
+.ti -1c
+.RI "class \fBIPV4MulticastValidator\fP"
+.br
+.RI "\fIClass for the function object that validates multicast addresses. \fP"
+.ti -1c
+.RI "class \fBIPV4Cidr\fP"
+.br
+.RI "\fIThe CIDR class is used to support routing tables and validate address policies. \fP"
+.ti -1c
+.RI "class \fBIPV6Cidr\fP"
+.br
+.RI "\fIThe CIDR class is used to support routing tables and validate address policies. \fP"
+.ti -1c
+.RI "class \fBIPV4Address\fP"
+.br
+.RI "\fIThe network name and address objects are all derived from a common \fBIPV4Address\fP base class. \fP"
+.ti -1c
+.RI "class \fBIPV4Mask\fP"
+.br
+.RI "\fIInternet addresses used specifically as masking addresses (such as '
+ 255.255.255.0') are held in the \fBIPV4Mask\fP derived object. \fP"
+.ti -1c
+.RI "class \fBIPV4Host\fP"
+.br
+.RI "\fIThis object is used to hold the actual and valid internet address of a specific host machine that will be accessed through a socket. \fP"
+.ti -1c
+.RI "class \fBIPV4Broadcast\fP"
+.br
+.RI "\fIThe broadcast address object is used to store the broadcast address for a specific subnet. \fP"
+.ti -1c
+.RI "class \fBIPV4Multicast\fP"
+.br
+.RI "\fIA specialization of \fBIPV4Address\fP that provides address validation for multicast addresses. \fP"
+.ti -1c
+.RI "class \fBIPV6Validator\fP"
+.br
+.RI "\fIClasses derived from \fBIPV6Address\fP would require an specific validator to pass to the \fBIPV6Address\fP constructor. \fP"
+.ti -1c
+.RI "class \fBIPV6MulticastValidator\fP"
+.br
+.RI "\fIClass for the function object that validates multicast addresses. \fP"
+.ti -1c
+.RI "class \fBIPV6Address\fP"
+.br
+.RI "\fIThe network name and address objects are all derived from a common \fBIPV6Address\fP base class. \fP"
+.ti -1c
+.RI "class \fBIPV6Mask\fP"
+.br
+.RI "\fIInternet addresses used specifically as masking addresses (such as '
+ 255.255.255.0') are held in the \fBIPV6Mask\fP derived object. \fP"
+.ti -1c
+.RI "class \fBIPV6Host\fP"
+.br
+.RI "\fIThis object is used to hold the actual and valid internet address of a specific host machine that will be accessed through a socket. \fP"
+.ti -1c
+.RI "class \fBIPV6Broadcast\fP"
+.br
+.RI "\fIThe broadcast address object is used to store the broadcast address for a specific subnet. \fP"
+.ti -1c
+.RI "class \fBIPV6Multicast\fP"
+.br
+.RI "\fIA specialization of \fBIPV6Address\fP that provides address validation for multicast addresses. \fP"
+.ti -1c
+.RI "class \fBHEXdump\fP"
+.br
+.RI "\fIProduces a dump of a buffer in a hexdump way with its code Ascii translation and relative buffer address. \fP"
+.ti -1c
+.RI "class \fBAppLogException\fP"
+.br
+.RI "\fIApplog exception, used for memory problems at the moment. \fP"
+.ti -1c
+.RI "class \fBAppLog\fP"
+.br
+.RI "\fIApplication logger is a class that implements a logger that can be used by applications to save log file somewhere on the system. \fP"
+.ti -1c
+.RI "class \fBBuffer\fP"
+.br
+.RI "\fIThe buffer class represents an IPC service that is built upon a buffer of fixed capacity that can be used to transfer objects between one or more producer and consumer threads. \fP"
+.ti -1c
+.RI "class \fBFixedBuffer\fP"
+.br
+.RI "\fIA buffer class that holds a known capacity of fixed sized objects defined during creation. \fP"
+.ti -1c
+.RI "class \fBThreadQueue\fP"
+.br
+.RI "\fISomewhat generic queue processing class to establish a producer consumer queue. \fP"
+.ti -1c
+.RI "class \fBCommandOption\fP"
+.br
+.RI "\fI\fBCommandOption\fP is the base class for all command line options. \fP"
+.ti -1c
+.RI "class \fBCommandOptionWithArg\fP"
+.br
+.RI "\fIDerived class of \fBCommandOption\fP for options that have a value associated with them. \fP"
+.ti -1c
+.RI "class \fBCommandOptionArg\fP"
+.br
+.RI "\fIClass for options with an argument e.g. \fP"
+.ti -1c
+.RI "class \fBCommandOptionRest\fP"
+.br
+.RI "\fIIt only makes sense to have a single one of these set and it is exclusive with \fBCommandOptionCollect\fP. \fP"
+.ti -1c
+.RI "class \fBCommandOptionCollect\fP"
+.br
+.RI "\fIIt only makes sense to have a single one of these set and it is also exclusive with \fBCommandOptionRest\fP. \fP"
+.ti -1c
+.RI "class \fBCommandOptionNoArg\fP"
+.br
+.RI "\fI\fBCommandOption\fP type for flags. \fP"
+.ti -1c
+.RI "class \fBCommandOptionParse\fP"
+.br
+.RI "\fIThis is the \fBCommandOptionParse\fP interface class. \fP"
+.ti -1c
+.RI "class \fBCounter\fP"
+.br
+.RI "\fIThe counter template is used for generic objects which act as automatic counters. \fP"
+.ti -1c
+.RI "class \fBDigest\fP"
+.br
+.RI "\fIThe digest base class is used for implementing and deriving one way hashing functions. \fP"
+.ti -1c
+.RI "class \fBChecksumDigest\fP"
+.br
+.RI "\fIA simple checksum digest function. \fP"
+.ti -1c
+.RI "class \fBCRC16Digest\fP"
+.br
+.RI "\fIA crc16 collection/compution hash accumulator class. \fP"
+.ti -1c
+.RI "class \fBCRC32Digest\fP"
+.br
+.RI "\fIA crc32 collection/computation hash accumulator class. \fP"
+.ti -1c
+.RI "class \fBMD5Digest\fP"
+.br
+.RI "\fIA md5 collection/computation accululator class. \fP"
+.ti -1c
+.RI "class \fBException\fP"
+.br
+.RI "\fIMainline exception handler, this is the root for all Common C++ exceptions and assures the ansi C++ exception class hierarchy is both followed and imported into the gnu Common C++ class hierarchy. \fP"
+.ti -1c
+.RI "class \fBIOException\fP"
+.br
+.RI "\fIA sub-hierarchy for all Common C++ I/O related classes. \fP"
+.ti -1c
+.RI "class \fBThrException\fP"
+.br
+.RI "\fIA sub-hierarchy for thread exceptions. \fP"
+.ti -1c
+.RI "class \fBSyncException\fP"
+.br
+.RI "\fIA sub-hierarchy for all task synchronizion related exceptions. \fP"
+.ti -1c
+.RI "class \fBInterruptException\fP"
+.br
+.ti -1c
+.RI "class \fBFile\fP"
+.br
+.ti -1c
+.RI "class \fBDir\fP"
+.br
+.RI "\fIA low level portable directory class. \fP"
+.ti -1c
+.RI "class \fBDirTree\fP"
+.br
+.RI "\fIA generic class to walk a hierarchical directory structure. \fP"
+.ti -1c
+.RI "class \fBRandomFile\fP"
+.br
+.RI "\fIThe purpose of this class is to define a base class for low level random file access that is portable between Win32 and Posix systems. \fP"
+.ti -1c
+.RI "class \fBThreadFile\fP"
+.br
+.RI "\fIThis class defines a database I/O file service that can be shared by multiple threads. \fP"
+.ti -1c
+.RI "class \fBSharedFile\fP"
+.br
+.RI "\fIThis class defines a database I/O file service that can be shared by multiple processes. \fP"
+.ti -1c
+.RI "class \fBMappedFile\fP"
+.br
+.RI "\fICreate and map a disk file into memory. \fP"
+.ti -1c
+.RI "class \fBDSO\fP"
+.br
+.RI "\fIThe \fBDSO\fP dynamic loader class is used to load object files. \fP"
+.ti -1c
+.RI "class \fBDirException\fP"
+.br
+.ti -1c
+.RI "class \fBDSOException\fP"
+.br
+.ti -1c
+.RI "class \fBFileException\fP"
+.br
+.ti -1c
+.RI "class \fBMIMEMultipart\fP"
+.br
+.RI "\fIA container class for multi-part MIME document objects which can be streamed to a std::ostream destination. \fP"
+.ti -1c
+.RI "class \fBMIMEMultipartForm\fP"
+.br
+.RI "\fIThe Multipart form is a MIME multipart document specific for the construction and delivery of form data to a web server through a post method. \fP"
+.ti -1c
+.RI "class \fBMIMEItemPart\fP"
+.br
+.RI "\fIThis is used to attach an item part to a MIME multipart document that is being streamed. \fP"
+.ti -1c
+.RI "class \fBMIMEFormData\fP"
+.br
+.RI "\fIThis is a document part type for use in submitting multipart form data to a web server. \fP"
+.ti -1c
+.RI "class \fBMemPager\fP"
+.br
+.RI "\fIThe memory pager is used to allocate cumulative memory pages for storing object specific 'persistant' data that is presumed to persist during the life of a given derived object. \fP"
+.ti -1c
+.RI "class \fBStackPager\fP"
+.br
+.RI "\fIThe \fBStackPager\fP provides a repository to stash and retrieve working data in last-in-first-out order. \fP"
+.ti -1c
+.RI "class \fBSharedMemPager\fP"
+.br
+.RI "\fIThe shared mempager uses a mutex to protect key access methods. \fP"
+.ti -1c
+.RI "class \fBKeydata\fP"
+.br
+.RI "\fI\fBKeydata\fP objects are used to load and hold 'configuration' data for a given application. \fP"
+.ti -1c
+.RI "class \fBMemPagerObject\fP"
+.br
+.RI "\fIThis class is used to create derived classes which are constructed within a memory pager pool. \fP"
+.ti -1c
+.RI "class \fBAssoc\fP"
+.br
+.RI "\fIThis class is used to associate (object) pointers with named strings. \fP"
+.ti -1c
+.RI "class \fBRunlist\fP"
+.br
+.RI "\fIA runlist is used to restrict concurrent exection to a limited set of concurrent sessions, much like a semaphore. \fP"
+.ti -1c
+.RI "class \fBRunable\fP"
+.br
+.RI "\fIA container for objects that can be queued against a runlist. \fP"
+.ti -1c
+.RI "class \fBNetworkDeviceInfo\fP"
+.br
+.RI "\fINetwork device information class. \fP"
+.ti -1c
+.RI "class \fBNumber\fP"
+.br
+.RI "\fIA number manipulation class. \fP"
+.ti -1c
+.RI "class \fBZNumber\fP"
+.br
+.ti -1c
+.RI "class \fBDate\fP"
+.br
+.RI "\fIThe \fBDate\fP class uses a julian date representation of the current year, month, and day. \fP"
+.ti -1c
+.RI "class \fBTime\fP"
+.br
+.RI "\fIThe \fBTime\fP class uses a integer representation of the current time. \fP"
+.ti -1c
+.RI "class \fBDatetime\fP"
+.br
+.RI "\fIThe \fBDatetime\fP class uses a julian date representation of the current year, month, and day and a integer representation of the current time. \fP"
+.ti -1c
+.RI "class \fBDateNumber\fP"
+.br
+.RI "\fIA number class that manipulates a string buffer that is also a date. \fP"
+.ti -1c
+.RI "class \fBobjCounter\fP"
+.br
+.RI "\fIGeneric template class for creating classes which maintain an active count of the number of instances currently in active use. \fP"
+.ti -1c
+.RI "class \fBRefObject\fP"
+.br
+.RI "\fIA reference countable object. \fP"
+.ti -1c
+.RI "class \fBRefPointer\fP"
+.br
+.RI "\fI\fBPointer\fP to reference counted objects. \fP"
+.ti -1c
+.RI "class \fBLinkedSingle\fP"
+.br
+.RI "\fISelf managed single linked list object chain. \fP"
+.ti -1c
+.RI "class \fBLinkedDouble\fP"
+.br
+.RI "\fISelf managed double linked list object chain. \fP"
+.ti -1c
+.RI "class \fBMapTable\fP"
+.br
+.RI "\fIA map table allows for entities to be mapped (hash index) onto it. \fP"
+.ti -1c
+.RI "class \fBMapIndex\fP"
+.br
+.RI "\fIThe \fBMapIndex\fP allows linear access into a \fBMapTable\fP, that otherwise could have its elements being retrieved only by key. \fP"
+.ti -1c
+.RI "class \fBMapObject\fP"
+.br
+.RI "\fIThe \fBMapObject\fP is a base class which can be used to make a derived class operate on a \fBMapTable\fP. \fP"
+.ti -1c
+.RI "class \fBobjList\fP"
+.br
+.RI "\fIUsed to create and manage a single linked list of objects of a common type. \fP"
+.ti -1c
+.RI "class \fBobjMap\fP"
+.br
+.RI "\fIUsed to create and manage a hash index of objects through a common type. \fP"
+.ti -1c
+.RI "class \fBkeyMap\fP"
+.br
+.ti -1c
+.RI "class \fBobjSync\fP"
+.br
+.RI "\fIGeneric template to create objects of a common base type which share a static mutex so that all instances of the class have a global lock. \fP"
+.ti -1c
+.RI "struct \fBcistring_char_traits\fP"
+.br
+.ti -1c
+.RI "class \fBPersistException\fP"
+.br
+.ti -1c
+.RI "class \fBTypeManager\fP"
+.br
+.RI "\fIThis class manages the types for generation of the persistent objects. \fP"
+.ti -1c
+.RI "class \fBBaseObject\fP"
+.br
+.RI "\fI\fBBaseObject\fP. \fP"
+.ti -1c
+.RI "class \fBEngine\fP"
+.br
+.RI "\fI\fBEngine\fP. \fP"
+.ti -1c
+.RI "class \fBPointer\fP"
+.br
+.RI "\fIUsed to create and manage referece counted pointers. \fP"
+.ti -1c
+.RI "class \fBProcess\fP"
+.br
+.RI "\fIA class for containing portable process related functions that help create portable code. \fP"
+.ti -1c
+.RI "class \fBLockfile\fP"
+.br
+.RI "\fIThis class is used to create a 'named' lock entity that can be used to control access to a resource between multiple processes. \fP"
+.ti -1c
+.RI "class \fBSerial\fP"
+.br
+.RI "\fIThe \fBSerial\fP class is used as the base for all serial I/O services under APE. \fP"
+.ti -1c
+.RI "class \fBTTYStream\fP"
+.br
+.RI "\fITTY streams are used to represent serial connections that are fully 'streamable' objects using C++ stream classes and friends. \fP"
+.ti -1c
+.RI "class \fBttystream\fP"
+.br
+.RI "\fIA more natural C++ 'ttystream' class for use by non-threaded applications. \fP"
+.ti -1c
+.RI "class \fBTTYSession\fP"
+.br
+.RI "\fIThe \fBTTYSession\fP aggragates a \fBTTYStream\fP and a Common C++ \fBThread\fP which is assumed to be the execution context that will be used to perform actual I/O operations. \fP"
+.ti -1c
+.RI "class \fBSerialPort\fP"
+.br
+.RI "\fIThe serial port is an internal class which is attached to and then serviced by a specified \fBSerialService\fP thread. \fP"
+.ti -1c
+.RI "class \fBSerialService\fP"
+.br
+.RI "\fIThe \fBSerialService\fP is a thead service object that is meant to service attached serial ports. \fP"
+.ti -1c
+.RI "class \fBSerException\fP"
+.br
+.ti -1c
+.RI "class \fBSlog\fP"
+.br
+.RI "\fIThe slog class is used to stream messages to the system's logging facility (syslogd). \fP"
+.ti -1c
+.RI "class \fBSocket\fP"
+.br
+.RI "\fIThe \fBSocket\fP is used as the base for all Internet protocol services under Common C++. \fP"
+.ti -1c
+.RI "class \fBDCCPSocket\fP"
+.br
+.RI "\fIDCCP sockets are used for stream based connected sessions between two sockets. \fP"
+.ti -1c
+.RI "class \fBUDPSocket\fP"
+.br
+.RI "\fIUDP sockets implement the TCP SOCK_DGRAM UDP protocol. \fP"
+.ti -1c
+.RI "class \fBUDPBroadcast\fP"
+.br
+.RI "\fIRepresenting a UDP socket used for subnet broadcasts, this class provides an alternate binding and setPeer() capability for UDP sockets. \fP"
+.ti -1c
+.RI "class \fBUDPTransmit\fP"
+.br
+.RI "\fIRepresenting half of a two-way UDP connection, the UDP transmitter can broadcast data to another selected peer host or to an entire subnet. \fP"
+.ti -1c
+.RI "class \fBUDPReceive\fP"
+.br
+.RI "\fIRepresenting half of a two-way UDP connection, the UDP receiver can receive data from another peer host or subnet. \fP"
+.ti -1c
+.RI "class \fBUDPDuplex\fP"
+.br
+.RI "\fIUDP duplex connections impliment a bi-directional point-to-point UDP session between two peer hosts. \fP"
+.ti -1c
+.RI "class \fBTCPSocket\fP"
+.br
+.RI "\fITCP sockets are used for stream based connected sessions between two sockets. \fP"
+.ti -1c
+.RI "class \fBTCPV6Socket\fP"
+.br
+.RI "\fITCPV6 sockets are used for stream based connected sessions between two ipv6 sockets. \fP"
+.ti -1c
+.RI "class \fBTCPStream\fP"
+.br
+.RI "\fITCP streams are used to represent TCP client connections to a server by TCP protocol servers for accepting client connections. \fP"
+.ti -1c
+.RI "class \fBTCPSession\fP"
+.br
+.RI "\fIThe TCP session is used to primarily to represent a client connection that can be managed on a seperate thread. \fP"
+.ti -1c
+.RI "class \fBSimpleTCPStream\fP"
+.br
+.RI "\fISimple TCP Stream, to be used with Common C++ Library. \fP"
+.ti -1c
+.RI "class \fBSockException\fP"
+.br
+.ti -1c
+.RI "class \fBSocketPort\fP"
+.br
+.RI "\fIThe socket port is an internal class which is attached to and then serviced by a specific \fBSocketService\fP 'object'. \fP"
+.ti -1c
+.RI "class \fBSocketService\fP"
+.br
+.RI "\fIThe \fBSocketService\fP is a thread pool object that is meant to service attached socket ports. \fP"
+.ti -1c
+.RI "class \fBSSLStream\fP"
+.br
+.ti -1c
+.RI "class \fBString\fP"
+.br
+.RI "\fIThis is a generic and portable string class. \fP"
+.ti -1c
+.RI "class \fBSString\fP"
+.br
+.ti -1c
+.RI "class \fBStringObject\fP"
+.br
+.RI "\fIThe \fBStringObject\fP class is used to derive subclasses that use the \fBString\fP managed memory pool for all space allocations by overriding new and delete operators. \fP"
+.ti -1c
+.RI "class \fBMutex\fP"
+.br
+.RI "\fIThe \fBMutex\fP class is used to protect a section of code so that at any given time only a single thread can perform the protected operation. \fP"
+.ti -1c
+.RI "class \fBMutexLock\fP"
+.br
+.RI "\fIThe \fBMutexLock\fP class is used to protect a section of code so that at any given time only a single thread can perform the protected operation. \fP"
+.ti -1c
+.RI "class \fBThreadLock\fP"
+.br
+.RI "\fIThe \fBThreadLock\fP class impliments a thread rwlock for optimal reader performance on systems which have rwlock support, and reverts to a simple mutex for those that do not. \fP"
+.ti -1c
+.RI "class \fBReadLock\fP"
+.br
+.RI "\fIThe \fBReadLock\fP class is used to protect a section of code through a \fBThreadLock\fP for 'read' access to the member function. \fP"
+.ti -1c
+.RI "class \fBWriteLock\fP"
+.br
+.RI "\fIThe \fBWriteLock\fP class is used to protect a section of code through a \fBThreadLock\fP for 'write' access to the member function. \fP"
+.ti -1c
+.RI "class \fBMutexCounter\fP"
+.br
+.RI "\fIThe \fBMutex\fP \fBCounter\fP is a counter variable which can safely be incremented or decremented by multiple threads. \fP"
+.ti -1c
+.RI "class \fBAtomicCounter\fP"
+.br
+.RI "\fIThe \fBAtomicCounter\fP class offers thread-safe manipulation of an integer counter. \fP"
+.ti -1c
+.RI "class \fBConditional\fP"
+.br
+.RI "\fIA conditional variable synchcronization object for one to one and one to many signal and control events between processes. \fP"
+.ti -1c
+.RI "class \fBSemaphore\fP"
+.br
+.RI "\fIA semaphore is generally used as a synchronization object between multiple threads or to protect a limited and finite resource such as a memory or thread pool. \fP"
+.ti -1c
+.RI "class \fBSemaphoreLock\fP"
+.br
+.RI "\fIThe \fBSemaphoreLock\fP class is used to protect a section of code through a semaphore so that only x instances of the member function may execute concurrently. \fP"
+.ti -1c
+.RI "class \fBEvent\fP"
+.br
+.RI "\fIThe \fBEvent\fP class implements a feature originally found in the WIN32 API; event notification. \fP"
+.ti -1c
+.RI "class \fBThread\fP"
+.br
+.RI "\fIEvery thread of execution in an application is created by instantiating an object of a class derived from the \fBThread\fP class. \fP"
+.ti -1c
+.RI "class \fBCancellation\fP"
+.br
+.RI "\fIA class to automatically set the thread cancellation mode of a member function. \fP"
+.ti -1c
+.RI "class \fBPosixThread\fP"
+.br
+.ti -1c
+.RI "class \fBThreadKey\fP"
+.br
+.RI "\fIThis class allows the creation of a thread context unique 'pointer' that can be set and retrieved and can be used to create thread specific data areas for implementing 'thread safe' library routines. \fP"
+.ti -1c
+.RI "class \fBTimerPort\fP"
+.br
+.RI "\fITimer ports are used to provide synchronized timing events when managed under a 'service thread' such as \fBSocketService\fP. \fP"
+.ti -1c
+.RI "class \fBSysTime\fP"
+.br
+.RI "\fIThis class is used to access non-reentrant date and time functions in the standard C library. \fP"
+.ti -1c
+.RI "class \fBStringTokenizer\fP"
+.br
+.RI "\fISplits delimited string into tokens. \fP"
+.ti -1c
+.RI "class \fBUnixSocket\fP"
+.br
+.RI "\fIUnix domain sockets are used for stream based connected sessions between processes on the same machine. \fP"
+.ti -1c
+.RI "class \fBUnixStream\fP"
+.br
+.RI "\fIUnix streams are used to represent Unix domain client connections to a local server for accepting client connections. \fP"
+.ti -1c
+.RI "class \fBunixstream\fP"
+.br
+.RI "\fIA more natural C++ 'unixstream' class for use by non-threaded applications. \fP"
+.ti -1c
+.RI "class \fBUnixSession\fP"
+.br
+.RI "\fIThe Unix domain session is used to primarily to represent a client connection that can be managed on a seperate thread. \fP"
+.ti -1c
+.RI "class \fBURLStream\fP"
+.br
+.RI "\fIA URL processing version of \fBTCPStream\fP. \fP"
+.ti -1c
+.RI "class \fBXMLStream\fP"
+.br
+.RI "\fIThis class impliments a basic XML stream parser that can be used to examine an XML resource thru virtual I/O methods. \fP"
+.ti -1c
+.RI "class \fBXMLRPC\fP"
+.br
+.RI "\fIThis class impliments a core \fBXMLRPC\fP service without the underlying transports. \fP"
+.ti -1c
+.RI "class \fBIOZException\fP"
+.br
+.ti -1c
+.RI "class \fBIZStream\fP"
+.br
+.ti -1c
+.RI "class \fBOZStream\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef unsigned short \fBtpport_t\fP"
+.br
+.RI "\fITransport Protocol Ports. \fP"
+.ti -1c
+.RI "typedef unsigned long \fBpos_t\fP"
+.br
+.ti -1c
+.RI "typedef size_t \fBccxx_size_t\fP"
+.br
+.ti -1c
+.RI "typedef std::string_char_traits< char > \fBcstring_char_traits\fP"
+.br
+.ti -1c
+.RI "typedef std::basic_string< char > \fBcstring\fP"
+.br
+.ti -1c
+.RI "typedef std::basic_string< char, \fBcistring_char_traits\fP< char > > \fBcistring\fP"
+.br
+.ti -1c
+.RI "typedef class \fBBaseObject\fP *(* \fBNewBaseObjectFunction\fP )(void)"
+.br
+.ti -1c
+.RI "typedef int \fBsigno_t\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "__EXPORT std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBIPV4Address\fP &ia)"
+.br
+.ti -1c
+.RI "struct in_addr \fBgetaddress\fP (const \fBIPV4Address\fP &ia)"
+.br
+.ti -1c
+.RI "__EXPORT std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBIPV6Address\fP &ia)"
+.br
+.ti -1c
+.RI "struct in6_addr \fBgetaddress\fP (const \fBIPV6Address\fP &ia)"
+.br
+.ti -1c
+.RI "__EXPORT \fBAppLog\fP & \fBdebug\fP (\fBAppLog\fP &sl)"
+.br
+.RI "\fIManipulator for debug level. \fP"
+.ti -1c
+.RI "__EXPORT \fBAppLog\fP & \fBwarn\fP (\fBAppLog\fP &sl)"
+.br
+.RI "\fIManipulator for warn level. \fP"
+.ti -1c
+.RI "__EXPORT \fBAppLog\fP & \fBerror\fP (\fBAppLog\fP &sl)"
+.br
+.RI "\fIManipulator for error level. \fP"
+.ti -1c
+.RI "__EXPORT \fBAppLog\fP & \fBemerg\fP (\fBAppLog\fP &sl)"
+.br
+.RI "\fIManipulator for emerg level. \fP"
+.ti -1c
+.RI "__EXPORT \fBAppLog\fP & \fBalert\fP (\fBAppLog\fP &sl)"
+.br
+.RI "\fIManipulator for alert level. \fP"
+.ti -1c
+.RI "__EXPORT \fBAppLog\fP & \fBcritical\fP (\fBAppLog\fP &sl)"
+.br
+.RI "\fIManipulator for critical level. \fP"
+.ti -1c
+.RI "__EXPORT \fBAppLog\fP & \fBnotice\fP (\fBAppLog\fP &sl)"
+.br
+.RI "\fIManipulator for notice level. \fP"
+.ti -1c
+.RI "__EXPORT \fBAppLog\fP & \fBinfo\fP (\fBAppLog\fP &sl)"
+.br
+.RI "\fIManipulator for info level. \fP"
+.ti -1c
+.RI "__EXPORT \fBCommandOptionParse\fP * \fBmakeCommandOptionParse\fP (int argc, char **argv, const char *comment, \fBCommandOption\fP *options=\fBdefaultCommandOptionList\fP)"
+.br
+.RI "\fImakeCommandOptionParse will create an implementation of a \fBCommandOptionParse\fP object. \fP"
+.ti -1c
+.RI "template<typename T > const T & \fBabs\fP (const T &v)"
+.br
+.ti -1c
+.RI "void \fBendKeydata\fP (void)"
+.br
+.ti -1c
+.RI "unsigned long \fBgetTicks\fP (void)"
+.br
+.ti -1c
+.RI "char * \fBlsetField\fP (char *target, size_t size, const char *src, const char fill=0)"
+.br
+.ti -1c
+.RI "char * \fBrsetField\fP (char *target, size_t size, const char *src, const char fill=0)"
+.br
+.ti -1c
+.RI "char * \fBsetString\fP (char *target, size_t size, const char *src)"
+.br
+.ti -1c
+.RI "char * \fBaddString\fP (char *target, size_t size, const char *src)"
+.br
+.ti -1c
+.RI "char * \fBnewString\fP (const char *src, size_t size=0)"
+.br
+.ti -1c
+.RI "void \fBdelString\fP (char *str)"
+.br
+.ti -1c
+.RI "char * \fBsetUpper\fP (char *string, size_t size)"
+.br
+.ti -1c
+.RI "char * \fBsetLower\fP (char *string, size_t size)"
+.br
+.ti -1c
+.RI "char * \fBfind\fP (const char *cs, char *str, size_t len=0)"
+.br
+.ti -1c
+.RI "char * \fBrfind\fP (const char *cs, char *str, size_t len=0)"
+.br
+.ti -1c
+.RI "char * \fBifind\fP (const char *cs, char *str, size_t len=0)"
+.br
+.ti -1c
+.RI "char * \fBstrip\fP (const char *cs, char *str, size_t len=0)"
+.br
+.ti -1c
+.RI "size_t \fBstrchop\fP (const char *cs, char *str, size_t len=0)"
+.br
+.ti -1c
+.RI "size_t \fBstrtrim\fP (const char *cs, char *str, size_t len=0)"
+.br
+.ti -1c
+.RI "char * \fBdupString\fP (const char *src, size_t size=0)"
+.br
+.ti -1c
+.RI "struct timespec * \fBgetTimeout\fP (struct timespec *spec, \fBtimeout_t\fP timeout)"
+.br
+.ti -1c
+.RI "void \fBwait\fP (\fBsigno_t\fP signo)"
+.br
+.ti -1c
+.RI "\fBThread\fP * \fBgetThread\fP (void)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "class __EXPORT \fBIPV4Host\fP"
+.br
+.ti -1c
+.RI "class __EXPORT \fBIPV6Host\fP"
+.br
+.ti -1c
+.RI "__EXPORT \fBAppLog\fP \fBalog\fP"
+.br
+.RI "\fIalog global log stream definition \fP"
+.ti -1c
+.RI "__EXPORT \fBCommandOption\fP * \fBdefaultCommandOptionList\fP"
+.br
+.RI "\fIThis defines a linked list head pointer for all the command line options that use the default list. \fP"
+.ti -1c
+.RI "\fBSlog\fP \fBslog\fP"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef size_t \fBost::ccxx_size_t\fP"
+.SS "typedef std::basic_string<char, \fBcistring_char_traits\fP<char> > \fBost::cistring\fP"
+.SS "typedef std::basic_string<char> \fBost::cstring\fP"
+.SS "typedef std::string_char_traits<char> \fBost::cstring_char_traits\fP"
+.SS "typedef class \fBBaseObject\fP*(* \fBost::NewBaseObjectFunction\fP)(void)"
+.SS "typedef unsigned long \fBost::pos_t\fP"
+.SS "typedef int \fBost::signo_t\fP"
+.SS "typedef unsigned short \fBost::tpport_t\fP"
+.PP
+Transport Protocol Ports. 
+.PP
+\fBExamples: \fP
+.in +1c
+\fBSampleSocketPort.cpp\fP, \fBtcp.cpp\fP, \fBtcpservice.cpp\fP, and \fBtcpthread.cpp\fP.
+.SH "Function Documentation"
+.PP 
+.SS "template<typename T > const T& ost::abs (const T & v)\fC [inline]\fP"
+.SS "char* ost::addString (char * target, size_t size, const char * src)"
+.SS "__EXPORT \fBAppLog\fP& ost::alert (AppLog & sl)\fC [inline]\fP"
+.PP
+Manipulator for alert level. \fBParameters:\fP
+.RS 4
+\fIsl\fP application logger stream 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+application logger stream 
+.RE
+.PP
+
+.PP
+References ost::Slog::levelAlert.
+.SS "__EXPORT \fBAppLog\fP& ost::critical (AppLog & sl)\fC [inline]\fP"
+.PP
+Manipulator for critical level. \fBParameters:\fP
+.RS 4
+\fIsl\fP application logger stream 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+application logger stream 
+.RE
+.PP
+
+.PP
+References ost::Slog::levelCritical.
+.SS "__EXPORT \fBAppLog\fP& ost::debug (AppLog & sl)\fC [inline]\fP"
+.PP
+Manipulator for debug level. \fBParameters:\fP
+.RS 4
+\fIsl\fP application logger stream 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+application logger stream 
+.RE
+.PP
+
+.PP
+References ost::Slog::levelDebug.
+.SS "void ost::delString (char * str)"
+.SS "char* ost::dupString (const char * src, size_t size = \fC0\fP)\fC [inline]\fP"
+.PP
+References newString().
+.SS "__EXPORT \fBAppLog\fP& ost::emerg (AppLog & sl)\fC [inline]\fP"
+.PP
+Manipulator for emerg level. \fBParameters:\fP
+.RS 4
+\fIsl\fP application logger stream 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+application logger stream 
+.RE
+.PP
+
+.PP
+References ost::Slog::levelEmergency.
+.SS "void ost::endKeydata (void)"This should be used before detaching a deamon, \fCexec()\fP, \fCfork()\fP, etc. 
+.PP
+References ost::Keydata::end().
+.SS "__EXPORT \fBAppLog\fP& ost::error (AppLog & sl)\fC [inline]\fP"
+.PP
+Manipulator for error level. \fBParameters:\fP
+.RS 4
+\fIsl\fP application logger stream 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+application logger stream 
+.RE
+.PP
+
+.PP
+References ost::Slog::levelError.
+.SS "char* ost::find (const char * cs, char * str, size_t len = \fC0\fP)"
+.SS "struct in6_addr ost::getaddress (const IPV6Address & ia)\fC [read]\fP"
+.SS "struct in_addr ost::getaddress (const IPV4Address & ia)\fC [read]\fP"
+.SS "\fBThread\fP* ost::getThread (void)\fC [inline]\fP"
+.PP
+References ost::Thread::get().
+.SS "unsigned long ost::getTicks (void)"
+.SS "struct timespec* ost::getTimeout (struct timespec * spec, \fBtimeout_t\fP timeout)\fC [read]\fP"
+.SS "char* ost::ifind (const char * cs, char * str, size_t len = \fC0\fP)"
+.SS "__EXPORT \fBAppLog\fP& ost::info (AppLog & sl)\fC [inline]\fP"
+.PP
+Manipulator for info level. \fBParameters:\fP
+.RS 4
+\fIsl\fP application logger stream 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+application logger stream 
+.RE
+.PP
+
+.PP
+References ost::Slog::levelInfo.
+.SS "char* ost::lsetField (char * target, size_t size, const char * src, const char fill = \fC0\fP)"
+.SS "__EXPORT \fBCommandOptionParse\fP* ost::makeCommandOptionParse (int argc, char ** argv, const char * comment, CommandOption * options = \fCdefaultCommandOptionList\fP)"
+.PP
+makeCommandOptionParse will create an implementation of a \fBCommandOptionParse\fP object. This particular implementation is a wrapper around getopt_long(3). That interface unfortunatly does not provide enough information to give the best error messages with malformed input. If the implementation changes there is a good chance that the binary interface will remain the same. 
+.PP
+\fBExamples: \fP
+.in +1c
+\fBcmdlineopt.cpp\fP.
+.SS "char* ost::newString (const char * src, size_t size = \fC0\fP)"
+.PP
+Referenced by dupString().
+.SS "__EXPORT \fBAppLog\fP& ost::notice (AppLog & sl)\fC [inline]\fP"
+.PP
+Manipulator for notice level. \fBParameters:\fP
+.RS 4
+\fIsl\fP application logger stream 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+application logger stream 
+.RE
+.PP
+
+.PP
+References ost::Slog::levelNotice.
+.SS "__EXPORT std::ostream& ost::operator<< (std::ostream & os, const IPV6Address & ia)"
+.SS "__EXPORT std::ostream& ost::operator<< (std::ostream & os, const IPV4Address & ia)"
+.SS "char* ost::rfind (const char * cs, char * str, size_t len = \fC0\fP)"
+.SS "char* ost::rsetField (char * target, size_t size, const char * src, const char fill = \fC0\fP)"
+.SS "char* ost::setLower (char * string, size_t size)"
+.SS "char* ost::setString (char * target, size_t size, const char * src)"
+.SS "char* ost::setUpper (char * string, size_t size)"
+.SS "size_t ost::strchop (const char * cs, char * str, size_t len = \fC0\fP)"
+.PP
+Referenced by ost::String::chop().
+.SS "char* ost::strip (const char * cs, char * str, size_t len = \fC0\fP)"
+.SS "size_t ost::strtrim (const char * cs, char * str, size_t len = \fC0\fP)"
+.PP
+Referenced by ost::String::trim().
+.SS "void ost::wait (signo_t signo)"
+.PP
+\fBExamples: \fP
+.in +1c
+\fBcmdlineopt.cpp\fP.
+.SS "__EXPORT \fBAppLog\fP& ost::warn (AppLog & sl)\fC [inline]\fP"
+.PP
+Manipulator for warn level. \fBParameters:\fP
+.RS 4
+\fIsl\fP application logger stream 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+application logger stream 
+.RE
+.PP
+
+.PP
+References ost::Slog::levelWarning.
+.SH "Variable Documentation"
+.PP 
+.SS "__EXPORT \fBAppLog\fP \fBost::alog\fP"
+.PP
+alog global log stream definition 
+.SS "__EXPORT \fBCommandOption\fP* \fBost::defaultCommandOptionList\fP"
+.PP
+This defines a linked list head pointer for all the command line options that use the default list. It will most likely be used in most cases without being explicitly referenced in application code. It is a default value of various method's parameters. 
+.PP
+\fBExamples: \fP
+.in +1c
+\fBcmdlineopt.cpp\fP.
+.SS "class __EXPORT \fBost::IPV4Host\fP"
+.SS "class __EXPORT \fBost::IPV6Host\fP"
+.SS "\fBSlog\fP \fBost::slog\fP"
+.PP
+\fBExamples: \fP
+.in +1c
+\fBslogTest.cpp\fP.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

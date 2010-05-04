@@ -1,0 +1,79 @@
+.TH "ost::ChecksumDigest" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::ChecksumDigest \- 
+.PP
+A simple checksum digest function.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <digest.h>\fP
+.PP
+Inherits \fBost::Digest\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBChecksumDigest\fP ()"
+.br
+.ti -1c
+.RI "void \fBinitDigest\fP (void)"
+.br
+.ti -1c
+.RI "unsigned \fBgetSize\fP (void)"
+.br
+.ti -1c
+.RI "unsigned \fBgetDigest\fP (unsigned char *buffer)"
+.br
+.ti -1c
+.RI "void \fBputDigest\fP (const unsigned char *buffer, unsigned length)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBoverflow\fP (int c)"
+.br
+.ti -1c
+.RI "std::ostream & \fBstrDigest\fP (std::ostream &os)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A simple checksum digest function. 
+
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> checksum hash function. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::ChecksumDigest::ChecksumDigest ()"
+.SH "Member Function Documentation"
+.PP 
+.SS "unsigned ost::ChecksumDigest::getDigest (unsigned char * buffer)\fC [virtual]\fP"
+.PP
+Implements \fBost::Digest\fP.
+.SS "unsigned ost::ChecksumDigest::getSize (void)\fC [inline, virtual]\fP"
+.PP
+Implements \fBost::Digest\fP.
+.SS "void ost::ChecksumDigest::initDigest (void)\fC [inline, virtual]\fP"
+.PP
+Implements \fBost::Digest\fP.
+.SS "int ost::ChecksumDigest::overflow (int c)\fC [protected]\fP"
+.SS "void ost::ChecksumDigest::putDigest (const unsigned char * buffer, unsigned length)\fC [virtual]\fP"
+.PP
+Implements \fBost::Digest\fP.
+.SS "std::ostream& ost::ChecksumDigest::strDigest (std::ostream & os)\fC [protected, virtual]\fP"
+.PP
+Implements \fBost::Digest\fP.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

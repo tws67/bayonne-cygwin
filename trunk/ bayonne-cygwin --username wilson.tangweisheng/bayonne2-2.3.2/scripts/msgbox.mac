@@ -1,0 +1,151 @@
+%% Copyright (C) 2005 David Sugar, Tycho Softworks.
+%%
+%% This file is free software; as a special exception the author gives
+%% unlimited permission to copy and/or distribute it, with or without
+%% modifications, as long as this notice is preserved.
+%%
+%% This program is distributed in the hope that it will be useful, but
+%% WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
+%% implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+%%
+%% A simple msgbox system, used for single mailbox messaging.  Supports
+%% optional delete to "archive".
+
+	dir msgbox
+	use sort
+	use time
+
+local play
+	cleardigits
+	counter %retry
+	set %count %retry
+	begin
+	case %count > 3
+		return
+	case %count = 1
+		play prefix=msgbox %msgfile
+	endcase
+	play msgbox-next
+	sleep 30
+	restart
+
+^1
+	move prefix=msgbox %msgfile %arcfile
+	erase prefix=msgbox %msgfile
+	return
+
+^2
+	clear %retry
+	restart
+
+^3
+	return
+
+^dtmf
+	play msgbox-invalid
+	restart
+
+macro login
+	keywords password count
+	define %password="none"
+	define %count=8
+	counter %retry
+	cleardigits
+	if %retry > 3 then return
+	play msgbox-login
+	sleep 30
+	play msgbox-badpass
+	restart
+
+^dtmf
+	input %pass count=%count
+	if %pass == %password then goto user
+	play msgbox-badpass
+	restart
+
+macro user
+	array size=32 count=40 %msgs
+	list %msgs msgbox match="msg-" extension={.au}
+	if #msgs -lt 1
+	then
+		play msgbox-youhave msgbox-no msgbox-msgswait
+		return
+	endif
+	sort %msgs
+	foreach %msg %msgs
+		set %arc archive/ %msg
+		::play msgfile=&msg arcfile=&arc
+	loop
+	play msgbox-allmsgs
+	cleardigits
+	return
+
+macro message
+	keywords limit name 
+	define %limit="600s" %name="unknown"
+	date %now
+	time %time
+	const %leave msgbox/common-leave {.au}
+	const %msg msgbox/msg- %session.uid {.au}
+	const %tmp msgbox/tmp- %session.timeslot {.au}
+	const %caller msgbox/name- %name {.au}
+	erase %tmp
+	if -file %caller
+	then
+		build %tmp msgbox-from %caller msgbox-sent \
+			&day %now &hour %time
+	else
+		build %tmp msgbox-from msgbox-unknown msgbox-sent \
+			&day %now &hour %time
+	endif
+	play msgbox-record
+	beep
+	cleardigits
+	timer %audiotimer
+	append %tmp %msg timeout=%limit exit={#}
+	if %audiotimer < 3 then erase %msg
+	play msgbox-saved %leave
+	cleardigits
+	return
+
+macro enter
+	keywords limit forward name password
+	define %limit="600s" %forward="none" %name="unknown" %password="none"
+	const %enter msgbox/common-enter {.au} 
+	string.8 %mycode
+	prompt %enter
+	if %forward != "none" then goto ::message
+	goto ::forward mailbox=%forward
+
+^dtmf
+	input %mycode count=8
+	if %mycode == %password then goto ::user
+	restart		
+
+macro yesno
+	keywords limit forward name 
+	define %limit="600s" %forward="none" %name="unknown"
+	cleardigits
+	counter %retry
+	const %enter msgbox/common-enter {.au} 
+	if -file %enter then prompt %enter
+	prompt msgbox-yesno
+	sleep 30s
+	play msgbox-invalid
+	if %retry < 3 then restart
+	return
+
+^1
+	if %forward == "none" then goto ::message
+	goto ::forward mailbox=%forward
+
+^2
+	cleardigits
+	return
+
+^dtmf
+	play msgbox-invalid
+	if %retry < 3 then restart
+	cleardigits
+	return
+

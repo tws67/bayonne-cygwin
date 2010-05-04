@@ -1,0 +1,49 @@
+.TH bayonne "1" "August 2005" "Bayonne" TSW
+.SH NAME
+bayonne \- GNU Telephony telephony server.
+.SH SYNOPSIS 
+.B bayonne \fI[options]\fR
+.br  
+.SH DESCRIPTION
+Bayonne is a script controllable telephony application server that can also
+interconnect calls between network endpoints and pstn services.  Virtually all 
+options are controlled by the config file.  When users start bayonne in 
+foreground mode, the ~/.bayonnerc may be used for overrides, particulary for 
+timeslot settings which may otherwise be too large for convenient testing.
+.PP
+.TP
+\fB\-start\fR
+starts the server in daemon mode.  This is also the default operation.
+.TP
+\fB\-check\fR
+checks scripts and current configuration.  Does not execute live.
+.TP
+\fB\-dump\fR
+dumps the current configuration so that it can be examined.
+.TP
+\fB\-down\fR
+request to shutdown a running instance of bayonne.
+.TP
+\fB\-reload\fR
+request to reload the server and configuration files.
+.TP
+\fB\-debug\fR
+starts in foreground mode with full debugging enabled (not gdb).
+.TP
+\fB\-v[vv]\fR
+start in foreground mode with various levels of verbose logging.
+.TP
+\fB\-version\fR
+print the version of bayonne.
+.TP
+.SH AUTHOR   
+Written by David Sugar.
+.SH "REPORTING BUGS"
+Report bugs to <dyfet@gnutelephony.org>.
+.SH COPYRIGHT
+Copyright \(co 2005 David Sugar, Tycho Softworks
+.br
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR
+PURPOSE. 
+

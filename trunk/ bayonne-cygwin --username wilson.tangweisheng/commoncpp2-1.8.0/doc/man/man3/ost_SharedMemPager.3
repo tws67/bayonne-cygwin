@@ -1,0 +1,100 @@
+.TH "ost::SharedMemPager" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::SharedMemPager \- 
+.PP
+The shared mempager uses a mutex to protect key access methods.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <misc.h>\fP
+.PP
+Inherits \fBost::MemPager\fP, and \fBost::Mutex\fP.
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSharedMemPager\fP (size_t pagesize=4096, const char *name=NULL)"
+.br
+.RI "\fICreate a mempager mutex pool. \fP"
+.ti -1c
+.RI "void \fBpurge\fP (void)"
+.br
+.RI "\fIPurge the memory pool while locked. \fP"
+.ti -1c
+.RI "void * \fBfirst\fP (size_t size)"
+.br
+.RI "\fIGet the first memory page after locking. \fP"
+.ti -1c
+.RI "void * \fBalloc\fP (size_t size)"
+.br
+.RI "\fIGet the last memory page after locking. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The shared mempager uses a mutex to protect key access methods. 
+
+This class is used when a mempager will be shared by multiple threads.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> mutex protected memory pager. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::SharedMemPager::SharedMemPager (size_t pagesize = \fC4096\fP, const char * name = \fCNULL\fP)\fC [protected]\fP"
+.PP
+Create a mempager mutex pool. \fBParameters:\fP
+.RS 4
+\fIpagesize\fP page size for allocation. 
+.br
+\fIname\fP a name for the pool. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void* ost::SharedMemPager::alloc (size_t size)\fC [protected, virtual]\fP"
+.PP
+Get the last memory page after locking. \fBReturns:\fP
+.RS 4
+allocated memory space. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsize\fP of request. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBost::MemPager\fP.
+.SS "void* ost::SharedMemPager::first (size_t size)\fC [protected, virtual]\fP"
+.PP
+Get the first memory page after locking. \fBReturns:\fP
+.RS 4
+allocated memory space. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsize\fP of request. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBost::MemPager\fP.
+.SS "void ost::SharedMemPager::purge (void)\fC [protected]\fP"
+.PP
+Purge the memory pool while locked. 
+.PP
+Reimplemented from \fBost::MemPager\fP.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

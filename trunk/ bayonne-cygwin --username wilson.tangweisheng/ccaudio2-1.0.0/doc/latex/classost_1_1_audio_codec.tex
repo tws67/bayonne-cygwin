@@ -1,0 +1,327 @@
+\section{ost::AudioCodec Class Reference}
+\label{classost_1_1_audio_codec}\index{ost::AudioCodec@{ost::AudioCodec}}
+
+
+The codec class is a virtual used for transcoding audio samples between linear frames (or other known format) and an encoded \char`\"{}sample\char`\"{} buffer.  
+
+
+{\ttfamily \#include $<$audio2.h$>$}Inheritance diagram for ost::AudioCodec::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classost_1_1_audio_codec}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf AudioCodec} (const char $\ast${\bf name}, {\bf Encoding} {\bf encoding})
+\begin{DoxyCompactList}\small\item\em Base for codecs, create a named coded of a specific encoding. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$AudioCodec} ()
+\item 
+virtual {\bf Level} {\bf getImpulse} (void $\ast$buffer, unsigned number=0)
+\begin{DoxyCompactList}\small\item\em Get the impulse energy level of a frame of X samples in the specified codec format. \item\end{DoxyCompactList}\item 
+virtual {\bf Level} {\bf getPeak} (void $\ast$buffer, unsigned number=0)
+\begin{DoxyCompactList}\small\item\em Get the peak energy level within the frame of X samples. \item\end{DoxyCompactList}\item 
+virtual bool {\bf isSilent} ({\bf Level} threashold, void $\ast$buffer, unsigned number=0)
+\begin{DoxyCompactList}\small\item\em Signal if the current audio frame is silent. \item\end{DoxyCompactList}\item 
+virtual unsigned {\bf encode} ({\bf Linear} buffer, void $\ast$dest, unsigned number=0)=0
+\begin{DoxyCompactList}\small\item\em Encode a linear sample frame into the codec sample buffer. \item\end{DoxyCompactList}\item 
+virtual unsigned {\bf encodeBuffered} ({\bf Linear} Buffer, {\bf Encoded} dest, unsigned number)
+\begin{DoxyCompactList}\small\item\em Encode linear samples buffered into the coded. \item\end{DoxyCompactList}\item 
+virtual unsigned {\bf decode} ({\bf Linear} buffer, void $\ast$source, unsigned number=0)=0
+\begin{DoxyCompactList}\small\item\em Decode the sample frame into linear samples. \item\end{DoxyCompactList}\item 
+virtual unsigned {\bf decodeBuffered} ({\bf Linear} buffer, {\bf Encoded} source, unsigned len)
+\begin{DoxyCompactList}\small\item\em Buffer and decode data into linear samples. \item\end{DoxyCompactList}\item 
+virtual unsigned {\bf getEstimated} (void)
+\begin{DoxyCompactList}\small\item\em Get estimated data required for buffered operations. \item\end{DoxyCompactList}\item 
+virtual unsigned {\bf getRequired} (void)
+\begin{DoxyCompactList}\small\item\em get required samples for encoding. \item\end{DoxyCompactList}\item 
+virtual unsigned {\bf getPacket} ({\bf Encoded} destination, {\bf Encoded} data, unsigned size)
+\begin{DoxyCompactList}\small\item\em Get a packet of data rather than decode. \item\end{DoxyCompactList}\item 
+{\bf Info} {\bf getInfo} (void)
+\begin{DoxyCompactList}\small\item\em Get an info description for this codec. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf endCodec} ({\bf AudioCodec} $\ast$codec)
+\begin{DoxyCompactList}\small\item\em End use of a requested codec. \item\end{DoxyCompactList}\item 
+static {\bf AudioCodec} $\ast$ {\bf getCodec} ({\bf Encoding} {\bf encoding}, const char $\ast$format=NULL, bool loaded=false)
+\begin{DoxyCompactList}\small\item\em Get the codec base class for accessing a specific derived codec identified by encoding type and optional spd info. \item\end{DoxyCompactList}\item 
+static {\bf AudioCodec} $\ast$ {\bf getCodec} ({\bf Info} \&{\bf info}, bool loaded=false)
+\begin{DoxyCompactList}\small\item\em Get the codec base class for accessing a specific derived codec identified by audio source descriptor. \item\end{DoxyCompactList}\item 
+static bool {\bf load} (const char $\ast${\bf name})
+\begin{DoxyCompactList}\small\item\em Load a named codec set into process memory. \item\end{DoxyCompactList}\item 
+static bool {\bf load} ({\bf Encoding} {\bf encoding})
+\begin{DoxyCompactList}\small\item\em Find and load a codec file by it's encoding type. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf AudioCodec} ()
+\item 
+virtual {\bf AudioCodec} $\ast$ {\bf getByFormat} (const char $\ast$format)
+\begin{DoxyCompactList}\small\item\em often used to create a \char`\"{}new\char`\"{} codec of a subtype based on encoding format, default returns the current codec entity. \item\end{DoxyCompactList}\item 
+virtual {\bf AudioCodec} $\ast$ {\bf getByInfo} ({\bf Info} \&{\bf info})
+\begin{DoxyCompactList}\small\item\em get a codec by audio source info descriptor. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf AudioCodec} $\ast$ {\bf next}
+\item 
+{\bf Encoding} {\bf encoding}
+\item 
+const char $\ast$ {\bf name}
+\item 
+{\bf Info} {\bf info}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf AudioCodec} $\ast$ {\bf first}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The codec class is a virtual used for transcoding audio samples between linear frames (or other known format) and an encoded \char`\"{}sample\char`\"{} buffer. This class is only abstract and describes the core interface for loadable codec modules. This class is normally merged with AudioSample. A derived AudioCodecXXX will typically include a AudioRegisterXXX static class to automatically initialize and register the codec with the codec registry.
+
+\begin{DoxyAuthor}{Author}
+David Sugar $<${\tt dyfet@ostel.com}$>$ process codec interface. 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::AudioCodec@{ost::AudioCodec}!AudioCodec@{AudioCodec}}
+\index{AudioCodec@{AudioCodec}!ost::AudioCodec@{ost::AudioCodec}}
+\subsubsection[{AudioCodec}]{\setlength{\rightskip}{0pt plus 5cm}ost::AudioCodec::AudioCodec ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_codec_ac2d7cd36a4aff2eec71dad02ac7eb67f}
+\index{ost::AudioCodec@{ost::AudioCodec}!AudioCodec@{AudioCodec}}
+\index{AudioCodec@{AudioCodec}!ost::AudioCodec@{ost::AudioCodec}}
+\subsubsection[{AudioCodec}]{\setlength{\rightskip}{0pt plus 5cm}ost::AudioCodec::AudioCodec (const char $\ast$ {\em name}, \/  {\bf Encoding} {\em encoding})}\label{classost_1_1_audio_codec_ad6b39c6b8e48636490586ca614d48d84}
+
+
+Base for codecs, create a named coded of a specific encoding. 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]of codec. \item[{\em encoding}]type of codec. \end{DoxyParams}
+\index{ost::AudioCodec@{ost::AudioCodec}!$\sim$AudioCodec@{$\sim$AudioCodec}}
+\index{$\sim$AudioCodec@{$\sim$AudioCodec}!ost::AudioCodec@{ost::AudioCodec}}
+\subsubsection[{$\sim$AudioCodec}]{\setlength{\rightskip}{0pt plus 5cm}virtual ost::AudioCodec::$\sim$AudioCodec ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classost_1_1_audio_codec_a4149a63324548a0cd1a4c268d41fd6e4}
+
+
+\subsection{Member Function Documentation}
+\index{ost::AudioCodec@{ost::AudioCodec}!decode@{decode}}
+\index{decode@{decode}!ost::AudioCodec@{ost::AudioCodec}}
+\subsubsection[{decode}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned ost::AudioCodec::decode ({\bf Linear} {\em buffer}, \/  void $\ast$ {\em source}, \/  unsigned {\em number} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classost_1_1_audio_codec_a907e86027d1511babd9446eca3b19850}
+
+
+Decode the sample frame into linear samples. \begin{DoxyReturn}{Returns}
+number of bytes scanned or returned 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]sample buffer to save linear samples into. \item[{\em source}]for encoded data. \item[{\em number}]of samples to extract. \end{DoxyParams}
+\index{ost::AudioCodec@{ost::AudioCodec}!decodeBuffered@{decodeBuffered}}
+\index{decodeBuffered@{decodeBuffered}!ost::AudioCodec@{ost::AudioCodec}}
+\subsubsection[{decodeBuffered}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned ost::AudioCodec::decodeBuffered ({\bf Linear} {\em buffer}, \/  {\bf Encoded} {\em source}, \/  unsigned {\em len})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_audio_codec_aa7f2d6b1965cdb86839ef55d9970e98e}
+
+
+Buffer and decode data into linear samples. This is needed for audio formats that have irregular packet sizes.
+
+\begin{DoxyReturn}{Returns}
+number of samples actually decoded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em destination}]for decoded data. \item[{\em source}]for encoded data. \item[{\em number}]of bytes being sent. \end{DoxyParams}
+\index{ost::AudioCodec@{ost::AudioCodec}!encode@{encode}}
+\index{encode@{encode}!ost::AudioCodec@{ost::AudioCodec}}
+\subsubsection[{encode}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned ost::AudioCodec::encode ({\bf Linear} {\em buffer}, \/  void $\ast$ {\em dest}, \/  unsigned {\em number} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classost_1_1_audio_codec_ad9238d106a0a42bc63be63a305417fb8}
+
+
+Encode a linear sample frame into the codec sample buffer. \begin{DoxyReturn}{Returns}
+number of bytes written. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]linear sample buffer to use. \item[{\em dest}]buffer to store encoded results. \item[{\em number}]of samples. \end{DoxyParams}
+\index{ost::AudioCodec@{ost::AudioCodec}!encodeBuffered@{encodeBuffered}}
+\index{encodeBuffered@{encodeBuffered}!ost::AudioCodec@{ost::AudioCodec}}
+\subsubsection[{encodeBuffered}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned ost::AudioCodec::encodeBuffered ({\bf Linear} {\em Buffer}, \/  {\bf Encoded} {\em dest}, \/  unsigned {\em number})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_audio_codec_ac430e489a59a79e0837500712e5bbed0}
+
+
+Encode linear samples buffered into the coded. \begin{DoxyReturn}{Returns}
+number of bytes written or 0 if incomplete. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]linear samples to post. \item[{\em destination}]of encoded audio. \item[{\em number}]of samples being buffered. \end{DoxyParams}
+\index{ost::AudioCodec@{ost::AudioCodec}!endCodec@{endCodec}}
+\index{endCodec@{endCodec}!ost::AudioCodec@{ost::AudioCodec}}
+\subsubsection[{endCodec}]{\setlength{\rightskip}{0pt plus 5cm}static void ost::AudioCodec::endCodec ({\bf AudioCodec} $\ast$ {\em codec})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_codec_ad9c810876d4c61205d39e06a9b91e89a}
+
+
+End use of a requested codec. If constructed then will be deleted.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em codec}]pointer to getCodec returned coded pointer. \end{DoxyParams}
+\index{ost::AudioCodec@{ost::AudioCodec}!getByFormat@{getByFormat}}
+\index{getByFormat@{getByFormat}!ost::AudioCodec@{ost::AudioCodec}}
+\subsubsection[{getByFormat}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf AudioCodec}$\ast$ ost::AudioCodec::getByFormat (const char $\ast$ {\em format})\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classost_1_1_audio_codec_ab82cde0fc2d640509eca21e4ef30ddee}
+
+
+often used to create a \char`\"{}new\char`\"{} codec of a subtype based on encoding format, default returns the current codec entity. \begin{DoxyReturn}{Returns}
+pointer to an active codec or NULL if not found. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em format}]name from spd. \end{DoxyParams}
+\index{ost::AudioCodec@{ost::AudioCodec}!getByInfo@{getByInfo}}
+\index{getByInfo@{getByInfo}!ost::AudioCodec@{ost::AudioCodec}}
+\subsubsection[{getByInfo}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf AudioCodec}$\ast$ ost::AudioCodec::getByInfo ({\bf Info} \& {\em info})\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classost_1_1_audio_codec_ad68f933525fe820797b89aa1c91432af}
+
+
+get a codec by audio source info descriptor. \begin{DoxyReturn}{Returns}
+pointer to an active codec or NULL if not found. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]audio source descriptor. \end{DoxyParams}
+\index{ost::AudioCodec@{ost::AudioCodec}!getCodec@{getCodec}}
+\index{getCodec@{getCodec}!ost::AudioCodec@{ost::AudioCodec}}
+\subsubsection[{getCodec}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf AudioCodec}$\ast$ ost::AudioCodec::getCodec ({\bf Info} \& {\em info}, \/  bool {\em loaded} = {\ttfamily false})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_codec_adaf944bce5fd0ef5559ed660a8b405c3}
+
+
+Get the codec base class for accessing a specific derived codec identified by audio source descriptor. \begin{DoxyReturn}{Returns}
+pointer to codec for processing. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]source descriptor for codec being requested. \item[{\em loaded}]true to load codec if not already in memory. \end{DoxyParams}
+\index{ost::AudioCodec@{ost::AudioCodec}!getCodec@{getCodec}}
+\index{getCodec@{getCodec}!ost::AudioCodec@{ost::AudioCodec}}
+\subsubsection[{getCodec}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf AudioCodec}$\ast$ ost::AudioCodec::getCodec ({\bf Encoding} {\em encoding}, \/  const char $\ast$ {\em format} = {\ttfamily NULL}, \/  bool {\em loaded} = {\ttfamily false})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_codec_a63e5170162bb09eac8f6d91bb920295f}
+
+
+Get the codec base class for accessing a specific derived codec identified by encoding type and optional spd info. \begin{DoxyReturn}{Returns}
+pointer to codec for processing. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em encoding}]format requested. \item[{\em format}]spd options to pass to codec being created. \item[{\em loaded}]true to load if not already in memory. \end{DoxyParams}
+\index{ost::AudioCodec@{ost::AudioCodec}!getEstimated@{getEstimated}}
+\index{getEstimated@{getEstimated}!ost::AudioCodec@{ost::AudioCodec}}
+\subsubsection[{getEstimated}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned ost::AudioCodec::getEstimated (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_audio_codec_a0d02b2719ed4d628f2350aee72e789cc}
+
+
+Get estimated data required for buffered operations. \begin{DoxyReturn}{Returns}
+estimated number of bytes required for decode. 
+\end{DoxyReturn}
+\index{ost::AudioCodec@{ost::AudioCodec}!getImpulse@{getImpulse}}
+\index{getImpulse@{getImpulse}!ost::AudioCodec@{ost::AudioCodec}}
+\subsubsection[{getImpulse}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Level} ost::AudioCodec::getImpulse (void $\ast$ {\em buffer}, \/  unsigned {\em number} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_audio_codec_a021a39d174853a4270f3f3775bfd634a}
+
+
+Get the impulse energy level of a frame of X samples in the specified codec format. \begin{DoxyReturn}{Returns}
+average impulse energy of frame (sumnation). 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]of encoded samples. \item[{\em number}]of encoded samples. \end{DoxyParams}
+\index{ost::AudioCodec@{ost::AudioCodec}!getInfo@{getInfo}}
+\index{getInfo@{getInfo}!ost::AudioCodec@{ost::AudioCodec}}
+\subsubsection[{getInfo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Info} ost::AudioCodec::getInfo (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_audio_codec_a564e2675bdab8ef4c957bde488c983e5}
+
+
+Get an info description for this codec. \begin{DoxyReturn}{Returns}
+info. 
+\end{DoxyReturn}
+\index{ost::AudioCodec@{ost::AudioCodec}!getPacket@{getPacket}}
+\index{getPacket@{getPacket}!ost::AudioCodec@{ost::AudioCodec}}
+\subsubsection[{getPacket}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned ost::AudioCodec::getPacket ({\bf Encoded} {\em destination}, \/  {\bf Encoded} {\em data}, \/  unsigned {\em size})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_audio_codec_a760f86f0ace0420992bfa8bc1e8f68cf}
+
+
+Get a packet of data rather than decode. This is tied with getEstimated.
+
+\begin{DoxyReturn}{Returns}
+size of data packet or 0 if not complete. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em destination}]to save. \item[{\em data}]to push into buffer. \item[{\em number}]of bytes to push. \end{DoxyParams}
+\index{ost::AudioCodec@{ost::AudioCodec}!getPeak@{getPeak}}
+\index{getPeak@{getPeak}!ost::AudioCodec@{ost::AudioCodec}}
+\subsubsection[{getPeak}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Level} ost::AudioCodec::getPeak (void $\ast$ {\em buffer}, \/  unsigned {\em number} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_audio_codec_a921946adef4203b24ba21ede710cfeb5}
+
+
+Get the peak energy level within the frame of X samples. \begin{DoxyReturn}{Returns}
+peak energy impulse in frame (largest). 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]of encoded samples. \item[{\em number}]of encoded samples. \end{DoxyParams}
+\index{ost::AudioCodec@{ost::AudioCodec}!getRequired@{getRequired}}
+\index{getRequired@{getRequired}!ost::AudioCodec@{ost::AudioCodec}}
+\subsubsection[{getRequired}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned ost::AudioCodec::getRequired (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_audio_codec_ab5164fbce2e6d1dde35554f039fb2379}
+
+
+get required samples for encoding. \begin{DoxyReturn}{Returns}
+required number of samples for encoder buffer. 
+\end{DoxyReturn}
+\index{ost::AudioCodec@{ost::AudioCodec}!isSilent@{isSilent}}
+\index{isSilent@{isSilent}!ost::AudioCodec@{ost::AudioCodec}}
+\subsubsection[{isSilent}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::AudioCodec::isSilent ({\bf Level} {\em threashold}, \/  void $\ast$ {\em buffer}, \/  unsigned {\em number} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_audio_codec_aa444bf042a79428d91958a38973ded8e}
+
+
+Signal if the current audio frame is silent. This can be deterimed either by an impulse computation, or, in some cases, some codecs may signal and flag silent packets.
+
+\begin{DoxyReturn}{Returns}
+true if silent 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threashold}]to use if not signaled. \item[{\em buffer}]of encoded samples. \item[{\em number}]of encoded samples. \end{DoxyParams}
+\index{ost::AudioCodec@{ost::AudioCodec}!load@{load}}
+\index{load@{load}!ost::AudioCodec@{ost::AudioCodec}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}static bool ost::AudioCodec::load ({\bf Encoding} {\em encoding})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_codec_a15af308cffe36ef275772c9047b3b2b5}
+
+
+Find and load a codec file by it's encoding type. Converts the type into a codec name and invokes the other loader...
+
+\begin{DoxyReturn}{Returns}
+true if successful. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em encoding}]type for file. \end{DoxyParams}
+\index{ost::AudioCodec@{ost::AudioCodec}!load@{load}}
+\index{load@{load}!ost::AudioCodec@{ost::AudioCodec}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}static bool ost::AudioCodec::load (const char $\ast$ {\em name})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_codec_a7f2483c2267044701fdcca3549f4e8c8}
+
+
+Load a named codec set into process memory. \begin{DoxyReturn}{Returns}
+true if successful. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]of codec set to load. \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\index{ost::AudioCodec@{ost::AudioCodec}!encoding@{encoding}}
+\index{encoding@{encoding}!ost::AudioCodec@{ost::AudioCodec}}
+\subsubsection[{encoding}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Encoding} {\bf ost::AudioCodec::encoding}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_codec_a7c5e345679761e0b6c9958005af5e173}
+\index{ost::AudioCodec@{ost::AudioCodec}!first@{first}}
+\index{first@{first}!ost::AudioCodec@{ost::AudioCodec}}
+\subsubsection[{first}]{\setlength{\rightskip}{0pt plus 5cm}{\bf AudioCodec}$\ast$ {\bf ost::AudioCodec::first}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_audio_codec_a44ca187dbb88f91fc675f08aef30e523}
+\index{ost::AudioCodec@{ost::AudioCodec}!info@{info}}
+\index{info@{info}!ost::AudioCodec@{ost::AudioCodec}}
+\subsubsection[{info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Info} {\bf ost::AudioCodec::info}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_codec_a4fb14af1f9c82f3b536f1c6ab8b53f69}
+\index{ost::AudioCodec@{ost::AudioCodec}!name@{name}}
+\index{name@{name}!ost::AudioCodec@{ost::AudioCodec}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::AudioCodec::name}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_codec_a7eea163ba29813a936ccac616c83bb18}
+\index{ost::AudioCodec@{ost::AudioCodec}!next@{next}}
+\index{next@{next}!ost::AudioCodec@{ost::AudioCodec}}
+\subsubsection[{next}]{\setlength{\rightskip}{0pt plus 5cm}{\bf AudioCodec}$\ast$ {\bf ost::AudioCodec::next}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_codec_acd455c04876aa5c5a42bd8fc9e43f620}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf audio2.h}\end{DoxyCompactItemize}

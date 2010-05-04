@@ -1,0 +1,116 @@
+.TH "ost::Runlist" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::Runlist \- 
+.PP
+A runlist is used to restrict concurrent exection to a limited set of concurrent sessions, much like a semaphore.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <misc.h>\fP
+.PP
+Inherits \fBost::Mutex\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRunlist\fP (unsigned count=1)"
+.br
+.RI "\fICreate a new runlist with a specified limit. \fP"
+.ti -1c
+.RI "bool \fBadd\fP (\fBRunable\fP *run)"
+.br
+.RI "\fIAdd a runable object to this runlist. \fP"
+.ti -1c
+.RI "void \fBdel\fP (\fBRunable\fP *run)"
+.br
+.RI "\fIRemove a runable object from the wait list or notify when it is done running so that the used count can be decremented. \fP"
+.ti -1c
+.RI "void \fBset\fP (unsigned \fBlimit\fP)"
+.br
+.RI "\fISet the limit. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcheck\fP (void)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "unsigned \fBlimit\fP"
+.br
+.ti -1c
+.RI "unsigned \fBused\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A runlist is used to restrict concurrent exection to a limited set of concurrent sessions, much like a semaphore. 
+
+However, the runlist differs in that it notifies objects when they become ready to run, rather than requiring them to wait and 'block' for the semaphore count to become low enough to continue.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> list of runable objects. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::Runlist::Runlist (unsigned count = \fC1\fP)"
+.PP
+Create a new runlist with a specified limit. \fBParameters:\fP
+.RS 4
+\fIcount\fP limit before wait queuing. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool ost::Runlist::add (\fBRunable\fP * run)"
+.PP
+Add a runable object to this runlist. If the number of entries running is below the limit, then add returns true otherwise the entry is added to the list.
+.PP
+\fBReturns:\fP
+.RS 4
+true if immediately ready to run 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIrun\fP pointer to runable object. 
+.RE
+.PP
+
+.SS "void ost::Runlist::check (void)\fC [protected]\fP"
+.SS "void ost::Runlist::del (\fBRunable\fP * run)"
+.PP
+Remove a runable object from the wait list or notify when it is done running so that the used count can be decremented. \fBParameters:\fP
+.RS 4
+\fIrun\fP pointer to runable object. 
+.RE
+.PP
+
+.SS "void ost::Runlist::set (unsigned limit)"
+.PP
+Set the limit. \fBParameters:\fP
+.RS 4
+\fIlimit\fP to use. 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "unsigned \fBost::Runlist::limit\fP\fC [protected]\fP"
+.SS "unsigned \fBost::Runlist::used\fP\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

@@ -1,0 +1,81 @@
+.TH "ost::objList" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::objList \- 
+.PP
+Used to create and manage a single linked list of objects of a common type.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <objlink.h>\fP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static T * \fBgetObject\fP (const K &key)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBobjList\fP (const K key)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "T * \fBobjNext\fP"
+.br
+.ti -1c
+.RI "const K \fBobjKey\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static T * \fBobjFirst\fP = NULL"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class T, typename K> class ost::objList< T, K >"
+Used to create and manage a single linked list of objects of a common type. 
+
+The list of created objects can be examined to find a key by an identifier.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@gnutelephony.org> single linked list searchable template chain. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class T , typename K > \fBost::objList\fP< T, K >::\fBobjList\fP (const K key)\fC [inline, protected]\fP"
+.PP
+References ost::objList< T, K >::objFirst, ost::objList< T, K >::objKey, and ost::objList< T, K >::objNext.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class T , typename K > T * \fBost::objList\fP< T, K >::getObject (const K & key)\fC [inline, static]\fP"
+.SH "Member Data Documentation"
+.PP 
+.SS "template<class T , typename K > T * \fBost::objList\fP< T, K >::\fBobjFirst\fP = NULL\fC [inline, static, protected]\fP"
+.PP
+Referenced by ost::objList< T, K >::objList().
+.SS "template<class T , typename K > const K \fBost::objList\fP< T, K >::\fBobjKey\fP\fC [protected]\fP"
+.PP
+Referenced by ost::objList< T, K >::objList().
+.SS "template<class T , typename K > T* \fBost::objList\fP< T, K >::\fBobjNext\fP\fC [protected]\fP"
+.PP
+Referenced by ost::objList< T, K >::objList().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

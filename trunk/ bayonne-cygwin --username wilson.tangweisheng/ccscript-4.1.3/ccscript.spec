@@ -1,0 +1,89 @@
+# Copyright (c) 2008, 2009 David Sugar, Tycho Softworks.
+# This file is free software; as a special exception the author gives
+# unlimited permission to copy and/or distribute it, with or without
+# modifications, as long as this notice is preserved.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY, to the extent permitted by law; without
+# even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+Name: ccscript
+Summary: C++ class framework for script extensible applications.
+Version: 4.1.3
+Release: 0%{?dist}
+License: GPLv3+
+URL: http://www.gnu.org/software/ccscript
+Group: System Environment/Libraries
+Source0: http://www.gnutelephony.org/dist/tarballs/ccscript-%{version}.tar.gz
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
+BuildRequires: ucommon-devel >= 2.0.0
+BuildRequires: latex2html lynx
+
+%description
+GNU ccScript is a highly specialized embedded scripting engine and virtual 
+execution environment for creating script "extensible" applications.  This 
+system is a C++ class library which allows one to derive application 
+specific dialects of the core language as needed through subclassing.
+
+%package devel
+Requires: %{name} = %{version}-%{release}
+Requires: ucommon-devel >= 2.0.0
+Group: Development/Libraries
+Summary: Headers for building ccscript applications
+
+%package doc
+Group: Documentation
+Summary: Documentation of ccscript engine
+
+%description devel
+This package provides header and support files for building applications 
+that use GNU ccScript.
+
+%description doc
+This package offers full documentation of core scripting language and engine 
+runtime system.
+
+%prep
+%setup -q
+%build
+
+%configure --disable-static
+%{__make} %{?_smp_mflags} 
+%{__make} docs
+
+%install
+%{__rm} -rf %{buildroot}
+%{__make} DESTDIR=%{buildroot} INSTALL="install -p" install
+%{__rm} %{buildroot}%{_libdir}/*.la
+
+%clean
+%{__rm} -rf %{buildroot}
+
+%files
+%defattr(-,root,root,-)
+%doc AUTHORS README COPYING NEWS SUPPORT ChangeLog
+%{_libdir}/*.so.*
+
+%files devel
+%defattr(-,root,root,-)
+%{_libdir}/*.so
+%{_includedir}/ccscript.h
+%{_libdir}/pkgconfig/*.pc
+%{_bindir}/ccscript-config
+%{_mandir}/man1/ccscript-config.1*
+
+%files doc
+%defattr(-,root,root,-)
+%doc doc/*.html doc/*.pdf doc/*.text
+
+%post -p /sbin/ldconfig
+
+%postun -p /sbin/ldconfig
+
+%changelog
+* Sun Jul 19 2009 - David Sugar <dyfet@gnutelephony.org> - 4.1.1-0
+- fixed ccscript-config script install issues upstream.
+
+* Sat Jul 04 2009 - David Sugar <dyfet@gnutelephony.org> - 4.1.0-0
+- spec file modified for redhat/fedora submission policies.

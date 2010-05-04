@@ -1,0 +1,130 @@
+.TH "persist.h" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+persist.h \- 
+.PP
+Persistence library classes.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cc++/config.h>\fP
+.br
+\fC#include <cc++/exception.h>\fP
+.br
+\fC#include <cc++/missing.h>\fP
+.br
+\fC#include <cc++/string.h>\fP
+.br
+\fC#include <zlib.h>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <deque>\fP
+.br
+\fC#include <map>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBost::PersistException\fP"
+.br
+.ti -1c
+.RI "class \fBost::TypeManager\fP"
+.br
+.RI "\fIThis class manages the types for generation of the persistent objects. \fP"
+.ti -1c
+.RI "class \fBost::TypeManager::Registration\fP"
+.br
+.RI "\fIThis manages a registration to the typemanager - attempting to remove problems with the optimisers. \fP"
+.ti -1c
+.RI "class \fBost::BaseObject\fP"
+.br
+.RI "\fI\fBBaseObject\fP. \fP"
+.ti -1c
+.RI "class \fBost::Engine\fP"
+.br
+.RI "\fI\fBEngine\fP. \fP"
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBost\fP"
+.br
+.in -1c
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBNS_PREFIX\fP   ost::"
+.br
+.ti -1c
+.RI "#define \fBDECLARE_PERSISTENCE\fP(ClassType)"
+.br
+.ti -1c
+.RI "#define \fBIMPLEMENT_PERSISTENCE\fP(ClassType, FullyQualifiedName)"
+.br
+.ti -1c
+.RI "#define \fBCCXX_ENGINEWRITE_REF\fP(valref)   writeBinary((const \fBuint8\fP*)&valref,sizeof(valref))"
+.br
+.ti -1c
+.RI "#define \fBCCXX_ENGINEREAD_REF\fP(valref)   readBinary((\fBuint8\fP*)&valref,sizeof(valref))"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef class BaseObject *(* \fBost::NewBaseObjectFunction\fP )(void)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Persistence library classes. 
+
+
+.SH "Define Documentation"
+.PP 
+.SS "#define CCXX_ENGINEREAD_REF(valref)   readBinary((\fBuint8\fP*)&valref,sizeof(valref))"
+.PP
+Referenced by ost::Engine::read().
+.SS "#define CCXX_ENGINEWRITE_REF(valref)   writeBinary((const \fBuint8\fP*)&valref,sizeof(valref))"
+.PP
+Referenced by ost::Engine::write().
+.SS "#define DECLARE_PERSISTENCE(ClassType)"\fBValue:\fP
+.PP
+.nf
+public:                                                              \
+        friend NS_PREFIX Engine& operator>>( NS_PREFIX Engine& ar, ClassType *&ob);             \
+        friend NS_PREFIX Engine& operator<<( NS_PREFIX Engine& ar, ClassType const &ob);        \
+        friend NS_PREFIX BaseObject *createNew##ClassType();                            \
+        virtual const char* getPersistenceID() const;                   \
+        static NS_PREFIX TypeManager::Registration registrationFor##ClassType;
+.fi
+.SS "#define IMPLEMENT_PERSISTENCE(ClassType, FullyQualifiedName)"\fBValue:\fP
+.PP
+.nf
+NS_PREFIX BaseObject *createNew##ClassType() { return new ClassType; }                    \
+  const char* ClassType::getPersistenceID() const {return FullyQualifiedName;} \
+  NS_PREFIX Engine& operator>>(NS_PREFIX Engine& ar, ClassType &ob)                           \
+        { ar >> (NS_PREFIX BaseObject &) ob; return ar; }                                     \
+  NS_PREFIX Engine& operator>>(NS_PREFIX Engine& ar, ClassType *&ob)                          \
+        { ar >> (NS_PREFIX BaseObject *&) ob; return ar; }                                    \
+  NS_PREFIX Engine& operator<<(NS_PREFIX Engine& ar, ClassType const &ob)                             \
+        { ar << (NS_PREFIX BaseObject const *)&ob; return ar; }                       \
+  NS_PREFIX TypeManager::Registration                                                 \
+        ClassType::registrationFor##ClassType(FullyQualifiedName,             \
+                                              createNew##ClassType);
+.fi
+.SS "#define NS_PREFIX   ost::"
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

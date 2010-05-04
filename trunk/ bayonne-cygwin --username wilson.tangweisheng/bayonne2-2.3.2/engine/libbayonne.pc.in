@@ -1,0 +1,27 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+sysconfdir=@sysconfdir@
+datadir=@datadir@
+localstatedir=@localstatedir@
+
+modflags=@COMMON_MODFLAGS@
+modpath=@module_libpath@
+varpath=@config_var@
+logpath=@config_log@
+runpath=@config_run@
+moduledir=@module_libpath@
+driverdir=@module_libpath@
+configdir=@config_files@
+datafiles=@datadir@/bayonne
+
+Name: libbayonne
+Description: Bayonne IVR Engine Driver Plugin Support Library
+Version: @VERSION@
+Requires: libccscript3 >= 0.2.0, libccaudio2 >= 0.2.1
+Libs:  -lbayonne
+
+ 
+
+ 

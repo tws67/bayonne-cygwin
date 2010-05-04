@@ -1,0 +1,102 @@
+\section{ost::DynamicKeydata Class Reference}
+\label{classost_1_1_dynamic_keydata}\index{ost::DynamicKeydata@{ost::DynamicKeydata}}
+
+
+\doxyref{Bayonne}{p.}{classost_1_1_bayonne} specific dynamic keydata class.  
+
+
+{\ttfamily \#include $<$bayonne.h$>$}Inheritance diagram for ost::DynamicKeydata::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classost_1_1_dynamic_keydata}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf DynamicKeydata} (const char $\ast$keypath, Keydata::Define $\ast$def=NULL, const char $\ast$homepath=NULL)
+\item 
+const char $\ast$ {\bf getString} (const char $\ast$key, char $\ast$buf, size\_\-t size)
+\item 
+long {\bf getValue} (const char $\ast$key)
+\item 
+bool {\bf isKey} (const char $\ast$key)
+\item 
+bool {\bf getBoolean} (const char $\ast$key)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf reload} (void)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf updateConfig} (Keydata $\ast$keydata)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \_\-\_\-EXPORT {\bf BayonneConfig}
+\item 
+class \_\-\_\-EXPORT {\bf ReconfigKeydata}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Bayonne}{p.}{classost_1_1_bayonne} specific dynamic keydata class. This class is used for keydata items which can be reloaded from the config file during runtime. The normal \doxyref{Bayonne}{p.}{classost_1_1_bayonne} \char`\"{}reload\char`\"{} operatio will be used for this purpose.
+
+\begin{DoxyAuthor}{Author}
+David Sugar $<${\tt dyfet@gnutelephony.org}$>$ Dynamically reloadable key data class. 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::DynamicKeydata@{ost::DynamicKeydata}!DynamicKeydata@{DynamicKeydata}}
+\index{DynamicKeydata@{DynamicKeydata}!ost::DynamicKeydata@{ost::DynamicKeydata}}
+\subsubsection[{DynamicKeydata}]{\setlength{\rightskip}{0pt plus 5cm}ost::DynamicKeydata::DynamicKeydata (const char $\ast$ {\em keypath}, \/  Keydata::Define $\ast$ {\em def} = {\ttfamily NULL}, \/  const char $\ast$ {\em homepath} = {\ttfamily NULL})}\label{classost_1_1_dynamic_keydata_a9087d0d244bd693e80f6085c2b505615}
+
+
+\subsection{Member Function Documentation}
+\index{ost::DynamicKeydata@{ost::DynamicKeydata}!getBoolean@{getBoolean}}
+\index{getBoolean@{getBoolean}!ost::DynamicKeydata@{ost::DynamicKeydata}}
+\subsubsection[{getBoolean}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::DynamicKeydata::getBoolean (const char $\ast$ {\em key})}\label{classost_1_1_dynamic_keydata_a483dbef6ff9495af21fc9158f613c239}
+
+
+Reimplemented in {\bf ost::ReconfigKeydata} \doxyref{}{p.}{classost_1_1_reconfig_keydata_a46ad6ae6de848727a5f18c70e198f8d3}.\index{ost::DynamicKeydata@{ost::DynamicKeydata}!getString@{getString}}
+\index{getString@{getString}!ost::DynamicKeydata@{ost::DynamicKeydata}}
+\subsubsection[{getString}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::DynamicKeydata::getString (const char $\ast$ {\em key}, \/  char $\ast$ {\em buf}, \/  size\_\-t {\em size})}\label{classost_1_1_dynamic_keydata_ab3f2cbaaa29562ee771e1059029eab43}
+
+
+Reimplemented in {\bf ost::ReconfigKeydata} \doxyref{}{p.}{classost_1_1_reconfig_keydata_adbc0fd84fe95e7e999febc0045cdf539}.\index{ost::DynamicKeydata@{ost::DynamicKeydata}!getValue@{getValue}}
+\index{getValue@{getValue}!ost::DynamicKeydata@{ost::DynamicKeydata}}
+\subsubsection[{getValue}]{\setlength{\rightskip}{0pt plus 5cm}long ost::DynamicKeydata::getValue (const char $\ast$ {\em key})}\label{classost_1_1_dynamic_keydata_a1748c0b898aa4a486c83becf0a72ff57}
+
+
+Reimplemented in {\bf ost::ReconfigKeydata} \doxyref{}{p.}{classost_1_1_reconfig_keydata_a88c674e5f63cec3d84745fcf5bb68554}.\index{ost::DynamicKeydata@{ost::DynamicKeydata}!isKey@{isKey}}
+\index{isKey@{isKey}!ost::DynamicKeydata@{ost::DynamicKeydata}}
+\subsubsection[{isKey}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::DynamicKeydata::isKey (const char $\ast$ {\em key})}\label{classost_1_1_dynamic_keydata_a14c3d2690aa4e34b874d6cd3e63068b8}
+
+
+Reimplemented in {\bf ost::ReconfigKeydata} \doxyref{}{p.}{classost_1_1_reconfig_keydata_ab90a4d048bee37daed8296a0b198d243}.\index{ost::DynamicKeydata@{ost::DynamicKeydata}!reload@{reload}}
+\index{reload@{reload}!ost::DynamicKeydata@{ost::DynamicKeydata}}
+\subsubsection[{reload}]{\setlength{\rightskip}{0pt plus 5cm}static void ost::DynamicKeydata::reload (void)\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_dynamic_keydata_a4422ca5bb345d1fe82aca5db9823a3f9}
+
+
+Reimplemented in {\bf ost::BayonneDriver} \doxyref{}{p.}{classost_1_1_bayonne_driver_af9b934ae174e32235ac2e6ea04dc55db}.\index{ost::DynamicKeydata@{ost::DynamicKeydata}!updateConfig@{updateConfig}}
+\index{updateConfig@{updateConfig}!ost::DynamicKeydata@{ost::DynamicKeydata}}
+\subsubsection[{updateConfig}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::DynamicKeydata::updateConfig (Keydata $\ast$ {\em keydata})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_dynamic_keydata_a691d8df63bf61056fa4c9e77839e3ea1}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{ost::DynamicKeydata@{ost::DynamicKeydata}!BayonneConfig@{BayonneConfig}}
+\index{BayonneConfig@{BayonneConfig}!ost::DynamicKeydata@{ost::DynamicKeydata}}
+\subsubsection[{BayonneConfig}]{\setlength{\rightskip}{0pt plus 5cm}friend class \_\-\_\-EXPORT {\bf BayonneConfig}\hspace{0.3cm}{\ttfamily  [friend]}}\label{classost_1_1_dynamic_keydata_abf8d366cdf9d637e4ff639ab75cad101}
+\index{ost::DynamicKeydata@{ost::DynamicKeydata}!ReconfigKeydata@{ReconfigKeydata}}
+\index{ReconfigKeydata@{ReconfigKeydata}!ost::DynamicKeydata@{ost::DynamicKeydata}}
+\subsubsection[{ReconfigKeydata}]{\setlength{\rightskip}{0pt plus 5cm}friend class \_\-\_\-EXPORT {\bf ReconfigKeydata}\hspace{0.3cm}{\ttfamily  [friend]}}\label{classost_1_1_dynamic_keydata_a8b732e94d3faaa529c1c30d6fd003d9f}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf bayonne.h}\end{DoxyCompactItemize}

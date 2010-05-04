@@ -1,0 +1,94 @@
+\section{ost::AudioResample Class Reference}
+\label{classost_1_1_audio_resample}\index{ost::AudioResample@{ost::AudioResample}}
+
+
+The \doxyref{AudioResample}{p.}{classost_1_1_audio_resample} class is used to manage linear intropolation buffering for rate conversions.  
+
+
+{\ttfamily \#include $<$audio2.h$>$}Inheritance diagram for ost::AudioResample::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classost_1_1_audio_resample}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf AudioResample} ({\bf Rate} mul, {\bf Rate} div)
+\item 
+{\bf $\sim$AudioResample} ()
+\item 
+size\_\-t {\bf process} ({\bf Linear} from, {\bf Linear} to, size\_\-t count)
+\item 
+size\_\-t {\bf estimate} (size\_\-t count)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned {\bf mfact}
+\item 
+unsigned {\bf dfact}
+\item 
+unsigned {\bf max}
+\item 
+unsigned {\bf gpos}
+\item 
+unsigned {\bf ppos}
+\item 
+{\bf Sample} {\bf last}
+\item 
+{\bf Linear} {\bf buffer}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \doxyref{AudioResample}{p.}{classost_1_1_audio_resample} class is used to manage linear intropolation buffering for rate conversions. \begin{DoxyAuthor}{Author}
+David Sugar $<${\tt dyfet@ostel.com}$>$ linear intropolation and rate conversion. 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::AudioResample@{ost::AudioResample}!AudioResample@{AudioResample}}
+\index{AudioResample@{AudioResample}!ost::AudioResample@{ost::AudioResample}}
+\subsubsection[{AudioResample}]{\setlength{\rightskip}{0pt plus 5cm}ost::AudioResample::AudioResample ({\bf Rate} {\em mul}, \/  {\bf Rate} {\em div})}\label{classost_1_1_audio_resample_a408740221daffc47f7a651b63c8b5c73}
+\index{ost::AudioResample@{ost::AudioResample}!$\sim$AudioResample@{$\sim$AudioResample}}
+\index{$\sim$AudioResample@{$\sim$AudioResample}!ost::AudioResample@{ost::AudioResample}}
+\subsubsection[{$\sim$AudioResample}]{\setlength{\rightskip}{0pt plus 5cm}ost::AudioResample::$\sim$AudioResample ()}\label{classost_1_1_audio_resample_a9e64615c7cf798286195e0ac3071fdc1}
+
+
+\subsection{Member Function Documentation}
+\index{ost::AudioResample@{ost::AudioResample}!estimate@{estimate}}
+\index{estimate@{estimate}!ost::AudioResample@{ost::AudioResample}}
+\subsubsection[{estimate}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t ost::AudioResample::estimate (size\_\-t {\em count})}\label{classost_1_1_audio_resample_a27baa7b1cfec1cf55eaa5038208f9c28}
+\index{ost::AudioResample@{ost::AudioResample}!process@{process}}
+\index{process@{process}!ost::AudioResample@{ost::AudioResample}}
+\subsubsection[{process}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t ost::AudioResample::process ({\bf Linear} {\em from}, \/  {\bf Linear} {\em to}, \/  size\_\-t {\em count})}\label{classost_1_1_audio_resample_af0bdd5ac2f0850324d048ecf86d02cc1}
+
+
+\subsection{Member Data Documentation}
+\index{ost::AudioResample@{ost::AudioResample}!buffer@{buffer}}
+\index{buffer@{buffer}!ost::AudioResample@{ost::AudioResample}}
+\subsubsection[{buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Linear} {\bf ost::AudioResample::buffer}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_resample_aa0c196fe38dc3512b3a8667082878e3f}
+\index{ost::AudioResample@{ost::AudioResample}!dfact@{dfact}}
+\index{dfact@{dfact}!ost::AudioResample@{ost::AudioResample}}
+\subsubsection[{dfact}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::AudioResample::dfact}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_resample_a8baae81f9d216302031b0934b8f2c0e4}
+\index{ost::AudioResample@{ost::AudioResample}!gpos@{gpos}}
+\index{gpos@{gpos}!ost::AudioResample@{ost::AudioResample}}
+\subsubsection[{gpos}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::AudioResample::gpos}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_resample_a03c347a6d21f77f94c7703030c983b67}
+\index{ost::AudioResample@{ost::AudioResample}!last@{last}}
+\index{last@{last}!ost::AudioResample@{ost::AudioResample}}
+\subsubsection[{last}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sample} {\bf ost::AudioResample::last}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_resample_a239a00ff4ef4eca85ecb134804e6e9b2}
+\index{ost::AudioResample@{ost::AudioResample}!max@{max}}
+\index{max@{max}!ost::AudioResample@{ost::AudioResample}}
+\subsubsection[{max}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::AudioResample::max}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_resample_a96c78af7fc79e221815873acae145b72}
+\index{ost::AudioResample@{ost::AudioResample}!mfact@{mfact}}
+\index{mfact@{mfact}!ost::AudioResample@{ost::AudioResample}}
+\subsubsection[{mfact}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::AudioResample::mfact}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_resample_a986ef6a994491b684ee5664b373698bf}
+\index{ost::AudioResample@{ost::AudioResample}!ppos@{ppos}}
+\index{ppos@{ppos}!ost::AudioResample@{ost::AudioResample}}
+\subsubsection[{ppos}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::AudioResample::ppos}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_resample_a1ebaf6e154b47bb2f28266d256c699da}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf audio2.h}\end{DoxyCompactItemize}

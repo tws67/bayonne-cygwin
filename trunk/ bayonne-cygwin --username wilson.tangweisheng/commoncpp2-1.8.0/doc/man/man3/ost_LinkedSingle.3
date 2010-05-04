@@ -1,0 +1,119 @@
+.TH "ost::LinkedSingle" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::LinkedSingle \- 
+.PP
+Self managed single linked list object chain.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <object.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBLinkedSingle\fP * \fBgetFirst\fP (void)"
+.br
+.RI "\fIGet first linked object in list. \fP"
+.ti -1c
+.RI "virtual \fBLinkedSingle\fP * \fBgetLast\fP (void)"
+.br
+.RI "\fIGets the last object in the list. \fP"
+.ti -1c
+.RI "\fBLinkedSingle\fP * \fBgetNext\fP (void)"
+.br
+.RI "\fIGet next object, for convenience. \fP"
+.ti -1c
+.RI "virtual void \fBinsert\fP (\fBLinkedSingle\fP &obj)"
+.br
+.RI "\fIInsert object into chain. \fP"
+.ti -1c
+.RI "\fBLinkedSingle\fP & \fBoperator+=\fP (\fBLinkedSingle\fP &obj)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLinkedSingle\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~LinkedSingle\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBLinkedSingle\fP * \fBnextObject\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Self managed single linked list object chain. 
+
+This is used for accumulating lists by using as a base class for a derived subclass.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@gnutelephony.org> Accumulating single linked list. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::LinkedSingle::LinkedSingle ()\fC [inline, protected]\fP"
+.SS "virtual ost::LinkedSingle::~LinkedSingle ()\fC [protected, virtual]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual \fBLinkedSingle\fP* ost::LinkedSingle::getFirst (void)\fC [virtual]\fP"
+.PP
+Get first linked object in list. This may be dynamically recast, and may refer to a master static bookmark pointer in a derived class. Otherwise it simply returns the current object. In a 'free' list, this may not only return the first object, but also set the first to next.
+.PP
+\fBReturns:\fP
+.RS 4
+pointer to first object in list. 
+.RE
+.PP
+
+.SS "virtual \fBLinkedSingle\fP* ost::LinkedSingle::getLast (void)\fC [virtual]\fP"
+.PP
+Gets the last object in the list. This normally follows the links to the end. This is a virtual because derived class may include a static member bookmark for the current end.
+.PP
+\fBReturns:\fP
+.RS 4
+pointer to last object in list. 
+.RE
+.PP
+
+.SS "\fBLinkedSingle\fP* ost::LinkedSingle::getNext (void)\fC [inline]\fP"
+.PP
+Get next object, for convenience. Derived class may use this with a dynamic cast.
+.PP
+\fBReturns:\fP
+.RS 4
+next object in list. 
+.RE
+.PP
+
+.SS "virtual void ost::LinkedSingle::insert (\fBLinkedSingle\fP & obj)\fC [virtual]\fP"
+.PP
+Insert object into chain. This is a virtual because derived class may choose instead to perform an insert at head or tail, may manage bookmarks, and may add mutex lock.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIobject\fP being inserted. 
+.RE
+.PP
+
+.SS "\fBLinkedSingle\fP& ost::LinkedSingle::operator+= (\fBLinkedSingle\fP & obj)"
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBLinkedSingle\fP* \fBost::LinkedSingle::nextObject\fP\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

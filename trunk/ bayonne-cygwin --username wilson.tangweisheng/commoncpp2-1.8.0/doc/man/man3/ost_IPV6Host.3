@@ -1,0 +1,86 @@
+.TH "ost::IPV6Host" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::IPV6Host \- 
+.PP
+This object is used to hold the actual and valid internet address of a specific host machine that will be accessed through a socket.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <address.h>\fP
+.PP
+Inherits \fBost::IPV6Address\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIPV6Host\fP (const char *host=NULL)"
+.br
+.RI "\fICreate a new host address for a specific internet host. \fP"
+.ti -1c
+.RI "\fBIPV6Host\fP (struct in6_addr addr)"
+.br
+.RI "\fIConvert a system socket binary address such as may be returned through the accept() call or getsockpeer() into an internet host address object. \fP"
+.ti -1c
+.RI "\fBIPV6Host\fP & \fBoperator&=\fP (const \fBIPV6Mask\fP &mask)"
+.br
+.RI "\fIMask the internet host address object with a network mask address. \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class __EXPORT \fBIPV6Mask\fP"
+.br
+.ti -1c
+.RI "__EXPORT \fBIPV6Host\fP \fBoperator&\fP (const \fBIPV6Host\fP &addr, const \fBIPV6Mask\fP &mask)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This object is used to hold the actual and valid internet address of a specific host machine that will be accessed through a socket. 
+
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> Address of a specific Internet host machine. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::IPV6Host::IPV6Host (const char * host = \fCNULL\fP)"
+.PP
+Create a new host address for a specific internet host. The internet host can be specified in a null terminated ASCII string and include either the physical host address or the DNS name of a host machine. Hence, an \fBIPV6Host\fP ('www.voxilla.org') can be directly declaired in this manner.
+.PP
+Defaults to the IP address that represents the interface matching 'gethostname()'.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIhost\fP dns or physical address of an Internet host. 
+.RE
+.PP
+
+.SS "ost::IPV6Host::IPV6Host (struct in6_addr addr)"
+.PP
+Convert a system socket binary address such as may be returned through the accept() call or getsockpeer() into an internet host address object. \fBParameters:\fP
+.RS 4
+\fIaddr\fP binary address of internet host. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBIPV6Host\fP& ost::IPV6Host::operator&= (const \fBIPV6Mask\fP & mask)"
+.PP
+Mask the internet host address object with a network mask address. This is commonly used to coerce an address by subnet. 
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class __EXPORT \fBIPV6Mask\fP\fC [friend]\fP"
+.SS "__EXPORT \fBIPV6Host\fP operator& (const \fBIPV6Host\fP & addr, const \fBIPV6Mask\fP & mask)\fC [friend]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

@@ -1,0 +1,420 @@
+.TH "ost::Engine" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::Engine \- 
+.PP
+\fBEngine\fP.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <persist.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBEngineMode\fP { \fBmodeRead\fP, \fBmodeWrite\fP }"
+.br
+.RI "\fIThese are the modes the Persistence::Engine can work in. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEngine\fP (std::iostream &stream, \fBEngineMode\fP mode, bool compress=true)  throw ( PersistException )"
+.br
+.RI "\fIConstructs a Persistence::Engine with the specified stream in the given mode. \fP"
+.ti -1c
+.RI "void \fBsync\fP ()"
+.br
+.RI "\fIThis Flushes the buffers and closes the Persistence::Engine this must happen before the underlying stream is shut down. \fP"
+.ti -1c
+.RI "bool \fBmore\fP ()"
+.br
+.RI "\fIThis says there are more objects to deserialize. \fP"
+.ti -1c
+.RI "virtual \fB~Engine\fP ()"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (const \fBBaseObject\fP &object)  throw ( PersistException )"
+.br
+.RI "\fIwrites a \fBBaseObject\fP from a reference. \fP"
+.ti -1c
+.RI "void \fBwrite\fP (const \fBBaseObject\fP *object)  throw ( PersistException )"
+.br
+.RI "\fIwrites a \fBBaseObject\fP from a pointer. \fP"
+.ti -1c
+.RI "void \fBwrite\fP (\fBint8\fP i)  throw ( PersistException )"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBuint8\fP i)  throw ( PersistException )"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBint16\fP i)  throw ( PersistException )"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBuint16\fP i)  throw ( PersistException )"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBint32\fP i)  throw ( PersistException )"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBuint32\fP i)  throw ( PersistException )"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBint64\fP i)  throw ( PersistException )"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBuint64\fP i)  throw ( PersistException )"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (float i)  throw ( PersistException )"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (double i)  throw ( PersistException )"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (const \fBString\fP &str)  throw ( PersistException )"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (const std::string &str)  throw ( PersistException )"
+.br
+.ti -1c
+.RI "void \fBwriteBinary\fP (const \fBuint8\fP *data, const \fBuint32\fP size)  throw ( PersistException )"
+.br
+.ti -1c
+.RI "void \fBread\fP (\fBBaseObject\fP &object)  throw ( PersistException )"
+.br
+.RI "\fIreads a \fBBaseObject\fP into a reference overwriting the object. \fP"
+.ti -1c
+.RI "void \fBread\fP (\fBBaseObject\fP *&object)  throw ( PersistException )"
+.br
+.RI "\fIreads a \fBBaseObject\fP into a pointer allocating memory for the object if necessary. \fP"
+.ti -1c
+.RI "void \fBread\fP (\fBint8\fP &i)  throw ( PersistException )"
+.br
+.ti -1c
+.RI "void \fBread\fP (\fBuint8\fP &i)  throw ( PersistException )"
+.br
+.ti -1c
+.RI "void \fBread\fP (\fBint16\fP &i)  throw ( PersistException )"
+.br
+.ti -1c
+.RI "void \fBread\fP (\fBuint16\fP &i)  throw ( PersistException )"
+.br
+.ti -1c
+.RI "void \fBread\fP (\fBint32\fP &i)  throw ( PersistException )"
+.br
+.ti -1c
+.RI "void \fBread\fP (\fBuint32\fP &i)  throw ( PersistException )"
+.br
+.ti -1c
+.RI "void \fBread\fP (\fBint64\fP &i)  throw ( PersistException )"
+.br
+.ti -1c
+.RI "void \fBread\fP (\fBuint64\fP &i)  throw ( PersistException )"
+.br
+.ti -1c
+.RI "void \fBread\fP (float &i)  throw ( PersistException )"
+.br
+.ti -1c
+.RI "void \fBread\fP (double &i)  throw ( PersistException )"
+.br
+.ti -1c
+.RI "void \fBread\fP (\fBString\fP &str)  throw ( PersistException )"
+.br
+.ti -1c
+.RI "void \fBread\fP (std::string &str)  throw ( PersistException )"
+.br
+.ti -1c
+.RI "void \fBreadBinary\fP (\fBuint8\fP *data, \fBuint32\fP size)  throw ( PersistException )"
+.br
+.in -1c
+.SS "Related Functions"
+(Note that these are not member functions.) 
+.in +1c
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator>>\fP (\fBEngine\fP &ar, \fBBaseObject\fP &ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator>>\fP (\fBEngine\fP &ar, \fBBaseObject\fP *&ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator<<\fP (\fBEngine\fP &ar, \fBBaseObject\fP const &ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator<<\fP (\fBEngine\fP &ar, \fBBaseObject\fP const *ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator>>\fP (\fBEngine\fP &ar, \fBint8\fP &ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator<<\fP (\fBEngine\fP &ar, \fBint8\fP ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator>>\fP (\fBEngine\fP &ar, \fBuint8\fP &ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator<<\fP (\fBEngine\fP &ar, \fBuint8\fP ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator>>\fP (\fBEngine\fP &ar, \fBint16\fP &ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator<<\fP (\fBEngine\fP &ar, \fBint16\fP ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator>>\fP (\fBEngine\fP &ar, \fBuint16\fP &ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator<<\fP (\fBEngine\fP &ar, \fBuint16\fP ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator>>\fP (\fBEngine\fP &ar, \fBint32\fP &ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator<<\fP (\fBEngine\fP &ar, \fBint32\fP ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator>>\fP (\fBEngine\fP &ar, \fBuint32\fP &ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator<<\fP (\fBEngine\fP &ar, \fBuint32\fP ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator>>\fP (\fBEngine\fP &ar, \fBint64\fP &ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator<<\fP (\fBEngine\fP &ar, \fBint64\fP ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator>>\fP (\fBEngine\fP &ar, \fBuint64\fP &ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator<<\fP (\fBEngine\fP &ar, \fBuint64\fP ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator>>\fP (\fBEngine\fP &ar, float &ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator<<\fP (\fBEngine\fP &ar, float ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator>>\fP (\fBEngine\fP &ar, double &ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator<<\fP (\fBEngine\fP &ar, double ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator>>\fP (\fBEngine\fP &ar, \fBString\fP &ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator<<\fP (\fBEngine\fP &ar, \fBString\fP ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator>>\fP (\fBEngine\fP &ar, std::string &ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator<<\fP (\fBEngine\fP &ar, std::string ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator>>\fP (\fBEngine\fP &ar, bool &ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "\fBEngine\fP & \fBoperator<<\fP (\fBEngine\fP &ar, bool ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "template<class T > \fBEngine\fP & \fBoperator<<\fP (\fBEngine\fP &ar, typename std::vector< T > const &ob) throw(PersistException)"
+.br
+.RI "\fIThe following are templated classes. \fP"
+.ti -1c
+.RI "template<class T > \fBEngine\fP & \fBoperator>>\fP (\fBEngine\fP &ar, typename std::vector< T > &ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "template<class T > \fBEngine\fP & \fBoperator<<\fP (\fBEngine\fP &ar, typename std::deque< T > const &ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "template<class T > \fBEngine\fP & \fBoperator>>\fP (\fBEngine\fP &ar, typename std::deque< T > &ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "template<class Key , class Value > \fBEngine\fP & \fBoperator<<\fP (\fBEngine\fP &ar, typename std::map< Key, Value > const &ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "template<class Key , class Value > \fBEngine\fP & \fBoperator>>\fP (\fBEngine\fP &ar, typename std::map< Key, Value > &ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "template<class x , class y > \fBEngine\fP & \fBoperator<<\fP (\fBEngine\fP &ar, std::pair< x, y > &ob) throw(PersistException)"
+.br
+.ti -1c
+.RI "template<class x , class y > \fBEngine\fP & \fBoperator>>\fP (\fBEngine\fP &ar, std::pair< x, y > &ob) throw(PersistException)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBEngine\fP. 
+
+This class constructs on a standard C++ STL stream and then operates in the mode specified. The stream passed into the constructor must be a binary mode to function properly.
+.PP
+\fBAuthor:\fP
+.RS 4
+Daniel Silverstone stream serialization of persistent classes. 
+.RE
+.PP
+
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBost::Engine::EngineMode\fP"
+.PP
+These are the modes the Persistence::Engine can work in. 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fImodeRead \fP\fP
+.TP
+\fB\fImodeWrite \fP\fP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::Engine::Engine (std::iostream & stream, \fBEngineMode\fP mode, bool compress = \fCtrue\fP)  throw ( \fBPersistException\fP )"
+.PP
+Constructs a Persistence::Engine with the specified stream in the given mode. The stream must be initialised properly prior to this call or problems will ensue. If built using zlib compress can be used to enable compression 
+.SS "virtual ost::Engine::~Engine ()\fC [virtual]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "bool ost::Engine::more ()"
+.PP
+This says there are more objects to deserialize. 
+.SS "void ost::Engine::read (std::string & str)  throw ( \fBPersistException\fP )"
+.SS "void ost::Engine::read (\fBString\fP & str)  throw ( \fBPersistException\fP )"
+.SS "void ost::Engine::read (double & i)  throw ( \fBPersistException\fP )\fC [inline]\fP"
+.PP
+References CCXX_ENGINEREAD_REF.
+.SS "void ost::Engine::read (float & i)  throw ( \fBPersistException\fP )\fC [inline]\fP"
+.PP
+References CCXX_ENGINEREAD_REF.
+.SS "void ost::Engine::read (\fBuint64\fP & i)  throw ( \fBPersistException\fP )\fC [inline]\fP"
+.PP
+References CCXX_ENGINEREAD_REF.
+.SS "void ost::Engine::read (\fBint64\fP & i)  throw ( \fBPersistException\fP )\fC [inline]\fP"
+.PP
+References CCXX_ENGINEREAD_REF.
+.SS "void ost::Engine::read (\fBuint32\fP & i)  throw ( \fBPersistException\fP )\fC [inline]\fP"
+.PP
+References CCXX_ENGINEREAD_REF.
+.SS "void ost::Engine::read (\fBint32\fP & i)  throw ( \fBPersistException\fP )\fC [inline]\fP"
+.PP
+References CCXX_ENGINEREAD_REF.
+.SS "void ost::Engine::read (\fBuint16\fP & i)  throw ( \fBPersistException\fP )\fC [inline]\fP"
+.PP
+References CCXX_ENGINEREAD_REF.
+.SS "void ost::Engine::read (\fBint16\fP & i)  throw ( \fBPersistException\fP )\fC [inline]\fP"
+.PP
+References CCXX_ENGINEREAD_REF.
+.SS "void ost::Engine::read (\fBuint8\fP & i)  throw ( \fBPersistException\fP )\fC [inline]\fP"
+.PP
+References CCXX_ENGINEREAD_REF.
+.SS "void ost::Engine::read (\fBint8\fP & i)  throw ( \fBPersistException\fP )\fC [inline]\fP"
+.PP
+References CCXX_ENGINEREAD_REF.
+.SS "void ost::Engine::read (\fBBaseObject\fP *& object)  throw ( \fBPersistException\fP )"
+.PP
+reads a \fBBaseObject\fP into a pointer allocating memory for the object if necessary. 
+.SS "void ost::Engine::read (\fBBaseObject\fP & object)  throw ( \fBPersistException\fP )"
+.PP
+reads a \fBBaseObject\fP into a reference overwriting the object. 
+.SS "void ost::Engine::readBinary (\fBuint8\fP * data, \fBuint32\fP size)  throw ( \fBPersistException\fP )"
+.SS "void ost::Engine::sync ()"
+.PP
+This Flushes the buffers and closes the Persistence::Engine this must happen before the underlying stream is shut down. 
+.SS "void ost::Engine::write (const std::string & str)  throw ( \fBPersistException\fP )"
+.SS "void ost::Engine::write (const \fBString\fP & str)  throw ( \fBPersistException\fP )"
+.SS "void ost::Engine::write (double i)  throw ( \fBPersistException\fP )\fC [inline]\fP"
+.PP
+References CCXX_ENGINEWRITE_REF.
+.SS "void ost::Engine::write (float i)  throw ( \fBPersistException\fP )\fC [inline]\fP"
+.PP
+References CCXX_ENGINEWRITE_REF.
+.SS "void ost::Engine::write (\fBuint64\fP i)  throw ( \fBPersistException\fP )\fC [inline]\fP"
+.PP
+References CCXX_ENGINEWRITE_REF.
+.SS "void ost::Engine::write (\fBint64\fP i)  throw ( \fBPersistException\fP )\fC [inline]\fP"
+.PP
+References CCXX_ENGINEWRITE_REF.
+.SS "void ost::Engine::write (\fBuint32\fP i)  throw ( \fBPersistException\fP )\fC [inline]\fP"
+.PP
+References CCXX_ENGINEWRITE_REF.
+.SS "void ost::Engine::write (\fBint32\fP i)  throw ( \fBPersistException\fP )\fC [inline]\fP"
+.PP
+References CCXX_ENGINEWRITE_REF.
+.SS "void ost::Engine::write (\fBuint16\fP i)  throw ( \fBPersistException\fP )\fC [inline]\fP"
+.PP
+References CCXX_ENGINEWRITE_REF.
+.SS "void ost::Engine::write (\fBint16\fP i)  throw ( \fBPersistException\fP )\fC [inline]\fP"
+.PP
+References CCXX_ENGINEWRITE_REF.
+.SS "void ost::Engine::write (\fBuint8\fP i)  throw ( \fBPersistException\fP )\fC [inline]\fP"
+.PP
+References CCXX_ENGINEWRITE_REF.
+.SS "void ost::Engine::write (\fBint8\fP i)  throw ( \fBPersistException\fP )\fC [inline]\fP"
+.PP
+References CCXX_ENGINEWRITE_REF.
+.SS "void ost::Engine::write (const \fBBaseObject\fP * object)  throw ( \fBPersistException\fP )"
+.PP
+writes a \fBBaseObject\fP from a pointer. 
+.SS "void ost::Engine::write (const \fBBaseObject\fP & object)  throw ( \fBPersistException\fP )\fC [inline]\fP"
+.PP
+writes a \fBBaseObject\fP from a reference. 
+.PP
+References write().
+.PP
+Referenced by write().
+.SS "void ost::Engine::writeBinary (const \fBuint8\fP * data, const \fBuint32\fP size)  throw ( \fBPersistException\fP )"
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "template<class x , class y > \fBEngine\fP & operator<< (\fBEngine\fP & ar, std::pair< x, y > & ob) throw(\fBPersistException\fP)\fC [related]\fP"serialize a pair of some serializable content to the engine. 
+.SS "template<class Key , class Value > \fBEngine\fP & operator<< (\fBEngine\fP & ar, typename std::map< Key, Value > const & ob) throw(\fBPersistException\fP)\fC [related]\fP"serialize a map with keys/values which both are serializeable to an engine. 
+.SS "template<class T > \fBEngine\fP & operator<< (\fBEngine\fP & ar, typename std::deque< T > const & ob) throw(\fBPersistException\fP)\fC [related]\fP"serialize a deque of some serializable content to the engine 
+.SS "template<class T > \fBEngine\fP & operator<< (\fBEngine\fP & ar, typename std::vector< T > const & ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.PP
+The following are templated classes. serialize a vector of some serializable content to the engine 
+.SS "\fBEngine\fP & operator<< (\fBEngine\fP & ar, bool ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator<< (\fBEngine\fP & ar, std::string ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator<< (\fBEngine\fP & ar, \fBString\fP ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator<< (\fBEngine\fP & ar, double ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator<< (\fBEngine\fP & ar, float ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator<< (\fBEngine\fP & ar, \fBuint64\fP ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator<< (\fBEngine\fP & ar, \fBint64\fP ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator<< (\fBEngine\fP & ar, \fBuint32\fP ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator<< (\fBEngine\fP & ar, \fBint32\fP ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator<< (\fBEngine\fP & ar, \fBuint16\fP ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator<< (\fBEngine\fP & ar, \fBint16\fP ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator<< (\fBEngine\fP & ar, \fBuint8\fP ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator<< (\fBEngine\fP & ar, \fBint8\fP ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator<< (\fBEngine\fP & ar, \fBBaseObject\fP const * ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator<< (\fBEngine\fP & ar, \fBBaseObject\fP const & ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "template<class x , class y > \fBEngine\fP & operator>> (\fBEngine\fP & ar, std::pair< x, y > & ob) throw(\fBPersistException\fP)\fC [related]\fP"deserialize a pair of some serializable content to the engine. 
+.SS "template<class Key , class Value > \fBEngine\fP & operator>> (\fBEngine\fP & ar, typename std::map< Key, Value > & ob) throw(\fBPersistException\fP)\fC [related]\fP"deserialize a map with keys/values which both are serializeable from an engine. 
+.SS "template<class T > \fBEngine\fP & operator>> (\fBEngine\fP & ar, typename std::deque< T > & ob) throw(\fBPersistException\fP)\fC [related]\fP"deserialize a deque of deserializable content from an engine. 
+.SS "template<class T > \fBEngine\fP & operator>> (\fBEngine\fP & ar, typename std::vector< T > & ob) throw(\fBPersistException\fP)\fC [related]\fP"deserialize a vector of deserializable content from an engine. 
+.SS "\fBEngine\fP & operator>> (\fBEngine\fP & ar, bool & ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator>> (\fBEngine\fP & ar, std::string & ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator>> (\fBEngine\fP & ar, \fBString\fP & ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator>> (\fBEngine\fP & ar, double & ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator>> (\fBEngine\fP & ar, float & ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator>> (\fBEngine\fP & ar, \fBuint64\fP & ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator>> (\fBEngine\fP & ar, \fBint64\fP & ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator>> (\fBEngine\fP & ar, \fBuint32\fP & ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator>> (\fBEngine\fP & ar, \fBint32\fP & ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator>> (\fBEngine\fP & ar, \fBuint16\fP & ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator>> (\fBEngine\fP & ar, \fBint16\fP & ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator>> (\fBEngine\fP & ar, \fBuint8\fP & ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator>> (\fBEngine\fP & ar, \fBint8\fP & ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator>> (\fBEngine\fP & ar, \fBBaseObject\fP *& ob) throw(\fBPersistException\fP)\fC [related]\fP"
+.SS "\fBEngine\fP & operator>> (\fBEngine\fP & ar, \fBBaseObject\fP & ob) throw(\fBPersistException\fP)\fC [related]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

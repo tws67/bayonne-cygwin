@@ -1,0 +1,88 @@
+.TH "ost::Runable" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::Runable \- 
+.PP
+A container for objects that can be queued against a runlist.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <misc.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBstarting\fP (\fBRunlist\fP *list)"
+.br
+.RI "\fIStart the object against a run list. \fP"
+.ti -1c
+.RI "void \fBstoping\fP (void)"
+.br
+.RI "\fIStop the object, called when stopping or ready completes. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRunable\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Runable\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBready\fP (void)=0"
+.br
+.RI "\fIMethod handler that is invoked when a wait-listed object becomes ready to run. \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBRunlist\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A container for objects that can be queued against a runlist. 
+
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> runable object with notify when ready. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::Runable::Runable ()\fC [protected]\fP"
+.SS "virtual ost::Runable::~Runable ()\fC [protected, virtual]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void ost::Runable::ready (void)\fC [protected, pure virtual]\fP"
+.PP
+Method handler that is invoked when a wait-listed object becomes ready to run. 
+.SS "bool ost::Runable::starting (\fBRunlist\fP * list)"
+.PP
+Start the object against a run list. \fBReturns:\fP
+.RS 4
+true if immediately available to run. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlist\fP to start under. 
+.RE
+.PP
+
+.SS "void ost::Runable::stoping (void)"
+.PP
+Stop the object, called when stopping or ready completes. May also be used for a task that has not yet started to remove it from the wait list. 
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBRunlist\fP\fC [friend]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

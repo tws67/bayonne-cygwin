@@ -1,0 +1,1636 @@
+\section{ost::BayonneSession Class Reference}
+\label{classost_1_1_bayonne_session}\index{ost::BayonneSession@{ost::BayonneSession}}
+
+
+The primary session object representing a server timeslot and active communication endpoint in \doxyref{Bayonne}{p.}{classost_1_1_bayonne}.  
+
+
+{\ttfamily \#include $<$bayonne.h$>$}Inheritance diagram for ost::BayonneSession::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classost_1_1_bayonne_session}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf isDTMF} (void)
+\item 
+bool {\bf isPeering} (void)
+\item 
+{\bf BayonneSpan} $\ast$ {\bf getSpan} (void)
+\item 
+{\bf timeslot\_\-t} {\bf getTimeslot} (void)
+\item 
+{\bf ScriptEngine} $\ast$ {\bf getEngine} (void)
+\item 
+const char $\ast$ {\bf getExternal} (const char $\ast$option)
+\begin{DoxyCompactList}\small\item\em Process interpreter session symbols. \item\end{DoxyCompactList}\item 
+bool {\bf addSymbol} (const char $\ast$id, const char $\ast$value)
+\begin{DoxyCompactList}\small\item\em Add to an existing symbol. \item\end{DoxyCompactList}\item 
+bool {\bf clearSymbol} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em Clear an existing symbol. \item\end{DoxyCompactList}\item 
+uint16 {\bf getEventSequence} (void)
+\begin{DoxyCompactList}\small\item\em Get event sequence id. \item\end{DoxyCompactList}\item 
+{\bf BayonneTranslator} $\ast$ {\bf getTranslator} (void)
+\begin{DoxyCompactList}\small\item\em Get the current language translator. \item\end{DoxyCompactList}\item 
+void {\bf startConnecting} (void)
+\begin{DoxyCompactList}\small\item\em Start connecting child. \item\end{DoxyCompactList}\item 
+{\bf BayonneSession} ({\bf BayonneDriver} $\ast${\bf driver}, {\bf timeslot\_\-t} {\bf timeslot}, {\bf BayonneSpan} $\ast${\bf span}=NULL)
+\begin{DoxyCompactList}\small\item\em Create a new session. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$BayonneSession} ()
+\begin{DoxyCompactList}\small\item\em Destroy a session. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getDigits} (void)
+\item 
+const char $\ast$ {\bf defVoicelib} (void)
+\item 
+const char $\ast$ {\bf getSessionId} (void)
+\item 
+const char $\ast$ {\bf getSessionParent} (void)
+\item 
+const char $\ast$ {\bf getSessionJoined} (void)
+\item 
+time\_\-t {\bf getSessionStart} (void)
+\item 
+void {\bf initialevent} (void)
+\begin{DoxyCompactList}\small\item\em Initial kickoff event. \item\end{DoxyCompactList}\item 
+void {\bf initialize} (void)
+\begin{DoxyCompactList}\small\item\em Initialine ccengine script environment. \item\end{DoxyCompactList}\item 
+void {\bf detach} (void)
+\begin{DoxyCompactList}\small\item\em Detach interpreter. \item\end{DoxyCompactList}\item 
+time\_\-t {\bf getJoined} (void)
+\begin{DoxyCompactList}\small\item\em Return time this call is joined or 0 if not child node. \item\end{DoxyCompactList}\item 
+{\bf BayonneDriver} $\ast$ {\bf getDriver} (void)
+\begin{DoxyCompactList}\small\item\em Return driver associated with this session. \item\end{DoxyCompactList}\item 
+virtual timeout\_\-t {\bf getRemaining} (void)=0
+\begin{DoxyCompactList}\small\item\em Return time remaining until timer expires. \item\end{DoxyCompactList}\item 
+virtual void {\bf startTimer} (timeout\_\-t timer)=0
+\begin{DoxyCompactList}\small\item\em Start a timer on the session. \item\end{DoxyCompactList}\item 
+virtual void {\bf stopTimer} (void)=0
+\begin{DoxyCompactList}\small\item\em Stop the timer for the session. \item\end{DoxyCompactList}\item 
+virtual void {\bf setOffhook} (bool {\bf state})
+\begin{DoxyCompactList}\small\item\em Set the port hook state. \item\end{DoxyCompactList}\item 
+virtual void {\bf makeIdle} (void)
+\begin{DoxyCompactList}\small\item\em Handles driver specific stuff when going idle. \item\end{DoxyCompactList}\item 
+void {\bf part} ({\bf event\_\-t} reason)
+\begin{DoxyCompactList}\small\item\em Disconnect notify peer. \item\end{DoxyCompactList}\item 
+virtual bool {\bf postEvent} ({\bf Event} $\ast$event)
+\begin{DoxyCompactList}\small\item\em Post an event to the session state engine. \item\end{DoxyCompactList}\item 
+bool {\bf matchLine} (Line $\ast$line)
+\item 
+virtual void {\bf queEvent} ({\bf Event} $\ast$event)
+\begin{DoxyCompactList}\small\item\em queue an event through the msgport. \item\end{DoxyCompactList}\item 
+virtual void {\bf startThread} (void)
+\begin{DoxyCompactList}\small\item\em ccengine thread handling. \item\end{DoxyCompactList}\item 
+virtual void {\bf enterThread} (ScriptThread $\ast$thr)
+\begin{DoxyCompactList}\small\item\em ccengine thread handling. \item\end{DoxyCompactList}\item 
+virtual void {\bf exitThread} (const char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em ccengine thread handling. \item\end{DoxyCompactList}\item 
+virtual void {\bf clrAudio} (void)
+\begin{DoxyCompactList}\small\item\em Clear/cleanup audio processing for the session. \item\end{DoxyCompactList}\item 
+virtual timeout\_\-t {\bf getToneFraming} (void)
+\begin{DoxyCompactList}\small\item\em Get frame rate used for creating tone generators. \item\end{DoxyCompactList}\item 
+virtual const char $\ast$ {\bf audioEncoding} (void)
+\begin{DoxyCompactList}\small\item\em Get driver default encoding. \item\end{DoxyCompactList}\item 
+virtual const char $\ast$ {\bf audioExtension} (void)
+\begin{DoxyCompactList}\small\item\em Get driver default extension. \item\end{DoxyCompactList}\item 
+virtual timeout\_\-t {\bf audioFraming} (void)
+\begin{DoxyCompactList}\small\item\em Get driver default framing. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getAudio} (bool live=true)
+\begin{DoxyCompactList}\small\item\em Check script keywords for audio processing. \item\end{DoxyCompactList}\item 
+void {\bf branching} (void)
+\begin{DoxyCompactList}\small\item\em ccengine branch event notification. \item\end{DoxyCompactList}\item 
+bool {\bf isOffhook} (void)
+\begin{DoxyCompactList}\small\item\em Return hook state. \item\end{DoxyCompactList}\item 
+{\bf interface\_\-t} {\bf getInterface} (void)
+\begin{DoxyCompactList}\small\item\em Return interface type of this session. \item\end{DoxyCompactList}\item 
+{\bf bridge\_\-t} {\bf getBridge} (void)
+\begin{DoxyCompactList}\small\item\em Return bridge type for joins. \item\end{DoxyCompactList}\item 
+{\bf calltype\_\-t} {\bf getType} (void)
+\begin{DoxyCompactList}\small\item\em Return call type on session. \item\end{DoxyCompactList}\item 
+{\bf timeslot\_\-t} {\bf getSlot} (void)
+\begin{DoxyCompactList}\small\item\em Return server timeslot this session uses. \item\end{DoxyCompactList}\item 
+bool {\bf isIdle} (void)
+\begin{DoxyCompactList}\small\item\em Return if the session is currently idle. \item\end{DoxyCompactList}\item 
+bool {\bf isRefer} (void)
+\begin{DoxyCompactList}\small\item\em Return if currently referring. \item\end{DoxyCompactList}\item 
+bool {\bf isJoined} (void)
+\begin{DoxyCompactList}\small\item\em Return state of join. \item\end{DoxyCompactList}\item 
+bool {\bf isAssociated} (void)
+\begin{DoxyCompactList}\small\item\em Return state of association with parent in call. \item\end{DoxyCompactList}\item 
+void {\bf associate} ({\bf BayonneSession} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Set new call association. \item\end{DoxyCompactList}\item 
+bool {\bf isHolding} (void)
+\item 
+bool {\bf isDisconnecting} (void)
+\begin{DoxyCompactList}\small\item\em Return state disconnecting or idle. \item\end{DoxyCompactList}\item 
+timeout\_\-t {\bf getJoinTimer} (void)
+\begin{DoxyCompactList}\small\item\em Return parent answer timer, if joining. \item\end{DoxyCompactList}\item 
+bool {\bf signalScript} ({\bf signal\_\-t} signal)
+\begin{DoxyCompactList}\small\item\em Signal notification to script. \item\end{DoxyCompactList}\item 
+virtual bool {\bf peerLinear} (void)
+\begin{DoxyCompactList}\small\item\em Indicate whether session peers audio as linear frames. \item\end{DoxyCompactList}\item 
+virtual bool {\bf peerAudio} (Audio::Encoded encoded)
+\begin{DoxyCompactList}\small\item\em Post a peer audio frame into the driver. \item\end{DoxyCompactList}\item 
+virtual bool {\bf setPeering} (Audio::Encoding encoding, timeout\_\-t framing)
+\begin{DoxyCompactList}\small\item\em Set peer audio encoding to the encoding type and framing specified by peer on drivers which can switch encoding. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getKeyString} (const char $\ast$id)
+\item 
+bool {\bf getKeyBool} (const char $\ast$id)
+\item 
+long {\bf getKeyValue} (const char $\ast$id)
+\item 
+timeout\_\-t {\bf getSecTimeout} (const char $\ast$id)
+\item 
+timeout\_\-t {\bf getMSecTimeout} (const char $\ast$id)
+\item 
+timeout\_\-t {\bf getTimeoutValue} (const char $\ast$opt=NULL)
+\item 
+timeout\_\-t {\bf getTimeoutKeyword} (const char $\ast$kw)
+\item 
+const char $\ast$ {\bf getExitKeyword} (const char $\ast$def)
+\item 
+const char $\ast$ {\bf getMenuKeyword} (const char $\ast$def)
+\item 
+unsigned {\bf getInputCount} (const char $\ast$digits, unsigned max)
+\item 
+uint32 {\bf newTid} (void)
+\begin{DoxyCompactList}\small\item\em Compute a new unique transaction id. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getTid} (void)
+\begin{DoxyCompactList}\small\item\em Get the current transaction identifier string for the session. \item\end{DoxyCompactList}\item 
+bool {\bf digitEvent} (const char $\ast$event)
+\begin{DoxyCompactList}\small\item\em Throw a digit pattern matching event message to the interprer. \item\end{DoxyCompactList}\item 
+bool {\bf stringEvent} (const char $\ast$evt)
+\item 
+char {\bf getDigit} (void)
+\begin{DoxyCompactList}\small\item\em Get the next pending digit in the DTMF input buffer. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf getGlobal} (const char $\ast$id)
+\item 
+static bool {\bf setGlobal} (const char $\ast$id, const char $\ast$value)
+\item 
+static bool {\bf sizeGlobal} (const char $\ast$id, unsigned size)
+\item 
+static bool {\bf addGlobal} (const char $\ast$id, const char $\ast$value)
+\item 
+static bool {\bf clearGlobal} (const char $\ast$id)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Traffic} {\bf call\_\-attempts}
+\item 
+{\bf Traffic} {\bf call\_\-complete}
+\item 
+{\bf BayonneAudio} {\bf audio}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf requiresDTMF} (void)
+\begin{DoxyCompactList}\small\item\em Used to indicate commands which require dtmf handling to be enabled. \item\end{DoxyCompactList}\item 
+void {\bf enterCall} (void)
+\begin{DoxyCompactList}\small\item\em Enter a co-\/joined call session; used to notify other services. \item\end{DoxyCompactList}\item 
+void {\bf exitCall} (const char $\ast$reason)
+\begin{DoxyCompactList}\small\item\em Exit a co-\/joined call session; used to notify other services. \item\end{DoxyCompactList}\item 
+virtual bool {\bf enableDTMF} (void)
+\begin{DoxyCompactList}\small\item\em Enable dtmf detection for this channel. \item\end{DoxyCompactList}\item 
+virtual void {\bf disableDTMF} (void)
+\begin{DoxyCompactList}\small\item\em Disable dtmf detection for this channel. \item\end{DoxyCompactList}\item 
+virtual const char $\ast$ {\bf checkAudio} (bool live)
+\begin{DoxyCompactList}\small\item\em Check audio properties for file and channel audio processing based on the driver specific capabilities of this channel through it's virtual. \item\end{DoxyCompactList}\item 
+virtual bool {\bf filterPosting} ({\bf Event} $\ast$event)
+\begin{DoxyCompactList}\small\item\em virtual to filter incoming events. \item\end{DoxyCompactList}\item 
+virtual bool {\bf enterCommon} ({\bf Event} $\ast$event)
+\item 
+virtual bool {\bf enterInitial} ({\bf Event} $\ast$event)
+\item 
+virtual bool {\bf enterFinal} ({\bf Event} $\ast$event)
+\item 
+virtual bool {\bf enterIdle} ({\bf Event} $\ast$event)
+\item 
+virtual bool {\bf enterReset} ({\bf Event} $\ast$event)
+\item 
+virtual bool {\bf enterRelease} ({\bf Event} $\ast$event)
+\item 
+virtual bool {\bf enterRinging} ({\bf Event} $\ast$event)
+\item 
+virtual bool {\bf enterPickup} ({\bf Event} $\ast$event)
+\item 
+virtual bool {\bf enterAnswer} ({\bf Event} $\ast$event)
+\item 
+virtual bool {\bf enterSeize} ({\bf Event} $\ast$event)
+\item 
+virtual bool {\bf enterHunting} ({\bf Event} $\ast$event)
+\item 
+virtual bool {\bf enterHangup} ({\bf Event} $\ast$event)
+\item 
+virtual bool {\bf enterTone} ({\bf Event} $\ast$event)
+\item 
+virtual bool {\bf enterReconnect} ({\bf Event} $\ast$event)
+\item 
+virtual bool {\bf enterDTMF} ({\bf Event} $\ast$event)
+\item 
+virtual bool {\bf enterPlay} ({\bf Event} $\ast$event)
+\item 
+virtual bool {\bf enterRecord} ({\bf Event} $\ast$event)
+\item 
+virtual bool {\bf enterJoin} ({\bf Event} $\ast$event)
+\item 
+virtual bool {\bf enterWait} ({\bf Event} $\ast$event)
+\item 
+virtual bool {\bf enterDial} ({\bf Event} $\ast$event)
+\item 
+virtual bool {\bf enterBusy} ({\bf Event} $\ast$event)
+\item 
+virtual bool {\bf enterStandby} ({\bf Event} $\ast$event)
+\item 
+virtual bool {\bf enterXfer} ({\bf Event} $\ast$event)
+\item 
+virtual bool {\bf enterRefer} ({\bf Event} $\ast$event)
+\item 
+virtual bool {\bf enterHold} ({\bf Event} $\ast$event)
+\item 
+virtual bool {\bf enterRecall} ({\bf Event} $\ast$event)
+\item 
+void {\bf check} (void)
+\begin{DoxyCompactList}\small\item\em Check dtmf handling and other nessisities for the interpreter after an event has changed interpreter state. \item\end{DoxyCompactList}\item 
+void {\bf renameRecord} (void)
+\item 
+bool {\bf stateInitial} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateFinal} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateIdle} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateIdleReset} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateReset} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateRelease} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateBusy} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateStandby} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateRinging} ({\bf Event} $\ast$event)
+\item 
+bool {\bf statePickup} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateAnswer} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateSeize} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateHunting} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateRunning} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateLibexec} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateLibreset} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateLibwait} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateWaitkey} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateThreading} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateHangup} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateCollect} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateSleep} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateStart} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateClear} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateInkey} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateInput} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateRead} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateDial} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateXfer} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateRefer} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateHold} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateRecall} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateTone} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateDTMF} ({\bf Event} $\ast$event)
+\item 
+bool {\bf statePlay} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateRecord} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateJoin} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateWait} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateConnect} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateReconnect} ({\bf Event} $\ast$event)
+\item 
+bool {\bf stateCalling} ({\bf Event} $\ast$event)
+\item 
+bool {\bf putEvent} ({\bf Event} $\ast$event)
+\begin{DoxyCompactList}\small\item\em Direct method to post an event to a channel. \item\end{DoxyCompactList}\item 
+void {\bf libWrite} (const char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Write libexec. \item\end{DoxyCompactList}\item 
+void {\bf libClose} (const char $\ast$string)
+\item 
+bool {\bf isLibexec} (const char $\ast$tsid)
+\item 
+timeout\_\-t {\bf getLibexecTimeout} (void)
+\item 
+const char $\ast$ {\bf getWritepath} (char $\ast$buf=NULL, size\_\-t len=0)
+\item 
+void {\bf incIncomingAttempts} (void)
+\item 
+void {\bf incOutgoingAttempts} (void)
+\item 
+void {\bf incIncomingComplete} (void)
+\item 
+void {\bf incOutgoingComplete} (void)
+\item 
+void {\bf incActiveCalls} (void)
+\item 
+void {\bf decActiveCalls} (void)
+\item 
+ScriptInterp $\ast$ {\bf getInterp} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em Return session id for interpreter session command. \item\end{DoxyCompactList}\item 
+ScriptSymbols $\ast$ {\bf getSymbols} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em Return ccengine symbol page map. \item\end{DoxyCompactList}\item 
+Name $\ast$ {\bf attachStart} ({\bf Event} $\ast$event)
+\begin{DoxyCompactList}\small\item\em Start a script from idle or ringing. \item\end{DoxyCompactList}\item 
+unsigned {\bf getId} (void)
+\begin{DoxyCompactList}\small\item\em Used by ccengine. \item\end{DoxyCompactList}\item 
+void {\bf setSid} (void)
+\begin{DoxyCompactList}\small\item\em Compute a uneque call session id for the current call on the current session object. \item\end{DoxyCompactList}\item 
+void {\bf setState} ({\bf state\_\-t})
+\begin{DoxyCompactList}\small\item\em Set the session to a new state. \item\end{DoxyCompactList}\item 
+void {\bf setRunning} (void)
+\begin{DoxyCompactList}\small\item\em Set the session to the running state, resume interpreter or libexec. \item\end{DoxyCompactList}\item 
+bool {\bf setReconnect} (const char $\ast$enc, timeout\_\-t framing)
+\begin{DoxyCompactList}\small\item\em Attempt to readjust encoding of active session if supported. \item\end{DoxyCompactList}\item 
+bool {\bf recallReconnect} (void)
+\begin{DoxyCompactList}\small\item\em Attempt to readjust encoding of active session for recall. \item\end{DoxyCompactList}\item 
+void {\bf setConnecting} (const char $\ast$evname=NULL)
+\begin{DoxyCompactList}\small\item\em Set the session to the connecting (join) state or run state based on flags and circumstances from seize/pickup. \item\end{DoxyCompactList}\item 
+bool {\bf setLibexec} ({\bf result\_\-t} result)
+\begin{DoxyCompactList}\small\item\em Set the result of a libexec initiated process and change state to libexec. \item\end{DoxyCompactList}\item 
+bool {\bf setLibreset} ({\bf result\_\-t} result)
+\begin{DoxyCompactList}\small\item\em Set the result of a libexec initiated process and execute a reset timer interval. \item\end{DoxyCompactList}\item 
+{\bf libaudio\_\-t} $\ast$ {\bf getLibaudio} (void)
+\begin{DoxyCompactList}\small\item\em Get the libaudio object. \item\end{DoxyCompactList}\item 
+void {\bf finalize} (void)
+\begin{DoxyCompactList}\small\item\em ccengine. \item\end{DoxyCompactList}\item 
+bool {\bf exit} (void)
+\begin{DoxyCompactList}\small\item\em Exit processing for interpreter. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::ostream $\ast$ {\bf logevents}
+\item 
+std::ostream $\ast$ {\bf logtrace}
+\item 
+Ring $\ast$ {\bf ring}
+\item 
+{\bf BayonneDriver} $\ast$ {\bf driver}
+\item 
+{\bf BayonneMsgport} $\ast$ {\bf msgport}
+\item 
+{\bf BayonneSession} $\ast$ {\bf peer}
+\item 
+{\bf BayonneSpan} $\ast$ {\bf span}
+\item 
+{\bf timeslot\_\-t} {\bf timeslot}
+\item 
+uint8 {\bf seq}
+\item 
+uint16 {\bf evseq}
+\item 
+uint32 {\bf tseq}
+\item 
+bool {\bf offhook}
+\item 
+bool {\bf dtmf}
+\item 
+bool {\bf answered}
+\item 
+bool {\bf starting}
+\item 
+bool {\bf holding}
+\item 
+bool {\bf connecting}
+\item 
+bool {\bf referring}
+\item 
+time\_\-t {\bf audiotimer}
+\item 
+time\_\-t {\bf starttime}
+\item 
+{\bf interface\_\-t} {\bf iface}
+\item 
+{\bf bridge\_\-t} {\bf bridge}
+\item 
+{\bf calltype\_\-t} {\bf type}
+\item 
+{\bf event\_\-t} {\bf seizure}
+\item 
+{\bf ScriptEngine} $\ast$ {\bf vm}
+\item 
+{\bf BayonneTranslator} $\ast$ {\bf translator}
+\begin{DoxyCompactList}\small\item\em Translator in effect for this session. \item\end{DoxyCompactList}\item 
+char {\bf var\_\-date} [12]
+\item 
+char {\bf var\_\-time} [12]
+\item 
+char {\bf var\_\-duration} [12]
+\item 
+char {\bf var\_\-callid} [12]
+\item 
+char {\bf var\_\-tid} [14]
+\item 
+char {\bf var\_\-sid} [16]
+\item 
+char {\bf var\_\-pid} [16]
+\item 
+char {\bf var\_\-recall} [16]
+\item 
+char {\bf var\_\-joined} [16]
+\item 
+char {\bf var\_\-rings} [4]
+\item 
+char {\bf var\_\-timeslot} [8]
+\item 
+char {\bf var\_\-spanid} [8]
+\item 
+char {\bf var\_\-bankid} [4]
+\item 
+char {\bf var\_\-spantsid} [12]
+\item 
+const char $\ast$ {\bf voicelib}
+\item 
+char $\ast$ {\bf dtmf\_\-digits}
+\item 
+unsigned {\bf digit\_\-count}
+\item 
+unsigned {\bf ring\_\-count}
+\item 
+time\_\-t {\bf time\_\-joined}
+\item 
+State {\bf state}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf BayonneTranslator} {\bf langNone}
+\item 
+static ScriptSymbols $\ast$ {\bf globalSyms}
+\item 
+static Mutex {\bf globalLock}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \_\-\_\-EXPORT {\bf ScriptEngine}
+\item 
+class \_\-\_\-EXPORT {\bf BayonneMsgport}
+\item 
+class \_\-\_\-EXPORT {\bf BayonneTranslator}
+\item 
+class \_\-\_\-EXPORT {\bf BayonneDriver}
+\item 
+class \_\-\_\-EXPORT {\bf Bayonne}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The primary session object representing a server timeslot and active communication endpoint in \doxyref{Bayonne}{p.}{classost_1_1_bayonne}. \begin{DoxyAuthor}{Author}
+David Sugar $<${\tt dyfet@gnutelephony.org}$>$ Session timeslot object. 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::BayonneSession@{ost::BayonneSession}!BayonneSession@{BayonneSession}}
+\index{BayonneSession@{BayonneSession}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{BayonneSession}]{\setlength{\rightskip}{0pt plus 5cm}ost::BayonneSession::BayonneSession ({\bf BayonneDriver} $\ast$ {\em driver}, \/  {\bf timeslot\_\-t} {\em timeslot}, \/  {\bf BayonneSpan} $\ast$ {\em span} = {\ttfamily NULL})}\label{classost_1_1_bayonne_session_abce25187d5977f98847eeda26708624b}
+
+
+Create a new session. 
+\begin{DoxyParams}{Parameters}
+\item[{\em driver}]to bind. \item[{\em timeslot}]to bind. \item[{\em span}]to bind, or NULL if no span associated. \end{DoxyParams}
+\index{ost::BayonneSession@{ost::BayonneSession}!$\sim$BayonneSession@{$\sim$BayonneSession}}
+\index{$\sim$BayonneSession@{$\sim$BayonneSession}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{$\sim$BayonneSession}]{\setlength{\rightskip}{0pt plus 5cm}virtual ost::BayonneSession::$\sim$BayonneSession ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_session_a917db591716aad91b517618143f081fc}
+
+
+Destroy a session. 
+
+\subsection{Member Function Documentation}
+\index{ost::BayonneSession@{ost::BayonneSession}!addGlobal@{addGlobal}}
+\index{addGlobal@{addGlobal}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{addGlobal}]{\setlength{\rightskip}{0pt plus 5cm}static bool ost::BayonneSession::addGlobal (const char $\ast$ {\em id}, \/  const char $\ast$ {\em value})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_session_ac82ec66462b8df13c8e6391e6e474d23}
+\index{ost::BayonneSession@{ost::BayonneSession}!addSymbol@{addSymbol}}
+\index{addSymbol@{addSymbol}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{addSymbol}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::addSymbol (const char $\ast$ {\em id}, \/  const char $\ast$ {\em value})}\label{classost_1_1_bayonne_session_a2139df91a7bac18b08c569b79f5e97a3}
+
+
+Add to an existing symbol. 
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]of symbol. \item[{\em value}]to add. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if not exists. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!associate@{associate}}
+\index{associate@{associate}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{associate}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneSession::associate ({\bf BayonneSession} $\ast$ {\em s})}\label{classost_1_1_bayonne_session_a7c43446463fa8cb7315f768e3135bbe0}
+
+
+Set new call association. Used by ACD.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em session}]to associate with. \end{DoxyParams}
+\index{ost::BayonneSession@{ost::BayonneSession}!attachStart@{attachStart}}
+\index{attachStart@{attachStart}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{attachStart}]{\setlength{\rightskip}{0pt plus 5cm}Name$\ast$ ost::BayonneSession::attachStart ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a6610a2cc45fab8276e445a242ce59cd0}
+
+
+Start a script from idle or ringing. This may use the assign statements to find the script name if none is passed.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em event}]passed to kick off the script. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+script to run or NULL. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!audioEncoding@{audioEncoding}}
+\index{audioEncoding@{audioEncoding}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{audioEncoding}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ ost::BayonneSession::audioEncoding (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_session_a0b4f7d35ca889f4aca5aeb158a7a2978}
+
+
+Get driver default encoding. \index{ost::BayonneSession@{ost::BayonneSession}!audioExtension@{audioExtension}}
+\index{audioExtension@{audioExtension}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{audioExtension}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ ost::BayonneSession::audioExtension (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_session_a57af20548e91c9f72bc93231da06687f}
+
+
+Get driver default extension. \index{ost::BayonneSession@{ost::BayonneSession}!audioFraming@{audioFraming}}
+\index{audioFraming@{audioFraming}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{audioFraming}]{\setlength{\rightskip}{0pt plus 5cm}virtual timeout\_\-t ost::BayonneSession::audioFraming (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_session_ae81514e62023fbbd3c978d3e51b1c960}
+
+
+Get driver default framing. \index{ost::BayonneSession@{ost::BayonneSession}!branching@{branching}}
+\index{branching@{branching}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{branching}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneSession::branching (void)}\label{classost_1_1_bayonne_session_aac5368d2b9d13167ad02476ccef19e90}
+
+
+ccengine branch event notification. Used for menudef processing. \index{ost::BayonneSession@{ost::BayonneSession}!check@{check}}
+\index{check@{check}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{check}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneSession::check (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_af7bd0ccd67c90d69a10622767e5ed8b6}
+
+
+Check dtmf handling and other nessisities for the interpreter after an event has changed interpreter state. \index{ost::BayonneSession@{ost::BayonneSession}!checkAudio@{checkAudio}}
+\index{checkAudio@{checkAudio}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{checkAudio}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ ost::BayonneSession::checkAudio (bool {\em live})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_a0c64249164eddb50c539ce924670634b}
+
+
+Check audio properties for file and channel audio processing based on the driver specific capabilities of this channel through it's virtual. \begin{DoxyReturn}{Returns}
+error message if audio format unacceptable, NULL if ok. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em true}]if for live audio, false if for file only. \end{DoxyParams}
+\index{ost::BayonneSession@{ost::BayonneSession}!clearGlobal@{clearGlobal}}
+\index{clearGlobal@{clearGlobal}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{clearGlobal}]{\setlength{\rightskip}{0pt plus 5cm}static bool ost::BayonneSession::clearGlobal (const char $\ast$ {\em id})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_session_aac419c729ab666a9599f809584f7fa52}
+\index{ost::BayonneSession@{ost::BayonneSession}!clearSymbol@{clearSymbol}}
+\index{clearSymbol@{clearSymbol}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{clearSymbol}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::clearSymbol (const char $\ast$ {\em id})}\label{classost_1_1_bayonne_session_af23179bf0d35dcaac243c4e433725644}
+
+
+Clear an existing symbol. 
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]of symbol. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if not exists. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!clrAudio@{clrAudio}}
+\index{clrAudio@{clrAudio}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{clrAudio}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::BayonneSession::clrAudio (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_session_a06684ad2143d937a2a8847e79b4b70a7}
+
+
+Clear/cleanup audio processing for the session. \index{ost::BayonneSession@{ost::BayonneSession}!decActiveCalls@{decActiveCalls}}
+\index{decActiveCalls@{decActiveCalls}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{decActiveCalls}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneSession::decActiveCalls (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_ade3d001d5eb916cd5cb92eb07b1a5714}
+\index{ost::BayonneSession@{ost::BayonneSession}!defVoicelib@{defVoicelib}}
+\index{defVoicelib@{defVoicelib}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{defVoicelib}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::BayonneSession::defVoicelib (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_session_a18ccdccdc2e3415024589496af3d9496}
+\index{ost::BayonneSession@{ost::BayonneSession}!detach@{detach}}
+\index{detach@{detach}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{detach}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneSession::detach (void)}\label{classost_1_1_bayonne_session_a37f384d388d03fc1bfa279ddbb593bbb}
+
+
+Detach interpreter. \index{ost::BayonneSession@{ost::BayonneSession}!digitEvent@{digitEvent}}
+\index{digitEvent@{digitEvent}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{digitEvent}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::digitEvent (const char $\ast$ {\em event})}\label{classost_1_1_bayonne_session_af41e585ddb7f6e14bbc15218da2aea0b}
+
+
+Throw a digit pattern matching event message to the interprer. \begin{DoxyReturn}{Returns}
+true if throw caught. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em event}]message. \end{DoxyParams}
+\index{ost::BayonneSession@{ost::BayonneSession}!disableDTMF@{disableDTMF}}
+\index{disableDTMF@{disableDTMF}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{disableDTMF}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::BayonneSession::disableDTMF (void)\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_a7ccb5f84d087a8a95cd322abb6360cb8}
+
+
+Disable dtmf detection for this channel. \index{ost::BayonneSession@{ost::BayonneSession}!enableDTMF@{enableDTMF}}
+\index{enableDTMF@{enableDTMF}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enableDTMF}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enableDTMF (void)\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_ac5234898152b1ce8bb1556daeeeff0ef}
+
+
+Enable dtmf detection for this channel. \begin{DoxyReturn}{Returns}
+true if successful. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!enterAnswer@{enterAnswer}}
+\index{enterAnswer@{enterAnswer}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterAnswer}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enterAnswer ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_a7fe03cba95d393168f47063a97777d0b}
+\index{ost::BayonneSession@{ost::BayonneSession}!enterBusy@{enterBusy}}
+\index{enterBusy@{enterBusy}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterBusy}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enterBusy ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_a6cf7f32a47068167f090124437e88565}
+\index{ost::BayonneSession@{ost::BayonneSession}!enterCall@{enterCall}}
+\index{enterCall@{enterCall}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterCall}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneSession::enterCall (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a1b9278cb73b02d5085176fcc5878f7e5}
+
+
+Enter a co-\/joined call session; used to notify other services. Always performed by child node. \index{ost::BayonneSession@{ost::BayonneSession}!enterCommon@{enterCommon}}
+\index{enterCommon@{enterCommon}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterCommon}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enterCommon ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_a43db97c1e3107faccd5319c3643eb04c}
+\index{ost::BayonneSession@{ost::BayonneSession}!enterDial@{enterDial}}
+\index{enterDial@{enterDial}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterDial}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enterDial ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_af1ce37749638bfaccf0226ba906677e3}
+\index{ost::BayonneSession@{ost::BayonneSession}!enterDTMF@{enterDTMF}}
+\index{enterDTMF@{enterDTMF}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterDTMF}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enterDTMF ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_a8df5334c0beb3b50d08bbf7d7ccd9ffc}
+\index{ost::BayonneSession@{ost::BayonneSession}!enterFinal@{enterFinal}}
+\index{enterFinal@{enterFinal}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterFinal}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enterFinal ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_ac35be2dca675960dc772c7d25dafb00a}
+\index{ost::BayonneSession@{ost::BayonneSession}!enterHangup@{enterHangup}}
+\index{enterHangup@{enterHangup}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterHangup}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enterHangup ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_ad9ba3c8103b79d2f09b7e9eb8c00324d}
+\index{ost::BayonneSession@{ost::BayonneSession}!enterHold@{enterHold}}
+\index{enterHold@{enterHold}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterHold}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enterHold ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_aad62595679b56b4cb9b0823227d7a823}
+\index{ost::BayonneSession@{ost::BayonneSession}!enterHunting@{enterHunting}}
+\index{enterHunting@{enterHunting}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterHunting}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enterHunting ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_a34aa579bad703a47c03612dff4cceb0a}
+\index{ost::BayonneSession@{ost::BayonneSession}!enterIdle@{enterIdle}}
+\index{enterIdle@{enterIdle}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterIdle}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enterIdle ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_ad49fd8f43791c0a9f609ae6328c7d968}
+\index{ost::BayonneSession@{ost::BayonneSession}!enterInitial@{enterInitial}}
+\index{enterInitial@{enterInitial}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterInitial}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enterInitial ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_a173d5c213a72accb7151bcc1494c7154}
+\index{ost::BayonneSession@{ost::BayonneSession}!enterJoin@{enterJoin}}
+\index{enterJoin@{enterJoin}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterJoin}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enterJoin ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_af5e140631753b79be262cc46f07a2769}
+\index{ost::BayonneSession@{ost::BayonneSession}!enterPickup@{enterPickup}}
+\index{enterPickup@{enterPickup}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterPickup}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enterPickup ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_a7234f08b8b78dd7b24e09455e4d1b76b}
+\index{ost::BayonneSession@{ost::BayonneSession}!enterPlay@{enterPlay}}
+\index{enterPlay@{enterPlay}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterPlay}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enterPlay ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_aaf68d394c1f9f31e156a1d40a141ac9b}
+\index{ost::BayonneSession@{ost::BayonneSession}!enterRecall@{enterRecall}}
+\index{enterRecall@{enterRecall}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterRecall}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enterRecall ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_a0e3f63fa39737e26db5a527aae54546d}
+\index{ost::BayonneSession@{ost::BayonneSession}!enterReconnect@{enterReconnect}}
+\index{enterReconnect@{enterReconnect}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterReconnect}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enterReconnect ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_a7edada7670b976802bddd86dbf2521bc}
+\index{ost::BayonneSession@{ost::BayonneSession}!enterRecord@{enterRecord}}
+\index{enterRecord@{enterRecord}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterRecord}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enterRecord ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_a4d1bd83fadf756dc73a065b427d99c8d}
+\index{ost::BayonneSession@{ost::BayonneSession}!enterRefer@{enterRefer}}
+\index{enterRefer@{enterRefer}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterRefer}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enterRefer ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_a99b1b20e8abe85aa314c6e5c84c50d2f}
+\index{ost::BayonneSession@{ost::BayonneSession}!enterRelease@{enterRelease}}
+\index{enterRelease@{enterRelease}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterRelease}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enterRelease ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_ae27183144e36f54757460a2723c1e47c}
+\index{ost::BayonneSession@{ost::BayonneSession}!enterReset@{enterReset}}
+\index{enterReset@{enterReset}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterReset}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enterReset ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_a0677daa4aea8d30677a032625f55e377}
+\index{ost::BayonneSession@{ost::BayonneSession}!enterRinging@{enterRinging}}
+\index{enterRinging@{enterRinging}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterRinging}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enterRinging ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_a9a15b2945688f2679e1bff0a789da440}
+\index{ost::BayonneSession@{ost::BayonneSession}!enterSeize@{enterSeize}}
+\index{enterSeize@{enterSeize}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterSeize}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enterSeize ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_a731af5efed64d325958abc414e372918}
+\index{ost::BayonneSession@{ost::BayonneSession}!enterStandby@{enterStandby}}
+\index{enterStandby@{enterStandby}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterStandby}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enterStandby ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_a1f1b75a686bc72f6beff292a69fe8d18}
+\index{ost::BayonneSession@{ost::BayonneSession}!enterThread@{enterThread}}
+\index{enterThread@{enterThread}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterThread}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::BayonneSession::enterThread (ScriptThread $\ast$ {\em thr})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_session_a9ed54f7dd09654fb2aa836132842979b}
+
+
+ccengine thread handling. \index{ost::BayonneSession@{ost::BayonneSession}!enterTone@{enterTone}}
+\index{enterTone@{enterTone}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterTone}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enterTone ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_abe77919b752f46857f0a51d65549d585}
+\index{ost::BayonneSession@{ost::BayonneSession}!enterWait@{enterWait}}
+\index{enterWait@{enterWait}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterWait}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enterWait ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_adcecf4ad9aff622cde57910c680abf93}
+\index{ost::BayonneSession@{ost::BayonneSession}!enterXfer@{enterXfer}}
+\index{enterXfer@{enterXfer}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{enterXfer}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::enterXfer ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_aa56445128ce5bb7500ac3b0fb316c8f8}
+\index{ost::BayonneSession@{ost::BayonneSession}!exit@{exit}}
+\index{exit@{exit}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{exit}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::exit (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a75e173928f6ade3630c9d84587161baa}
+
+
+Exit processing for interpreter. \begin{DoxyReturn}{Returns}
+true of exiting. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!exitCall@{exitCall}}
+\index{exitCall@{exitCall}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{exitCall}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneSession::exitCall (const char $\ast$ {\em reason})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a047ba9cc9689252a20236477101bfe59}
+
+
+Exit a co-\/joined call session; used to notify other services. May happen when a child node exits, drops a recall, or is dropped by a parent.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em reason}]call is terminated. \end{DoxyParams}
+\index{ost::BayonneSession@{ost::BayonneSession}!exitThread@{exitThread}}
+\index{exitThread@{exitThread}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{exitThread}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::BayonneSession::exitThread (const char $\ast$ {\em msg})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_session_a6168c04d9fb87d4d35abc8b03f1b4ff1}
+
+
+ccengine thread handling. \index{ost::BayonneSession@{ost::BayonneSession}!filterPosting@{filterPosting}}
+\index{filterPosting@{filterPosting}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{filterPosting}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::filterPosting ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_session_a753dc4e409e8dcc15b451f9a85b7442d}
+
+
+virtual to filter incoming events. 
+\begin{DoxyParams}{Parameters}
+\item[{\em event}]being sent to channel. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if accepting event. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!finalize@{finalize}}
+\index{finalize@{finalize}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{finalize}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneSession::finalize (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a2987ad10baba7832d343c5b753ce4789}
+
+
+ccengine. \index{ost::BayonneSession@{ost::BayonneSession}!getAudio@{getAudio}}
+\index{getAudio@{getAudio}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getAudio}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::BayonneSession::getAudio (bool {\em live} = {\ttfamily true})}\label{classost_1_1_bayonne_session_a71c1c0b8413878eac53f92fb1051267e}
+
+
+Check script keywords for audio processing. \begin{DoxyReturn}{Returns}
+NULL if ok, else error message. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em live}]true if for live, else for file processing. \end{DoxyParams}
+\index{ost::BayonneSession@{ost::BayonneSession}!getBridge@{getBridge}}
+\index{getBridge@{getBridge}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getBridge}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bridge\_\-t} ost::BayonneSession::getBridge (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_session_a5337bb5243101fcf4f719ec3b6614120}
+
+
+Return bridge type for joins. \begin{DoxyReturn}{Returns}
+bridge type. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!getDigit@{getDigit}}
+\index{getDigit@{getDigit}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getDigit}]{\setlength{\rightskip}{0pt plus 5cm}char ost::BayonneSession::getDigit (void)}\label{classost_1_1_bayonne_session_a95d8364b00c50f9a8edc59dcebb826af}
+
+
+Get the next pending digit in the DTMF input buffer. \begin{DoxyReturn}{Returns}
+digit. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!getDigits@{getDigits}}
+\index{getDigits@{getDigits}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getDigits}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::BayonneSession::getDigits (void)}\label{classost_1_1_bayonne_session_a99acf2f456e03891d56ef70ccd9e5f8b}
+\index{ost::BayonneSession@{ost::BayonneSession}!getDriver@{getDriver}}
+\index{getDriver@{getDriver}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getDriver}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneDriver}$\ast$ ost::BayonneSession::getDriver (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_session_acb82cbb32956c230fb13c9fbd35ad997}
+
+
+Return driver associated with this session. \begin{DoxyReturn}{Returns}
+driver object. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!getEngine@{getEngine}}
+\index{getEngine@{getEngine}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getEngine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ScriptEngine}$\ast$ ost::BayonneSession::getEngine (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_session_a89def9072d9c81c6ef96dae7087281f7}
+\index{ost::BayonneSession@{ost::BayonneSession}!getEventSequence@{getEventSequence}}
+\index{getEventSequence@{getEventSequence}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getEventSequence}]{\setlength{\rightskip}{0pt plus 5cm}uint16 ost::BayonneSession::getEventSequence (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_session_a44479b3cdd0f47766c3aeffb57d9b0a5}
+
+
+Get event sequence id. \begin{DoxyReturn}{Returns}
+event sequence id. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!getExitKeyword@{getExitKeyword}}
+\index{getExitKeyword@{getExitKeyword}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getExitKeyword}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::BayonneSession::getExitKeyword (const char $\ast$ {\em def})}\label{classost_1_1_bayonne_session_aeca871b133925bb529c1e7561def1657}
+\index{ost::BayonneSession@{ost::BayonneSession}!getExternal@{getExternal}}
+\index{getExternal@{getExternal}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getExternal}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::BayonneSession::getExternal (const char $\ast$ {\em option})}\label{classost_1_1_bayonne_session_af4d7531c85e37ea64409586883237680}
+
+
+Process interpreter session symbols. 
+\begin{DoxyParams}{Parameters}
+\item[{\em option}]symbol being requested. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NULL if not external, else value. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!getGlobal@{getGlobal}}
+\index{getGlobal@{getGlobal}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getGlobal}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ ost::BayonneSession::getGlobal (const char $\ast$ {\em id})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_session_a240ae9259bf1cc27aca2fac993f0abcc}
+\index{ost::BayonneSession@{ost::BayonneSession}!getId@{getId}}
+\index{getId@{getId}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getId}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::BayonneSession::getId (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a28cd4158e29706537b58f75911c948db}
+
+
+Used by ccengine. \index{ost::BayonneSession@{ost::BayonneSession}!getInputCount@{getInputCount}}
+\index{getInputCount@{getInputCount}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getInputCount}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::BayonneSession::getInputCount (const char $\ast$ {\em digits}, \/  unsigned {\em max})}\label{classost_1_1_bayonne_session_afff48637bfaecec6ee8e6346b0288bb8}
+\index{ost::BayonneSession@{ost::BayonneSession}!getInterface@{getInterface}}
+\index{getInterface@{getInterface}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getInterface}]{\setlength{\rightskip}{0pt plus 5cm}{\bf interface\_\-t} ost::BayonneSession::getInterface (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_session_a3908cd2ed5885310990ef972c660d3a8}
+
+
+Return interface type of this session. \begin{DoxyReturn}{Returns}
+interface type. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!getInterp@{getInterp}}
+\index{getInterp@{getInterp}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getInterp}]{\setlength{\rightskip}{0pt plus 5cm}ScriptInterp$\ast$ ost::BayonneSession::getInterp (const char $\ast$ {\em id})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_aea8f9280e5ac7ee2a6fe6d673bde124b}
+
+
+Return session id for interpreter session command. 
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]of session request. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ccengine object to return for the id. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!getJoined@{getJoined}}
+\index{getJoined@{getJoined}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getJoined}]{\setlength{\rightskip}{0pt plus 5cm}time\_\-t ost::BayonneSession::getJoined (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_session_aabf349923376d1b0c9dbb65c411fe0b2}
+
+
+Return time this call is joined or 0 if not child node. \index{ost::BayonneSession@{ost::BayonneSession}!getJoinTimer@{getJoinTimer}}
+\index{getJoinTimer@{getJoinTimer}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getJoinTimer}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t ost::BayonneSession::getJoinTimer (void)}\label{classost_1_1_bayonne_session_a5ed441a42a592b1cff6dd8d292c8b9f2}
+
+
+Return parent answer timer, if joining. \begin{DoxyReturn}{Returns}
+timeout for joining. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!getKeyBool@{getKeyBool}}
+\index{getKeyBool@{getKeyBool}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getKeyBool}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::getKeyBool (const char $\ast$ {\em id})}\label{classost_1_1_bayonne_session_a34aebcc3de26d8c5fc1cf4d1ce89fb0d}
+\index{ost::BayonneSession@{ost::BayonneSession}!getKeyString@{getKeyString}}
+\index{getKeyString@{getKeyString}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getKeyString}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::BayonneSession::getKeyString (const char $\ast$ {\em id})}\label{classost_1_1_bayonne_session_af670f9d524a99069c509af417af69bd3}
+\index{ost::BayonneSession@{ost::BayonneSession}!getKeyValue@{getKeyValue}}
+\index{getKeyValue@{getKeyValue}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getKeyValue}]{\setlength{\rightskip}{0pt plus 5cm}long ost::BayonneSession::getKeyValue (const char $\ast$ {\em id})}\label{classost_1_1_bayonne_session_a27cb9b035e889ba9d5051d05e70edbc2}
+\index{ost::BayonneSession@{ost::BayonneSession}!getLibaudio@{getLibaudio}}
+\index{getLibaudio@{getLibaudio}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getLibaudio}]{\setlength{\rightskip}{0pt plus 5cm}{\bf libaudio\_\-t}$\ast$ ost::BayonneSession::getLibaudio (void)\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classost_1_1_bayonne_session_a97992d0c3dd6bf43ddb27611e6281957}
+
+
+Get the libaudio object. Used by server libexec to prepare a libaudio/phrasebook session.
+
+\begin{DoxyReturn}{Returns}
+libaudio object for this session. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!getLibexecTimeout@{getLibexecTimeout}}
+\index{getLibexecTimeout@{getLibexecTimeout}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getLibexecTimeout}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t ost::BayonneSession::getLibexecTimeout (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a74fa2c78134b574d87d6da3a317baa31}
+\index{ost::BayonneSession@{ost::BayonneSession}!getMenuKeyword@{getMenuKeyword}}
+\index{getMenuKeyword@{getMenuKeyword}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getMenuKeyword}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::BayonneSession::getMenuKeyword (const char $\ast$ {\em def})}\label{classost_1_1_bayonne_session_abd18497e91cc9aa5b5e9536c0884f8bf}
+\index{ost::BayonneSession@{ost::BayonneSession}!getMSecTimeout@{getMSecTimeout}}
+\index{getMSecTimeout@{getMSecTimeout}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getMSecTimeout}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t ost::BayonneSession::getMSecTimeout (const char $\ast$ {\em id})}\label{classost_1_1_bayonne_session_afc36e2d0a5539fc7fc95ed162b3fd164}
+\index{ost::BayonneSession@{ost::BayonneSession}!getRemaining@{getRemaining}}
+\index{getRemaining@{getRemaining}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getRemaining}]{\setlength{\rightskip}{0pt plus 5cm}virtual timeout\_\-t ost::BayonneSession::getRemaining (void)\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classost_1_1_bayonne_session_af45f76bf4818c7c28a9ef93c42784641}
+
+
+Return time remaining until timer expires. Commonly used for msgport scheduling.
+
+\begin{DoxyReturn}{Returns}
+time remaining in milliseconds. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!getSecTimeout@{getSecTimeout}}
+\index{getSecTimeout@{getSecTimeout}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getSecTimeout}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t ost::BayonneSession::getSecTimeout (const char $\ast$ {\em id})}\label{classost_1_1_bayonne_session_aa87d6ef44e53326ce9ef0d2a7f0fc171}
+\index{ost::BayonneSession@{ost::BayonneSession}!getSessionId@{getSessionId}}
+\index{getSessionId@{getSessionId}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getSessionId}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::BayonneSession::getSessionId (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_session_aec5c9b1d23ebbad9d977f3fdd4f9860e}
+\index{ost::BayonneSession@{ost::BayonneSession}!getSessionJoined@{getSessionJoined}}
+\index{getSessionJoined@{getSessionJoined}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getSessionJoined}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::BayonneSession::getSessionJoined (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_session_ac1dc8fea0afdfc9cc692c7c427c7bab9}
+\index{ost::BayonneSession@{ost::BayonneSession}!getSessionParent@{getSessionParent}}
+\index{getSessionParent@{getSessionParent}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getSessionParent}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::BayonneSession::getSessionParent (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_session_a76cb22dfc8f12300f21e2ba28e54dd10}
+\index{ost::BayonneSession@{ost::BayonneSession}!getSessionStart@{getSessionStart}}
+\index{getSessionStart@{getSessionStart}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getSessionStart}]{\setlength{\rightskip}{0pt plus 5cm}time\_\-t ost::BayonneSession::getSessionStart (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_session_a7a288deb1ced40262d0c951bbbb9af44}
+\index{ost::BayonneSession@{ost::BayonneSession}!getSlot@{getSlot}}
+\index{getSlot@{getSlot}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getSlot}]{\setlength{\rightskip}{0pt plus 5cm}{\bf timeslot\_\-t} ost::BayonneSession::getSlot (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_session_a9d0ee7d9c08aa0971928745609eeba12}
+
+
+Return server timeslot this session uses. \begin{DoxyReturn}{Returns}
+server timeslot. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!getSpan@{getSpan}}
+\index{getSpan@{getSpan}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getSpan}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneSpan}$\ast$ ost::BayonneSession::getSpan (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_session_ae72e19834d402348ab99fc99160f3a15}
+\index{ost::BayonneSession@{ost::BayonneSession}!getSymbols@{getSymbols}}
+\index{getSymbols@{getSymbols}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getSymbols}]{\setlength{\rightskip}{0pt plus 5cm}ScriptSymbols$\ast$ ost::BayonneSession::getSymbols (const char $\ast$ {\em id})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a7f1db89f32092ff23e772cdf2abcc443}
+
+
+Return ccengine symbol page map. Gives access to globals.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]table of symbols. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+table map to use. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!getTid@{getTid}}
+\index{getTid@{getTid}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getTid}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::BayonneSession::getTid (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_session_a2334b8f21bd3053801bdc1232032d0f6}
+
+
+Get the current transaction identifier string for the session. \begin{DoxyReturn}{Returns}
+transaction identifier. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!getTimeoutKeyword@{getTimeoutKeyword}}
+\index{getTimeoutKeyword@{getTimeoutKeyword}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getTimeoutKeyword}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t ost::BayonneSession::getTimeoutKeyword (const char $\ast$ {\em kw})}\label{classost_1_1_bayonne_session_ad8ce21abbfcc32e07ac7580b224a0ff5}
+\index{ost::BayonneSession@{ost::BayonneSession}!getTimeoutValue@{getTimeoutValue}}
+\index{getTimeoutValue@{getTimeoutValue}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getTimeoutValue}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t ost::BayonneSession::getTimeoutValue (const char $\ast$ {\em opt} = {\ttfamily NULL})}\label{classost_1_1_bayonne_session_a642f69c65806c83b9a37b98a865e14f5}
+\index{ost::BayonneSession@{ost::BayonneSession}!getTimeslot@{getTimeslot}}
+\index{getTimeslot@{getTimeslot}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getTimeslot}]{\setlength{\rightskip}{0pt plus 5cm}{\bf timeslot\_\-t} ost::BayonneSession::getTimeslot (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_session_a8a9021e23f0a4349774647a761e25d3b}
+\index{ost::BayonneSession@{ost::BayonneSession}!getToneFraming@{getToneFraming}}
+\index{getToneFraming@{getToneFraming}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getToneFraming}]{\setlength{\rightskip}{0pt plus 5cm}virtual timeout\_\-t ost::BayonneSession::getToneFraming (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_session_a428ce1f71d89c442375e22b5db35d4ca}
+
+
+Get frame rate used for creating tone generators. \index{ost::BayonneSession@{ost::BayonneSession}!getTranslator@{getTranslator}}
+\index{getTranslator@{getTranslator}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getTranslator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneTranslator}$\ast$ ost::BayonneSession::getTranslator (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_session_a6fbecbab33755132a98710d02e7efb3d}
+
+
+Get the current language translator. \begin{DoxyReturn}{Returns}
+translator. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!getType@{getType}}
+\index{getType@{getType}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getType}]{\setlength{\rightskip}{0pt plus 5cm}{\bf calltype\_\-t} ost::BayonneSession::getType (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_session_a68b31126693369f2d72ff6081416b95b}
+
+
+Return call type on session. \begin{DoxyReturn}{Returns}
+call type. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!getWritepath@{getWritepath}}
+\index{getWritepath@{getWritepath}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{getWritepath}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::BayonneSession::getWritepath (char $\ast$ {\em buf} = {\ttfamily NULL}, \/  size\_\-t {\em len} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a31e4ecbdb942646507fa9ae22ce7ee67}
+\index{ost::BayonneSession@{ost::BayonneSession}!incActiveCalls@{incActiveCalls}}
+\index{incActiveCalls@{incActiveCalls}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{incActiveCalls}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneSession::incActiveCalls (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a833e0c950a6e4839d94afa824b5252d4}
+\index{ost::BayonneSession@{ost::BayonneSession}!incIncomingAttempts@{incIncomingAttempts}}
+\index{incIncomingAttempts@{incIncomingAttempts}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{incIncomingAttempts}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneSession::incIncomingAttempts (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a5f4d2789e41591b29dfd290b4b13269f}
+\index{ost::BayonneSession@{ost::BayonneSession}!incIncomingComplete@{incIncomingComplete}}
+\index{incIncomingComplete@{incIncomingComplete}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{incIncomingComplete}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneSession::incIncomingComplete (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a81494e225dd809bc0b095a2407ed3952}
+\index{ost::BayonneSession@{ost::BayonneSession}!incOutgoingAttempts@{incOutgoingAttempts}}
+\index{incOutgoingAttempts@{incOutgoingAttempts}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{incOutgoingAttempts}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneSession::incOutgoingAttempts (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_ab7649f7e52a1c6a9f3ab5197425fea6f}
+\index{ost::BayonneSession@{ost::BayonneSession}!incOutgoingComplete@{incOutgoingComplete}}
+\index{incOutgoingComplete@{incOutgoingComplete}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{incOutgoingComplete}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneSession::incOutgoingComplete (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a209ae00635c52cb5085eac0895eed24c}
+\index{ost::BayonneSession@{ost::BayonneSession}!initialevent@{initialevent}}
+\index{initialevent@{initialevent}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{initialevent}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneSession::initialevent (void)}\label{classost_1_1_bayonne_session_a4d2581f0ae9a278808b3b2024e066c90}
+
+
+Initial kickoff event. \index{ost::BayonneSession@{ost::BayonneSession}!initialize@{initialize}}
+\index{initialize@{initialize}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneSession::initialize (void)}\label{classost_1_1_bayonne_session_a7aa2285eca11568cc56e839f37902d19}
+
+
+Initialine ccengine script environment. \index{ost::BayonneSession@{ost::BayonneSession}!isAssociated@{isAssociated}}
+\index{isAssociated@{isAssociated}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{isAssociated}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::isAssociated (void)}\label{classost_1_1_bayonne_session_aa238547f859f208fb3cf58b8d9210c09}
+
+
+Return state of association with parent in call. \begin{DoxyReturn}{Returns}
+true if currently associated. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!isDisconnecting@{isDisconnecting}}
+\index{isDisconnecting@{isDisconnecting}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{isDisconnecting}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::isDisconnecting (void)}\label{classost_1_1_bayonne_session_a7fa5fe4d74a45731a772246f949912db}
+
+
+Return state disconnecting or idle. .. \index{ost::BayonneSession@{ost::BayonneSession}!isDTMF@{isDTMF}}
+\index{isDTMF@{isDTMF}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{isDTMF}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::isDTMF (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_session_a6e6799a5cc50bf4946cba7a8cc89e29c}
+\index{ost::BayonneSession@{ost::BayonneSession}!isHolding@{isHolding}}
+\index{isHolding@{isHolding}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{isHolding}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::isHolding (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_session_a45626f6bcd803c7b19bc767b05032dbe}
+\index{ost::BayonneSession@{ost::BayonneSession}!isIdle@{isIdle}}
+\index{isIdle@{isIdle}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{isIdle}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::isIdle (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_session_a137d20c03a85af25b94d580ea548577c}
+
+
+Return if the session is currently idle. \begin{DoxyReturn}{Returns}
+true if currently idle. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!isJoined@{isJoined}}
+\index{isJoined@{isJoined}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{isJoined}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::isJoined (void)}\label{classost_1_1_bayonne_session_a15d6edaccccaf97fc627716c5723ff3b}
+
+
+Return state of join. \begin{DoxyReturn}{Returns}
+true if currently joined. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!isLibexec@{isLibexec}}
+\index{isLibexec@{isLibexec}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{isLibexec}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::isLibexec (const char $\ast$ {\em tsid})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a3964d941c3052fbe64b69a1e759497b7}
+\index{ost::BayonneSession@{ost::BayonneSession}!isOffhook@{isOffhook}}
+\index{isOffhook@{isOffhook}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{isOffhook}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::isOffhook (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_session_ae73503dac184765769a421efe937c94f}
+
+
+Return hook state. \begin{DoxyReturn}{Returns}
+true if offhook. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!isPeering@{isPeering}}
+\index{isPeering@{isPeering}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{isPeering}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::isPeering (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_session_a30eb46e0ae96c498b1d9d30fa2b4dfe5}
+\index{ost::BayonneSession@{ost::BayonneSession}!isRefer@{isRefer}}
+\index{isRefer@{isRefer}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{isRefer}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::isRefer (void)}\label{classost_1_1_bayonne_session_a5024d245dd8bda81870e26c16e05148a}
+
+
+Return if currently referring. \begin{DoxyReturn}{Returns}
+true if referring. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!libClose@{libClose}}
+\index{libClose@{libClose}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{libClose}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneSession::libClose (const char $\ast$ {\em string})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a33a30e7a95c28b574f9f351be6767ea0}
+\index{ost::BayonneSession@{ost::BayonneSession}!libWrite@{libWrite}}
+\index{libWrite@{libWrite}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{libWrite}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneSession::libWrite (const char $\ast$ {\em string})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a954b337bf60d3d55ca7ea6480052f5fc}
+
+
+Write libexec. ..
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]to write. \end{DoxyParams}
+\index{ost::BayonneSession@{ost::BayonneSession}!makeIdle@{makeIdle}}
+\index{makeIdle@{makeIdle}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{makeIdle}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::BayonneSession::makeIdle (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_session_a1c63a1db2257b25625ed21a5d0dd4c5b}
+
+
+Handles driver specific stuff when going idle. \index{ost::BayonneSession@{ost::BayonneSession}!matchLine@{matchLine}}
+\index{matchLine@{matchLine}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{matchLine}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::matchLine (Line $\ast$ {\em line})}\label{classost_1_1_bayonne_session_a912eacdde0858ac59fef03983efc1827}
+\index{ost::BayonneSession@{ost::BayonneSession}!newTid@{newTid}}
+\index{newTid@{newTid}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{newTid}]{\setlength{\rightskip}{0pt plus 5cm}uint32 ost::BayonneSession::newTid (void)}\label{classost_1_1_bayonne_session_aa41b0a1525ec740bd4149e4daeb3683a}
+
+
+Compute a new unique transaction id. These are like pids and are often used to assure transaction coherence, such as in the libexec system.
+
+\begin{DoxyReturn}{Returns}
+generated integer transaction identifier. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!part@{part}}
+\index{part@{part}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{part}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneSession::part ({\bf event\_\-t} {\em reason})}\label{classost_1_1_bayonne_session_a3f0d593819d76826af83f822f3f15ce5}
+
+
+Disconnect notify peer. ..
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em reason}]event id to pass \end{DoxyParams}
+\index{ost::BayonneSession@{ost::BayonneSession}!peerAudio@{peerAudio}}
+\index{peerAudio@{peerAudio}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{peerAudio}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::peerAudio (Audio::Encoded {\em encoded})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_session_a7a07e512158e26c9c10be528034212f3}
+
+
+Post a peer audio frame into the driver. The frame is assumed to either be in the format used for global peering, or, if the driver supports setPeering, perhaps in the session selected format.
+
+\begin{DoxyReturn}{Returns}
+true if peer frame was posted. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em encoded}]audio frame to peer. \end{DoxyParams}
+\index{ost::BayonneSession@{ost::BayonneSession}!peerLinear@{peerLinear}}
+\index{peerLinear@{peerLinear}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{peerLinear}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::peerLinear (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_session_a96d66c504302ffcf537088f771ee0399}
+
+
+Indicate whether session peers audio as linear frames. \begin{DoxyReturn}{Returns}
+true if peering linear. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!postEvent@{postEvent}}
+\index{postEvent@{postEvent}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{postEvent}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::postEvent ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_session_adc200eb759f3500a3fb91e8d7cd5bed2}
+
+
+Post an event to the session state engine. \begin{DoxyReturn}{Returns}
+true if event claimed. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em event}]being posted. \end{DoxyParams}
+\index{ost::BayonneSession@{ost::BayonneSession}!putEvent@{putEvent}}
+\index{putEvent@{putEvent}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{putEvent}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::putEvent ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a64102254ad579e33d00965320e30722b}
+
+
+Direct method to post an event to a channel. \begin{DoxyReturn}{Returns}
+true if event is claimed by channel. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em event}]being posted. \end{DoxyParams}
+\index{ost::BayonneSession@{ost::BayonneSession}!queEvent@{queEvent}}
+\index{queEvent@{queEvent}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{queEvent}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::BayonneSession::queEvent ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_session_a06cd007941597877ef71ad222fe627ca}
+
+
+queue an event through the msgport. 
+\begin{DoxyParams}{Parameters}
+\item[{\em event}]to queue. \end{DoxyParams}
+\index{ost::BayonneSession@{ost::BayonneSession}!recallReconnect@{recallReconnect}}
+\index{recallReconnect@{recallReconnect}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{recallReconnect}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::recallReconnect (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a3491f72e8ad4b1dc14d43180f97f4501}
+
+
+Attempt to readjust encoding of active session for recall. \index{ost::BayonneSession@{ost::BayonneSession}!renameRecord@{renameRecord}}
+\index{renameRecord@{renameRecord}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{renameRecord}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneSession::renameRecord (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a4667dc2a6cec14e88af340b1f0f48153}
+\index{ost::BayonneSession@{ost::BayonneSession}!requiresDTMF@{requiresDTMF}}
+\index{requiresDTMF@{requiresDTMF}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{requiresDTMF}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::requiresDTMF (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_afa47f1841cc072a61d150622852b6dd1}
+
+
+Used to indicate commands which require dtmf handling to be enabled. \begin{DoxyReturn}{Returns}
+true if dtmf was enabled. If false, error processing occured for the interpreter. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!setConnecting@{setConnecting}}
+\index{setConnecting@{setConnecting}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{setConnecting}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneSession::setConnecting (const char $\ast$ {\em evname} = {\ttfamily NULL})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_ae63969df56e788392db09940db94314a}
+
+
+Set the session to the connecting (join) state or run state based on flags and circumstances from seize/pickup. \index{ost::BayonneSession@{ost::BayonneSession}!setGlobal@{setGlobal}}
+\index{setGlobal@{setGlobal}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{setGlobal}]{\setlength{\rightskip}{0pt plus 5cm}static bool ost::BayonneSession::setGlobal (const char $\ast$ {\em id}, \/  const char $\ast$ {\em value})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_session_afb3bd2b6810fff2732050ef1f0c3fc0b}
+\index{ost::BayonneSession@{ost::BayonneSession}!setLibexec@{setLibexec}}
+\index{setLibexec@{setLibexec}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{setLibexec}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::setLibexec ({\bf result\_\-t} {\em result})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_ac807b251f697a8b0c9337649fe1ab08b}
+
+
+Set the result of a libexec initiated process and change state to libexec. Return false if no libexec support, or if not currently libexecing...
+
+\begin{DoxyReturn}{Returns}
+true if in libexec 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em result}]code to set. \end{DoxyParams}
+\index{ost::BayonneSession@{ost::BayonneSession}!setLibreset@{setLibreset}}
+\index{setLibreset@{setLibreset}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{setLibreset}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::setLibreset ({\bf result\_\-t} {\em result})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_ac3dd75803ddb1e49b2a56271d19dddd6}
+
+
+Set the result of a libexec initiated process and execute a reset timer interval. This is used to schedule reset hang time before resuming libexec.
+
+\begin{DoxyReturn}{Returns}
+true if in libexec 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em result}]code to set. \end{DoxyParams}
+\index{ost::BayonneSession@{ost::BayonneSession}!setOffhook@{setOffhook}}
+\index{setOffhook@{setOffhook}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{setOffhook}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::BayonneSession::setOffhook (bool {\em state})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_session_a5312a1d188ffba870d9e42152ecd63b7}
+
+
+Set the port hook state. Mostly for analog devices.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em state}]true to set offhook, false onhook. \end{DoxyParams}
+\index{ost::BayonneSession@{ost::BayonneSession}!setPeering@{setPeering}}
+\index{setPeering@{setPeering}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{setPeering}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSession::setPeering (Audio::Encoding {\em encoding}, \/  timeout\_\-t {\em framing})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_session_ad20338c9a5d55e6cd34abdf8e7cf3908}
+
+
+Set peer audio encoding to the encoding type and framing specified by peer on drivers which can switch encoding. This can enable audio conversions to be bypassed.
+
+\begin{DoxyReturn}{Returns}
+true if set. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em encoding}]format requested. \item[{\em framing}]timer to use. \end{DoxyParams}
+\index{ost::BayonneSession@{ost::BayonneSession}!setReconnect@{setReconnect}}
+\index{setReconnect@{setReconnect}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{setReconnect}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::setReconnect (const char $\ast$ {\em enc}, \/  timeout\_\-t {\em framing})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a852e08213108949a83c04953b665e51b}
+
+
+Attempt to readjust encoding of active session if supported. 
+\begin{DoxyParams}{Parameters}
+\item[{\em encoding}]to try \item[{\em timeout}]to use \end{DoxyParams}
+\index{ost::BayonneSession@{ost::BayonneSession}!setRunning@{setRunning}}
+\index{setRunning@{setRunning}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{setRunning}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneSession::setRunning (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_aee6bb2a0d2212051c4270df064447689}
+
+
+Set the session to the running state, resume interpreter or libexec. \index{ost::BayonneSession@{ost::BayonneSession}!setSid@{setSid}}
+\index{setSid@{setSid}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{setSid}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneSession::setSid (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a219383d546e61bb9e4945d38729f7b2b}
+
+
+Compute a uneque call session id for the current call on the current session object. Also a great key for cdr records. \index{ost::BayonneSession@{ost::BayonneSession}!setState@{setState}}
+\index{setState@{setState}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{setState}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneSession::setState ({\bf state\_\-t})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_acc5a5491e0f6650042acde6eff6a6b8d}
+
+
+Set the session to a new state. \index{ost::BayonneSession@{ost::BayonneSession}!signalScript@{signalScript}}
+\index{signalScript@{signalScript}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{signalScript}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::signalScript ({\bf signal\_\-t} {\em signal})}\label{classost_1_1_bayonne_session_a705ff6646543853aadbf59e5d245b3b7}
+
+
+Signal notification to script. 
+\begin{DoxyParams}{Parameters}
+\item[{\em signal}]to send to script engine. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if signal claimed. 
+\end{DoxyReturn}
+\index{ost::BayonneSession@{ost::BayonneSession}!sizeGlobal@{sizeGlobal}}
+\index{sizeGlobal@{sizeGlobal}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{sizeGlobal}]{\setlength{\rightskip}{0pt plus 5cm}static bool ost::BayonneSession::sizeGlobal (const char $\ast$ {\em id}, \/  unsigned {\em size})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_session_afe9c63ad4b355cb832c4179a90665da7}
+\index{ost::BayonneSession@{ost::BayonneSession}!startConnecting@{startConnecting}}
+\index{startConnecting@{startConnecting}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{startConnecting}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneSession::startConnecting (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_session_a61cb7c52be270e09088f2c974e5f8619}
+
+
+Start connecting child. .. \index{ost::BayonneSession@{ost::BayonneSession}!startThread@{startThread}}
+\index{startThread@{startThread}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{startThread}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::BayonneSession::startThread (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_session_addbf4d7629bb593b27ab63198e938994}
+
+
+ccengine thread handling. \index{ost::BayonneSession@{ost::BayonneSession}!startTimer@{startTimer}}
+\index{startTimer@{startTimer}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{startTimer}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::BayonneSession::startTimer (timeout\_\-t {\em timer})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classost_1_1_bayonne_session_a1414015667472b3f43938259143ef4cb}
+
+
+Start a timer on the session. Used extensivily in state handler code.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em timer}]to start for specified milliseconds. \end{DoxyParams}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateAnswer@{stateAnswer}}
+\index{stateAnswer@{stateAnswer}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateAnswer}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateAnswer ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_afaebb6622c6a0b33ed35f55706664b79}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateBusy@{stateBusy}}
+\index{stateBusy@{stateBusy}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateBusy}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateBusy ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a094b9e43b85d61f9ecff3dcec80e19b5}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateCalling@{stateCalling}}
+\index{stateCalling@{stateCalling}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateCalling}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateCalling ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a9654c17cb2f74f600e3c072e778e74e5}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateClear@{stateClear}}
+\index{stateClear@{stateClear}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateClear}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateClear ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a3c8153d0ed0994d1d57ce6af74b59792}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateCollect@{stateCollect}}
+\index{stateCollect@{stateCollect}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateCollect}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateCollect ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a9bf15e9cc97126ffbbec9c11448fb9c5}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateConnect@{stateConnect}}
+\index{stateConnect@{stateConnect}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateConnect}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateConnect ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a635f1397251847be08707dea9c3713d8}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateDial@{stateDial}}
+\index{stateDial@{stateDial}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateDial}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateDial ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a8f39e47ac1e53a38b4fc6f572e0aab7d}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateDTMF@{stateDTMF}}
+\index{stateDTMF@{stateDTMF}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateDTMF}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateDTMF ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a778a2a265ddf6511d53f09f23ffa0094}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateFinal@{stateFinal}}
+\index{stateFinal@{stateFinal}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateFinal}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateFinal ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a74075b75f9f76d95f1364d0dfe679528}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateHangup@{stateHangup}}
+\index{stateHangup@{stateHangup}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateHangup}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateHangup ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a636d18174895279e6f9d7bbf51a3331d}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateHold@{stateHold}}
+\index{stateHold@{stateHold}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateHold}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateHold ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a79e106df81a98b7eac7c9e171b790bcc}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateHunting@{stateHunting}}
+\index{stateHunting@{stateHunting}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateHunting}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateHunting ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a0c9f7f5d41bd055f060186e1e74a7ad1}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateIdle@{stateIdle}}
+\index{stateIdle@{stateIdle}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateIdle}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateIdle ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_aa4047fd5de30c87e23e3b99c2974b454}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateIdleReset@{stateIdleReset}}
+\index{stateIdleReset@{stateIdleReset}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateIdleReset}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateIdleReset ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a3c7e157b2e21595fcb29b07a6c3aeb42}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateInitial@{stateInitial}}
+\index{stateInitial@{stateInitial}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateInitial}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateInitial ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a709ed8608343dda710323dfd0617ca65}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateInkey@{stateInkey}}
+\index{stateInkey@{stateInkey}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateInkey}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateInkey ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_abfbb12dc35d40256682bbbe12b542ace}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateInput@{stateInput}}
+\index{stateInput@{stateInput}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateInput}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateInput ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_ab1d7624b36ef899bdb3b19dbbc4468c0}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateJoin@{stateJoin}}
+\index{stateJoin@{stateJoin}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateJoin}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateJoin ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a130cf35dfd2f3a4a5ae1e396b5e8eda9}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateLibexec@{stateLibexec}}
+\index{stateLibexec@{stateLibexec}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateLibexec}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateLibexec ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a0195efca5b831d45446b2fd3b073143f}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateLibreset@{stateLibreset}}
+\index{stateLibreset@{stateLibreset}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateLibreset}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateLibreset ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a57acb95b108004c2061399eaaa55ae02}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateLibwait@{stateLibwait}}
+\index{stateLibwait@{stateLibwait}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateLibwait}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateLibwait ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a0d6c3f55977f759a44dc614ae5390397}
+\index{ost::BayonneSession@{ost::BayonneSession}!statePickup@{statePickup}}
+\index{statePickup@{statePickup}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{statePickup}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::statePickup ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a5a4bbfc2099ac6cfdf2f8eda6d350315}
+\index{ost::BayonneSession@{ost::BayonneSession}!statePlay@{statePlay}}
+\index{statePlay@{statePlay}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{statePlay}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::statePlay ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a0e9ce9a5b9c7087d414656ca32e18ae9}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateRead@{stateRead}}
+\index{stateRead@{stateRead}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateRead}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateRead ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a41f6e348e9bca2ff00ac8a0144f5acb7}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateRecall@{stateRecall}}
+\index{stateRecall@{stateRecall}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateRecall}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateRecall ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a483142361bdaf93254a1fdfe584a80be}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateReconnect@{stateReconnect}}
+\index{stateReconnect@{stateReconnect}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateReconnect}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateReconnect ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_aff412ed2a064d662d61b09abe13e6158}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateRecord@{stateRecord}}
+\index{stateRecord@{stateRecord}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateRecord}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateRecord ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_af2f2cbd39277ef9fedceda7d6385847e}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateRefer@{stateRefer}}
+\index{stateRefer@{stateRefer}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateRefer}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateRefer ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a8704e1081824de71e41aeafaffa4b6f6}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateRelease@{stateRelease}}
+\index{stateRelease@{stateRelease}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateRelease}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateRelease ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a7d8d2252af0481bc89bb592a891503ed}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateReset@{stateReset}}
+\index{stateReset@{stateReset}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateReset}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateReset ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a5c0f56a85a3435de72b3f49ed2015939}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateRinging@{stateRinging}}
+\index{stateRinging@{stateRinging}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateRinging}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateRinging ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_afde803ca068d85de9efbc891a028e6f7}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateRunning@{stateRunning}}
+\index{stateRunning@{stateRunning}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateRunning}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateRunning ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a3ad96a9d897ba9346ee82d709b908a0d}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateSeize@{stateSeize}}
+\index{stateSeize@{stateSeize}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateSeize}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateSeize ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a849d77267a72786d311bb807a98026f5}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateSleep@{stateSleep}}
+\index{stateSleep@{stateSleep}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateSleep}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateSleep ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_ad77f210984fd355b0665c23d3953167f}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateStandby@{stateStandby}}
+\index{stateStandby@{stateStandby}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateStandby}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateStandby ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_ab356488cb1c07b3803c8e153a9f48d38}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateStart@{stateStart}}
+\index{stateStart@{stateStart}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateStart}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateStart ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_acdbb51815c847d278f534242d81acedd}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateThreading@{stateThreading}}
+\index{stateThreading@{stateThreading}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateThreading}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateThreading ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_ae7dae7423b6019b495964e98804778ca}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateTone@{stateTone}}
+\index{stateTone@{stateTone}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateTone}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateTone ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_ad3ea7694cf35b5fef94e9f86dc3e17de}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateWait@{stateWait}}
+\index{stateWait@{stateWait}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateWait}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateWait ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_ab99d27eed47f29400586d1f8797f1776}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateWaitkey@{stateWaitkey}}
+\index{stateWaitkey@{stateWaitkey}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateWaitkey}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateWaitkey ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_ad126c94874439e694d30ed7c3835db30}
+\index{ost::BayonneSession@{ost::BayonneSession}!stateXfer@{stateXfer}}
+\index{stateXfer@{stateXfer}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stateXfer}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stateXfer ({\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a6d8465e192ce33b76467797213aa2354}
+\index{ost::BayonneSession@{ost::BayonneSession}!stopTimer@{stopTimer}}
+\index{stopTimer@{stopTimer}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stopTimer}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::BayonneSession::stopTimer (void)\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classost_1_1_bayonne_session_acf742469b3cdf115139c430087083448}
+
+
+Stop the timer for the session. Used extensivily in state handler code. \index{ost::BayonneSession@{ost::BayonneSession}!stringEvent@{stringEvent}}
+\index{stringEvent@{stringEvent}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{stringEvent}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneSession::stringEvent (const char $\ast$ {\em evt})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_session_ac925c4e028431ee94623f69c85e7ba84}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{ost::BayonneSession@{ost::BayonneSession}!Bayonne@{Bayonne}}
+\index{Bayonne@{Bayonne}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{Bayonne}]{\setlength{\rightskip}{0pt plus 5cm}friend class \_\-\_\-EXPORT {\bf Bayonne}\hspace{0.3cm}{\ttfamily  [friend]}}\label{classost_1_1_bayonne_session_a908d65e83397886aa06e2f7d5430e1a2}
+\index{ost::BayonneSession@{ost::BayonneSession}!BayonneDriver@{BayonneDriver}}
+\index{BayonneDriver@{BayonneDriver}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{BayonneDriver}]{\setlength{\rightskip}{0pt plus 5cm}friend class \_\-\_\-EXPORT {\bf BayonneDriver}\hspace{0.3cm}{\ttfamily  [friend]}}\label{classost_1_1_bayonne_session_a722dcbcd08103d309ca710e6ccf24fc9}
+\index{ost::BayonneSession@{ost::BayonneSession}!BayonneMsgport@{BayonneMsgport}}
+\index{BayonneMsgport@{BayonneMsgport}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{BayonneMsgport}]{\setlength{\rightskip}{0pt plus 5cm}friend class \_\-\_\-EXPORT {\bf BayonneMsgport}\hspace{0.3cm}{\ttfamily  [friend]}}\label{classost_1_1_bayonne_session_a83079b615a076a23b1f9362ebd29d758}
+\index{ost::BayonneSession@{ost::BayonneSession}!BayonneTranslator@{BayonneTranslator}}
+\index{BayonneTranslator@{BayonneTranslator}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{BayonneTranslator}]{\setlength{\rightskip}{0pt plus 5cm}friend class \_\-\_\-EXPORT {\bf BayonneTranslator}\hspace{0.3cm}{\ttfamily  [friend]}}\label{classost_1_1_bayonne_session_ac71accf26eb4054c19a5768b038d2ea0}
+\index{ost::BayonneSession@{ost::BayonneSession}!ScriptEngine@{ScriptEngine}}
+\index{ScriptEngine@{ScriptEngine}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{ScriptEngine}]{\setlength{\rightskip}{0pt plus 5cm}friend class \_\-\_\-EXPORT {\bf ScriptEngine}\hspace{0.3cm}{\ttfamily  [friend]}}\label{classost_1_1_bayonne_session_a0b12673a603f86f7c4945727d9a5891b}
+
+
+\subsection{Member Data Documentation}
+\index{ost::BayonneSession@{ost::BayonneSession}!answered@{answered}}
+\index{answered@{answered}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{answered}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::BayonneSession::answered}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_ad1583fabc0431b2e8e6235fc3ceb5164}
+\index{ost::BayonneSession@{ost::BayonneSession}!audio@{audio}}
+\index{audio@{audio}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{audio}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneAudio} {\bf ost::BayonneSession::audio}}\label{classost_1_1_bayonne_session_a929741295f6a50f3582f947128f4e158}
+\index{ost::BayonneSession@{ost::BayonneSession}!audiotimer@{audiotimer}}
+\index{audiotimer@{audiotimer}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{audiotimer}]{\setlength{\rightskip}{0pt plus 5cm}time\_\-t {\bf ost::BayonneSession::audiotimer}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_ac4aa5e5dfadca71618763c0789e5f900}
+\index{ost::BayonneSession@{ost::BayonneSession}!bridge@{bridge}}
+\index{bridge@{bridge}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{bridge}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bridge\_\-t} {\bf ost::BayonneSession::bridge}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a00c9fc4c2c655e4b1d6c63d88c9ff822}
+\index{ost::BayonneSession@{ost::BayonneSession}!call\_\-attempts@{call\_\-attempts}}
+\index{call\_\-attempts@{call\_\-attempts}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{call\_\-attempts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Traffic} {\bf ost::BayonneSession::call\_\-attempts}}\label{classost_1_1_bayonne_session_a84bc4384ca1424097d41d98af0794ba0}
+\index{ost::BayonneSession@{ost::BayonneSession}!call\_\-complete@{call\_\-complete}}
+\index{call\_\-complete@{call\_\-complete}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{call\_\-complete}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Traffic} {\bf ost::BayonneSession::call\_\-complete}}\label{classost_1_1_bayonne_session_a8ef0a13e9cf2f967a3f9def3d7c57bbb}
+\index{ost::BayonneSession@{ost::BayonneSession}!connecting@{connecting}}
+\index{connecting@{connecting}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{connecting}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::BayonneSession::connecting}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_adc5670dd6b657fc6182b53e2c013c27c}
+\index{ost::BayonneSession@{ost::BayonneSession}!digit\_\-count@{digit\_\-count}}
+\index{digit\_\-count@{digit\_\-count}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{digit\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::BayonneSession::digit\_\-count}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a3fac0dac4b68ff7f6176165c7f3795dc}
+\index{ost::BayonneSession@{ost::BayonneSession}!driver@{driver}}
+\index{driver@{driver}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{driver}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneDriver}$\ast$ {\bf ost::BayonneSession::driver}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a71eb0944c5d05296ebf5d151cd8495c0}
+\index{ost::BayonneSession@{ost::BayonneSession}!dtmf@{dtmf}}
+\index{dtmf@{dtmf}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{dtmf}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::BayonneSession::dtmf}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a16e1c09b06e52924372b0851bb2a80b2}
+\index{ost::BayonneSession@{ost::BayonneSession}!dtmf\_\-digits@{dtmf\_\-digits}}
+\index{dtmf\_\-digits@{dtmf\_\-digits}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{dtmf\_\-digits}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf ost::BayonneSession::dtmf\_\-digits}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_ac85eea012add8215bf520f14657e9490}
+\index{ost::BayonneSession@{ost::BayonneSession}!evseq@{evseq}}
+\index{evseq@{evseq}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{evseq}]{\setlength{\rightskip}{0pt plus 5cm}uint16 {\bf ost::BayonneSession::evseq}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_aebfbca1d736ef5296ad9d1f68926fefe}
+\index{ost::BayonneSession@{ost::BayonneSession}!globalLock@{globalLock}}
+\index{globalLock@{globalLock}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{globalLock}]{\setlength{\rightskip}{0pt plus 5cm}Mutex {\bf ost::BayonneSession::globalLock}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_session_accda286f4d47b273ed7207381555bb0a}
+\index{ost::BayonneSession@{ost::BayonneSession}!globalSyms@{globalSyms}}
+\index{globalSyms@{globalSyms}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{globalSyms}]{\setlength{\rightskip}{0pt plus 5cm}ScriptSymbols$\ast$ {\bf ost::BayonneSession::globalSyms}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_session_a6f08550f8dd57d3f25b1ae2e3a0c26f0}
+\index{ost::BayonneSession@{ost::BayonneSession}!holding@{holding}}
+\index{holding@{holding}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{holding}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::BayonneSession::holding}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a6925832b379b1bcdb83df7acc7b56806}
+\index{ost::BayonneSession@{ost::BayonneSession}!iface@{iface}}
+\index{iface@{iface}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{iface}]{\setlength{\rightskip}{0pt plus 5cm}{\bf interface\_\-t} {\bf ost::BayonneSession::iface}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_af513c8da8d173b034d71ab16df898ce3}
+\index{ost::BayonneSession@{ost::BayonneSession}!langNone@{langNone}}
+\index{langNone@{langNone}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{langNone}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneTranslator} {\bf ost::BayonneSession::langNone}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_session_ab4cede2a84f07911423d47c8b22e3b7e}
+\index{ost::BayonneSession@{ost::BayonneSession}!logevents@{logevents}}
+\index{logevents@{logevents}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{logevents}]{\setlength{\rightskip}{0pt plus 5cm}std::ostream$\ast$ {\bf ost::BayonneSession::logevents}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a077bc63cc1cf04e6c966527952988ec7}
+\index{ost::BayonneSession@{ost::BayonneSession}!logtrace@{logtrace}}
+\index{logtrace@{logtrace}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{logtrace}]{\setlength{\rightskip}{0pt plus 5cm}std::ostream $\ast$ {\bf ost::BayonneSession::logtrace}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_ac56792642d3c7f5dcc5d04b3e0a72328}
+\index{ost::BayonneSession@{ost::BayonneSession}!msgport@{msgport}}
+\index{msgport@{msgport}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{msgport}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneMsgport}$\ast$ {\bf ost::BayonneSession::msgport}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a4185652cf216d6b578a831a1a7806565}
+\index{ost::BayonneSession@{ost::BayonneSession}!offhook@{offhook}}
+\index{offhook@{offhook}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{offhook}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::BayonneSession::offhook}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a6c7c944c98150fe0912e02a1670920c6}
+\index{ost::BayonneSession@{ost::BayonneSession}!peer@{peer}}
+\index{peer@{peer}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{peer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneSession}$\ast$ {\bf ost::BayonneSession::peer}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_aff8a3f9adbd6f0947d6cb2e6e99f4506}
+\index{ost::BayonneSession@{ost::BayonneSession}!referring@{referring}}
+\index{referring@{referring}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{referring}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::BayonneSession::referring}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_ac7577e27d3e77b8e6cf4e68f930fc4f1}
+\index{ost::BayonneSession@{ost::BayonneSession}!ring@{ring}}
+\index{ring@{ring}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{ring}]{\setlength{\rightskip}{0pt plus 5cm}Ring$\ast$ {\bf ost::BayonneSession::ring}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a420391be388559db7373a1b1274e0f95}
+\index{ost::BayonneSession@{ost::BayonneSession}!ring\_\-count@{ring\_\-count}}
+\index{ring\_\-count@{ring\_\-count}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{ring\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::BayonneSession::ring\_\-count}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a728f937ae349bf5b3e16c081127c8f05}
+\index{ost::BayonneSession@{ost::BayonneSession}!seizure@{seizure}}
+\index{seizure@{seizure}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{seizure}]{\setlength{\rightskip}{0pt plus 5cm}{\bf event\_\-t} {\bf ost::BayonneSession::seizure}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_afe79db419ab1c2bd8694579cded70c16}
+\index{ost::BayonneSession@{ost::BayonneSession}!seq@{seq}}
+\index{seq@{seq}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{seq}]{\setlength{\rightskip}{0pt plus 5cm}uint8 {\bf ost::BayonneSession::seq}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_af12dad82250c5204c79b3d30f44ab0a8}
+\index{ost::BayonneSession@{ost::BayonneSession}!span@{span}}
+\index{span@{span}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{span}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneSpan}$\ast$ {\bf ost::BayonneSession::span}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_ae0edcd15e9170210282622e31d047632}
+\index{ost::BayonneSession@{ost::BayonneSession}!starting@{starting}}
+\index{starting@{starting}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{starting}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::BayonneSession::starting}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_ae229ba8c03528460d8e82ecd4d9126f0}
+\index{ost::BayonneSession@{ost::BayonneSession}!starttime@{starttime}}
+\index{starttime@{starttime}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{starttime}]{\setlength{\rightskip}{0pt plus 5cm}time\_\-t {\bf ost::BayonneSession::starttime}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_ad0152e7812fb9e6e84d764ae9a25ba32}
+\index{ost::BayonneSession@{ost::BayonneSession}!state@{state}}
+\index{state@{state}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}State {\bf ost::BayonneSession::state}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a8bb5dd15ef4724559af0b8aab0827701}
+\index{ost::BayonneSession@{ost::BayonneSession}!time\_\-joined@{time\_\-joined}}
+\index{time\_\-joined@{time\_\-joined}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{time\_\-joined}]{\setlength{\rightskip}{0pt plus 5cm}time\_\-t {\bf ost::BayonneSession::time\_\-joined}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_afb83cbb0ef881c30d27ce38b88195a33}
+\index{ost::BayonneSession@{ost::BayonneSession}!timeslot@{timeslot}}
+\index{timeslot@{timeslot}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{timeslot}]{\setlength{\rightskip}{0pt plus 5cm}{\bf timeslot\_\-t} {\bf ost::BayonneSession::timeslot}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_adaeda41eec1a968875631084afc58a22}
+\index{ost::BayonneSession@{ost::BayonneSession}!translator@{translator}}
+\index{translator@{translator}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{translator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneTranslator}$\ast$ {\bf ost::BayonneSession::translator}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a056ec1df1fffb3b0221d3417c8fc0126}
+
+
+Translator in effect for this session. \index{ost::BayonneSession@{ost::BayonneSession}!tseq@{tseq}}
+\index{tseq@{tseq}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{tseq}]{\setlength{\rightskip}{0pt plus 5cm}uint32 {\bf ost::BayonneSession::tseq}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a354852beda531e69cb0f11a6c031f697}
+\index{ost::BayonneSession@{ost::BayonneSession}!type@{type}}
+\index{type@{type}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf calltype\_\-t} {\bf ost::BayonneSession::type}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_ad12eb1a482dc077f52cfc97ec07608e0}
+\index{ost::BayonneSession@{ost::BayonneSession}!var\_\-bankid@{var\_\-bankid}}
+\index{var\_\-bankid@{var\_\-bankid}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{var\_\-bankid}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::BayonneSession::var\_\-bankid}[4]\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a11424b591364dbc5a941a6e79f048f94}
+\index{ost::BayonneSession@{ost::BayonneSession}!var\_\-callid@{var\_\-callid}}
+\index{var\_\-callid@{var\_\-callid}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{var\_\-callid}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::BayonneSession::var\_\-callid}[12]\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a345b64ad11112d60f6450a5bc95783d4}
+\index{ost::BayonneSession@{ost::BayonneSession}!var\_\-date@{var\_\-date}}
+\index{var\_\-date@{var\_\-date}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{var\_\-date}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::BayonneSession::var\_\-date}[12]\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a2df03af27269eba3412192df2ae49166}
+\index{ost::BayonneSession@{ost::BayonneSession}!var\_\-duration@{var\_\-duration}}
+\index{var\_\-duration@{var\_\-duration}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{var\_\-duration}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::BayonneSession::var\_\-duration}[12]\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_aa404b9a9d1a32844011b740f5fb60e37}
+\index{ost::BayonneSession@{ost::BayonneSession}!var\_\-joined@{var\_\-joined}}
+\index{var\_\-joined@{var\_\-joined}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{var\_\-joined}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::BayonneSession::var\_\-joined}[16]\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a04c31565baef4c60166204a0bbdb21f3}
+\index{ost::BayonneSession@{ost::BayonneSession}!var\_\-pid@{var\_\-pid}}
+\index{var\_\-pid@{var\_\-pid}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{var\_\-pid}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::BayonneSession::var\_\-pid}[16]\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a21902ca0a4a7c88cdb30ae81cce85b38}
+\index{ost::BayonneSession@{ost::BayonneSession}!var\_\-recall@{var\_\-recall}}
+\index{var\_\-recall@{var\_\-recall}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{var\_\-recall}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::BayonneSession::var\_\-recall}[16]\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a1af411a51c5082bc8470a437f404a47a}
+\index{ost::BayonneSession@{ost::BayonneSession}!var\_\-rings@{var\_\-rings}}
+\index{var\_\-rings@{var\_\-rings}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{var\_\-rings}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::BayonneSession::var\_\-rings}[4]\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a564189e642fdcccb0c03a6c375204900}
+\index{ost::BayonneSession@{ost::BayonneSession}!var\_\-sid@{var\_\-sid}}
+\index{var\_\-sid@{var\_\-sid}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{var\_\-sid}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::BayonneSession::var\_\-sid}[16]\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a87c4426ed212848c49b72c00fd787905}
+\index{ost::BayonneSession@{ost::BayonneSession}!var\_\-spanid@{var\_\-spanid}}
+\index{var\_\-spanid@{var\_\-spanid}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{var\_\-spanid}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::BayonneSession::var\_\-spanid}[8]\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_afb013f1e66d34701498d613b77dca3d5}
+\index{ost::BayonneSession@{ost::BayonneSession}!var\_\-spantsid@{var\_\-spantsid}}
+\index{var\_\-spantsid@{var\_\-spantsid}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{var\_\-spantsid}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::BayonneSession::var\_\-spantsid}[12]\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_afcb92514bd27a01c2875f3a52b0f8d42}
+\index{ost::BayonneSession@{ost::BayonneSession}!var\_\-tid@{var\_\-tid}}
+\index{var\_\-tid@{var\_\-tid}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{var\_\-tid}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::BayonneSession::var\_\-tid}[14]\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a115e0465f2bec637b0fa757cc56eec62}
+\index{ost::BayonneSession@{ost::BayonneSession}!var\_\-time@{var\_\-time}}
+\index{var\_\-time@{var\_\-time}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{var\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::BayonneSession::var\_\-time}[12]\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_aba2cb5901e4a40be82616a7a1ae124db}
+\index{ost::BayonneSession@{ost::BayonneSession}!var\_\-timeslot@{var\_\-timeslot}}
+\index{var\_\-timeslot@{var\_\-timeslot}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{var\_\-timeslot}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::BayonneSession::var\_\-timeslot}[8]\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a0b198afa355bcea189cb627195d3ecf3}
+\index{ost::BayonneSession@{ost::BayonneSession}!vm@{vm}}
+\index{vm@{vm}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{vm}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ScriptEngine}$\ast$ {\bf ost::BayonneSession::vm}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_a29b6006e3acd2c0bc754397a73defd17}
+\index{ost::BayonneSession@{ost::BayonneSession}!voicelib@{voicelib}}
+\index{voicelib@{voicelib}!ost::BayonneSession@{ost::BayonneSession}}
+\subsubsection[{voicelib}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::BayonneSession::voicelib}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_session_ab4b3a577966d1549a5707ff4583b405b}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf bayonne.h}\end{DoxyCompactItemize}

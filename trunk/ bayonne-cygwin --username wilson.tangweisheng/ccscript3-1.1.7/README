@@ -1,0 +1,46 @@
+Copyright (c) 1999-2005 by Open Source Telecom Corporation.
+Verbatim copying and distribution of this entire article is permitted
+in any medium, provided this notice is preserved.
+
+This directory contains the "3rd" major release of the GNU ccScript 
+engine.  GNU ccScript "3" is a and highly specialized embedded
+scripting engine and virtual execution environment for creating script
+"extensible" applications.  This system is a C++ class library which
+allows one to derive application specific dialects of the core language 
+as needed through subclassing.
+
+Where ccScript differs from similar packages is both in determinstic
+runtime, and it's use of step execution for integrating with realtime
+state-transition and callback event driven systems.  That is, rather 
+than invoke a function which then parses an interpreter, one executes a 
+single "step" statement. This is useful when a callback service thread 
+is monitoring multiple devices; each device can have a ccscript 
+interpreter instance, and a single thread can dispatch events upon 
+demand.
+
+GNU ccScript is used in GNU Bayonne (the telephony application server of
+the GNU project) and will likely get used in other GNUCOMM servers.  GNU
+ccScript is derived from and requires GNU Common C++.
+
+GNU ccscript is also meant to script systems without downtime.  This has
+one curious effect; when ccscript is started, a core script is converted
+into an "image" object.  When an interpreter instance is connected to
+process script requests, it attaches a reference.  If an active script 
+is modified and reloaded, a new "image" is created, and new requests are 
+then given this new image.  When the last reference against an old 
+script image is terminated, the image is also purged.  This allows one 
+to compile and rebuild scripts on the fly and load them into memory even 
+while active interpreter instances are running.
+
+GNU ccScript is not meant to solve the problems of traditional scripting
+engines (tcl, guile, etc).  However, if you need several hundred 
+instances of an interpreter running concurrently, if you are builing 
+state-event systems, or if you need near real-time response through a 
+script system, then GNU ccScript may be the answer for you.
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+* more codecs, including sx, mpeg, speex, and bit codecs
+
+* improved soundcard support, full duplex operations, osx 
+
+* ogg container files
+
+* sampling rate scaling
+
+
+

@@ -1,0 +1,245 @@
+\section{ost::AudioTone Class Reference}
+\label{classost_1_1_audio_tone}\index{ost::AudioTone@{ost::AudioTone}}
+
+
+The \doxyref{AudioTone}{p.}{classost_1_1_audio_tone} class is used to create a frame of audio encoded single or dualtones.  
+
+
+{\ttfamily \#include $<$audio2.h$>$}Inheritance diagram for ost::AudioTone::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classost_1_1_audio_tone}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Rate} {\bf getRate} (void)
+\begin{DoxyCompactList}\small\item\em Get the sample encoding rate being used for the tone generator. \item\end{DoxyCompactList}\item 
+size\_\-t {\bf getSamples} (void)
+\begin{DoxyCompactList}\small\item\em Get the frame size for the number of audio samples generated. \item\end{DoxyCompactList}\item 
+bool {\bf isSilent} (void)
+\begin{DoxyCompactList}\small\item\em Test if the tone generator is currently set to silence. \item\end{DoxyCompactList}\item 
+virtual {\bf Linear} {\bf getFrame} (void)
+\begin{DoxyCompactList}\small\item\em Iterate the tone frame, and extract linear samples in native frame. \item\end{DoxyCompactList}\item 
+unsigned {\bf getFrames} ({\bf Linear} buffer, unsigned number)
+\begin{DoxyCompactList}\small\item\em This is used to copy one or more pages of framed audio quickly to an external buffer. \item\end{DoxyCompactList}\item 
+virtual bool {\bf isComplete} (void)
+\begin{DoxyCompactList}\small\item\em See if at end of tone. \item\end{DoxyCompactList}\item 
+{\bf AudioTone} ({\bf timeout\_\-t} duration=20, {\bf Rate} {\bf rate}=rate8khz)
+\begin{DoxyCompactList}\small\item\em Construct a silent tone generator of specific frame size. \item\end{DoxyCompactList}\item 
+{\bf AudioTone} (unsigned f1, unsigned f2, {\bf Level} l1, {\bf Level} l2, {\bf timeout\_\-t} duration=20, {\bf Rate} sample=rate8khz)
+\begin{DoxyCompactList}\small\item\em Construct a dual tone frame generator. \item\end{DoxyCompactList}\item 
+{\bf AudioTone} (unsigned freq, {\bf Level} level, {\bf timeout\_\-t} duration=20, {\bf Rate} sample=rate8khz)
+\begin{DoxyCompactList}\small\item\em Construct a single tone frame generator. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$AudioTone} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf silence} (void)
+\begin{DoxyCompactList}\small\item\em Set the frame to silent. \item\end{DoxyCompactList}\item 
+void {\bf reset} (void)
+\begin{DoxyCompactList}\small\item\em Reset the tone generator completely. \item\end{DoxyCompactList}\item 
+void {\bf cleanup} (void)
+\begin{DoxyCompactList}\small\item\em Cleanup for virtual destructors to use. \item\end{DoxyCompactList}\item 
+void {\bf single} (unsigned freq, {\bf Level} level)
+\begin{DoxyCompactList}\small\item\em Set frame to generate single tone. \item\end{DoxyCompactList}\item 
+void {\bf dual} (unsigned f1, unsigned f2, {\bf Level} l1, {\bf Level} l2)
+\begin{DoxyCompactList}\small\item\em Set frame to generate dual tone. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Rate} {\bf rate}
+\item 
+unsigned {\bf samples}
+\item 
+{\bf Linear} {\bf frame}
+\item 
+double {\bf df1}
+\item 
+double {\bf df2}
+\item 
+double {\bf p1}
+\item 
+double {\bf p2}
+\item 
+{\bf Level} {\bf m1}
+\item 
+{\bf Level} {\bf m2}
+\item 
+bool {\bf silencer}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \doxyref{AudioTone}{p.}{classost_1_1_audio_tone} class is used to create a frame of audio encoded single or dualtones. The frame will be iterated for each request, so a continual tone can be extracted by frame.
+
+\begin{DoxyAuthor}{Author}
+David Sugar $<${\tt dyfet@ostel.com}$>$ audio tone generator class. 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::AudioTone@{ost::AudioTone}!AudioTone@{AudioTone}}
+\index{AudioTone@{AudioTone}!ost::AudioTone@{ost::AudioTone}}
+\subsubsection[{AudioTone}]{\setlength{\rightskip}{0pt plus 5cm}ost::AudioTone::AudioTone ({\bf timeout\_\-t} {\em duration} = {\ttfamily 20}, \/  {\bf Rate} {\em rate} = {\ttfamily rate8khz})}\label{classost_1_1_audio_tone_a4d980cf63efbf17402bb59ab48abd664}
+
+
+Construct a silent tone generator of specific frame size. 
+\begin{DoxyParams}{Parameters}
+\item[{\em duration}]of frame in milliseconds. \item[{\em rate}]of samples. \end{DoxyParams}
+\index{ost::AudioTone@{ost::AudioTone}!AudioTone@{AudioTone}}
+\index{AudioTone@{AudioTone}!ost::AudioTone@{ost::AudioTone}}
+\subsubsection[{AudioTone}]{\setlength{\rightskip}{0pt plus 5cm}ost::AudioTone::AudioTone (unsigned {\em f1}, \/  unsigned {\em f2}, \/  {\bf Level} {\em l1}, \/  {\bf Level} {\em l2}, \/  {\bf timeout\_\-t} {\em duration} = {\ttfamily 20}, \/  {\bf Rate} {\em sample} = {\ttfamily rate8khz})}\label{classost_1_1_audio_tone_a03dbad78bb2b33f5c088e07e2dbf3efc}
+
+
+Construct a dual tone frame generator. 
+\begin{DoxyParams}{Parameters}
+\item[{\em f1}]frequency of tone 1. \item[{\em f2}]frequency of tone 2. \item[{\em l1}]level of tone 1. \item[{\em l2}]level of tone 2. \item[{\em duration}]of frame in milliseconds. \item[{\em sample}]rate being generated. \end{DoxyParams}
+\index{ost::AudioTone@{ost::AudioTone}!AudioTone@{AudioTone}}
+\index{AudioTone@{AudioTone}!ost::AudioTone@{ost::AudioTone}}
+\subsubsection[{AudioTone}]{\setlength{\rightskip}{0pt plus 5cm}ost::AudioTone::AudioTone (unsigned {\em freq}, \/  {\bf Level} {\em level}, \/  {\bf timeout\_\-t} {\em duration} = {\ttfamily 20}, \/  {\bf Rate} {\em sample} = {\ttfamily rate8khz})}\label{classost_1_1_audio_tone_af4b226bb2ad9932f0594b235fc4c8d24}
+
+
+Construct a single tone frame generator. 
+\begin{DoxyParams}{Parameters}
+\item[{\em freq}]of tone. \item[{\em level}]of tone. \item[{\em duration}]of frame in milliseconds. \item[{\em sample}]rate being generated. \end{DoxyParams}
+\index{ost::AudioTone@{ost::AudioTone}!$\sim$AudioTone@{$\sim$AudioTone}}
+\index{$\sim$AudioTone@{$\sim$AudioTone}!ost::AudioTone@{ost::AudioTone}}
+\subsubsection[{$\sim$AudioTone}]{\setlength{\rightskip}{0pt plus 5cm}virtual ost::AudioTone::$\sim$AudioTone ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_audio_tone_a361595a6ad1dd7a07b5f1f31d8d90598}
+
+
+\subsection{Member Function Documentation}
+\index{ost::AudioTone@{ost::AudioTone}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!ost::AudioTone@{ost::AudioTone}}
+\subsubsection[{cleanup}]{\setlength{\rightskip}{0pt plus 5cm}void ost::AudioTone::cleanup (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_tone_ac7fe13d4b7090fcf5d0cf3860f408a1d}
+
+
+Cleanup for virtual destructors to use. \index{ost::AudioTone@{ost::AudioTone}!dual@{dual}}
+\index{dual@{dual}!ost::AudioTone@{ost::AudioTone}}
+\subsubsection[{dual}]{\setlength{\rightskip}{0pt plus 5cm}void ost::AudioTone::dual (unsigned {\em f1}, \/  unsigned {\em f2}, \/  {\bf Level} {\em l1}, \/  {\bf Level} {\em l2})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_tone_a7ce3c90e4a79bab48575fea350893633}
+
+
+Set frame to generate dual tone. ..
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em f1}]frequency of tone 1 \item[{\em f2}]frequency of tone 2 \item[{\em l1}]level of tone 1 \item[{\em l2}]level of tone 2 \end{DoxyParams}
+\index{ost::AudioTone@{ost::AudioTone}!getFrame@{getFrame}}
+\index{getFrame@{getFrame}!ost::AudioTone@{ost::AudioTone}}
+\subsubsection[{getFrame}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Linear} ost::AudioTone::getFrame (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_audio_tone_a943d31930ce0f1318f42d6dc825200cb}
+
+
+Iterate the tone frame, and extract linear samples in native frame. If endian flag passed, then convert for standard endian representation (byte swap) if needed.
+
+\begin{DoxyReturn}{Returns}
+pointer to samples. 
+\end{DoxyReturn}
+
+
+Reimplemented in {\bf ost::TelTone} \doxyref{}{p.}{classost_1_1_tel_tone_a9fb42cc64137389c3033b58505a5a6d9}, {\bf ost::DTMFTones} \doxyref{}{p.}{classost_1_1_d_t_m_f_tones_ac59d2ebb1f5feb0aa7871a02109f3b26}, and {\bf ost::MFTones} \doxyref{}{p.}{classost_1_1_m_f_tones_a1e3cb8bbbbe783bc7f4f40a2162ad713}.\index{ost::AudioTone@{ost::AudioTone}!getFrames@{getFrames}}
+\index{getFrames@{getFrames}!ost::AudioTone@{ost::AudioTone}}
+\subsubsection[{getFrames}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::AudioTone::getFrames ({\bf Linear} {\em buffer}, \/  unsigned {\em number})}\label{classost_1_1_audio_tone_a0fb3b5759015fa3d844c64a371a4ff0b}
+
+
+This is used to copy one or more pages of framed audio quickly to an external buffer. \begin{DoxyReturn}{Returns}
+number of frames copied. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]to copy into. \item[{\em number}]of frames requested. \end{DoxyParams}
+\index{ost::AudioTone@{ost::AudioTone}!getRate@{getRate}}
+\index{getRate@{getRate}!ost::AudioTone@{ost::AudioTone}}
+\subsubsection[{getRate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rate} ost::AudioTone::getRate (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_audio_tone_a02cb488e70d91e794f68f13b00454b57}
+
+
+Get the sample encoding rate being used for the tone generator. \begin{DoxyReturn}{Returns}
+sample rate in samples per second. 
+\end{DoxyReturn}
+\index{ost::AudioTone@{ost::AudioTone}!getSamples@{getSamples}}
+\index{getSamples@{getSamples}!ost::AudioTone@{ost::AudioTone}}
+\subsubsection[{getSamples}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t ost::AudioTone::getSamples (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_audio_tone_a5712e33902728fc7620f6399ea4e83a7}
+
+
+Get the frame size for the number of audio samples generated. \begin{DoxyReturn}{Returns}
+number of samples processed in frame. 
+\end{DoxyReturn}
+\index{ost::AudioTone@{ost::AudioTone}!isComplete@{isComplete}}
+\index{isComplete@{isComplete}!ost::AudioTone@{ost::AudioTone}}
+\subsubsection[{isComplete}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::AudioTone::isComplete (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_audio_tone_afd2f4d74c504ff9f1638ac0097f7df8d}
+
+
+See if at end of tone. This is used for non-\/continues audio tones, or to detect \char`\"{}break\char`\"{} events.
+
+\begin{DoxyReturn}{Returns}
+true if end of data. 
+\end{DoxyReturn}
+
+
+Reimplemented in {\bf ost::TelTone} \doxyref{}{p.}{classost_1_1_tel_tone_ac9a38161400d6a843d4b38a819ae48e9}, {\bf ost::DTMFTones} \doxyref{}{p.}{classost_1_1_d_t_m_f_tones_a274d70b6b87294764bc50e47f1a8f250}, and {\bf ost::MFTones} \doxyref{}{p.}{classost_1_1_m_f_tones_a1a889d81dba1bdbc01d55c25d0b348b1}.\index{ost::AudioTone@{ost::AudioTone}!isSilent@{isSilent}}
+\index{isSilent@{isSilent}!ost::AudioTone@{ost::AudioTone}}
+\subsubsection[{isSilent}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::AudioTone::isSilent (void)}\label{classost_1_1_audio_tone_a21e969c7ed50d2b7dfa6a40510dcdb39}
+
+
+Test if the tone generator is currently set to silence. \begin{DoxyReturn}{Returns}
+true if generator set for silence. 
+\end{DoxyReturn}
+\index{ost::AudioTone@{ost::AudioTone}!reset@{reset}}
+\index{reset@{reset}!ost::AudioTone@{ost::AudioTone}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void ost::AudioTone::reset (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_tone_ac0e2a678a95c456a03b4f70da3122ca7}
+
+
+Reset the tone generator completely. Produces silence., \index{ost::AudioTone@{ost::AudioTone}!silence@{silence}}
+\index{silence@{silence}!ost::AudioTone@{ost::AudioTone}}
+\subsubsection[{silence}]{\setlength{\rightskip}{0pt plus 5cm}void ost::AudioTone::silence (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_tone_ad91228a7da5391669f9411aa41077fd5}
+
+
+Set the frame to silent. \index{ost::AudioTone@{ost::AudioTone}!single@{single}}
+\index{single@{single}!ost::AudioTone@{ost::AudioTone}}
+\subsubsection[{single}]{\setlength{\rightskip}{0pt plus 5cm}void ost::AudioTone::single (unsigned {\em freq}, \/  {\bf Level} {\em level})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_tone_a6d69251fd23c384ee10442d7896180f4}
+
+
+Set frame to generate single tone. ..
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em freq}]of tone. \item[{\em level}]of tone. \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\index{ost::AudioTone@{ost::AudioTone}!df1@{df1}}
+\index{df1@{df1}!ost::AudioTone@{ost::AudioTone}}
+\subsubsection[{df1}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf ost::AudioTone::df1}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_tone_aab0abcb02f857739af67253b7f646ba1}
+\index{ost::AudioTone@{ost::AudioTone}!df2@{df2}}
+\index{df2@{df2}!ost::AudioTone@{ost::AudioTone}}
+\subsubsection[{df2}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf ost::AudioTone::df2}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_tone_a5aad2d80a709a910c45fc539689219fe}
+\index{ost::AudioTone@{ost::AudioTone}!frame@{frame}}
+\index{frame@{frame}!ost::AudioTone@{ost::AudioTone}}
+\subsubsection[{frame}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Linear} {\bf ost::AudioTone::frame}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_tone_a6f29b9172a04d07df9d5891c8f4781f2}
+\index{ost::AudioTone@{ost::AudioTone}!m1@{m1}}
+\index{m1@{m1}!ost::AudioTone@{ost::AudioTone}}
+\subsubsection[{m1}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Level} {\bf ost::AudioTone::m1}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_tone_a983027261f30a998a568e77f36efabf2}
+\index{ost::AudioTone@{ost::AudioTone}!m2@{m2}}
+\index{m2@{m2}!ost::AudioTone@{ost::AudioTone}}
+\subsubsection[{m2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Level} {\bf ost::AudioTone::m2}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_tone_a842886fa90ae476835ba13e735e4994d}
+\index{ost::AudioTone@{ost::AudioTone}!p1@{p1}}
+\index{p1@{p1}!ost::AudioTone@{ost::AudioTone}}
+\subsubsection[{p1}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf ost::AudioTone::p1}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_tone_ae222f8c1640d91dbea1e8779f0f281a5}
+\index{ost::AudioTone@{ost::AudioTone}!p2@{p2}}
+\index{p2@{p2}!ost::AudioTone@{ost::AudioTone}}
+\subsubsection[{p2}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf ost::AudioTone::p2}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_tone_a9b8a98236af30daae504296cb65e4733}
+\index{ost::AudioTone@{ost::AudioTone}!rate@{rate}}
+\index{rate@{rate}!ost::AudioTone@{ost::AudioTone}}
+\subsubsection[{rate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rate} {\bf ost::AudioTone::rate}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_tone_a038e23d76167a86650d0cbf10667ed98}
+\index{ost::AudioTone@{ost::AudioTone}!samples@{samples}}
+\index{samples@{samples}!ost::AudioTone@{ost::AudioTone}}
+\subsubsection[{samples}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::AudioTone::samples}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_tone_aed7a46d4e3948ba036d7598f4061c12f}
+\index{ost::AudioTone@{ost::AudioTone}!silencer@{silencer}}
+\index{silencer@{silencer}!ost::AudioTone@{ost::AudioTone}}
+\subsubsection[{silencer}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::AudioTone::silencer}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_tone_a2a60ea3ec50114a86e21b3aa273f6b2f}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf audio2.h}\end{DoxyCompactItemize}

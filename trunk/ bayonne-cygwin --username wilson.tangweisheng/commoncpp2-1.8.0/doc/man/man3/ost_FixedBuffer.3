@@ -1,0 +1,141 @@
+.TH "ost::FixedBuffer" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::FixedBuffer \- 
+.PP
+A buffer class that holds a known capacity of fixed sized objects defined during creation.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <buffer.h>\fP
+.PP
+Inherits \fBost::Buffer\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFixedBuffer\fP (size_t capacity, size_t objsize)"
+.br
+.RI "\fICreate a buffer of known capacity for objects of a specified size. \fP"
+.ti -1c
+.RI "\fBFixedBuffer\fP (const \fBFixedBuffer\fP &fb)"
+.br
+.RI "\fICreate a copy of an existing fixed size buffer and duplicate it's contents. \fP"
+.ti -1c
+.RI "virtual \fB~FixedBuffer\fP ()"
+.br
+.RI "\fIDestroy the fixed buffer and free the memory used to store objects. \fP"
+.ti -1c
+.RI "\fBFixedBuffer\fP & \fBoperator=\fP (const \fBFixedBuffer\fP &fb)"
+.br
+.ti -1c
+.RI "bool \fBisValid\fP (void)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "size_t \fBonPeek\fP (void *buf)"
+.br
+.RI "\fIReturn the first object in the buffer. \fP"
+.ti -1c
+.RI "size_t \fBonWait\fP (void *buf)"
+.br
+.RI "\fIWait for and return a fixed object in the buffer. \fP"
+.ti -1c
+.RI "size_t \fBonPost\fP (void *buf)"
+.br
+.RI "\fIPost an object of the appropriate size into the buffer. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A buffer class that holds a known capacity of fixed sized objects defined during creation. 
+
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> producer/consumer buffer for fixed size objects. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::FixedBuffer::FixedBuffer (size_t capacity, size_t objsize)"
+.PP
+Create a buffer of known capacity for objects of a specified size. \fBParameters:\fP
+.RS 4
+\fIcapacity\fP of the buffer. 
+.br
+\fIobjsize\fP for each object held in the buffer. 
+.RE
+.PP
+
+.SS "ost::FixedBuffer::FixedBuffer (const \fBFixedBuffer\fP & fb)"
+.PP
+Create a copy of an existing fixed size buffer and duplicate it's contents. \fBParameters:\fP
+.RS 4
+\fIfb\fP existing \fBFixedBuffer\fP object. 
+.RE
+.PP
+
+.SS "virtual ost::FixedBuffer::~FixedBuffer ()\fC [virtual]\fP"
+.PP
+Destroy the fixed buffer and free the memory used to store objects. 
+.SH "Member Function Documentation"
+.PP 
+.SS "bool ost::FixedBuffer::isValid (void)\fC [virtual]\fP"
+.PP
+Reimplemented from \fBost::Buffer\fP.
+.SS "size_t ost::FixedBuffer::onPeek (void * buf)\fC [protected, virtual]\fP"
+.PP
+Return the first object in the buffer. \fBReturns:\fP
+.RS 4
+predefined size of this buffers objects. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuf\fP pointer to copy contents of head of buffer to. 
+.RE
+.PP
+
+.PP
+Implements \fBost::Buffer\fP.
+.SS "size_t ost::FixedBuffer::onPost (void * buf)\fC [protected, virtual]\fP"
+.PP
+Post an object of the appropriate size into the buffer. \fBReturns:\fP
+.RS 4
+predefined size of this buffers objects. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuf\fP pointer to data to copy into the buffer. 
+.RE
+.PP
+
+.PP
+Implements \fBost::Buffer\fP.
+.SS "size_t ost::FixedBuffer::onWait (void * buf)\fC [protected, virtual]\fP"
+.PP
+Wait for and return a fixed object in the buffer. \fBReturns:\fP
+.RS 4
+predefined size of this buffers objects. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuf\fP pointer to hold object returned from the buffer. 
+.RE
+.PP
+
+.PP
+Implements \fBost::Buffer\fP.
+.SS "\fBFixedBuffer\fP& ost::FixedBuffer::operator= (const \fBFixedBuffer\fP & fb)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

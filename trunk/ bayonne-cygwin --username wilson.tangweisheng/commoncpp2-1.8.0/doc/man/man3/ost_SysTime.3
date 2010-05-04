@@ -1,0 +1,91 @@
+.TH "ost::SysTime" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::SysTime \- 
+.PP
+This class is used to access non-reentrant date and time functions in the standard C library.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <thread.h>\fP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static time_t \fBgetTime\fP (time_t *tloc=NULL)"
+.br
+.ti -1c
+.RI "static time_t \fBtime\fP (time_t *tloc)"
+.br
+.ti -1c
+.RI "static int \fBgetTimeOfDay\fP (struct timeval *tp)"
+.br
+.ti -1c
+.RI "static int \fBgettimeofday\fP (struct timeval *tp, struct timezone *)"
+.br
+.ti -1c
+.RI "static struct tm * \fBgetLocalTime\fP (const time_t *clock, struct tm *result)"
+.br
+.ti -1c
+.RI "static struct tm * \fBlocatime\fP (const time_t *clock, struct tm *result)"
+.br
+.ti -1c
+.RI "static struct tm * \fBgetGMTTime\fP (const time_t *clock, struct tm *result)"
+.br
+.ti -1c
+.RI "static struct tm * \fBgmtime\fP (const time_t *clock, struct tm *result)"
+.br
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBlock\fP (void)"
+.br
+.ti -1c
+.RI "static void \fBunlock\fP (void)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class is used to access non-reentrant date and time functions in the standard C library. 
+
+The class has two purposes:
+.IP "\(bu" 2
+1 To be used internaly in CommonCpp's date and time classes to make them thread safe.
+.IP "\(bu" 2
+2 To be used by clients as thread safe replacements to the standard C functions, much like \fBThread::sleep()\fP represents a thread safe version of the standard sleep() function.
+.PP
+.PP
+\fBNote:\fP
+.RS 4
+The class provides one function with the same name as its equivalent standard function and one with another, unique name. For new clients, the version with the unique name is recommended to make it easy to grep for accidental usage of the standard functions. The version with the standard name is provided for existing clients to sed replace their original version.
+.PP
+Also note that some functions that returned pointers have been redone to take that pointer as an argument instead, making the caller responsible for memory allocation/deallocation. This is almost how POSIX specifies *_r functions (reentrant versions of the standard time functions), except the POSIX functions also return the given pointer while we do not. We don't use the *_r functions as they aren't all generally available on all platforms yet.
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Idar Tollefsen <idar@cognita.no> \fBThread\fP safe date and time functions. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "static struct tm* ost::SysTime::getGMTTime (const time_t * clock, struct tm * result)\fC [static, read]\fP"
+.SS "static struct tm* ost::SysTime::getLocalTime (const time_t * clock, struct tm * result)\fC [static, read]\fP"
+.SS "static time_t ost::SysTime::getTime (time_t * tloc = \fCNULL\fP)\fC [static]\fP"
+.SS "static int ost::SysTime::gettimeofday (struct timeval * tp, struct timezone *)\fC [inline, static]\fP"
+.SS "static int ost::SysTime::getTimeOfDay (struct timeval * tp)\fC [static]\fP"
+.SS "static struct tm* ost::SysTime::gmtime (const time_t * clock, struct tm * result)\fC [inline, static, read]\fP"
+.SS "static struct tm* ost::SysTime::locatime (const time_t * clock, struct tm * result)\fC [inline, static, read]\fP"
+.SS "static void ost::SysTime::lock (void)\fC [inline, static, protected]\fP"
+.SS "static time_t ost::SysTime::time (time_t * tloc)\fC [inline, static]\fP"
+.SS "static void ost::SysTime::unlock (void)\fC [inline, static, protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

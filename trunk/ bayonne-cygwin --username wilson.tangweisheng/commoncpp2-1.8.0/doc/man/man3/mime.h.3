@@ -1,0 +1,51 @@
+.TH "mime.h" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+mime.h \- 
+.PP
+MIME document abstractions.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cc++/config.h>\fP
+.br
+\fC#include <cc++/socket.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBost::MIMEMultipart\fP"
+.br
+.RI "\fIA container class for multi-part MIME document objects which can be streamed to a std::ostream destination. \fP"
+.ti -1c
+.RI "class \fBost::MIMEMultipartForm\fP"
+.br
+.RI "\fIThe Multipart form is a MIME multipart document specific for the construction and delivery of form data to a web server through a post method. \fP"
+.ti -1c
+.RI "class \fBost::MIMEItemPart\fP"
+.br
+.RI "\fIThis is used to attach an item part to a MIME multipart document that is being streamed. \fP"
+.ti -1c
+.RI "class \fBost::MIMEFormData\fP"
+.br
+.RI "\fIThis is a document part type for use in submitting multipart form data to a web server. \fP"
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBost\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+MIME document abstractions. 
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

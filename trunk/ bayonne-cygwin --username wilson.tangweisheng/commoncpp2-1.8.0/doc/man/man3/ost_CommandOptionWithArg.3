@@ -1,0 +1,108 @@
+.TH "ost::CommandOptionWithArg" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::CommandOptionWithArg \- 
+.PP
+Derived class of \fBCommandOption\fP for options that have a value associated with them.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cmdoptns.h>\fP
+.PP
+Inherits \fBost::CommandOption\fP.
+.PP
+Inherited by \fBost::CommandOptionArg\fP, \fBost::CommandOptionCollect\fP, and \fBost::CommandOptionRest\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCommandOptionWithArg\fP (const char *inOptionName, const char *inOptionLetter, const char *inDescription, \fBOptionType\fP inOptionType, bool inRequired=false, \fBCommandOption\fP **ppNext=&\fBdefaultCommandOptionList\fP)"
+.br
+.RI "\fI\fBCommandOptionWithArg\fP contructor. \fP"
+.ti -1c
+.RI "virtual \fB~CommandOptionWithArg\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBfoundOption\fP (\fBCommandOptionParse\fP *cop, const char *value=0)"
+.br
+.ti -1c
+.RI "virtual void \fBfoundOption\fP (\fBCommandOptionParse\fP *cop, const char **value, int num)"
+.br
+.ti -1c
+.RI "virtual bool \fBhasValue\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "const char ** \fBvalues\fP"
+.br
+.RI "\fIArray of list of values collected for this option. \fP"
+.ti -1c
+.RI "int \fBnumValue\fP"
+.br
+.RI "\fI\fBNumber\fP of values in the values array. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Derived class of \fBCommandOption\fP for options that have a value associated with them. 
+
+Classes \fBCommandOptionRest\fP and \fBCommandOptionArg\fP derive from this class. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::CommandOptionWithArg::CommandOptionWithArg (const char * inOptionName, const char * inOptionLetter, const char * inDescription, \fBOptionType\fP inOptionType, bool inRequired = \fCfalse\fP, \fBCommandOption\fP ** ppNext = \fC&\fBdefaultCommandOptionList\fP\fP)"
+.PP
+\fBCommandOptionWithArg\fP contructor. Note the default values for required and ppNext.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinOptionName\fP long option name 
+.br
+\fIinOptionLetter\fP short letter name 
+.br
+\fIinDescription\fP short description of the option 
+.br
+\fIinOptionType\fP the type of this option 
+.br
+\fIinRequired\fP true if option is required 
+.br
+\fIppNext\fP the linked list header 
+.RE
+.PP
+
+.SS "virtual ost::CommandOptionWithArg::~CommandOptionWithArg ()\fC [virtual]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void ost::CommandOptionWithArg::foundOption (\fBCommandOptionParse\fP * cop, const char ** value, int num)\fC [virtual]\fP"
+.PP
+Reimplemented from \fBost::CommandOption\fP.
+.SS "virtual void ost::CommandOptionWithArg::foundOption (\fBCommandOptionParse\fP * cop, const char * value = \fC0\fP)\fC [virtual]\fP"
+.PP
+Reimplemented from \fBost::CommandOption\fP.
+.SS "virtual bool ost::CommandOptionWithArg::hasValue ()\fC [virtual]\fP"
+.PP
+Reimplemented from \fBost::CommandOption\fP.
+.SH "Member Data Documentation"
+.PP 
+.SS "int \fBost::CommandOptionWithArg::numValue\fP"
+.PP
+\fBNumber\fP of values in the values array. 
+.PP
+\fBExamples: \fP
+.in +1c
+\fBcmdlineopt.cpp\fP.
+.SS "const char** \fBost::CommandOptionWithArg::values\fP"
+.PP
+Array of list of values collected for this option. 
+.PP
+\fBExamples: \fP
+.in +1c
+\fBcmdlineopt.cpp\fP.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

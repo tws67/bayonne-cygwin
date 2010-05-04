@@ -1,0 +1,78 @@
+.TH "ost::IPV6Mask" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::IPV6Mask \- 
+.PP
+Internet addresses used specifically as masking addresses (such as '
+ 255.255.255.0') are held in the \fBIPV6Mask\fP derived object.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <address.h>\fP
+.PP
+Inherits \fBost::IPV6Address\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIPV6Mask\fP (const char *mask)"
+.br
+.RI "\fICreate the mask from a null terminated ASCII string such as '255.255.255.128'. \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "__EXPORT \fBIPV6Host\fP \fBoperator&\fP (const \fBIPV6Host\fP &addr, const \fBIPV6Mask\fP &mask)"
+.br
+.RI "\fIMasks are usually used to coerce host addresses into a specific router or class domain. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Internet addresses used specifically as masking addresses (such as '
+ 255.255.255.0') are held in the \fBIPV6Mask\fP derived object. 
+
+The seperate class is used so that C++ type casting can automatically determine when an \fBIPV6Address\fP object is really a mask address object rather than simply using the base class. This also allows manipulative operators for address masking to operate only when presented with a Masked address as well as providing cleaner and safer source.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> Internet Address Mask such as subnet masks. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::IPV6Mask::IPV6Mask (const char * mask)"
+.PP
+Create the mask from a null terminated ASCII string such as '255.255.255.128'. \fBParameters:\fP
+.RS 4
+\fImask\fP null terminated ASCII mask string. 
+.RE
+.PP
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "__EXPORT \fBIPV6Host\fP operator& (const \fBIPV6Host\fP & addr, const \fBIPV6Mask\fP & mask)\fC [friend]\fP"
+.PP
+Masks are usually used to coerce host addresses into a specific router or class domain. This can be done by taking the Inet Host Address object and 'and'ing it with an address mask. This operation can be directly expressed in C++ through the & operator.
+.PP
+\fBReturns:\fP
+.RS 4
+a internet host address that has been masked. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIaddr\fP host address to be masked by subnet. 
+.br
+\fImask\fP inetnet mask address object to mask by. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

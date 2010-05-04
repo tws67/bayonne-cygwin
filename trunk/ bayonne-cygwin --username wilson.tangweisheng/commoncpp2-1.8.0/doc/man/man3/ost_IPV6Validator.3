@@ -1,0 +1,62 @@
+.TH "ost::IPV6Validator" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::IPV6Validator \- 
+.PP
+Classes derived from \fBIPV6Address\fP would require an specific validator to pass to the \fBIPV6Address\fP constructor.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <address.h>\fP
+.PP
+Inherited by \fBost::IPV6MulticastValidator\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIPV6Validator\fP ()"
+.br
+.RI "\fIConstructor. \fP"
+.ti -1c
+.RI "virtual \fB~IPV6Validator\fP ()"
+.br
+.RI "\fIKeeps compilers happy. \fP"
+.ti -1c
+.RI "virtual void \fBoperator()\fP (const in6_addr address) const =0"
+.br
+.RI "\fIPure virtual application operator. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Classes derived from \fBIPV6Address\fP would require an specific validator to pass to the \fBIPV6Address\fP constructor. 
+
+This is a base class for classes of function objects used by such derived classes.
+.PP
+\fBAuthor:\fP
+.RS 4
+Federico Montesino <p5087@quintero.fie.us.es> Abstract base class for derived inet addresses validators. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::IPV6Validator::IPV6Validator ()\fC [inline]\fP"
+.PP
+Constructor. Does not deal with any state. 
+.SS "virtual ost::IPV6Validator::~IPV6Validator ()\fC [inline, virtual]\fP"
+.PP
+Keeps compilers happy. 
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void ost::IPV6Validator::operator() (const in6_addr address) const\fC [pure virtual]\fP"
+.PP
+Pure virtual application operator. Apply the validation algorithm specific to derived classes. 
+.PP
+Implemented in \fBost::IPV6MulticastValidator\fP.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

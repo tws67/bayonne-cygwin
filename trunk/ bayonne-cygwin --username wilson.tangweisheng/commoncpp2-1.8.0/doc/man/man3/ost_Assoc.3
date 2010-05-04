@@ -1,0 +1,72 @@
+.TH "ost::Assoc" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::Assoc \- 
+.PP
+This class is used to associate (object) pointers with named strings.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <misc.h>\fP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBentry\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void * \fBgetPointer\fP (const char *id) const "
+.br
+.ti -1c
+.RI "void \fBsetPointer\fP (const char *id, void *data)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAssoc\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Assoc\fP ()"
+.br
+.ti -1c
+.RI "void \fBclear\fP (void)"
+.br
+.ti -1c
+.RI "virtual void * \fBgetMemory\fP (size_t size)=0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class is used to associate (object) pointers with named strings. 
+
+A virtual is used to allocate memory which can be overriden in the derived class.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> associate names with pointers. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::Assoc::Assoc ()\fC [protected]\fP"
+.SS "virtual ost::Assoc::~Assoc ()\fC [protected, virtual]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::Assoc::clear (void)\fC [protected]\fP"
+.SS "virtual void* ost::Assoc::getMemory (size_t size)\fC [protected, pure virtual]\fP"
+.SS "void* ost::Assoc::getPointer (const char * id) const"
+.SS "void ost::Assoc::setPointer (const char * id, void * data)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

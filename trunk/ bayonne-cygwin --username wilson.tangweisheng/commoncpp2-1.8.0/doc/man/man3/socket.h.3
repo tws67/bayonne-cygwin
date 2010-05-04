@@ -1,0 +1,144 @@
+.TH "socket.h" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+socket.h \- 
+.PP
+Network addresses and sockets related classes.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cc++/address.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBost::Socket\fP"
+.br
+.RI "\fIThe \fBSocket\fP is used as the base for all Internet protocol services under Common C++. \fP"
+.ti -1c
+.RI "class \fBost::DCCPSocket\fP"
+.br
+.RI "\fIDCCP sockets are used for stream based connected sessions between two sockets. \fP"
+.ti -1c
+.RI "class \fBost::UDPSocket\fP"
+.br
+.RI "\fIUDP sockets implement the TCP SOCK_DGRAM UDP protocol. \fP"
+.ti -1c
+.RI "class \fBost::UDPBroadcast\fP"
+.br
+.RI "\fIRepresenting a UDP socket used for subnet broadcasts, this class provides an alternate binding and setPeer() capability for UDP sockets. \fP"
+.ti -1c
+.RI "class \fBost::UDPTransmit\fP"
+.br
+.RI "\fIRepresenting half of a two-way UDP connection, the UDP transmitter can broadcast data to another selected peer host or to an entire subnet. \fP"
+.ti -1c
+.RI "class \fBost::UDPReceive\fP"
+.br
+.RI "\fIRepresenting half of a two-way UDP connection, the UDP receiver can receive data from another peer host or subnet. \fP"
+.ti -1c
+.RI "class \fBost::UDPDuplex\fP"
+.br
+.RI "\fIUDP duplex connections impliment a bi-directional point-to-point UDP session between two peer hosts. \fP"
+.ti -1c
+.RI "class \fBost::TCPSocket\fP"
+.br
+.RI "\fITCP sockets are used for stream based connected sessions between two sockets. \fP"
+.ti -1c
+.RI "class \fBost::TCPV6Socket\fP"
+.br
+.RI "\fITCPV6 sockets are used for stream based connected sessions between two ipv6 sockets. \fP"
+.ti -1c
+.RI "class \fBost::TCPStream\fP"
+.br
+.RI "\fITCP streams are used to represent TCP client connections to a server by TCP protocol servers for accepting client connections. \fP"
+.ti -1c
+.RI "class \fBost::TCPSession\fP"
+.br
+.RI "\fIThe TCP session is used to primarily to represent a client connection that can be managed on a seperate thread. \fP"
+.ti -1c
+.RI "class \fBost::SimpleTCPStream\fP"
+.br
+.RI "\fISimple TCP Stream, to be used with Common C++ Library. \fP"
+.ti -1c
+.RI "class \fBost::SockException\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBost\fP"
+.br
+.in -1c
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBINVALID_SOCKET\fP   -1"
+.br
+.ti -1c
+.RI "#define \fBMSG_DONTWAIT\fP   0"
+.br
+.ti -1c
+.RI "#define \fBMSG_NOSIGNAL\fP   0"
+.br
+.ti -1c
+.RI "#define \fBSOCK_DCCP\fP   6"
+.br
+.ti -1c
+.RI "#define \fBIPPROTO_DCCP\fP   33"
+.br
+.ti -1c
+.RI "#define \fBSOL_DCCP\fP   269"
+.br
+.ti -1c
+.RI "#define \fBDCCP_SOCKOPT_AVAILABLE_CCIDS\fP   12"
+.br
+.ti -1c
+.RI "#define \fBDCCP_SOCKOPT_CCID\fP   13"
+.br
+.ti -1c
+.RI "#define \fBDCCP_SOCKOPT_TX_CCID\fP   14"
+.br
+.ti -1c
+.RI "#define \fBDCCP_SOCKOPT_RX_CCID\fP   15"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef int \fBSOCKET\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Network addresses and sockets related classes. 
+
+
+.SH "Define Documentation"
+.PP 
+.SS "#define DCCP_SOCKOPT_AVAILABLE_CCIDS   12"
+.SS "#define DCCP_SOCKOPT_CCID   13"
+.SS "#define DCCP_SOCKOPT_RX_CCID   15"
+.SS "#define DCCP_SOCKOPT_TX_CCID   14"
+.SS "#define INVALID_SOCKET   -1"
+.SS "#define IPPROTO_DCCP   33"
+.SS "#define MSG_DONTWAIT   0"
+.PP
+Referenced by ost::UDPTransmit::transmit().
+.SS "#define MSG_NOSIGNAL   0"
+.PP
+Referenced by ost::UDPTransmit::send(), and ost::UDPTransmit::transmit().
+.SS "#define SOCK_DCCP   6"
+.SS "#define SOL_DCCP   269"
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef int \fBSOCKET\fP"
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

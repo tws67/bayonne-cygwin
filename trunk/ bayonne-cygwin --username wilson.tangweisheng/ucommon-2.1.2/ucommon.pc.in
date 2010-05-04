@@ -1,0 +1,9 @@
+clink=@UCOMMON_CLINK@
+model=@UCOMMON_MODEL@
+
+Name: ucommon
+Description: 
+Version: @VERSION@
+Libs:  -lucommon @UCOMMON_LINKED@ 
+Cflags: @UCOMMON_FLAGS@ 
+ 

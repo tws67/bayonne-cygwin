@@ -1,0 +1,223 @@
+\section{ost::BayonneRPC Class Reference}
+\label{classost_1_1_bayonne_r_p_c}\index{ost::BayonneRPC@{ost::BayonneRPC}}
+
+
+\doxyref{Bayonne}{p.}{classost_1_1_bayonne} RPC arguments, may be passed through to binders from webservice sessions for extensions to soap \& xmlrpc services.  
+
+
+{\ttfamily \#include $<$bayonne.h$>$}Inheritance diagram for ost::BayonneRPC::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classost_1_1_bayonne_r_p_c}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf params}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf setComplete} ({\bf BayonneSession} $\ast$s)
+\item 
+unsigned {\bf getCount} (void)
+\item 
+const char $\ast$ {\bf getParamId} (unsigned short param, unsigned short offset)
+\item 
+const char $\ast$ {\bf getIndexed} (unsigned short param, unsigned short offset=0)
+\item 
+const char $\ast$ {\bf getNamed} (unsigned short param, const char $\ast$member)
+\item 
+const char $\ast$ {\bf getMapped} (const char $\ast$map, const char $\ast$member)
+\item 
+bool {\bf buildResponse} (const char $\ast$fmt,...)
+\item 
+void {\bf sendSuccess} (void)
+\item 
+void {\bf sendFault} (int {\bf code}, const char $\ast${\bf string})
+\item 
+void {\bf transportFault} (unsigned {\bf code}, const char $\ast${\bf string})
+\item 
+bool {\bf invokeXMLRPC} (void)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>char $\ast$ {\bf buffer}\\
+\>size\_t {\bf bufsize}\\
+\>size\_t {\bf bufused}\\
+\>const char $\ast$ {\bf agent\_id}\\
+\>const char $\ast$ {\bf protocol}\\
+\>bool {\bf authorized}\\
+\>const char $\ast$ {\bf userid}\\
+\>{\bf BayonneDriver} $\ast$ {\bf driver}\\
+\} {\bf transport}\\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>unsigned {\bf code}\\
+\>const char $\ast$ {\bf string}\\
+\} {\bf result}\\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>const char $\ast$ {\bf prefix}\\
+\>const char $\ast$ {\bf method}\\
+\>const char $\ast$ {\bf tranid}\\
+\>const char $\ast$ {\bf action}\\
+\>const char $\ast$ {\bf resuri}\\
+\} {\bf header}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf BayonneRPC} ()
+\item 
+virtual {\bf $\sim$BayonneRPC} ()
+\item 
+bool {\bf parseCall} (char $\ast$cp)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ost::BayonneRPC::params} {\bf params}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+size\_\-t {\bf xmlwrite} (char $\ast$$\ast$buf, size\_\-t $\ast$max, const char $\ast$fmt,...)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Bayonne}{p.}{classost_1_1_bayonne} RPC arguments, may be passed through to binders from webservice sessions for extensions to soap \& xmlrpc services. rpc arguments parsed \begin{DoxyAuthor}{Author}
+David Sugar $<${\tt dyfet@gnutelephony.org}$>$ 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!BayonneRPC@{BayonneRPC}}
+\index{BayonneRPC@{BayonneRPC}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{BayonneRPC}]{\setlength{\rightskip}{0pt plus 5cm}ost::BayonneRPC::BayonneRPC ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_r_p_c_ad1abe707d0e716a57426ea0afa0650a3}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!$\sim$BayonneRPC@{$\sim$BayonneRPC}}
+\index{$\sim$BayonneRPC@{$\sim$BayonneRPC}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{$\sim$BayonneRPC}]{\setlength{\rightskip}{0pt plus 5cm}virtual ost::BayonneRPC::$\sim$BayonneRPC ()\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_r_p_c_a941e676ea78a3b773e8ee26f3ca2e317}
+
+
+\subsection{Member Function Documentation}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!buildResponse@{buildResponse}}
+\index{buildResponse@{buildResponse}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{buildResponse}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneRPC::buildResponse (const char $\ast$ {\em fmt}, \/   {\em ...})}\label{classost_1_1_bayonne_r_p_c_a804ea1217085ff6d4b06ce881afcc070}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!getCount@{getCount}}
+\index{getCount@{getCount}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{getCount}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::BayonneRPC::getCount (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_r_p_c_a7dd14cf17edf242816e501dbd33f6419}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!getIndexed@{getIndexed}}
+\index{getIndexed@{getIndexed}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{getIndexed}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::BayonneRPC::getIndexed (unsigned short {\em param}, \/  unsigned short {\em offset} = {\ttfamily 0})}\label{classost_1_1_bayonne_r_p_c_a61beb103ba26f9c3be4a2da9d379b670}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!getMapped@{getMapped}}
+\index{getMapped@{getMapped}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{getMapped}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::BayonneRPC::getMapped (const char $\ast$ {\em map}, \/  const char $\ast$ {\em member})}\label{classost_1_1_bayonne_r_p_c_ad1673a409cb9beb2fc0dccc0d2dd4f87}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!getNamed@{getNamed}}
+\index{getNamed@{getNamed}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{getNamed}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::BayonneRPC::getNamed (unsigned short {\em param}, \/  const char $\ast$ {\em member})}\label{classost_1_1_bayonne_r_p_c_a139d1e2704538ddb646433504dd7806c}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!getParamId@{getParamId}}
+\index{getParamId@{getParamId}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{getParamId}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::BayonneRPC::getParamId (unsigned short {\em param}, \/  unsigned short {\em offset})}\label{classost_1_1_bayonne_r_p_c_adc244a6eb6196c7ebd1884003ab0a18a}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!invokeXMLRPC@{invokeXMLRPC}}
+\index{invokeXMLRPC@{invokeXMLRPC}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{invokeXMLRPC}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneRPC::invokeXMLRPC (void)}\label{classost_1_1_bayonne_r_p_c_a3f63b6592758c19e4cfbcee389cb13b3}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!parseCall@{parseCall}}
+\index{parseCall@{parseCall}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{parseCall}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneRPC::parseCall (char $\ast$ {\em cp})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_r_p_c_aeeb0a7aafcd1014de19b34e41061ef5e}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!sendFault@{sendFault}}
+\index{sendFault@{sendFault}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{sendFault}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneRPC::sendFault (int {\em code}, \/  const char $\ast$ {\em string})}\label{classost_1_1_bayonne_r_p_c_aac610f266d04f60f3864c821b2e324e5}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!sendSuccess@{sendSuccess}}
+\index{sendSuccess@{sendSuccess}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{sendSuccess}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneRPC::sendSuccess (void)}\label{classost_1_1_bayonne_r_p_c_a265e89bd874c21280743050ecd9db4a0}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!setComplete@{setComplete}}
+\index{setComplete@{setComplete}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{setComplete}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::BayonneRPC::setComplete ({\bf BayonneSession} $\ast$ {\em s})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_r_p_c_a3ad6cd70a03e3ab017c849096acddd83}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!transportFault@{transportFault}}
+\index{transportFault@{transportFault}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{transportFault}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneRPC::transportFault (unsigned {\em code}, \/  const char $\ast$ {\em string})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_r_p_c_a222b938ac8664d9526c67b640dbfd71c}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!xmlwrite@{xmlwrite}}
+\index{xmlwrite@{xmlwrite}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{xmlwrite}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t xmlwrite (char $\ast$$\ast$ {\em buf}, \/  size\_\-t $\ast$ {\em max}, \/  const char $\ast$ {\em fmt}, \/   {\em ...})\hspace{0.3cm}{\ttfamily  [friend]}}\label{classost_1_1_bayonne_r_p_c_a43230a6f01c2da4d547ecf0c08733be3}
+
+
+\subsection{Member Data Documentation}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!action@{action}}
+\index{action@{action}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{action}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::BayonneRPC::action}}\label{classost_1_1_bayonne_r_p_c_a2cf853921a2a8b5b762191710dc19f6d}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!agent\_\-id@{agent\_\-id}}
+\index{agent\_\-id@{agent\_\-id}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{agent\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::BayonneRPC::agent\_\-id}}\label{classost_1_1_bayonne_r_p_c_a2ff1a030079f9479dc6e9227b5ff4d74}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!authorized@{authorized}}
+\index{authorized@{authorized}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{authorized}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::BayonneRPC::authorized}}\label{classost_1_1_bayonne_r_p_c_a37ab6559e235407e6df091868beda8f7}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!buffer@{buffer}}
+\index{buffer@{buffer}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{buffer}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf ost::BayonneRPC::buffer}}\label{classost_1_1_bayonne_r_p_c_a7edf2bfae837fb3925c5999502391403}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!bufsize@{bufsize}}
+\index{bufsize@{bufsize}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{bufsize}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf ost::BayonneRPC::bufsize}}\label{classost_1_1_bayonne_r_p_c_a18c3ab2db27cf66cdcdce89ef05c5ca1}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!bufused@{bufused}}
+\index{bufused@{bufused}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{bufused}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf ost::BayonneRPC::bufused}}\label{classost_1_1_bayonne_r_p_c_aab9620a787598ab81af11e20aa2da9e6}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!code@{code}}
+\index{code@{code}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{code}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::BayonneRPC::code}}\label{classost_1_1_bayonne_r_p_c_a06ff3d323ea6abca768ec3ca42216795}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!driver@{driver}}
+\index{driver@{driver}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{driver}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneDriver}$\ast$ {\bf ost::BayonneRPC::driver}}\label{classost_1_1_bayonne_r_p_c_a0012fe0eee6dd15eea086dd5986d2139}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!header@{header}}
+\index{header@{header}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{header}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \} 	 {\bf ost::BayonneRPC::header}}\label{classost_1_1_bayonne_r_p_c_a172c3f76b89c92f325477fa535b6ff5e}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!method@{method}}
+\index{method@{method}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{method}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::BayonneRPC::method}}\label{classost_1_1_bayonne_r_p_c_abf8b640c5b24159844e0115e6757af72}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!params@{params}}
+\index{params@{params}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{params}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf ost::BayonneRPC::params}	 {\bf ost::BayonneRPC::params}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_r_p_c_a812f98d2b33809227f84338d071a4ff3}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!prefix@{prefix}}
+\index{prefix@{prefix}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{prefix}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::BayonneRPC::prefix}}\label{classost_1_1_bayonne_r_p_c_a52d2944d2f65028f3eec1aaf9d25c296}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!protocol@{protocol}}
+\index{protocol@{protocol}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{protocol}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::BayonneRPC::protocol}}\label{classost_1_1_bayonne_r_p_c_a785ba3fb926049f5aa2661f1d727b596}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!result@{result}}
+\index{result@{result}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{result}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \} 	 {\bf ost::BayonneRPC::result}}\label{classost_1_1_bayonne_r_p_c_a2daa58c7969d329053a721aedabfea3d}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!resuri@{resuri}}
+\index{resuri@{resuri}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{resuri}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::BayonneRPC::resuri}}\label{classost_1_1_bayonne_r_p_c_a3b207b8758815748673726a326f48022}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!string@{string}}
+\index{string@{string}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{string}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::BayonneRPC::string}}\label{classost_1_1_bayonne_r_p_c_a0a2a59fa72d833d05fa655a507d9f827}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!tranid@{tranid}}
+\index{tranid@{tranid}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{tranid}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::BayonneRPC::tranid}}\label{classost_1_1_bayonne_r_p_c_a4ce0f0d0f82784983211d083ce4aefb3}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!transport@{transport}}
+\index{transport@{transport}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{transport}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \} 	 {\bf ost::BayonneRPC::transport}}\label{classost_1_1_bayonne_r_p_c_ad969e858812e51c062fbf2740afee686}
+\index{ost::BayonneRPC@{ost::BayonneRPC}!userid@{userid}}
+\index{userid@{userid}!ost::BayonneRPC@{ost::BayonneRPC}}
+\subsubsection[{userid}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::BayonneRPC::userid}}\label{classost_1_1_bayonne_r_p_c_a7ee9b22b2581e554e8383c53a656c0aa}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf bayonne.h}\end{DoxyCompactItemize}

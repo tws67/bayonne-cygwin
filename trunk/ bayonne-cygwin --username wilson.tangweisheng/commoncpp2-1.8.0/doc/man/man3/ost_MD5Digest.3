@@ -1,0 +1,92 @@
+.TH "ost::MD5Digest" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::MD5Digest \- 
+.PP
+A md5 collection/computation accululator class.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <digest.h>\fP
+.PP
+Inherits \fBost::Digest\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMD5Digest\fP ()"
+.br
+.ti -1c
+.RI "void \fBinitDigest\fP (void)"
+.br
+.ti -1c
+.RI "unsigned \fBgetSize\fP (void)"
+.br
+.ti -1c
+.RI "unsigned \fBgetDigest\fP (unsigned char *buffer)"
+.br
+.ti -1c
+.RI "void \fBputDigest\fP (const unsigned char *buffer, unsigned len)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBoverflow\fP (int c)"
+.br
+.ti -1c
+.RI "void \fBupdate\fP (void)"
+.br
+.ti -1c
+.RI "void \fBcommit\fP (void)"
+.br
+.ti -1c
+.RI "std::ostream & \fBstrDigest\fP (std::ostream &os)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A md5 collection/computation accululator class. 
+
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> md5 hash accumulation. 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+.PP
+\fBdigest.cpp\fP.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::MD5Digest::MD5Digest ()"
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::MD5Digest::commit (void)\fC [protected]\fP"
+.SS "unsigned ost::MD5Digest::getDigest (unsigned char * buffer)\fC [virtual]\fP"
+.PP
+Implements \fBost::Digest\fP.
+.SS "unsigned ost::MD5Digest::getSize (void)\fC [inline, virtual]\fP"
+.PP
+Implements \fBost::Digest\fP.
+.SS "void ost::MD5Digest::initDigest (void)\fC [virtual]\fP"
+.PP
+Implements \fBost::Digest\fP.
+.SS "int ost::MD5Digest::overflow (int c)\fC [protected]\fP"
+.SS "void ost::MD5Digest::putDigest (const unsigned char * buffer, unsigned len)\fC [virtual]\fP"
+.PP
+Implements \fBost::Digest\fP.
+.SS "std::ostream& ost::MD5Digest::strDigest (std::ostream & os)\fC [protected, virtual]\fP"
+.PP
+Implements \fBost::Digest\fP.
+.SS "void ost::MD5Digest::update (void)\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

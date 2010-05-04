@@ -1,0 +1,51 @@
+.TH "unix.h" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+unix.h \- 
+.PP
+UNIX domain sockets, streams and sessions.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cc++/missing.h>\fP
+.br
+\fC#include <cc++/socket.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBost::UnixSocket\fP"
+.br
+.RI "\fIUnix domain sockets are used for stream based connected sessions between processes on the same machine. \fP"
+.ti -1c
+.RI "class \fBost::UnixStream\fP"
+.br
+.RI "\fIUnix streams are used to represent Unix domain client connections to a local server for accepting client connections. \fP"
+.ti -1c
+.RI "class \fBost::unixstream\fP"
+.br
+.RI "\fIA more natural C++ 'unixstream' class for use by non-threaded applications. \fP"
+.ti -1c
+.RI "class \fBost::UnixSession\fP"
+.br
+.RI "\fIThe Unix domain session is used to primarily to represent a client connection that can be managed on a seperate thread. \fP"
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBost\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+UNIX domain sockets, streams and sessions. 
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

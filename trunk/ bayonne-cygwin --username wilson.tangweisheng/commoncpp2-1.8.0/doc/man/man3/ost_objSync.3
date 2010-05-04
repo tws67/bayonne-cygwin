@@ -1,0 +1,43 @@
+.TH "ost::objSync" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::objSync \- 
+.PP
+Generic template to create objects of a common base type which share a static mutex so that all instances of the class have a global lock.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <objsync.h>\fP
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBobjLock\fP (void)"
+.br
+.ti -1c
+.RI "void \fBobjUnlock\fP (void)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class T> class ost::objSync< T >"
+Generic template to create objects of a common base type which share a static mutex so that all instances of the class have a global lock. 
+
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@gnutelephony.org> global mutex locked class. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class T > void \fBost::objSync\fP< T >::objLock (void)\fC [inline, protected]\fP"
+.SS "template<class T > void \fBost::objSync\fP< T >::objUnlock (void)\fC [inline, protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

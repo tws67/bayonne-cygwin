@@ -1,0 +1,230 @@
+.TH "ost::CommandOption" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::CommandOption \- 
+.PP
+\fBCommandOption\fP is the base class for all command line options.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cmdoptns.h>\fP
+.PP
+Inherited by \fBost::CommandOptionNoArg\fP, and \fBost::CommandOptionWithArg\fP.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBOptionType\fP { \fBhasArg\fP, \fBnoArg\fP, \fBtrailing\fP, \fBcollect\fP }"
+.br
+.RI "\fIOptionType is for denoting what type of option this is, with an arg, without an arg or the trailing args. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~CommandOption\fP ()"
+.br
+.RI "\fIA virtual destructor just in case. \fP"
+.ti -1c
+.RI "\fBCommandOption\fP (const char *inOptionName, const char *inOptionLetter, const char *inDescription, \fBOptionType\fP inOptionType, bool inRequired=false, \fBCommandOption\fP **ppNext=&\fBdefaultCommandOptionList\fP)"
+.br
+.RI "\fI\fBCommandOption\fP contructor. \fP"
+.ti -1c
+.RI "virtual void \fBfoundOption\fP (\fBCommandOptionParse\fP *cop, const char *value=0)"
+.br
+.RI "\fIfoundOption is called by the \fBCommandOptionParse\fP object during the parsing of the command line options. \fP"
+.ti -1c
+.RI "virtual void \fBfoundOption\fP (\fBCommandOptionParse\fP *cop, const char **value, int num)"
+.br
+.RI "\fIfoundOption is called by the \fBCommandOptionParse\fP object during the parsing of the command line options. \fP"
+.ti -1c
+.RI "virtual void \fBparseDone\fP (\fBCommandOptionParse\fP *cop)"
+.br
+.RI "\fIOnce parsing of command line options is complete, this method is called. \fP"
+.ti -1c
+.RI "virtual void \fBperformTask\fP (\fBCommandOptionParse\fP *cop)"
+.br
+.RI "\fIOnce \fBCommandOption\fP objects have completed parsing and there are no errors they may have some specific tasks to perform. \fP"
+.ti -1c
+.RI "virtual bool \fBhasValue\fP ()"
+.br
+.RI "\fIFor fields with the required flag set, this method is used to determine if the Option has satisfied it's required status. \fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBoptionName\fP"
+.br
+.RI "\fILong option name, these will be preceded with '--' on the command line. \fP"
+.ti -1c
+.RI "const char * \fBoptionLetter\fP"
+.br
+.RI "\fIoption letter, these will be preceded with '-' on the command line. \fP"
+.ti -1c
+.RI "const char * \fBdescription\fP"
+.br
+.RI "\fIA short description of the option for Usage messages. \fP"
+.ti -1c
+.RI "\fBOptionType\fP \fBoptionType\fP"
+.br
+.RI "\fIThis command option's OptionType. \fP"
+.ti -1c
+.RI "bool \fBrequired\fP"
+.br
+.RI "\fITrue if this parameter is required. \fP"
+.ti -1c
+.RI "\fBCommandOption\fP * \fBnext\fP"
+.br
+.RI "\fIThis next \fBCommandOption\fP in this list of options or nil if no more options exist. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBCommandOption\fP is the base class for all command line options. 
+
+Command line options can be defined statically and used when constructing a command line parser onject using makeCommandOptionParse. This serves only as a base class to \fBCommandOptionWithArg\fP, \fBCommandOptionRest\fP or \fBCommandOptionNoArg\fP which can also be used to derive more complex classes or even entire applications.
+.PP
+\fBAuthor:\fP
+.RS 4
+Gianni Mariani <gianni@mariani.ws> 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+.PP
+\fBcmdlineopt.cpp\fP.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBost::CommandOption::OptionType\fP"
+.PP
+OptionType is for denoting what type of option this is, with an arg, without an arg or the trailing args. Option type 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIhasArg \fP\fP
+This option is associated with a value. 
+.TP
+\fB\fInoArg \fP\fP
+This option is a flag only. 
+.TP
+\fB\fItrailing \fP\fP
+Remaining of the command line arguments. 
+.TP
+\fB\fIcollect \fP\fP
+Collect values that are not a value to an option. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual ost::CommandOption::~CommandOption ()\fC [virtual]\fP"
+.PP
+A virtual destructor just in case. 
+.SS "ost::CommandOption::CommandOption (const char * inOptionName, const char * inOptionLetter, const char * inDescription, \fBOptionType\fP inOptionType, bool inRequired = \fCfalse\fP, \fBCommandOption\fP ** ppNext = \fC&\fBdefaultCommandOptionList\fP\fP)"
+.PP
+\fBCommandOption\fP contructor. Note the default values for required and ppNext.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinOptionName\fP long option name 
+.br
+\fIinOptionLetter\fP short letter name 
+.br
+\fIinDescription\fP short description of the option 
+.br
+\fIinOptionType\fP the type of this option 
+.br
+\fIinRequired\fP true if option is required 
+.br
+\fIppNext\fP the linked list header 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void ost::CommandOption::foundOption (\fBCommandOptionParse\fP * cop, const char ** value, int num)\fC [virtual]\fP"
+.PP
+foundOption is called by the \fBCommandOptionParse\fP object during the parsing of the command line options. \fBParameters:\fP
+.RS 4
+\fIcop\fP pointer to the command option parser 
+.br
+\fIvalue\fP an array of values of this option 
+.br
+\fInum\fP number of values in the array 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBost::CommandOptionWithArg\fP.
+.SS "virtual void ost::CommandOption::foundOption (\fBCommandOptionParse\fP * cop, const char * value = \fC0\fP)\fC [virtual]\fP"
+.PP
+foundOption is called by the \fBCommandOptionParse\fP object during the parsing of the command line options. \fBParameters:\fP
+.RS 4
+\fIcop\fP pointer to the command option parser 
+.br
+\fIvalue\fP the value of this option 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBost::CommandOptionWithArg\fP, and \fBost::CommandOptionNoArg\fP.
+.SS "virtual bool ost::CommandOption::hasValue ()\fC [virtual]\fP"
+.PP
+For fields with the required flag set, this method is used to determine if the Option has satisfied it's required status. The default methods simply returns true if any values have been found. This could be specialized to return true based on some other criteria. 
+.PP
+Reimplemented in \fBost::CommandOptionWithArg\fP.
+.SS "virtual void ost::CommandOption::parseDone (\fBCommandOptionParse\fP * cop)\fC [virtual]\fP"
+.PP
+Once parsing of command line options is complete, this method is called. This can be used to perform last minute checks on the options collected.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcop\fP pointer to the command option parser 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+\fBcmdlineopt.cpp\fP.
+.SS "virtual void ost::CommandOption::performTask (\fBCommandOptionParse\fP * cop)\fC [virtual]\fP"
+.PP
+Once \fBCommandOption\fP objects have completed parsing and there are no errors they may have some specific tasks to perform. PerformTask must return.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcop\fP pointer to the command option parser 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+\fBcmdlineopt.cpp\fP.
+.SH "Member Data Documentation"
+.PP 
+.SS "const char* \fBost::CommandOption::description\fP"
+.PP
+A short description of the option for Usage messages. e.g. Usage: mycommand : blah -f, --file <DESCRIPTION here> 
+.SS "\fBCommandOption\fP* \fBost::CommandOption::next\fP"
+.PP
+This next \fBCommandOption\fP in this list of options or nil if no more options exist. 
+.SS "const char* \fBost::CommandOption::optionLetter\fP"
+.PP
+option letter, these will be preceded with '-' on the command line. e.g. -f foo.x 
+.SS "const char* \fBost::CommandOption::optionName\fP"
+.PP
+Long option name, these will be preceded with '--' on the command line. e.g. --file foo.x 
+.SS "\fBOptionType\fP \fBost::CommandOption::optionType\fP"
+.PP
+This command option's OptionType. 
+.SS "bool \fBost::CommandOption::required\fP"
+.PP
+True if this parameter is required. If the parameter is not supplied and required is true, an error will be flagged in the option processor. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

@@ -1,0 +1,86 @@
+.TH "ost::AppLog::Ident" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::AppLog::Ident \- 
+.PP
+\fBIdent\fP class that represents module name.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <applog.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIdent\fP ()"
+.br
+.RI "\fIConstructor. \fP"
+.ti -1c
+.RI "\fB~Ident\fP ()"
+.br
+.RI "\fIDesctructor. \fP"
+.ti -1c
+.RI "\fBIdent\fP (\fBIdent\fP &id)"
+.br
+.RI "\fICopy constructor. \fP"
+.ti -1c
+.RI "\fBIdent\fP (const char *str)"
+.br
+.RI "\fIconst char* constructor, provided for convenience. \fP"
+.ti -1c
+.RI "std::string & \fBstr\fP ()"
+.br
+.RI "\fIstd::string cast. \fP"
+.ti -1c
+.RI "\fBIdent\fP & \fBoperator=\fP (std::string &st)"
+.br
+.RI "\fIAssignment operator (string). \fP"
+.ti -1c
+.RI "\fBIdent\fP & \fBoperator=\fP (const char str[])"
+.br
+.RI "\fIAssignment operator (const char[]), provided for convenience. \fP"
+.ti -1c
+.RI "const char * \fBc_str\fP ()"
+.br
+.RI "\fIconst char* cast provided for conveneince. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBIdent\fP class that represents module name. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::AppLog::Ident::Ident ()\fC [inline]\fP"
+.PP
+Constructor. 
+.SS "ost::AppLog::Ident::~Ident ()\fC [inline]\fP"
+.PP
+Desctructor. 
+.SS "ost::AppLog::Ident::Ident (\fBIdent\fP & id)\fC [inline]\fP"
+.PP
+Copy constructor. 
+.SS "ost::AppLog::Ident::Ident (const char * str)\fC [inline]\fP"
+.PP
+const char* constructor, provided for convenience. 
+.SH "Member Function Documentation"
+.PP 
+.SS "const char* ost::AppLog::Ident::c_str ()\fC [inline]\fP"
+.PP
+const char* cast provided for conveneince. 
+.PP
+Referenced by ost::AppLog::operator()(), and ost::AppLog::operator<<().
+.SS "\fBIdent\fP& ost::AppLog::Ident::operator= (const char str[])\fC [inline]\fP"
+.PP
+Assignment operator (const char[]), provided for convenience. 
+.SS "\fBIdent\fP& ost::AppLog::Ident::operator= (std::string & st)\fC [inline]\fP"
+.PP
+Assignment operator (string). 
+.SS "std::string& ost::AppLog::Ident::str ()\fC [inline]\fP"
+.PP
+std::string cast. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

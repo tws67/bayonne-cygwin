@@ -1,0 +1,23 @@
+<!ELEMENT methodCall (methodName, params)>
+<!ELEMENT methodName (#PCDATA)>
+<!ELEMENT params     (param*)>
+<!ELEMENT param      (value)>
+<!ELEMENT value      
+   (i4|int|string|dateTime.iso8601|double|base64|struct|array)>
+   
+<!ELEMENT i4               (#PCDATA)>
+<!ELEMENT int              (#PCDATA)>
+<!ELEMENT string           (#PCDATA)>
+<!ELEMENT dateTime.iso8601 (#PCDATA)>
+<!ELEMENT double           (#PCDATA)>
+<!ELEMENT base64           (#PCDATA)>
+
+<!ELEMENT array            (data)>
+<!ELEMENT data             (value*)>
+<!ELEMENT struct           (member+)>
+<!ELEMENT member           (name, value)>
+<!ELEMENT name             (#PCDATA)>
+
+<!ELEMENT methodResponse   (params | fault)>
+<!ELEMENT fault            (value)>
+

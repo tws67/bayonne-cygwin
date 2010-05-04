@@ -1,0 +1,35 @@
+This release is mostly to offer a stable and supportable release of
+Bayonne 2 which can be used to build basic script driven ivr
+applications using the Bayonne 2 runtime engine.  This distribution
+includes only those drivers which are themselves supplied on a free
+software license, including the Bayonne 2 sip driver built from the GPL
+licensed eXosip package, the h323 driver built from the MPL licensed
+OpenH323 stack, the Voicetronix driver built from the LGPL licensed
+voicetronix sdk, and the CAPI soundcard driver for GNU/Linux CAPI
+support.  GNU Bayonne 2 can be used with GNU/Linux, various BSD systems,
+Mac OS/X, and Microsoft Windows.
+
+The current release includes support for a preliminary BayonneXML 
+parser, and may be used as an XML application server.  When used in this 
+manner, Bayonne will fetch a XML document structured in BayonneXML, and 
+then render and navigate the document in voice.  This is achieved when 
+Bayonne is configured to use the bayonnexml service binding (--bind 
+bayonnexml or bind=bayonnexml in server.conf).  Complete documentation 
+for BayonneXML will soon be offered.
+
+Some additional drivers are available separately in the separately
+available "bayonne2-nonfree" package, which is freely offered, but
+includes drivers that are "non free" in terms of their licensing.  This
+separation is similar to the nonfree (as in freedom) debian repository,
+rather than non-free as in cost.  The nonfree drivers include initial
+support for Intel Dialogic.  Drivers for Synway and Aculab telephony
+cards are also in active development. The nonfree package is found at
+http://sourceforge.net/projects/gnutelephony/
+
+In that Bayonne 2 uses services binding, the ivrscript1 service binding
+will continue to be explicitly offered in future stable releases.
+Ivrscript1 is offered as an initial binding for the Bayonne 2 scripting
+language to assure applications written against this first release will
+also behave consistently even if future releases offer new or different
+scripting language features. 
+

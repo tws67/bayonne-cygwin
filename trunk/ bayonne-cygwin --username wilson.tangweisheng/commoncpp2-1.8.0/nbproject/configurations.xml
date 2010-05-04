@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="62">
+  <logicalFolder name="root" displayName="root" projectFiles="true">
+    <df name="commoncpp2-1.8.0" root=".">
+      <df name="autoconf">
+      </df>
+      <df name="demo">
+        <in>SampleSocketPort.cpp</in>
+        <in>SampleSocketPort.h</in>
+        <in>buffer.cpp</in>
+        <in>cmdlineopt.cpp</in>
+        <in>crc32.cpp</in>
+        <in>dccpclient.cpp</in>
+        <in>dccpserver.cpp</in>
+        <in>dir.cpp</in>
+        <in>keydump.cpp</in>
+        <in>netdevices.cpp</in>
+        <in>serialecho.cpp</in>
+        <in>serialecho.h</in>
+        <in>serialmain.cpp</in>
+        <in>slogTest.cpp</in>
+        <in>str.cpp</in>
+        <in>tcp.cpp</in>
+        <in>tcpservice.cpp</in>
+        <in>tcpthread.cpp</in>
+        <in>test_alog.cpp</in>
+        <in>timer.cpp</in>
+        <in>urlfetch.cpp</in>
+        <in>xmlfetch.cpp</in>
+      </df>
+      <df name="doc">
+        <df name="html">
+        </df>
+        <df name="man">
+          <df name="man3">
+          </df>
+        </df>
+      </df>
+      <df name="inc">
+        <df name="cc++">
+          <in>address.h</in>
+          <in>applog.h</in>
+          <in>buffer.h</in>
+          <in>cmdoptns.h</in>
+          <in>common.h</in>
+          <in>config.h</in>
+          <in>counter.h</in>
+          <in>digest.h</in>
+          <in>exception.h</in>
+          <in>export.h</in>
+          <in>file.h</in>
+          <in>functions.h</in>
+          <in>mime.h</in>
+          <in>misc.h</in>
+          <in>missing.h</in>
+          <in>network.h</in>
+          <in>numbers.h</in>
+          <in>objcount.h</in>
+          <in>object.h</in>
+          <in>objlink.h</in>
+          <in>objmap.h</in>
+          <in>objsync.h</in>
+          <in>oststring.h</in>
+          <in>persist.h</in>
+          <in>pointer.h</in>
+          <in>process.h</in>
+          <in>serial.h</in>
+          <in>slog.h</in>
+          <in>socket.h</in>
+          <in>socketport.h</in>
+          <in>ssl.h</in>
+          <in>strchar.h</in>
+          <in>string.h</in>
+          <in>template.h</in>
+          <in>thread.h</in>
+          <in>tokenizer.h</in>
+          <in>unix.h</in>
+          <in>url.h</in>
+          <in>xml.h</in>
+          <in>zstream.h</in>
+        </df>
+      </df>
+      <df name="m4">
+      </df>
+      <df name="src">
+        <in>applog.cpp</in>
+        <in>assoc.cpp</in>
+        <in>buffer.cpp</in>
+        <in>cidr.cpp</in>
+        <in>cmdoptns.cpp</in>
+        <in>date.cpp</in>
+        <in>digest.cpp</in>
+        <in>dir.cpp</in>
+        <in>dso.cpp</in>
+        <in>engine.cpp</in>
+        <in>event.cpp</in>
+        <in>exception.cpp</in>
+        <in>file.cpp</in>
+        <in>friends.cpp</in>
+        <in>getopt.c</in>
+        <in>getopt.h</in>
+        <in>getopt1.c</in>
+        <in>in6addr.cpp</in>
+        <in>inaddr.cpp</in>
+        <in>keydata.cpp</in>
+        <in>linked.cpp</in>
+        <in>lockfile.cpp</in>
+        <in>map.cpp</in>
+        <in>md5.cpp</in>
+        <in>mempager.cpp</in>
+        <in>mime.cpp</in>
+        <in>missing.cpp</in>
+        <in>mutex.cpp</in>
+        <in>nat.cpp</in>
+        <in>nat.h</in>
+        <in>network.cpp</in>
+        <in>numbers.cpp</in>
+        <in>peer.cpp</in>
+        <in>persist.cpp</in>
+        <in>pointer.cpp</in>
+        <in>private.h</in>
+        <in>process.cpp</in>
+        <in>runlist.cpp</in>
+        <in>semaphore.cpp</in>
+        <in>serial.cpp</in>
+        <in>simplesocket.cpp</in>
+        <in>slog.cpp</in>
+        <in>socket.cpp</in>
+        <in>socketport.cpp</in>
+        <in>ssl.cpp</in>
+        <in>strchar.cpp</in>
+        <in>string.cpp</in>
+        <in>thread.cpp</in>
+        <in>threadkey.cpp</in>
+        <in>timer.cpp</in>
+        <in>tokenizer.cpp</in>
+        <in>unix.cpp</in>
+        <in>url.cpp</in>
+        <in>urlstring.cpp</in>
+        <in>xml.cpp</in>
+        <in>zstream.cpp</in>
+      </df>
+      <df name="tests">
+        <in>SampleObject.cpp</in>
+        <in>SampleObject.h</in>
+        <in>SampleSubObject.cpp</in>
+        <in>SampleSubObject.h</in>
+        <in>Test_Date.cpp</in>
+        <in>Test_Date.h</in>
+        <in>Test_Digest.h</in>
+        <in>Test_Engine.cpp</in>
+        <in>Test_Engine.h</in>
+        <in>Test_SHATumbler.h</in>
+        <in>Test_TCPStream.cpp</in>
+        <in>Test_TCPStream.h</in>
+        <in>Test_URLString.cpp</in>
+        <in>Test_URLString.h</in>
+        <in>bug1.cpp</in>
+        <in>bug2.cpp</in>
+        <in>ccxx_tests.cpp</in>
+        <in>digest.cpp</in>
+        <in>forever.cpp</in>
+        <in>tcpstr1.cpp</in>
+        <in>thread1.cpp</in>
+        <in>thread2.cpp</in>
+        <in>thread3.cpp</in>
+        <in>url1.cpp</in>
+      </df>
+      <df name="w32">
+        <df name="cc++">
+          <in>config.h</in>
+        </df>
+        <df name="demo">
+        </df>
+        <df name="tests">
+        </df>
+        <df name="vs2008">
+        </df>
+      </df>
+      <in>config.h</in>
+    </df>
+    <logicalFolder name="ExternalFiles" displayName="重要文件" projectFiles="false">
+      <itemPath>Makefile-commoncpp2-1.8.0.mk</itemPath>
+      <itemPath>makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile-commoncpp2-1.8.0.mk</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <compilerSet>Cygwin_4.x|Cygwin_4.x</compilerSet>
+        <platform>3</platform>
+      </toolsSet>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>$(MAKE) -f Makefile</buildCommand>
+          <cleanCommand>$(MAKE) -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+          <ccTool>
+            <incDir>
+              <pElem>inc</pElem>
+              <pElem>src</pElem>
+              <pElem>.</pElem>
+            </incDir>
+            <preprocessorList>
+              <Elem>HAVE_CONFIG_H</Elem>
+              <Elem>_GNU_SOURCE</Elem>
+              <Elem>CCXX_EXPORT_LIBRARY</Elem>
+            </preprocessorList>
+          </ccTool>
+        </makeTool>
+      </makefileType>
+      <item path="config.h" ex="true" tool="3">
+      </item>
+      <item path="demo/SampleSocketPort.cpp" ex="true" tool="1">
+      </item>
+      <item path="demo/SampleSocketPort.h" ex="true" tool="3">
+      </item>
+      <item path="demo/buffer.cpp" ex="true" tool="1">
+      </item>
+      <item path="demo/cmdlineopt.cpp" ex="true" tool="1">
+      </item>
+      <item path="demo/crc32.cpp" ex="true" tool="1">
+      </item>
+      <item path="demo/dccpclient.cpp" ex="true" tool="1">
+      </item>
+      <item path="demo/dccpserver.cpp" ex="true" tool="1">
+      </item>
+      <item path="demo/dir.cpp" ex="true" tool="1">
+      </item>
+      <item path="demo/keydump.cpp" ex="true" tool="1">
+      </item>
+      <item path="demo/netdevices.cpp" ex="true" tool="1">
+      </item>
+      <item path="demo/serialecho.cpp" ex="true" tool="1">
+      </item>
+      <item path="demo/serialecho.h" ex="true" tool="3">
+      </item>
+      <item path="demo/serialmain.cpp" ex="true" tool="1">
+      </item>
+      <item path="demo/slogTest.cpp" ex="true" tool="1">
+      </item>
+      <item path="demo/str.cpp" ex="true" tool="1">
+      </item>
+      <item path="demo/tcp.cpp" ex="true" tool="1">
+      </item>
+      <item path="demo/tcpservice.cpp" ex="true" tool="1">
+      </item>
+      <item path="demo/tcpthread.cpp" ex="true" tool="1">
+      </item>
+      <item path="demo/test_alog.cpp" ex="true" tool="1">
+      </item>
+      <item path="demo/timer.cpp" ex="true" tool="1">
+      </item>
+      <item path="demo/urlfetch.cpp" ex="true" tool="1">
+      </item>
+      <item path="demo/xmlfetch.cpp" ex="true" tool="1">
+      </item>
+      <item path="inc/cc++/address.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/applog.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/buffer.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/cmdoptns.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/common.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/config.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/counter.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/digest.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/exception.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/export.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/file.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/functions.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/mime.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/misc.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/missing.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/network.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/numbers.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/objcount.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/object.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/objlink.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/objmap.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/objsync.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/oststring.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/persist.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/pointer.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/process.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/serial.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/slog.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/socket.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/socketport.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/ssl.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/strchar.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/string.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/template.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/thread.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/tokenizer.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/unix.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/url.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/xml.h" ex="true" tool="3">
+      </item>
+      <item path="inc/cc++/zstream.h" ex="true" tool="3">
+      </item>
+      <item path="src/getopt.c" ex="true" tool="0">
+      </item>
+      <item path="src/getopt.h" ex="true" tool="3">
+      </item>
+      <item path="src/getopt1.c" ex="true" tool="0">
+      </item>
+      <item path="src/nat.h" ex="true" tool="3">
+      </item>
+      <item path="src/private.h" ex="true" tool="3">
+      </item>
+      <item path="tests/SampleObject.cpp" ex="true" tool="1">
+      </item>
+      <item path="tests/SampleObject.h" ex="true" tool="3">
+      </item>
+      <item path="tests/SampleSubObject.cpp" ex="true" tool="1">
+      </item>
+      <item path="tests/SampleSubObject.h" ex="true" tool="3">
+      </item>
+      <item path="tests/Test_Date.cpp" ex="true" tool="1">
+      </item>
+      <item path="tests/Test_Date.h" ex="true" tool="3">
+      </item>
+      <item path="tests/Test_Digest.h" ex="true" tool="3">
+      </item>
+      <item path="tests/Test_Engine.cpp" ex="true" tool="1">
+      </item>
+      <item path="tests/Test_Engine.h" ex="true" tool="3">
+      </item>
+      <item path="tests/Test_SHATumbler.h" ex="true" tool="3">
+      </item>
+      <item path="tests/Test_TCPStream.cpp" ex="true" tool="1">
+      </item>
+      <item path="tests/Test_TCPStream.h" ex="true" tool="3">
+      </item>
+      <item path="tests/Test_URLString.cpp" ex="true" tool="1">
+      </item>
+      <item path="tests/Test_URLString.h" ex="true" tool="3">
+      </item>
+      <item path="tests/bug1.cpp" ex="true" tool="1">
+      </item>
+      <item path="tests/bug2.cpp" ex="true" tool="1">
+      </item>
+      <item path="tests/ccxx_tests.cpp" ex="true" tool="1">
+      </item>
+      <item path="tests/digest.cpp" ex="true" tool="1">
+      </item>
+      <item path="tests/forever.cpp" ex="true" tool="1">
+      </item>
+      <item path="tests/tcpstr1.cpp" ex="true" tool="1">
+      </item>
+      <item path="tests/thread1.cpp" ex="true" tool="1">
+      </item>
+      <item path="tests/thread2.cpp" ex="true" tool="1">
+      </item>
+      <item path="tests/thread3.cpp" ex="true" tool="1">
+      </item>
+      <item path="tests/url1.cpp" ex="true" tool="1">
+      </item>
+      <item path="w32/cc++/config.h" ex="true" tool="3">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

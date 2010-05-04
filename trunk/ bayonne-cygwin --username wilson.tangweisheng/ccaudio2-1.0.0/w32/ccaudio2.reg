@@ -1,0 +1,9 @@
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\CAPE Framework\Audio Settings]
+"Codecs"="C:\\Program Files\\Common Files\\CAPE Framework\\Audio Codecs"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\CAPE Framework .NET\Audio Settings]
+"Codecs"="C:\\Program Files\\Common Files\\CAPE Framework .NET\\Audio Codecs"
+
+

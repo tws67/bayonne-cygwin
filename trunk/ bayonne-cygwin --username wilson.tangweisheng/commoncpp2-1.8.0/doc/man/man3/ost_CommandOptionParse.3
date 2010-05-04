@@ -1,0 +1,104 @@
+.TH "ost::CommandOptionParse" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::CommandOptionParse \- 
+.PP
+This is the \fBCommandOptionParse\fP interface class.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cmdoptns.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~CommandOptionParse\fP ()=0"
+.br
+.RI "\fIVirtual destructor needed so that the object may be correctly deleted. \fP"
+.ti -1c
+.RI "virtual bool \fBargsHaveError\fP ()=0"
+.br
+.RI "\fIGet the value of the error flag set if the parser encountered errors. \fP"
+.ti -1c
+.RI "virtual const char * \fBprintErrors\fP ()=0"
+.br
+.RI "\fIReturn a string of text describing the list of errors encountered. \fP"
+.ti -1c
+.RI "virtual const char * \fBprintUsage\fP ()=0"
+.br
+.RI "\fIReturn a string that contains the usage description of this list of paramaters. \fP"
+.ti -1c
+.RI "virtual void \fBregisterError\fP (const char *errMsg)=0"
+.br
+.RI "\fIRegister an error with this parser. \fP"
+.ti -1c
+.RI "virtual void \fBperformTask\fP ()=0"
+.br
+.RI "\fIThe method should be invoked by the main code once it has determined that the application should be started. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+This is the \fBCommandOptionParse\fP interface class. 
+
+To implement this object you can call \fBmakeCommandOptionParse()\fP; This will instantiate a dynamically allocated version of this class and parse the command line for the list of command options that are passed in.
+.PP
+\fBAuthor:\fP
+.RS 4
+Gianni Mariani <gianni@mariani.ws> 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+.PP
+\fBcmdlineopt.cpp\fP.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual ost::CommandOptionParse::~CommandOptionParse ()\fC [pure virtual]\fP"
+.PP
+Virtual destructor needed so that the object may be correctly deleted. 
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual bool ost::CommandOptionParse::argsHaveError ()\fC [pure virtual]\fP"
+.PP
+Get the value of the error flag set if the parser encountered errors. 
+.PP
+\fBExamples: \fP
+.in +1c
+\fBcmdlineopt.cpp\fP.
+.SS "virtual void ost::CommandOptionParse::performTask ()\fC [pure virtual]\fP"
+.PP
+The method should be invoked by the main code once it has determined that the application should be started. 
+.PP
+\fBExamples: \fP
+.in +1c
+\fBcmdlineopt.cpp\fP.
+.SS "virtual const char* ost::CommandOptionParse::printErrors ()\fC [pure virtual]\fP"
+.PP
+Return a string of text describing the list of errors encountered. 
+.PP
+\fBExamples: \fP
+.in +1c
+\fBcmdlineopt.cpp\fP.
+.SS "virtual const char* ost::CommandOptionParse::printUsage ()\fC [pure virtual]\fP"
+.PP
+Return a string that contains the usage description of this list of paramaters. 
+.PP
+\fBExamples: \fP
+.in +1c
+\fBcmdlineopt.cpp\fP.
+.SS "virtual void ost::CommandOptionParse::registerError (const char * errMsg)\fC [pure virtual]\fP"
+.PP
+Register an error with this parser. This string will be appended to the errors already buffered in this object. 
+.PP
+\fBExamples: \fP
+.in +1c
+\fBcmdlineopt.cpp\fP.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

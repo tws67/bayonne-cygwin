@@ -1,0 +1,154 @@
+\section{bayonne.h File Reference}
+\label{bayonne_8h}\index{bayonne.h@{bayonne.h}}
+{\ttfamily \#include $<$cc++/script3.h$>$}\par
+{\ttfamily \#include $<$cc++/audio2.h$>$}\par
+{\ttfamily \#include $<$cc++/socket.h$>$}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf ost::StreamingBuffer}
+\begin{DoxyCompactList}\small\item\em Streaming buffer for audio, to be used in bgm audio sources. \item\end{DoxyCompactList}\item 
+class {\bf ost::StaticKeydata}
+\begin{DoxyCompactList}\small\item\em Bayonnne specific static keydata class. \item\end{DoxyCompactList}\item 
+class {\bf ost::DynamicKeydata}
+\begin{DoxyCompactList}\small\item\em \doxyref{Bayonne}{p.}{classost_1_1_bayonne} specific dynamic keydata class. \item\end{DoxyCompactList}\item 
+class {\bf ost::ReconfigKeydata}
+\begin{DoxyCompactList}\small\item\em \doxyref{Bayonne}{p.}{classost_1_1_bayonne} specific reloaded keydata class. \item\end{DoxyCompactList}\item 
+class {\bf ost::Bayonne}
+\begin{DoxyCompactList}\small\item\em Generic \doxyref{Bayonne}{p.}{classost_1_1_bayonne} master class to reference various useful data types and core static members used for locating resources found in libbayonne. \item\end{DoxyCompactList}\item 
+struct {\bf ost::Bayonne::libaudio\_\-t}
+\item 
+struct {\bf ost::Bayonne::regauth\_\-t}
+\item 
+struct {\bf ost::Bayonne::Event}
+\begin{DoxyCompactList}\small\item\em The event data structure includes the event identifier and any paramaters. \item\end{DoxyCompactList}\item 
+class {\bf ost::Bayonne::Ring}
+\begin{DoxyCompactList}\small\item\em This is an internal ring class for synchronized ringing. \item\end{DoxyCompactList}\item 
+class {\bf ost::Bayonne::Traffic}
+\begin{DoxyCompactList}\small\item\em This is a class used for collecting statistics for call traffic measurement, such as might be used by MRTG. \item\end{DoxyCompactList}\item 
+struct {\bf ost::Bayonne::RPCDefine}
+\begin{DoxyCompactList}\small\item\em This is a structure used to initialize XMLRPC method tables. \item\end{DoxyCompactList}\item 
+class {\bf ost::Bayonne::RPCNode}
+\begin{DoxyCompactList}\small\item\em This is a little class used to associate XMLRPC call method tables with our server. \item\end{DoxyCompactList}\item 
+struct {\bf ost::Bayonne::statetab}
+\begin{DoxyCompactList}\small\item\em A list of each state and a description. \item\end{DoxyCompactList}\item 
+struct {\bf ost::Bayonne::State}
+\begin{DoxyCompactList}\small\item\em The primary state data structure. \item\end{DoxyCompactList}\item 
+class {\bf ost::BayonneZeroconf}
+\begin{DoxyCompactList}\small\item\em This class is used to bind services that are to be published with zeroconf, such as by the avahi module. \item\end{DoxyCompactList}\item 
+class {\bf ost::BayonneConfig}
+\begin{DoxyCompactList}\small\item\em A bayonne config class, used for special purposes, especially during script compiles. \item\end{DoxyCompactList}\item 
+class {\bf ost::BayonneTranslator}
+\begin{DoxyCompactList}\small\item\em A core class to support language translation services in \doxyref{Bayonne}{p.}{classost_1_1_bayonne} phrasebook. \item\end{DoxyCompactList}\item 
+class {\bf ost::BayonneAudio}
+\begin{DoxyCompactList}\small\item\em Offers core \doxyref{Bayonne}{p.}{classost_1_1_bayonne} audio processing in a self contained class. \item\end{DoxyCompactList}\item 
+class {\bf ost::BayonneMsgport}
+\begin{DoxyCompactList}\small\item\em \doxyref{Bayonne}{p.}{classost_1_1_bayonne} Msgports are used to queue and post session events which normally have to be passed through another thread context. \item\end{DoxyCompactList}\item 
+class {\bf ost::BayonneDriver}
+\begin{DoxyCompactList}\small\item\em The principle driver node for a given collection of spans and sessions of a given \doxyref{Bayonne}{p.}{classost_1_1_bayonne} driver family type. \item\end{DoxyCompactList}\item 
+class {\bf ost::BayonneSpan}
+\begin{DoxyCompactList}\small\item\em A span is a collection of ports under a single control interface or communication channel, such as a T1/E1/PRI/BRI span. \item\end{DoxyCompactList}\item 
+class {\bf ost::BayonneBinder}
+\begin{DoxyCompactList}\small\item\em An intermediary binder class for \doxyref{Bayonne}{p.}{classost_1_1_bayonne} engine. \item\end{DoxyCompactList}\item 
+class {\bfseries ost::BayonneBinder::Image}
+\item 
+class {\bf ost::BayonneSession}
+\begin{DoxyCompactList}\small\item\em The primary session object representing a server timeslot and active communication endpoint in \doxyref{Bayonne}{p.}{classost_1_1_bayonne}. \item\end{DoxyCompactList}\item 
+class {\bf ost::BayonneRPC}
+\begin{DoxyCompactList}\small\item\em \doxyref{Bayonne}{p.}{classost_1_1_bayonne} RPC arguments, may be passed through to binders from webservice sessions for extensions to soap \& xmlrpc services. \item\end{DoxyCompactList}\item 
+struct {\bf ost::BayonneRPC::params}
+\item 
+class {\bf ost::BayonneService}
+\begin{DoxyCompactList}\small\item\em \doxyref{Bayonne}{p.}{classost_1_1_bayonne} services are used for threaded modules which may be installed at runtime. \item\end{DoxyCompactList}\item 
+class {\bf ost::ScriptEngine}
+\begin{DoxyCompactList}\small\item\em Offers interface bridge for embedded scripting engines through an abstract interface. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf ost}
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf BAYONNE\_\-RELEASE}~1
+\item 
+\#define {\bf NO\_\-TIMESLOT}~0xffff
+\item 
+\#define {\bf MAX\_\-DTMF}~32
+\item 
+\#define {\bf MAX\_\-LIST}~256
+\item 
+\#define {\bf MAX\_\-LIBINPUT}~256
+\item 
+\#define {\bf MAX\_\-PATHNAME}~256
+\item 
+\#define {\bf MIN\_\-AUDIOFEED}~(120 $\ast$ 8)
+\item 
+\#define {\bf MAX\_\-AUDIOFEED}~(600 $\ast$ 8)
+\item 
+\#define {\bf RPC\_\-MAX\_\-PARAMS}~96
+\item 
+\#define {\bf PFD\_\-INVALID}~-\/1
+\item 
+\#define {\bf SLOG\_\-DEBUG}(x,...)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\_\-t {\bf ost::xmlwrite} (char $\ast$$\ast$buf, size\_\-t $\ast$max, const char $\ast$fmt,...)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+class \_\-\_\-EXPORT {\bf ost::BayonneMsgport}
+\item 
+class \_\-\_\-EXPORT {\bf ost::BayonneDriver}
+\item 
+class \_\-\_\-EXPORT {\bf ost::BayonneSession}
+\item 
+class \_\-\_\-EXPORT {\bf ost::BayonneSpan}
+\item 
+class \_\-\_\-EXPORT {\bf ost::BayonneService}
+\item 
+class \_\-\_\-EXPORT {\bf ost::BayonneTranslator}
+\item 
+class \_\-\_\-EXPORT {\bf ost::BayonneRPC}
+\item 
+class \_\-\_\-EXPORT {\bf ost::ScriptEngine}
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\index{bayonne.h@{bayonne.h}!BAYONNE\_\-RELEASE@{BAYONNE\_\-RELEASE}}
+\index{BAYONNE\_\-RELEASE@{BAYONNE\_\-RELEASE}!bayonne.h@{bayonne.h}}
+\subsubsection[{BAYONNE\_\-RELEASE}]{\setlength{\rightskip}{0pt plus 5cm}\#define BAYONNE\_\-RELEASE~1}\label{bayonne_8h_a78966edfeeb2d6e5feb1982f6418516d}
+\index{bayonne.h@{bayonne.h}!MAX\_\-AUDIOFEED@{MAX\_\-AUDIOFEED}}
+\index{MAX\_\-AUDIOFEED@{MAX\_\-AUDIOFEED}!bayonne.h@{bayonne.h}}
+\subsubsection[{MAX\_\-AUDIOFEED}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAX\_\-AUDIOFEED~(600 $\ast$ 8)}\label{bayonne_8h_a2d16a525c3844472c991fec3fa5dcc1b}
+\index{bayonne.h@{bayonne.h}!MAX\_\-DTMF@{MAX\_\-DTMF}}
+\index{MAX\_\-DTMF@{MAX\_\-DTMF}!bayonne.h@{bayonne.h}}
+\subsubsection[{MAX\_\-DTMF}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAX\_\-DTMF~32}\label{bayonne_8h_a47202f8a6db4717a4a511fa62dcc59cc}
+\index{bayonne.h@{bayonne.h}!MAX\_\-LIBINPUT@{MAX\_\-LIBINPUT}}
+\index{MAX\_\-LIBINPUT@{MAX\_\-LIBINPUT}!bayonne.h@{bayonne.h}}
+\subsubsection[{MAX\_\-LIBINPUT}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAX\_\-LIBINPUT~256}\label{bayonne_8h_a30ae647c205ac454ba7d799d0e2daef4}
+\index{bayonne.h@{bayonne.h}!MAX\_\-LIST@{MAX\_\-LIST}}
+\index{MAX\_\-LIST@{MAX\_\-LIST}!bayonne.h@{bayonne.h}}
+\subsubsection[{MAX\_\-LIST}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAX\_\-LIST~256}\label{bayonne_8h_a25af92c44af20a674aefa4ca00c05360}
+\index{bayonne.h@{bayonne.h}!MAX\_\-PATHNAME@{MAX\_\-PATHNAME}}
+\index{MAX\_\-PATHNAME@{MAX\_\-PATHNAME}!bayonne.h@{bayonne.h}}
+\subsubsection[{MAX\_\-PATHNAME}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAX\_\-PATHNAME~256}\label{bayonne_8h_aa4e5ca47d52a8be522912705c27e0d1c}
+\index{bayonne.h@{bayonne.h}!MIN\_\-AUDIOFEED@{MIN\_\-AUDIOFEED}}
+\index{MIN\_\-AUDIOFEED@{MIN\_\-AUDIOFEED}!bayonne.h@{bayonne.h}}
+\subsubsection[{MIN\_\-AUDIOFEED}]{\setlength{\rightskip}{0pt plus 5cm}\#define MIN\_\-AUDIOFEED~(120 $\ast$ 8)}\label{bayonne_8h_aec5c2c5692c3002490efb47c0a737d71}
+\index{bayonne.h@{bayonne.h}!NO\_\-TIMESLOT@{NO\_\-TIMESLOT}}
+\index{NO\_\-TIMESLOT@{NO\_\-TIMESLOT}!bayonne.h@{bayonne.h}}
+\subsubsection[{NO\_\-TIMESLOT}]{\setlength{\rightskip}{0pt plus 5cm}\#define NO\_\-TIMESLOT~0xffff}\label{bayonne_8h_a998d720b5002fe9902ad70f23e1530cc}
+\index{bayonne.h@{bayonne.h}!PFD\_\-INVALID@{PFD\_\-INVALID}}
+\index{PFD\_\-INVALID@{PFD\_\-INVALID}!bayonne.h@{bayonne.h}}
+\subsubsection[{PFD\_\-INVALID}]{\setlength{\rightskip}{0pt plus 5cm}\#define PFD\_\-INVALID~-\/1}\label{bayonne_8h_a0458dbec642fc929dfc5cf0da0706daf}
+\index{bayonne.h@{bayonne.h}!RPC\_\-MAX\_\-PARAMS@{RPC\_\-MAX\_\-PARAMS}}
+\index{RPC\_\-MAX\_\-PARAMS@{RPC\_\-MAX\_\-PARAMS}!bayonne.h@{bayonne.h}}
+\subsubsection[{RPC\_\-MAX\_\-PARAMS}]{\setlength{\rightskip}{0pt plus 5cm}\#define RPC\_\-MAX\_\-PARAMS~96}\label{bayonne_8h_a9c028f7641a8cc2e5383f578414bcdc9}
+\index{bayonne.h@{bayonne.h}!SLOG\_\-DEBUG@{SLOG\_\-DEBUG}}
+\index{SLOG\_\-DEBUG@{SLOG\_\-DEBUG}!bayonne.h@{bayonne.h}}
+\subsubsection[{SLOG\_\-DEBUG}]{\setlength{\rightskip}{0pt plus 5cm}\#define SLOG\_\-DEBUG(x, \/   {\em ...})}\label{bayonne_8h_aba97e5228a57c914d62c0b4e20f25d15}

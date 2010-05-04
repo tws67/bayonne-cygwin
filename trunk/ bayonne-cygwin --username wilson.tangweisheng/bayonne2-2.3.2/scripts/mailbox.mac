@@ -1,0 +1,82 @@
+%% Copyright (C) 2005 David Sugar, Tycho Softworks.
+%%
+%% This file is free software; as a special exception the author gives
+%% unlimited permission to copy and/or distribute it, with or without
+%% modifications, as long as this notice is preserved.
+%%
+%% This program is distributed in the hope that it will be useful, but
+%% WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
+%% implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+%%  
+%% A simple mailbox/voice mail system macro one can use to add very basic
+%% voice messaging to other applications.
+%%
+%% Primary macros:
+%%	mailbox::login		entry point for user login
+%%	mailbox::user		entry point for user interface
+%%	mailbox::record		record a new message into a mailbox
+%%	mailbox::busy		offer busy greeting
+%%	mailbox::away		offer no answer greeting
+%%
+%% Common options:
+%%	mailbox=xxx		id of mailbox
+%%	order=f/r		order to list waiting messages
+%%	password=xxx		password to use for login
+%%	duration=xxx		duration for recordings
+%%
+%% Prefixes: (/var/lib/bayonne)
+%%	mailbox/msgs/id		messages by id
+%%	mailbox/busy		alternate busy greetings
+%%	mailbox/away		alternate away greetings
+%%	mailbox/name		names for mailboxes & callers by id
+
+init %mailbox.order "f"	size=1
+init %mailbox.voice "en/none" size=32
+init %mailbox.duration "60s" size=8
+init %mailbox.timeout "5" size=2
+init %mailbox.retry "3" size=1
+init %mailbox.pwsize "6" size=1
+
+function record
+	keywords voice mailbox caller limit
+	fconst voice=%mailbox.voice count=%mailbox.retry limit=%mailbox.duration caller="unknown"
+	if !defined %mailbox then return
+	const %msg {mailbox/msgs/} %mailbox {/new-} %session.uid {.au}
+	const %cid {mailbox/name/} %caller {.au}
+	const %mid {mailbox/name/} %mailbox {.au}
+	if -file %mid
+	then
+		play mailbox-toname %mid
+	else
+		play mailbox-tombox &spell %mailbox
+	endif
+
+	case %cid == "unknown"
+		build %msg mailbox-frunknown
+	case -file %cid
+		build %msg mailbox-frname %cid
+	otherwise
+		build %msg mailbox-frbyid &spell %caller
+	endcase
+
+	append %msg timeout=%limit
+	return	
+
+function login
+	keywords voice order password mailbox count timeout pwsize
+	fconst voice=%mailbox.voice password="" order=%mailbox.caller count=%mailbox.retry pwsize=%mailbox.pwsize timeout=%mailbox.timeout
+	counter %retries
+
+	if !defined %mailbox then return
+	if -empty %password then goto mailbox::user
+
+	form
+		speak voice=%voice mailbox-getpass
+		input %mypass count=%pwsize timeout=%timeout
+	endinput
+		if %mypass == %password then goto mailbox::user
+		play voice=%voice mailbox-invpass
+	endform %retries >= %count
+
+	play voice=%voice mailbox-nologin
+	return

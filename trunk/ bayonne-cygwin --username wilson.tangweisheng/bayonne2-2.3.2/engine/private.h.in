@@ -1,0 +1,151 @@
+/* engine/private.h.in.  Generated from configure.ac by autoheader.  */
+
+/* bayonne files */
+#undef BAYONNE_FILES
+
+/* bin files */
+#undef BIN_FILES
+
+/* config files */
+#undef CONFIG_FILES
+
+/* new option */
+#undef EXOSIP2_OPTION_SEND_101
+
+/* some distros do not pre-build openh323 with gsm or speex */
+#undef H323_CODECS_DISABLED
+
+/* we have SENDING_COMPLETE in ALERT_REQ */
+#undef HAVE_ALERT_SENDING_COMPLETE
+
+/* has capi 2.0 support */
+#undef HAVE_CAPI20_H
+
+/* Define to 1 if you have the <dlfcn.h> header file. */
+#undef HAVE_DLFCN_H
+
+/* have fox toolkit for gui */
+#undef HAVE_FOX
+
+/* Define to 1 if you have the <inttypes.h> header file. */
+#undef HAVE_INTTYPES_H
+
+/* libexec enabled */
+#undef HAVE_LIBEXEC
+
+/* Define to 1 if you have the <memory.h> header file. */
+#undef HAVE_MEMORY_H
+
+/* Define to 1 if you have the <stdint.h> header file. */
+#undef HAVE_STDINT_H
+
+/* Define to 1 if you have the <stdlib.h> header file. */
+#undef HAVE_STDLIB_H
+
+/* Define to 1 if you have the <strings.h> header file. */
+#undef HAVE_STRINGS_H
+
+/* Define to 1 if you have the <string.h> header file. */
+#undef HAVE_STRING_H
+
+/* Define to 1 if you have the <stropts.h> header file. */
+#undef HAVE_STROPTS_H
+
+/* Define to 1 if you have the <sys/mount.h> header file. */
+#undef HAVE_SYS_MOUNT_H
+
+/* Define to 1 if you have the <sys/statvfs.h> header file. */
+#undef HAVE_SYS_STATVFS_H
+
+/* Define to 1 if you have the <sys/stat.h> header file. */
+#undef HAVE_SYS_STAT_H
+
+/* Define to 1 if you have the <sys/types.h> header file. */
+#undef HAVE_SYS_TYPES_H
+
+/* Define to 1 if you have the <sys/vfs.h> header file. */
+#undef HAVE_SYS_VFS_H
+
+/* Define to 1 if you have the <unistd.h> header file. */
+#undef HAVE_UNISTD_H
+
+/* java binary */
+#undef JAVA_PROGRAM
+
+/* libdir path */
+#undef LIBDIR_FILES
+
+/* libexec path */
+#undef LIBEXEC_FILES
+
+/* libexec runner */
+#undef LIBEXEC_PROGRAM
+
+/* log files */
+#undef LOG_FILES
+
+/* macro files */
+#undef MACRO_FILES
+
+/* define module path */
+#undef MODULE_LIBPATH
+
+/* define pointer mode */
+#undef OSIP2_LIST_PTR
+
+/* Name of package */
+#undef PACKAGE
+
+/* Define to the address where bug reports for this package should be sent. */
+#undef PACKAGE_BUGREPORT
+
+/* Define to the full name of this package. */
+#undef PACKAGE_NAME
+
+/* Define to the full name and version of this package. */
+#undef PACKAGE_STRING
+
+/* Define to the one symbol short name of this package. */
+#undef PACKAGE_TARNAME
+
+/* Define to the version of this package. */
+#undef PACKAGE_VERSION
+
+/* perl binary */
+#undef PERL_PROGRAM
+
+/* php binary */
+#undef PHP_PROGRAM
+
+/* ilrun for pnet */
+#undef PNET_PROGRAM
+
+/* prompt files */
+#undef PROMPT_FILES
+
+/* python binary */
+#undef PYTHON_PROGRAM
+
+/* run files */
+#undef RUN_FILES
+
+/* script files */
+#undef SCRIPT_FILES
+
+/* shared files */
+#undef SHARED_FILES
+
+/* source files */
+#undef SOURCE_FILES
+
+/* Define to 1 if you have the ANSI C header files. */
+#undef STDC_HEADERS
+
+/* var files */
+#undef VAR_FILES
+
+/* Version number of package */
+#undef VERSION
+
+/* zeroconf avahi client */
+#undef ZEROCONF_AVAHI

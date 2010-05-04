@@ -1,0 +1,152 @@
+.TH "ost::MapIndex" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::MapIndex \- 
+.PP
+The \fBMapIndex\fP allows linear access into a \fBMapTable\fP, that otherwise could have its elements being retrieved only by key.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <object.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMapIndex\fP ()"
+.br
+.RI "\fICreates an empty map index (pointing to nothing). \fP"
+.ti -1c
+.RI "\fBMapIndex\fP (\fBMapObject\fP *theObject)"
+.br
+.RI "\fICreates a map index pointing to a specific map object. \fP"
+.ti -1c
+.RI "\fBMapIndex\fP (const \fBMapIndex\fP &theIndex)"
+.br
+.RI "\fICreates a copy of a given map index. \fP"
+.ti -1c
+.RI "void * \fBoperator*\fP () const "
+.br
+.RI "\fIDereference operator: the pointed object it is returned as void * for easy re-cast. \fP"
+.ti -1c
+.RI "\fBMapIndex\fP & \fBoperator=\fP (\fBMapObject\fP *theObject)"
+.br
+.RI "\fIAssignment operator to avoid implicit cast. \fP"
+.ti -1c
+.RI "\fBMapIndex\fP & \fBoperator++\fP ()"
+.br
+.RI "\fIPrefix increment operator, to be used in loops and such. \fP"
+.ti -1c
+.RI "\fBMapIndex\fP \fBoperator++\fP (int)"
+.br
+.RI "\fIPostfix increment operator, to be used in loops and such. \fP"
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBMapIndex\fP &theIndex) const "
+.br
+.RI "\fIComparison operator, between two MapIndex's. \fP"
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBMapIndex\fP &theIndex) const "
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBMapObject\fP *theObject) const "
+.br
+.RI "\fIComparison operator, between the \fBMapIndex\fP and a \fBMapObject\fP, useful to avoid casts for sake of clearness. \fP"
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBMapObject\fP *theObject) const "
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBMapIndex\fP allows linear access into a \fBMapTable\fP, that otherwise could have its elements being retrieved only by key. 
+
+It can be increased, checked and dereferenced like a pointer, by means of suitable operators.
+.PP
+\fBAuthor:\fP
+.RS 4
+Sergio Repetto <s.repetto@pentaengineering.it> Index object to access \fBMapTable\fP elements 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::MapIndex::MapIndex ()\fC [inline]\fP"
+.PP
+Creates an empty map index (pointing to nothing). 
+.SS "ost::MapIndex::MapIndex (\fBMapObject\fP * theObject)\fC [inline]\fP"
+.PP
+Creates a map index pointing to a specific map object. \fBParameters:\fP
+.RS 4
+\fIthe\fP indexed object 
+.RE
+.PP
+
+.SS "ost::MapIndex::MapIndex (const \fBMapIndex\fP & theIndex)\fC [inline]\fP"
+.PP
+Creates a copy of a given map index. \fBParameters:\fP
+.RS 4
+\fIthe\fP source index object 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool ost::MapIndex::operator!= (const \fBMapObject\fP * theObject) const\fC [inline]\fP"
+.SS "bool ost::MapIndex::operator!= (const \fBMapIndex\fP & theIndex) const\fC [inline]\fP"
+.SS "void* ost::MapIndex::operator* () const\fC [inline]\fP"
+.PP
+Dereference operator: the pointed object it is returned as void * for easy re-cast. \fBReturns:\fP
+.RS 4
+pointer to indexed object. 
+.RE
+.PP
+
+.SS "\fBMapIndex\fP ost::MapIndex::operator++ (int)\fC [inline]\fP"
+.PP
+Postfix increment operator, to be used in loops and such. \fBReturns:\fP
+.RS 4
+the object itself, as changed. 
+.RE
+.PP
+
+.PP
+References operator++().
+.PP
+Referenced by operator++().
+.SS "\fBMapIndex\fP& ost::MapIndex::operator++ ()"
+.PP
+Prefix increment operator, to be used in loops and such. \fBReturns:\fP
+.RS 4
+the object itself, as changed. 
+.RE
+.PP
+
+.SS "\fBMapIndex\fP& ost::MapIndex::operator= (\fBMapObject\fP * theObject)"
+.PP
+Assignment operator to avoid implicit cast. \fBReturns:\fP
+.RS 4
+the object itself, as changed. 
+.RE
+.PP
+
+.SS "bool ost::MapIndex::operator== (const \fBMapObject\fP * theObject) const\fC [inline]\fP"
+.PP
+Comparison operator, between the \fBMapIndex\fP and a \fBMapObject\fP, useful to avoid casts for sake of clearness. \fBReturns:\fP
+.RS 4
+the object itself, as changed. 
+.RE
+.PP
+
+.SS "bool ost::MapIndex::operator== (const \fBMapIndex\fP & theIndex) const\fC [inline]\fP"
+.PP
+Comparison operator, between two MapIndex's. \fBReturns:\fP
+.RS 4
+the object itself, as changed. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

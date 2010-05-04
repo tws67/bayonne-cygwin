@@ -1,0 +1,265 @@
+\section{ost::BayonneSpan Class Reference}
+\label{classost_1_1_bayonne_span}\index{ost::BayonneSpan@{ost::BayonneSpan}}
+
+
+A span is a collection of ports under a single control interface or communication channel, such as a T1/E1/PRI/BRI span.  
+
+
+{\ttfamily \#include $<$bayonne.h$>$}Inheritance diagram for ost::BayonneSpan::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classost_1_1_bayonne_span}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf BayonneSpan} ({\bf BayonneDriver} $\ast${\bf driver}, {\bf timeslot\_\-t} {\bf timeslots})
+\begin{DoxyCompactList}\small\item\em Create a span for a specified number of timeslots. \item\end{DoxyCompactList}\item 
+{\bf BayonneSession} $\ast$ {\bf getTimeslot} ({\bf timeslot\_\-t} {\bf id})
+\begin{DoxyCompactList}\small\item\em Get the session associated with the nth timeslot of the span. \item\end{DoxyCompactList}\item 
+{\bf timeslot\_\-t} {\bf getFirst} (void)
+\begin{DoxyCompactList}\small\item\em Get the first server timeslot of this span. \item\end{DoxyCompactList}\item 
+{\bf timeslot\_\-t} {\bf getCount} (void)
+\begin{DoxyCompactList}\small\item\em Return total number of server timeslots in this span. \item\end{DoxyCompactList}\item 
+unsigned {\bf getId} (void)
+\begin{DoxyCompactList}\small\item\em Get the id associated with this span. \item\end{DoxyCompactList}\item 
+{\bf BayonneDriver} $\ast$ {\bf getDriver} (void)
+\begin{DoxyCompactList}\small\item\em Get driver associated with this span. \item\end{DoxyCompactList}\item 
+unsigned {\bf getAvail} (void)
+\begin{DoxyCompactList}\small\item\em Get number of call slots still available. \item\end{DoxyCompactList}\item 
+virtual bool {\bf suspend} (void)
+\begin{DoxyCompactList}\small\item\em Suspend a span. \item\end{DoxyCompactList}\item 
+virtual bool {\bf resume} (void)
+\begin{DoxyCompactList}\small\item\em Resume a suspended span. \item\end{DoxyCompactList}\item 
+virtual bool {\bf reset} (void)
+\begin{DoxyCompactList}\small\item\em Reset a span. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf BayonneSpan} $\ast$ {\bf get} (unsigned {\bf id})
+\begin{DoxyCompactList}\small\item\em Get a span by a global span id. \item\end{DoxyCompactList}\item 
+static void {\bf allocate} (unsigned total=0)
+\begin{DoxyCompactList}\small\item\em Allocate the total number of spans this server will support. \item\end{DoxyCompactList}\item 
+static unsigned {\bf getSpans} (void)
+\begin{DoxyCompactList}\small\item\em Return total spans in use. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Traffic} {\bf call\_\-attempts}
+\item 
+{\bf Traffic} {\bf call\_\-complete}
+\item 
+volatile unsigned short {\bf active\_\-calls}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned {\bf id}
+\item 
+{\bf BayonneDriver} $\ast$ {\bf driver}
+\item 
+{\bf BayonneSpan} $\ast$ {\bf next}
+\item 
+{\bf timeslot\_\-t} {\bf timeslot}
+\item 
+{\bf timeslot\_\-t} {\bf count}
+\item 
+{\bf timeslot\_\-t} {\bf used}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf BayonneSpan} $\ast$ {\bf first}
+\item 
+static {\bf BayonneSpan} $\ast$ {\bf last}
+\item 
+static unsigned {\bf spans}
+\item 
+static {\bf BayonneSpan} $\ast$$\ast$ {\bf index}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \_\-\_\-EXPORT {\bf BayonneSession}
+\item 
+class \_\-\_\-EXPORT {\bf BayonneDriver}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A span is a collection of ports under a single control interface or communication channel, such as a T1/E1/PRI/BRI span. \begin{DoxyAuthor}{Author}
+David Sugar $<${\tt dyfet@gnutelephony.org}$>$ Span management object. 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!BayonneSpan@{BayonneSpan}}
+\index{BayonneSpan@{BayonneSpan}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{BayonneSpan}]{\setlength{\rightskip}{0pt plus 5cm}ost::BayonneSpan::BayonneSpan ({\bf BayonneDriver} $\ast$ {\em driver}, \/  {\bf timeslot\_\-t} {\em timeslots})}\label{classost_1_1_bayonne_span_a0cff1b248e84238f8214d708c6788933}
+
+
+Create a span for a specified number of timeslots. 
+\begin{DoxyParams}{Parameters}
+\item[{\em driver}]associated with span. \item[{\em timeslots}]this span covers. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!allocate@{allocate}}
+\index{allocate@{allocate}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{allocate}]{\setlength{\rightskip}{0pt plus 5cm}static void ost::BayonneSpan::allocate (unsigned {\em total} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_span_a411157186cecd58ab14b758808a00ba3}
+
+
+Allocate the total number of spans this server will support. 
+\begin{DoxyParams}{Parameters}
+\item[{\em total}]span count. \end{DoxyParams}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!get@{get}}
+\index{get@{get}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf BayonneSpan}$\ast$ ost::BayonneSpan::get (unsigned {\em id})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_span_a3ca93a7ea3770cbdd697fd243c458c69}
+
+
+Get a span by a global span id. 
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]of span. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+span object associated with id. 
+\end{DoxyReturn}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!getAvail@{getAvail}}
+\index{getAvail@{getAvail}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{getAvail}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::BayonneSpan::getAvail (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_span_afe718e766b155954094cc2f5cc9a2633}
+
+
+Get number of call slots still available. \begin{DoxyReturn}{Returns}
+count of call slots available. 
+\end{DoxyReturn}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!getCount@{getCount}}
+\index{getCount@{getCount}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{getCount}]{\setlength{\rightskip}{0pt plus 5cm}{\bf timeslot\_\-t} ost::BayonneSpan::getCount (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_span_a139679fdb3757fb8775854f89166f89d}
+
+
+Return total number of server timeslots in this span. \begin{DoxyReturn}{Returns}
+server timeslot count. 
+\end{DoxyReturn}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!getDriver@{getDriver}}
+\index{getDriver@{getDriver}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{getDriver}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneDriver}$\ast$ ost::BayonneSpan::getDriver (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_span_af25c328eecfc426882cdbce6211e1b9f}
+
+
+Get driver associated with this span. \begin{DoxyReturn}{Returns}
+driver object for span. 
+\end{DoxyReturn}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!getFirst@{getFirst}}
+\index{getFirst@{getFirst}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{getFirst}]{\setlength{\rightskip}{0pt plus 5cm}{\bf timeslot\_\-t} ost::BayonneSpan::getFirst (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_span_a2d924f2a42a127b58fab3f59ea3838f4}
+
+
+Get the first server timeslot of this span. \begin{DoxyReturn}{Returns}
+first server timeslot. 
+\end{DoxyReturn}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!getId@{getId}}
+\index{getId@{getId}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{getId}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::BayonneSpan::getId (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_span_a22da21646d6028c9d897b3608c6178c1}
+
+
+Get the id associated with this span. \begin{DoxyReturn}{Returns}
+global id of this span object. 
+\end{DoxyReturn}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!getSpans@{getSpans}}
+\index{getSpans@{getSpans}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{getSpans}]{\setlength{\rightskip}{0pt plus 5cm}static unsigned ost::BayonneSpan::getSpans (void)\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classost_1_1_bayonne_span_ab06a9bf98317ac81e8c31323522f30c9}
+
+
+Return total spans in use. \begin{DoxyReturn}{Returns}
+total spans in use. 
+\end{DoxyReturn}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!getTimeslot@{getTimeslot}}
+\index{getTimeslot@{getTimeslot}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{getTimeslot}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneSession}$\ast$ ost::BayonneSpan::getTimeslot ({\bf timeslot\_\-t} {\em id})}\label{classost_1_1_bayonne_span_a14299e0362404bbc333a519278192989}
+
+
+Get the session associated with the nth timeslot of the span. 
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]of nth timeslot of span. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+associated session object. 
+\end{DoxyReturn}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!reset@{reset}}
+\index{reset@{reset}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSpan::reset (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_span_a605637e215c8e9f173ab1d1c69b93dc6}
+
+
+Reset a span. \begin{DoxyReturn}{Returns}
+true if successful. 
+\end{DoxyReturn}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!resume@{resume}}
+\index{resume@{resume}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{resume}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSpan::resume (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_span_a81b9e93bbd86ad862486d59a172aaa50}
+
+
+Resume a suspended span. \begin{DoxyReturn}{Returns}
+true if successful. 
+\end{DoxyReturn}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!suspend@{suspend}}
+\index{suspend@{suspend}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{suspend}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneSpan::suspend (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_span_ad843100907a6fbf0b93171c279a0e851}
+
+
+Suspend a span. \begin{DoxyReturn}{Returns}
+true if successful. 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!BayonneDriver@{BayonneDriver}}
+\index{BayonneDriver@{BayonneDriver}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{BayonneDriver}]{\setlength{\rightskip}{0pt plus 5cm}friend class \_\-\_\-EXPORT {\bf BayonneDriver}\hspace{0.3cm}{\ttfamily  [friend]}}\label{classost_1_1_bayonne_span_a722dcbcd08103d309ca710e6ccf24fc9}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!BayonneSession@{BayonneSession}}
+\index{BayonneSession@{BayonneSession}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{BayonneSession}]{\setlength{\rightskip}{0pt plus 5cm}friend class \_\-\_\-EXPORT {\bf BayonneSession}\hspace{0.3cm}{\ttfamily  [friend]}}\label{classost_1_1_bayonne_span_a59728bba507bfe559a76d72b50766072}
+
+
+\subsection{Member Data Documentation}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!active\_\-calls@{active\_\-calls}}
+\index{active\_\-calls@{active\_\-calls}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{active\_\-calls}]{\setlength{\rightskip}{0pt plus 5cm}volatile unsigned short {\bf ost::BayonneSpan::active\_\-calls}}\label{classost_1_1_bayonne_span_a0522e9b6263cdab886b4911c804fad14}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!call\_\-attempts@{call\_\-attempts}}
+\index{call\_\-attempts@{call\_\-attempts}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{call\_\-attempts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Traffic} {\bf ost::BayonneSpan::call\_\-attempts}}\label{classost_1_1_bayonne_span_aa85fbca98a308e6da5633605f4209346}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!call\_\-complete@{call\_\-complete}}
+\index{call\_\-complete@{call\_\-complete}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{call\_\-complete}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Traffic} {\bf ost::BayonneSpan::call\_\-complete}}\label{classost_1_1_bayonne_span_afd54660f13b048ac89c2957bfa60d76d}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!count@{count}}
+\index{count@{count}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf timeslot\_\-t} {\bf ost::BayonneSpan::count}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_span_ade91f49eaccd2c6eaecfe5373610a562}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!driver@{driver}}
+\index{driver@{driver}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{driver}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneDriver}$\ast$ {\bf ost::BayonneSpan::driver}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_span_a547cb6c32c8c6458b9f771bdc0aff628}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!first@{first}}
+\index{first@{first}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{first}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneSpan}$\ast$ {\bf ost::BayonneSpan::first}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_span_a0b1c94cbbc66e3cab8e64b68f16747c2}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!id@{id}}
+\index{id@{id}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::BayonneSpan::id}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_span_a9a9459e200c1c6a0fbc35b7497cb810a}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!index@{index}}
+\index{index@{index}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneSpan}$\ast$$\ast$ {\bf ost::BayonneSpan::index}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_span_ac9aeb74a00ebd1494bf6e2002098fe40}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!last@{last}}
+\index{last@{last}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{last}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneSpan}$\ast$ {\bf ost::BayonneSpan::last}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_span_a2344438cd2d67f6821cfcebc2f515762}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!next@{next}}
+\index{next@{next}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{next}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneSpan}$\ast$ {\bf ost::BayonneSpan::next}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_span_a562c195db74ae1b94ab00546b31549f1}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!spans@{spans}}
+\index{spans@{spans}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{spans}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::BayonneSpan::spans}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_span_a79ad97ae1214b5bc7d7c6e45fdb523c6}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!timeslot@{timeslot}}
+\index{timeslot@{timeslot}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{timeslot}]{\setlength{\rightskip}{0pt plus 5cm}{\bf timeslot\_\-t} {\bf ost::BayonneSpan::timeslot}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_span_a9dc4dba2dac5a79c78ea8b6947b3748d}
+\index{ost::BayonneSpan@{ost::BayonneSpan}!used@{used}}
+\index{used@{used}!ost::BayonneSpan@{ost::BayonneSpan}}
+\subsubsection[{used}]{\setlength{\rightskip}{0pt plus 5cm}{\bf timeslot\_\-t} {\bf ost::BayonneSpan::used}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_span_ad88bb76025e95b600abdb2a2135d2a80}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf bayonne.h}\end{DoxyCompactItemize}

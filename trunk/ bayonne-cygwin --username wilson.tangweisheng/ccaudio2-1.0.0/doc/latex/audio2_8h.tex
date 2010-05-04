@@ -1,0 +1,111 @@
+\section{audio2.h File Reference}
+\label{audio2_8h}\index{audio2.h@{audio2.h}}
+
+
+Framework for portable audio processing and file handling classes.  
+{\ttfamily \#include $<$cstddef$>$}\par
+{\ttfamily \#include $<$cstdlib$>$}\par
+{\ttfamily \#include $<$sys/types.h$>$}\par
+{\ttfamily \#include $<$netinet/in.h$>$}\par
+{\ttfamily \#include $<$ctime$>$}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf ost::Audio}
+\begin{DoxyCompactList}\small\item\em Generic audio class to hold master data types and various useful class encapsulated friend functions as per GNU Common C++ 2 coding standard. \item\end{DoxyCompactList}\item 
+struct {\bf ost::Audio::goertzel\_\-state\_\-t}
+\item 
+struct {\bf ost::Audio::dtmf\_\-detect\_\-state\_\-t}
+\item 
+struct {\bf ost::Audio::tone\_\-detection\_\-descriptor\_\-t}
+\item 
+struct {\bf ost::Audio::mpeg\_\-audio}
+\item 
+struct {\bf ost::Audio::mpeg\_\-tagv1}
+\item 
+class {\bf ost::Audio::Info}
+\begin{DoxyCompactList}\small\item\em \doxyref{Audio}{p.}{classost_1_1_audio} source description. \item\end{DoxyCompactList}\item 
+class {\bf ost::AudioResample}
+\begin{DoxyCompactList}\small\item\em The \doxyref{AudioResample}{p.}{classost_1_1_audio_resample} class is used to manage linear intropolation buffering for rate conversions. \item\end{DoxyCompactList}\item 
+class {\bf ost::AudioTone}
+\begin{DoxyCompactList}\small\item\em The \doxyref{AudioTone}{p.}{classost_1_1_audio_tone} class is used to create a frame of audio encoded single or dualtones. \item\end{DoxyCompactList}\item 
+class {\bf ost::AudioBase}
+\begin{DoxyCompactList}\small\item\em \doxyref{AudioBase}{p.}{classost_1_1_audio_base} base class for many other audio classes which stream data. \item\end{DoxyCompactList}\item 
+class {\bf ost::AudioBuffer}
+\begin{DoxyCompactList}\small\item\em The \doxyref{AudioBuffer}{p.}{classost_1_1_audio_buffer} class is for mixing one-\/to-\/one soft joins. \item\end{DoxyCompactList}\item 
+class {\bf ost::AudioFile}
+\begin{DoxyCompactList}\small\item\em A class used to manipulate audio data. \item\end{DoxyCompactList}\item 
+class {\bf ost::AudioStream}
+\begin{DoxyCompactList}\small\item\em \doxyref{AudioStream}{p.}{classost_1_1_audio_stream} accesses \doxyref{AudioFile}{p.}{classost_1_1_audio_file} base class content as fixed frames of streaming linear samples. \item\end{DoxyCompactList}\item 
+class {\bf ost::AudioCodec}
+\begin{DoxyCompactList}\small\item\em The codec class is a virtual used for transcoding audio samples between linear frames (or other known format) and an encoded \char`\"{}sample\char`\"{} buffer. \item\end{DoxyCompactList}\item 
+class {\bf ost::AudioDevice}
+\item 
+class {\bf ost::TelTone}
+\begin{DoxyCompactList}\small\item\em An object that is used to sequence and extract telephony tones based on a telephony tone descriptor retrieved from the parsed international telephony tone database. \item\end{DoxyCompactList}\item 
+struct {\bf ost::TelTone::\_\-tonedef}
+\item 
+struct {\bf ost::TelTone::\_\-tonekey}
+\item 
+class {\bf ost::DTMFTones}
+\begin{DoxyCompactList}\small\item\em \doxyref{DTMFTones}{p.}{classost_1_1_d_t_m_f_tones} is used to generate a series of dtmf audio data from a \char`\"{}telephone\char`\"{} number passed as an ASCII string. \item\end{DoxyCompactList}\item 
+class {\bf ost::MFTones}
+\begin{DoxyCompactList}\small\item\em \doxyref{MFTones}{p.}{classost_1_1_m_f_tones} is used to generate a series of mf audio data from a \char`\"{}telephone\char`\"{} number passed as an ASCII string. \item\end{DoxyCompactList}\item 
+class {\bf ost::DTMFDetect}
+\begin{DoxyCompactList}\small\item\em \doxyref{DTMFDetect}{p.}{classost_1_1_d_t_m_f_detect} is used for detecting DTMF tones in a stream of audio. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace {\bf ost}
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf CCXX\_\-PACKED}
+\item 
+\#define {\bf AUDIO\_\-SIGNED\_\-LINEAR\_\-RAW}~1
+\item 
+\#define {\bf AUDIO\_\-LINEAR\_\-CONVERSION}~1
+\item 
+\#define {\bf AUDIO\_\-CODEC\_\-MODULES}~1
+\item 
+\#define {\bf AUDIO\_\-LINEAR\_\-FRAMING}~1
+\item 
+\#define {\bf AUDIO\_\-NATIVE\_\-METHODS}~1
+\item 
+\#define {\bf AUDIO\_\-RATE\_\-RESAMPLER}~1
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+class \_\-\_\-EXPORT {\bf ost::AudioCodec}
+\item 
+class \_\-\_\-EXPORT {\bf ost::AudioDevice}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Framework for portable audio processing and file handling classes. 
+
+\subsection{Define Documentation}
+\index{audio2.h@{audio2.h}!AUDIO\_\-CODEC\_\-MODULES@{AUDIO\_\-CODEC\_\-MODULES}}
+\index{AUDIO\_\-CODEC\_\-MODULES@{AUDIO\_\-CODEC\_\-MODULES}!audio2.h@{audio2.h}}
+\subsubsection[{AUDIO\_\-CODEC\_\-MODULES}]{\setlength{\rightskip}{0pt plus 5cm}\#define AUDIO\_\-CODEC\_\-MODULES~1}\label{audio2_8h_a028536012084a42b4510c90eb28be738}
+\index{audio2.h@{audio2.h}!AUDIO\_\-LINEAR\_\-CONVERSION@{AUDIO\_\-LINEAR\_\-CONVERSION}}
+\index{AUDIO\_\-LINEAR\_\-CONVERSION@{AUDIO\_\-LINEAR\_\-CONVERSION}!audio2.h@{audio2.h}}
+\subsubsection[{AUDIO\_\-LINEAR\_\-CONVERSION}]{\setlength{\rightskip}{0pt plus 5cm}\#define AUDIO\_\-LINEAR\_\-CONVERSION~1}\label{audio2_8h_a84606f4a23e81410b0e32e486822f846}
+\index{audio2.h@{audio2.h}!AUDIO\_\-LINEAR\_\-FRAMING@{AUDIO\_\-LINEAR\_\-FRAMING}}
+\index{AUDIO\_\-LINEAR\_\-FRAMING@{AUDIO\_\-LINEAR\_\-FRAMING}!audio2.h@{audio2.h}}
+\subsubsection[{AUDIO\_\-LINEAR\_\-FRAMING}]{\setlength{\rightskip}{0pt plus 5cm}\#define AUDIO\_\-LINEAR\_\-FRAMING~1}\label{audio2_8h_a24e608854dc0dd9bcbc44a4a4dcdf676}
+\index{audio2.h@{audio2.h}!AUDIO\_\-NATIVE\_\-METHODS@{AUDIO\_\-NATIVE\_\-METHODS}}
+\index{AUDIO\_\-NATIVE\_\-METHODS@{AUDIO\_\-NATIVE\_\-METHODS}!audio2.h@{audio2.h}}
+\subsubsection[{AUDIO\_\-NATIVE\_\-METHODS}]{\setlength{\rightskip}{0pt plus 5cm}\#define AUDIO\_\-NATIVE\_\-METHODS~1}\label{audio2_8h_ac9fbed88006882c27fe7d228291c8c7c}
+\index{audio2.h@{audio2.h}!AUDIO\_\-RATE\_\-RESAMPLER@{AUDIO\_\-RATE\_\-RESAMPLER}}
+\index{AUDIO\_\-RATE\_\-RESAMPLER@{AUDIO\_\-RATE\_\-RESAMPLER}!audio2.h@{audio2.h}}
+\subsubsection[{AUDIO\_\-RATE\_\-RESAMPLER}]{\setlength{\rightskip}{0pt plus 5cm}\#define AUDIO\_\-RATE\_\-RESAMPLER~1}\label{audio2_8h_abe8f760f29265ae92d19dc703e031f67}
+\index{audio2.h@{audio2.h}!AUDIO\_\-SIGNED\_\-LINEAR\_\-RAW@{AUDIO\_\-SIGNED\_\-LINEAR\_\-RAW}}
+\index{AUDIO\_\-SIGNED\_\-LINEAR\_\-RAW@{AUDIO\_\-SIGNED\_\-LINEAR\_\-RAW}!audio2.h@{audio2.h}}
+\subsubsection[{AUDIO\_\-SIGNED\_\-LINEAR\_\-RAW}]{\setlength{\rightskip}{0pt plus 5cm}\#define AUDIO\_\-SIGNED\_\-LINEAR\_\-RAW~1}\label{audio2_8h_a1cba749dac4075b565ef27f32000af1c}
+\index{audio2.h@{audio2.h}!CCXX\_\-PACKED@{CCXX\_\-PACKED}}
+\index{CCXX\_\-PACKED@{CCXX\_\-PACKED}!audio2.h@{audio2.h}}
+\subsubsection[{CCXX\_\-PACKED}]{\setlength{\rightskip}{0pt plus 5cm}\#define CCXX\_\-PACKED}\label{audio2_8h_a2d5d6a19f6c727b9e318292caa8b7f4d}

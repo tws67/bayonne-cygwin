@@ -1,0 +1,204 @@
+.TH "ost::LinkedDouble" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::LinkedDouble \- 
+.PP
+Self managed double linked list object chain.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <object.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBInsertMode\fP { \fBmodeAtFirst\fP, \fBmodeAtLast\fP, \fBmodeBefore\fP, \fBmodeAfter\fP }"
+.br
+.RI "\fIRequested in overloaded \fBinsert()\fP method to indicate how to insert data into list. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBLinkedDouble\fP * \fBgetFirst\fP (void)"
+.br
+.RI "\fIGet first linked object in list. \fP"
+.ti -1c
+.RI "virtual \fBLinkedDouble\fP * \fBgetLast\fP (void)"
+.br
+.RI "\fIGets the last object in the list. \fP"
+.ti -1c
+.RI "virtual \fBLinkedDouble\fP * \fBgetInsert\fP (void)"
+.br
+.RI "\fIVirtual to get the insert point to use when adding new members. \fP"
+.ti -1c
+.RI "\fBLinkedDouble\fP * \fBgetNext\fP (void)"
+.br
+.RI "\fIGet next object, for convenience. \fP"
+.ti -1c
+.RI "\fBLinkedDouble\fP * \fBgetPrev\fP (void)"
+.br
+.RI "\fIGet prev object in the list. \fP"
+.ti -1c
+.RI "virtual void \fBinsert\fP (\fBLinkedDouble\fP &obj, \fBInsertMode\fP position=modeAtLast)"
+.br
+.RI "\fIInsert object into chain at given position, as indicated by \fBInsertMode\fP; If no position is given, it defaults to \fBmodeAtLast\fP, inserting element at list's end. \fP"
+.ti -1c
+.RI "virtual void \fBdetach\fP (void)"
+.br
+.RI "\fIRemove object from chain. \fP"
+.ti -1c
+.RI "\fBLinkedDouble\fP & \fBoperator+=\fP (\fBLinkedDouble\fP &obj)"
+.br
+.ti -1c
+.RI "\fBLinkedDouble\fP & \fBoperator--\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLinkedDouble\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~LinkedDouble\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBenterLock\fP (void)"
+.br
+.ti -1c
+.RI "virtual void \fBleaveLock\fP (void)"
+.br
+.ti -1c
+.RI "virtual \fBLinkedDouble\fP * \fBfirstObject\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBLinkedDouble\fP * \fBlastObject\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBLinkedDouble\fP * \fBnextObject\fP"
+.br
+.ti -1c
+.RI "\fBLinkedDouble\fP * \fBprevObject\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Self managed double linked list object chain. 
+
+This is used for accumulating lists by using as a base class for a derived subclass.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@gnutelephony.org> Accumulating double linked list. 
+.RE
+.PP
+
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBost::LinkedDouble::InsertMode\fP"
+.PP
+Requested in overloaded \fBinsert()\fP method to indicate how to insert data into list. 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fImodeAtFirst \fP\fP
+insert at first position in list pointed by current object 
+.TP
+\fB\fImodeAtLast \fP\fP
+insert at last position in list pointed by current object 
+.TP
+\fB\fImodeBefore \fP\fP
+insert in list before current object 
+.TP
+\fB\fImodeAfter \fP\fP
+insert in list after current object 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::LinkedDouble::LinkedDouble ()\fC [inline, protected]\fP"
+.SS "virtual ost::LinkedDouble::~LinkedDouble ()\fC [protected, virtual]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void ost::LinkedDouble::detach (void)\fC [virtual]\fP"
+.PP
+Remove object from chain. 
+.SS "virtual void ost::LinkedDouble::enterLock (void)\fC [protected, virtual]\fP"
+.SS "virtual \fBLinkedDouble\fP* ost::LinkedDouble::firstObject ()\fC [protected, virtual]\fP"
+.SS "virtual \fBLinkedDouble\fP* ost::LinkedDouble::getFirst (void)\fC [virtual]\fP"
+.PP
+Get first linked object in list. This may be dynamically recast, and may refer to a master static bookmark pointer in a derived class. Otherwise it follows list to front.
+.PP
+\fBReturns:\fP
+.RS 4
+pointer to first object in list. 
+.RE
+.PP
+
+.SS "virtual \fBLinkedDouble\fP* ost::LinkedDouble::getInsert (void)\fC [virtual]\fP"
+.PP
+Virtual to get the insert point to use when adding new members. This may be current, or always head or always tail. As a virtual, this allows derived class to establish 'policy'.
+.PP
+\fBReturns:\fP
+.RS 4
+pointer to insertion point in list. 
+.RE
+.PP
+
+.SS "virtual \fBLinkedDouble\fP* ost::LinkedDouble::getLast (void)\fC [virtual]\fP"
+.PP
+Gets the last object in the list. This normally follows the links to the end. This is a virtual because derived class may include a static member bookmark for the current end.
+.PP
+\fBReturns:\fP
+.RS 4
+pointer to last object in list. 
+.RE
+.PP
+
+.SS "\fBLinkedDouble\fP* ost::LinkedDouble::getNext (void)\fC [inline]\fP"
+.PP
+Get next object, for convenience. Derived class may use this with a dynamic cast.
+.PP
+\fBReturns:\fP
+.RS 4
+next object in list. 
+.RE
+.PP
+
+.SS "\fBLinkedDouble\fP* ost::LinkedDouble::getPrev (void)\fC [inline]\fP"
+.PP
+Get prev object in the list. \fBReturns:\fP
+.RS 4
+pointer to previous object. 
+.RE
+.PP
+
+.SS "virtual void ost::LinkedDouble::insert (\fBLinkedDouble\fP & obj, \fBInsertMode\fP position = \fCmodeAtLast\fP)\fC [virtual]\fP"
+.PP
+Insert object into chain at given position, as indicated by \fBInsertMode\fP; If no position is given, it defaults to \fBmodeAtLast\fP, inserting element at list's end. \fBParameters:\fP
+.RS 4
+\fIobject\fP being inserted. 
+.br
+\fIposition\fP where object is inserted. 
+.RE
+.PP
+
+.SS "virtual \fBLinkedDouble\fP* ost::LinkedDouble::lastObject ()\fC [protected, virtual]\fP"
+.SS "virtual void ost::LinkedDouble::leaveLock (void)\fC [protected, virtual]\fP"
+.SS "\fBLinkedDouble\fP& ost::LinkedDouble::operator+= (\fBLinkedDouble\fP & obj)"
+.SS "\fBLinkedDouble\fP& ost::LinkedDouble::operator-- ()"
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBLinkedDouble\fP* \fBost::LinkedDouble::nextObject\fP\fC [protected]\fP"
+.SS "\fBLinkedDouble\fP * \fBost::LinkedDouble::prevObject\fP\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

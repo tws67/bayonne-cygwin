@@ -1,0 +1,60 @@
+.TH "ost::MutexLock" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::MutexLock \- 
+.PP
+The \fBMutexLock\fP class is used to protect a section of code so that at any given time only a single thread can perform the protected operation.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <thread.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMutexLock\fP (\fBMutex\fP &_mutex)"
+.br
+.RI "\fIAcquire the mutex. \fP"
+.ti -1c
+.RI "\fB~MutexLock\fP ()"
+.br
+.RI "\fIRelease the mutex automatically. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBMutexLock\fP class is used to protect a section of code so that at any given time only a single thread can perform the protected operation. 
+
+It use \fBMutex\fP to protect operation. Using this class is usefull and exception safe. The mutex that has been locked is automatically released when the function call stack falls out of scope, so one doesnt have to remember to unlock the mutex at each function return.
+.PP
+A common use is
+.PP
+void func_to_protect() { \fBMutexLock\fP lock(mutex); ... operation ... }
+.PP
+NOTE: do not declare variable as 'MutexLock (mutex)', the mutex will be released at statement end.
+.PP
+\fBAuthor:\fP
+.RS 4
+Frediano Ziglio <freddy77@angelfire.com> \fBMutex\fP automatic locker for protected access. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::MutexLock::MutexLock (\fBMutex\fP & _mutex)\fC [inline]\fP"
+.PP
+Acquire the mutex. \fBParameters:\fP
+.RS 4
+\fI_mutex\fP reference to mutex to aquire. 
+.RE
+.PP
+
+.SS "ost::MutexLock::~MutexLock ()\fC [inline]\fP"
+.PP
+Release the mutex automatically. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

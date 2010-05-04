@@ -1,0 +1,22 @@
+.TH "ost::StringTokenizer::NoSuchElementException" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::StringTokenizer::NoSuchElementException \- 
+.PP
+\fBException\fP thrown, if someone tried to read beyond the end of the tokens.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <tokenizer.h>\fP
+.SH "Detailed Description"
+.PP 
+\fBException\fP thrown, if someone tried to read beyond the end of the tokens. 
+
+Will not happen if you use it the 'clean' way with comparison against \fBend()\fP, but if you skip some tokens, because you 'know' they are there. Simplifies error handling a lot, since you can just read your tokens the way you expect it, and if there is some error in the input this \fBException\fP will be thrown. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

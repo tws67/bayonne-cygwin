@@ -1,0 +1,17 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+modflags=@COMMON_MODFLAGS@
+modpath=@script_libdir@
+scriptdir=@script_libdir@
+
+Name: libccscript3
+Description: GNU ccScript runtime library
+Version: @VERSION@
+Requires: libccgnu2 >= 1.3.0
+Libs:  -lccscript3 
+ 
+
+ 

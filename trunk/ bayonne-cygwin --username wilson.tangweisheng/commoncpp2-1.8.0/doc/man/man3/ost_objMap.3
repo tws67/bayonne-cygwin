@@ -1,0 +1,91 @@
+.TH "ost::objMap" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::objMap \- 
+.PP
+Used to create and manage a hash index of objects through a common type.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <objmap.h>\fP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static T * \fBgetObject\fP (keystring key)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual unsigned \fBkeyIndex\fP (K k)"
+.br
+.ti -1c
+.RI "unsigned \fBgetSize\fP (void)"
+.br
+.ti -1c
+.RI "\fBobjMap\fP (const K key)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "T * \fBobjNext\fP"
+.br
+.ti -1c
+.RI "const K \fBobjKey\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static T * \fBobjIndex\fP [S]"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class T, class K, unsigned S> class ost::objMap< T, K, S >"
+Used to create and manage a hash index of objects through a common type. 
+
+The objects can be examined and a specific instance located by a hash key.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@gnutelephony.org> hash indexed searchable template chain. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class T, class K, unsigned S> \fBost::objMap\fP< T, K, S >::\fBobjMap\fP (const K key)\fC [inline, protected]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class T , class K , unsigned S> T * \fBost::objMap\fP< T, K, S >::getObject (keystring key)\fC [inline, static]\fP"
+.PP
+References ost::objMap< T, K, S >::keyIndex(), and ost::objMap< T, K, S >::objIndex.
+.SS "template<class T, class K, unsigned S> unsigned \fBost::objMap\fP< T, K, S >::getSize (void)\fC [inline, protected]\fP"
+.SS "template<class T, class K, unsigned S> virtual unsigned \fBost::objMap\fP< T, K, S >::keyIndex (K k)\fC [inline, protected, virtual]\fP"
+.PP
+Referenced by ost::objMap< T, K, S >::getObject(), and ost::objMap< T, keystring, S >::objMap().
+.SH "Member Data Documentation"
+.PP 
+.SS "template<class T, class K, unsigned S> T * \fBost::objMap\fP< T, K, S >::\fBobjIndex\fP ()\fC [inline, static, protected]\fP"
+.PP
+Referenced by ost::objMap< T, K, S >::getObject(), and ost::objMap< T, keystring, S >::objMap().
+.SS "template<class T, class K, unsigned S> const K \fBost::objMap\fP< T, K, S >::\fBobjKey\fP\fC [protected]\fP"
+.PP
+Referenced by ost::objMap< T, keystring, S >::objMap().
+.SS "template<class T, class K, unsigned S> T* \fBost::objMap\fP< T, K, S >::\fBobjNext\fP\fC [protected]\fP"
+.PP
+Referenced by ost::objMap< T, keystring, S >::objMap().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

@@ -1,0 +1,98 @@
+.TH "ost::SSLStream" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::SSLStream \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ssl.h>\fP
+.PP
+Inherits \fBost::TCPStream\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSSLStream\fP (\fBFamily\fP \fBfamily\fP=IPV4, bool throwflag=true, \fBtimeout_t\fP to=0)"
+.br
+.ti -1c
+.RI "void \fBdisconnect\fP (void)"
+.br
+.ti -1c
+.RI "\fBSSLStream\fP (const \fBIPV4Host\fP &host, \fBtpport_t\fP port, unsigned mss=536, bool throwflag=true, \fBtimeout_t\fP to=0)"
+.br
+.ti -1c
+.RI "\fBSSLStream\fP (const \fBIPV6Host\fP &host, \fBtpport_t\fP port, unsigned mss=536, bool throwflag=true, \fBtimeout_t\fP to=0)"
+.br
+.ti -1c
+.RI "\fBSSLStream\fP (const char *name, \fBFamily\fP \fBfamily\fP=IPV4, unsigned mss=536, bool throwflag=false, \fBtimeout_t\fP to=0)"
+.br
+.ti -1c
+.RI "\fBSSLStream\fP (const \fBSSLStream\fP &\fBssl\fP)"
+.br
+.ti -1c
+.RI "bool \fBisSSL\fP (void)"
+.br
+.ti -1c
+.RI "bool \fBgetSession\fP (void)"
+.br
+.ti -1c
+.RI "void \fBendStream\fP (void)"
+.br
+.ti -1c
+.RI "virtual \fB~SSLStream\fP ()"
+.br
+.ti -1c
+.RI "ssize_t \fBreadLine\fP (char *str, size_t max, \fBtimeout_t\fP to=0)"
+.br
+.ti -1c
+.RI "ssize_t \fBreadData\fP (void *buf, size_t len, char separator=0, \fBtimeout_t\fP to=0)"
+.br
+.ti -1c
+.RI "ssize_t \fBwriteData\fP (void *buf, size_t len, \fBtimeout_t\fP to=0)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "SSL * \fBssl\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::SSLStream::SSLStream (\fBFamily\fP family = \fCIPV4\fP, bool throwflag = \fCtrue\fP, \fBtimeout_t\fP to = \fC0\fP)"
+.SS "ost::SSLStream::SSLStream (const \fBIPV4Host\fP & host, \fBtpport_t\fP port, unsigned mss = \fC536\fP, bool throwflag = \fCtrue\fP, \fBtimeout_t\fP to = \fC0\fP)"
+.SS "ost::SSLStream::SSLStream (const \fBIPV6Host\fP & host, \fBtpport_t\fP port, unsigned mss = \fC536\fP, bool throwflag = \fCtrue\fP, \fBtimeout_t\fP to = \fC0\fP)"
+.SS "ost::SSLStream::SSLStream (const char * name, \fBFamily\fP family = \fCIPV4\fP, unsigned mss = \fC536\fP, bool throwflag = \fCfalse\fP, \fBtimeout_t\fP to = \fC0\fP)"
+.SS "ost::SSLStream::SSLStream (const \fBSSLStream\fP & ssl)"
+.SS "virtual ost::SSLStream::~SSLStream ()\fC [virtual]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::SSLStream::disconnect (void)"
+.PP
+Reimplemented from \fBost::TCPStream\fP.
+.SS "void ost::SSLStream::endStream (void)"
+.PP
+Reimplemented from \fBost::TCPStream\fP.
+.SS "bool ost::SSLStream::getSession (void)"
+.SS "bool ost::SSLStream::isSSL (void)\fC [inline]\fP"
+.PP
+References ssl.
+.SS "ssize_t ost::SSLStream::readData (void * buf, size_t len, char separator = \fC0\fP, \fBtimeout_t\fP to = \fC0\fP)\fC [virtual]\fP"
+.PP
+Reimplemented from \fBost::Socket\fP.
+.SS "ssize_t ost::SSLStream::readLine (char * str, size_t max, \fBtimeout_t\fP to = \fC0\fP)"
+.PP
+Reimplemented from \fBost::Socket\fP.
+.SS "ssize_t ost::SSLStream::writeData (void * buf, size_t len, \fBtimeout_t\fP to = \fC0\fP)"
+.SH "Member Data Documentation"
+.PP 
+.SS "SSL* \fBost::SSLStream::ssl\fP\fC [protected]\fP"
+.PP
+Referenced by isSSL().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

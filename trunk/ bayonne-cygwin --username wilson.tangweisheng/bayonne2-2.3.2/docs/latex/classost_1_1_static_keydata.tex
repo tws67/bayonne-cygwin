@@ -1,0 +1,59 @@
+\section{ost::StaticKeydata Class Reference}
+\label{classost_1_1_static_keydata}\index{ost::StaticKeydata@{ost::StaticKeydata}}
+
+
+Bayonnne specific static keydata class.  
+
+
+{\ttfamily \#include $<$bayonne.h$>$}Inheritance diagram for ost::StaticKeydata::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classost_1_1_static_keydata}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf StaticKeydata} (const char $\ast$path, Keydata::Define $\ast$defkeys=NULL, const char $\ast$homepath=NULL)
+\item 
+const char $\ast$ {\bf getString} (const char $\ast$id)
+\item 
+long {\bf getValue} (const char $\ast$id)
+\item 
+bool {\bf getBoolean} (const char $\ast$id)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Bayonnne specific static keydata class. This is used for configuration keys which cannot be reloaded at runtime.
+
+\begin{DoxyAuthor}{Author}
+David Sugar $<${\tt dyfet@gnutelephony.org}$>$ Static Keydata 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::StaticKeydata@{ost::StaticKeydata}!StaticKeydata@{StaticKeydata}}
+\index{StaticKeydata@{StaticKeydata}!ost::StaticKeydata@{ost::StaticKeydata}}
+\subsubsection[{StaticKeydata}]{\setlength{\rightskip}{0pt plus 5cm}ost::StaticKeydata::StaticKeydata (const char $\ast$ {\em path}, \/  Keydata::Define $\ast$ {\em defkeys} = {\ttfamily NULL}, \/  const char $\ast$ {\em homepath} = {\ttfamily NULL})}\label{classost_1_1_static_keydata_a4571768fac69e4d58d00b6fcfd3e5844}
+
+
+\subsection{Member Function Documentation}
+\index{ost::StaticKeydata@{ost::StaticKeydata}!getBoolean@{getBoolean}}
+\index{getBoolean@{getBoolean}!ost::StaticKeydata@{ost::StaticKeydata}}
+\subsubsection[{getBoolean}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::StaticKeydata::getBoolean (const char $\ast$ {\em id})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_static_keydata_a00637bcf510477858fac6549c0c0f5e4}
+
+
+Reimplemented in {\bf ost::ReconfigKeydata} \doxyref{}{p.}{classost_1_1_reconfig_keydata_a46ad6ae6de848727a5f18c70e198f8d3}.\index{ost::StaticKeydata@{ost::StaticKeydata}!getString@{getString}}
+\index{getString@{getString}!ost::StaticKeydata@{ost::StaticKeydata}}
+\subsubsection[{getString}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::StaticKeydata::getString (const char $\ast$ {\em id})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_static_keydata_ac9062a4e35ed822bf6b9e2e445f3963e}
+\index{ost::StaticKeydata@{ost::StaticKeydata}!getValue@{getValue}}
+\index{getValue@{getValue}!ost::StaticKeydata@{ost::StaticKeydata}}
+\subsubsection[{getValue}]{\setlength{\rightskip}{0pt plus 5cm}long ost::StaticKeydata::getValue (const char $\ast$ {\em id})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_static_keydata_a70ab1a503b411b6b8a330f05e9a33d32}
+
+
+Reimplemented in {\bf ost::ReconfigKeydata} \doxyref{}{p.}{classost_1_1_reconfig_keydata_a88c674e5f63cec3d84745fcf5bb68554}.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf bayonne.h}\end{DoxyCompactItemize}

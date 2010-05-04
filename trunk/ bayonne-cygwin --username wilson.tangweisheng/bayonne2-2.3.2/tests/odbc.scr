@@ -1,0 +1,28 @@
+%% Copyright (C) 2005 Tycho Softworks.
+%%
+%% This file is free software; as a special exception the author gives
+%% unlimited permission to copy and/or distribute it, with or without
+%% modifications, as long as this notice is preserved.
+%%
+%% This program is distributed in the hope that it will be useful, but
+%% WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
+%% implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+%%
+%% Test odbc connectivity and threading in core engine.
+
+	%% ignored if no sip driver loaded...
+	register.sip proxy=localhost uri=sip:test@localhost
+
+        use odbc database=testing
+
+program  main
+        array %a count=20
+        echo "USING DRIVER %sql.driver"
+        sql "insert into a" results=&a
+        echo "E %script.error"
+        echo "F %sql.error"
+	exit
+
+
+
+

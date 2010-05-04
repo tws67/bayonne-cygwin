@@ -1,0 +1,975 @@
+\section{ost::Audio Class Reference}
+\label{classost_1_1_audio}\index{ost::Audio@{ost::Audio}}
+
+
+Generic audio class to hold master data types and various useful class encapsulated friend functions as per GNU Common C++ 2 coding standard.  
+
+
+{\ttfamily \#include $<$audio2.h$>$}Inheritance diagram for ost::Audio::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.89406cm]{classost_1_1_audio}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf dtmf\_\-detect\_\-state\_\-t}
+\item 
+struct {\bf goertzel\_\-state\_\-t}
+\item 
+class {\bf Info}
+\begin{DoxyCompactList}\small\item\em \doxyref{Audio}{p.}{classost_1_1_audio} source description. \item\end{DoxyCompactList}\item 
+struct {\bf mpeg\_\-audio}
+\item 
+struct {\bf mpeg\_\-tagv1}
+\item 
+struct {\bf tone\_\-detection\_\-descriptor\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Rate} \{ \par
+{\bf rateUnknown}, 
+{\bf rate6khz} =  6000, 
+{\bf rate8khz} =  8000, 
+{\bf rate16khz} =  16000, 
+\par
+{\bf rate32khz} =  32000, 
+{\bf rate44khz} =  44100
+ \}
+\begin{DoxyCompactList}\small\item\em \doxyref{Audio}{p.}{classost_1_1_audio} encoding rate, samples per second. \item\end{DoxyCompactList}\item 
+enum {\bf Mode} \{ \par
+{\bf modeRead}, 
+{\bf modeReadAny}, 
+{\bf modeReadOne}, 
+{\bf modeWrite}, 
+\par
+{\bf modeCache}, 
+{\bf modeInfo}, 
+{\bf modeFeed}, 
+{\bf modeAppend}, 
+\par
+{\bf modeCreate}
+ \}
+\begin{DoxyCompactList}\small\item\em File processing mode, whether to skip missing files, etc. \item\end{DoxyCompactList}\item 
+enum {\bf Encoding} \{ \par
+{\bf unknownEncoding} =  0, 
+{\bf g721ADPCM}, 
+{\bf g722Audio}, 
+{\bf g722\_\-7bit}, 
+\par
+{\bf g722\_\-6bit}, 
+{\bf g723\_\-2bit}, 
+{\bf g723\_\-3bit}, 
+{\bf g723\_\-5bit}, 
+\par
+{\bf gsmVoice}, 
+{\bf msgsmVoice}, 
+{\bf mulawAudio}, 
+{\bf alawAudio}, 
+\par
+{\bf mp1Audio}, 
+{\bf mp2Audio}, 
+{\bf mp3Audio}, 
+{\bf okiADPCM}, 
+\par
+{\bf voxADPCM}, 
+{\bf sx73Voice}, 
+{\bf sx96Voice}, 
+{\bf cdaStereo}, 
+\par
+{\bf cdaMono}, 
+{\bf pcm8Stereo}, 
+{\bf pcm8Mono}, 
+{\bf pcm16Stereo}, 
+\par
+{\bf pcm16Mono}, 
+{\bf pcm32Stereo}, 
+{\bf pcm32Mono}, 
+{\bf speexVoice}, 
+\par
+{\bf speexAudio}, 
+{\bf g729Audio}, 
+{\bf ilbcAudio}, 
+{\bf speexUltra}, 
+\par
+{\bf speexNarrow} =  speexVoice, 
+{\bf speexWide} =  speexAudio, 
+{\bf g723\_\-4bit} =  g721ADPCM
+ \}
+\begin{DoxyCompactList}\small\item\em \doxyref{Audio}{p.}{classost_1_1_audio} encoding formats. \item\end{DoxyCompactList}\item 
+enum {\bf Format} \{ \par
+{\bf raw}, 
+{\bf snd}, 
+{\bf riff}, 
+{\bf mpeg}, 
+\par
+{\bf wave}
+ \}
+\begin{DoxyCompactList}\small\item\em \doxyref{Audio}{p.}{classost_1_1_audio} container file format. \item\end{DoxyCompactList}\item 
+enum {\bf DeviceMode} \{ {\bf PLAY}, 
+{\bf RECORD}, 
+{\bf PLAYREC}
+ \}
+\begin{DoxyCompactList}\small\item\em \doxyref{Audio}{p.}{classost_1_1_audio} device access mode. \item\end{DoxyCompactList}\item 
+enum {\bf Error} \{ \par
+{\bf errSuccess} =  0, 
+{\bf errReadLast}, 
+{\bf errNotOpened}, 
+{\bf errEndOfFile}, 
+\par
+{\bf errStartOfFile}, 
+{\bf errRateInvalid}, 
+{\bf errEncodingInvalid}, 
+{\bf errReadInterrupt}, 
+\par
+{\bf errWriteInterrupt}, 
+{\bf errReadFailure}, 
+{\bf errWriteFailure}, 
+{\bf errReadIncomplete}, 
+\par
+{\bf errWriteIncomplete}, 
+{\bf errRequestInvalid}, 
+{\bf errTOCFailed}, 
+{\bf errStatFailed}, 
+\par
+{\bf errInvalidTrack}, 
+{\bf errPlaybackFailed}, 
+{\bf errNotPlaying}, 
+{\bf errNoCodec}
+ \}
+\begin{DoxyCompactList}\small\item\em \doxyref{Audio}{p.}{classost_1_1_audio} error conditions. \item\end{DoxyCompactList}\item 
+typedef int16\_\-t {\bf snd16\_\-t}
+\item 
+typedef int32\_\-t {\bf snd32\_\-t}
+\item 
+typedef int16\_\-t {\bf Level}
+\item 
+typedef int16\_\-t {\bf Sample}
+\item 
+typedef int16\_\-t $\ast$ {\bf Linear}
+\item 
+typedef unsigned long {\bf timeout\_\-t}
+\item 
+typedef unsigned char $\ast$ {\bf Encoded}
+\item 
+typedef enum {\bf Rate} {\bf Rate}
+\item 
+typedef enum {\bf Mode} {\bf Mode}
+\item 
+typedef enum {\bf Encoding} {\bf Encoding}
+\item 
+typedef enum {\bf Format} {\bf Format}
+\item 
+typedef enum {\bf DeviceMode} {\bf DeviceMode}
+\item 
+typedef enum {\bf Error} {\bf Error}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf Level} {\bf tolevel} (float dbm)
+\begin{DoxyCompactList}\small\item\em Convert dbm power level to integer value (0-\/32768). \item\end{DoxyCompactList}\item 
+static float {\bf todbm} ({\bf Level} power)
+\begin{DoxyCompactList}\small\item\em Convert integer power levels to dbm. \item\end{DoxyCompactList}\item 
+static bool {\bf hasDevice} (unsigned device=0)
+\begin{DoxyCompactList}\small\item\em Test for the presense of a specified (indexed) audio device. \item\end{DoxyCompactList}\item 
+static {\bf AudioDevice} $\ast$ {\bf getDevice} (unsigned device=0, {\bf DeviceMode} mode=PLAY)
+\begin{DoxyCompactList}\small\item\em Get a audio device object that can be used to play or record audio. \item\end{DoxyCompactList}\item 
+static const char $\ast$ {\bf getCodecPath} (void)
+\begin{DoxyCompactList}\small\item\em Get pathname to where loadable codec modules are stored. \item\end{DoxyCompactList}\item 
+static const char $\ast$ {\bf getMIME} ({\bf Info} \&info)
+\begin{DoxyCompactList}\small\item\em Get the mime descriptive type for a given \doxyref{Audio}{p.}{classost_1_1_audio} encoding description, usually retrieved from a newly opened audio file. \item\end{DoxyCompactList}\item 
+static const char $\ast$ {\bf getName} ({\bf Encoding} encoding)
+\begin{DoxyCompactList}\small\item\em Get the short ascii description used for the given audio encoding type. \item\end{DoxyCompactList}\item 
+static const char $\ast$ {\bf getExtension} ({\bf Encoding} encoding)
+\begin{DoxyCompactList}\small\item\em Get the preferred file extension name to use for a given audio encoding type. \item\end{DoxyCompactList}\item 
+static {\bf Encoding} {\bf getEncoding} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Get the audio encoding format that is specified by a short ascii name. \item\end{DoxyCompactList}\item 
+static {\bf Encoding} {\bf getStereo} ({\bf Encoding} encoding)
+\begin{DoxyCompactList}\small\item\em Get the stereo encoding format associated with the given format. \item\end{DoxyCompactList}\item 
+static {\bf Encoding} {\bf getMono} ({\bf Encoding} encoding)
+\begin{DoxyCompactList}\small\item\em Get the mono encoding format associated with the given format. \item\end{DoxyCompactList}\item 
+static bool {\bf isLinear} ({\bf Encoding} encoding)
+\begin{DoxyCompactList}\small\item\em Test if the audio encoding format is a linear one. \item\end{DoxyCompactList}\item 
+static bool {\bf isBuffered} ({\bf Encoding} encoding)
+\begin{DoxyCompactList}\small\item\em Test if the audio encoding format must be packetized (that is, has irregular sized frames) and must be processed only through buffered codecs. \item\end{DoxyCompactList}\item 
+static bool {\bf isMono} ({\bf Encoding} encoding)
+\begin{DoxyCompactList}\small\item\em Test if the audio encoding format is a mono format. \item\end{DoxyCompactList}\item 
+static bool {\bf isStereo} ({\bf Encoding} encoding)
+\begin{DoxyCompactList}\small\item\em Test if the audio encoding format is a stereo format. \item\end{DoxyCompactList}\item 
+static {\bf Rate} {\bf getRate} ({\bf Encoding} encoding)
+\begin{DoxyCompactList}\small\item\em Return default sample rate associated with the specified audio encoding format. \item\end{DoxyCompactList}\item 
+static {\bf Rate} {\bf getRate} ({\bf Encoding} e, {\bf Rate} request)
+\begin{DoxyCompactList}\small\item\em Return optional rate setting effect. \item\end{DoxyCompactList}\item 
+static {\bf timeout\_\-t} {\bf getFraming} ({\bf Encoding} encoding, {\bf timeout\_\-t} timeout=0)
+\begin{DoxyCompactList}\small\item\em Return frame timing for an audio encoding format. \item\end{DoxyCompactList}\item 
+static {\bf timeout\_\-t} {\bf getFraming} ({\bf Info} \&info, {\bf timeout\_\-t} timeout=0)
+\begin{DoxyCompactList}\small\item\em Return frame time for an audio source description. \item\end{DoxyCompactList}\item 
+static bool {\bf isEndian} ({\bf Encoding} encoding)
+\begin{DoxyCompactList}\small\item\em Test if the endian byte order of the encoding format is different from the machine's native byte order. \item\end{DoxyCompactList}\item 
+static bool {\bf isEndian} ({\bf Info} \&info)
+\begin{DoxyCompactList}\small\item\em Test if the endian byte order of the audio source description is different from the machine's native byte order. \item\end{DoxyCompactList}\item 
+static bool {\bf swapEndian} ({\bf Encoding} encoding, void $\ast$buffer, unsigned number)
+\begin{DoxyCompactList}\small\item\em Optionally swap endian of audio data if the encoding format endian byte order is different from the machine's native endian. \item\end{DoxyCompactList}\item 
+static void {\bf swapEncoded} ({\bf Info} \&info, {\bf Encoded} data, size\_\-t bytes)
+\begin{DoxyCompactList}\small\item\em Optionally swap endian of encoded audio data based on the audio encoding type, and relationship to native byte order. \item\end{DoxyCompactList}\item 
+static bool {\bf swapEndian} ({\bf Info} \&info, void $\ast$buffer, unsigned number)
+\begin{DoxyCompactList}\small\item\em Optionally swap endian of audio data if the audio source description byte order is different from the machine's native endian byte order. \item\end{DoxyCompactList}\item 
+static {\bf Level} {\bf getImpulse} ({\bf Encoding} encoding, void $\ast$buffer, unsigned number)
+\begin{DoxyCompactList}\small\item\em Get the energey impulse level of a frame of audio data. \item\end{DoxyCompactList}\item 
+static {\bf Level} {\bf getImpulse} ({\bf Info} \&info, void $\ast$buffer, unsigned number=0)
+\begin{DoxyCompactList}\small\item\em Get the energey impulse level of a frame of audio data. \item\end{DoxyCompactList}\item 
+static {\bf Level} {\bf getPeak} ({\bf Encoding} encoding, void $\ast$buffer, unsigned number)
+\begin{DoxyCompactList}\small\item\em Get the peak (highest energy) level found in a frame of audio data. \item\end{DoxyCompactList}\item 
+static {\bf Level} {\bf getPeak} ({\bf Info} \&info, void $\ast$buffer, unsigned number=0)
+\begin{DoxyCompactList}\small\item\em Get the peak (highest energy) level found in a frame of audio data. \item\end{DoxyCompactList}\item 
+static void {\bf toTimestamp} ({\bf timeout\_\-t} duration, char $\ast$address, size\_\-t size)
+\begin{DoxyCompactList}\small\item\em Provide ascii timestamp representation of a timeout value. \item\end{DoxyCompactList}\item 
+static {\bf timeout\_\-t} {\bf toTimeout} (const char $\ast$timestamp)
+\begin{DoxyCompactList}\small\item\em Convert ascii timestamp representation to a timeout number. \item\end{DoxyCompactList}\item 
+static int {\bf getFrame} ({\bf Encoding} encoding, int samples=0)
+\begin{DoxyCompactList}\small\item\em Returns the number of bytes in a sample frame for the given encoding type, rounded up to the nearest integer. \item\end{DoxyCompactList}\item 
+static int {\bf getCount} ({\bf Encoding} encoding)
+\begin{DoxyCompactList}\small\item\em Returns the number of samples in all channels for a frame in the given encoding. \item\end{DoxyCompactList}\item 
+static unsigned long {\bf toSamples} ({\bf Encoding} encoding, size\_\-t bytes)
+\begin{DoxyCompactList}\small\item\em Compute byte counts of audio data into number of samples based on the audio encoding format used. \item\end{DoxyCompactList}\item 
+static unsigned long {\bf toSamples} ({\bf Info} \&info, size\_\-t bytes)
+\begin{DoxyCompactList}\small\item\em Compute byte counts of audio data into number of samples based on the audio source description used. \item\end{DoxyCompactList}\item 
+static size\_\-t {\bf toBytes} ({\bf Info} \&info, unsigned long number)
+\begin{DoxyCompactList}\small\item\em Compute the number of bytes a given number of samples in a given audio encoding will occupy. \item\end{DoxyCompactList}\item 
+static size\_\-t {\bf toBytes} ({\bf Encoding} encoding, unsigned long number)
+\begin{DoxyCompactList}\small\item\em Compute the number of bytes a given number of samples in a given audio encoding will occupy. \item\end{DoxyCompactList}\item 
+static void {\bf fill} (unsigned char $\ast$address, int number, {\bf Encoding} encoding)
+\begin{DoxyCompactList}\small\item\em Fill an audio buffer with \char`\"{}empty\char`\"{} (silent) audio data, based on the audio encoding format. \item\end{DoxyCompactList}\item 
+static bool {\bf loadPlugin} (const char $\ast$path)
+\begin{DoxyCompactList}\small\item\em Load a dso plugin (codec plugin), used internally. \item\end{DoxyCompactList}\item 
+static size\_\-t {\bf maxFramesize} ({\bf Info} \&info)
+\begin{DoxyCompactList}\small\item\em Maximum framesize for a given coding that may be needed to store a result. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned {\bf ndata}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Generic audio class to hold master data types and various useful class encapsulated friend functions as per GNU Common C++ 2 coding standard. \begin{DoxyAuthor}{Author}
+David Sugar $<${\tt dyfet@ostel.com}$>$ Master audio class. 
+\end{DoxyAuthor}
+
+
+\subsection{Member Typedef Documentation}
+\index{ost::Audio@{ost::Audio}!DeviceMode@{DeviceMode}}
+\index{DeviceMode@{DeviceMode}!ost::Audio@{ost::Audio}}
+\subsubsection[{DeviceMode}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf DeviceMode} {\bf ost::Audio::DeviceMode}}\label{classost_1_1_audio_a64ea45fd7b796a2de14093e69591bbc1}
+\index{ost::Audio@{ost::Audio}!Encoded@{Encoded}}
+\index{Encoded@{Encoded}!ost::Audio@{ost::Audio}}
+\subsubsection[{Encoded}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned char$\ast$ {\bf ost::Audio::Encoded}}\label{classost_1_1_audio_a5c7e49d2b98c74b5a63a0e52a31e626e}
+\index{ost::Audio@{ost::Audio}!Encoding@{Encoding}}
+\index{Encoding@{Encoding}!ost::Audio@{ost::Audio}}
+\subsubsection[{Encoding}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf Encoding} {\bf ost::Audio::Encoding}}\label{classost_1_1_audio_ac6a37d56c55e4e90c76e1ff32c5a9b4d}
+\index{ost::Audio@{ost::Audio}!Error@{Error}}
+\index{Error@{Error}!ost::Audio@{ost::Audio}}
+\subsubsection[{Error}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf Error} {\bf ost::Audio::Error}}\label{classost_1_1_audio_afc24bc71c6ce0c97f0c349291eed74cf}
+\index{ost::Audio@{ost::Audio}!Format@{Format}}
+\index{Format@{Format}!ost::Audio@{ost::Audio}}
+\subsubsection[{Format}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf Format} {\bf ost::Audio::Format}}\label{classost_1_1_audio_a10021256123af9a4b31bf1f69629524c}
+\index{ost::Audio@{ost::Audio}!Level@{Level}}
+\index{Level@{Level}!ost::Audio@{ost::Audio}}
+\subsubsection[{Level}]{\setlength{\rightskip}{0pt plus 5cm}typedef int16\_\-t {\bf ost::Audio::Level}}\label{classost_1_1_audio_a4dda00f9d98568cf340f94e9bd0fcd88}
+\index{ost::Audio@{ost::Audio}!Linear@{Linear}}
+\index{Linear@{Linear}!ost::Audio@{ost::Audio}}
+\subsubsection[{Linear}]{\setlength{\rightskip}{0pt plus 5cm}typedef int16\_\-t$\ast$ {\bf ost::Audio::Linear}}\label{classost_1_1_audio_a8e557e78d8d049df8f2ed5eb0b60cea9}
+\index{ost::Audio@{ost::Audio}!Mode@{Mode}}
+\index{Mode@{Mode}!ost::Audio@{ost::Audio}}
+\subsubsection[{Mode}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf Mode} {\bf ost::Audio::Mode}}\label{classost_1_1_audio_aaa5de3c7b74ee304a5292d79a6a4df9b}
+\index{ost::Audio@{ost::Audio}!Rate@{Rate}}
+\index{Rate@{Rate}!ost::Audio@{ost::Audio}}
+\subsubsection[{Rate}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf Rate} {\bf ost::Audio::Rate}}\label{classost_1_1_audio_af100e5274ac000c170299e83b87a1314}
+\index{ost::Audio@{ost::Audio}!Sample@{Sample}}
+\index{Sample@{Sample}!ost::Audio@{ost::Audio}}
+\subsubsection[{Sample}]{\setlength{\rightskip}{0pt plus 5cm}typedef int16\_\-t {\bf ost::Audio::Sample}}\label{classost_1_1_audio_ab9d6b2f16d237f7c70a6ea783fce52f6}
+\index{ost::Audio@{ost::Audio}!snd16\_\-t@{snd16\_\-t}}
+\index{snd16\_\-t@{snd16\_\-t}!ost::Audio@{ost::Audio}}
+\subsubsection[{snd16\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef int16\_\-t {\bf ost::Audio::snd16\_\-t}}\label{classost_1_1_audio_a1b3506ec0126f95fe8f4eadd7d79b6da}
+\index{ost::Audio@{ost::Audio}!snd32\_\-t@{snd32\_\-t}}
+\index{snd32\_\-t@{snd32\_\-t}!ost::Audio@{ost::Audio}}
+\subsubsection[{snd32\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef int32\_\-t {\bf ost::Audio::snd32\_\-t}}\label{classost_1_1_audio_a121b4a42005124b043b33cc6e7bb374e}
+\index{ost::Audio@{ost::Audio}!timeout\_\-t@{timeout\_\-t}}
+\index{timeout\_\-t@{timeout\_\-t}!ost::Audio@{ost::Audio}}
+\subsubsection[{timeout\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned long {\bf ost::Audio::timeout\_\-t}}\label{classost_1_1_audio_adaaf1ff03bfae21e5d6231b2f944b490}
+
+
+\subsection{Member Enumeration Documentation}
+\index{ost::Audio@{ost::Audio}!DeviceMode@{DeviceMode}}
+\index{DeviceMode@{DeviceMode}!ost::Audio@{ost::Audio}}
+\subsubsection[{DeviceMode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ost::Audio::DeviceMode}}\label{classost_1_1_audio_a6ed0d85bd28cabe648d18832e54777c1}
+
+
+\doxyref{Audio}{p.}{classost_1_1_audio} device access mode. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{PLAY@{PLAY}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!PLAY@{PLAY}}\item[{\em 
+PLAY\label{classost_1_1_audio_a6ed0d85bd28cabe648d18832e54777c1a434fa31ee9406fe04ab7d39359f5d5b5}
+}]\index{RECORD@{RECORD}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!RECORD@{RECORD}}\item[{\em 
+RECORD\label{classost_1_1_audio_a6ed0d85bd28cabe648d18832e54777c1a859407d0f38e9b07ac7ea646f21b2114}
+}]\index{PLAYREC@{PLAYREC}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!PLAYREC@{PLAYREC}}\item[{\em 
+PLAYREC\label{classost_1_1_audio_a6ed0d85bd28cabe648d18832e54777c1a2a5f699cdda2e8e061f9630069505c58}
+}]\end{description}
+\end{Desc}
+
+\index{ost::Audio@{ost::Audio}!Encoding@{Encoding}}
+\index{Encoding@{Encoding}!ost::Audio@{ost::Audio}}
+\subsubsection[{Encoding}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ost::Audio::Encoding}}\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331ba}
+
+
+\doxyref{Audio}{p.}{classost_1_1_audio} encoding formats. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{unknownEncoding@{unknownEncoding}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!unknownEncoding@{unknownEncoding}}\item[{\em 
+unknownEncoding\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baa8e09e897a62d7a5ecc3dce9282619883}
+}]\index{g721ADPCM@{g721ADPCM}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!g721ADPCM@{g721ADPCM}}\item[{\em 
+g721ADPCM\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baa9aee334a2d893ad44d7a3856e87a34a0}
+}]\index{g722Audio@{g722Audio}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!g722Audio@{g722Audio}}\item[{\em 
+g722Audio\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baa0128360769248d7ebbc61bb1bdea060f}
+}]\index{g722\_\-7bit@{g722\_\-7bit}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!g722\_\-7bit@{g722\_\-7bit}}\item[{\em 
+g722\_\-7bit\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baa9bad14942804ae774da37c17ebf1c5a2}
+}]\index{g722\_\-6bit@{g722\_\-6bit}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!g722\_\-6bit@{g722\_\-6bit}}\item[{\em 
+g722\_\-6bit\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baa3f2c9e61b4a788f8e2ddabea3e0e64a5}
+}]\index{g723\_\-2bit@{g723\_\-2bit}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!g723\_\-2bit@{g723\_\-2bit}}\item[{\em 
+g723\_\-2bit\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baaaa50db3a491cbd7a56e2ca9519216c31}
+}]\index{g723\_\-3bit@{g723\_\-3bit}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!g723\_\-3bit@{g723\_\-3bit}}\item[{\em 
+g723\_\-3bit\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baa232c38a80a6707ffa9c40a0ebce849d2}
+}]\index{g723\_\-5bit@{g723\_\-5bit}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!g723\_\-5bit@{g723\_\-5bit}}\item[{\em 
+g723\_\-5bit\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baac33334f21056ca768c932faa58ee4e3b}
+}]\index{gsmVoice@{gsmVoice}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!gsmVoice@{gsmVoice}}\item[{\em 
+gsmVoice\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baa8ad54db389dbd71a73db82bc44457d95}
+}]\index{msgsmVoice@{msgsmVoice}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!msgsmVoice@{msgsmVoice}}\item[{\em 
+msgsmVoice\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baa9c776ce70f0499bb61b8954b74a8fac7}
+}]\index{mulawAudio@{mulawAudio}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!mulawAudio@{mulawAudio}}\item[{\em 
+mulawAudio\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baa5f6c81d40b3bb2e78e7fbc30fdbd2074}
+}]\index{alawAudio@{alawAudio}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!alawAudio@{alawAudio}}\item[{\em 
+alawAudio\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baa72609cc1ee8752337012b27f8c63d016}
+}]\index{mp1Audio@{mp1Audio}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!mp1Audio@{mp1Audio}}\item[{\em 
+mp1Audio\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baa04a05a2df746a4d72e35571b67cc5284}
+}]\index{mp2Audio@{mp2Audio}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!mp2Audio@{mp2Audio}}\item[{\em 
+mp2Audio\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baa89cb4e37330a69f5e180ddb463d7740e}
+}]\index{mp3Audio@{mp3Audio}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!mp3Audio@{mp3Audio}}\item[{\em 
+mp3Audio\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baa56d99d68ada26ec7dd4f53414461badd}
+}]\index{okiADPCM@{okiADPCM}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!okiADPCM@{okiADPCM}}\item[{\em 
+okiADPCM\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baaa4e009edc72290cc7e375c54a66e17a6}
+}]\index{voxADPCM@{voxADPCM}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!voxADPCM@{voxADPCM}}\item[{\em 
+voxADPCM\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baaae3709b42ebf20e118b3d8dbe7d8996b}
+}]\index{sx73Voice@{sx73Voice}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!sx73Voice@{sx73Voice}}\item[{\em 
+sx73Voice\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baa2d14662303292d014327a93f6ac68802}
+}]\index{sx96Voice@{sx96Voice}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!sx96Voice@{sx96Voice}}\item[{\em 
+sx96Voice\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baab7d3a16e18d1b00bb56d91843d8fe2b8}
+}]\index{cdaStereo@{cdaStereo}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!cdaStereo@{cdaStereo}}\item[{\em 
+cdaStereo\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baa5ca72fd2aa7204223dd90d25b361fbf6}
+}]\index{cdaMono@{cdaMono}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!cdaMono@{cdaMono}}\item[{\em 
+cdaMono\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baa21542716b78d850f6ffe02bbbac160ec}
+}]\index{pcm8Stereo@{pcm8Stereo}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!pcm8Stereo@{pcm8Stereo}}\item[{\em 
+pcm8Stereo\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baa6361df110128c2e5b774c9bf1496b102}
+}]\index{pcm8Mono@{pcm8Mono}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!pcm8Mono@{pcm8Mono}}\item[{\em 
+pcm8Mono\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baae163dd3eddff63ed6a184fb21461b330}
+}]\index{pcm16Stereo@{pcm16Stereo}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!pcm16Stereo@{pcm16Stereo}}\item[{\em 
+pcm16Stereo\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baaaecacf9d126404dee63f19df016ed8a2}
+}]\index{pcm16Mono@{pcm16Mono}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!pcm16Mono@{pcm16Mono}}\item[{\em 
+pcm16Mono\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baac8d2724c58b6015260e1eeafe4045baa}
+}]\index{pcm32Stereo@{pcm32Stereo}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!pcm32Stereo@{pcm32Stereo}}\item[{\em 
+pcm32Stereo\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baa689c16b1c20517c6e6b4d5a1877ef677}
+}]\index{pcm32Mono@{pcm32Mono}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!pcm32Mono@{pcm32Mono}}\item[{\em 
+pcm32Mono\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baa5d5349654c1f97010f3a1a722d49aa68}
+}]\index{speexVoice@{speexVoice}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!speexVoice@{speexVoice}}\item[{\em 
+speexVoice\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baa5c1b17694150aa7c8cb33fb2e3a78cb7}
+}]\index{speexAudio@{speexAudio}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!speexAudio@{speexAudio}}\item[{\em 
+speexAudio\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baa731f9bb579ecbb50b663970a2f504a49}
+}]\index{g729Audio@{g729Audio}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!g729Audio@{g729Audio}}\item[{\em 
+g729Audio\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baa18a9a174c23c51a90fd1043bb2c5b1b1}
+}]\index{ilbcAudio@{ilbcAudio}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!ilbcAudio@{ilbcAudio}}\item[{\em 
+ilbcAudio\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baaf9096458bb864e2c7003c1c61d18adc4}
+}]\index{speexUltra@{speexUltra}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!speexUltra@{speexUltra}}\item[{\em 
+speexUltra\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baa0c6336bb14ee0129e8e1f97b276cada0}
+}]\index{speexNarrow@{speexNarrow}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!speexNarrow@{speexNarrow}}\item[{\em 
+speexNarrow\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baa29abde2c5d8761d855a19f377d280bd3}
+}]\index{speexWide@{speexWide}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!speexWide@{speexWide}}\item[{\em 
+speexWide\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baafbdfc0c366fd02319cdc026e7ae9a67f}
+}]\index{g723\_\-4bit@{g723\_\-4bit}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!g723\_\-4bit@{g723\_\-4bit}}\item[{\em 
+g723\_\-4bit\label{classost_1_1_audio_ac000fdc6e71fc298896e5060e1e331baa80f1c4463d696f269587e60ccb62a137}
+}]\end{description}
+\end{Desc}
+
+\index{ost::Audio@{ost::Audio}!Error@{Error}}
+\index{Error@{Error}!ost::Audio@{ost::Audio}}
+\subsubsection[{Error}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ost::Audio::Error}}\label{classost_1_1_audio_a9b399c8c40f1c9c460490efeb3f86884}
+
+
+\doxyref{Audio}{p.}{classost_1_1_audio} error conditions. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{errSuccess@{errSuccess}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!errSuccess@{errSuccess}}\item[{\em 
+errSuccess\label{classost_1_1_audio_a9b399c8c40f1c9c460490efeb3f86884aaf27439b02b8237b6a56c822f180414d}
+}]\index{errReadLast@{errReadLast}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!errReadLast@{errReadLast}}\item[{\em 
+errReadLast\label{classost_1_1_audio_a9b399c8c40f1c9c460490efeb3f86884af0b6200842a9819e841ed6483b073da3}
+}]\index{errNotOpened@{errNotOpened}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!errNotOpened@{errNotOpened}}\item[{\em 
+errNotOpened\label{classost_1_1_audio_a9b399c8c40f1c9c460490efeb3f86884a234d5e01216dd2709e1a302178e2b769}
+}]\index{errEndOfFile@{errEndOfFile}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!errEndOfFile@{errEndOfFile}}\item[{\em 
+errEndOfFile\label{classost_1_1_audio_a9b399c8c40f1c9c460490efeb3f86884a3893553d65303314f79536b41ca3d15e}
+}]\index{errStartOfFile@{errStartOfFile}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!errStartOfFile@{errStartOfFile}}\item[{\em 
+errStartOfFile\label{classost_1_1_audio_a9b399c8c40f1c9c460490efeb3f86884a2d8e975e5200165280499b9604b98212}
+}]\index{errRateInvalid@{errRateInvalid}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!errRateInvalid@{errRateInvalid}}\item[{\em 
+errRateInvalid\label{classost_1_1_audio_a9b399c8c40f1c9c460490efeb3f86884a0a06eeec844e19cd445213bbdf20f0a1}
+}]\index{errEncodingInvalid@{errEncodingInvalid}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!errEncodingInvalid@{errEncodingInvalid}}\item[{\em 
+errEncodingInvalid\label{classost_1_1_audio_a9b399c8c40f1c9c460490efeb3f86884a090ca64e7dfece97811c37bd076937da}
+}]\index{errReadInterrupt@{errReadInterrupt}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!errReadInterrupt@{errReadInterrupt}}\item[{\em 
+errReadInterrupt\label{classost_1_1_audio_a9b399c8c40f1c9c460490efeb3f86884a90fe70ebd883cafe2f647c3eb7b0aa37}
+}]\index{errWriteInterrupt@{errWriteInterrupt}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!errWriteInterrupt@{errWriteInterrupt}}\item[{\em 
+errWriteInterrupt\label{classost_1_1_audio_a9b399c8c40f1c9c460490efeb3f86884a156cc653457d3f76935b7f8bc856d43f}
+}]\index{errReadFailure@{errReadFailure}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!errReadFailure@{errReadFailure}}\item[{\em 
+errReadFailure\label{classost_1_1_audio_a9b399c8c40f1c9c460490efeb3f86884a0b98c4e843ad5feca37c2fcd2a960d48}
+}]\index{errWriteFailure@{errWriteFailure}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!errWriteFailure@{errWriteFailure}}\item[{\em 
+errWriteFailure\label{classost_1_1_audio_a9b399c8c40f1c9c460490efeb3f86884a73662d71bc5ac2b5df735ef7a95a04b9}
+}]\index{errReadIncomplete@{errReadIncomplete}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!errReadIncomplete@{errReadIncomplete}}\item[{\em 
+errReadIncomplete\label{classost_1_1_audio_a9b399c8c40f1c9c460490efeb3f86884ac51b3f3746de6f218335d8f9bd6edc17}
+}]\index{errWriteIncomplete@{errWriteIncomplete}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!errWriteIncomplete@{errWriteIncomplete}}\item[{\em 
+errWriteIncomplete\label{classost_1_1_audio_a9b399c8c40f1c9c460490efeb3f86884a7cdee9c419aa5ffaa8436f34da734c8e}
+}]\index{errRequestInvalid@{errRequestInvalid}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!errRequestInvalid@{errRequestInvalid}}\item[{\em 
+errRequestInvalid\label{classost_1_1_audio_a9b399c8c40f1c9c460490efeb3f86884a25186756cddbe09668774d34910c6054}
+}]\index{errTOCFailed@{errTOCFailed}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!errTOCFailed@{errTOCFailed}}\item[{\em 
+errTOCFailed\label{classost_1_1_audio_a9b399c8c40f1c9c460490efeb3f86884ad06c70265582cee5b91e93d75b4f5001}
+}]\index{errStatFailed@{errStatFailed}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!errStatFailed@{errStatFailed}}\item[{\em 
+errStatFailed\label{classost_1_1_audio_a9b399c8c40f1c9c460490efeb3f86884ad1b9591fb7b7d30ddad63f6e706bbaae}
+}]\index{errInvalidTrack@{errInvalidTrack}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!errInvalidTrack@{errInvalidTrack}}\item[{\em 
+errInvalidTrack\label{classost_1_1_audio_a9b399c8c40f1c9c460490efeb3f86884a88933ebeecc847bdd457c73bfa340a5c}
+}]\index{errPlaybackFailed@{errPlaybackFailed}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!errPlaybackFailed@{errPlaybackFailed}}\item[{\em 
+errPlaybackFailed\label{classost_1_1_audio_a9b399c8c40f1c9c460490efeb3f86884ab8f14090a0ce6e7df5ab0733d1d052be}
+}]\index{errNotPlaying@{errNotPlaying}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!errNotPlaying@{errNotPlaying}}\item[{\em 
+errNotPlaying\label{classost_1_1_audio_a9b399c8c40f1c9c460490efeb3f86884a34f559f52d6302c22ac2378815888d3e}
+}]\index{errNoCodec@{errNoCodec}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!errNoCodec@{errNoCodec}}\item[{\em 
+errNoCodec\label{classost_1_1_audio_a9b399c8c40f1c9c460490efeb3f86884a1491cc7eab3e1e461eb497552a5cadbf}
+}]\end{description}
+\end{Desc}
+
+\index{ost::Audio@{ost::Audio}!Format@{Format}}
+\index{Format@{Format}!ost::Audio@{ost::Audio}}
+\subsubsection[{Format}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ost::Audio::Format}}\label{classost_1_1_audio_a1b1f99ba120876f87870b8f7f007e924}
+
+
+\doxyref{Audio}{p.}{classost_1_1_audio} container file format. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{raw@{raw}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!raw@{raw}}\item[{\em 
+raw\label{classost_1_1_audio_a1b1f99ba120876f87870b8f7f007e924ae71df2f88ae93b3040e400fc5beb6c1f}
+}]\index{snd@{snd}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!snd@{snd}}\item[{\em 
+snd\label{classost_1_1_audio_a1b1f99ba120876f87870b8f7f007e924a034a7bf5ce1cdb7990bff5260293241c}
+}]\index{riff@{riff}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!riff@{riff}}\item[{\em 
+riff\label{classost_1_1_audio_a1b1f99ba120876f87870b8f7f007e924aa8667be9bacfd6ed992b93191d88e17a}
+}]\index{mpeg@{mpeg}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!mpeg@{mpeg}}\item[{\em 
+mpeg\label{classost_1_1_audio_a1b1f99ba120876f87870b8f7f007e924a8a308f2000da135db008c71462ec16d5}
+}]\index{wave@{wave}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!wave@{wave}}\item[{\em 
+wave\label{classost_1_1_audio_a1b1f99ba120876f87870b8f7f007e924a932ca85af7639cd6db3f55534b1063eb}
+}]\end{description}
+\end{Desc}
+
+\index{ost::Audio@{ost::Audio}!Mode@{Mode}}
+\index{Mode@{Mode}!ost::Audio@{ost::Audio}}
+\subsubsection[{Mode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ost::Audio::Mode}}\label{classost_1_1_audio_aaa0dde6cbf61934fcb527661a491ed5c}
+
+
+File processing mode, whether to skip missing files, etc. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{modeRead@{modeRead}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!modeRead@{modeRead}}\item[{\em 
+modeRead\label{classost_1_1_audio_aaa0dde6cbf61934fcb527661a491ed5caecb1664beec2b86c5d87d86f64d0a84d}
+}]\index{modeReadAny@{modeReadAny}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!modeReadAny@{modeReadAny}}\item[{\em 
+modeReadAny\label{classost_1_1_audio_aaa0dde6cbf61934fcb527661a491ed5ca375f4b87b508327185bd6f19025b1424}
+}]\index{modeReadOne@{modeReadOne}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!modeReadOne@{modeReadOne}}\item[{\em 
+modeReadOne\label{classost_1_1_audio_aaa0dde6cbf61934fcb527661a491ed5ca58966349b002a4412997e2f141976273}
+}]\index{modeWrite@{modeWrite}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!modeWrite@{modeWrite}}\item[{\em 
+modeWrite\label{classost_1_1_audio_aaa0dde6cbf61934fcb527661a491ed5ca6f74b25c50c34c027a0720dd7dc32386}
+}]\index{modeCache@{modeCache}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!modeCache@{modeCache}}\item[{\em 
+modeCache\label{classost_1_1_audio_aaa0dde6cbf61934fcb527661a491ed5caf41875f19de18f05fc1c420a8d21f7c6}
+}]\index{modeInfo@{modeInfo}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!modeInfo@{modeInfo}}\item[{\em 
+modeInfo\label{classost_1_1_audio_aaa0dde6cbf61934fcb527661a491ed5caed372135c7f2d5e51e80d60f9d15a368}
+}]\index{modeFeed@{modeFeed}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!modeFeed@{modeFeed}}\item[{\em 
+modeFeed\label{classost_1_1_audio_aaa0dde6cbf61934fcb527661a491ed5caa955eac8a565410a7552fd7938cf2583}
+}]\index{modeAppend@{modeAppend}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!modeAppend@{modeAppend}}\item[{\em 
+modeAppend\label{classost_1_1_audio_aaa0dde6cbf61934fcb527661a491ed5caa320fddf63b1c9600aef25b47870e8c6}
+}]\index{modeCreate@{modeCreate}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!modeCreate@{modeCreate}}\item[{\em 
+modeCreate\label{classost_1_1_audio_aaa0dde6cbf61934fcb527661a491ed5ca47ed2d6bafa7f3495c8515625f96fe29}
+}]\end{description}
+\end{Desc}
+
+\index{ost::Audio@{ost::Audio}!Rate@{Rate}}
+\index{Rate@{Rate}!ost::Audio@{ost::Audio}}
+\subsubsection[{Rate}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ost::Audio::Rate}}\label{classost_1_1_audio_a38b5dfd1b29f5fd1acff3273582d18ed}
+
+
+\doxyref{Audio}{p.}{classost_1_1_audio} encoding rate, samples per second. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{rateUnknown@{rateUnknown}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!rateUnknown@{rateUnknown}}\item[{\em 
+rateUnknown\label{classost_1_1_audio_a38b5dfd1b29f5fd1acff3273582d18eda8a10475fcbfd70f2d8c496f0283626a7}
+}]\index{rate6khz@{rate6khz}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!rate6khz@{rate6khz}}\item[{\em 
+rate6khz\label{classost_1_1_audio_a38b5dfd1b29f5fd1acff3273582d18eda85dee3b5f2de3a586ad5cd91205ae167}
+}]\index{rate8khz@{rate8khz}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!rate8khz@{rate8khz}}\item[{\em 
+rate8khz\label{classost_1_1_audio_a38b5dfd1b29f5fd1acff3273582d18edab4450628efd918f9c8f11e5362b53deb}
+}]\index{rate16khz@{rate16khz}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!rate16khz@{rate16khz}}\item[{\em 
+rate16khz\label{classost_1_1_audio_a38b5dfd1b29f5fd1acff3273582d18edabbd0ac85608ddbc3306597c0fb19f4ac}
+}]\index{rate32khz@{rate32khz}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!rate32khz@{rate32khz}}\item[{\em 
+rate32khz\label{classost_1_1_audio_a38b5dfd1b29f5fd1acff3273582d18edabd8fe3ab3fa2524304c4d8bfc78e93be}
+}]\index{rate44khz@{rate44khz}!ost::Audio@{ost::Audio}}\index{ost::Audio@{ost::Audio}!rate44khz@{rate44khz}}\item[{\em 
+rate44khz\label{classost_1_1_audio_a38b5dfd1b29f5fd1acff3273582d18eda12152c96c294e1b46a86763a810e3cc7}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Member Function Documentation}
+\index{ost::Audio@{ost::Audio}!fill@{fill}}
+\index{fill@{fill}!ost::Audio@{ost::Audio}}
+\subsubsection[{fill}]{\setlength{\rightskip}{0pt plus 5cm}static void ost::Audio::fill (unsigned char $\ast$ {\em address}, \/  int {\em number}, \/  {\bf Encoding} {\em encoding})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a2a1e1767496c07e32827293e201996e4}
+
+
+Fill an audio buffer with \char`\"{}empty\char`\"{} (silent) audio data, based on the audio encoding format. 
+\begin{DoxyParams}{Parameters}
+\item[{\em address}]of data to fill. \item[{\em number}]of samples to fill. \item[{\em encoding}]format of data. \end{DoxyParams}
+\index{ost::Audio@{ost::Audio}!getCodecPath@{getCodecPath}}
+\index{getCodecPath@{getCodecPath}!ost::Audio@{ost::Audio}}
+\subsubsection[{getCodecPath}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ ost::Audio::getCodecPath (void)\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a36143260e0b57148892aea0975f45f25}
+
+
+Get pathname to where loadable codec modules are stored. \begin{DoxyReturn}{Returns}
+file path to loadable codecs. 
+\end{DoxyReturn}
+\index{ost::Audio@{ost::Audio}!getCount@{getCount}}
+\index{getCount@{getCount}!ost::Audio@{ost::Audio}}
+\subsubsection[{getCount}]{\setlength{\rightskip}{0pt plus 5cm}static int ost::Audio::getCount ({\bf Encoding} {\em encoding})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a4e1b8087385faebfae5ad3ca6dddf1ac}
+
+
+Returns the number of samples in all channels for a frame in the given encoding. For example, pcm32Stereo has a frame size of 8 bytes: Note that different codecs have different definitions of a frame -\/ for example, compressed encodings have a rather large frame size relative to the sample size due to the way bytes are fed to the decompression engine.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em encoding}]The encoding to calculate the frame sample count for. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+samples The number of samples in a frame of the given encoding. 
+\end{DoxyReturn}
+\index{ost::Audio@{ost::Audio}!getDevice@{getDevice}}
+\index{getDevice@{getDevice}!ost::Audio@{ost::Audio}}
+\subsubsection[{getDevice}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf AudioDevice}$\ast$ ost::Audio::getDevice (unsigned {\em device} = {\ttfamily 0}, \/  {\bf DeviceMode} {\em mode} = {\ttfamily PLAY})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_afbbb4878c27901385cc0f27264d565fa}
+
+
+Get a audio device object that can be used to play or record audio. This is normally a local soundcard, though an abstract base class is returned, so the underlying device may be different.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em device}]index or 0 for default audio device. \item[{\em mode}]of device; play, record, or full duplex. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to abstract audio device object interface class. 
+\end{DoxyReturn}
+\index{ost::Audio@{ost::Audio}!getEncoding@{getEncoding}}
+\index{getEncoding@{getEncoding}!ost::Audio@{ost::Audio}}
+\subsubsection[{getEncoding}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Encoding} ost::Audio::getEncoding (const char $\ast$ {\em name})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_ab800b7125f2a0bcfc73459a2fe78a1e8}
+
+
+Get the audio encoding format that is specified by a short ascii name. This will either accept names like those returned from \doxyref{getName()}{p.}{classost_1_1_audio_a01363a0e26b84f4df7a5fce514fbbb30}, or .xxx file extensions, and return the audio encoding type associated with the name or extension.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]of encoding or file extension. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+audio encoding format. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxyref{getName}{p.}{classost_1_1_audio_a01363a0e26b84f4df7a5fce514fbbb30} 
+\end{DoxySeeAlso}
+\index{ost::Audio@{ost::Audio}!getExtension@{getExtension}}
+\index{getExtension@{getExtension}!ost::Audio@{ost::Audio}}
+\subsubsection[{getExtension}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ ost::Audio::getExtension ({\bf Encoding} {\em encoding})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_aadd5e4375762873bc26f0c564a557bab}
+
+
+Get the preferred file extension name to use for a given audio encoding type. 
+\begin{DoxyParams}{Parameters}
+\item[{\em encoding}]format. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ascii file extension to use. 
+\end{DoxyReturn}
+\index{ost::Audio@{ost::Audio}!getFrame@{getFrame}}
+\index{getFrame@{getFrame}!ost::Audio@{ost::Audio}}
+\subsubsection[{getFrame}]{\setlength{\rightskip}{0pt plus 5cm}static int ost::Audio::getFrame ({\bf Encoding} {\em encoding}, \/  int {\em samples} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a4c2fb14b523be5acfef85342dc218486}
+
+
+Returns the number of bytes in a sample frame for the given encoding type, rounded up to the nearest integer. A frame is defined as the minimum number of bytes necessary to create a point or points in the output waveform for all output channels. For example, 16-\/bit mono PCM has a frame size of two (because those two bytes constitute a point in the output waveform). GSM has it's own definition of a frame which involves decompressing a sequence of bytes to determine the final points on the output waveform. The minimum number of bytes you can feed to the decompression engine is 32.5 (260 bits), so this function will return 33 (because we round up) given an encoding type of GSM. Other compressed encodings will return similar results. Be prepared to deal with nonintuitive return values for rare encodings.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em encoding}]The encoding type to get the frame size for. \item[{\em samples}]Reserved. Use zero.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes in a frame for the given encoding. 
+\end{DoxyReturn}
+\index{ost::Audio@{ost::Audio}!getFraming@{getFraming}}
+\index{getFraming@{getFraming}!ost::Audio@{ost::Audio}}
+\subsubsection[{getFraming}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf timeout\_\-t} ost::Audio::getFraming ({\bf Info} \& {\em info}, \/  {\bf timeout\_\-t} {\em timeout} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a5bdc14828c3bced834c4515fa979d221}
+
+
+Return frame time for an audio source description. \begin{DoxyReturn}{Returns}
+frame time to use in milliseconds. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]descriptor of frame encoding to get timing segment for. \item[{\em timeout}]of frame time segment to request. \end{DoxyParams}
+\index{ost::Audio@{ost::Audio}!getFraming@{getFraming}}
+\index{getFraming@{getFraming}!ost::Audio@{ost::Audio}}
+\subsubsection[{getFraming}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf timeout\_\-t} ost::Audio::getFraming ({\bf Encoding} {\em encoding}, \/  {\bf timeout\_\-t} {\em timeout} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a7a39ae9e35b5b106f8b09e7fd2d7b1dd}
+
+
+Return frame timing for an audio encoding format. \begin{DoxyReturn}{Returns}
+frame time to use in milliseconds. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em encoding}]of frame to get timing segment for. \item[{\em timeout}]of frame time segment to request. \end{DoxyParams}
+\index{ost::Audio@{ost::Audio}!getImpulse@{getImpulse}}
+\index{getImpulse@{getImpulse}!ost::Audio@{ost::Audio}}
+\subsubsection[{getImpulse}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Level} ost::Audio::getImpulse ({\bf Info} \& {\em info}, \/  void $\ast$ {\em buffer}, \/  unsigned {\em number} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a6a8d9b0c07c98b9c117bc56f4ed6f5f7}
+
+
+Get the energey impulse level of a frame of audio data. \begin{DoxyReturn}{Returns}
+impulse energy level of audio data. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]encoding source description object. \item[{\em buffer}]of audio data to examine. \item[{\em number}]of audio samples to examine. \end{DoxyParams}
+\index{ost::Audio@{ost::Audio}!getImpulse@{getImpulse}}
+\index{getImpulse@{getImpulse}!ost::Audio@{ost::Audio}}
+\subsubsection[{getImpulse}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Level} ost::Audio::getImpulse ({\bf Encoding} {\em encoding}, \/  void $\ast$ {\em buffer}, \/  unsigned {\em number})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a2870bc92d525fb047589941f25e79384}
+
+
+Get the energey impulse level of a frame of audio data. \begin{DoxyReturn}{Returns}
+impulse energy level of audio data. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em encoding}]format of data to examine. \item[{\em buffer}]of audio data to examine. \item[{\em number}]of audio samples to examine. \end{DoxyParams}
+\index{ost::Audio@{ost::Audio}!getMIME@{getMIME}}
+\index{getMIME@{getMIME}!ost::Audio@{ost::Audio}}
+\subsubsection[{getMIME}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ ost::Audio::getMIME ({\bf Info} \& {\em info})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_af7b3c1d85ace6a44b16fef152987da81}
+
+
+Get the mime descriptive type for a given \doxyref{Audio}{p.}{classost_1_1_audio} encoding description, usually retrieved from a newly opened audio file. 
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]source description object \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+text of mime type to use for this audio source. 
+\end{DoxyReturn}
+\index{ost::Audio@{ost::Audio}!getMono@{getMono}}
+\index{getMono@{getMono}!ost::Audio@{ost::Audio}}
+\subsubsection[{getMono}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Encoding} ost::Audio::getMono ({\bf Encoding} {\em encoding})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a55c4d5c8390dead23b4e6b35a0766be0}
+
+
+Get the mono encoding format associated with the given format. 
+\begin{DoxyParams}{Parameters}
+\item[{\em encoding}]format. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+associated mono audio encoding format. 
+\end{DoxyReturn}
+\index{ost::Audio@{ost::Audio}!getName@{getName}}
+\index{getName@{getName}!ost::Audio@{ost::Audio}}
+\subsubsection[{getName}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ ost::Audio::getName ({\bf Encoding} {\em encoding})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a01363a0e26b84f4df7a5fce514fbbb30}
+
+
+Get the short ascii description used for the given audio encoding type. 
+\begin{DoxyParams}{Parameters}
+\item[{\em encoding}]format. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ascii name of encoding format. 
+\end{DoxyReturn}
+\index{ost::Audio@{ost::Audio}!getPeak@{getPeak}}
+\index{getPeak@{getPeak}!ost::Audio@{ost::Audio}}
+\subsubsection[{getPeak}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Level} ost::Audio::getPeak ({\bf Info} \& {\em info}, \/  void $\ast$ {\em buffer}, \/  unsigned {\em number} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a07303de431fc4e5fd78776f86948f514}
+
+
+Get the peak (highest energy) level found in a frame of audio data. \begin{DoxyReturn}{Returns}
+peak energy level found in data. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]description object of audio data. \item[{\em buffer}]of audio data. \item[{\em number}]of samples to examine. \end{DoxyParams}
+\index{ost::Audio@{ost::Audio}!getPeak@{getPeak}}
+\index{getPeak@{getPeak}!ost::Audio@{ost::Audio}}
+\subsubsection[{getPeak}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Level} ost::Audio::getPeak ({\bf Encoding} {\em encoding}, \/  void $\ast$ {\em buffer}, \/  unsigned {\em number})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a176923b091b10a7df193ed7ade801ca5}
+
+
+Get the peak (highest energy) level found in a frame of audio data. \begin{DoxyReturn}{Returns}
+peak energy level found in data. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em encoding}]format of data. \item[{\em buffer}]of audio data. \item[{\em number}]of samples to examine. \end{DoxyParams}
+\index{ost::Audio@{ost::Audio}!getRate@{getRate}}
+\index{getRate@{getRate}!ost::Audio@{ost::Audio}}
+\subsubsection[{getRate}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Rate} ost::Audio::getRate ({\bf Encoding} {\em e}, \/  {\bf Rate} {\em request})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a6aa0d4e34c7271725165b3ed4bac004c}
+
+
+Return optional rate setting effect. Many codecs are fixed rate.
+
+\begin{DoxyReturn}{Returns}
+result rate for audio date. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em encoding}]format. \item[{\em requested}]rate. \end{DoxyParams}
+\index{ost::Audio@{ost::Audio}!getRate@{getRate}}
+\index{getRate@{getRate}!ost::Audio@{ost::Audio}}
+\subsubsection[{getRate}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Rate} ost::Audio::getRate ({\bf Encoding} {\em encoding})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a0d4fe5d02585c327ba712d9361a1f9ac}
+
+
+Return default sample rate associated with the specified audio encoding format. \begin{DoxyReturn}{Returns}
+sample rate for audio data. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em encoding}]format. \end{DoxyParams}
+\index{ost::Audio@{ost::Audio}!getStereo@{getStereo}}
+\index{getStereo@{getStereo}!ost::Audio@{ost::Audio}}
+\subsubsection[{getStereo}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Encoding} ost::Audio::getStereo ({\bf Encoding} {\em encoding})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a5c4cbe617d6504f286ced3fa9973c5f4}
+
+
+Get the stereo encoding format associated with the given format. 
+\begin{DoxyParams}{Parameters}
+\item[{\em encoding}]format being tested for stereo. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+associated stereo audio encoding format. 
+\end{DoxyReturn}
+\index{ost::Audio@{ost::Audio}!hasDevice@{hasDevice}}
+\index{hasDevice@{hasDevice}!ost::Audio@{ost::Audio}}
+\subsubsection[{hasDevice}]{\setlength{\rightskip}{0pt plus 5cm}static bool ost::Audio::hasDevice (unsigned {\em device} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a7ac3ba7ec4a27f87a59e81b28509380d}
+
+
+Test for the presense of a specified (indexed) audio device. This is normally used to test for local soundcard access.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em device}]index or 0 for default audio device. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if device exists. 
+\end{DoxyReturn}
+\index{ost::Audio@{ost::Audio}!isBuffered@{isBuffered}}
+\index{isBuffered@{isBuffered}!ost::Audio@{ost::Audio}}
+\subsubsection[{isBuffered}]{\setlength{\rightskip}{0pt plus 5cm}static bool ost::Audio::isBuffered ({\bf Encoding} {\em encoding})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_aaf1157fb77bd118f4a3456d99c7adf84}
+
+
+Test if the audio encoding format must be packetized (that is, has irregular sized frames) and must be processed only through buffered codecs. \begin{DoxyReturn}{Returns}
+true if packetized audio. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em encoding}]format. \end{DoxyParams}
+\index{ost::Audio@{ost::Audio}!isEndian@{isEndian}}
+\index{isEndian@{isEndian}!ost::Audio@{ost::Audio}}
+\subsubsection[{isEndian}]{\setlength{\rightskip}{0pt plus 5cm}static bool ost::Audio::isEndian ({\bf Info} \& {\em info})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_ae3cd23992f27a24380d866e2815b037c}
+
+
+Test if the endian byte order of the audio source description is different from the machine's native byte order. \begin{DoxyReturn}{Returns}
+true if endian format is different. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]source description object. \end{DoxyParams}
+\index{ost::Audio@{ost::Audio}!isEndian@{isEndian}}
+\index{isEndian@{isEndian}!ost::Audio@{ost::Audio}}
+\subsubsection[{isEndian}]{\setlength{\rightskip}{0pt plus 5cm}static bool ost::Audio::isEndian ({\bf Encoding} {\em encoding})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a92329b4cec1f96b35077fe4e59df59e0}
+
+
+Test if the endian byte order of the encoding format is different from the machine's native byte order. \begin{DoxyReturn}{Returns}
+true if endian format is different. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em encoding}]format. \end{DoxyParams}
+\index{ost::Audio@{ost::Audio}!isLinear@{isLinear}}
+\index{isLinear@{isLinear}!ost::Audio@{ost::Audio}}
+\subsubsection[{isLinear}]{\setlength{\rightskip}{0pt plus 5cm}static bool ost::Audio::isLinear ({\bf Encoding} {\em encoding})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a8ae0c37f1cc3f9f89f7d803ccbaf3ae7}
+
+
+Test if the audio encoding format is a linear one. \begin{DoxyReturn}{Returns}
+true if encoding format is linear audio data. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em encoding}]format. \end{DoxyParams}
+\index{ost::Audio@{ost::Audio}!isMono@{isMono}}
+\index{isMono@{isMono}!ost::Audio@{ost::Audio}}
+\subsubsection[{isMono}]{\setlength{\rightskip}{0pt plus 5cm}static bool ost::Audio::isMono ({\bf Encoding} {\em encoding})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a98257391028757cf94170b6a592b2e29}
+
+
+Test if the audio encoding format is a mono format. \begin{DoxyReturn}{Returns}
+true if encoding format is mono audio data. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em encoding}]format. \end{DoxyParams}
+\index{ost::Audio@{ost::Audio}!isStereo@{isStereo}}
+\index{isStereo@{isStereo}!ost::Audio@{ost::Audio}}
+\subsubsection[{isStereo}]{\setlength{\rightskip}{0pt plus 5cm}static bool ost::Audio::isStereo ({\bf Encoding} {\em encoding})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a975ac3c81701de7f404a319ef77e0f85}
+
+
+Test if the audio encoding format is a stereo format. \begin{DoxyReturn}{Returns}
+true if encoding format is stereo audio data. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em encoding}]format. \end{DoxyParams}
+\index{ost::Audio@{ost::Audio}!loadPlugin@{loadPlugin}}
+\index{loadPlugin@{loadPlugin}!ost::Audio@{ost::Audio}}
+\subsubsection[{loadPlugin}]{\setlength{\rightskip}{0pt plus 5cm}static bool ost::Audio::loadPlugin (const char $\ast$ {\em path})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a6e5a9c870f6573c94cead5c86cebd5f6}
+
+
+Load a dso plugin (codec plugin), used internally. ..
+
+\begin{DoxyReturn}{Returns}
+true if loaded. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em path}]to codec. \end{DoxyParams}
+\index{ost::Audio@{ost::Audio}!maxFramesize@{maxFramesize}}
+\index{maxFramesize@{maxFramesize}!ost::Audio@{ost::Audio}}
+\subsubsection[{maxFramesize}]{\setlength{\rightskip}{0pt plus 5cm}static size\_\-t ost::Audio::maxFramesize ({\bf Info} \& {\em info})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a7bee06be25a955b2833f34c7f4c57fc9}
+
+
+Maximum framesize for a given coding that may be needed to store a result. 
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]source description object. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+maximum possible frame size to allocate for encoded data. 
+\end{DoxyReturn}
+\index{ost::Audio@{ost::Audio}!swapEncoded@{swapEncoded}}
+\index{swapEncoded@{swapEncoded}!ost::Audio@{ost::Audio}}
+\subsubsection[{swapEncoded}]{\setlength{\rightskip}{0pt plus 5cm}static void ost::Audio::swapEncoded ({\bf Info} \& {\em info}, \/  {\bf Encoded} {\em data}, \/  size\_\-t {\em bytes})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_ad06ec3abaa4b887081c4d46f691fdd23}
+
+
+Optionally swap endian of encoded audio data based on the audio encoding type, and relationship to native byte order. 
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]source description of object. \item[{\em buffer}]of audio data. \item[{\em number}]of bytes of audio data. \end{DoxyParams}
+\index{ost::Audio@{ost::Audio}!swapEndian@{swapEndian}}
+\index{swapEndian@{swapEndian}!ost::Audio@{ost::Audio}}
+\subsubsection[{swapEndian}]{\setlength{\rightskip}{0pt plus 5cm}static bool ost::Audio::swapEndian ({\bf Info} \& {\em info}, \/  void $\ast$ {\em buffer}, \/  unsigned {\em number})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a4bae79bc00dd60adeddb48c1ade7b83f}
+
+
+Optionally swap endian of audio data if the audio source description byte order is different from the machine's native endian byte order. \begin{DoxyReturn}{Returns}
+true if endian format was different. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]source description object of data. \item[{\em buffer}]of audio data. \item[{\em number}]of audio samples. \end{DoxyParams}
+\index{ost::Audio@{ost::Audio}!swapEndian@{swapEndian}}
+\index{swapEndian@{swapEndian}!ost::Audio@{ost::Audio}}
+\subsubsection[{swapEndian}]{\setlength{\rightskip}{0pt plus 5cm}static bool ost::Audio::swapEndian ({\bf Encoding} {\em encoding}, \/  void $\ast$ {\em buffer}, \/  unsigned {\em number})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_adbe8ba272ece9657c9804726e1a1f341}
+
+
+Optionally swap endian of audio data if the encoding format endian byte order is different from the machine's native endian. \begin{DoxyReturn}{Returns}
+true if endian format was different. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em encoding}]format of data. \item[{\em buffer}]of audio data. \item[{\em number}]of audio samples. \end{DoxyParams}
+\index{ost::Audio@{ost::Audio}!toBytes@{toBytes}}
+\index{toBytes@{toBytes}!ost::Audio@{ost::Audio}}
+\subsubsection[{toBytes}]{\setlength{\rightskip}{0pt plus 5cm}static size\_\-t ost::Audio::toBytes ({\bf Encoding} {\em encoding}, \/  unsigned long {\em number})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a56a2c6df89910071cf0174c8654a463b}
+
+
+Compute the number of bytes a given number of samples in a given audio encoding will occupy. \begin{DoxyReturn}{Returns}
+number of bytes samples will occupy. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em encoding}]format. \item[{\em number}]of samples. \end{DoxyParams}
+\index{ost::Audio@{ost::Audio}!toBytes@{toBytes}}
+\index{toBytes@{toBytes}!ost::Audio@{ost::Audio}}
+\subsubsection[{toBytes}]{\setlength{\rightskip}{0pt plus 5cm}static size\_\-t ost::Audio::toBytes ({\bf Info} \& {\em info}, \/  unsigned long {\em number})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_ace0ee184d9c8f9331f649fe510aab8bb}
+
+
+Compute the number of bytes a given number of samples in a given audio encoding will occupy. \begin{DoxyReturn}{Returns}
+number of bytes samples will occupy. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]encoding source description. \item[{\em number}]of samples. \end{DoxyParams}
+\index{ost::Audio@{ost::Audio}!todbm@{todbm}}
+\index{todbm@{todbm}!ost::Audio@{ost::Audio}}
+\subsubsection[{todbm}]{\setlength{\rightskip}{0pt plus 5cm}static float ost::Audio::todbm ({\bf Level} {\em power})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a3621624ca7a26b328a82fdf25e1f6a13}
+
+
+Convert integer power levels to dbm. 
+\begin{DoxyParams}{Parameters}
+\item[{\em power}]level. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+dbm power level. 
+\end{DoxyReturn}
+\index{ost::Audio@{ost::Audio}!tolevel@{tolevel}}
+\index{tolevel@{tolevel}!ost::Audio@{ost::Audio}}
+\subsubsection[{tolevel}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Level} ost::Audio::tolevel (float {\em dbm})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_ad42f5f824bcf39df34a46f04d46baee2}
+
+
+Convert dbm power level to integer value (0-\/32768). 
+\begin{DoxyParams}{Parameters}
+\item[{\em dbm}]power level \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+integer value. 
+\end{DoxyReturn}
+\index{ost::Audio@{ost::Audio}!toSamples@{toSamples}}
+\index{toSamples@{toSamples}!ost::Audio@{ost::Audio}}
+\subsubsection[{toSamples}]{\setlength{\rightskip}{0pt plus 5cm}static unsigned long ost::Audio::toSamples ({\bf Info} \& {\em info}, \/  size\_\-t {\em bytes})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_af2fbd756ff3a097a2bac0ca5a131827b}
+
+
+Compute byte counts of audio data into number of samples based on the audio source description used. \begin{DoxyReturn}{Returns}
+number of audio samples in specified data. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]encoding source description. \item[{\em bytes}]of data. \end{DoxyParams}
+\index{ost::Audio@{ost::Audio}!toSamples@{toSamples}}
+\index{toSamples@{toSamples}!ost::Audio@{ost::Audio}}
+\subsubsection[{toSamples}]{\setlength{\rightskip}{0pt plus 5cm}static unsigned long ost::Audio::toSamples ({\bf Encoding} {\em encoding}, \/  size\_\-t {\em bytes})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_abadf17c232d679f62218ab2cd8531706}
+
+
+Compute byte counts of audio data into number of samples based on the audio encoding format used. \begin{DoxyReturn}{Returns}
+number of audio samples in specified data. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em encoding}]format. \item[{\em bytes}]of data. \end{DoxyParams}
+\index{ost::Audio@{ost::Audio}!toTimeout@{toTimeout}}
+\index{toTimeout@{toTimeout}!ost::Audio@{ost::Audio}}
+\subsubsection[{toTimeout}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf timeout\_\-t} ost::Audio::toTimeout (const char $\ast$ {\em timestamp})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a195793e86aaa34cd68ee21fffe1ec531}
+
+
+Convert ascii timestamp representation to a timeout number. 
+\begin{DoxyParams}{Parameters}
+\item[{\em timestamp}]ascii data. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+timeout\_\-t duration from data. 
+\end{DoxyReturn}
+\index{ost::Audio@{ost::Audio}!toTimestamp@{toTimestamp}}
+\index{toTimestamp@{toTimestamp}!ost::Audio@{ost::Audio}}
+\subsubsection[{toTimestamp}]{\setlength{\rightskip}{0pt plus 5cm}static void ost::Audio::toTimestamp ({\bf timeout\_\-t} {\em duration}, \/  char $\ast$ {\em address}, \/  size\_\-t {\em size})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a5a5be50a71949a84e73f9af9497d5b79}
+
+
+Provide ascii timestamp representation of a timeout value. 
+\begin{DoxyParams}{Parameters}
+\item[{\em duration}]timeout value \item[{\em address}]for ascii data. \item[{\em size}]of ascii data. \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\index{ost::Audio@{ost::Audio}!ndata@{ndata}}
+\index{ndata@{ndata}!ost::Audio@{ost::Audio}}
+\subsubsection[{ndata}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned {\bf ost::Audio::ndata}\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_audio_a34d7ecf60969d63f18529c1e8be6b1a2}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf audio2.h}\end{DoxyCompactItemize}

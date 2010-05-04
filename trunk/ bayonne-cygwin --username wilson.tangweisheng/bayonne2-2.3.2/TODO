@@ -1,0 +1,77 @@
+general:
+
+* merge common code for audio threads
+
+* enter reorder state on exit of call type (handset) pickup
+
+* generic make your own tone?  more tone database stuff?
+
+* examples and admin guide
+
+* outbound call handling, dialing, etc, for most drivers
+
+* maybe more fifo commands
+
+* cleanup error processing and logging
+
+* stats & cdr
+
+* remaining language models for phrasebook (ru, es, bengali)
+
+libexec:
+
+* audio prompt, record, and tone request capability, more features
+
+* error logging
+
+* new perl, python, php modules
+
+soundcard:
+
+* gui to simulate phone
+
+sip:
+
+* memory leak, is it osip or ccrtp?
+
+voicetronix:
+
+* more testing
+
+dialogic:
+
+* audio, join, and testing
+
+* conferencing support
+
+capi:
+
+* audio, join, and testing
+
+aculab:
+
+* lots of work, define spans
+
+other drivers:
+
+* pika
+
+* iax
+
+* zaptel
+
+* modem
+
+platforms:
+
+* w32 projects for soundcard, globalcall, pika
+
+* document and merge bayonne headers, libs into cape installer??
+
+modules:
+
+* udpmon
+
+* snmpmon
+
+

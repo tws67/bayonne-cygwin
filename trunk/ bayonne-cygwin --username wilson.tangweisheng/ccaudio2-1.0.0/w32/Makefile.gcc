@@ -1,0 +1,63 @@
+# Copyright (C) 2002 Open Source Telecom Corporation.
+#
+# This file is free software; as a special exception the author gives
+# unlimited permission to copy and/or distribute it, with or without
+# modifications, as long as this notice is preserved.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+# A makefile to do a mingw32 cross compile build of dll's.
+
+VPATH = ../src
+OPATH = ../win32
+ARCH = i586-mingw32msvc-
+prefix = /usr/i586-mingw32msvc
+
+CXX = $(ARCH)c++
+AS = $(ARCH)as
+DLLTOOL = $(ARCH)dlltool
+DLLWRAP = $(ARCH)dllwrap
+WINDRES = $(ARCH)windres
+STRIP = $(ARCH)strip
+exeext = .exe
+dllext = .dll
+
+CPPFLAGS = -I. -I../src $(HAVE) -DHAVE_CONFIG_H -D_GNU_SOURCE
+CXXFLAGS = -g -O2 -mthreads
+LDFLAGS = -L$(prefix)/lib -lwinmm
+#LDEXEC = -L$(OPATH) -lccgnu2 $(LDFLAGS)
+
+DLL_NAME = ccaudio1.dll
+DLL_LIB = libccaudio1.a
+DLL_DEF = ccaudio.def
+
+all:	$(DLL_NAME)
+
+HDRS = ../src/audio.h
+
+OBJS = friends.o dtmf.o fileio.o stream.o codec.o buffer.o audiofile.o
+
+DLLWRAP_FLAGS = --export-all --output-def $(DLL_DEF) \
+        --implib $(DLL_LIB) --driver-name $(CXX)
+
+$(DLL_NAME) $(DLL_DEF) $(DLL_LIB): $(addprefix $(OPATH)/, $(OBJS)) libccaudio1.o
+	$(DLLWRAP) $(DLLWRAP_FLAGS) -o $(DLL_NAME) \
+	$(OBJS) libccaudio1.o $(LDFLAGS)
+
+libccaudio1.o:	ccaudio.rc
+	$(WINDRES) -o libccaudio1.o ccaudio.rc
+
+$(OPATH)/%.o: %.cpp
+	$(CXX) -c $(CPPFLAGS) $(CXXFLAGS) -o $(OPATH)/$(basename $@).o $<
+
+clean:
+	-rm -f $(OBJS) $(DLL_NAME) $(DLL_LIB) $(DLL_DEF)
+
+install:
+	cp -af $(HDRS) $(prefix)/include/cc++2
+	cp -af $(DLL_LIB) $(DLL_NAME) $(prefix)/dll
+	cp -af $(DLL_LIB) $(prefix)/lib/libccaudio1dll.a
+	$(STRIP) $(prefix)/dll/$(DLL_NAME) 
+	ar -rs $(prefix)/lib/$(DLL_LIB) $(CCGNU2_OBJS)

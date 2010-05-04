@@ -1,0 +1,113 @@
+.TH "ost::DSO" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::DSO \- 
+.PP
+The \fBDSO\fP dynamic loader class is used to load object files.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <file.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDSO\fP (const char *filename)"
+.br
+.RI "\fIConstruct and load a \fBDSO\fP object file. \fP"
+.ti -1c
+.RI "\fBDSO\fP (const char *filename, bool resolve)"
+.br
+.ti -1c
+.RI "const char * \fBgetError\fP (void)"
+.br
+.RI "\fIRetrieve error indicator associated with \fBDSO\fP failure. \fP"
+.ti -1c
+.RI "virtual \fB~DSO\fP ()"
+.br
+.RI "\fIDetach a \fBDSO\fP object from running memory. \fP"
+.ti -1c
+.RI "void * \fBoperator[]\fP (const char *sym)"
+.br
+.RI "\fILookup a symbol in the loaded file. \fP"
+.ti -1c
+.RI "bool \fBisValid\fP (void)"
+.br
+.RI "\fISee if \fBDSO\fP object is valid. \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBdynunload\fP (void)"
+.br
+.ti -1c
+.RI "static \fBDSO\fP * \fBgetObject\fP (const char *name)"
+.br
+.RI "\fIFind a specific \fBDSO\fP object by filename. \fP"
+.ti -1c
+.RI "static void \fBsetDebug\fP (void)"
+.br
+.RI "\fIInstall debug handler. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBDSO\fP dynamic loader class is used to load object files. 
+
+On elf based systems this is typically done with dlopen. A dummy stub class is generated for non-dl capable systems.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> Dynamic class file loader. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::DSO::DSO (const char * filename)\fC [inline]\fP"
+.PP
+Construct and load a \fBDSO\fP object file. \fBParameters:\fP
+.RS 4
+\fIfilename\fP pathname of object file to load. 
+.RE
+.PP
+
+.SS "ost::DSO::DSO (const char * filename, bool resolve)\fC [inline]\fP"
+.SS "virtual ost::DSO::~DSO ()\fC [virtual]\fP"
+.PP
+Detach a \fBDSO\fP object from running memory. 
+.SH "Member Function Documentation"
+.PP 
+.SS "static void ost::DSO::dynunload (void)\fC [static]\fP"
+.SS "const char* ost::DSO::getError (void)\fC [inline]\fP"
+.PP
+Retrieve error indicator associated with \fBDSO\fP failure. This is often used in catch handlers. 
+.SS "static \fBDSO\fP* ost::DSO::getObject (const char * name)\fC [static]\fP"
+.PP
+Find a specific \fBDSO\fP object by filename. \fBParameters:\fP
+.RS 4
+\fIname\fP of \fBDSO\fP object file (partial). 
+.RE
+.PP
+
+.SS "bool ost::DSO::isValid (void)"
+.PP
+See if \fBDSO\fP object is valid. \fBReturns:\fP
+.RS 4
+true if valid. 
+.RE
+.PP
+
+.SS "void* ost::DSO::operator[] (const char * sym)"
+.PP
+Lookup a symbol in the loaded file. 
+.SS "static void ost::DSO::setDebug (void)\fC [static]\fP"
+.PP
+Install debug handler. .. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

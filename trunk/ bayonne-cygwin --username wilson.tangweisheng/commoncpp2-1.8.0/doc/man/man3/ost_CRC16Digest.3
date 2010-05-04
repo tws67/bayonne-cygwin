@@ -1,0 +1,107 @@
+.TH "ost::CRC16Digest" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::CRC16Digest \- 
+.PP
+A crc16 collection/compution hash accumulator class.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <digest.h>\fP
+.PP
+Inherits \fBost::Digest\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCRC16Digest\fP ()"
+.br
+.ti -1c
+.RI "\fBCRC16Digest\fP (const \fBCRC16Digest\fP &crc)"
+.br
+.ti -1c
+.RI "virtual \fB~CRC16Digest\fP ()"
+.br
+.ti -1c
+.RI "void \fBinitDigest\fP (\fBuint16\fP crc)"
+.br
+.ti -1c
+.RI "void \fBinitDigest\fP (void)"
+.br
+.ti -1c
+.RI "unsigned \fBgetSize\fP (void)"
+.br
+.ti -1c
+.RI "\fBCRC16Digest\fP & \fBoperator=\fP (const \fBCRC16Digest\fP &right)"
+.br
+.ti -1c
+.RI "\fBoperator const uint16\fP () const "
+.br
+.ti -1c
+.RI "\fBuint16\fP \fBgetDigest\fP (void)"
+.br
+.ti -1c
+.RI "unsigned \fBgetDigest\fP (unsigned char *buffer)"
+.br
+.ti -1c
+.RI "void \fBputDigest\fP (const unsigned char *buffer, unsigned length)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBoverflow\fP (int c)"
+.br
+.ti -1c
+.RI "std::ostream & \fBstrDigest\fP (std::ostream &os)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A crc16 collection/compution hash accumulator class. 
+
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> crc16 computation hash. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::CRC16Digest::CRC16Digest ()"
+.SS "ost::CRC16Digest::CRC16Digest (const \fBCRC16Digest\fP & crc)"
+.SS "virtual ost::CRC16Digest::~CRC16Digest ()\fC [inline, virtual]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "unsigned ost::CRC16Digest::getDigest (unsigned char * buffer)\fC [virtual]\fP"
+.PP
+Implements \fBost::Digest\fP.
+.SS "\fBuint16\fP ost::CRC16Digest::getDigest (void)\fC [inline]\fP"
+.SS "unsigned ost::CRC16Digest::getSize (void)\fC [inline, virtual]\fP"
+.PP
+Implements \fBost::Digest\fP.
+.SS "void ost::CRC16Digest::initDigest (void)\fC [inline, virtual]\fP"
+.PP
+Implements \fBost::Digest\fP.
+.PP
+References initDigest().
+.PP
+Referenced by initDigest().
+.SS "void ost::CRC16Digest::initDigest (\fBuint16\fP crc)\fC [inline]\fP"
+.SS "ost::CRC16Digest::operator const \fBuint16\fP () const\fC [inline]\fP"
+.SS "\fBCRC16Digest\fP& ost::CRC16Digest::operator= (const \fBCRC16Digest\fP & right)"
+.SS "int ost::CRC16Digest::overflow (int c)\fC [protected]\fP"
+.SS "void ost::CRC16Digest::putDigest (const unsigned char * buffer, unsigned length)\fC [virtual]\fP"
+.PP
+Implements \fBost::Digest\fP.
+.SS "std::ostream& ost::CRC16Digest::strDigest (std::ostream & os)\fC [protected, virtual]\fP"
+.PP
+Implements \fBost::Digest\fP.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

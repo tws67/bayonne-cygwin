@@ -1,0 +1,61 @@
+.TH "object.h" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+object.h \- 
+.PP
+Some object manipulation classes for smart pointers, linked lists, etc.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cc++/missing.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBost::RefObject\fP"
+.br
+.RI "\fIA reference countable object. \fP"
+.ti -1c
+.RI "class \fBost::RefPointer\fP"
+.br
+.RI "\fI\fBPointer\fP to reference counted objects. \fP"
+.ti -1c
+.RI "class \fBost::LinkedSingle\fP"
+.br
+.RI "\fISelf managed single linked list object chain. \fP"
+.ti -1c
+.RI "class \fBost::LinkedDouble\fP"
+.br
+.RI "\fISelf managed double linked list object chain. \fP"
+.ti -1c
+.RI "class \fBost::MapTable\fP"
+.br
+.RI "\fIA map table allows for entities to be mapped (hash index) onto it. \fP"
+.ti -1c
+.RI "class \fBost::MapIndex\fP"
+.br
+.RI "\fIThe \fBMapIndex\fP allows linear access into a \fBMapTable\fP, that otherwise could have its elements being retrieved only by key. \fP"
+.ti -1c
+.RI "class \fBost::MapObject\fP"
+.br
+.RI "\fIThe \fBMapObject\fP is a base class which can be used to make a derived class operate on a \fBMapTable\fP. \fP"
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBost\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Some object manipulation classes for smart pointers, linked lists, etc. 
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

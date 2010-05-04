@@ -1,0 +1,191 @@
+\section{ost::AudioDevice Class Reference}
+\label{classost_1_1_audio_device}\index{ost::AudioDevice@{ost::AudioDevice}}
+
+
+{\ttfamily \#include $<$audio2.h$>$}Inheritance diagram for ost::AudioDevice::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classost_1_1_audio_device}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$AudioDevice} ()
+\item 
+virtual unsigned {\bf putSamples} ({\bf Linear} buffer, unsigned count)=0
+\begin{DoxyCompactList}\small\item\em Copy linear samples to an audio device through its virtual. \item\end{DoxyCompactList}\item 
+virtual unsigned {\bf getSamples} ({\bf Linear} buffer, unsigned count)=0
+\begin{DoxyCompactList}\small\item\em Copy linear samples from an audio device through its virtual. \item\end{DoxyCompactList}\item 
+virtual ssize\_\-t {\bf putBuffer} ({\bf Encoded} data, size\_\-t count)
+\begin{DoxyCompactList}\small\item\em Copy audio encoded in the currently selected encoding for the audio device. \item\end{DoxyCompactList}\item 
+virtual ssize\_\-t {\bf getBuffer} ({\bf Encoded} data, size\_\-t count)
+\begin{DoxyCompactList}\small\item\em Record audio encoded in the currently selected encoding for the audio device. \item\end{DoxyCompactList}\item 
+virtual bool {\bf setEncoded} ({\bf Info} \&{\bf info})
+\begin{DoxyCompactList}\small\item\em Use encoding source descriptor to select the audio encoding format the audio device should be using. \item\end{DoxyCompactList}\item 
+virtual bool {\bf setAudio} ({\bf Rate} rate=rate8khz, bool stereo=false, {\bf timeout\_\-t} framing=20)=0
+\begin{DoxyCompactList}\small\item\em Set properties for audio device. \item\end{DoxyCompactList}\item 
+virtual void {\bf sync} (void)
+\begin{DoxyCompactList}\small\item\em Synchronize timing for audio device to next audio frame. \item\end{DoxyCompactList}\item 
+virtual void {\bf flush} (void)=0
+\begin{DoxyCompactList}\small\item\em Flush any pending buffered samples in audio device. \item\end{DoxyCompactList}\item 
+unsigned {\bf bufMono} ({\bf Linear} buffer, unsigned count)
+\begin{DoxyCompactList}\small\item\em Process linear mono audio and automatically convert to the encoding format the audio device is currently using. \item\end{DoxyCompactList}\item 
+unsigned {\bf bufStereo} ({\bf Linear} buffer, unsigned count)
+\begin{DoxyCompactList}\small\item\em Process linear stereo audio and automatically convert to the encoding format the audio device is currently using. \item\end{DoxyCompactList}\item 
+{\bf Info} $\ast$ {\bf getInfo} (void)
+\begin{DoxyCompactList}\small\item\em Get audio device source descriptor in effect for the device. \item\end{DoxyCompactList}\item 
+bool {\bf isEnabled} (void)
+\begin{DoxyCompactList}\small\item\em Whether device is currently enabled. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf enabled}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::AudioDevice@{ost::AudioDevice}!$\sim$AudioDevice@{$\sim$AudioDevice}}
+\index{$\sim$AudioDevice@{$\sim$AudioDevice}!ost::AudioDevice@{ost::AudioDevice}}
+\subsubsection[{$\sim$AudioDevice}]{\setlength{\rightskip}{0pt plus 5cm}virtual ost::AudioDevice::$\sim$AudioDevice ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classost_1_1_audio_device_ae7c1477744fdb3821df5b09953bbe9ad}
+
+
+\subsection{Member Function Documentation}
+\index{ost::AudioDevice@{ost::AudioDevice}!bufMono@{bufMono}}
+\index{bufMono@{bufMono}!ost::AudioDevice@{ost::AudioDevice}}
+\subsubsection[{bufMono}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::AudioDevice::bufMono ({\bf Linear} {\em buffer}, \/  unsigned {\em count})}\label{classost_1_1_audio_device_a385560f5f8d4781b387346d30c4ce345}
+
+
+Process linear mono audio and automatically convert to the encoding format the audio device is currently using. If needed, automatically convert from mono to stereo.
+
+\begin{DoxyReturn}{Returns}
+number of samples played. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]to linear mono audio data to play. \item[{\em count}]of linear mono audio samples to play. \end{DoxyParams}
+\index{ost::AudioDevice@{ost::AudioDevice}!bufStereo@{bufStereo}}
+\index{bufStereo@{bufStereo}!ost::AudioDevice@{ost::AudioDevice}}
+\subsubsection[{bufStereo}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::AudioDevice::bufStereo ({\bf Linear} {\em buffer}, \/  unsigned {\em count})}\label{classost_1_1_audio_device_ae6374d257f5c269a205eec7e1f596f6f}
+
+
+Process linear stereo audio and automatically convert to the encoding format the audio device is currently using. If needed, automatically convert from stereo to mono.
+
+\begin{DoxyReturn}{Returns}
+number of samples played. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]to linear stereo audio data to play. \item[{\em count}]of linear stereo audio samples to play. \end{DoxyParams}
+\index{ost::AudioDevice@{ost::AudioDevice}!flush@{flush}}
+\index{flush@{flush}!ost::AudioDevice@{ost::AudioDevice}}
+\subsubsection[{flush}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::AudioDevice::flush (void)\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classost_1_1_audio_device_afaf42f23668d8eebc1fe367c7b33f9f4}
+
+
+Flush any pending buffered samples in audio device. \index{ost::AudioDevice@{ost::AudioDevice}!getBuffer@{getBuffer}}
+\index{getBuffer@{getBuffer}!ost::AudioDevice@{ost::AudioDevice}}
+\subsubsection[{getBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual ssize\_\-t ost::AudioDevice::getBuffer ({\bf Encoded} {\em data}, \/  size\_\-t {\em count})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_audio_device_a93d1081a88acc1cb9da1ab2e98a8c791}
+
+
+Record audio encoded in the currently selected encoding for the audio device. 
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]buffer for recording encoded audio. \item[{\em count}]of encoded bytes to record. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of encoded bytes recorded. 
+\end{DoxyReturn}
+
+
+Implements {\bf ost::AudioBase} \doxyref{}{p.}{classost_1_1_audio_base_ac2efc5edeab71de84764796d4353a057}.\index{ost::AudioDevice@{ost::AudioDevice}!getInfo@{getInfo}}
+\index{getInfo@{getInfo}!ost::AudioDevice@{ost::AudioDevice}}
+\subsubsection[{getInfo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Info}$\ast$ ost::AudioDevice::getInfo (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_audio_device_a6aecc79b2e3ac741af3cbba660ade7b9}
+
+
+Get audio device source descriptor in effect for the device. \begin{DoxyReturn}{Returns}
+audio device descriptor. 
+\end{DoxyReturn}
+\index{ost::AudioDevice@{ost::AudioDevice}!getSamples@{getSamples}}
+\index{getSamples@{getSamples}!ost::AudioDevice@{ost::AudioDevice}}
+\subsubsection[{getSamples}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned ost::AudioDevice::getSamples ({\bf Linear} {\em buffer}, \/  unsigned {\em count})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classost_1_1_audio_device_a9797ed3fdf2fb6488f513e944f96dcfa}
+
+
+Copy linear samples from an audio device through its virtual. 
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]for recording. \item[{\em count}]of audio samples to record. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of audio samples recorded. 
+\end{DoxyReturn}
+\index{ost::AudioDevice@{ost::AudioDevice}!isEnabled@{isEnabled}}
+\index{isEnabled@{isEnabled}!ost::AudioDevice@{ost::AudioDevice}}
+\subsubsection[{isEnabled}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::AudioDevice::isEnabled (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_audio_device_a2f991c8aef77c2fdf8690e08a192da64}
+
+
+Whether device is currently enabled. If invalid audio settings are selected, it will be disabled until supported values are supplied.
+
+\begin{DoxyReturn}{Returns}
+enable state. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxyref{setAudio}{p.}{classost_1_1_audio_device_a80c44530fa49b79c8480b0543aadd425} setInfo 
+\end{DoxySeeAlso}
+\index{ost::AudioDevice@{ost::AudioDevice}!putBuffer@{putBuffer}}
+\index{putBuffer@{putBuffer}!ost::AudioDevice@{ost::AudioDevice}}
+\subsubsection[{putBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual ssize\_\-t ost::AudioDevice::putBuffer ({\bf Encoded} {\em data}, \/  size\_\-t {\em count})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_audio_device_af385b8b82740059b92e115082247a613}
+
+
+Copy audio encoded in the currently selected encoding for the audio device. 
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]pointer to encoded data to play. \item[{\em count}]of encoded bytes to play. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of encoded bytes played. 
+\end{DoxyReturn}
+
+
+Implements {\bf ost::AudioBase} \doxyref{}{p.}{classost_1_1_audio_base_a4f8127866aad2198934215ea55e892a2}.\index{ost::AudioDevice@{ost::AudioDevice}!putSamples@{putSamples}}
+\index{putSamples@{putSamples}!ost::AudioDevice@{ost::AudioDevice}}
+\subsubsection[{putSamples}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned ost::AudioDevice::putSamples ({\bf Linear} {\em buffer}, \/  unsigned {\em count})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classost_1_1_audio_device_a71f1ac06b15596a907958d58724d200f}
+
+
+Copy linear samples to an audio device through its virtual. 
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]to linear audio data to play. \item[{\em count}]of audio samples to play. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of audio samples played. 
+\end{DoxyReturn}
+\index{ost::AudioDevice@{ost::AudioDevice}!setAudio@{setAudio}}
+\index{setAudio@{setAudio}!ost::AudioDevice@{ost::AudioDevice}}
+\subsubsection[{setAudio}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::AudioDevice::setAudio ({\bf Rate} {\em rate} = {\ttfamily rate8khz}, \/  bool {\em stereo} = {\ttfamily false}, \/  {\bf timeout\_\-t} {\em framing} = {\ttfamily 20})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classost_1_1_audio_device_a80c44530fa49b79c8480b0543aadd425}
+
+
+Set properties for audio device. 
+\begin{DoxyParams}{Parameters}
+\item[{\em rate}]of audio samples device should operate at. \item[{\em stereo}]flag. \item[{\em framing}]timer for default i/o framing for device. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if settings not supported by device. 
+\end{DoxyReturn}
+\index{ost::AudioDevice@{ost::AudioDevice}!setEncoded@{setEncoded}}
+\index{setEncoded@{setEncoded}!ost::AudioDevice@{ost::AudioDevice}}
+\subsubsection[{setEncoded}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::AudioDevice::setEncoded ({\bf Info} \& {\em info})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classost_1_1_audio_device_acf78ce4886758173a54ce91c0c1668d8}
+
+
+Use encoding source descriptor to select the audio encoding format the audio device should be using. \begin{DoxyReturn}{Returns}
+false if encoding format specified is unsupported by device 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]source description for device settings. \end{DoxyParams}
+\index{ost::AudioDevice@{ost::AudioDevice}!sync@{sync}}
+\index{sync@{sync}!ost::AudioDevice@{ost::AudioDevice}}
+\subsubsection[{sync}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::AudioDevice::sync (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classost_1_1_audio_device_a61c2bceba12270f2f573a3bd01d1892e}
+
+
+Synchronize timing for audio device to next audio frame. this is needed for audio devices which do not block i/o to assure one does not push too much data before the device can handle it. 
+
+\subsection{Member Data Documentation}
+\index{ost::AudioDevice@{ost::AudioDevice}!enabled@{enabled}}
+\index{enabled@{enabled}!ost::AudioDevice@{ost::AudioDevice}}
+\subsubsection[{enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::AudioDevice::enabled}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_device_ac99355626bd3b70a7b4551055279ad2b}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf audio2.h}\end{DoxyCompactItemize}

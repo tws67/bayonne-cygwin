@@ -1,0 +1,230 @@
+.TH "ost::XMLRPC" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::XMLRPC \- 
+.PP
+This class impliments a core \fBXMLRPC\fP service without the underlying transports.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <xml.h>\fP
+.PP
+Inherits \fBost::XMLStream\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBXMLRPC\fP (size_t bufferSize=512)"
+.br
+.RI "\fIConstruct \fBXMLRPC\fP workspace. \fP"
+.ti -1c
+.RI "virtual \fB~XMLRPC\fP ()"
+.br
+.RI "\fIDestroy \fBXMLRPC\fP object. \fP"
+.ti -1c
+.RI "void \fBbegArray\fP (void)"
+.br
+.RI "\fICreate an array. \fP"
+.ti -1c
+.RI "void \fBendArray\fP (void)"
+.br
+.RI "\fIend an array. \fP"
+.ti -1c
+.RI "void \fBinvoke\fP (const char *method)"
+.br
+.RI "\fICreate \fBXMLRPC\fP 'method' call in buffer. \fP"
+.ti -1c
+.RI "void \fBresponse\fP (bool fault)"
+.br
+.RI "\fICreate \fBXMLRPC\fP 'reply' to a method call. \fP"
+.ti -1c
+.RI "void \fBaddParam\fP (bool value)"
+.br
+.RI "\fIAdd bool param to \fBXMLRPC\fP request. \fP"
+.ti -1c
+.RI "void \fBaddMember\fP (const char *name, bool value)"
+.br
+.RI "\fIAdd bool member to a \fBXMLRPC\fP struct. \fP"
+.ti -1c
+.RI "void \fBaddParam\fP (long value)"
+.br
+.RI "\fIAdd an integer paramater to \fBXMLRPC\fP request. \fP"
+.ti -1c
+.RI "void \fBaddMember\fP (const char *name, long value)"
+.br
+.RI "\fIAdd an integer member to \fBXMLRPC\fP struct. \fP"
+.ti -1c
+.RI "void \fBaddParam\fP (const char *string)"
+.br
+.RI "\fIAdd a string paramater to \fBXMLRPC\fP request. \fP"
+.ti -1c
+.RI "void \fBaddMember\fP (const char *name, const char *value)"
+.br
+.RI "\fIAdd a string member to \fBXMLRPC\fP struct. \fP"
+.ti -1c
+.RI "void \fBendStruct\fP (void)"
+.br
+.RI "\fIClear a struct. \fP"
+.ti -1c
+.RI "bool \fBsend\fP (const char *resource)"
+.br
+.RI "\fIComplete buffer and send well formed \fBXMLRPC\fP request thru post. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual bool \fBpost\fP (const char *resource, const char *msg)=0"
+.br
+.RI "\fIUsed in a derived transport class to deliver the \fBXMLRPC\fP encoded request and return true if successful. \fP"
+.ti -1c
+.RI "void \fBbegStruct\fP (void)"
+.br
+.RI "\fIStart member struct. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class impliments a core \fBXMLRPC\fP service without the underlying transports. 
+
+It is meant to create and parse \fBXMLRPC\fP messages. To use for a fit purpose, one might combine it with \fBURLStream\fP, although this implimentation makes no requirement for http based transport.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> XML-RPC service building class 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::XMLRPC::XMLRPC (size_t bufferSize = \fC512\fP)"
+.PP
+Construct \fBXMLRPC\fP workspace. \fBParameters:\fP
+.RS 4
+\fIbufferSize\fP size of buffer when using old C++ strstreams. When the newer stringstream (<sstream>) is available, this parameter is silently ignored. 
+.RE
+.PP
+
+.SS "virtual ost::XMLRPC::~XMLRPC ()\fC [virtual]\fP"
+.PP
+Destroy \fBXMLRPC\fP object. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::XMLRPC::addMember (const char * name, const char * value)"
+.PP
+Add a string member to \fBXMLRPC\fP struct. \fBParameters:\fP
+.RS 4
+\fIname\fP of member. 
+.br
+\fIvalue\fP of member. 
+.RE
+.PP
+
+.SS "void ost::XMLRPC::addMember (const char * name, long value)"
+.PP
+Add an integer member to \fBXMLRPC\fP struct. \fBParameters:\fP
+.RS 4
+\fIname\fP of member. 
+.br
+\fIvalue\fP of member. 
+.RE
+.PP
+
+.SS "void ost::XMLRPC::addMember (const char * name, bool value)"
+.PP
+Add bool member to a \fBXMLRPC\fP struct. \fBParameters:\fP
+.RS 4
+\fIname\fP of member. 
+.br
+\fIvalue\fP of member. 
+.RE
+.PP
+
+.SS "void ost::XMLRPC::addParam (const char * string)"
+.PP
+Add a string paramater to \fBXMLRPC\fP request. \fBParameters:\fP
+.RS 4
+\fIstring\fP to add. 
+.RE
+.PP
+
+.SS "void ost::XMLRPC::addParam (long value)"
+.PP
+Add an integer paramater to \fBXMLRPC\fP request. \fBParameters:\fP
+.RS 4
+\fIvalue\fP to add. 
+.RE
+.PP
+
+.SS "void ost::XMLRPC::addParam (bool value)"
+.PP
+Add bool param to \fBXMLRPC\fP request. \fBParameters:\fP
+.RS 4
+\fIvalue\fP to add. 
+.RE
+.PP
+
+.SS "void ost::XMLRPC::begArray (void)"
+.PP
+Create an array. 
+.SS "void ost::XMLRPC::begStruct (void)\fC [protected]\fP"
+.PP
+Start member struct. 
+.SS "void ost::XMLRPC::endArray (void)"
+.PP
+end an array. 
+.SS "void ost::XMLRPC::endStruct (void)"
+.PP
+Clear a struct. 
+.SS "void ost::XMLRPC::invoke (const char * method)"
+.PP
+Create \fBXMLRPC\fP 'method' call in buffer. \fBParameters:\fP
+.RS 4
+\fImethod\fP name of method being called. 
+.RE
+.PP
+
+.SS "virtual bool ost::XMLRPC::post (const char * resource, const char * msg)\fC [protected, pure virtual]\fP"
+.PP
+Used in a derived transport class to deliver the \fBXMLRPC\fP encoded request and return true if successful. The Parse method can then be used to decode the reply.
+.PP
+\fBReturns:\fP
+.RS 4
+true if successful. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIresource\fP to send to (such as url). 
+.br
+\fImsg\fP well formed \fBXMLRPC\fP request message. 
+.RE
+.PP
+
+.SS "void ost::XMLRPC::response (bool fault)"
+.PP
+Create \fBXMLRPC\fP 'reply' to a method call. \fBParameters:\fP
+.RS 4
+\fIfault\fP set true for fault message. 
+.RE
+.PP
+
+.SS "bool ost::XMLRPC::send (const char * resource)"
+.PP
+Complete buffer and send well formed \fBXMLRPC\fP request thru post. \fBReturns:\fP
+.RS 4
+true if successful. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIresource\fP to send to. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

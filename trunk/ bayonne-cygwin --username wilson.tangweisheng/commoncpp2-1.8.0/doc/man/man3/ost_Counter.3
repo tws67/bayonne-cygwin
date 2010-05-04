@@ -1,0 +1,98 @@
+.TH "ost::Counter" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::Counter \- 
+.PP
+The counter template is used for generic objects which act as automatic counters.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <counter.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCounter\fP ()"
+.br
+.RI "\fIConstruct and initialize a counter to zero. \fP"
+.ti -1c
+.RI "\fBCounter\fP (const \fBCounter\fP &counter)"
+.br
+.RI "\fIConstruct a counter with an initial value set for another counter. \fP"
+.ti -1c
+.RI "\fBCounter\fP (T initial)"
+.br
+.RI "\fIConstruct a counter with an initial value of the specified data type. \fP"
+.ti -1c
+.RI "T & \fBoperator=\fP (T c)"
+.br
+.ti -1c
+.RI "\fBoperator T\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "T \fBcount\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename T> class ost::Counter< T >"
+The counter template is used for generic objects which act as automatic counters. 
+
+Each time the object is accessed, the underlying counted data type is incremented.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@gnutelephony.org> Automatic counter template class. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename T > \fBost::Counter\fP< T >::\fBCounter\fP ()\fC [inline]\fP"
+.PP
+Construct and initialize a counter to zero. 
+.PP
+References ost::Counter< T >::count.
+.SS "template<typename T > \fBost::Counter\fP< T >::\fBCounter\fP (const \fBCounter\fP< T > & counter)\fC [inline]\fP"
+.PP
+Construct a counter with an initial value set for another counter. \fBParameters:\fP
+.RS 4
+\fIcounter\fP to copy from. 
+.RE
+.PP
+
+.PP
+References ost::Counter< T >::count.
+.SS "template<typename T > \fBost::Counter\fP< T >::\fBCounter\fP (T initial)\fC [inline]\fP"
+.PP
+Construct a counter with an initial value of the specified data type. \fBParameters:\fP
+.RS 4
+\fIinitial\fP value to set. 
+.RE
+.PP
+
+.PP
+References ost::Counter< T >::count.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename T > \fBost::Counter\fP< T >::operator T ()\fC [inline]\fP"
+.PP
+References ost::Counter< T >::count.
+.SS "template<typename T > T& \fBost::Counter\fP< T >::operator= (T c)\fC [inline]\fP"
+.SH "Member Data Documentation"
+.PP 
+.SS "template<typename T > T \fBost::Counter\fP< T >::\fBcount\fP\fC [protected]\fP"
+.PP
+Referenced by ost::Counter< T >::Counter(), and ost::Counter< T >::operator T().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

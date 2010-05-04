@@ -1,0 +1,13 @@
+/var/log/bayonne/*.calls {
+    missingok
+    weekly
+    compress
+}
+
+/var/log/bayonne/*.audit {
+    missingok
+    weekly
+    compress
+}
+
+

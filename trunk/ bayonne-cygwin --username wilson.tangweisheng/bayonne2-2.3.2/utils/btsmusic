@@ -1,0 +1,33 @@
+#!/bin/sh
+
+musicdir=/var/lib/bayonne/music
+if test -d /opt/bayonne/var ; then
+	musicdir=/opt/bayonne/var/music ; fi
+
+if test ! -w $musicdir ; then
+	musicdir=~/.bayonne/music ; fi
+
+if test -z "$*" ; then
+	echo "*** no files specified" ; exit -1 ; fi
+
+for file in $* ; do
+	case $file in
+	*.ogg)
+		base=`basename "$file" .ogg`
+		;;
+	*.mp3)
+		base=`basename "$file" .mp3`
+		;;
+	*)
+		base=""
+		;;
+	esac
+	base=`echo $base | sed -e "s/ //g"`
+	if test -z "$base" ; then 
+		echo "*** $file: unknown type"
+		exit -1
+	fi
+	if test ! -d $musicdir ; then
+		mkdir -p $musicdir ; fi
+	sox "$file" -w -c 1 -r 8000 $musicdir/$base.wav
+done

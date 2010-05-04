@@ -1,0 +1,347 @@
+.TH "ost::SocketPort" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::SocketPort \- 
+.PP
+The socket port is an internal class which is attached to and then serviced by a specific \fBSocketService\fP 'object'.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <socketport.h>\fP
+.PP
+Inherits \fBost::Socket\fP, and \fBost::TimerPort\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetTimer\fP (\fBtimeout_t\fP timeout=0)"
+.br
+.RI "\fIDerived setTimer to notify the service thread pool of change in expected timeout. \fP"
+.ti -1c
+.RI "void \fBincTimer\fP (\fBtimeout_t\fP timeout)"
+.br
+.RI "\fIDerived incTimer to notify the service thread pool of a change in expected timeout. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSocketPort\fP (\fBSocketService\fP *svc, \fBTCPSocket\fP &tcp)"
+.br
+.RI "\fIConstruct an accepted TCP socket connection from a specific bound TCP server. \fP"
+.ti -1c
+.RI "\fBSocketPort\fP (\fBSocketService\fP *svc, \fBTCPV6Socket\fP &tcp)"
+.br
+.ti -1c
+.RI "\fBSocketPort\fP (\fBSocketService\fP *svc, const \fBIPV4Address\fP &ia, \fBtpport_t\fP port)"
+.br
+.RI "\fIConstruct a bound UDP socket for use in deriving realtime UDP streaming protocols handled by thread pool objects. \fP"
+.ti -1c
+.RI "\fBSocketPort\fP (\fBSocketService\fP *svc, const \fBIPV6Address\fP &ia, \fBtpport_t\fP port)"
+.br
+.ti -1c
+.RI "\fBSocketPort\fP (\fBSocketService\fP *svc, const \fBIPV4Host\fP &ih, \fBtpport_t\fP port)"
+.br
+.RI "\fIA non-blocking constructor for outbound tcp connections. \fP"
+.ti -1c
+.RI "\fBSocketPort\fP (\fBSocketService\fP *svc, const \fBIPV6Host\fP &ih, \fBtpport_t\fP port)"
+.br
+.ti -1c
+.RI "void \fBattach\fP (\fBSocketService\fP *svc)"
+.br
+.RI "\fIAttach yourself to the service pool thread object. \fP"
+.ti -1c
+.RI "virtual \fB~SocketPort\fP ()"
+.br
+.RI "\fIDisconnect the socket from the service thread pool and the remote connection. \fP"
+.ti -1c
+.RI "void \fBsetDetectPending\fP (bool)"
+.br
+.RI "\fIUsed to indicate if the service thread should monitor pending data for us. \fP"
+.ti -1c
+.RI "bool \fBgetDetectPending\fP (void) const "
+.br
+.RI "\fIGet the current state of the DetectPending flag. \fP"
+.ti -1c
+.RI "void \fBsetDetectOutput\fP (bool)"
+.br
+.RI "\fIUsed to indicate if output ready monitoring should be performed by the service thread. \fP"
+.ti -1c
+.RI "bool \fBgetDetectOutput\fP (void) const "
+.br
+.RI "\fIGet the current state of the DetectOutput flag. \fP"
+.ti -1c
+.RI "virtual void \fBexpired\fP (void)"
+.br
+.RI "\fICalled by the service thread pool when the objects timer has expired. \fP"
+.ti -1c
+.RI "virtual void \fBpending\fP (void)"
+.br
+.RI "\fICalled by the service thread pool when input data is pending for this socket. \fP"
+.ti -1c
+.RI "virtual void \fBoutput\fP (void)"
+.br
+.RI "\fICalled by the service thread pool when output data is pending for this socket. \fP"
+.ti -1c
+.RI "virtual void \fBdisconnect\fP (void)"
+.br
+.RI "\fICalled by the service thread pool when a disconnect has occured. \fP"
+.ti -1c
+.RI "\fBError\fP \fBconnect\fP (const \fBIPV4Address\fP &ia, \fBtpport_t\fP port)"
+.br
+.RI "\fIConnect a \fBSocket\fP Port to a known peer host. \fP"
+.ti -1c
+.RI "\fBError\fP \fBconnect\fP (const \fBIPV6Address\fP &ia, \fBtpport_t\fP port)"
+.br
+.ti -1c
+.RI "ssize_t \fBsend\fP (const void *buf, size_t len)"
+.br
+.RI "\fITransmit 'send' data to a connected peer host. \fP"
+.ti -1c
+.RI "ssize_t \fBreceive\fP (void *buf, size_t len)"
+.br
+.RI "\fIReceive a message from any host. \fP"
+.ti -1c
+.RI "ssize_t \fBpeek\fP (void *buf, size_t len)"
+.br
+.RI "\fIExamine the content of the next packet. \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBSocketService\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The socket port is an internal class which is attached to and then serviced by a specific \fBSocketService\fP 'object'. 
+
+Derived versions of this class offer specific functionality for specific protocols. Both Common C++ supporting frameworks and application objects may be derived from related protocol specific base classes.
+.PP
+A special set of classes, 'SocketPort' and 'SocketService', exist for building realtime streaming media servers on top of UDP and TCP protocols. The 'SocketPort' is used to hold a connected or associated TCP or UDP socket which is being 'streamed' and which offers callback methods that are invoked from a 'SocketService' thread. SocketService's can be pooled into logical thread pools that can service a group of SocketPorts. A millisecond accurate 'timer' is associated with each \fBSocketPort\fP and can be used to time synchronize \fBSocketPort\fP I/O operations.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> base class for realtime and thread pool serviced protocols. 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+.PP
+\fBtcpservice.cpp\fP.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::SocketPort::SocketPort (\fBSocketService\fP * svc, \fBTCPSocket\fP & tcp)\fC [protected]\fP"
+.PP
+Construct an accepted TCP socket connection from a specific bound TCP server. This is meant to derive advanced application specific TCP servers that can be thread pooled.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsvc\fP pool thread object. 
+.br
+\fItcp\fP socket object to accept. 
+.RE
+.PP
+
+.SS "ost::SocketPort::SocketPort (\fBSocketService\fP * svc, \fBTCPV6Socket\fP & tcp)\fC [protected]\fP"
+.SS "ost::SocketPort::SocketPort (\fBSocketService\fP * svc, const \fBIPV4Address\fP & ia, \fBtpport_t\fP port)\fC [protected]\fP"
+.PP
+Construct a bound UDP socket for use in deriving realtime UDP streaming protocols handled by thread pool objects. \fBParameters:\fP
+.RS 4
+\fIsvc\fP pool thread object. 
+.br
+\fIia\fP address of interface to bind. 
+.br
+\fIport\fP number to bind to. 
+.RE
+.PP
+
+.SS "ost::SocketPort::SocketPort (\fBSocketService\fP * svc, const \fBIPV6Address\fP & ia, \fBtpport_t\fP port)\fC [protected]\fP"
+.SS "ost::SocketPort::SocketPort (\fBSocketService\fP * svc, const \fBIPV4Host\fP & ih, \fBtpport_t\fP port)\fC [protected]\fP"
+.PP
+A non-blocking constructor for outbound tcp connections. To detect when the connection is established, overload \fBSocketPort::output()\fP. \fBSocketPort::output()\fP get's called by the \fBSocketService\fP when the connection is ready, \fBSocketPort::disconnect()\fP when the connect failed. at the moment you should set the socket state to 'CONNECTED' when \fBSocketPort::output()\fP get's called for the first time.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsvc\fP pool thread object. 
+.br
+\fIih\fP addess to connect to. 
+.br
+\fIport\fP number to connect to. 
+.RE
+.PP
+
+.SS "ost::SocketPort::SocketPort (\fBSocketService\fP * svc, const \fBIPV6Host\fP & ih, \fBtpport_t\fP port)\fC [protected]\fP"
+.SS "virtual ost::SocketPort::~SocketPort ()\fC [protected, virtual]\fP"
+.PP
+Disconnect the socket from the service thread pool and the remote connection. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::SocketPort::attach (\fBSocketService\fP * svc)\fC [protected]\fP"
+.PP
+Attach yourself to the service pool thread object. The later version.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsvc\fP pool thread object 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+\fBtcpservice.cpp\fP.
+.SS "\fBError\fP ost::SocketPort::connect (const \fBIPV6Address\fP & ia, \fBtpport_t\fP port)\fC [protected]\fP"
+.SS "\fBError\fP ost::SocketPort::connect (const \fBIPV4Address\fP & ia, \fBtpport_t\fP port)\fC [protected]\fP"
+.PP
+Connect a \fBSocket\fP Port to a known peer host. This is normally used with the UDP constructor. This is also performed as a non-blocking operation under Posix systems to prevent delays in a callback handler.
+.PP
+\fBReturns:\fP
+.RS 4
+0 if successful. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIia\fP address of remote host or subnet. 
+.br
+\fIport\fP number of remote peer(s). 
+.RE
+.PP
+
+.SS "virtual void ost::SocketPort::disconnect (void)\fC [protected, virtual]\fP"
+.PP
+Called by the service thread pool when a disconnect has occured. 
+.PP
+\fBExamples: \fP
+.in +1c
+\fBtcpservice.cpp\fP.
+.SS "virtual void ost::SocketPort::expired (void)\fC [protected, virtual]\fP"
+.PP
+Called by the service thread pool when the objects timer has expired. Used for timed events. 
+.PP
+\fBExamples: \fP
+.in +1c
+\fBtcpservice.cpp\fP.
+.SS "bool ost::SocketPort::getDetectOutput (void) const\fC [inline, protected]\fP"
+.PP
+Get the current state of the DetectOutput flag. 
+.SS "bool ost::SocketPort::getDetectPending (void) const\fC [inline, protected]\fP"
+.PP
+Get the current state of the DetectPending flag. 
+.SS "void ost::SocketPort::incTimer (\fBtimeout_t\fP timeout)"
+.PP
+Derived incTimer to notify the service thread pool of a change in expected timeout. This allows \fBSocketService\fP to reschedule all timers. Otherwise same as \fBTimerPort\fP.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimeout\fP in milliseconds. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBost::TimerPort\fP.
+.SS "virtual void ost::SocketPort::output (void)\fC [protected, virtual]\fP"
+.PP
+Called by the service thread pool when output data is pending for this socket. 
+.SS "ssize_t ost::SocketPort::peek (void * buf, size_t len)\fC [inline, protected]\fP"
+.PP
+Examine the content of the next packet. This can be used to build 'smart' line buffering for derived TCP classes.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuf\fP pointer to packet buffer to examine. 
+.br
+\fIlen\fP of packet buffer to examine. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+number of bytes actually available. 
+.RE
+.PP
+
+.SS "virtual void ost::SocketPort::pending (void)\fC [protected, virtual]\fP"
+.PP
+Called by the service thread pool when input data is pending for this socket. 
+.PP
+\fBExamples: \fP
+.in +1c
+\fBtcpservice.cpp\fP.
+.SS "ssize_t ost::SocketPort::receive (void * buf, size_t len)\fC [inline, protected]\fP"
+.PP
+Receive a message from any host. This is used in derived classes to build protocols.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuf\fP pointer to packet buffer to receive. 
+.br
+\fIlen\fP of packet buffer to receive. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+number of bytes received. 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+\fBtcpservice.cpp\fP.
+.SS "ssize_t ost::SocketPort::send (const void * buf, size_t len)\fC [inline, protected]\fP"
+.PP
+Transmit 'send' data to a connected peer host. This is not public by default since an overriding protocol is likely to be used in a derived class.
+.PP
+\fBReturns:\fP
+.RS 4
+number of bytes sent. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuf\fP address of buffer to send. 
+.br
+\fIlen\fP of bytes to send. 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+\fBtcpservice.cpp\fP.
+.SS "void ost::SocketPort::setDetectOutput (bool)\fC [protected]\fP"
+.PP
+Used to indicate if output ready monitoring should be performed by the service thread. 
+.SS "void ost::SocketPort::setDetectPending (bool)\fC [protected]\fP"
+.PP
+Used to indicate if the service thread should monitor pending data for us. 
+.SS "void ost::SocketPort::setTimer (\fBtimeout_t\fP timeout = \fC0\fP)"
+.PP
+Derived setTimer to notify the service thread pool of change in expected timeout. This allows \fBSocketService\fP to reschedule all timers. Otherwise same as \fBTimerPort\fP.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimeout\fP in milliseconds. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBost::TimerPort\fP.
+.PP
+\fBExamples: \fP
+.in +1c
+\fBtcpservice.cpp\fP.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBSocketService\fP\fC [friend]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

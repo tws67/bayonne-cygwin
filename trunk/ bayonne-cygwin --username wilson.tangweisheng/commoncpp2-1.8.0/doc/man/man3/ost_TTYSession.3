@@ -1,0 +1,57 @@
+.TH "ost::TTYSession" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::TTYSession \- 
+.PP
+The \fBTTYSession\fP aggragates a \fBTTYStream\fP and a Common C++ \fBThread\fP which is assumed to be the execution context that will be used to perform actual I/O operations.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <serial.h>\fP
+.PP
+Inherits \fBost::Thread\fP, and \fBost::TTYStream\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTTYSession\fP (const char *name, int pri=0, int stack=0)"
+.br
+.RI "\fICreate TTY stream that will be managed by it's own thread. \fP"
+.ti -1c
+.RI "virtual \fB~TTYSession\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBTTYSession\fP aggragates a \fBTTYStream\fP and a Common C++ \fBThread\fP which is assumed to be the execution context that will be used to perform actual I/O operations. 
+
+This class is very anagolous to \fBTCPSession\fP.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> This class is very anagolous to \fBTCPSession\fP. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::TTYSession::TTYSession (const char * name, int pri = \fC0\fP, int stack = \fC0\fP)"
+.PP
+Create TTY stream that will be managed by it's own thread. \fBParameters:\fP
+.RS 4
+\fIname\fP of tty device to open. 
+.br
+\fIpri\fP execution priority. 
+.br
+\fIstack\fP allocation needed on some platforms. 
+.RE
+.PP
+
+.SS "virtual ost::TTYSession::~TTYSession ()\fC [virtual]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

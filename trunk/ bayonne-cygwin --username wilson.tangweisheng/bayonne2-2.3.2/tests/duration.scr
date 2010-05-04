@@ -1,0 +1,27 @@
+%% Copyright (C) 2005 Tycho Softworks.
+%%
+%% This file is free software; as a special exception the author gives
+%% unlimited permission to copy and/or distribute it, with or without
+%% modifications, as long as this notice is preserved.
+%%
+%% This program is distributed in the hope that it will be useful, but
+%% WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
+%% implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+%%
+%% Measure call duration...
+
+	%% ignored if no sip driver loaded...
+	register.sip proxy=localhost uri=sip:test@localhost
+
+        echo "before pickup"
+        pickup
+        echo "before sleep"
+        sleep 3s
+        echo "after sleep"
+        echo "offhook as %session.callid"
+        echo "call start " %session.date " " %session.time
+        echo "call duration " %session.duration
+        hangup
+
+
+

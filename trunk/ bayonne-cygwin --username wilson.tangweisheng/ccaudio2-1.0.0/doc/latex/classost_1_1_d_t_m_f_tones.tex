@@ -1,0 +1,100 @@
+\section{ost::DTMFTones Class Reference}
+\label{classost_1_1_d_t_m_f_tones}\index{ost::DTMFTones@{ost::DTMFTones}}
+
+
+\doxyref{DTMFTones}{p.}{classost_1_1_d_t_m_f_tones} is used to generate a series of dtmf audio data from a \char`\"{}telephone\char`\"{} number passed as an ASCII string.  
+
+
+{\ttfamily \#include $<$audio2.h$>$}Inheritance diagram for ost::DTMFTones::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classost_1_1_d_t_m_f_tones}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf DTMFTones} (const char $\ast${\bf digits}, {\bf Level} {\bf level}, {\bf timeout\_\-t} duration=20, {\bf timeout\_\-t} interdigit=60)
+\begin{DoxyCompactList}\small\item\em Generate a dtmf dialer for a specified dialing string. \item\end{DoxyCompactList}\item 
+{\bf $\sim$DTMFTones} ()
+\item 
+{\bf Linear} {\bf getFrame} (void)
+\item 
+bool {\bf isComplete} (void)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned {\bf remaining}
+\item 
+unsigned {\bf dtmfframes}
+\item 
+{\bf timeout\_\-t} {\bf frametime}
+\item 
+const char $\ast$ {\bf digits}
+\item 
+{\bf Level} {\bf level}
+\item 
+bool {\bf complete}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{DTMFTones}{p.}{classost_1_1_d_t_m_f_tones} is used to generate a series of dtmf audio data from a \char`\"{}telephone\char`\"{} number passed as an ASCII string. Each time \doxyref{getFrame()}{p.}{classost_1_1_d_t_m_f_tones_ac59d2ebb1f5feb0aa7871a02109f3b26} is called, the next audio frame of dtmf audio will be created and pulled.
+
+\begin{DoxyAuthor}{Author}
+David Sugar $<${\tt dyfet@ostel.com}$>$ Generate DTMF audio 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::DTMFTones@{ost::DTMFTones}!DTMFTones@{DTMFTones}}
+\index{DTMFTones@{DTMFTones}!ost::DTMFTones@{ost::DTMFTones}}
+\subsubsection[{DTMFTones}]{\setlength{\rightskip}{0pt plus 5cm}ost::DTMFTones::DTMFTones (const char $\ast$ {\em digits}, \/  {\bf Level} {\em level}, \/  {\bf timeout\_\-t} {\em duration} = {\ttfamily 20}, \/  {\bf timeout\_\-t} {\em interdigit} = {\ttfamily 60})}\label{classost_1_1_d_t_m_f_tones_a62570e25d94b2e82f5b384d29107d096}
+
+
+Generate a dtmf dialer for a specified dialing string. 
+\begin{DoxyParams}{Parameters}
+\item[{\em digits}]to generate tone dialing for. \item[{\em level}]for dtmf. \item[{\em duration}]timing for generated audio. \item[{\em interdigit}]timing, should be multiple of frame. \end{DoxyParams}
+\index{ost::DTMFTones@{ost::DTMFTones}!$\sim$DTMFTones@{$\sim$DTMFTones}}
+\index{$\sim$DTMFTones@{$\sim$DTMFTones}!ost::DTMFTones@{ost::DTMFTones}}
+\subsubsection[{$\sim$DTMFTones}]{\setlength{\rightskip}{0pt plus 5cm}ost::DTMFTones::$\sim$DTMFTones ()}\label{classost_1_1_d_t_m_f_tones_a8893c69b31f96c7d9aef3daaaf9ca4a9}
+
+
+\subsection{Member Function Documentation}
+\index{ost::DTMFTones@{ost::DTMFTones}!getFrame@{getFrame}}
+\index{getFrame@{getFrame}!ost::DTMFTones@{ost::DTMFTones}}
+\subsubsection[{getFrame}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Linear} ost::DTMFTones::getFrame (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_d_t_m_f_tones_ac59d2ebb1f5feb0aa7871a02109f3b26}
+
+
+Reimplemented from {\bf ost::AudioTone} \doxyref{}{p.}{classost_1_1_audio_tone_a943d31930ce0f1318f42d6dc825200cb}.\index{ost::DTMFTones@{ost::DTMFTones}!isComplete@{isComplete}}
+\index{isComplete@{isComplete}!ost::DTMFTones@{ost::DTMFTones}}
+\subsubsection[{isComplete}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::DTMFTones::isComplete (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_d_t_m_f_tones_a274d70b6b87294764bc50e47f1a8f250}
+
+
+Reimplemented from {\bf ost::AudioTone} \doxyref{}{p.}{classost_1_1_audio_tone_afd2f4d74c504ff9f1638ac0097f7df8d}.
+
+\subsection{Member Data Documentation}
+\index{ost::DTMFTones@{ost::DTMFTones}!complete@{complete}}
+\index{complete@{complete}!ost::DTMFTones@{ost::DTMFTones}}
+\subsubsection[{complete}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::DTMFTones::complete}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_d_t_m_f_tones_ad259f2e7159aeda0abc99b1c9e701a74}
+\index{ost::DTMFTones@{ost::DTMFTones}!digits@{digits}}
+\index{digits@{digits}!ost::DTMFTones@{ost::DTMFTones}}
+\subsubsection[{digits}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::DTMFTones::digits}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_d_t_m_f_tones_a67627cb21e5ff3e615c21e786bd03b8c}
+\index{ost::DTMFTones@{ost::DTMFTones}!dtmfframes@{dtmfframes}}
+\index{dtmfframes@{dtmfframes}!ost::DTMFTones@{ost::DTMFTones}}
+\subsubsection[{dtmfframes}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::DTMFTones::dtmfframes}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_d_t_m_f_tones_ae39e6e3fa09c9b39cee81b7a3123fb10}
+\index{ost::DTMFTones@{ost::DTMFTones}!frametime@{frametime}}
+\index{frametime@{frametime}!ost::DTMFTones@{ost::DTMFTones}}
+\subsubsection[{frametime}]{\setlength{\rightskip}{0pt plus 5cm}{\bf timeout\_\-t} {\bf ost::DTMFTones::frametime}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_d_t_m_f_tones_ab7b645b27130a20d1dd45097f4e1c210}
+\index{ost::DTMFTones@{ost::DTMFTones}!level@{level}}
+\index{level@{level}!ost::DTMFTones@{ost::DTMFTones}}
+\subsubsection[{level}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Level} {\bf ost::DTMFTones::level}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_d_t_m_f_tones_a3b8d23f074e6b74928911a2ffa9546bf}
+\index{ost::DTMFTones@{ost::DTMFTones}!remaining@{remaining}}
+\index{remaining@{remaining}!ost::DTMFTones@{ost::DTMFTones}}
+\subsubsection[{remaining}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::DTMFTones::remaining}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_d_t_m_f_tones_a5177da80d954edb7e140c8cf07a05e75}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf audio2.h}\end{DoxyCompactItemize}
