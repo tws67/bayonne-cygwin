@@ -1,0 +1,193 @@
+\section{ost::BayonneAudio Class Reference}
+\label{classost_1_1_bayonne_audio}\index{ost::BayonneAudio@{ost::BayonneAudio}}
+
+
+Offers core \doxyref{Bayonne}{p.}{classost_1_1_bayonne} audio processing in a self contained class.  
+
+
+{\ttfamily \#include $<$bayonne.h$>$}Inheritance diagram for ost::BayonneAudio::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classost_1_1_bayonne_audio}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf BayonneAudio} ()
+\begin{DoxyCompactList}\small\item\em Initialize instance of audio. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getFilename} (const char $\ast$name, bool write=false)
+\begin{DoxyCompactList}\small\item\em Convert a prompt identifier into a complete audio file pathname. \item\end{DoxyCompactList}\item 
+void {\bf cleanup} (void)
+\begin{DoxyCompactList}\small\item\em Clear open files and other data structures from previous audio processing operations. \item\end{DoxyCompactList}\item 
+void {\bf play} (const char $\ast$$\ast${\bf list}, Mode mode=modeRead)
+\begin{DoxyCompactList}\small\item\em Open a sequence of audio prompts for playback. \item\end{DoxyCompactList}\item 
+void {\bf record} (const char $\ast$name, Mode mode=modeCreate, const char $\ast$annotation=NULL)
+\begin{DoxyCompactList}\small\item\em Open an audio prompt for recording. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getVoicelib} (const char $\ast$iso)
+\begin{DoxyCompactList}\small\item\em Check if a voice library is available. \item\end{DoxyCompactList}\item 
+AudioCodec $\ast$ {\bf getCodec} (void)
+\begin{DoxyCompactList}\small\item\em Get audio codec used. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+AudioTone $\ast$ {\bf tone}
+\begin{DoxyCompactList}\small\item\em Current tone object to use for generation of audio tones, dtmf dialing sequences, etc. \item\end{DoxyCompactList}\item 
+{\bf BayonneTranslator} $\ast$ {\bf translator}
+\begin{DoxyCompactList}\small\item\em Current language translator in effect for the current set of autio prompts. \item\end{DoxyCompactList}\item 
+char {\bf vlib} [60]
+\begin{DoxyCompactList}\small\item\em Alternate voicelib construct. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf extension}
+\item 
+const char $\ast$ {\bf voicelib}
+\item 
+const char $\ast$ {\bf libext}
+\item 
+const char $\ast$ {\bf prefixdir}
+\item 
+const char $\ast$ {\bf offset}
+\item 
+Encoding {\bf encoding}
+\item 
+timeout\_\-t {\bf framing}
+\item 
+char {\bf var\_\-position} [14]
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ {\bf getContinuation} (void)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char {\bf filename} [256]
+\item 
+const char $\ast$$\ast$ {\bf list}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Offers core \doxyref{Bayonne}{p.}{classost_1_1_bayonne} audio processing in a self contained class. The \doxyref{BayonneAudio}{p.}{classost_1_1_bayonne_audio} class is used with each session object.
+
+self contained \doxyref{Bayonne}{p.}{classost_1_1_bayonne} audio processing. \begin{DoxyAuthor}{Author}
+David Sugar $<${\tt dyfet@gnutelephony.org}$>$ 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::BayonneAudio@{ost::BayonneAudio}!BayonneAudio@{BayonneAudio}}
+\index{BayonneAudio@{BayonneAudio}!ost::BayonneAudio@{ost::BayonneAudio}}
+\subsubsection[{BayonneAudio}]{\setlength{\rightskip}{0pt plus 5cm}ost::BayonneAudio::BayonneAudio ()}\label{classost_1_1_bayonne_audio_acae35069eb345756535d14de0555ae2a}
+
+
+Initialize instance of audio. 
+
+\subsection{Member Function Documentation}
+\index{ost::BayonneAudio@{ost::BayonneAudio}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!ost::BayonneAudio@{ost::BayonneAudio}}
+\subsubsection[{cleanup}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneAudio::cleanup (void)}\label{classost_1_1_bayonne_audio_a0ddb96284a1d5d556563d4c2422e473c}
+
+
+Clear open files and other data structures from previous audio processing operations. \index{ost::BayonneAudio@{ost::BayonneAudio}!getCodec@{getCodec}}
+\index{getCodec@{getCodec}!ost::BayonneAudio@{ost::BayonneAudio}}
+\subsubsection[{getCodec}]{\setlength{\rightskip}{0pt plus 5cm}AudioCodec$\ast$ ost::BayonneAudio::getCodec (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_audio_aea63bc6977c1c7a33eeae2ff44e78e64}
+
+
+Get audio codec used. \begin{DoxyReturn}{Returns}
+audio codec. 
+\end{DoxyReturn}
+\index{ost::BayonneAudio@{ost::BayonneAudio}!getContinuation@{getContinuation}}
+\index{getContinuation@{getContinuation}!ost::BayonneAudio@{ost::BayonneAudio}}
+\subsubsection[{getContinuation}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ ost::BayonneAudio::getContinuation (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_audio_a5b18bfd82a73f51bb4448bbeb22faa1c}
+\index{ost::BayonneAudio@{ost::BayonneAudio}!getFilename@{getFilename}}
+\index{getFilename@{getFilename}!ost::BayonneAudio@{ost::BayonneAudio}}
+\subsubsection[{getFilename}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::BayonneAudio::getFilename (const char $\ast$ {\em name}, \/  bool {\em write} = {\ttfamily false})}\label{classost_1_1_bayonne_audio_a2c9894a2638e0086e96b7c3b50851d6d}
+
+
+Convert a prompt identifier into a complete audio file pathname. \begin{DoxyReturn}{Returns}
+pointer to fully qualified file path or NULL if invalid. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]of prompt requested. \item[{\em write}]path required if true. \end{DoxyParams}
+\index{ost::BayonneAudio@{ost::BayonneAudio}!getVoicelib@{getVoicelib}}
+\index{getVoicelib@{getVoicelib}!ost::BayonneAudio@{ost::BayonneAudio}}
+\subsubsection[{getVoicelib}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::BayonneAudio::getVoicelib (const char $\ast$ {\em iso})}\label{classost_1_1_bayonne_audio_a01f22ccb206cfd4055cf7d9c9fa90b66}
+
+
+Check if a voice library is available. \begin{DoxyReturn}{Returns}
+voice library id or NULL if invalid. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em iso}]name of library to request. \end{DoxyParams}
+\index{ost::BayonneAudio@{ost::BayonneAudio}!play@{play}}
+\index{play@{play}!ost::BayonneAudio@{ost::BayonneAudio}}
+\subsubsection[{play}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneAudio::play (const char $\ast$$\ast$ {\em list}, \/  Mode {\em mode} = {\ttfamily modeRead})}\label{classost_1_1_bayonne_audio_a092031e358a49b1717e3065fed35e26a}
+
+
+Open a sequence of audio prompts for playback. 
+\begin{DoxyParams}{Parameters}
+\item[{\em list}]of prompts to open. \item[{\em mode}]for playback file processing of list. \end{DoxyParams}
+\index{ost::BayonneAudio@{ost::BayonneAudio}!record@{record}}
+\index{record@{record}!ost::BayonneAudio@{ost::BayonneAudio}}
+\subsubsection[{record}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneAudio::record (const char $\ast$ {\em name}, \/  Mode {\em mode} = {\ttfamily modeCreate}, \/  const char $\ast$ {\em annotation} = {\ttfamily NULL})}\label{classost_1_1_bayonne_audio_af7e6d0a61a65f5e60e7cac7322bafc95}
+
+
+Open an audio prompt for recording. 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]of prompt to open. \item[{\em mode}]whether to create or use pre-\/existing recording. \item[{\em annotation}]to save in file if supported by format used. \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\index{ost::BayonneAudio@{ost::BayonneAudio}!encoding@{encoding}}
+\index{encoding@{encoding}!ost::BayonneAudio@{ost::BayonneAudio}}
+\subsubsection[{encoding}]{\setlength{\rightskip}{0pt plus 5cm}Encoding {\bf ost::BayonneAudio::encoding}}\label{classost_1_1_bayonne_audio_aca358a1e72b75bf0117de3602c69fdeb}
+\index{ost::BayonneAudio@{ost::BayonneAudio}!extension@{extension}}
+\index{extension@{extension}!ost::BayonneAudio@{ost::BayonneAudio}}
+\subsubsection[{extension}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::BayonneAudio::extension}}\label{classost_1_1_bayonne_audio_afcb6e2fe9abb2d248bea736c4620e98e}
+\index{ost::BayonneAudio@{ost::BayonneAudio}!filename@{filename}}
+\index{filename@{filename}!ost::BayonneAudio@{ost::BayonneAudio}}
+\subsubsection[{filename}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::BayonneAudio::filename}[256]\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_audio_a1b76b2e198a9f945374fb1ea6a3c0163}
+\index{ost::BayonneAudio@{ost::BayonneAudio}!framing@{framing}}
+\index{framing@{framing}!ost::BayonneAudio@{ost::BayonneAudio}}
+\subsubsection[{framing}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::BayonneAudio::framing}}\label{classost_1_1_bayonne_audio_af260deafd9252c41fb26a1937ab7cf0a}
+\index{ost::BayonneAudio@{ost::BayonneAudio}!libext@{libext}}
+\index{libext@{libext}!ost::BayonneAudio@{ost::BayonneAudio}}
+\subsubsection[{libext}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ {\bf ost::BayonneAudio::libext}}\label{classost_1_1_bayonne_audio_a90b43118c5480f6d0eef518d4780b735}
+\index{ost::BayonneAudio@{ost::BayonneAudio}!list@{list}}
+\index{list@{list}!ost::BayonneAudio@{ost::BayonneAudio}}
+\subsubsection[{list}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$$\ast$ {\bf ost::BayonneAudio::list}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_audio_a2b6379c6554b7fcc45d60f162809b6ef}
+\index{ost::BayonneAudio@{ost::BayonneAudio}!offset@{offset}}
+\index{offset@{offset}!ost::BayonneAudio@{ost::BayonneAudio}}
+\subsubsection[{offset}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ {\bf ost::BayonneAudio::offset}}\label{classost_1_1_bayonne_audio_ab1b41d5a7724860abc67b06814c9a105}
+\index{ost::BayonneAudio@{ost::BayonneAudio}!prefixdir@{prefixdir}}
+\index{prefixdir@{prefixdir}!ost::BayonneAudio@{ost::BayonneAudio}}
+\subsubsection[{prefixdir}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ {\bf ost::BayonneAudio::prefixdir}}\label{classost_1_1_bayonne_audio_a7525973ddf586163dd36b8487de951b8}
+\index{ost::BayonneAudio@{ost::BayonneAudio}!tone@{tone}}
+\index{tone@{tone}!ost::BayonneAudio@{ost::BayonneAudio}}
+\subsubsection[{tone}]{\setlength{\rightskip}{0pt plus 5cm}AudioTone$\ast$ {\bf ost::BayonneAudio::tone}}\label{classost_1_1_bayonne_audio_af715ba352e34cc1cc784bd6429d11708}
+
+
+Current tone object to use for generation of audio tones, dtmf dialing sequences, etc. \index{ost::BayonneAudio@{ost::BayonneAudio}!translator@{translator}}
+\index{translator@{translator}!ost::BayonneAudio@{ost::BayonneAudio}}
+\subsubsection[{translator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneTranslator}$\ast$ {\bf ost::BayonneAudio::translator}}\label{classost_1_1_bayonne_audio_a5713aa1a30c7614be41fe0641d873086}
+
+
+Current language translator in effect for the current set of autio prompts. \index{ost::BayonneAudio@{ost::BayonneAudio}!var\_\-position@{var\_\-position}}
+\index{var\_\-position@{var\_\-position}!ost::BayonneAudio@{ost::BayonneAudio}}
+\subsubsection[{var\_\-position}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::BayonneAudio::var\_\-position}[14]}\label{classost_1_1_bayonne_audio_a80d5c41978d49f4601f27d90a30af3e1}
+\index{ost::BayonneAudio@{ost::BayonneAudio}!vlib@{vlib}}
+\index{vlib@{vlib}!ost::BayonneAudio@{ost::BayonneAudio}}
+\subsubsection[{vlib}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::BayonneAudio::vlib}[60]}\label{classost_1_1_bayonne_audio_ab4c0f6359658a98484a4f648e76dafd6}
+
+
+Alternate voicelib construct. \index{ost::BayonneAudio@{ost::BayonneAudio}!voicelib@{voicelib}}
+\index{voicelib@{voicelib}!ost::BayonneAudio@{ost::BayonneAudio}}
+\subsubsection[{voicelib}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ {\bf ost::BayonneAudio::voicelib}}\label{classost_1_1_bayonne_audio_a5574ccb6b69f4dbb002ef2bb76ea832d}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf bayonne.h}\end{DoxyCompactItemize}

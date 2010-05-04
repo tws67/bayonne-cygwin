@@ -1,0 +1,1046 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML><HEAD></HEAD><BODY>
+<OBJECT type="text/site properties">
+<param name="FrameName" value="right">
+</OBJECT>
+<UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a22b33b82f3be60a5634617bf712bd39e"><param name="Name" value="afClose"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a4a271372f5c71ed212a38bcbd6bc78f1"><param name="Name" value="afCreate"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#aac2bc808f80921302fab043b76e7fd1b"><param name="Name" value="afOpen"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a8e849ce99910b88c7ce7d6def2b09713"><param name="Name" value="afPeek"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#ad9ce6bffdc596b4131a0d2de1b9d3687"><param name="Name" value="afRead"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#abb103103800873c272940685d7d73bda"><param name="Name" value="afSeek"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a79a6020d043bf65659a114420af86c04"><param name="Name" value="afWrite"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa72609cc1ee8752337012b27f8c63d016"><param name="Name" value="alawAudio"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#a84f470ef63154d5b8c040e850a89dcb4"><param name="Name" value="annotation"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="audio2_8h.html"><param name="Name" value="audio2.h"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="audio2_8h.html#a028536012084a42b4510c90eb28be738"><param name="Name" value="AUDIO_CODEC_MODULES"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="audio2_8h.html#a84606f4a23e81410b0e32e486822f846"><param name="Name" value="AUDIO_LINEAR_CONVERSION"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="audio2_8h.html#a24e608854dc0dd9bcbc44a4a4dcdf676"><param name="Name" value="AUDIO_LINEAR_FRAMING"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="audio2_8h.html#ac9fbed88006882c27fe7d228291c8c7c"><param name="Name" value="AUDIO_NATIVE_METHODS"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="audio2_8h.html#abe8f760f29265ae92d19dc703e031f67"><param name="Name" value="AUDIO_RATE_RESAMPLER"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="audio2_8h.html#a1cba749dac4075b565ef27f32000af1c"><param name="Name" value="AUDIO_SIGNED_LINEAR_RAW"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="audio2_8h.html#a9635fdc6094c8f49fe76f71c69edd9ac"><param name="Name" value="AudioCodec"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="audio2_8h.html#a799e6ebccb4619ac5f3cf3e023b4c72d"><param name="Name" value="AudioDevice"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="audio2_8h.html#a2d5d6a19f6c727b9e318292caa8b7f4d"><param name="Name" value="CCXX_PACKED"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="audio2_8h.html#a028536012084a42b4510c90eb28be738"><param name="Name" value="AUDIO_CODEC_MODULES"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="audio2_8h.html#a84606f4a23e81410b0e32e486822f846"><param name="Name" value="AUDIO_LINEAR_CONVERSION"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="audio2_8h.html#a24e608854dc0dd9bcbc44a4a4dcdf676"><param name="Name" value="AUDIO_LINEAR_FRAMING"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="audio2_8h.html#ac9fbed88006882c27fe7d228291c8c7c"><param name="Name" value="AUDIO_NATIVE_METHODS"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="audio2_8h.html#abe8f760f29265ae92d19dc703e031f67"><param name="Name" value="AUDIO_RATE_RESAMPLER"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="audio2_8h.html#a1cba749dac4075b565ef27f32000af1c"><param name="Name" value="AUDIO_SIGNED_LINEAR_RAW"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_base.html#a78b761e7276b8c6ea542130aa3a6fde6"><param name="Name" value="AudioBase"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_buffer.html#a39ddb2920d6b421dabca98ac92221996"><param name="Name" value="AudioBuffer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespaceost.html#a9635fdc6094c8f49fe76f71c69edd9ac"><param name="Name" value="AudioCodec"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="namespaceost.html#a9635fdc6094c8f49fe76f71c69edd9ac"><param name="Name" value="audio2.h"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="namespaceost.html#a9635fdc6094c8f49fe76f71c69edd9ac"><param name="Name" value="ost"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#ad6b39c6b8e48636490586ca614d48d84"><param name="Name" value="ost::AudioCodec"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespaceost.html#a799e6ebccb4619ac5f3cf3e023b4c72d"><param name="Name" value="AudioDevice"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="namespaceost.html#a799e6ebccb4619ac5f3cf3e023b4c72d"><param name="Name" value="audio2.h"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="namespaceost.html#a799e6ebccb4619ac5f3cf3e023b4c72d"><param name="Name" value="ost"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#ab01d1c7365320d331e854552ecc953a2"><param name="Name" value="AudioFile"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_resample.html#a408740221daffc47f7a651b63c8b5c73"><param name="Name" value="AudioResample"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#ae7c476840e97627aec743f0224aad1fe"><param name="Name" value="AudioStream"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a4d980cf63efbf17402bb59ab48abd664"><param name="Name" value="AudioTone"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#a7f3155677b7414ec2b00138a9252b980"><param name="Name" value="bitrate"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#adab79077d903b00da35240fdeaeadf16"><param name="Name" value="bufAudio"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_resample.html#aa0c196fe38dc3512b3a8667082878e3f"><param name="Name" value="buffer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a523ae30758d099f93c2d4036fcb25fdf"><param name="Name" value="bufferChannels"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a0735cc187829f8cb3f4b44df94db5ed2"><param name="Name" value="bufferFrame"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#ac43e4053dba97120a826df030025e767"><param name="Name" value="bufferPosition"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#a385560f5f8d4781b387346d30c4ce345"><param name="Name" value="bufMono"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#a385560f5f8d4781b387346d30c4ce345"><param name="Name" value="ost::AudioDevice"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#aa4c33abc46eedf00c9a061130185bffe"><param name="Name" value="ost::AudioStream"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#ae6374d257f5c269a205eec7e1f596f6f"><param name="Name" value="bufStereo"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#ae6374d257f5c269a205eec7e1f596f6f"><param name="Name" value="ost::AudioDevice"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#afd95f7a2df57101f7773920528c61abb"><param name="Name" value="ost::AudioStream"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="audio2_8h.html#a2d5d6a19f6c727b9e318292caa8b7f4d"><param name="Name" value="CCXX_PACKED"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa21542716b78d850f6ffe02bbbac160ec"><param name="Name" value="cdaMono"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa5ca72fd2aa7204223dd90d25b361fbf6"><param name="Name" value="cdaStereo"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#ac7fe13d4b7090fcf5d0cf3860f408a1d"><param name="Name" value="cleanup"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#af68c40e779091f736c8782e35ac611a6"><param name="Name" value="clear"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#af68c40e779091f736c8782e35ac611a6"><param name="Name" value="ost::Audio::Info"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a9ba09de7cf15f819a798fd10fed10060"><param name="Name" value="ost::AudioFile"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#aba0e5a66e006c61aef1ddbd018e2e7ed"><param name="Name" value="close"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#aba0e5a66e006c61aef1ddbd018e2e7ed"><param name="Name" value="ost::AudioFile"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a823bf9a3d64dbae7117b6c29681017d3"><param name="Name" value="ost::AudioStream"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a36d87f56ca6a25e8e477cf98c559c5a6"><param name="Name" value="codec"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a68e9727e7c756e0fd41ba793fa8d1737"><param name="Name" value="col_out2nd"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a6d350dab0121421a1a41289da38fb152"><param name="Name" value="col_out"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_tones.html#ad259f2e7159aeda0abc99b1c9e701a74"><param name="Name" value="complete"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_tones.html#ad259f2e7159aeda0abc99b1c9e701a74"><param name="Name" value="ost::DTMFTones"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_m_f_tones.html#a454e89ef50ff60437542c3aa9eb6dd32"><param name="Name" value="ost::MFTones"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#ab7bf2c032d956281a1ff8dd92eae2acd"><param name="Name" value="ost::TelTone"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#ad83573418d7d66ee12ab7742a3427856"><param name="Name" value="count"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#ad83573418d7d66ee12ab7742a3427856"><param name="Name" value="ost::TelTone"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_tel_tone_1_1__tonedef.html#a9c5e73aacc5fc6bbebde09946c8b57e8"><param name="Name" value="ost::TelTone::_tonedef"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#af536da5d45926c3f75075c76f12ecb51"><param name="Name" value="create"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#af536da5d45926c3f75075c76f12ecb51"><param name="Name" value="ost::AudioFile"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a58fd6f03aff924fdd330919caf543623"><param name="Name" value="ost::AudioStream"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a16befda79cb712b33db882afd8230aae"><param name="Name" value="current_digits"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a9b1fa0adfa42e6440b06ec741f3cba9e"><param name="Name" value="current_sample"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#aabc88921668e15b9eb20baa6906b4fdf"><param name="Name" value="decBuffer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a907e86027d1511babd9446eca3b19850"><param name="Name" value="decode"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#aa7f2d6b1965cdb86839ef55d9970e98e"><param name="Name" value="decodeBuffered"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a587b93ce80081042f0d49bc93b8afd1e"><param name="Name" value="decSize"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#aa83d1aff24fd6bc422275f7f3e638b73"><param name="Name" value="def"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a6bb6ee1319b8b09a1d7bb2c57b66876c"><param name="Name" value="detected_digits"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a64ea45fd7b796a2de14093e69591bbc1"><param name="Name" value="DeviceMode"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#aab0abcb02f857739af67253b7f646ba1"><param name="Name" value="df1"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a5aad2d80a709a910c45fc539689219fe"><param name="Name" value="df2"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_resample.html#a8baae81f9d216302031b0934b8f2c0e4"><param name="Name" value="dfact"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a2d8ec7cd817782d307fa4f434728d9a8"><param name="Name" value="digit_hits"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a4732440ba856b4ddd9d022130012fe25"><param name="Name" value="digits"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a4732440ba856b4ddd9d022130012fe25"><param name="Name" value="ost::Audio::dtmf_detect_state_t"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_tones.html#a67627cb21e5ff3e615c21e786bd03b8c"><param name="Name" value="ost::DTMFTones"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_m_f_tones.html#a7040ba98563c1c07b1b259db2c70f7b6"><param name="Name" value="ost::MFTones"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_detect.html#a9761101bcc763ac4d33c992097482d46"><param name="Name" value="DTMFDetect"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_tones.html#ae39e6e3fa09c9b39cee81b7a3123fb10"><param name="Name" value="dtmfframes"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_tones.html#a62570e25d94b2e82f5b384d29107d096"><param name="Name" value="DTMFTones"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a7ce3c90e4a79bab48575fea350893633"><param name="Name" value="dual"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_tel_tone_1_1__tonedef.html#a3056f75cb554954ec745e5b10caff6ec"><param name="Name" value="duration"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#ac99355626bd3b70a7b4551055279ad2b"><param name="Name" value="enabled"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#aa602b11f03414d79135c93fde44c3e01"><param name="Name" value="encBuffer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#ad9238d106a0a42bc63be63a305417fb8"><param name="Name" value="encode"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#ac430e489a59a79e0837500712e5bbed0"><param name="Name" value="encodeBuffered"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a5c7e49d2b98c74b5a63a0e52a31e626e"><param name="Name" value="Encoded"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac6a37d56c55e4e90c76e1ff32c5a9b4d"><param name="Name" value="Encoding"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#a247ab7f4d83b8b160c3d6e61fbc534d7"><param name="Name" value="encoding"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#a247ab7f4d83b8b160c3d6e61fbc534d7"><param name="Name" value="ost::Audio::Info"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a7c5e345679761e0b6c9958005af5e173"><param name="Name" value="ost::AudioCodec"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a2efa96f577a5c2cfd9013b2dec4c17b1"><param name="Name" value="encSize"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#ad9c810876d4c61205d39e06a9b91e89a"><param name="Name" value="endCodec"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a0e633637c0bef5ed0bf9317a8130de5e"><param name="Name" value="energy"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a090ca64e7dfece97811c37bd076937da"><param name="Name" value="errEncodingInvalid"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a3893553d65303314f79536b41ca3d15e"><param name="Name" value="errEndOfFile"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a88933ebeecc847bdd457c73bfa340a5c"><param name="Name" value="errInvalidTrack"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a1491cc7eab3e1e461eb497552a5cadbf"><param name="Name" value="errNoCodec"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a234d5e01216dd2709e1a302178e2b769"><param name="Name" value="errNotOpened"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a34f559f52d6302c22ac2378815888d3e"><param name="Name" value="errNotPlaying"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#afc24bc71c6ce0c97f0c349291eed74cf"><param name="Name" value="Error"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a77c0be5d7e5d485647dc4be6804bf9e0"><param name="Name" value="error"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884ab8f14090a0ce6e7df5ab0733d1d052be"><param name="Name" value="errPlaybackFailed"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a0a06eeec844e19cd445213bbdf20f0a1"><param name="Name" value="errRateInvalid"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a0b98c4e843ad5feca37c2fcd2a960d48"><param name="Name" value="errReadFailure"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884ac51b3f3746de6f218335d8f9bd6edc17"><param name="Name" value="errReadIncomplete"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a90fe70ebd883cafe2f647c3eb7b0aa37"><param name="Name" value="errReadInterrupt"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884af0b6200842a9819e841ed6483b073da3"><param name="Name" value="errReadLast"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a25186756cddbe09668774d34910c6054"><param name="Name" value="errRequestInvalid"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a2d8e975e5200165280499b9604b98212"><param name="Name" value="errStartOfFile"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884ad1b9591fb7b7d30ddad63f6e706bbaae"><param name="Name" value="errStatFailed"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884aaf27439b02b8237b6a56c822f180414d"><param name="Name" value="errSuccess"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884ad06c70265582cee5b91e93d75b4f5001"><param name="Name" value="errTOCFailed"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a73662d71bc5ac2b5df735ef7a95a04b9"><param name="Name" value="errWriteFailure"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a7cdee9c419aa5ffaa8436f34da734c8e"><param name="Name" value="errWriteIncomplete"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a156cc653457d3f76935b7f8bc856d43f"><param name="Name" value="errWriteInterrupt"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_resample.html#a27baa7b1cfec1cf55eaa5038208f9c28"><param name="Name" value="estimate"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_tel_tone_1_1__tonedef.html#aa8947bc6f45bfcf74e804cfca5a80293"><param name="Name" value="f1"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_tel_tone_1_1__tonedef.html#a8bd4411cae9b6fb55a4e74b913fa4b77"><param name="Name" value="f2"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1goertzel__state__t.html#a1630fc16b30ad926fb0ea8d1b63716a5"><param name="Name" value="fac"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1goertzel__state__t.html#a1630fc16b30ad926fb0ea8d1b63716a5"><param name="Name" value="ost::Audio::goertzel_state_t"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1tone__detection__descriptor__t.html#a3624c9fe09774dc046df3f268325735e"><param name="Name" value="ost::Audio::tone_detection_descriptor_t"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a40b54bf1509eff39857697e5cfb0b104"><param name="Name" value="fax_hits"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a1acad11091747d13725f6bb71b63fe19"><param name="Name" value="fax_tone2nd"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a2f33d8a3dc1b99843ac70f748acae368"><param name="Name" value="fax_tone"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a6345e33f09bdee73f70cf7bd36034908"><param name="Name" value="file"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a2a1e1767496c07e32827293e201996e4"><param name="Name" value="fill"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#a20f6472d7864f980c2d6040ef5a38cc1"><param name="Name" value="find"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a44ca187dbb88f91fc675f08aef30e523"><param name="Name" value="first"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a44ca187dbb88f91fc675f08aef30e523"><param name="Name" value="ost::AudioCodec"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_tel_tone_1_1__tonekey.html#a5ee285737d2f8ca1acc643f5eef2221f"><param name="Name" value="ost::TelTone::_tonekey"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#afaf42f23668d8eebc1fe367c7b33f9f4"><param name="Name" value="flush"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#afaf42f23668d8eebc1fe367c7b33f9f4"><param name="Name" value="ost::AudioDevice"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a0c1c16d1db4e4a9d6d6a06eb0fa98f71"><param name="Name" value="ost::AudioStream"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a10021256123af9a4b31bf1f69629524c"><param name="Name" value="Format"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#ad6a3424809c431bed4dcbe008d6e7fe4"><param name="Name" value="format"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a6f29b9172a04d07df9d5891c8f4781f2"><param name="Name" value="frame"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#afddcd59bb4f012dc5bb7d565750a1e5d"><param name="Name" value="framebuf"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#ad9a8665590be0f4ea174fb87ed591f48"><param name="Name" value="framecount"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#a6f88389b27d7d57c42a6fe22b924f809"><param name="Name" value="framesize"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_tones.html#ab7b645b27130a20d1dd45097f4e1c210"><param name="Name" value="frametime"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_tones.html#ab7b645b27130a20d1dd45097f4e1c210"><param name="Name" value="ost::DTMFTones"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_m_f_tones.html#a1ab0b75fcd4a6c2b6307293f418536cc"><param name="Name" value="ost::MFTones"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#a562f918a4f1d73d605a2eb49eb6c4786"><param name="Name" value="framing"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#a562f918a4f1d73d605a2eb49eb6c4786"><param name="Name" value="ost::Audio::Info"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#a8b133fbb4fbffc680fccd894405acca0"><param name="Name" value="ost::TelTone"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa9aee334a2d893ad44d7a3856e87a34a0"><param name="Name" value="g721ADPCM"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa3f2c9e61b4a788f8e2ddabea3e0e64a5"><param name="Name" value="g722_6bit"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa9bad14942804ae774da37c17ebf1c5a2"><param name="Name" value="g722_7bit"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa0128360769248d7ebbc61bb1bdea060f"><param name="Name" value="g722Audio"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baaaa50db3a491cbd7a56e2ca9519216c31"><param name="Name" value="g723_2bit"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa232c38a80a6707ffa9c40a0ebce849d2"><param name="Name" value="g723_3bit"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa80f1c4463d696f269587e60ccb62a137"><param name="Name" value="g723_4bit"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baac33334f21056ca768c932faa58ee4e3b"><param name="Name" value="g723_5bit"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa18a9a174c23c51a90fd1043bb2c5b1b1"><param name="Name" value="g729Audio"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__tagv1.html#a0e19702524085e531f8cf9d8e227598c"><param name="Name" value="genre"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a50401a6a8ab481d4e9a80cc4788c8d6d"><param name="Name" value="getAbsolutePosition"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a5239719e8411bf6ee7f71a9f42ec9643"><param name="Name" value="getAge"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#ae5c1671337f9c9c00e677065aaed6b38"><param name="Name" value="getAnnotation"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_base.html#ac2efc5edeab71de84764796d4353a057"><param name="Name" value="getBuffer"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_base.html#ac2efc5edeab71de84764796d4353a057"><param name="Name" value="ost::AudioBase"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_buffer.html#afd4bc8c265125e0809165c50ee2dac57"><param name="Name" value="ost::AudioBuffer"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#a93d1081a88acc1cb9da1ab2e98a8c791"><param name="Name" value="ost::AudioDevice"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a40e6fcddf43df289fef2f66ccbe84bbd"><param name="Name" value="ost::AudioFile"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a32945278bd2fcb2b03c97f15d78f571b"><param name="Name" value="ost::AudioStream"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#ab82cde0fc2d640509eca21e4ef30ddee"><param name="Name" value="getByFormat"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#ad68f933525fe820797b89aa1c91432af"><param name="Name" value="getByInfo"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a63e5170162bb09eac8f6d91bb920295f"><param name="Name" value="getCodec"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a63e5170162bb09eac8f6d91bb920295f"><param name="Name" value="ost::AudioCodec"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a5a2a7d99d0b81e72b88cea73294de33b"><param name="Name" value="ost::AudioFile"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a47823d4a7bc81c6fd488af7df15ed755"><param name="Name" value="ost::AudioStream"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a36143260e0b57148892aea0975f45f25"><param name="Name" value="getCodecPath"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a776d3b9884e4138496ad5a1eedfdbc33"><param name="Name" value="getContinuation"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a4e1b8087385faebfae5ad3ca6dddf1ac"><param name="Name" value="getCount"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a4e1b8087385faebfae5ad3ca6dddf1ac"><param name="Name" value="ost::Audio"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a3aa469beded2aed7ce2e6931171db597"><param name="Name" value="ost::AudioStream"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#afbbb4878c27901385cc0f27264d565fa"><param name="Name" value="getDevice"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a98d814ef2eb3e646f22f3ef36fa47f34"><param name="Name" value="getEncoded"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ab800b7125f2a0bcfc73459a2fe78a1e8"><param name="Name" value="getEncoding"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ab800b7125f2a0bcfc73459a2fe78a1e8"><param name="Name" value="ost::Audio"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_base.html#ac419b6c2407894a81147e05f5c5eed9c"><param name="Name" value="ost::AudioBase"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a7b9b5e2d9b8358477874aed0c610ee38"><param name="Name" value="ost::AudioFile"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#aaa17fb3fc0909a04f407c2fad11eeb31"><param name="Name" value="getError"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#ab5c5d566d756ac6c33b40a9555bdcfa5"><param name="Name" value="getErrorStr"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a0d02b2719ed4d628f2350aee72e789cc"><param name="Name" value="getEstimated"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#aadd5e4375762873bc26f0c564a557bab"><param name="Name" value="getExtension"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a8c44290b4185963301333e1605ab67d0"><param name="Name" value="getFormat"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a4c2fb14b523be5acfef85342dc218486"><param name="Name" value="getFrame"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a4c2fb14b523be5acfef85342dc218486"><param name="Name" value="ost::Audio"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a943d31930ce0f1318f42d6dc825200cb"><param name="Name" value="ost::AudioTone"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_tones.html#ac59d2ebb1f5feb0aa7871a02109f3b26"><param name="Name" value="ost::DTMFTones"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_m_f_tones.html#a1e3cb8bbbbe783bc7f4f40a2162ad713"><param name="Name" value="ost::MFTones"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#a9fb42cc64137389c3033b58505a5a6d9"><param name="Name" value="ost::TelTone"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a0fb3b5759015fa3d844c64a371a4ff0b"><param name="Name" value="getFrames"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a7a39ae9e35b5b106f8b09e7fd2d7b1dd"><param name="Name" value="getFraming"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a0332615031318a94f93272f59295f5e3"><param name="Name" value="getHeader"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a2870bc92d525fb047589941f25e79384"><param name="Name" value="getImpulse"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a2870bc92d525fb047589941f25e79384"><param name="Name" value="ost::Audio"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a021a39d174853a4270f3f3775bfd634a"><param name="Name" value="ost::AudioCodec"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a564e2675bdab8ef4c957bde488c983e5"><param name="Name" value="getInfo"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a564e2675bdab8ef4c957bde488c983e5"><param name="Name" value="ost::AudioCodec"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#a6aecc79b2e3ac741af3cbba660ade7b9"><param name="Name" value="ost::AudioDevice"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a2c684cf4a4cb6b6171d056ad3bc61c45"><param name="Name" value="ost::AudioFile"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a77ddf4ca468cab1e60afd6240a134288"><param name="Name" value="getLinear"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#ace1ea2d5fd87a2b8be6e359f65de33b3"><param name="Name" value="getLong"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#af7b3c1d85ace6a44b16fef152987da81"><param name="Name" value="getMIME"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a55c4d5c8390dead23b4e6b35a0766be0"><param name="Name" value="getMono"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a55c4d5c8390dead23b4e6b35a0766be0"><param name="Name" value="ost::Audio"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a6d17c9a029b0ac28148eb9107acff751"><param name="Name" value="ost::AudioStream"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a01363a0e26b84f4df7a5fce514fbbb30"><param name="Name" value="getName"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_base.html#a8333d7f0135dad5eaf515895c08dbfbd"><param name="Name" value="getNative"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_base.html#a26a26fef0bcc5a158dab9cdf5a0d772e"><param name="Name" value="getPacket"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_base.html#a26a26fef0bcc5a158dab9cdf5a0d772e"><param name="Name" value="ost::AudioBase"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a760f86f0ace0420992bfa8bc1e8f68cf"><param name="Name" value="ost::AudioCodec"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#aab3a8568a6e1b3c9660a6c63b049ccd6"><param name="Name" value="ost::AudioStream"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a176923b091b10a7df193ed7ade801ca5"><param name="Name" value="getPeak"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a176923b091b10a7df193ed7ade801ca5"><param name="Name" value="ost::Audio"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a921946adef4203b24ba21ede710cfeb5"><param name="Name" value="ost::AudioCodec"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a5a993307ec0c18483dd455f79d0bcfd4"><param name="Name" value="getPosition"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a0d4fe5d02585c327ba712d9361a1f9ac"><param name="Name" value="getRate"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a0d4fe5d02585c327ba712d9361a1f9ac"><param name="Name" value="ost::Audio"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a02cb488e70d91e794f68f13b00454b57"><param name="Name" value="ost::AudioTone"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#ab5164fbce2e6d1dde35554f039fb2379"><param name="Name" value="getRequired"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_detect.html#ae33af9f9b942d007b9303810a58be868"><param name="Name" value="getResult"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_base.html#a438fa2853fd7683b06a5939c115aaa4c"><param name="Name" value="getSampleRate"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_base.html#a438fa2853fd7683b06a5939c115aaa4c"><param name="Name" value="ost::AudioBase"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a3d271f6b81b9e9840150490d4725c620"><param name="Name" value="ost::AudioFile"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#a9797ed3fdf2fb6488f513e944f96dcfa"><param name="Name" value="getSamples"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#a9797ed3fdf2fb6488f513e944f96dcfa"><param name="Name" value="ost::AudioDevice"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a9bb99aa5d59ef9414b8bac9b8086edad"><param name="Name" value="ost::AudioFile"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a5712e33902728fc7620f6399ea4e83a7"><param name="Name" value="ost::AudioTone"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a948b62678f94efba102add295c7398bd"><param name="Name" value="getShort"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#ab7d003202eac30515f2a7f87b6186b36"><param name="Name" value="getSize"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a5c4cbe617d6504f286ced3fa9973c5f4"><param name="Name" value="getStereo"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a5c4cbe617d6504f286ced3fa9973c5f4"><param name="Name" value="ost::Audio"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a287e2a936022552de4f8bc7731df3bba"><param name="Name" value="ost::AudioStream"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a681306f00673b11777bf8330eb4e533b"><param name="Name" value="getWaveFormat"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_detect.html#a7613c6d1296fbc51263d6f7e9c50774d"><param name="Name" value="goertzelInit"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_detect.html#a225100c6ad08d7f6dcdf9b179bd84bff"><param name="Name" value="goertzelResult"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_detect.html#ad6fb18bc0360d281917f8377d88c6871"><param name="Name" value="goertzelUpdate"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_resample.html#a03c347a6d21f77f94c7703030c983b67"><param name="Name" value="gpos"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa8ad54db389dbd71a73db82bc44457d95"><param name="Name" value="gsmVoice"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a7ac3ba7ec4a27f87a59e81b28509380d"><param name="Name" value="hasDevice"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#ae536bde9ea42d58957880b26e35e19c3"><param name="Name" value="hasPositioning"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a3e41041fca381f436c3dca571e82a10e"><param name="Name" value="header"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#a8fa6cac96df3c014db58370e5e46d530"><param name="Name" value="headersize"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a0bfa319ff9ff428ce075d23e780b7058"><param name="Name" value="hit1"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a678194ac32a49d37c56d36916f5516ca"><param name="Name" value="hit2"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#ab530845f05591781bdd2ecfc69e3b4fd"><param name="Name" value="hit3"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#aba05fcde1082fdd2d9ee45c9d7a0b8d8"><param name="Name" value="hit4"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_tel_tone_1_1__tonekey.html#a61007a09f569ffcc5bda1afaa9714577"><param name="Name" value="id"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baaf9096458bb864e2c7003c1c61d18adc4"><param name="Name" value="ilbcAudio"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#a08bd364745a62238514c6591a950a9ab"><param name="Name" value="Info"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_base.html#aaf541ba0c6e8285e961d551454aa63a1"><param name="Name" value="info"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_base.html#aaf541ba0c6e8285e961d551454aa63a1"><param name="Name" value="ost::AudioBase"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a4fb14af1f9c82f3b536f1c6ab8b53f69"><param name="Name" value="ost::AudioCodec"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a4bf7f795b71403f7f9946c105b5b5c5d"><param name="Name" value="initialize"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#aec017418b5c61090fd8f45d5b29de0cf"><param name="Name" value="iolimit"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#aaf1157fb77bd118f4a3456d99c7adf84"><param name="Name" value="isBuffered"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#afd2f4d74c504ff9f1638ac0097f7df8d"><param name="Name" value="isComplete"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#afd2f4d74c504ff9f1638ac0097f7df8d"><param name="Name" value="ost::AudioTone"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_tones.html#a274d70b6b87294764bc50e47f1a8f250"><param name="Name" value="ost::DTMFTones"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_m_f_tones.html#a1a889d81dba1bdbc01d55c25d0b348b1"><param name="Name" value="ost::MFTones"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#ac9a38161400d6a843d4b38a819ae48e9"><param name="Name" value="ost::TelTone"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#a2f991c8aef77c2fdf8690e08a192da64"><param name="Name" value="isEnabled"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a92329b4cec1f96b35077fe4e59df59e0"><param name="Name" value="isEndian"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a8ae0c37f1cc3f9f89f7d803ccbaf3ae7"><param name="Name" value="isLinear"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a98257391028757cf94170b6a592b2e29"><param name="Name" value="isMono"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a20643f6badb06c1993773f4341ef91e6"><param name="Name" value="isOpen"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a8ed546acdfe452bb642364d486036f9f"><param name="Name" value="isSigned"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#aa444bf042a79428d91958a38973ded8e"><param name="Name" value="isSilent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#aa444bf042a79428d91958a38973ded8e"><param name="Name" value="ost::AudioCodec"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a21e969c7ed50d2b7dfa6a40510dcdb39"><param name="Name" value="ost::AudioTone"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a975ac3c81701de7f404a319ef77e0f85"><param name="Name" value="isStereo"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#aaf520ef6e2e3da00c0d0cfc4eee781ea"><param name="Name" value="isStreamable"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_m_f_tones.html#aa7f10829db96089ad0078a07b55621c6"><param name="Name" value="kflag"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_resample.html#a239a00ff4ef4eca85ecb134804e6e9b2"><param name="Name" value="last"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_resample.html#a239a00ff4ef4eca85ecb134804e6e9b2"><param name="Name" value="ost::AudioResample"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_tel_tone_1_1__tonekey.html#aa7ffcb8ee36bd9834cb05f5bc31952d2"><param name="Name" value="ost::TelTone::_tonekey"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a60bcd432e3ee53b06284b9dcbb9568dc"><param name="Name" value="length"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a4dda00f9d98568cf340f94e9bd0fcd88"><param name="Name" value="Level"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_tones.html#a3b8d23f074e6b74928911a2ffa9546bf"><param name="Name" value="level"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_tones.html#a3b8d23f074e6b74928911a2ffa9546bf"><param name="Name" value="ost::DTMFTones"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_m_f_tones.html#aa2dbf77e15507a7b7c14d3b66d7c991e"><param name="Name" value="ost::MFTones"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#ac64942aa5d5993948cb89115f2a0e203"><param name="Name" value="ost::TelTone"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a8e557e78d8d049df8f2ed5eb0b60cea9"><param name="Name" value="Linear"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a7f2483c2267044701fdcca3549f4e8c8"><param name="Name" value="load"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a7f2483c2267044701fdcca3549f4e8c8"><param name="Name" value="ost::AudioCodec"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#accdcf48f72d04bc79dc6ee2bfad38b35"><param name="Name" value="ost::TelTone"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a6e5a9c870f6573c94cead5c86cebd5f6"><param name="Name" value="loadPlugin"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a27b6231325ef5b3a5efe01412b133227"><param name="Name" value="lost_digits"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a983027261f30a998a568e77f36efabf2"><param name="Name" value="m1"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a842886fa90ae476835ba13e735e4994d"><param name="Name" value="m2"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_resample.html#a96c78af7fc79e221815873acae145b72"><param name="Name" value="max"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a7bee06be25a955b2833f34c7f4c57fc9"><param name="Name" value="maxFramesize"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_resample.html#a986ef6a994491b684ee5664b373698bf"><param name="Name" value="mfact"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_m_f_tones.html#abc6f3c983a816cf8a69b25ed90eb65cc"><param name="Name" value="mfframes"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_m_f_tones.html#ae9d48c4d9de53b7e1b861548c8c07b38"><param name="Name" value="MFTones"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a9d735037f661669d18cef627c197b67e"><param name="Name" value="mhit"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a95e71e5d7bc03fa97a8ccb21c89f5c98"><param name="Name" value="minimum"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#aaa5de3c7b74ee304a5292d79a6a4df9b"><param name="Name" value="Mode"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a8bda31d8252da3502844381bf6173f45"><param name="Name" value="mode"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#aaa0dde6cbf61934fcb527661a491ed5caa320fddf63b1c9600aef25b47870e8c6"><param name="Name" value="modeAppend"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#aaa0dde6cbf61934fcb527661a491ed5caf41875f19de18f05fc1c420a8d21f7c6"><param name="Name" value="modeCache"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#aaa0dde6cbf61934fcb527661a491ed5ca47ed2d6bafa7f3495c8515625f96fe29"><param name="Name" value="modeCreate"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#aaa0dde6cbf61934fcb527661a491ed5caa955eac8a565410a7552fd7938cf2583"><param name="Name" value="modeFeed"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#aaa0dde6cbf61934fcb527661a491ed5caed372135c7f2d5e51e80d60f9d15a368"><param name="Name" value="modeInfo"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#aaa0dde6cbf61934fcb527661a491ed5caecb1664beec2b86c5d87d86f64d0a84d"><param name="Name" value="modeRead"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#aaa0dde6cbf61934fcb527661a491ed5ca375f4b87b508327185bd6f19025b1424"><param name="Name" value="modeReadAny"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#aaa0dde6cbf61934fcb527661a491ed5ca58966349b002a4412997e2f141976273"><param name="Name" value="modeReadOne"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#aaa0dde6cbf61934fcb527661a491ed5ca6f74b25c50c34c027a0720dd7dc32386"><param name="Name" value="modeWrite"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa04a05a2df746a4d72e35571b67cc5284"><param name="Name" value="mp1Audio"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa89cb4e37330a69f5e180ddb463d7740e"><param name="Name" value="mp2Audio"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa56d99d68ada26ec7dd4f53414461badd"><param name="Name" value="mp3Audio"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a672f424a774eadfc8b5bf5c62903dc00"><param name="Name" value="mp3info"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#ab9679401bb55fbaa2121ab3f81d4a7ea"><param name="Name" value="mp_brate"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#a1eb170358a872fd480c55a28ce5c5f4e"><param name="Name" value="mp_channels"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#acb81e5190c07f6d22575b4f1a17cdead"><param name="Name" value="mp_copyright"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#a8b3a4d39a2cf71c8ed19f58c734bb028"><param name="Name" value="mp_crc"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#a392dcd9969ac7cb5593d5ace9d4ba409"><param name="Name" value="mp_emp"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#a1421a91dc9134069505db80b6a16774b"><param name="Name" value="mp_extend"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#a2cddde96a4560692692a273faa5fca9b"><param name="Name" value="mp_layer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#a9c0e0afae7ade43bdcf638fbbfe3064f"><param name="Name" value="mp_original"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#adb85e53fff084c4cf8d9e80d6c57f2a3"><param name="Name" value="mp_pad"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#a056edee325af640d28b9ec1761a8d1ff"><param name="Name" value="mp_priv"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#a45345a1a20d3e274bd02c3079e7a04c1"><param name="Name" value="mp_srate"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#a0616c2cf1ca66cc7d4e6e723cd1a1a8c"><param name="Name" value="mp_sync1"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#a912522e501564727926bda6fa1751bb4"><param name="Name" value="mp_sync2"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#a33787fdb19fef66e02011746cb6a258a"><param name="Name" value="mp_ver"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a1b1f99ba120876f87870b8f7f007e924a8a308f2000da135db008c71462ec16d5"><param name="Name" value="mpeg"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa9c776ce70f0499bb61b8954b74a8fac7"><param name="Name" value="msgsmVoice"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa5f6c81d40b3bb2e78e7fbc30fdbd2074"><param name="Name" value="mulawAudio"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a7eea163ba29813a936ccac616c83bb18"><param name="Name" value="name"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a34d7ecf60969d63f18529c1e8be6b1a2"><param name="Name" value="ndata"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#acd455c04876aa5c5a42bd8fc9e43f620"><param name="Name" value="next"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#acd455c04876aa5c5a42bd8fc9e43f620"><param name="Name" value="ost::AudioCodec"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_tel_tone_1_1__tonedef.html#a6ab75bcf761e4c1a3e5e6574dda3bdd7"><param name="Name" value="ost::TelTone::_tonedef"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_tel_tone_1_1__tonekey.html#a759b5eb70b376b42328b205e154c3a88"><param name="Name" value="ost::TelTone::_tonekey"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baaa4e009edc72290cc7e375c54a66e17a6"><param name="Name" value="okiADPCM"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a6aa46c6af42e7155be4f92d1b7e0109b"><param name="Name" value="open"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a6aa46c6af42e7155be4f92d1b7e0109b"><param name="Name" value="ost::AudioFile"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a2dba2a15630314e4eb6a134ca82b5a60"><param name="Name" value="ost::AudioStream"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#ab17b3dbcc1893d572efe92bfc0f15390"><param name="Name" value="operator!"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#a48a648aaef83abb6fd65fc59dcf40467"><param name="Name" value="order"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html"><param name="Name" value="ost::Audio::dtmf_detect_state_t"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a6d350dab0121421a1a41289da38fb152"><param name="Name" value="col_out"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a68e9727e7c756e0fd41ba793fa8d1737"><param name="Name" value="col_out2nd"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a16befda79cb712b33db882afd8230aae"><param name="Name" value="current_digits"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a9b1fa0adfa42e6440b06ec741f3cba9e"><param name="Name" value="current_sample"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a6bb6ee1319b8b09a1d7bb2c57b66876c"><param name="Name" value="detected_digits"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a2d8ec7cd817782d307fa4f434728d9a8"><param name="Name" value="digit_hits"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a4732440ba856b4ddd9d022130012fe25"><param name="Name" value="digits"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a0e633637c0bef5ed0bf9317a8130de5e"><param name="Name" value="energy"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a40b54bf1509eff39857697e5cfb0b104"><param name="Name" value="fax_hits"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a2f33d8a3dc1b99843ac70f748acae368"><param name="Name" value="fax_tone"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a1acad11091747d13725f6bb71b63fe19"><param name="Name" value="fax_tone2nd"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a0bfa319ff9ff428ce075d23e780b7058"><param name="Name" value="hit1"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a678194ac32a49d37c56d36916f5516ca"><param name="Name" value="hit2"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#ab530845f05591781bdd2ecfc69e3b4fd"><param name="Name" value="hit3"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#aba05fcde1082fdd2d9ee45c9d7a0b8d8"><param name="Name" value="hit4"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a27b6231325ef5b3a5efe01412b133227"><param name="Name" value="lost_digits"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a9d735037f661669d18cef627c197b67e"><param name="Name" value="mhit"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#af21afb8422b17c34e0702783e4ca9362"><param name="Name" value="row_out"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a4f28bae9e4849c109353f1baa7ed4e43"><param name="Name" value="row_out2nd"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1goertzel__state__t.html"><param name="Name" value="ost::Audio::goertzel_state_t"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1goertzel__state__t.html#a1630fc16b30ad926fb0ea8d1b63716a5"><param name="Name" value="fac"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1goertzel__state__t.html#a1a7405840dfec270e33a47cabcdff91f"><param name="Name" value="v2"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1goertzel__state__t.html#ab100a79a96a5baeeb2792adf9e5401b0"><param name="Name" value="v3"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html"><param name="Name" value="ost::Audio::Info"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#a84f470ef63154d5b8c040e850a89dcb4"><param name="Name" value="annotation"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#a7f3155677b7414ec2b00138a9252b980"><param name="Name" value="bitrate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#af68c40e779091f736c8782e35ac611a6"><param name="Name" value="clear"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#a247ab7f4d83b8b160c3d6e61fbc534d7"><param name="Name" value="encoding"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#ad6a3424809c431bed4dcbe008d6e7fe4"><param name="Name" value="format"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#ad9a8665590be0f4ea174fb87ed591f48"><param name="Name" value="framecount"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#a6f88389b27d7d57c42a6fe22b924f809"><param name="Name" value="framesize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#a562f918a4f1d73d605a2eb49eb6c4786"><param name="Name" value="framing"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#a8fa6cac96df3c014db58370e5e46d530"><param name="Name" value="headersize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#a08bd364745a62238514c6591a950a9ab"><param name="Name" value="Info"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#a48a648aaef83abb6fd65fc59dcf40467"><param name="Name" value="order"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#a62bc343ffa9bef02d98af2168976615a"><param name="Name" value="padding"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#aa2da9a01f49ef6c0d191580ab7235ceb"><param name="Name" value="rate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#a4630246844b6994828766d8a30a906d2"><param name="Name" value="set"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#aeda8145d804ae0c950ab43fb929a10ea"><param name="Name" value="setFraming"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#ad760deec6ae467c9daadcd452547835c"><param name="Name" value="setRate"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html"><param name="Name" value="ost::Audio::mpeg_audio"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#ab9679401bb55fbaa2121ab3f81d4a7ea"><param name="Name" value="mp_brate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#a1eb170358a872fd480c55a28ce5c5f4e"><param name="Name" value="mp_channels"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#acb81e5190c07f6d22575b4f1a17cdead"><param name="Name" value="mp_copyright"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#a8b3a4d39a2cf71c8ed19f58c734bb028"><param name="Name" value="mp_crc"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#a392dcd9969ac7cb5593d5ace9d4ba409"><param name="Name" value="mp_emp"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#a1421a91dc9134069505db80b6a16774b"><param name="Name" value="mp_extend"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#a2cddde96a4560692692a273faa5fca9b"><param name="Name" value="mp_layer"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#a9c0e0afae7ade43bdcf638fbbfe3064f"><param name="Name" value="mp_original"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#adb85e53fff084c4cf8d9e80d6c57f2a3"><param name="Name" value="mp_pad"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#a056edee325af640d28b9ec1761a8d1ff"><param name="Name" value="mp_priv"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#a45345a1a20d3e274bd02c3079e7a04c1"><param name="Name" value="mp_srate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#a0616c2cf1ca66cc7d4e6e723cd1a1a8c"><param name="Name" value="mp_sync1"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#a912522e501564727926bda6fa1751bb4"><param name="Name" value="mp_sync2"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__audio.html#a33787fdb19fef66e02011746cb6a258a"><param name="Name" value="mp_ver"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__tagv1.html"><param name="Name" value="ost::Audio::mpeg_tagv1"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__tagv1.html#a0e19702524085e531f8cf9d8e227598c"><param name="Name" value="genre"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__tagv1.html#a3d2dc3ef39cd5cf32ed00c88719a5b08"><param name="Name" value="tag_album"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__tagv1.html#aaec2a7c165378db68d95840e63640e4c"><param name="Name" value="tag_artist"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__tagv1.html#ae9fe8188284d7aa1307570dac5e46475"><param name="Name" value="tag_id"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__tagv1.html#ad5f2e78c6836abb8231b35dd709c4bba"><param name="Name" value="tag_note"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__tagv1.html#adfa7e43219245b81587495f2b8b13c4c"><param name="Name" value="tag_title"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__tagv1.html#a8fa333a7e97cf9b4e4750b47fc86f6d7"><param name="Name" value="tag_year"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1tone__detection__descriptor__t.html"><param name="Name" value="ost::Audio::tone_detection_descriptor_t"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html"><param name="Name" value="ost::Audio"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa72609cc1ee8752337012b27f8c63d016"><param name="Name" value="alawAudio"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa21542716b78d850f6ffe02bbbac160ec"><param name="Name" value="cdaMono"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa5ca72fd2aa7204223dd90d25b361fbf6"><param name="Name" value="cdaStereo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a64ea45fd7b796a2de14093e69591bbc1"><param name="Name" value="DeviceMode"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a5c7e49d2b98c74b5a63a0e52a31e626e"><param name="Name" value="Encoded"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac6a37d56c55e4e90c76e1ff32c5a9b4d"><param name="Name" value="Encoding"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a090ca64e7dfece97811c37bd076937da"><param name="Name" value="errEncodingInvalid"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a3893553d65303314f79536b41ca3d15e"><param name="Name" value="errEndOfFile"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a88933ebeecc847bdd457c73bfa340a5c"><param name="Name" value="errInvalidTrack"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a1491cc7eab3e1e461eb497552a5cadbf"><param name="Name" value="errNoCodec"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a234d5e01216dd2709e1a302178e2b769"><param name="Name" value="errNotOpened"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a34f559f52d6302c22ac2378815888d3e"><param name="Name" value="errNotPlaying"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#afc24bc71c6ce0c97f0c349291eed74cf"><param name="Name" value="Error"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884ab8f14090a0ce6e7df5ab0733d1d052be"><param name="Name" value="errPlaybackFailed"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a0a06eeec844e19cd445213bbdf20f0a1"><param name="Name" value="errRateInvalid"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a0b98c4e843ad5feca37c2fcd2a960d48"><param name="Name" value="errReadFailure"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884ac51b3f3746de6f218335d8f9bd6edc17"><param name="Name" value="errReadIncomplete"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a90fe70ebd883cafe2f647c3eb7b0aa37"><param name="Name" value="errReadInterrupt"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884af0b6200842a9819e841ed6483b073da3"><param name="Name" value="errReadLast"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a25186756cddbe09668774d34910c6054"><param name="Name" value="errRequestInvalid"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a2d8e975e5200165280499b9604b98212"><param name="Name" value="errStartOfFile"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884ad1b9591fb7b7d30ddad63f6e706bbaae"><param name="Name" value="errStatFailed"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884aaf27439b02b8237b6a56c822f180414d"><param name="Name" value="errSuccess"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884ad06c70265582cee5b91e93d75b4f5001"><param name="Name" value="errTOCFailed"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a73662d71bc5ac2b5df735ef7a95a04b9"><param name="Name" value="errWriteFailure"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a7cdee9c419aa5ffaa8436f34da734c8e"><param name="Name" value="errWriteIncomplete"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a9b399c8c40f1c9c460490efeb3f86884a156cc653457d3f76935b7f8bc856d43f"><param name="Name" value="errWriteInterrupt"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a2a1e1767496c07e32827293e201996e4"><param name="Name" value="fill"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a10021256123af9a4b31bf1f69629524c"><param name="Name" value="Format"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa9aee334a2d893ad44d7a3856e87a34a0"><param name="Name" value="g721ADPCM"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa3f2c9e61b4a788f8e2ddabea3e0e64a5"><param name="Name" value="g722_6bit"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa9bad14942804ae774da37c17ebf1c5a2"><param name="Name" value="g722_7bit"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa0128360769248d7ebbc61bb1bdea060f"><param name="Name" value="g722Audio"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baaaa50db3a491cbd7a56e2ca9519216c31"><param name="Name" value="g723_2bit"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa232c38a80a6707ffa9c40a0ebce849d2"><param name="Name" value="g723_3bit"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa80f1c4463d696f269587e60ccb62a137"><param name="Name" value="g723_4bit"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baac33334f21056ca768c932faa58ee4e3b"><param name="Name" value="g723_5bit"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa18a9a174c23c51a90fd1043bb2c5b1b1"><param name="Name" value="g729Audio"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a36143260e0b57148892aea0975f45f25"><param name="Name" value="getCodecPath"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a4e1b8087385faebfae5ad3ca6dddf1ac"><param name="Name" value="getCount"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#afbbb4878c27901385cc0f27264d565fa"><param name="Name" value="getDevice"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ab800b7125f2a0bcfc73459a2fe78a1e8"><param name="Name" value="getEncoding"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#aadd5e4375762873bc26f0c564a557bab"><param name="Name" value="getExtension"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a4c2fb14b523be5acfef85342dc218486"><param name="Name" value="getFrame"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a7a39ae9e35b5b106f8b09e7fd2d7b1dd"><param name="Name" value="getFraming"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a2870bc92d525fb047589941f25e79384"><param name="Name" value="getImpulse"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#af7b3c1d85ace6a44b16fef152987da81"><param name="Name" value="getMIME"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a55c4d5c8390dead23b4e6b35a0766be0"><param name="Name" value="getMono"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a01363a0e26b84f4df7a5fce514fbbb30"><param name="Name" value="getName"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a176923b091b10a7df193ed7ade801ca5"><param name="Name" value="getPeak"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a0d4fe5d02585c327ba712d9361a1f9ac"><param name="Name" value="getRate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a5c4cbe617d6504f286ced3fa9973c5f4"><param name="Name" value="getStereo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa8ad54db389dbd71a73db82bc44457d95"><param name="Name" value="gsmVoice"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a7ac3ba7ec4a27f87a59e81b28509380d"><param name="Name" value="hasDevice"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baaf9096458bb864e2c7003c1c61d18adc4"><param name="Name" value="ilbcAudio"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#aaf1157fb77bd118f4a3456d99c7adf84"><param name="Name" value="isBuffered"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a92329b4cec1f96b35077fe4e59df59e0"><param name="Name" value="isEndian"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a8ae0c37f1cc3f9f89f7d803ccbaf3ae7"><param name="Name" value="isLinear"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a98257391028757cf94170b6a592b2e29"><param name="Name" value="isMono"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a975ac3c81701de7f404a319ef77e0f85"><param name="Name" value="isStereo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a4dda00f9d98568cf340f94e9bd0fcd88"><param name="Name" value="Level"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a8e557e78d8d049df8f2ed5eb0b60cea9"><param name="Name" value="Linear"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a6e5a9c870f6573c94cead5c86cebd5f6"><param name="Name" value="loadPlugin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a7bee06be25a955b2833f34c7f4c57fc9"><param name="Name" value="maxFramesize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#aaa5de3c7b74ee304a5292d79a6a4df9b"><param name="Name" value="Mode"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#aaa0dde6cbf61934fcb527661a491ed5caa320fddf63b1c9600aef25b47870e8c6"><param name="Name" value="modeAppend"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#aaa0dde6cbf61934fcb527661a491ed5caf41875f19de18f05fc1c420a8d21f7c6"><param name="Name" value="modeCache"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#aaa0dde6cbf61934fcb527661a491ed5ca47ed2d6bafa7f3495c8515625f96fe29"><param name="Name" value="modeCreate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#aaa0dde6cbf61934fcb527661a491ed5caa955eac8a565410a7552fd7938cf2583"><param name="Name" value="modeFeed"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#aaa0dde6cbf61934fcb527661a491ed5caed372135c7f2d5e51e80d60f9d15a368"><param name="Name" value="modeInfo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#aaa0dde6cbf61934fcb527661a491ed5caecb1664beec2b86c5d87d86f64d0a84d"><param name="Name" value="modeRead"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#aaa0dde6cbf61934fcb527661a491ed5ca375f4b87b508327185bd6f19025b1424"><param name="Name" value="modeReadAny"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#aaa0dde6cbf61934fcb527661a491ed5ca58966349b002a4412997e2f141976273"><param name="Name" value="modeReadOne"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#aaa0dde6cbf61934fcb527661a491ed5ca6f74b25c50c34c027a0720dd7dc32386"><param name="Name" value="modeWrite"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa04a05a2df746a4d72e35571b67cc5284"><param name="Name" value="mp1Audio"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa89cb4e37330a69f5e180ddb463d7740e"><param name="Name" value="mp2Audio"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa56d99d68ada26ec7dd4f53414461badd"><param name="Name" value="mp3Audio"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a1b1f99ba120876f87870b8f7f007e924a8a308f2000da135db008c71462ec16d5"><param name="Name" value="mpeg"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa9c776ce70f0499bb61b8954b74a8fac7"><param name="Name" value="msgsmVoice"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa5f6c81d40b3bb2e78e7fbc30fdbd2074"><param name="Name" value="mulawAudio"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a34d7ecf60969d63f18529c1e8be6b1a2"><param name="Name" value="ndata"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baaa4e009edc72290cc7e375c54a66e17a6"><param name="Name" value="okiADPCM"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baac8d2724c58b6015260e1eeafe4045baa"><param name="Name" value="pcm16Mono"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baaaecacf9d126404dee63f19df016ed8a2"><param name="Name" value="pcm16Stereo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa5d5349654c1f97010f3a1a722d49aa68"><param name="Name" value="pcm32Mono"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa689c16b1c20517c6e6b4d5a1877ef677"><param name="Name" value="pcm32Stereo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baae163dd3eddff63ed6a184fb21461b330"><param name="Name" value="pcm8Mono"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa6361df110128c2e5b774c9bf1496b102"><param name="Name" value="pcm8Stereo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a6ed0d85bd28cabe648d18832e54777c1a434fa31ee9406fe04ab7d39359f5d5b5"><param name="Name" value="PLAY"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a6ed0d85bd28cabe648d18832e54777c1a2a5f699cdda2e8e061f9630069505c58"><param name="Name" value="PLAYREC"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#af100e5274ac000c170299e83b87a1314"><param name="Name" value="Rate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a38b5dfd1b29f5fd1acff3273582d18edabbd0ac85608ddbc3306597c0fb19f4ac"><param name="Name" value="rate16khz"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a38b5dfd1b29f5fd1acff3273582d18edabd8fe3ab3fa2524304c4d8bfc78e93be"><param name="Name" value="rate32khz"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a38b5dfd1b29f5fd1acff3273582d18eda12152c96c294e1b46a86763a810e3cc7"><param name="Name" value="rate44khz"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a38b5dfd1b29f5fd1acff3273582d18eda85dee3b5f2de3a586ad5cd91205ae167"><param name="Name" value="rate6khz"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a38b5dfd1b29f5fd1acff3273582d18edab4450628efd918f9c8f11e5362b53deb"><param name="Name" value="rate8khz"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a38b5dfd1b29f5fd1acff3273582d18eda8a10475fcbfd70f2d8c496f0283626a7"><param name="Name" value="rateUnknown"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a1b1f99ba120876f87870b8f7f007e924ae71df2f88ae93b3040e400fc5beb6c1f"><param name="Name" value="raw"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a6ed0d85bd28cabe648d18832e54777c1a859407d0f38e9b07ac7ea646f21b2114"><param name="Name" value="RECORD"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a1b1f99ba120876f87870b8f7f007e924aa8667be9bacfd6ed992b93191d88e17a"><param name="Name" value="riff"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ab9d6b2f16d237f7c70a6ea783fce52f6"><param name="Name" value="Sample"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a1b1f99ba120876f87870b8f7f007e924a034a7bf5ce1cdb7990bff5260293241c"><param name="Name" value="snd"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a1b3506ec0126f95fe8f4eadd7d79b6da"><param name="Name" value="snd16_t"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a121b4a42005124b043b33cc6e7bb374e"><param name="Name" value="snd32_t"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa731f9bb579ecbb50b663970a2f504a49"><param name="Name" value="speexAudio"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa29abde2c5d8761d855a19f377d280bd3"><param name="Name" value="speexNarrow"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa0c6336bb14ee0129e8e1f97b276cada0"><param name="Name" value="speexUltra"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa5c1b17694150aa7c8cb33fb2e3a78cb7"><param name="Name" value="speexVoice"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baafbdfc0c366fd02319cdc026e7ae9a67f"><param name="Name" value="speexWide"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ad06ec3abaa4b887081c4d46f691fdd23"><param name="Name" value="swapEncoded"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#adbe8ba272ece9657c9804726e1a1f341"><param name="Name" value="swapEndian"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa2d14662303292d014327a93f6ac68802"><param name="Name" value="sx73Voice"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baab7d3a16e18d1b00bb56d91843d8fe2b8"><param name="Name" value="sx96Voice"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#adaaf1ff03bfae21e5d6231b2f944b490"><param name="Name" value="timeout_t"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ace0ee184d9c8f9331f649fe510aab8bb"><param name="Name" value="toBytes"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a3621624ca7a26b328a82fdf25e1f6a13"><param name="Name" value="todbm"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ad42f5f824bcf39df34a46f04d46baee2"><param name="Name" value="tolevel"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#abadf17c232d679f62218ab2cd8531706"><param name="Name" value="toSamples"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a195793e86aaa34cd68ee21fffe1ec531"><param name="Name" value="toTimeout"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a5a5be50a71949a84e73f9af9497d5b79"><param name="Name" value="toTimestamp"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa8e09e897a62d7a5ecc3dce9282619883"><param name="Name" value="unknownEncoding"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baaae3709b42ebf20e118b3d8dbe7d8996b"><param name="Name" value="voxADPCM"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a1b1f99ba120876f87870b8f7f007e924a932ca85af7639cd6db3f55534b1063eb"><param name="Name" value="wave"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_base.html"><param name="Name" value="ost::AudioBase"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_base.html#a78b761e7276b8c6ea542130aa3a6fde6"><param name="Name" value="AudioBase"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_base.html#ac2efc5edeab71de84764796d4353a057"><param name="Name" value="getBuffer"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_base.html#ac419b6c2407894a81147e05f5c5eed9c"><param name="Name" value="getEncoding"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_base.html#a8333d7f0135dad5eaf515895c08dbfbd"><param name="Name" value="getNative"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_base.html#a26a26fef0bcc5a158dab9cdf5a0d772e"><param name="Name" value="getPacket"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_base.html#a438fa2853fd7683b06a5939c115aaa4c"><param name="Name" value="getSampleRate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_base.html#aaf541ba0c6e8285e961d551454aa63a1"><param name="Name" value="info"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_base.html#a4f8127866aad2198934215ea55e892a2"><param name="Name" value="putBuffer"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_base.html#a4f515f81fd2079b74ab93eee4947d9fb"><param name="Name" value="putNative"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_base.html#a932477ed1dab1f1251a22b3c75f0e745"><param name="Name" value="~AudioBase"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_buffer.html"><param name="Name" value="ost::AudioBuffer"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_buffer.html#a39ddb2920d6b421dabca98ac92221996"><param name="Name" value="AudioBuffer"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_buffer.html#afd4bc8c265125e0809165c50ee2dac57"><param name="Name" value="getBuffer"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_buffer.html#a398d028be8c691e8107073308f4507bc"><param name="Name" value="putBuffer"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_buffer.html#a7829566cc5246824dcb670df9ae75233"><param name="Name" value="~AudioBuffer"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html"><param name="Name" value="ost::AudioCodec"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#ad6b39c6b8e48636490586ca614d48d84"><param name="Name" value="AudioCodec"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a907e86027d1511babd9446eca3b19850"><param name="Name" value="decode"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#aa7f2d6b1965cdb86839ef55d9970e98e"><param name="Name" value="decodeBuffered"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#ad9238d106a0a42bc63be63a305417fb8"><param name="Name" value="encode"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#ac430e489a59a79e0837500712e5bbed0"><param name="Name" value="encodeBuffered"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a7c5e345679761e0b6c9958005af5e173"><param name="Name" value="encoding"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#ad9c810876d4c61205d39e06a9b91e89a"><param name="Name" value="endCodec"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a44ca187dbb88f91fc675f08aef30e523"><param name="Name" value="first"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#ab82cde0fc2d640509eca21e4ef30ddee"><param name="Name" value="getByFormat"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#ad68f933525fe820797b89aa1c91432af"><param name="Name" value="getByInfo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a63e5170162bb09eac8f6d91bb920295f"><param name="Name" value="getCodec"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a0d02b2719ed4d628f2350aee72e789cc"><param name="Name" value="getEstimated"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a021a39d174853a4270f3f3775bfd634a"><param name="Name" value="getImpulse"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a564e2675bdab8ef4c957bde488c983e5"><param name="Name" value="getInfo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a760f86f0ace0420992bfa8bc1e8f68cf"><param name="Name" value="getPacket"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a921946adef4203b24ba21ede710cfeb5"><param name="Name" value="getPeak"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#ab5164fbce2e6d1dde35554f039fb2379"><param name="Name" value="getRequired"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a4fb14af1f9c82f3b536f1c6ab8b53f69"><param name="Name" value="info"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#aa444bf042a79428d91958a38973ded8e"><param name="Name" value="isSilent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a7f2483c2267044701fdcca3549f4e8c8"><param name="Name" value="load"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a7eea163ba29813a936ccac616c83bb18"><param name="Name" value="name"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#acd455c04876aa5c5a42bd8fc9e43f620"><param name="Name" value="next"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a4149a63324548a0cd1a4c268d41fd6e4"><param name="Name" value="~AudioCodec"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html"><param name="Name" value="ost::AudioDevice"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#a385560f5f8d4781b387346d30c4ce345"><param name="Name" value="bufMono"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#ae6374d257f5c269a205eec7e1f596f6f"><param name="Name" value="bufStereo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#ac99355626bd3b70a7b4551055279ad2b"><param name="Name" value="enabled"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#afaf42f23668d8eebc1fe367c7b33f9f4"><param name="Name" value="flush"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#a93d1081a88acc1cb9da1ab2e98a8c791"><param name="Name" value="getBuffer"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#a6aecc79b2e3ac741af3cbba660ade7b9"><param name="Name" value="getInfo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#a9797ed3fdf2fb6488f513e944f96dcfa"><param name="Name" value="getSamples"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#a2f991c8aef77c2fdf8690e08a192da64"><param name="Name" value="isEnabled"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#af385b8b82740059b92e115082247a613"><param name="Name" value="putBuffer"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#a71f1ac06b15596a907958d58724d200f"><param name="Name" value="putSamples"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#a80c44530fa49b79c8480b0543aadd425"><param name="Name" value="setAudio"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#acf78ce4886758173a54ce91c0c1668d8"><param name="Name" value="setEncoded"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#a61c2bceba12270f2f573a3bd01d1892e"><param name="Name" value="sync"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#ae7c1477744fdb3821df5b09953bbe9ad"><param name="Name" value="~AudioDevice"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html"><param name="Name" value="ost::AudioFile"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a22b33b82f3be60a5634617bf712bd39e"><param name="Name" value="afClose"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a4a271372f5c71ed212a38bcbd6bc78f1"><param name="Name" value="afCreate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#aac2bc808f80921302fab043b76e7fd1b"><param name="Name" value="afOpen"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a8e849ce99910b88c7ce7d6def2b09713"><param name="Name" value="afPeek"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#ad9ce6bffdc596b4131a0d2de1b9d3687"><param name="Name" value="afRead"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#abb103103800873c272940685d7d73bda"><param name="Name" value="afSeek"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a79a6020d043bf65659a114420af86c04"><param name="Name" value="afWrite"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#ab01d1c7365320d331e854552ecc953a2"><param name="Name" value="AudioFile"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a9ba09de7cf15f819a798fd10fed10060"><param name="Name" value="clear"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#aba0e5a66e006c61aef1ddbd018e2e7ed"><param name="Name" value="close"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#af536da5d45926c3f75075c76f12ecb51"><param name="Name" value="create"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a77c0be5d7e5d485647dc4be6804bf9e0"><param name="Name" value="error"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a6345e33f09bdee73f70cf7bd36034908"><param name="Name" value="file"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a50401a6a8ab481d4e9a80cc4788c8d6d"><param name="Name" value="getAbsolutePosition"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a5239719e8411bf6ee7f71a9f42ec9643"><param name="Name" value="getAge"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#ae5c1671337f9c9c00e677065aaed6b38"><param name="Name" value="getAnnotation"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a40e6fcddf43df289fef2f66ccbe84bbd"><param name="Name" value="getBuffer"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a5a2a7d99d0b81e72b88cea73294de33b"><param name="Name" value="getCodec"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a776d3b9884e4138496ad5a1eedfdbc33"><param name="Name" value="getContinuation"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a7b9b5e2d9b8358477874aed0c610ee38"><param name="Name" value="getEncoding"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#aaa17fb3fc0909a04f407c2fad11eeb31"><param name="Name" value="getError"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#ab5c5d566d756ac6c33b40a9555bdcfa5"><param name="Name" value="getErrorStr"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a8c44290b4185963301333e1605ab67d0"><param name="Name" value="getFormat"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a0332615031318a94f93272f59295f5e3"><param name="Name" value="getHeader"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a2c684cf4a4cb6b6171d056ad3bc61c45"><param name="Name" value="getInfo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a77ddf4ca468cab1e60afd6240a134288"><param name="Name" value="getLinear"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#ace1ea2d5fd87a2b8be6e359f65de33b3"><param name="Name" value="getLong"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a5a993307ec0c18483dd455f79d0bcfd4"><param name="Name" value="getPosition"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a3d271f6b81b9e9840150490d4725c620"><param name="Name" value="getSampleRate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a9bb99aa5d59ef9414b8bac9b8086edad"><param name="Name" value="getSamples"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a948b62678f94efba102add295c7398bd"><param name="Name" value="getShort"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#ab7d003202eac30515f2a7f87b6186b36"><param name="Name" value="getSize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a681306f00673b11777bf8330eb4e533b"><param name="Name" value="getWaveFormat"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#ae536bde9ea42d58957880b26e35e19c3"><param name="Name" value="hasPositioning"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a3e41041fca381f436c3dca571e82a10e"><param name="Name" value="header"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a4bf7f795b71403f7f9946c105b5b5c5d"><param name="Name" value="initialize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#aec017418b5c61090fd8f45d5b29de0cf"><param name="Name" value="iolimit"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a20643f6badb06c1993773f4341ef91e6"><param name="Name" value="isOpen"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a8ed546acdfe452bb642364d486036f9f"><param name="Name" value="isSigned"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a60bcd432e3ee53b06284b9dcbb9568dc"><param name="Name" value="length"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a95e71e5d7bc03fa97a8ccb21c89f5c98"><param name="Name" value="minimum"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a8bda31d8252da3502844381bf6173f45"><param name="Name" value="mode"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a672f424a774eadfc8b5bf5c62903dc00"><param name="Name" value="mp3info"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a6aa46c6af42e7155be4f92d1b7e0109b"><param name="Name" value="open"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#ab17b3dbcc1893d572efe92bfc0f15390"><param name="Name" value="operator!"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a64e4bc2f136643948f96614f4d9a427c"><param name="Name" value="pathname"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a46e8267b131d44140c3c0a559b03d29e"><param name="Name" value="position"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a6d53c942621cae134b021b57064b4004"><param name="Name" value="putBuffer"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#ab941daafb0edc6e4d8e8dd24e02e2996"><param name="Name" value="putLinear"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a5ce6a635542e569fdbbc8edaf0272a5d"><param name="Name" value="putSamples"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#af99312145e575f1997fc3dd7fe358b23"><param name="Name" value="setError"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#aefc09014ae763a526aff04c818147476"><param name="Name" value="setLimit"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a328422764d2f68036d922767cf5b9e69"><param name="Name" value="setLong"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#aaf4e8c6db995e308d69a21d158cdea58"><param name="Name" value="setMinimum"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a231e5107dd68988de78c38c8792a6af6"><param name="Name" value="setPosition"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#ad52aa34c45c18c949549e3f7a71c3412"><param name="Name" value="setShort"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#ac8b03c353b059994588581765460e1de"><param name="Name" value="skip"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#acf8468ccbd7289cce50291e6f6ec0d53"><param name="Name" value="~AudioFile"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_resample.html"><param name="Name" value="ost::AudioResample"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_resample.html#a408740221daffc47f7a651b63c8b5c73"><param name="Name" value="AudioResample"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_resample.html#aa0c196fe38dc3512b3a8667082878e3f"><param name="Name" value="buffer"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_resample.html#a8baae81f9d216302031b0934b8f2c0e4"><param name="Name" value="dfact"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_resample.html#a27baa7b1cfec1cf55eaa5038208f9c28"><param name="Name" value="estimate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_resample.html#a03c347a6d21f77f94c7703030c983b67"><param name="Name" value="gpos"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_resample.html#a239a00ff4ef4eca85ecb134804e6e9b2"><param name="Name" value="last"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_resample.html#a96c78af7fc79e221815873acae145b72"><param name="Name" value="max"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_resample.html#a986ef6a994491b684ee5664b373698bf"><param name="Name" value="mfact"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_resample.html#a1ebaf6e154b47bb2f28266d256c699da"><param name="Name" value="ppos"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_resample.html#af0bdd5ac2f0850324d048ecf86d02cc1"><param name="Name" value="process"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_resample.html#a9e64615c7cf798286195e0ac3071fdc1"><param name="Name" value="~AudioResample"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html"><param name="Name" value="ost::AudioStream"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#ae7c476840e97627aec743f0224aad1fe"><param name="Name" value="AudioStream"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#adab79077d903b00da35240fdeaeadf16"><param name="Name" value="bufAudio"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a523ae30758d099f93c2d4036fcb25fdf"><param name="Name" value="bufferChannels"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a0735cc187829f8cb3f4b44df94db5ed2"><param name="Name" value="bufferFrame"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#ac43e4053dba97120a826df030025e767"><param name="Name" value="bufferPosition"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#aa4c33abc46eedf00c9a061130185bffe"><param name="Name" value="bufMono"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#afd95f7a2df57101f7773920528c61abb"><param name="Name" value="bufStereo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a823bf9a3d64dbae7117b6c29681017d3"><param name="Name" value="close"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a36d87f56ca6a25e8e477cf98c559c5a6"><param name="Name" value="codec"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a58fd6f03aff924fdd330919caf543623"><param name="Name" value="create"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#aabc88921668e15b9eb20baa6906b4fdf"><param name="Name" value="decBuffer"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a587b93ce80081042f0d49bc93b8afd1e"><param name="Name" value="decSize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#aa602b11f03414d79135c93fde44c3e01"><param name="Name" value="encBuffer"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a2efa96f577a5c2cfd9013b2dec4c17b1"><param name="Name" value="encSize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a0c1c16d1db4e4a9d6d6a06eb0fa98f71"><param name="Name" value="flush"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#afddcd59bb4f012dc5bb7d565750a1e5d"><param name="Name" value="framebuf"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a32945278bd2fcb2b03c97f15d78f571b"><param name="Name" value="getBuffer"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a47823d4a7bc81c6fd488af7df15ed755"><param name="Name" value="getCodec"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a3aa469beded2aed7ce2e6931171db597"><param name="Name" value="getCount"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a98d814ef2eb3e646f22f3ef36fa47f34"><param name="Name" value="getEncoded"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a6d17c9a029b0ac28148eb9107acff751"><param name="Name" value="getMono"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#aab3a8568a6e1b3c9660a6c63b049ccd6"><param name="Name" value="getPacket"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a287e2a936022552de4f8bc7731df3bba"><param name="Name" value="getStereo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#aaf520ef6e2e3da00c0d0cfc4eee781ea"><param name="Name" value="isStreamable"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a2dba2a15630314e4eb6a134ca82b5a60"><param name="Name" value="open"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a80bdb4f5e1b1f21206305592745b4556"><param name="Name" value="putEncoded"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a1dc042d6cdea238dd371d447103dca3a"><param name="Name" value="putMono"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a5f9d1dbc5dce59b1307546931718f561"><param name="Name" value="putStereo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a2457cfcde22eed8ee32152dd60039bd3"><param name="Name" value="streamable"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a2224c65e284690dd924af3f1f2f24630"><param name="Name" value="~AudioStream"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html"><param name="Name" value="ost::AudioTone"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a4d980cf63efbf17402bb59ab48abd664"><param name="Name" value="AudioTone"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#ac7fe13d4b7090fcf5d0cf3860f408a1d"><param name="Name" value="cleanup"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#aab0abcb02f857739af67253b7f646ba1"><param name="Name" value="df1"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a5aad2d80a709a910c45fc539689219fe"><param name="Name" value="df2"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a7ce3c90e4a79bab48575fea350893633"><param name="Name" value="dual"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a6f29b9172a04d07df9d5891c8f4781f2"><param name="Name" value="frame"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a943d31930ce0f1318f42d6dc825200cb"><param name="Name" value="getFrame"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a0fb3b5759015fa3d844c64a371a4ff0b"><param name="Name" value="getFrames"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a02cb488e70d91e794f68f13b00454b57"><param name="Name" value="getRate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a5712e33902728fc7620f6399ea4e83a7"><param name="Name" value="getSamples"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#afd2f4d74c504ff9f1638ac0097f7df8d"><param name="Name" value="isComplete"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a21e969c7ed50d2b7dfa6a40510dcdb39"><param name="Name" value="isSilent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a983027261f30a998a568e77f36efabf2"><param name="Name" value="m1"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a842886fa90ae476835ba13e735e4994d"><param name="Name" value="m2"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#ae222f8c1640d91dbea1e8779f0f281a5"><param name="Name" value="p1"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a9b8a98236af30daae504296cb65e4733"><param name="Name" value="p2"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a038e23d76167a86650d0cbf10667ed98"><param name="Name" value="rate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#ac0e2a678a95c456a03b4f70da3122ca7"><param name="Name" value="reset"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#aed7a46d4e3948ba036d7598f4061c12f"><param name="Name" value="samples"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#ad91228a7da5391669f9411aa41077fd5"><param name="Name" value="silence"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a2a60ea3ec50114a86e21b3aa273f6b2f"><param name="Name" value="silencer"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a6d69251fd23c384ee10442d7896180f4"><param name="Name" value="single"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a361595a6ad1dd7a07b5f1f31d8d90598"><param name="Name" value="~AudioTone"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_detect.html"><param name="Name" value="ost::DTMFDetect"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_detect.html#a9761101bcc763ac4d33c992097482d46"><param name="Name" value="DTMFDetect"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_detect.html#ae33af9f9b942d007b9303810a58be868"><param name="Name" value="getResult"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_detect.html#a7613c6d1296fbc51263d6f7e9c50774d"><param name="Name" value="goertzelInit"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_detect.html#a225100c6ad08d7f6dcdf9b179bd84bff"><param name="Name" value="goertzelResult"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_detect.html#ad6fb18bc0360d281917f8377d88c6871"><param name="Name" value="goertzelUpdate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_detect.html#af12fa2c868462ff78e5326a620d98f7a"><param name="Name" value="putSamples"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_detect.html#a1f526ff1431080305aa0ac89601188f2"><param name="Name" value="~DTMFDetect"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_tones.html"><param name="Name" value="ost::DTMFTones"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_tones.html#ad259f2e7159aeda0abc99b1c9e701a74"><param name="Name" value="complete"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_tones.html#a67627cb21e5ff3e615c21e786bd03b8c"><param name="Name" value="digits"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_tones.html#ae39e6e3fa09c9b39cee81b7a3123fb10"><param name="Name" value="dtmfframes"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_tones.html#a62570e25d94b2e82f5b384d29107d096"><param name="Name" value="DTMFTones"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_tones.html#ab7b645b27130a20d1dd45097f4e1c210"><param name="Name" value="frametime"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_tones.html#ac59d2ebb1f5feb0aa7871a02109f3b26"><param name="Name" value="getFrame"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_tones.html#a274d70b6b87294764bc50e47f1a8f250"><param name="Name" value="isComplete"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_tones.html#a3b8d23f074e6b74928911a2ffa9546bf"><param name="Name" value="level"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_tones.html#a5177da80d954edb7e140c8cf07a05e75"><param name="Name" value="remaining"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_tones.html#a8893c69b31f96c7d9aef3daaaf9ca4a9"><param name="Name" value="~DTMFTones"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_m_f_tones.html"><param name="Name" value="ost::MFTones"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_m_f_tones.html#a454e89ef50ff60437542c3aa9eb6dd32"><param name="Name" value="complete"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_m_f_tones.html#a7040ba98563c1c07b1b259db2c70f7b6"><param name="Name" value="digits"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_m_f_tones.html#a1ab0b75fcd4a6c2b6307293f418536cc"><param name="Name" value="frametime"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_m_f_tones.html#a1e3cb8bbbbe783bc7f4f40a2162ad713"><param name="Name" value="getFrame"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_m_f_tones.html#a1a889d81dba1bdbc01d55c25d0b348b1"><param name="Name" value="isComplete"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_m_f_tones.html#aa7f10829db96089ad0078a07b55621c6"><param name="Name" value="kflag"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_m_f_tones.html#aa2dbf77e15507a7b7c14d3b66d7c991e"><param name="Name" value="level"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_m_f_tones.html#abc6f3c983a816cf8a69b25ed90eb65cc"><param name="Name" value="mfframes"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_m_f_tones.html#ae9d48c4d9de53b7e1b861548c8c07b38"><param name="Name" value="MFTones"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_m_f_tones.html#a9057503a5760fb278c0a461d9b786043"><param name="Name" value="remaining"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_m_f_tones.html#a43b51accde7cd36306565325a44895bc"><param name="Name" value="~MFTones"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_tel_tone_1_1__tonedef.html"><param name="Name" value="ost::TelTone::_tonedef"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_tel_tone_1_1__tonedef.html#a9c5e73aacc5fc6bbebde09946c8b57e8"><param name="Name" value="count"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_tel_tone_1_1__tonedef.html#a3056f75cb554954ec745e5b10caff6ec"><param name="Name" value="duration"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_tel_tone_1_1__tonedef.html#aa8947bc6f45bfcf74e804cfca5a80293"><param name="Name" value="f1"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_tel_tone_1_1__tonedef.html#a8bd4411cae9b6fb55a4e74b913fa4b77"><param name="Name" value="f2"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_tel_tone_1_1__tonedef.html#a6ab75bcf761e4c1a3e5e6574dda3bdd7"><param name="Name" value="next"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_tel_tone_1_1__tonedef.html#a34adf3eaef83e30954e5fad4e2be2277"><param name="Name" value="silence"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_tel_tone_1_1__tonekey.html"><param name="Name" value="ost::TelTone::_tonekey"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_tel_tone_1_1__tonekey.html#a5ee285737d2f8ca1acc643f5eef2221f"><param name="Name" value="first"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_tel_tone_1_1__tonekey.html#a61007a09f569ffcc5bda1afaa9714577"><param name="Name" value="id"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_tel_tone_1_1__tonekey.html#aa7ffcb8ee36bd9834cb05f5bc31952d2"><param name="Name" value="last"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_tel_tone_1_1__tonekey.html#a759b5eb70b376b42328b205e154c3a88"><param name="Name" value="next"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html"><param name="Name" value="ost::TelTone"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#ab7bf2c032d956281a1ff8dd92eae2acd"><param name="Name" value="complete"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#ad83573418d7d66ee12ab7742a3427856"><param name="Name" value="count"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#aa83d1aff24fd6bc422275f7f3e638b73"><param name="Name" value="def"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#a20f6472d7864f980c2d6040ef5a38cc1"><param name="Name" value="find"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#a8b133fbb4fbffc680fccd894405acca0"><param name="Name" value="framing"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#a9fb42cc64137389c3033b58505a5a6d9"><param name="Name" value="getFrame"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#ac9a38161400d6a843d4b38a819ae48e9"><param name="Name" value="isComplete"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#ac64942aa5d5993948cb89115f2a0e203"><param name="Name" value="level"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#accdcf48f72d04bc79dc6ee2bfad38b35"><param name="Name" value="load"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#a063fcabcb8f53fda15619e590e3f5376"><param name="Name" value="remaining"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#a8992b8689dfc06bbeefce252c018aa7d"><param name="Name" value="silent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#a9a8adaa958dfa572f6d6f5c8e1d3b072"><param name="Name" value="TelTone"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#a91d5a785d8f665505d03eac002f246df"><param name="Name" value="tone"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#a68db377979005fe801d50f07f0e03be5"><param name="Name" value="tonedef_t"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#af77f6282aa08dc65e4db2834bfeac473"><param name="Name" value="tonekey_t"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#a1ebc07f54bafd5b7d901b8bdbf201bab"><param name="Name" value="~TelTone"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespaceost.html"><param name="Name" value="ost"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="namespaceost.html#a9635fdc6094c8f49fe76f71c69edd9ac"><param name="Name" value="AudioCodec"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="namespaceost.html#a799e6ebccb4619ac5f3cf3e023b4c72d"><param name="Name" value="AudioDevice"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#ae222f8c1640d91dbea1e8779f0f281a5"><param name="Name" value="p1"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a9b8a98236af30daae504296cb65e4733"><param name="Name" value="p2"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#a62bc343ffa9bef02d98af2168976615a"><param name="Name" value="padding"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a64e4bc2f136643948f96614f4d9a427c"><param name="Name" value="pathname"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baac8d2724c58b6015260e1eeafe4045baa"><param name="Name" value="pcm16Mono"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baaaecacf9d126404dee63f19df016ed8a2"><param name="Name" value="pcm16Stereo"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa5d5349654c1f97010f3a1a722d49aa68"><param name="Name" value="pcm32Mono"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa689c16b1c20517c6e6b4d5a1877ef677"><param name="Name" value="pcm32Stereo"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baae163dd3eddff63ed6a184fb21461b330"><param name="Name" value="pcm8Mono"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa6361df110128c2e5b774c9bf1496b102"><param name="Name" value="pcm8Stereo"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a6ed0d85bd28cabe648d18832e54777c1a434fa31ee9406fe04ab7d39359f5d5b5"><param name="Name" value="PLAY"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a6ed0d85bd28cabe648d18832e54777c1a2a5f699cdda2e8e061f9630069505c58"><param name="Name" value="PLAYREC"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a46e8267b131d44140c3c0a559b03d29e"><param name="Name" value="position"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_resample.html#a1ebaf6e154b47bb2f28266d256c699da"><param name="Name" value="ppos"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_resample.html#af0bdd5ac2f0850324d048ecf86d02cc1"><param name="Name" value="process"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_base.html#a4f8127866aad2198934215ea55e892a2"><param name="Name" value="putBuffer"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_base.html#a4f8127866aad2198934215ea55e892a2"><param name="Name" value="ost::AudioBase"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_buffer.html#a398d028be8c691e8107073308f4507bc"><param name="Name" value="ost::AudioBuffer"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#af385b8b82740059b92e115082247a613"><param name="Name" value="ost::AudioDevice"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a6d53c942621cae134b021b57064b4004"><param name="Name" value="ost::AudioFile"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a80bdb4f5e1b1f21206305592745b4556"><param name="Name" value="putEncoded"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#ab941daafb0edc6e4d8e8dd24e02e2996"><param name="Name" value="putLinear"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a1dc042d6cdea238dd371d447103dca3a"><param name="Name" value="putMono"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_base.html#a4f515f81fd2079b74ab93eee4947d9fb"><param name="Name" value="putNative"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#a71f1ac06b15596a907958d58724d200f"><param name="Name" value="putSamples"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#a71f1ac06b15596a907958d58724d200f"><param name="Name" value="ost::AudioDevice"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a5ce6a635542e569fdbbc8edaf0272a5d"><param name="Name" value="ost::AudioFile"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_detect.html#af12fa2c868462ff78e5326a620d98f7a"><param name="Name" value="ost::DTMFDetect"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a5f9d1dbc5dce59b1307546931718f561"><param name="Name" value="putStereo"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a38b5dfd1b29f5fd1acff3273582d18edabbd0ac85608ddbc3306597c0fb19f4ac"><param name="Name" value="rate16khz"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a38b5dfd1b29f5fd1acff3273582d18edabd8fe3ab3fa2524304c4d8bfc78e93be"><param name="Name" value="rate32khz"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a38b5dfd1b29f5fd1acff3273582d18eda12152c96c294e1b46a86763a810e3cc7"><param name="Name" value="rate44khz"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a38b5dfd1b29f5fd1acff3273582d18eda85dee3b5f2de3a586ad5cd91205ae167"><param name="Name" value="rate6khz"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a38b5dfd1b29f5fd1acff3273582d18edab4450628efd918f9c8f11e5362b53deb"><param name="Name" value="rate8khz"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#af100e5274ac000c170299e83b87a1314"><param name="Name" value="Rate"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#aa2da9a01f49ef6c0d191580ab7235ceb"><param name="Name" value="rate"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#aa2da9a01f49ef6c0d191580ab7235ceb"><param name="Name" value="ost::Audio::Info"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a038e23d76167a86650d0cbf10667ed98"><param name="Name" value="ost::AudioTone"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a38b5dfd1b29f5fd1acff3273582d18eda8a10475fcbfd70f2d8c496f0283626a7"><param name="Name" value="rateUnknown"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a1b1f99ba120876f87870b8f7f007e924ae71df2f88ae93b3040e400fc5beb6c1f"><param name="Name" value="raw"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a6ed0d85bd28cabe648d18832e54777c1a859407d0f38e9b07ac7ea646f21b2114"><param name="Name" value="RECORD"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_tones.html#a5177da80d954edb7e140c8cf07a05e75"><param name="Name" value="remaining"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_tones.html#a5177da80d954edb7e140c8cf07a05e75"><param name="Name" value="ost::DTMFTones"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_m_f_tones.html#a9057503a5760fb278c0a461d9b786043"><param name="Name" value="ost::MFTones"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#a063fcabcb8f53fda15619e590e3f5376"><param name="Name" value="ost::TelTone"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#ac0e2a678a95c456a03b4f70da3122ca7"><param name="Name" value="reset"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a1b1f99ba120876f87870b8f7f007e924aa8667be9bacfd6ed992b93191d88e17a"><param name="Name" value="riff"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#a4f28bae9e4849c109353f1baa7ed4e43"><param name="Name" value="row_out2nd"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1dtmf__detect__state__t.html#af21afb8422b17c34e0702783e4ca9362"><param name="Name" value="row_out"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ab9d6b2f16d237f7c70a6ea783fce52f6"><param name="Name" value="Sample"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#aed7a46d4e3948ba036d7598f4061c12f"><param name="Name" value="samples"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#a4630246844b6994828766d8a30a906d2"><param name="Name" value="set"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#a80c44530fa49b79c8480b0543aadd425"><param name="Name" value="setAudio"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#acf78ce4886758173a54ce91c0c1668d8"><param name="Name" value="setEncoded"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#af99312145e575f1997fc3dd7fe358b23"><param name="Name" value="setError"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#aeda8145d804ae0c950ab43fb929a10ea"><param name="Name" value="setFraming"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#aefc09014ae763a526aff04c818147476"><param name="Name" value="setLimit"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a328422764d2f68036d922767cf5b9e69"><param name="Name" value="setLong"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#aaf4e8c6db995e308d69a21d158cdea58"><param name="Name" value="setMinimum"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#a231e5107dd68988de78c38c8792a6af6"><param name="Name" value="setPosition"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_1_1_info.html#ad760deec6ae467c9daadcd452547835c"><param name="Name" value="setRate"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#ad52aa34c45c18c949549e3f7a71c3412"><param name="Name" value="setShort"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#ad91228a7da5391669f9411aa41077fd5"><param name="Name" value="silence"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#ad91228a7da5391669f9411aa41077fd5"><param name="Name" value="ost::AudioTone"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_tel_tone_1_1__tonedef.html#a34adf3eaef83e30954e5fad4e2be2277"><param name="Name" value="ost::TelTone::_tonedef"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a2a60ea3ec50114a86e21b3aa273f6b2f"><param name="Name" value="silencer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#a8992b8689dfc06bbeefce252c018aa7d"><param name="Name" value="silent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a6d69251fd23c384ee10442d7896180f4"><param name="Name" value="single"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#ac8b03c353b059994588581765460e1de"><param name="Name" value="skip"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a1b3506ec0126f95fe8f4eadd7d79b6da"><param name="Name" value="snd16_t"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a121b4a42005124b043b33cc6e7bb374e"><param name="Name" value="snd32_t"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a1b1f99ba120876f87870b8f7f007e924a034a7bf5ce1cdb7990bff5260293241c"><param name="Name" value="snd"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa731f9bb579ecbb50b663970a2f504a49"><param name="Name" value="speexAudio"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa29abde2c5d8761d855a19f377d280bd3"><param name="Name" value="speexNarrow"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa0c6336bb14ee0129e8e1f97b276cada0"><param name="Name" value="speexUltra"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa5c1b17694150aa7c8cb33fb2e3a78cb7"><param name="Name" value="speexVoice"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baafbdfc0c366fd02319cdc026e7ae9a67f"><param name="Name" value="speexWide"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a2457cfcde22eed8ee32152dd60039bd3"><param name="Name" value="streamable"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ad06ec3abaa4b887081c4d46f691fdd23"><param name="Name" value="swapEncoded"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#adbe8ba272ece9657c9804726e1a1f341"><param name="Name" value="swapEndian"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa2d14662303292d014327a93f6ac68802"><param name="Name" value="sx73Voice"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baab7d3a16e18d1b00bb56d91843d8fe2b8"><param name="Name" value="sx96Voice"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#a61c2bceba12270f2f573a3bd01d1892e"><param name="Name" value="sync"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__tagv1.html#a3d2dc3ef39cd5cf32ed00c88719a5b08"><param name="Name" value="tag_album"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__tagv1.html#aaec2a7c165378db68d95840e63640e4c"><param name="Name" value="tag_artist"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__tagv1.html#ae9fe8188284d7aa1307570dac5e46475"><param name="Name" value="tag_id"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__tagv1.html#ad5f2e78c6836abb8231b35dd709c4bba"><param name="Name" value="tag_note"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__tagv1.html#adfa7e43219245b81587495f2b8b13c4c"><param name="Name" value="tag_title"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1mpeg__tagv1.html#a8fa333a7e97cf9b4e4750b47fc86f6d7"><param name="Name" value="tag_year"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#a9a8adaa958dfa572f6d6f5c8e1d3b072"><param name="Name" value="TelTone"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#adaaf1ff03bfae21e5d6231b2f944b490"><param name="Name" value="timeout_t"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ace0ee184d9c8f9331f649fe510aab8bb"><param name="Name" value="toBytes"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a3621624ca7a26b328a82fdf25e1f6a13"><param name="Name" value="todbm"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ad42f5f824bcf39df34a46f04d46baee2"><param name="Name" value="tolevel"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#a91d5a785d8f665505d03eac002f246df"><param name="Name" value="tone"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#a68db377979005fe801d50f07f0e03be5"><param name="Name" value="tonedef_t"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#af77f6282aa08dc65e4db2834bfeac473"><param name="Name" value="tonekey_t"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#abadf17c232d679f62218ab2cd8531706"><param name="Name" value="toSamples"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a195793e86aaa34cd68ee21fffe1ec531"><param name="Name" value="toTimeout"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a5a5be50a71949a84e73f9af9497d5b79"><param name="Name" value="toTimestamp"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baa8e09e897a62d7a5ecc3dce9282619883"><param name="Name" value="unknownEncoding"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1goertzel__state__t.html#a1a7405840dfec270e33a47cabcdff91f"><param name="Name" value="v2"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structost_1_1_audio_1_1goertzel__state__t.html#ab100a79a96a5baeeb2792adf9e5401b0"><param name="Name" value="v3"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#ac000fdc6e71fc298896e5060e1e331baaae3709b42ebf20e118b3d8dbe7d8996b"><param name="Name" value="voxADPCM"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio.html#a1b1f99ba120876f87870b8f7f007e924a932ca85af7639cd6db3f55534b1063eb"><param name="Name" value="wave"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_base.html#a932477ed1dab1f1251a22b3c75f0e745"><param name="Name" value="~AudioBase"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_buffer.html#a7829566cc5246824dcb670df9ae75233"><param name="Name" value="~AudioBuffer"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_codec.html#a4149a63324548a0cd1a4c268d41fd6e4"><param name="Name" value="~AudioCodec"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_device.html#ae7c1477744fdb3821df5b09953bbe9ad"><param name="Name" value="~AudioDevice"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_file.html#acf8468ccbd7289cce50291e6f6ec0d53"><param name="Name" value="~AudioFile"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_resample.html#a9e64615c7cf798286195e0ac3071fdc1"><param name="Name" value="~AudioResample"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_stream.html#a2224c65e284690dd924af3f1f2f24630"><param name="Name" value="~AudioStream"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_audio_tone.html#a361595a6ad1dd7a07b5f1f31d8d90598"><param name="Name" value="~AudioTone"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_detect.html#a1f526ff1431080305aa0ac89601188f2"><param name="Name" value="~DTMFDetect"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_d_t_m_f_tones.html#a8893c69b31f96c7d9aef3daaaf9ca4a9"><param name="Name" value="~DTMFTones"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_m_f_tones.html#a43b51accde7cd36306565325a44895bc"><param name="Name" value="~MFTones"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classost_1_1_tel_tone.html#a1ebc07f54bafd5b7d901b8bdbf201bab"><param name="Name" value="~TelTone"></OBJECT>
+</UL>
+</BODY>
+</HTML>

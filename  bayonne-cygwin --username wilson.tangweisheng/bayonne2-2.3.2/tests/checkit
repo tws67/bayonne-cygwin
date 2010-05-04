@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# you can use shell env $BAYONNE_DRIVER to specify prefered driver for
+# testing.  soundcard and console are often used for quick tests.  A
+# spec like "export BAYONNE_DRIVER=sip:4" may also be useful, as it creates
+# a test mode server with just 4 sip sessions.
+
+if test -z "$*" ; then
+	../server/bayonne --check --libexec=../tests test.scr
+else
+	../server/bayonne --check --libexec=../tests $*
+fi
+
+	

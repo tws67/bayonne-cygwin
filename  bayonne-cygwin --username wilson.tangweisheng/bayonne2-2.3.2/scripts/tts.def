@@ -1,0 +1,46 @@
+%% Copyright (C) 2005 Tycho Softworks.
+%%
+%% This file is free software; as a special exception the author gives
+%% unlimited permission to copy and/or distribute it, with or without
+%% modifications, as long as this notice is preserved.
+%%
+%% This program is distributed in the hope that it will be useful, but
+%% WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
+%% implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+%%
+%% This is tts support script definitions
+
+macro tts-theta
+	keywords prefix file text voice extension encoding limit
+	define %prefix="" %extension="" %encoding=%session.encoding 
+	begin
+	if !defined %file
+	then
+		const %file {tmp:tts-} %session.index 
+		const %playfile {tmp:tts-} %session.timeslot
+		writepath %path %file prefix=%prefix extension=%extension
+		libexec limit=%limit lib::tts_theta.sh %path %voice %text
+		play %playfile
+		erase %playfile
+	else
+		writepath %path %file prefix=%prefix extension=%extension
+		libexec limit=%limit lib::tts_theta.sh %path %voice %text
+	endif
+	
+macro tts-festival
+	keywords prefix file text voice extension encoding limit
+	define %prefix="" %extension="" %encoding=%session.encoding 
+	begin
+	if !defined %file
+	then
+		const %file {tmp:tts-} %session.index 
+		const %playfile {tmp:tts-} %session.timeslot
+		writepath %path %file prefix=%prefix extension=%extension
+		libexec limit=%limit lib::tts_festival.sh %path %voice %text
+		play %playfile
+		erase %playfile
+	else
+		writepath %path %file prefix=%prefix extension=%extension
+		libexec limit=%limit lib::tts_festival.sh %path %voice %text
+	endif
+	

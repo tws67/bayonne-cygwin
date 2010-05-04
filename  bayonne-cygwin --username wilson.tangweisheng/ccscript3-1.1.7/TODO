@@ -1,0 +1,12 @@
+* pgsql, mysql specific optional db modules
+
+* unixodbc detection broken on freebsd6?
+
+* gsoap for cc payment services
+
+* more -localtime options in time.pkg
+
+* more manipulaitons in manip.pkg
+
+
+

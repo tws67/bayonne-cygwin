@@ -1,0 +1,59 @@
+.TH "ost::CommandOptionCollect" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::CommandOptionCollect \- 
+.PP
+It only makes sense to have a single one of these set and it is also exclusive with \fBCommandOptionRest\fP.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cmdoptns.h>\fP
+.PP
+Inherits \fBost::CommandOptionWithArg\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCommandOptionCollect\fP (const char *inOptionName, const char *inOptionLetter, const char *inDescription, bool inRequired=false, \fBCommandOption\fP **ppNext=&\fBdefaultCommandOptionList\fP)"
+.br
+.RI "\fI\fBCommandOptionRest\fP contructor. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+It only makes sense to have a single one of these set and it is also exclusive with \fBCommandOptionRest\fP. 
+
+This makes parameter collecting behave line the Unix 'cat' command.
+.PP
+\fBCommandOption\fP to collect parameters that are not options. 
+.PP
+\fBExamples: \fP
+.in +1c
+.PP
+\fBcmdlineopt.cpp\fP.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::CommandOptionCollect::CommandOptionCollect (const char * inOptionName, const char * inOptionLetter, const char * inDescription, bool inRequired = \fCfalse\fP, \fBCommandOption\fP ** ppNext = \fC&\fBdefaultCommandOptionList\fP\fP)"
+.PP
+\fBCommandOptionRest\fP contructor. This sets the optionType for this object to Collect.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinOptionName\fP long option name 
+.br
+\fIinOptionLetter\fP short letter name 
+.br
+\fIinDescription\fP short description of the option 
+.br
+\fIinRequired\fP true if option is required 
+.br
+\fIppNext\fP the linked list header 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

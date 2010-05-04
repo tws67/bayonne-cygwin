@@ -1,0 +1,695 @@
+.TH "ost::Thread" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::Thread \- 
+.PP
+Every thread of execution in an application is created by instantiating an object of a class derived from the \fBThread\fP class.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <thread.h>\fP
+.PP
+Inherited by \fBost::PosixThread\fP, \fBost::SerialService\fP, \fBost::SocketService\fP, \fBost::TCPSession\fP, \fBost::ThreadQueue\fP, \fBost::TTYSession\fP, and \fBost::UnixSession\fP.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBThrow\fP { \fBthrowNothing\fP, \fBthrowObject\fP, \fBthrowException\fP }"
+.br
+.RI "\fIHow to raise error. \fP"
+.ti -1c
+.RI "enum \fBCancel\fP { \fBcancelInitial\fP = 0, \fBcancelDeferred\fP = 1, \fBcancelImmediate\fP, \fBcancelDisabled\fP, \fBcancelManual\fP, \fBcancelDefault\fP = cancelDeferred }"
+.br
+.RI "\fIHow work cancellation. \fP"
+.ti -1c
+.RI "enum \fBSuspend\fP { \fBsuspendEnable\fP, \fBsuspendDisable\fP }"
+.br
+.RI "\fIHow work suspend. \fP"
+.ti -1c
+.RI "typedef enum \fBost::Thread::Throw\fP \fBThrow\fP"
+.br
+.RI "\fIHow to raise error. \fP"
+.ti -1c
+.RI "typedef enum \fBost::Thread::Cancel\fP \fBCancel\fP"
+.br
+.RI "\fIHow work cancellation. \fP"
+.ti -1c
+.RI "typedef enum \fBost::Thread::Suspend\fP \fBSuspend\fP"
+.br
+.RI "\fIHow work suspend. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBThread\fP (bool isMain)"
+.br
+.RI "\fIThis is actually a special constructor that is used to create a thread 'object' for the current execution context when that context is not created via an instance of a derived \fBThread\fP object itself. \fP"
+.ti -1c
+.RI "\fBThread\fP (int pri=0, size_t stack=0)"
+.br
+.RI "\fIWhen a thread object is contructed, a new thread of execution context is created. \fP"
+.ti -1c
+.RI "\fBThread\fP (const \fBThread\fP &th)"
+.br
+.RI "\fIA thread of execution can also be specified by cloning an existing thread. \fP"
+.ti -1c
+.RI "virtual \fB~Thread\fP ()"
+.br
+.RI "\fIThe thread destructor should clear up any resources that have been allocated by the thread. \fP"
+.ti -1c
+.RI "int \fBstart\fP (\fBSemaphore\fP *start=0)"
+.br
+.RI "\fIWhen a new thread is created, it does not begin immediate execution. \fP"
+.ti -1c
+.RI "int \fBdetach\fP (\fBSemaphore\fP *start=0)"
+.br
+.RI "\fIStart a new thread as 'detached'. \fP"
+.ti -1c
+.RI "\fBThread\fP * \fBgetParent\fP (void)"
+.br
+.RI "\fIGets the pointer to the \fBThread\fP class which created the current thread object. \fP"
+.ti -1c
+.RI "void \fBsuspend\fP (void)"
+.br
+.RI "\fISuspends execution of the selected thread. \fP"
+.ti -1c
+.RI "void \fBresume\fP (void)"
+.br
+.RI "\fIResumes execution of the selected thread. \fP"
+.ti -1c
+.RI "\fBCancel\fP \fBgetCancel\fP (void)"
+.br
+.RI "\fIUsed to retrieve the cancellation mode in effect for the selected thread. \fP"
+.ti -1c
+.RI "bool \fBisRunning\fP (void) const "
+.br
+.RI "\fIVerifies if the thread is still running or has already been terminated but not yet deleted. \fP"
+.ti -1c
+.RI "bool \fBisDetached\fP (void) const "
+.br
+.RI "\fICheck if this thread is detached. \fP"
+.ti -1c
+.RI "void \fBjoin\fP (void)"
+.br
+.RI "\fIBlocking call which unlocks when thread terminates. \fP"
+.ti -1c
+.RI "bool \fBisThread\fP (void) const "
+.br
+.RI "\fITests to see if the current execution context is the same as the specified thread object. \fP"
+.ti -1c
+.RI "\fBcctid_t\fP \fBgetId\fP (void) const "
+.br
+.RI "\fIGet system thread numeric identifier. \fP"
+.ti -1c
+.RI "const char * \fBgetName\fP (void) const "
+.br
+.RI "\fIGet the name string for this thread, to use in debug messages. \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBThread\fP * \fBget\fP (void)"
+.br
+.ti -1c
+.RI "static void \fBsetStack\fP (size_t size=0)"
+.br
+.RI "\fISet base stack limit before manual stack sizes have effect. \fP"
+.ti -1c
+.RI "static void \fBsleep\fP (\fBtimeout_t\fP msec)"
+.br
+.RI "\fIA thread-safe sleep call. \fP"
+.ti -1c
+.RI "static void \fByield\fP (void)"
+.br
+.RI "\fIYields the current thread's CPU time slice to allow another thread to begin immediate execution. \fP"
+.ti -1c
+.RI "static \fBThrow\fP \fBgetException\fP (void)"
+.br
+.RI "\fIGet exception mode of the current thread. \fP"
+.ti -1c
+.RI "static void \fBsetException\fP (\fBThrow\fP mode)"
+.br
+.RI "\fISet exception mode of the current thread. \fP"
+.ti -1c
+.RI "static \fBCancel\fP \fBenterCancel\fP (void)"
+.br
+.RI "\fIThis is used to help build wrapper functions in libraries around system calls that should behave as cancellation points but don't. \fP"
+.ti -1c
+.RI "static void \fBexitCancel\fP (\fBCancel\fP cancel)"
+.br
+.RI "\fIThis is used to restore a cancel block. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetName\fP (const char *text)"
+.br
+.RI "\fISet the name of the current thread. \fP"
+.ti -1c
+.RI "virtual void \fBrun\fP (void)=0"
+.br
+.RI "\fIAll threads execute by deriving the Run method of \fBThread\fP. \fP"
+.ti -1c
+.RI "virtual void \fBfinal\fP (void)"
+.br
+.RI "\fIA thread that is self terminating, either by invoking \fBexit()\fP or leaving it's \fBrun()\fP, will have this method called. \fP"
+.ti -1c
+.RI "virtual void \fBinitial\fP (void)"
+.br
+.RI "\fIThe initial method is called by a newly created thread when it starts execution. \fP"
+.ti -1c
+.RI "virtual void * \fBgetExtended\fP (void)"
+.br
+.RI "\fISince \fBgetParent()\fP and \fBgetThread()\fP only refer to an object of the \fBThread\fP 'base' type, this virtual method can be replaced in a derived class with something that returns data specific to the derived class that can still be accessed through the pointer returned by \fBgetParent()\fP and \fBgetThread()\fP. \fP"
+.ti -1c
+.RI "virtual void \fBnotify\fP (\fBThread\fP *)"
+.br
+.RI "\fIWhen a thread terminates, it now sends a notification message to the parent thread which created it. \fP"
+.ti -1c
+.RI "void \fBexit\fP (void)"
+.br
+.RI "\fIUsed to properly exit from a \fBThread\fP derived \fBrun()\fP or \fBinitial()\fP method. \fP"
+.ti -1c
+.RI "void \fBsync\fP (void)"
+.br
+.RI "\fIUsed to wait for a join or cancel, in place of explicit exit. \fP"
+.ti -1c
+.RI "bool \fBtestCancel\fP (void)"
+.br
+.RI "\fItest a cancellation point for deferred thread cancellation. \fP"
+.ti -1c
+.RI "void \fBsetCancel\fP (\fBCancel\fP mode)"
+.br
+.RI "\fISets thread cancellation mode. \fP"
+.ti -1c
+.RI "void \fBsetSuspend\fP (\fBSuspend\fP mode)"
+.br
+.RI "\fISets the thread's ability to be suspended from execution. \fP"
+.ti -1c
+.RI "void \fBterminate\fP (void)"
+.br
+.RI "\fIUsed by another thread to terminate the current thread. \fP"
+.ti -1c
+.RI "void \fBclrParent\fP (void)"
+.br
+.RI "\fIclear parent thread relationship. \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBPosixThread\fP"
+.br
+.ti -1c
+.RI "class \fBDummyThread\fP"
+.br
+.ti -1c
+.RI "class \fBCancellation\fP"
+.br
+.ti -1c
+.RI "class \fBpostream_type\fP"
+.br
+.ti -1c
+.RI "class \fBSlog\fP"
+.br
+.ti -1c
+.RI "class \fBThreadImpl\fP"
+.br
+.ti -1c
+.RI "void \fBoperator++\fP (\fBThread\fP &th)"
+.br
+.RI "\fISignal the semaphore that the specified thread is waiting for before beginning execution. \fP"
+.ti -1c
+.RI "void \fBoperator--\fP (\fBThread\fP &th)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Every thread of execution in an application is created by instantiating an object of a class derived from the \fBThread\fP class. 
+
+Classes derived from \fBThread\fP must implement the \fBrun()\fP method, which specifies the code of the thread. The base \fBThread\fP class supports encapsulation of the generic threading methods implemented on various target operating systems. This includes the ability to start and stop threads in a synchronized and controllable manner, the ability to specify thread execution priority, and thread specific 'system call' wrappers, such as for sleep and yield. A thread exception is thrown if the thread cannot be created. Threading was the first part of Common C++ I wrote, back when it was still the APE library. My goal for Common C++ threading has been to make threading as natural and easy to use in C++ application development as threading is in Java. With this said, one does not need to use threading at all to take advantage of Common C++. However, all Common C++ classes are designed at least to be thread-aware/thread-safe as appropriate and necessary.
+.PP
+Common C++ threading is currently built either from the Posix 'pthread' library or using the win32 SDK. In that the Posix 'pthread' draft has gone through many revisions, and many system implementations are only marginally compliant, and even then usually in different ways, I wrote a large series of autoconf macros found in ost_pthread.m4 which handle the task of identifying which pthread features and capabilities your target platform supports. In the process I learned much about what autoconf can and cannot do for you..
+.PP
+Currently the GNU Portable \fBThread\fP library (GNU pth) is not directly supported in Common C++. While GNU 'Pth' doesn't offer direct native threading support or benefit from SMP hardware, many of the design advantages of threading can be gained from it's use, and the Pth pthread 'emulation' library should be usable with Common C++. In the future, Common C++ will directly support Pth, as well as OS/2 and BeOS native threading API's.
+.PP
+Common C++ itself defines a fairly 'neutral' threading model that is not tied to any specific API such as pthread, win32, etc. This neutral thread model is contained in a series of classes which handle threading and synchronization and which may be used together to build reliable threaded applications.
+.PP
+Common C++ defines application specific threads as objects which are derived from the Common C++ 'Thread' base class. At minimum the 'Run' method must be implemented, and this method essentially is the 'thread', for it is executed within the execution context of the thread, and when the Run method terminates the thread is assumed to have terminated.
+.PP
+Common C++ allows one to specify the running priority of a newly created thread relative to the 'parent' thread which is the thread that is executing when the constructor is called. Since most newer C++ implementations do not allow one to call virtual constructors or virtual methods from constructors, the thread must be 'started' after the constructor returns. This is done either by defining a 'starting' semaphore object that one or more newly created thread objects can wait upon, or by invoking an explicit 'start' member function.
+.PP
+Threads can be 'suspended' and 'resumed'. As this behavior is not defined in the Posix 'pthread' specification, it is often emulated through signals. Typically SIGUSR1 will be used for this purpose in Common C++ applications, depending in the target platform. On Linux, since threads are indeed processes, SIGSTP and SIGCONT can be used. On solaris, the Solaris thread library supports suspend and resume directly.
+.PP
+Threads can be canceled. Not all platforms support the concept of externally cancelable threads. On those platforms and API implementations that do not, threads are typically canceled through the action of a signal handler.
+.PP
+As noted earlier, threads are considered running until the 'Run' method returns, or until a cancellation request is made. Common C++ threads can control how they respond to cancellation, using setCancellation(). \fBCancellation\fP requests can be ignored, set to occur only when a cancellation 'point' has been reached in the code, or occur immediately. Threads can also exit by returning from Run() or by invoking the Exit() method.
+.PP
+Generally it is a good practice to initialize any resources the thread may require within the constructor of your derived thread class, and to purge or restore any allocated resources in the destructor. In most cases, the destructor will be executed after the thread has terminated, and hence will execute within the context of the thread that requested a join rather than in the context of the thread that is being terminated. Most destructors in derived thread classes should first call Terminate() to make sure the thread has stopped running before releasing resources.
+.PP
+A Common C++ thread is normally canceled by deleting the thread object. The process of deletion invokes the thread's destructor, and the destructor will then perform a 'join' against the thread using the Terminate() function. This behavior is not always desirable since the thread may block itself from cancellation and block the current 'delete' operation from completing. One can alternately invoke Terminate() directly before deleting a thread object.
+.PP
+When a given Common C++ thread exits on it's own through it's Run() method, a 'Final' method will be called. This Final method will be called while the thread is 'detached'. If a thread object is constructed through a 'new' operator, it's final method can be used to 'self delete' when done, and allows an independent thread to construct and remove itself autonomously.
+.PP
+A special global function, \fBgetThread()\fP, is provided to identify the thread object that represents the current execution context you are running under. This is sometimes needed to deliver signals to the correct thread. Since all thread manipulation should be done through the Common C++ (base) thread class itself, this provides the same functionality as things like 'pthread_self' for Common C++.
+.PP
+All Common C++ threads have an exception 'mode' which determines their behavior when an exception is thrown by another Common C++ class. Extensions to Common C++ should respect the current exception mode and use \fBgetException()\fP to determine what to do when they are about to throw an object. The default exception mode (defined in the \fBThread()\fP constructor) is throwObject, which causes a pointer to an instance of the class where the error occured to be thrown. Other exception modes are throwException, which causes a class-specific exception class to be thrown, and throwNothing, which causes errors to be ignored.
+.PP
+As an example, you could try to call the \fBSocket\fP class with an invalid address that the system could not bind to. This would cause an object of type \fBSocket\fP * to be thrown by default, as the default exception mode is throwObject. If you call setException(throwException) before the bad call to the \fBSocket\fP constructor, an object of type \fBSockException\fP (the exception class for class \fBSocket\fP) will be thrown instead.
+.PP
+To determine what exception class is thrown by a given Common C++ class when the exception mode is set to throwException, search the source files for the class you are interested in for a class which inherits directly or indirectly from class \fBException\fP. This is the exception class which would be thrown when the exception mode is set to throwException.
+.PP
+The advantage of using throwException versus throwObject is that more information is available to the programmer from the thrown object. All class-specific exceptions inherit from class \fBException\fP, which provides a getString() method which can be called to get a human-readable error string.
+.PP
+Common C++ threads are often aggregated into other classes to provide services that are 'managed' from or operate within the context of a thread, even within the Common C++ framework itself. A good example of this is the \fBTCPSession\fP class, which essentially is a combination of a TCP client connection and a separate thread the user can define by deriving a class with a Run() method to handle the connected service. This aggregation logically connects the successful allocation of a given resource with the construction of a thread to manage and perform operations for said resource.
+.PP
+Threads are also used in 'service pools'. In Common C++, a service pool is one or more threads that are used to manage a set of resources. While Common C++ does not provide a direct 'pool' class, it does provide a model for their implementation, usually by constructing an array of thread 'service' objects, each of which can then be assigned the next new instance of a given resource in turn or algorithmically.
+.PP
+Threads have signal handlers associated with them. Several signal types are 'predefined' and have special meaning. All signal handlers are defined as virtual member functions of the \fBThread\fP class which are called when a specific signal is received for a given thread. The 'SIGPIPE' event is defined as a 'Disconnect' event since it's normally associated with a socket disconnecting or broken fifo. The Hangup() method is associated with the SIGHUP signal. All other signals are handled through the more generic Signal().
+.PP
+Incidently, unlike Posix, the win32 API has no concept of signals, and certainly no means to define or deliver signals on a per-thread basis. For this reason, no signal handling is supported or emulated in the win32 implementation of Common C++ at this time.
+.PP
+In addition to \fBTCPStream\fP, there is a \fBTCPSession\fP class which combines a thread with a \fBTCPStream\fP object. The assumption made by \fBTCPSession\fP is that one will service each TCP connection with a separate thread, and this makes sense for systems where extended connections may be maintained and complex protocols are being used over TCP.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> base class used to derive all threads of execution. 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+.PP
+\fBbug1.cpp\fP, \fBbug2.cpp\fP, \fBtcpservice.cpp\fP, \fBtcpstr1.cpp\fP, \fBthread1.cpp\fP, and \fBthread2.cpp\fP.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef enum \fBost::Thread::Cancel\fP  \fBost::Thread::Cancel\fP"
+.PP
+How work cancellation. 
+.SS "typedef enum \fBost::Thread::Suspend\fP  \fBost::Thread::Suspend\fP"
+.PP
+How work suspend. 
+.SS "typedef enum \fBost::Thread::Throw\fP  \fBost::Thread::Throw\fP"
+.PP
+How to raise error. 
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBost::Thread::Cancel\fP"
+.PP
+How work cancellation. 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIcancelInitial \fP\fP
+used internally, do not use 
+.TP
+\fB\fIcancelDeferred \fP\fP
+exit thread on cancellation pointsuch as yield 
+.TP
+\fB\fIcancelImmediate \fP\fP
+exit befor cancellation 
+.TP
+\fB\fIcancelDisabled \fP\fP
+ignore cancellation 
+.TP
+\fB\fIcancelManual \fP\fP
+unimplemented (working in progress) 
+.TP
+\fB\fIcancelDefault \fP\fP
+default you should use this for compatibility instead of deferred 
+.SS "enum \fBost::Thread::Suspend\fP"
+.PP
+How work suspend. 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIsuspendEnable \fP\fP
+suspend enabled 
+.TP
+\fB\fIsuspendDisable \fP\fP
+suspend disabled, Suspend do nothing 
+.SS "enum \fBost::Thread::Throw\fP"
+.PP
+How to raise error. 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIthrowNothing \fP\fP
+continue without throwing error 
+.TP
+\fB\fIthrowObject \fP\fP
+throw object that cause error (throw this) 
+.TP
+\fB\fIthrowException \fP\fP
+throw an object relative to error 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::Thread::Thread (bool isMain)"
+.PP
+This is actually a special constructor that is used to create a thread 'object' for the current execution context when that context is not created via an instance of a derived \fBThread\fP object itself. This constructor does not support First.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIisMain\fP bool used if the main 'thread' of the application. 
+.RE
+.PP
+
+.SS "ost::Thread::Thread (int pri = \fC0\fP, size_t stack = \fC0\fP)"
+.PP
+When a thread object is contructed, a new thread of execution context is created. This constructor allows basic properties of that context (thread priority, stack space, etc) to be defined. The starting condition is also specified for whether the thread is to wait on a semaphore before begining execution or wait until it's start method is called.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpri\fP thread base priority relative to it's parent. 
+.br
+\fIstack\fP space as needed in some implementations. 
+.RE
+.PP
+
+.SS "ost::Thread::Thread (const \fBThread\fP & th)"
+.PP
+A thread of execution can also be specified by cloning an existing thread. The existing thread's properties (cancel mode, priority, etc), are also duplicated.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIth\fP currently executing thread object to clone. 
+.RE
+.PP
+
+.SS "virtual ost::Thread::~Thread ()\fC [virtual]\fP"
+.PP
+The thread destructor should clear up any resources that have been allocated by the thread. The desctructor of a derived thread should begin with Terminate() and is presumed to then execute within the context of the thread causing terminaton. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::Thread::clrParent (void)\fC [inline, protected]\fP"
+.PP
+clear parent thread relationship. 
+.SS "int ost::Thread::detach (\fBSemaphore\fP * start = \fC0\fP)"
+.PP
+Start a new thread as 'detached'. This is an alternative \fBstart()\fP method that resolves some issues with later glibc implimentations which incorrectly impliment self-detach.
+.PP
+\fBReturns:\fP
+.RS 4
+error code if execution fails. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstart\fP optional starting semaphore to alternately use. 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+\fBthread2.cpp\fP.
+.SS "static \fBCancel\fP ost::Thread::enterCancel (void)\fC [static]\fP"
+.PP
+This is used to help build wrapper functions in libraries around system calls that should behave as cancellation points but don't. \fBReturns:\fP
+.RS 4
+saved cancel type. 
+.RE
+.PP
+
+.SS "void ost::Thread::exit (void)\fC [protected]\fP"
+.PP
+Used to properly exit from a \fBThread\fP derived \fBrun()\fP or \fBinitial()\fP method. Terminates execution of the current thread and calls the derived classes \fBfinal()\fP method. 
+.PP
+\fBExamples: \fP
+.in +1c
+\fBbug2.cpp\fP, and \fBtcpservice.cpp\fP.
+.SS "static void ost::Thread::exitCancel (\fBCancel\fP cancel)\fC [static]\fP"
+.PP
+This is used to restore a cancel block. \fBParameters:\fP
+.RS 4
+\fIcancel\fP type that was saved. 
+.RE
+.PP
+
+.SS "virtual void ost::Thread::final (void)\fC [protected, virtual]\fP"
+.PP
+A thread that is self terminating, either by invoking \fBexit()\fP or leaving it's \fBrun()\fP, will have this method called. It can be used to self delete the current object assuming the object was created with new on the heap rather than stack local, hence one may often see final defined as 'delete this' in a derived thread class. A final method, while running, cannot be terminated or cancelled by another thread. Final is called for all cancellation type (even immediate).
+.PP
+You can safe delete thread ('delete this') class on final, but you should exit ASAP (or do not try to call CommonC++ methods...)
+.PP
+\fBNote:\fP
+.RS 4
+A thread cannot delete its own context or join itself. To make a thread that is a self running object that self-deletes, one has to detach the thread by using \fBdetach()\fP instead of \fBstart()\fP.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBexit\fP 
+.PP
+\fBrun\fP 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBost::ThreadQueue\fP.
+.PP
+\fBExamples: \fP
+.in +1c
+\fBtcpthread.cpp\fP.
+.SS "static \fBThread\fP* ost::Thread::get (void)\fC [static]\fP"
+.PP
+Referenced by ost::getThread().
+.SS "\fBCancel\fP ost::Thread::getCancel (void)\fC [inline]\fP"
+.PP
+Used to retrieve the cancellation mode in effect for the selected thread. \fBReturns:\fP
+.RS 4
+cancellation mode constant. 
+.RE
+.PP
+
+.SS "static \fBThrow\fP ost::Thread::getException (void)\fC [static]\fP"
+.PP
+Get exception mode of the current thread. \fBReturns:\fP
+.RS 4
+exception mode. 
+.RE
+.PP
+
+.SS "virtual void* ost::Thread::getExtended (void)\fC [protected, virtual]\fP"
+.PP
+Since \fBgetParent()\fP and \fBgetThread()\fP only refer to an object of the \fBThread\fP 'base' type, this virtual method can be replaced in a derived class with something that returns data specific to the derived class that can still be accessed through the pointer returned by \fBgetParent()\fP and \fBgetThread()\fP. \fBReturns:\fP
+.RS 4
+pointer to derived class specific data. 
+.RE
+.PP
+
+.SS "\fBcctid_t\fP ost::Thread::getId (void) const"
+.PP
+Get system thread numeric identifier. \fBReturns:\fP
+.RS 4
+numeric identifier of this thread. 
+.RE
+.PP
+
+.SS "const char* ost::Thread::getName (void) const\fC [inline]\fP"
+.PP
+Get the name string for this thread, to use in debug messages. \fBReturns:\fP
+.RS 4
+debug name. 
+.RE
+.PP
+
+.SS "\fBThread\fP* ost::Thread::getParent (void)\fC [inline]\fP"
+.PP
+Gets the pointer to the \fBThread\fP class which created the current thread object. \fBReturns:\fP
+.RS 4
+a \fBThread\fP *, or '(Thread *)this' if no parent. 
+.RE
+.PP
+
+.SS "virtual void ost::Thread::initial (void)\fC [protected, virtual]\fP"
+.PP
+The initial method is called by a newly created thread when it starts execution. This method is ran with deferred cancellation disabled by default. The Initial method is given a separate handler so that it can create temporary objects on it's own stack frame, rather than having objects created on \fBrun()\fP that are only needed by startup and yet continue to consume stack space.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBrun\fP 
+.PP
+\fBfinal\fP 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBost::TCPSession\fP, and \fBost::UnixSession\fP.
+.SS "bool ost::Thread::isDetached (void) const"
+.PP
+Check if this thread is detached. \fBReturns:\fP
+.RS 4
+true if the thread is detached. 
+.RE
+.PP
+
+.SS "bool ost::Thread::isRunning (void) const"
+.PP
+Verifies if the thread is still running or has already been terminated but not yet deleted. \fBReturns:\fP
+.RS 4
+true if the thread is still executing. 
+.RE
+.PP
+
+.SS "bool ost::Thread::isThread (void) const"
+.PP
+Tests to see if the current execution context is the same as the specified thread object. \fBReturns:\fP
+.RS 4
+true if the current context is this object. 
+.RE
+.PP
+
+.SS "void ost::Thread::join (void)"
+.PP
+Blocking call which unlocks when thread terminates. 
+.SS "virtual void ost::Thread::notify (\fBThread\fP *)\fC [protected, virtual]\fP"
+.PP
+When a thread terminates, it now sends a notification message to the parent thread which created it. The actual use of this notification is left to be defined in a derived class.
+.PP
+\fBParameters:\fP
+.RS 4
+\fI-\fP the thread that has terminated. 
+.RE
+.PP
+
+.SS "void ost::Thread::resume (void)"
+.PP
+Resumes execution of the selected thread. 
+.SS "virtual void ost::Thread::run (void)\fC [protected, pure virtual]\fP"
+.PP
+All threads execute by deriving the Run method of \fBThread\fP. This method is called after Initial to begin normal operation of the thread. If the method terminates, then the thread will also terminate after notifying it's parent and calling it's Final() method.
+.PP
+\fBSee also:\fP
+.RS 4
+Initial 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+\fBbug1.cpp\fP, \fBbug2.cpp\fP, \fBtcpservice.cpp\fP, \fBtcpstr1.cpp\fP, \fBtcpthread.cpp\fP, \fBthread1.cpp\fP, and \fBthread2.cpp\fP.
+.SS "void ost::Thread::setCancel (\fBCancel\fP mode)\fC [protected]\fP"
+.PP
+Sets thread cancellation mode. Threads can either be set immune to termination (cancelDisabled), can be set to terminate when reaching specific 'thread cancellation points' (cancelDeferred) or immediately when Terminate is requested (cancelImmediate).
+.PP
+\fBParameters:\fP
+.RS 4
+\fImode\fP for cancellation of the current thread. 
+.RE
+.PP
+
+.SS "static void ost::Thread::setException (\fBThrow\fP mode)\fC [static]\fP"
+.PP
+Set exception mode of the current thread. \fBReturns:\fP
+.RS 4
+exception mode. 
+.RE
+.PP
+
+.SS "void ost::Thread::setName (const char * text)\fC [protected]\fP"
+.PP
+Set the name of the current thread. If the name is passed as NULL, then the default name is set (usually object pointer).
+.PP
+\fBParameters:\fP
+.RS 4
+\fItext\fP name to use. 
+.RE
+.PP
+
+.SS "static void ost::Thread::setStack (size_t size = \fC0\fP)\fC [inline, static]\fP"
+.PP
+Set base stack limit before manual stack sizes have effect. \fBParameters:\fP
+.RS 4
+\fIsize\fP stack size to set, or use 0 to clear autostack. 
+.RE
+.PP
+
+.SS "void ost::Thread::setSuspend (\fBSuspend\fP mode)\fC [protected]\fP"
+.PP
+Sets the thread's ability to be suspended from execution. The thread may either have suspend enabled (suspendEnable) or disabled (suspendDisable).
+.PP
+\fBParameters:\fP
+.RS 4
+\fImode\fP for suspend. 
+.RE
+.PP
+
+.SS "static void ost::Thread::sleep (\fBtimeout_t\fP msec)\fC [static]\fP"
+.PP
+A thread-safe sleep call. On most Posix systems, 'sleep()' is implimented with SIGALRM making it unusable from multipe threads. Pthread libraries often define an alternate 'sleep' handler such as usleep(), nanosleep(), or nap(), that is thread safe, and also offers a higher timer resolution.
+.PP
+\fBParameters:\fP
+.RS 4
+\fImsec\fP timeout in milliseconds. 
+.RE
+.PP
+
+.SS "int ost::Thread::start (\fBSemaphore\fP * start = \fC0\fP)"
+.PP
+When a new thread is created, it does not begin immediate execution. This is because the derived class virtual tables are not properly loaded at the time the C++ object is created within the constructor itself, at least in some compiler/system combinations. The thread can either be told to wait for an external semaphore, or it can be started directly after the constructor completes by calling the \fBstart()\fP method.
+.PP
+\fBReturns:\fP
+.RS 4
+error code if execution fails. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstart\fP optional starting semaphore to alternately use. 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+\fBtcpservice.cpp\fP, and \fBtcpstr1.cpp\fP.
+.SS "void ost::Thread::suspend (void)"
+.PP
+Suspends execution of the selected thread. Pthreads do not normally support suspendable threads, so the behavior is simulated with signals. On systems such as Linux that define threads as processes, SIGSTOP and SIGCONT may be used. 
+.SS "void ost::Thread::sync (void)\fC [protected]\fP"
+.PP
+Used to wait for a join or cancel, in place of explicit exit. 
+.SS "void ost::Thread::terminate (void)\fC [protected]\fP"
+.PP
+Used by another thread to terminate the current thread. Termination actually occurs based on the current \fBsetCancel()\fP mode. When the current thread does terminate, control is returned to the requesting thread. \fBterminate()\fP should always be called at the start of any destructor of a class derived from \fBThread\fP to assure the remaining part of the destructor is called without the thread still executing. 
+.SS "bool ost::Thread::testCancel (void)\fC [protected]\fP"
+.PP
+test a cancellation point for deferred thread cancellation. 
+.SS "static void ost::Thread::yield (void)\fC [static]\fP"
+.PP
+Yields the current thread's CPU time slice to allow another thread to begin immediate execution. 
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBCancellation\fP\fC [friend]\fP"
+.SS "friend class DummyThread\fC [friend]\fP"
+.SS "void operator++ (\fBThread\fP & th)\fC [friend]\fP"
+.PP
+Signal the semaphore that the specified thread is waiting for before beginning execution. \fBParameters:\fP
+.RS 4
+\fIth\fP specified thread. 
+.RE
+.PP
+
+.SS "void operator-- (\fBThread\fP & th)\fC [friend]\fP"
+.SS "friend class \fBPosixThread\fP\fC [friend]\fP"
+.SS "friend class postream_type\fC [friend]\fP"
+.SS "friend class \fBSlog\fP\fC [friend]\fP"
+.SS "friend class ThreadImpl\fC [friend]\fP"
+.PP
+Reimplemented in \fBost::PosixThread\fP.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

@@ -1,0 +1,115 @@
+.TH "ost::StackPager" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::StackPager \- 
+.PP
+The \fBStackPager\fP provides a repository to stash and retrieve working data in last-in-first-out order.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <misc.h>\fP
+.PP
+Inherits \fBost::MemPager\fP.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBframe\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBStackPager\fP (size_t pagesize)"
+.br
+.RI "\fICreate a lifo pager as a mempager. \fP"
+.ti -1c
+.RI "void * \fBpush\fP (const void *object, size_t size)"
+.br
+.RI "\fIPush an arbitrary object onto the stack. \fP"
+.ti -1c
+.RI "void * \fBpush\fP (const char *string)"
+.br
+.RI "\fIPush a string onto the stack. \fP"
+.ti -1c
+.RI "void * \fBpull\fP (void)"
+.br
+.RI "\fIRetrieve next object from stack. \fP"
+.ti -1c
+.RI "void \fBpurge\fP (void)"
+.br
+.RI "\fIPurge the stack of all objects and memory allocations. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBStackPager\fP provides a repository to stash and retrieve working data in last-in-first-out order. 
+
+The use of a mempager to support it's operation allows storage of arbitrary sized objects with no fixed limit.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> last in first out object pager. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::StackPager::StackPager (size_t pagesize)"
+.PP
+Create a lifo pager as a mempager. \fBParameters:\fP
+.RS 4
+\fIpagesize\fP for memory allocation 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void* ost::StackPager::pull (void)"
+.PP
+Retrieve next object from stack. \fBReturns:\fP
+.RS 4
+object. 
+.RE
+.PP
+
+.SS "void ost::StackPager::purge (void)"
+.PP
+Purge the stack of all objects and memory allocations. 
+.PP
+Reimplemented from \fBost::MemPager\fP.
+.SS "void* ost::StackPager::push (const char * string)"
+.PP
+Push a string onto the stack. \fBReturns:\fP
+.RS 4
+stack memory location. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP pointer. 
+.RE
+.PP
+
+.SS "void* ost::StackPager::push (const void * object, size_t size)"
+.PP
+Push an arbitrary object onto the stack. \fBReturns:\fP
+.RS 4
+stack memory location. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIobject\fP pointer to data 
+.br
+\fIsize\fP of data. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

@@ -1,0 +1,342 @@
+\section{ost::BayonneTranslator Class Reference}
+\label{classost_1_1_bayonne_translator}\index{ost::BayonneTranslator@{ost::BayonneTranslator}}
+
+
+A core class to support language translation services in \doxyref{Bayonne}{p.}{classost_1_1_bayonne} phrasebook.  
+
+
+{\ttfamily \#include $<$bayonne.h$>$}Inheritance diagram for ost::BayonneTranslator::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classost_1_1_bayonne_translator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf BayonneTranslator} (const char $\ast$iso)
+\begin{DoxyCompactList}\small\item\em Create a translator instance for a specific language identifier. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$BayonneTranslator} ()
+\item 
+{\bf BayonneTranslator} $\ast$ {\bf getNext} ()
+\begin{DoxyCompactList}\small\item\em Get next translator. \item\end{DoxyCompactList}\item 
+virtual unsigned {\bf digits} ({\bf BayonneSession} $\ast$sessiob, unsigned count, const char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Translate a simple set of digits to spoken speech. \item\end{DoxyCompactList}\item 
+virtual unsigned {\bf spell} ({\bf BayonneSession} $\ast$session, unsigned count, const char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Spell out the string as individual letters. \item\end{DoxyCompactList}\item 
+virtual unsigned {\bf sayorder} ({\bf BayonneSession} $\ast$session, unsigned count, const char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Translate an ordinal number (xxnth) to prompts. \item\end{DoxyCompactList}\item 
+virtual unsigned {\bf number} ({\bf BayonneSession} $\ast$session, unsigned count, const char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Translate a number to spoken speech. \item\end{DoxyCompactList}\item 
+virtual unsigned {\bf saynumber} ({\bf BayonneSession} $\ast$session, unsigned count, const char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Translate generic numbers to spoken speech. \item\end{DoxyCompactList}\item 
+virtual unsigned {\bf saycount} ({\bf BayonneSession} $\ast$session, unsigned count, const char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Translate a counting number (integer) to spoken speech. \item\end{DoxyCompactList}\item 
+virtual unsigned {\bf sayhour} ({\bf BayonneSession} $\ast$session, unsigned count, const char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Translate a string for time into short hours. \item\end{DoxyCompactList}\item 
+virtual unsigned {\bf saytime} ({\bf BayonneSession} $\ast$session, unsigned count, const char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Translate a string for time into speech. \item\end{DoxyCompactList}\item 
+virtual unsigned {\bf weekday} ({\bf BayonneSession} $\ast$session, unsigned count, const char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Translate a string with a date into the spoken weekday. \item\end{DoxyCompactList}\item 
+virtual unsigned {\bf sayday} ({\bf BayonneSession} $\ast$session, unsigned count, const char $\ast$string)
+\item 
+virtual unsigned {\bf saydate} ({\bf BayonneSession} $\ast$session, unsigned count, const char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Translate a string with a date into a spoken date. \item\end{DoxyCompactList}\item 
+virtual unsigned {\bf saybool} ({\bf BayonneSession} $\ast$session, unsigned count, const char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Translate a logical value and speak as yes/no. \item\end{DoxyCompactList}\item 
+virtual unsigned {\bf phone} ({\bf BayonneSession} $\ast$session, unsigned count, const char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Translate and speak a phone number. \item\end{DoxyCompactList}\item 
+virtual unsigned {\bf extension} ({\bf BayonneSession} $\ast$session, unsigned count, const char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Translate and speak a phone extension. \item\end{DoxyCompactList}\item 
+virtual const char $\ast$ {\bf speak} ({\bf BayonneSession} $\ast$session, Line $\ast$line=NULL)
+\begin{DoxyCompactList}\small\item\em Translation dispatch, processes script and invokes other methods. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getId} (void)
+\begin{DoxyCompactList}\small\item\em Get the id string. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf BayonneTranslator} $\ast$ {\bf get} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Find a translator for a given name/location. \item\end{DoxyCompactList}\item 
+static {\bf BayonneTranslator} $\ast$ {\bf getFirst} (void)
+\begin{DoxyCompactList}\small\item\em Get first translator. \item\end{DoxyCompactList}\item 
+static {\bf BayonneTranslator} $\ast$ {\bf loadTranslator} (const char $\ast$iso)
+\begin{DoxyCompactList}\small\item\em Load a named translator into memory for use. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf getToken} ({\bf BayonneSession} $\ast$s, Line $\ast$l, unsigned $\ast$idx)
+\item 
+static unsigned {\bf addItem} ({\bf BayonneSession} $\ast$s, unsigned count, const char $\ast$text)
+\item 
+static const char $\ast$ {\bf getLast} ({\bf BayonneSession} $\ast$s, unsigned count)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf BayonneTranslator} $\ast$ {\bf next}
+\item 
+const char $\ast$ {\bf id}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf BayonneTranslator} $\ast$ {\bf first}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A core class to support language translation services in \doxyref{Bayonne}{p.}{classost_1_1_bayonne} phrasebook. \begin{DoxyAuthor}{Author}
+David Sugar $<${\tt dyfet@gnutelephony.org}$>$ Phrasebook translation base class. 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!BayonneTranslator@{BayonneTranslator}}
+\index{BayonneTranslator@{BayonneTranslator}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{BayonneTranslator}]{\setlength{\rightskip}{0pt plus 5cm}ost::BayonneTranslator::BayonneTranslator (const char $\ast$ {\em iso})}\label{classost_1_1_bayonne_translator_ab26b5524a8a4c6257e9fc5fc188407be}
+
+
+Create a translator instance for a specific language identifier. Generally iso names will be sued. Sometimes iso sub-\/identifiers may be used for nation specific versions of phrasebook.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em iso}]name of language/locale. \end{DoxyParams}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!$\sim$BayonneTranslator@{$\sim$BayonneTranslator}}
+\index{$\sim$BayonneTranslator@{$\sim$BayonneTranslator}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{$\sim$BayonneTranslator}]{\setlength{\rightskip}{0pt plus 5cm}virtual ost::BayonneTranslator::$\sim$BayonneTranslator ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_translator_ac226e4a8099455dee1f8937c0dcd032c}
+
+
+\subsection{Member Function Documentation}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!addItem@{addItem}}
+\index{addItem@{addItem}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{addItem}]{\setlength{\rightskip}{0pt plus 5cm}static unsigned ost::BayonneTranslator::addItem ({\bf BayonneSession} $\ast$ {\em s}, \/  unsigned {\em count}, \/  const char $\ast$ {\em text})\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_translator_a0c8183f1b6a6787f2cd62ab5dbd7a4d3}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!digits@{digits}}
+\index{digits@{digits}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{digits}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned ost::BayonneTranslator::digits ({\bf BayonneSession} $\ast$ {\em sessiob}, \/  unsigned {\em count}, \/  const char $\ast$ {\em string})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_translator_a486c42ebfdeb9d2f615a592454f76f1e}
+
+
+Translate a simple set of digits to spoken speech. 
+\begin{DoxyParams}{Parameters}
+\item[{\em session}]to save list of prompts. \item[{\em count}]of current prompts used. \item[{\em string}]to be processed. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new count of prompts used. 
+\end{DoxyReturn}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!extension@{extension}}
+\index{extension@{extension}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{extension}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned ost::BayonneTranslator::extension ({\bf BayonneSession} $\ast$ {\em session}, \/  unsigned {\em count}, \/  const char $\ast$ {\em string})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_translator_a6a919ecc36bcdd3090893090227a54cc}
+
+
+Translate and speak a phone extension. 
+\begin{DoxyParams}{Parameters}
+\item[{\em session}]to save list of prompts. \item[{\em count}]of current prompts used. \item[{\em string}]to be processed. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new count of prompts used. 
+\end{DoxyReturn}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!get@{get}}
+\index{get@{get}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf BayonneTranslator}$\ast$ ost::BayonneTranslator::get (const char $\ast$ {\em name})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_translator_a71a4c35b060e8a9537f99f341959470b}
+
+
+Find a translator for a given name/location. 
+\begin{DoxyParams}{Parameters}
+\item[{\em iso}]language/locale name of translator to find. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+derived translator class for translator. 
+\end{DoxyReturn}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!getFirst@{getFirst}}
+\index{getFirst@{getFirst}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{getFirst}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf BayonneTranslator}$\ast$ ost::BayonneTranslator::getFirst (void)\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classost_1_1_bayonne_translator_a7d2770fbab858a955792c3760c6cbac7}
+
+
+Get first translator. \begin{DoxyReturn}{Returns}
+pointer to first translator. 
+\end{DoxyReturn}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!getId@{getId}}
+\index{getId@{getId}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{getId}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::BayonneTranslator::getId (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_translator_a205a5b6cfe1a53eef5615ff76e4b7530}
+
+
+Get the id string. \begin{DoxyReturn}{Returns}
+id string. 
+\end{DoxyReturn}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!getLast@{getLast}}
+\index{getLast@{getLast}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{getLast}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ ost::BayonneTranslator::getLast ({\bf BayonneSession} $\ast$ {\em s}, \/  unsigned {\em count})\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_translator_a1fb13d341876e595576e2fa0cce0ac65}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!getNext@{getNext}}
+\index{getNext@{getNext}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{getNext}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneTranslator}$\ast$ ost::BayonneTranslator::getNext ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_translator_a61c3f718c722d41ee88604dbf7bae523}
+
+
+Get next translator. \begin{DoxyReturn}{Returns}
+next translator. 
+\end{DoxyReturn}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!getToken@{getToken}}
+\index{getToken@{getToken}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{getToken}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ ost::BayonneTranslator::getToken ({\bf BayonneSession} $\ast$ {\em s}, \/  Line $\ast$ {\em l}, \/  unsigned $\ast$ {\em idx})\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_translator_a747f9dff0380ec8d09087fe95fb47d2b}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!loadTranslator@{loadTranslator}}
+\index{loadTranslator@{loadTranslator}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{loadTranslator}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf BayonneTranslator}$\ast$ ost::BayonneTranslator::loadTranslator (const char $\ast$ {\em iso})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_translator_ac33776c05fd246cc76a69c74c4c4e63f}
+
+
+Load a named translator into memory for use. This is used by the fifo/script language command.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em iso}]module name to load. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful. 
+\end{DoxyReturn}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!number@{number}}
+\index{number@{number}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{number}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned ost::BayonneTranslator::number ({\bf BayonneSession} $\ast$ {\em session}, \/  unsigned {\em count}, \/  const char $\ast$ {\em string})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_translator_a2e36ce31976d86c49eb22eda09d087a9}
+
+
+Translate a number to spoken speech. 
+\begin{DoxyParams}{Parameters}
+\item[{\em session}]to save list of prompts. \item[{\em count}]of current prompts used. \item[{\em string}]to be processed. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new count of prompts used. 
+\end{DoxyReturn}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!phone@{phone}}
+\index{phone@{phone}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{phone}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned ost::BayonneTranslator::phone ({\bf BayonneSession} $\ast$ {\em session}, \/  unsigned {\em count}, \/  const char $\ast$ {\em string})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_translator_a0f0debea1170f0f164c3a253129fb372}
+
+
+Translate and speak a phone number. 
+\begin{DoxyParams}{Parameters}
+\item[{\em session}]to save list of prompts. \item[{\em count}]of current prompts used. \item[{\em string}]to be processed. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new count of prompts used. 
+\end{DoxyReturn}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!saybool@{saybool}}
+\index{saybool@{saybool}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{saybool}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned ost::BayonneTranslator::saybool ({\bf BayonneSession} $\ast$ {\em session}, \/  unsigned {\em count}, \/  const char $\ast$ {\em string})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_translator_a835f7fb334b7923314629402f5134681}
+
+
+Translate a logical value and speak as yes/no. 
+\begin{DoxyParams}{Parameters}
+\item[{\em session}]to save list of prompts. \item[{\em count}]of current prompts used. \item[{\em string}]to be processed. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new count of prompts used. 
+\end{DoxyReturn}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!saycount@{saycount}}
+\index{saycount@{saycount}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{saycount}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned ost::BayonneTranslator::saycount ({\bf BayonneSession} $\ast$ {\em session}, \/  unsigned {\em count}, \/  const char $\ast$ {\em string})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_translator_a8a12f4a72219d9dec11fae469496c1e8}
+
+
+Translate a counting number (integer) to spoken speech. 
+\begin{DoxyParams}{Parameters}
+\item[{\em session}]to save list of prompts. \item[{\em count}]of current prompts used. \item[{\em string}]to be processed. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new count of prompts used. 
+\end{DoxyReturn}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!saydate@{saydate}}
+\index{saydate@{saydate}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{saydate}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned ost::BayonneTranslator::saydate ({\bf BayonneSession} $\ast$ {\em session}, \/  unsigned {\em count}, \/  const char $\ast$ {\em string})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_translator_a8cb2fdb6e9ac929adcb99ac010871b0c}
+
+
+Translate a string with a date into a spoken date. 
+\begin{DoxyParams}{Parameters}
+\item[{\em session}]to save list of prompts. \item[{\em count}]of current prompts used. \item[{\em string}]to be processed. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new count of prompts used. 
+\end{DoxyReturn}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!sayday@{sayday}}
+\index{sayday@{sayday}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{sayday}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned ost::BayonneTranslator::sayday ({\bf BayonneSession} $\ast$ {\em session}, \/  unsigned {\em count}, \/  const char $\ast$ {\em string})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_translator_aa0b03e520aacb7af6347c63dc4ed6ba9}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!sayhour@{sayhour}}
+\index{sayhour@{sayhour}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{sayhour}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned ost::BayonneTranslator::sayhour ({\bf BayonneSession} $\ast$ {\em session}, \/  unsigned {\em count}, \/  const char $\ast$ {\em string})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_translator_ad11b6bc58f6515960d9e6d83a10d4ca6}
+
+
+Translate a string for time into short hours. 
+\begin{DoxyParams}{Parameters}
+\item[{\em session}]to save list of prompts. \item[{\em count}]of current prompts used. \item[{\em string}]to be processed. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new count of prompts used. 
+\end{DoxyReturn}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!saynumber@{saynumber}}
+\index{saynumber@{saynumber}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{saynumber}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned ost::BayonneTranslator::saynumber ({\bf BayonneSession} $\ast$ {\em session}, \/  unsigned {\em count}, \/  const char $\ast$ {\em string})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_translator_ae826788ca02efa2b50ce6b0b0ea8fe85}
+
+
+Translate generic numbers to spoken speech. This is the one used by the \&number rule.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em session}]to save list of prompts. \item[{\em count}]of current prompts used. \item[{\em string}]to be processed. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new count of prompts used. 
+\end{DoxyReturn}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!sayorder@{sayorder}}
+\index{sayorder@{sayorder}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{sayorder}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned ost::BayonneTranslator::sayorder ({\bf BayonneSession} $\ast$ {\em session}, \/  unsigned {\em count}, \/  const char $\ast$ {\em string})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_translator_a05f28b8f8d911f9bc055a54bc93cfdee}
+
+
+Translate an ordinal number (xxnth) to prompts. 
+\begin{DoxyParams}{Parameters}
+\item[{\em session}]to save list of prompts. \item[{\em count}]of current prompts used. \item[{\em string}]to be processed. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new count of prompts used. 
+\end{DoxyReturn}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!saytime@{saytime}}
+\index{saytime@{saytime}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{saytime}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned ost::BayonneTranslator::saytime ({\bf BayonneSession} $\ast$ {\em session}, \/  unsigned {\em count}, \/  const char $\ast$ {\em string})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_translator_a9623a29de817c11791d63745b4136179}
+
+
+Translate a string for time into speech. 
+\begin{DoxyParams}{Parameters}
+\item[{\em session}]to save list of prompts. \item[{\em count}]of current prompts used. \item[{\em string}]to be processed. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new count of prompts used. 
+\end{DoxyReturn}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!speak@{speak}}
+\index{speak@{speak}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{speak}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ ost::BayonneTranslator::speak ({\bf BayonneSession} $\ast$ {\em session}, \/  Line $\ast$ {\em line} = {\ttfamily NULL})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_translator_ade16ea7b65442995c833958e6e5abb32}
+
+
+Translation dispatch, processes script and invokes other methods. \begin{DoxyReturn}{Returns}
+error message or NULL if okay 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em session}]to process a command from. \item[{\em line}]of compiled script to process. \end{DoxyParams}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!spell@{spell}}
+\index{spell@{spell}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{spell}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned ost::BayonneTranslator::spell ({\bf BayonneSession} $\ast$ {\em session}, \/  unsigned {\em count}, \/  const char $\ast$ {\em string})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_translator_a51670201d80fce5388baa9758e7cea86}
+
+
+Spell out the string as individual letters. 
+\begin{DoxyParams}{Parameters}
+\item[{\em session}]to save list of prompts. \item[{\em count}]of current prompts used. \item[{\em string}]to be processed. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new count of prompts used. 
+\end{DoxyReturn}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!weekday@{weekday}}
+\index{weekday@{weekday}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{weekday}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned ost::BayonneTranslator::weekday ({\bf BayonneSession} $\ast$ {\em session}, \/  unsigned {\em count}, \/  const char $\ast$ {\em string})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_translator_aa505ea84b87cef18644d53651372a23a}
+
+
+Translate a string with a date into the spoken weekday. 
+\begin{DoxyParams}{Parameters}
+\item[{\em session}]to save list of prompts. \item[{\em count}]of current prompts used. \item[{\em string}]to be processed. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new count of prompts used. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!first@{first}}
+\index{first@{first}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{first}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneTranslator}$\ast$ {\bf ost::BayonneTranslator::first}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_translator_a0240d016bb54209b7f4274f92e15a3c4}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!id@{id}}
+\index{id@{id}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::BayonneTranslator::id}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_translator_a4e36d515f886c297ff86fb3f19c2f8ff}
+\index{ost::BayonneTranslator@{ost::BayonneTranslator}!next@{next}}
+\index{next@{next}!ost::BayonneTranslator@{ost::BayonneTranslator}}
+\subsubsection[{next}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneTranslator}$\ast$ {\bf ost::BayonneTranslator::next}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_translator_acb5a69e6a0d44410e1d0e541bdd74874}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf bayonne.h}\end{DoxyCompactItemize}

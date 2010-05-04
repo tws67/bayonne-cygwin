@@ -1,0 +1,9 @@
+ccscript Library NEWS -- history of visible user changes.
+
+GNU ccScript3 - release 0.1
+
+A new and highly optimized release series of the ccScript engine.  
+Includes major improvements in the use of locking and symbol lookup
+operations.
+
+

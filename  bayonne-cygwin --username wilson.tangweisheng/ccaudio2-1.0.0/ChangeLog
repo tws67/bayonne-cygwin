@@ -1,0 +1,188 @@
+Changes from 0.9.14 to 1.0.0
+- reworking of plugin naming and build conventions.
+- code cleanup.
+- now licensed using GNU Lesser General Public License 3.0 or Later.
+- more modern rpm spec file.
+
+Changes from 0.9.13 to 0.9.14
+- oss ioctl changes as suggested by Yair.
+
+Changes from 0.9.12 to 0.9.13
+- audiotool --size option
+- small code fixup
+
+Changes from 0.9.11 to 0.9.12
+- check for gsm.h header in multiple places
+- more encoding formats
+
+Changes from 0.9.10 to 0.9.11
+- more encoding format codec name aliases
+
+Changes from 0.9.9 to 0.9.10
+- 2 bit adpcm added along with .a16
+
+Changes from 0.9.8 to 0.9.9
+- g.723 codecs, additional file name rules for .a24/.a32/.a40
+- combined g.721/723 codecs into new adpcm.codec module
+
+Changes from 0.9.7 to 0.9.8
+- fix for adpcm audio codec
+
+Changes from 0.9.6 to 0.9.7
+- fix for timing base of gsm audio
+
+Changes from 0.9.5 to 0.9.6
+- crude rate resampling support
+- getRate for encodings and setRate for Info
+- speex codec fix
+- oki codec and dialogic vox support
+
+Changes from 0.9.4 to 0.9.5
+- some fixup for wave rewrite
+- g.729 characteristics added
+- ilbc characteristics added
+- fix for g721 bidirectional use
+
+Changes from 0.9.3 to 0.9.4
+- ndata result for audio codecs
+- new coded methods!
+- g721 adpcm codec added
+- fix for default codec peak and silence
+- supported formats in pkgconfig file
+
+Changes from 0.9.2 to 0.9.3
+- codec cleanup for leak
+
+Changes from 0.9.1 to 0.9.2
+- codec testing and organization cleanup
+- built in gsm code removed; use libgsm from debian
+
+Changes from 0.9.0 to 0.9.1
+- small code cleanup
+- rename xxx to xxx.codec
+- fix libgsm native support
+- temp fix for file close header rewrite
+- open uses getExtension
+- gsm support in .au as format 28
+- audio/x-gsm mime type.
+
+Changes from 0.8.0 to 0.9.0
+- fix pathing for lib64 support.
+- some code cleanup
+- redefined codec support
+
+Changes from 0.7.13 to 0.8.0
+- AudioDevice always assumes native endian.
+- depreciate AudioFile::get/putSamples interface.
+- isPacket test added for packetized codecs.
+- AudioPacket class.
+- linear as l16...
+
+Changes from 0.7.12 to 0.7.13
+- fix for consts for compile cleanness.
+- added speex codec.
+
+Changes from 0.7.11 to 0.7.12
+- native endian methods for audiobase.
+- getLinear/putLinear methods now require native byte order buffers.
+- audio devices now also have native byte order linear methods.
+
+Changes from 0.7.10 to 0.7.11
+- new spec file...
+- fix for pathing of plugins
+- documentation improved
+- netbsd oss sound support
+
+Changes from 0.7.9 to 0.7.10
+- missing headers for libgsm in distro tarball
+
+Changes from 0.7.8 to 0.7.9
+- fix for dtmf inband.
+
+Changes from 0.7.7 to 0.7.8
+- fix on private include use in gsm codec
+
+Changes from 0.7.6 to 0.7.7
+- fix for pure c compile mode of gsm codec
+
+Changes from 0.7.5 to 0.7.6
+- packing control.
+
+Changes from 0.7.4 to 0.7.5
+- small fix oss.
+- critical fixes for w32 audio devices.
+
+Changes from 0.7.3 to 0.7.4
+- fetch codec from AudioStream.
+
+Changes from 0.7.2 to 0.7.3
+- make sure w32 ssize_t matches commonc++ as "int"
+
+Changes from 0.7.1 to 0.7.2
+- AudioStream single frame get/put buffer operations now use packet mode.
+- some placeholder modes...
+- enable-debug configure option...
+
+Changes from 0.7.0 to 0.7.1
+- padding information added to Info class.
+- audiotool --info can show computed framing for mp3 files
+
+Changes from 0.6.1 to 0.7.0
+- maxFramesize to get maximum possible buffer size for a given encoding.
+- mp3 file access stuff, first try
+- new headersize field for frame fragment header in Audio::Info.
+
+Changes from 0.6.0 to 0.6.1
+- mismatch in some size types.
+- make sure man pages are in EXTRAS_DIST
+
+Changes from 0.5.0 to 0.6.0
+- w32 common files merged under GNU Telephony
+- use of common AudioBase core class
+
+Changes from 0.4.0 to 0.5.0
+- new namespace for codecs
+- gsm codec plugin
+- fix for frame setting
+- more file extensions recognized
+- some api fixes
+- new encoder to encoder stream conversion functions for audio files
+- better support for file extension to encoder mapping
+- class documentation is complete!
+- use of timestamps for audio file positioning.
+
+Changes from 0.3.1 to 0.4.0
+- AudioTone getFrame() method now virtual
+- AudioTone has isSilent() and silent frame handling.
+- fixed problem in portable setLong logic!
+- update file size on closing of writable snd/au file!
+- AudioFile based destructors now clear files!
+- New Telephony Tone Generation classes!
+- New loading of international tone maps!
+- New "tonetool" utility!
+
+Changes from 0.3.0 to 0.3.1
+- CAPE debug support added.
+
+Changes from 0.2.1 to 0.3.0
+- codec objects link through base lib now.
+- fix .spec file, no Common C++ dependencies...
+- AudioTone generator class replaces getTone static methods...
+- some fix for types in conversions.
+- fix for internal registry class use.
+- audiofile destructor fix.
+
+Changes from 0.2.0 to 0.2.1
+- open modeFeed for reading a circular audio feed
+- open modeReadAny and modeReadOne for extended continuation operations
+  based on Bayonne.
+- iolimit used for modeFeed write limit.
+
+Changes from 0.1 to 0.2.0
+- added CDAudio class.
+- endian aware header parsing and endian as part of info block.
+- case insensitive compares added.
+- dialogic adpcm uniquely identified.
+- riff (wave) create/read support added.
+- 8, 16, and 32 bit pcm linear audio formats added.
+

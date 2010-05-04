@@ -1,0 +1,181 @@
+#!/bin/sh
+
+extension=".au"
+encoding="mulaw"
+engine=none
+voice=""
+text=""
+file=""
+opts=""
+last=""
+
+if test -z "$*" ; then
+	echo "*** no options"
+	exit -1
+fi
+
+for opt in $* ; do
+	if test ! -z "$text" ; then
+		text="$text $opt"
+		continue
+	fi
+	case "$opt" in
+	*-theta)
+		engine="theta"
+		opt=""
+		;;
+	*-encoding)
+		lastopt="-encoding"
+		opt=""
+		;;
+        *-file)      
+                if test ! -z "$file" ; then
+                        echo "*** file already selected"
+                        exit -1
+                fi
+                lastopt="-file"
+                opt=""
+                ;; 
+	*-voice)
+		if test ! -z "$voice" ; then
+			echo "*** voice already selected"
+			exit -1
+		fi
+		lastopt="-voice"
+		opt=""
+		;;
+	*-theta-voice)
+		if test ! -z "$voice" ; then
+			echo "*** voice already selected"
+			exit -1
+		fi
+		engine="theta"
+		lastopt="-voice"
+		opt=""
+		;;
+	*-theta-voice=*)
+		if test ! -z "$voice" ; then
+			echo "*** voice already selected"
+			exit -1
+		fi
+		engine="theta"
+		lastopt="-voice"
+		opt=`echo $opt | sed s/.theta-voice=//`
+		;;
+	*-encoding=*)
+		lastopt="-encoding"
+		opt=`echo $opt | sed s/.encoding=//`
+		;;
+	*-voice=*)
+		if test ! -z "$voice" ; then
+			echo "*** voice already selected"
+			exit -1
+		fi
+		lastopt="-voice"
+		opt=`echo $opt | sed s/.voice=//`
+		;;
+        *-file=*)
+                if test ! -z "$file" ; then
+                        echo "*** file already selected"
+                        exit -1
+                fi
+                lastopt="-file"
+                opt=`echo $opt | sed s/.file=//`
+                ;;  
+	*)
+		if test -z "$lastopt" ; then
+			if test -z "$file" ; then
+				lastopt="-file"
+			else
+				text="$text $opt"
+				opt=""
+			fi
+		fi
+		;;
+	esac
+	if test ! -z "$opt" ; then
+		case "$lastopt" in
+		-voice)
+			voice=$opt
+			;;
+		-file)
+			file=$opt
+			case $file in
+			*.au|*.wav)
+				;;
+			*.al)
+				encoding="alaw"
+				;;
+			*.ul)
+				encoding="mulaw"
+				;;
+			*.raw)
+				encoding="linear"
+				;;
+			*)
+				file=$file.au
+				;;
+			esac
+			;;
+		-encoding)
+			case "$opt" in
+			mulaw|ulaw|alaw|linear|gsm)
+				encoding="$opt"
+				;;
+			*)
+				echo "*** unknown or unsupported encoding $opt"
+				exit -1
+				;;
+			esac
+			;;
+		esac
+		lastopt=""
+	fi
+done
+
+if test "$engine" == "none" ; then
+	echo "*** no tts engine selected"
+	exit -1
+fi
+
+if test -z "$file" ; then
+	echo "*** no file selected for output"
+	exit -1
+fi
+
+if test -z "$text" ; then
+	echo "*** no text for output"
+	exit -1
+fi
+
+case "$engine" in
+theta)
+	case "$voice" in
+	male)
+		voice="-N Frank"
+		;;
+	female)
+		voice="-N Emily"
+		;;
+	*)
+		voice="-N $voice"
+		;;
+	esac
+	format="$file-$encoding"
+	case $format in
+	*.raw-linear|*.wav-linear)
+		/opt/theta/bin/theta -c 1 -F 8000 -o $file $voice "'$text'"
+		;;
+	*)
+		/opt/theta/bin/theta -c 1 -F 8000 -o .theta.wav $voice "'$text'"
+		audiotool --build -encoding=$encoding $file .theta.wav
+		rm -f .theta.wav
+		;;
+	esac
+	;;
+*)
+	echo "*** unknown tts engine"
+	exit -1
+esac
+exit 0
+

@@ -1,0 +1,66 @@
+.TH "exception.h" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+exception.h \- 
+.PP
+GNU Common C++ exception model base classes.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cc++/config.h>\fP
+.br
+\fC#include <cc++/string.h>\fP
+.br
+\fC#include <exception>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBost::Exception\fP"
+.br
+.RI "\fIMainline exception handler, this is the root for all Common C++ exceptions and assures the ansi C++ exception class hierarchy is both followed and imported into the gnu Common C++ class hierarchy. \fP"
+.ti -1c
+.RI "class \fBost::IOException\fP"
+.br
+.RI "\fIA sub-hierarchy for all Common C++ I/O related classes. \fP"
+.ti -1c
+.RI "class \fBost::ThrException\fP"
+.br
+.RI "\fIA sub-hierarchy for thread exceptions. \fP"
+.ti -1c
+.RI "class \fBost::SyncException\fP"
+.br
+.RI "\fIA sub-hierarchy for all task synchronizion related exceptions. \fP"
+.ti -1c
+.RI "class \fBost::InterruptException\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBost\fP"
+.br
+.in -1c
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBCOMMON_STD_EXCEPTION\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+GNU Common C++ exception model base classes. 
+
+
+.SH "Define Documentation"
+.PP 
+.SS "#define COMMON_STD_EXCEPTION"
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

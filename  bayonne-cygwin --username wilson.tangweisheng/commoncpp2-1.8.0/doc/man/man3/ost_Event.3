@@ -1,0 +1,90 @@
+.TH "ost::Event" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::Event \- 
+.PP
+The \fBEvent\fP class implements a feature originally found in the WIN32 API; event notification.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <thread.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEvent\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Event\fP ()"
+.br
+.ti -1c
+.RI "void \fBreset\fP (void)"
+.br
+.RI "\fIOnce signaled, the \fBEvent\fP class must be 'reset' before responding to a new signal. \fP"
+.ti -1c
+.RI "void \fBsignal\fP (void)"
+.br
+.RI "\fISignal the event for the waiting thread. \fP"
+.ti -1c
+.RI "bool \fBwait\fP (\fBtimeout_t\fP timer)"
+.br
+.RI "\fIWait either for the event to be signaled by another thread or for the specified timeout duration. \fP"
+.ti -1c
+.RI "bool \fBwait\fP (void)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBEvent\fP class implements a feature originally found in the WIN32 API; event notification. 
+
+A target thread waits on a resetable \fBEvent\fP, and one or more other threads can then signal the waiting thread to resume execution. A timeout can be used to specify a wait duration in milliseconds. The \fBEvent\fP class must be reset before it can be used again as a trigger. These event objects use a trigger/reset mechanism and are related to low level conditional variables.
+.PP
+\fBAuthor:\fP
+.RS 4
+: David Sugar <dyfet@ostel.com> \fBThread\fP synchornization on event notification. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::Event::Event ()"
+.SS "virtual ost::Event::~Event ()\fC [virtual]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::Event::reset (void)"
+.PP
+Once signaled, the \fBEvent\fP class must be 'reset' before responding to a new signal. \fBSee also:\fP
+.RS 4
+\fBsignal\fP 
+.RE
+.PP
+
+.SS "void ost::Event::signal (void)"
+.PP
+Signal the event for the waiting thread. 
+.SS "bool ost::Event::wait (void)"
+.SS "bool ost::Event::wait (\fBtimeout_t\fP timer)"
+.PP
+Wait either for the event to be signaled by another thread or for the specified timeout duration. \fBSee also:\fP
+.RS 4
+\fBsignal\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if signaled, false if timed out. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimer\fP timeout in milliseconds to wait for a signal. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

@@ -1,0 +1,43 @@
+.TH "ost::Cancellation" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::Cancellation \- 
+.PP
+A class to automatically set the thread cancellation mode of a member function.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <thread.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCancellation\fP (\fBThread::Cancel\fP cancel)"
+.br
+.ti -1c
+.RI "\fB~Cancellation\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A class to automatically set the thread cancellation mode of a member function. 
+
+When the member function returns and the automatic variable falls out of scope, the previous thread cancellation mode is restored.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@gnu.org> Automatic cancellation mode setting. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::Cancellation::Cancellation (\fBThread::Cancel\fP cancel)"
+.SS "ost::Cancellation::~Cancellation ()"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

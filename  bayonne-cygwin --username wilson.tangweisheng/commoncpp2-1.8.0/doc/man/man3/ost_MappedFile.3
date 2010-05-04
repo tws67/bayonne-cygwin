@@ -1,0 +1,232 @@
+.TH "ost::MappedFile" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::MappedFile \- 
+.PP
+Create and map a disk file into memory.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <file.h>\fP
+.PP
+Inherits \fBost::RandomFile\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMappedFile\fP (const char *fname, \fBAccess\fP mode)"
+.br
+.RI "\fIOpen a file for mapping. \fP"
+.ti -1c
+.RI "\fBMappedFile\fP (const char *fname, \fBAccess\fP mode, size_t size)"
+.br
+.RI "\fICreate if not exists, and map a file of specified size into memory. \fP"
+.ti -1c
+.RI "\fBMappedFile\fP (const char *fname, \fBpos_t\fP offset, size_t size, \fBAccess\fP mode)"
+.br
+.RI "\fIMap a portion or all of a specified file in the specified shared memory access mode. \fP"
+.ti -1c
+.RI "virtual \fB~MappedFile\fP ()"
+.br
+.RI "\fIRelease a mapped section of memory associated with a file. \fP"
+.ti -1c
+.RI "void \fBsync\fP (void)"
+.br
+.RI "\fISynchronize the contents of the mapped portion of memory with the disk file and wait for completion. \fP"
+.ti -1c
+.RI "void \fBsync\fP (char *address, size_t len)"
+.br
+.RI "\fISynchronize a segment of memory mapped from a segment fetch. \fP"
+.ti -1c
+.RI "void \fBupdate\fP (size_t offset=0, size_t len=0)"
+.br
+.RI "\fIMap a portion of the memory mapped from the file back to the file and do not wait for completion. \fP"
+.ti -1c
+.RI "void \fBupdate\fP (char *address, size_t len)"
+.br
+.RI "\fIUpdate a mapped region back to disk as specified by address and length. \fP"
+.ti -1c
+.RI "void \fBrelease\fP (char *address, size_t len)"
+.br
+.RI "\fIRelease (unmap) a memory segment. \fP"
+.ti -1c
+.RI "char * \fBfetch\fP (size_t offset=0)"
+.br
+.RI "\fIFetch a pointer to an offset within the memory mapped portion of the disk file. \fP"
+.ti -1c
+.RI "char * \fBfetch\fP (off_t pos, size_t len)"
+.br
+.RI "\fIFetch and map a portion of a disk file to a logical memory block. \fP"
+.ti -1c
+.RI "bool \fBlock\fP (void)"
+.br
+.RI "\fILock the currently mapped portion of a file. \fP"
+.ti -1c
+.RI "void \fBunlock\fP (void)"
+.br
+.RI "\fIUnlock a locked mapped portion of a file. \fP"
+.ti -1c
+.RI "size_t \fBpageAligned\fP (size_t size)"
+.br
+.RI "\fICompute map size to aligned page boundry. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Create and map a disk file into memory. 
+
+This portable class works under both Posix via mmap and under the win32 API. A mapped file can be referenced directly by it's memory segment. One can map and unmap portions of a file on demand, and update changed memory pages mapped from files immediately through \fBsync()\fP.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> Map a named disk file into memory. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::MappedFile::MappedFile (const char * fname, \fBAccess\fP mode)"
+.PP
+Open a file for mapping. More than one segment of a file may be mapped into seperate regions of memory.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfname\fP file name to access for mapping. 
+.br
+\fImode\fP access mode to map file. 
+.RE
+.PP
+
+.SS "ost::MappedFile::MappedFile (const char * fname, \fBAccess\fP mode, size_t size)"
+.PP
+Create if not exists, and map a file of specified size into memory. \fBParameters:\fP
+.RS 4
+\fIfname\fP file name to access for mapping. 
+.br
+\fImode\fP access mode to map file. 
+.br
+\fIsize\fP of file to map. 
+.RE
+.PP
+
+.SS "ost::MappedFile::MappedFile (const char * fname, \fBpos_t\fP offset, size_t size, \fBAccess\fP mode)"
+.PP
+Map a portion or all of a specified file in the specified shared memory access mode. Valid mapping modes include mappedRead, mappedWrite, and mappedReadWrite.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfname\fP pathname of file to map into memory. 
+.br
+\fIoffset\fP from start of file to begin mapping in bytes. 
+.br
+\fIsize\fP of mapped area in bytes. 
+.br
+\fImode\fP to map file. 
+.RE
+.PP
+
+.SS "virtual ost::MappedFile::~MappedFile ()\fC [virtual]\fP"
+.PP
+Release a mapped section of memory associated with a file. The mapped area is updated back to disk. 
+.SH "Member Function Documentation"
+.PP 
+.SS "char* ost::MappedFile::fetch (off_t pos, size_t len)"
+.PP
+Fetch and map a portion of a disk file to a logical memory block. \fBReturns:\fP
+.RS 4
+pointer to memory segment. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP offset of file segment to map. 
+.br
+\fIlen\fP size of memory segment to map. 
+.RE
+.PP
+
+.SS "char* ost::MappedFile::fetch (size_t offset = \fC0\fP)\fC [inline]\fP"
+.PP
+Fetch a pointer to an offset within the memory mapped portion of the disk file. This really is used for convience of matching operations between Update and Fetch, as one could simply have accessed the base pointer where the file was mapped directly.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoffset\fP from start of mapped memory. 
+.RE
+.PP
+
+.SS "bool ost::MappedFile::lock (void)"
+.PP
+Lock the currently mapped portion of a file. \fBReturns:\fP
+.RS 4
+true if pages are locked. 
+.RE
+.PP
+
+.SS "size_t ost::MappedFile::pageAligned (size_t size)"
+.PP
+Compute map size to aligned page boundry. \fBParameters:\fP
+.RS 4
+\fIsize\fP request. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+page aligned size. 
+.RE
+.PP
+
+.SS "void ost::MappedFile::release (char * address, size_t len)"
+.PP
+Release (unmap) a memory segment. \fBParameters:\fP
+.RS 4
+\fIaddress\fP address of memory segment to release. 
+.br
+\fIlen\fP length of memory segment to release. 
+.RE
+.PP
+
+.SS "void ost::MappedFile::sync (char * address, size_t len)"
+.PP
+Synchronize a segment of memory mapped from a segment fetch. \fBParameters:\fP
+.RS 4
+\fIaddress\fP memory address to update. 
+.br
+\fIlen\fP size of segment. 
+.RE
+.PP
+
+.SS "void ost::MappedFile::sync (void)"
+.PP
+Synchronize the contents of the mapped portion of memory with the disk file and wait for completion. This assures the memory mapped from the file is written back. 
+.SS "void ost::MappedFile::unlock (void)"
+.PP
+Unlock a locked mapped portion of a file. 
+.SS "void ost::MappedFile::update (char * address, size_t len)"
+.PP
+Update a mapped region back to disk as specified by address and length. \fBParameters:\fP
+.RS 4
+\fIaddress\fP address of segment. 
+.br
+\fIlen\fP length of segment. 
+.RE
+.PP
+
+.SS "void ost::MappedFile::update (size_t offset = \fC0\fP, size_t len = \fC0\fP)"
+.PP
+Map a portion of the memory mapped from the file back to the file and do not wait for completion. This is useful when mapping a database file and updating a single record.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoffset\fP offset into the mapped region of memory. 
+.br
+\fIlen\fP length of partial region (example, record length). 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

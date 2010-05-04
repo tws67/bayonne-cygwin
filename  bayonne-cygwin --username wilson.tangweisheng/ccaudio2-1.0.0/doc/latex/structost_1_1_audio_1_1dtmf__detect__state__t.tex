@@ -1,0 +1,110 @@
+\section{ost::Audio::dtmf\_\-detect\_\-state\_\-t Struct Reference}
+\label{structost_1_1_audio_1_1dtmf__detect__state__t}\index{ost::Audio::dtmf\_\-detect\_\-state\_\-t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}}
+
+
+{\ttfamily \#include $<$audio2.h$>$}\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf hit1}
+\item 
+int {\bf hit2}
+\item 
+int {\bf hit3}
+\item 
+int {\bf hit4}
+\item 
+int {\bf mhit}
+\item 
+{\bf goertzel\_\-state\_\-t} {\bf row\_\-out} [4]
+\item 
+{\bf goertzel\_\-state\_\-t} {\bf col\_\-out} [4]
+\item 
+{\bf goertzel\_\-state\_\-t} {\bf row\_\-out2nd} [4]
+\item 
+{\bf goertzel\_\-state\_\-t} {\bf col\_\-out2nd} [4]
+\item 
+{\bf goertzel\_\-state\_\-t} {\bf fax\_\-tone}
+\item 
+{\bf goertzel\_\-state\_\-t} {\bf fax\_\-tone2nd}
+\item 
+float {\bf energy}
+\item 
+int {\bf current\_\-sample}
+\item 
+char {\bf digits} [129]
+\item 
+int {\bf current\_\-digits}
+\item 
+int {\bf detected\_\-digits}
+\item 
+int {\bf lost\_\-digits}
+\item 
+int {\bf digit\_\-hits} [16]
+\item 
+int {\bf fax\_\-hits}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\index{ost::Audio::dtmf\_\-detect\_\-state\_\-t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}!col\_\-out@{col\_\-out}}
+\index{col\_\-out@{col\_\-out}!ost::Audio::dtmf_detect_state_t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}}
+\subsubsection[{col\_\-out}]{\setlength{\rightskip}{0pt plus 5cm}{\bf goertzel\_\-state\_\-t} {\bf ost::Audio::dtmf\_\-detect\_\-state\_\-t::col\_\-out}[4]}\label{structost_1_1_audio_1_1dtmf__detect__state__t_a6d350dab0121421a1a41289da38fb152}
+\index{ost::Audio::dtmf\_\-detect\_\-state\_\-t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}!col\_\-out2nd@{col\_\-out2nd}}
+\index{col\_\-out2nd@{col\_\-out2nd}!ost::Audio::dtmf_detect_state_t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}}
+\subsubsection[{col\_\-out2nd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf goertzel\_\-state\_\-t} {\bf ost::Audio::dtmf\_\-detect\_\-state\_\-t::col\_\-out2nd}[4]}\label{structost_1_1_audio_1_1dtmf__detect__state__t_a68e9727e7c756e0fd41ba793fa8d1737}
+\index{ost::Audio::dtmf\_\-detect\_\-state\_\-t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}!current\_\-digits@{current\_\-digits}}
+\index{current\_\-digits@{current\_\-digits}!ost::Audio::dtmf_detect_state_t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}}
+\subsubsection[{current\_\-digits}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ost::Audio::dtmf\_\-detect\_\-state\_\-t::current\_\-digits}}\label{structost_1_1_audio_1_1dtmf__detect__state__t_a16befda79cb712b33db882afd8230aae}
+\index{ost::Audio::dtmf\_\-detect\_\-state\_\-t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}!current\_\-sample@{current\_\-sample}}
+\index{current\_\-sample@{current\_\-sample}!ost::Audio::dtmf_detect_state_t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}}
+\subsubsection[{current\_\-sample}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ost::Audio::dtmf\_\-detect\_\-state\_\-t::current\_\-sample}}\label{structost_1_1_audio_1_1dtmf__detect__state__t_a9b1fa0adfa42e6440b06ec741f3cba9e}
+\index{ost::Audio::dtmf\_\-detect\_\-state\_\-t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}!detected\_\-digits@{detected\_\-digits}}
+\index{detected\_\-digits@{detected\_\-digits}!ost::Audio::dtmf_detect_state_t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}}
+\subsubsection[{detected\_\-digits}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ost::Audio::dtmf\_\-detect\_\-state\_\-t::detected\_\-digits}}\label{structost_1_1_audio_1_1dtmf__detect__state__t_a6bb6ee1319b8b09a1d7bb2c57b66876c}
+\index{ost::Audio::dtmf\_\-detect\_\-state\_\-t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}!digit\_\-hits@{digit\_\-hits}}
+\index{digit\_\-hits@{digit\_\-hits}!ost::Audio::dtmf_detect_state_t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}}
+\subsubsection[{digit\_\-hits}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ost::Audio::dtmf\_\-detect\_\-state\_\-t::digit\_\-hits}[16]}\label{structost_1_1_audio_1_1dtmf__detect__state__t_a2d8ec7cd817782d307fa4f434728d9a8}
+\index{ost::Audio::dtmf\_\-detect\_\-state\_\-t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}!digits@{digits}}
+\index{digits@{digits}!ost::Audio::dtmf_detect_state_t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}}
+\subsubsection[{digits}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::Audio::dtmf\_\-detect\_\-state\_\-t::digits}[129]}\label{structost_1_1_audio_1_1dtmf__detect__state__t_a4732440ba856b4ddd9d022130012fe25}
+\index{ost::Audio::dtmf\_\-detect\_\-state\_\-t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}!energy@{energy}}
+\index{energy@{energy}!ost::Audio::dtmf_detect_state_t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}}
+\subsubsection[{energy}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf ost::Audio::dtmf\_\-detect\_\-state\_\-t::energy}}\label{structost_1_1_audio_1_1dtmf__detect__state__t_a0e633637c0bef5ed0bf9317a8130de5e}
+\index{ost::Audio::dtmf\_\-detect\_\-state\_\-t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}!fax\_\-hits@{fax\_\-hits}}
+\index{fax\_\-hits@{fax\_\-hits}!ost::Audio::dtmf_detect_state_t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}}
+\subsubsection[{fax\_\-hits}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ost::Audio::dtmf\_\-detect\_\-state\_\-t::fax\_\-hits}}\label{structost_1_1_audio_1_1dtmf__detect__state__t_a40b54bf1509eff39857697e5cfb0b104}
+\index{ost::Audio::dtmf\_\-detect\_\-state\_\-t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}!fax\_\-tone@{fax\_\-tone}}
+\index{fax\_\-tone@{fax\_\-tone}!ost::Audio::dtmf_detect_state_t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}}
+\subsubsection[{fax\_\-tone}]{\setlength{\rightskip}{0pt plus 5cm}{\bf goertzel\_\-state\_\-t} {\bf ost::Audio::dtmf\_\-detect\_\-state\_\-t::fax\_\-tone}}\label{structost_1_1_audio_1_1dtmf__detect__state__t_a2f33d8a3dc1b99843ac70f748acae368}
+\index{ost::Audio::dtmf\_\-detect\_\-state\_\-t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}!fax\_\-tone2nd@{fax\_\-tone2nd}}
+\index{fax\_\-tone2nd@{fax\_\-tone2nd}!ost::Audio::dtmf_detect_state_t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}}
+\subsubsection[{fax\_\-tone2nd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf goertzel\_\-state\_\-t} {\bf ost::Audio::dtmf\_\-detect\_\-state\_\-t::fax\_\-tone2nd}}\label{structost_1_1_audio_1_1dtmf__detect__state__t_a1acad11091747d13725f6bb71b63fe19}
+\index{ost::Audio::dtmf\_\-detect\_\-state\_\-t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}!hit1@{hit1}}
+\index{hit1@{hit1}!ost::Audio::dtmf_detect_state_t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}}
+\subsubsection[{hit1}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ost::Audio::dtmf\_\-detect\_\-state\_\-t::hit1}}\label{structost_1_1_audio_1_1dtmf__detect__state__t_a0bfa319ff9ff428ce075d23e780b7058}
+\index{ost::Audio::dtmf\_\-detect\_\-state\_\-t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}!hit2@{hit2}}
+\index{hit2@{hit2}!ost::Audio::dtmf_detect_state_t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}}
+\subsubsection[{hit2}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ost::Audio::dtmf\_\-detect\_\-state\_\-t::hit2}}\label{structost_1_1_audio_1_1dtmf__detect__state__t_a678194ac32a49d37c56d36916f5516ca}
+\index{ost::Audio::dtmf\_\-detect\_\-state\_\-t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}!hit3@{hit3}}
+\index{hit3@{hit3}!ost::Audio::dtmf_detect_state_t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}}
+\subsubsection[{hit3}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ost::Audio::dtmf\_\-detect\_\-state\_\-t::hit3}}\label{structost_1_1_audio_1_1dtmf__detect__state__t_ab530845f05591781bdd2ecfc69e3b4fd}
+\index{ost::Audio::dtmf\_\-detect\_\-state\_\-t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}!hit4@{hit4}}
+\index{hit4@{hit4}!ost::Audio::dtmf_detect_state_t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}}
+\subsubsection[{hit4}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ost::Audio::dtmf\_\-detect\_\-state\_\-t::hit4}}\label{structost_1_1_audio_1_1dtmf__detect__state__t_aba05fcde1082fdd2d9ee45c9d7a0b8d8}
+\index{ost::Audio::dtmf\_\-detect\_\-state\_\-t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}!lost\_\-digits@{lost\_\-digits}}
+\index{lost\_\-digits@{lost\_\-digits}!ost::Audio::dtmf_detect_state_t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}}
+\subsubsection[{lost\_\-digits}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ost::Audio::dtmf\_\-detect\_\-state\_\-t::lost\_\-digits}}\label{structost_1_1_audio_1_1dtmf__detect__state__t_a27b6231325ef5b3a5efe01412b133227}
+\index{ost::Audio::dtmf\_\-detect\_\-state\_\-t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}!mhit@{mhit}}
+\index{mhit@{mhit}!ost::Audio::dtmf_detect_state_t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}}
+\subsubsection[{mhit}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ost::Audio::dtmf\_\-detect\_\-state\_\-t::mhit}}\label{structost_1_1_audio_1_1dtmf__detect__state__t_a9d735037f661669d18cef627c197b67e}
+\index{ost::Audio::dtmf\_\-detect\_\-state\_\-t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}!row\_\-out@{row\_\-out}}
+\index{row\_\-out@{row\_\-out}!ost::Audio::dtmf_detect_state_t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}}
+\subsubsection[{row\_\-out}]{\setlength{\rightskip}{0pt plus 5cm}{\bf goertzel\_\-state\_\-t} {\bf ost::Audio::dtmf\_\-detect\_\-state\_\-t::row\_\-out}[4]}\label{structost_1_1_audio_1_1dtmf__detect__state__t_af21afb8422b17c34e0702783e4ca9362}
+\index{ost::Audio::dtmf\_\-detect\_\-state\_\-t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}!row\_\-out2nd@{row\_\-out2nd}}
+\index{row\_\-out2nd@{row\_\-out2nd}!ost::Audio::dtmf_detect_state_t@{ost::Audio::dtmf\_\-detect\_\-state\_\-t}}
+\subsubsection[{row\_\-out2nd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf goertzel\_\-state\_\-t} {\bf ost::Audio::dtmf\_\-detect\_\-state\_\-t::row\_\-out2nd}[4]}\label{structost_1_1_audio_1_1dtmf__detect__state__t_a4f28bae9e4849c109353f1baa7ed4e43}
+
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf audio2.h}\end{DoxyCompactItemize}

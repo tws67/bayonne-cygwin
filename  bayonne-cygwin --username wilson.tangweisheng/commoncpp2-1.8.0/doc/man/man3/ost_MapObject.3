@@ -1,0 +1,88 @@
+.TH "ost::MapObject" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::MapObject \- 
+.PP
+The \fBMapObject\fP is a base class which can be used to make a derived class operate on a \fBMapTable\fP.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <object.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBdetach\fP (void)"
+.br
+.RI "\fIRemove the object from it's current table. \fP"
+.ti -1c
+.RI "\fBMapObject\fP (const char *id)"
+.br
+.RI "\fISave id, mark as not using any table. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBMapObject\fP * \fBnextObject\fP"
+.br
+.ti -1c
+.RI "const char * \fBidObject\fP"
+.br
+.ti -1c
+.RI "\fBMapTable\fP * \fBtable\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBMapTable\fP"
+.br
+.ti -1c
+.RI "class \fBMapIndex\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBMapObject\fP is a base class which can be used to make a derived class operate on a \fBMapTable\fP. 
+
+Derived classes may override new and delete operators to use managed free list from a \fBMapTable\fP.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@gnutelephony.org> Mappable object. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::MapObject::MapObject (const char * id)"
+.PP
+Save id, mark as not using any table. \fBParameters:\fP
+.RS 4
+\fIid\fP string for this object. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::MapObject::detach (void)"
+.PP
+Remove the object from it's current table. 
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBMapIndex\fP\fC [friend]\fP"
+.SS "friend class \fBMapTable\fP\fC [friend]\fP"
+.SH "Member Data Documentation"
+.PP 
+.SS "const char* \fBost::MapObject::idObject\fP\fC [protected]\fP"
+.SS "\fBMapObject\fP* \fBost::MapObject::nextObject\fP\fC [protected]\fP"
+.SS "\fBMapTable\fP* \fBost::MapObject::table\fP\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

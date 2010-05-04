@@ -1,0 +1,358 @@
+\section{ost::Bayonne::State Struct Reference}
+\label{structost_1_1_bayonne_1_1_state}\index{ost::Bayonne::State@{ost::Bayonne::State}}
+
+
+The primary state data structure.  
+
+
+{\ttfamily \#include $<$bayonne.h$>$}\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Handler} {\bf handler}
+\item 
+{\bf Handler} {\bf logstate}
+\item 
+const char $\ast$ {\bf name}
+\item 
+timeout\_\-t {\bf timeout}
+\item 
+bool {\bf peering}
+\item 
+Name $\ast$ {\bf menu}
+\item 
+unsigned {\bf stack}
+\item 
+Line $\ast$ {\bf lib}
+\item 
+int {\bf pfd}
+\item 
+{\bf result\_\-t} {\bf result}
+\item 
+int {\bf pid}
+\item 
+{\bf libaudio\_\-t} $\ast$ {\bf libaudio}
+\item 
+bool {\bf refer}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>struct \{\\
+\>\>unsigned {\bf count}\\
+\>\>timeout\_t {\bf interval}\\
+\>\} {\bf wait}\\
+\>struct \{\\
+\>\>Audio::Mode {\bf mode}\\
+\>\>Audio::Level {\bf level}\\
+\>\>timeout\_t {\bf total}\\
+\>\>timeout\_t {\bf silence}\\
+\>\>timeout\_t {\bf intersilence}\\
+\>\>long {\bf lastnum}\\
+\>\>bool {\bf exitkey}\\
+\>\>bool {\bf compress}\\
+\>\>bool {\bf trigger}\\
+\>\>const char $\ast$ {\bf pos}\\
+\>\>const char $\ast$ {\bf exit}\\
+\>\>const char $\ast$ {\bf menu}\\
+\>\>const char $\ast$ {\bf note}\\
+\>\>union \{\\
+\>\>\>const char $\ast$ {\bf list} [256]\\
+\>\>\>struct \{\\
+\>\>\>\>const char $\ast$ {\bf pathv} [4]\\
+\>\>\>\>char {\bf path1} [128]\\
+\>\>\>\>char {\bf path2} [128]\\
+\>\>\>\>char {\bf meta} [256 $\ast$2]\\
+\>\>\>\} \\
+\>\>\} \\
+\>\} {\bf audio}\\
+\>struct \{\\
+\>\>timeout\_t {\bf interdigit}\\
+\>\>timeout\_t {\bf lastdigit}\\
+\>\>const char $\ast$ {\bf var}\\
+\>\>const char $\ast$ {\bf exit}\\
+\>\>const char $\ast$ {\bf format}\\
+\>\>const char $\ast$ {\bf ignore}\\
+\>\>const char $\ast$ {\bf route}\\
+\>\>unsigned {\bf count}\\
+\>\>unsigned {\bf size}\\
+\>\>unsigned {\bf required}\\
+\>\} {\bf input}\\
+\>struct \{\\
+\>\>const char $\ast$ {\bf var}\\
+\>\>const char $\ast$ {\bf menu}\\
+\>\} {\bf inkey}\\
+\>struct \{\\
+\>\>const char $\ast$ {\bf sequence}\\
+\>\>bool {\bf flashing}\\
+\>\>bool {\bf dialing}\\
+\>\>bool {\bf exiting}\\
+\>\>bool {\bf hangup}\\
+\>\>bool {\bf dtmf}\\
+\>\>bool {\bf refer}\\
+\>\>char $\ast$ {\bf syncdigit}\\
+\>\>timeout\_t {\bf synctimer}\\
+\>\>timeout\_t {\bf duration}\\
+\>\>char {\bf digits} [64]\\
+\>\>char {\bf sessionid} [16]\\
+\>\} {\bf tone}\\
+\>struct \{\\
+\>\>timeout\_t {\bf on}\\
+\>\>timeout\_t {\bf off}\\
+\>\>timeout\_t {\bf interdigit}\\
+\>\>unsigned {\bf pos}\\
+\>\>bool {\bf flashing}\\
+\>\>bool {\bf dialing}\\
+\>\>unsigned char {\bf digits} [64]\\
+\>\} {\bf pulse}\\
+\>struct \{\\
+\>\>const char $\ast$ {\bf dial}\\
+\>\>const char $\ast$ {\bf exit}\\
+\>\>bool {\bf dtmf}\\
+\>\>bool {\bf drop}\\
+\>\>bool {\bf hangup}\\
+\>\>bool {\bf refer}\\
+\>\>{\bf BayonneSession} $\ast$ {\bf peer}\\
+\>\>timeout\_t {\bf answer\_timer}\\
+\>\>timeout\_t {\bf hunt\_timer}\\
+\>\>Line $\ast$ {\bf select}\\
+\>\>unsigned {\bf index}\\
+\>\>char {\bf digits} [64]\\
+\>\} {\bf join}\\
+\>struct \{\\
+\>\>const char $\ast$ {\bf ref}\\
+\>\>char {\bf buf} [256 $\ast$sizeof(char $\ast$)]\\
+\>\} {\bf url}\\
+\}; \\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The primary state data structure. This holds data that is setup by the interpreter and which must remain persistent for the execution of a given state. This is composed of some common elements which exist in a session for all states, and a union of state specific data elements, all packed together. 
+
+\subsection{Member Data Documentation}
+\subsubsection[{"@13}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \} }\label{structost_1_1_bayonne_1_1_state_acdc541e09b31cd4bf504503bc43a1f08}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!answer\_\-timer@{answer\_\-timer}}
+\index{answer\_\-timer@{answer\_\-timer}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{answer\_\-timer}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::Bayonne::State::answer\_\-timer}}\label{structost_1_1_bayonne_1_1_state_a10ff439e1b4501a2a29b10a6d8d3ce6d}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!audio@{audio}}
+\index{audio@{audio}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{audio}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \}  	 {\bf ost::Bayonne::State::audio}}\label{structost_1_1_bayonne_1_1_state_a49eff148b041844ffd50115d151a77d1}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!buf@{buf}}
+\index{buf@{buf}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{buf}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::Bayonne::State::buf}[256 $\ast$sizeof(char $\ast$)]}\label{structost_1_1_bayonne_1_1_state_a4d815e5fc0b01173fb592ef2db59ee2e}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!compress@{compress}}
+\index{compress@{compress}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{compress}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::Bayonne::State::compress}}\label{structost_1_1_bayonne_1_1_state_ae0ff79071c51111412b786dc923289b8}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!count@{count}}
+\index{count@{count}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::Bayonne::State::count}}\label{structost_1_1_bayonne_1_1_state_a7b58a793c6e71c97ce4ebc8eb758b8a1}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!dial@{dial}}
+\index{dial@{dial}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{dial}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::State::dial}}\label{structost_1_1_bayonne_1_1_state_a61b67ec4204c6350b00e9d75ff7052b1}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!dialing@{dialing}}
+\index{dialing@{dialing}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{dialing}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::Bayonne::State::dialing}}\label{structost_1_1_bayonne_1_1_state_a4d6696607b6b2e25a0f6a60b1bbbefbc}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!digits@{digits}}
+\index{digits@{digits}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{digits}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf ost::Bayonne::State::digits}[64]}\label{structost_1_1_bayonne_1_1_state_a823e4818eec35231d9adbeff2039629d}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!digits@{digits}}
+\index{digits@{digits}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{digits}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::Bayonne::State::digits}[64]}\label{structost_1_1_bayonne_1_1_state_a27840fe81482406f65a1dd5e4444da79}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!drop@{drop}}
+\index{drop@{drop}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{drop}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::Bayonne::State::drop}}\label{structost_1_1_bayonne_1_1_state_a10be68ef7213ad956c8f49eb8484b826}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!dtmf@{dtmf}}
+\index{dtmf@{dtmf}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{dtmf}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::Bayonne::State::dtmf}}\label{structost_1_1_bayonne_1_1_state_aa49f9cda27c2835803a90b7a495456b9}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!duration@{duration}}
+\index{duration@{duration}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{duration}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::Bayonne::State::duration}}\label{structost_1_1_bayonne_1_1_state_ac5885aa147c5afeedeee1694bcaeb1f7}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!exit@{exit}}
+\index{exit@{exit}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{exit}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::State::exit}}\label{structost_1_1_bayonne_1_1_state_ae6fdb3ddb876fdcd162e79c5fcaed1bd}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!exiting@{exiting}}
+\index{exiting@{exiting}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{exiting}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::Bayonne::State::exiting}}\label{structost_1_1_bayonne_1_1_state_adc2dc88022b76971bd7498e967e35ae9}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!exitkey@{exitkey}}
+\index{exitkey@{exitkey}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{exitkey}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::Bayonne::State::exitkey}}\label{structost_1_1_bayonne_1_1_state_ade715928fcb859d74be906663125346a}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!flashing@{flashing}}
+\index{flashing@{flashing}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{flashing}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::Bayonne::State::flashing}}\label{structost_1_1_bayonne_1_1_state_a625070cd24ba551435ba95aa3f0ff599}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!format@{format}}
+\index{format@{format}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{format}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::State::format}}\label{structost_1_1_bayonne_1_1_state_aaa9f362d7ca83d0b436f2a6ab3878bfe}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!handler@{handler}}
+\index{handler@{handler}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Handler} {\bf ost::Bayonne::State::handler}}\label{structost_1_1_bayonne_1_1_state_a1be5a541deca7cac04ccecb5fe7017f6}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!hangup@{hangup}}
+\index{hangup@{hangup}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{hangup}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::Bayonne::State::hangup}}\label{structost_1_1_bayonne_1_1_state_a313279d09817baa5f3c4a00badf4cf16}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!hunt\_\-timer@{hunt\_\-timer}}
+\index{hunt\_\-timer@{hunt\_\-timer}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{hunt\_\-timer}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::Bayonne::State::hunt\_\-timer}}\label{structost_1_1_bayonne_1_1_state_a27c89aefdc0b835a20e431063fd45a4f}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!ignore@{ignore}}
+\index{ignore@{ignore}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{ignore}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::State::ignore}}\label{structost_1_1_bayonne_1_1_state_a85eec98af43be85afd964c50ad3d9336}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!index@{index}}
+\index{index@{index}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{index}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::Bayonne::State::index}}\label{structost_1_1_bayonne_1_1_state_a22b376f6df530dbe13c0bd868c1cef82}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!inkey@{inkey}}
+\index{inkey@{inkey}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{inkey}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \} 	 {\bf ost::Bayonne::State::inkey}}\label{structost_1_1_bayonne_1_1_state_ac1694c70fd5c9712012a2b0711671d4c}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!input@{input}}
+\index{input@{input}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{input}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \} 	 {\bf ost::Bayonne::State::input}}\label{structost_1_1_bayonne_1_1_state_acad9afb1fa9127292226e0cdd30cde34}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!interdigit@{interdigit}}
+\index{interdigit@{interdigit}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{interdigit}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::Bayonne::State::interdigit}}\label{structost_1_1_bayonne_1_1_state_ad413f71cbec55de503fbf551196c4765}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!intersilence@{intersilence}}
+\index{intersilence@{intersilence}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{intersilence}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::Bayonne::State::intersilence}}\label{structost_1_1_bayonne_1_1_state_a50d2903b100a6513ac9f55ea4af805f6}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!interval@{interval}}
+\index{interval@{interval}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{interval}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::Bayonne::State::interval}}\label{structost_1_1_bayonne_1_1_state_a769915916da8ec7f3b1c58cb4d370801}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!join@{join}}
+\index{join@{join}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{join}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \} 	 {\bf ost::Bayonne::State::join}}\label{structost_1_1_bayonne_1_1_state_adcd7a59693efb5d5c8bf532bb0ed3bcc}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!lastdigit@{lastdigit}}
+\index{lastdigit@{lastdigit}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{lastdigit}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::Bayonne::State::lastdigit}}\label{structost_1_1_bayonne_1_1_state_af1bf1dba7144c80a2be9e8723515bec0}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!lastnum@{lastnum}}
+\index{lastnum@{lastnum}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{lastnum}]{\setlength{\rightskip}{0pt plus 5cm}long {\bf ost::Bayonne::State::lastnum}}\label{structost_1_1_bayonne_1_1_state_aa84278066054a51d43f101f65dc6f88d}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!level@{level}}
+\index{level@{level}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{level}]{\setlength{\rightskip}{0pt plus 5cm}Audio::Level {\bf ost::Bayonne::State::level}}\label{structost_1_1_bayonne_1_1_state_a73a1b6c5df61a92ab44541446c49b76b}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!lib@{lib}}
+\index{lib@{lib}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{lib}]{\setlength{\rightskip}{0pt plus 5cm}Line$\ast$ {\bf ost::Bayonne::State::lib}}\label{structost_1_1_bayonne_1_1_state_adcd41c6d238ea92a48f3f73e52c5cca4}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!libaudio@{libaudio}}
+\index{libaudio@{libaudio}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{libaudio}]{\setlength{\rightskip}{0pt plus 5cm}{\bf libaudio\_\-t}$\ast$ {\bf ost::Bayonne::State::libaudio}}\label{structost_1_1_bayonne_1_1_state_aeb1fff1909587c55db66caa97c7564be}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!list@{list}}
+\index{list@{list}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{list}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::State::list}[256]}\label{structost_1_1_bayonne_1_1_state_a81616c18f6915c43b3534f825b4cd521}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!logstate@{logstate}}
+\index{logstate@{logstate}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{logstate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Handler} {\bf ost::Bayonne::State::logstate}}\label{structost_1_1_bayonne_1_1_state_a61ec8d60f0f9e2dddf48a89564866973}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!menu@{menu}}
+\index{menu@{menu}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{menu}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::State::menu}}\label{structost_1_1_bayonne_1_1_state_a97b8b956b3f54a52ca90f3e25b7b3715}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!menu@{menu}}
+\index{menu@{menu}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{menu}]{\setlength{\rightskip}{0pt plus 5cm}Name$\ast$ {\bf ost::Bayonne::State::menu}}\label{structost_1_1_bayonne_1_1_state_a4c25570043941e98b24fad1266ed6ab7}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!meta@{meta}}
+\index{meta@{meta}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{meta}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::Bayonne::State::meta}[256 $\ast$2]}\label{structost_1_1_bayonne_1_1_state_a25f44d5671074de3e7a33c1379a2c4ec}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!mode@{mode}}
+\index{mode@{mode}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}Audio::Mode {\bf ost::Bayonne::State::mode}}\label{structost_1_1_bayonne_1_1_state_a69fb636dff1a238c053a8f1d96bd3919}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!name@{name}}
+\index{name@{name}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::State::name}}\label{structost_1_1_bayonne_1_1_state_aa18050e0ade1d2ee0c268212628e753b}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!note@{note}}
+\index{note@{note}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{note}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::State::note}}\label{structost_1_1_bayonne_1_1_state_a95e98bba385cc3fafbb600b24bd3ffc0}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!off@{off}}
+\index{off@{off}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{off}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::Bayonne::State::off}}\label{structost_1_1_bayonne_1_1_state_a826ecff26fce8c3ca409978b5c0c5d67}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!on@{on}}
+\index{on@{on}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{on}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::Bayonne::State::on}}\label{structost_1_1_bayonne_1_1_state_a08de0999c773919f0500f221c90801d8}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!path1@{path1}}
+\index{path1@{path1}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{path1}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::Bayonne::State::path1}[128]}\label{structost_1_1_bayonne_1_1_state_a48e812f123dd8ab5fe2261582ce32953}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!path2@{path2}}
+\index{path2@{path2}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{path2}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::Bayonne::State::path2}[128]}\label{structost_1_1_bayonne_1_1_state_a9532121093a436336e1eb33e06e730f0}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!pathv@{pathv}}
+\index{pathv@{pathv}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{pathv}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::State::pathv}[4]}\label{structost_1_1_bayonne_1_1_state_a64c786d22cb53501c1412b8dbe9a0f2c}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!peer@{peer}}
+\index{peer@{peer}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{peer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneSession}$\ast$ {\bf ost::Bayonne::State::peer}}\label{structost_1_1_bayonne_1_1_state_aa32d62b89a65190d6cd2cb259ce42366}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!peering@{peering}}
+\index{peering@{peering}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{peering}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::Bayonne::State::peering}}\label{structost_1_1_bayonne_1_1_state_a3320e2addc2ad81da2849591479debbd}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!pfd@{pfd}}
+\index{pfd@{pfd}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{pfd}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ost::Bayonne::State::pfd}}\label{structost_1_1_bayonne_1_1_state_a65bd856fc8466b60f2a17432639d5761}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!pid@{pid}}
+\index{pid@{pid}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{pid}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ost::Bayonne::State::pid}}\label{structost_1_1_bayonne_1_1_state_ada0b6e8687c883378d9fafcfa4b7bf0c}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!pos@{pos}}
+\index{pos@{pos}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{pos}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::Bayonne::State::pos}}\label{structost_1_1_bayonne_1_1_state_aa37cb1adaa137b0da7828da0f0a55ae9}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!pos@{pos}}
+\index{pos@{pos}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{pos}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::State::pos}}\label{structost_1_1_bayonne_1_1_state_a8c1b3425e5d08ed80ce67c810b094e02}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!pulse@{pulse}}
+\index{pulse@{pulse}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{pulse}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \} 	 {\bf ost::Bayonne::State::pulse}}\label{structost_1_1_bayonne_1_1_state_ae192ffc52065045c3c72669914079e0c}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!ref@{ref}}
+\index{ref@{ref}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{ref}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::State::ref}}\label{structost_1_1_bayonne_1_1_state_ab0af265afda4fc8deb95231e6bdf8fcf}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!refer@{refer}}
+\index{refer@{refer}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{refer}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::Bayonne::State::refer}}\label{structost_1_1_bayonne_1_1_state_aea8ff4f80579c9cac2f1c241be338850}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!required@{required}}
+\index{required@{required}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{required}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::Bayonne::State::required}}\label{structost_1_1_bayonne_1_1_state_a92743c49c9b6dd6521a0cd349e4b1bd3}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!result@{result}}
+\index{result@{result}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{result}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\_\-t} {\bf ost::Bayonne::State::result}}\label{structost_1_1_bayonne_1_1_state_a7d951a72ce05c34228f1d18673a83d9b}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!route@{route}}
+\index{route@{route}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{route}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::State::route}}\label{structost_1_1_bayonne_1_1_state_a180724a98293be41fc42635062d345e0}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!select@{select}}
+\index{select@{select}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{select}]{\setlength{\rightskip}{0pt plus 5cm}Line$\ast$ {\bf ost::Bayonne::State::select}}\label{structost_1_1_bayonne_1_1_state_a4e6ebd3f8bc723c4d268da37ca42e789}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!sequence@{sequence}}
+\index{sequence@{sequence}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{sequence}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::State::sequence}}\label{structost_1_1_bayonne_1_1_state_a3362722a34c3610b8a8fe342ede54c4b}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!sessionid@{sessionid}}
+\index{sessionid@{sessionid}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{sessionid}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::Bayonne::State::sessionid}[16]}\label{structost_1_1_bayonne_1_1_state_a01a36554d2d14b165c5784f39ba36c92}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!silence@{silence}}
+\index{silence@{silence}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{silence}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::Bayonne::State::silence}}\label{structost_1_1_bayonne_1_1_state_aaafc7f9ee00f3a10fe20933963adca2f}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!size@{size}}
+\index{size@{size}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::Bayonne::State::size}}\label{structost_1_1_bayonne_1_1_state_a4648cf0a45e3b1d553511d896b3431fc}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!stack@{stack}}
+\index{stack@{stack}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{stack}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::Bayonne::State::stack}}\label{structost_1_1_bayonne_1_1_state_a35621650e2e1d04088f1920bf5556116}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!syncdigit@{syncdigit}}
+\index{syncdigit@{syncdigit}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{syncdigit}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf ost::Bayonne::State::syncdigit}}\label{structost_1_1_bayonne_1_1_state_af2e3c8f9148a0ef2848c9ca37d6cfc17}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!synctimer@{synctimer}}
+\index{synctimer@{synctimer}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{synctimer}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::Bayonne::State::synctimer}}\label{structost_1_1_bayonne_1_1_state_a5c2e94a3a35f02b49acf4b901caeb71b}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!timeout@{timeout}}
+\index{timeout@{timeout}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{timeout}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::Bayonne::State::timeout}}\label{structost_1_1_bayonne_1_1_state_ace3b971acd33879f61eb524f1c59a771}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!tone@{tone}}
+\index{tone@{tone}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{tone}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \} 	 {\bf ost::Bayonne::State::tone}}\label{structost_1_1_bayonne_1_1_state_a9ca4465529b71967cb7e385f9f1bddd2}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!total@{total}}
+\index{total@{total}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{total}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::Bayonne::State::total}}\label{structost_1_1_bayonne_1_1_state_a8784075f93b6b6bcb9ea83e2faf1e8c5}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!trigger@{trigger}}
+\index{trigger@{trigger}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{trigger}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::Bayonne::State::trigger}}\label{structost_1_1_bayonne_1_1_state_a11682172654d0df63504bfe0148f417a}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!url@{url}}
+\index{url@{url}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{url}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \} 	 {\bf ost::Bayonne::State::url}}\label{structost_1_1_bayonne_1_1_state_a0466d041db4460bfa5599f3178d68d6d}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!var@{var}}
+\index{var@{var}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{var}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::State::var}}\label{structost_1_1_bayonne_1_1_state_a4353c54b5b2523beb38eb05dd8483f4f}
+\index{ost::Bayonne::State@{ost::Bayonne::State}!wait@{wait}}
+\index{wait@{wait}!ost::Bayonne::State@{ost::Bayonne::State}}
+\subsubsection[{wait}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \} 	 {\bf ost::Bayonne::State::wait}}\label{structost_1_1_bayonne_1_1_state_a1d05d712a5ad473665f4f3091fe43cbf}
+
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf bayonne.h}\end{DoxyCompactItemize}

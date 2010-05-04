@@ -1,0 +1,103 @@
+.TH "ost::Dir" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::Dir \- 
+.PP
+A low level portable directory class.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <file.h>\fP
+.PP
+Inherits \fBost::File\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDir\fP (const char *name=NULL)"
+.br
+.ti -1c
+.RI "void \fBopen\fP (const char *name)"
+.br
+.ti -1c
+.RI "void \fBclose\fP (void)"
+.br
+.ti -1c
+.RI "virtual \fB~Dir\fP ()"
+.br
+.ti -1c
+.RI "const char * \fBgetName\fP (void)"
+.br
+.ti -1c
+.RI "const char * \fBoperator++\fP ()"
+.br
+.ti -1c
+.RI "const char * \fBoperator++\fP (int)"
+.br
+.ti -1c
+.RI "const char * \fBoperator*\fP ()"
+.br
+.ti -1c
+.RI "bool \fBrewind\fP (void)"
+.br
+.ti -1c
+.RI "bool \fBoperator!\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisValid\fP (void)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBcreate\fP (const char *path, \fBAttr\fP attr=attrGroup)"
+.br
+.ti -1c
+.RI "static bool \fBremove\fP (const char *path)"
+.br
+.ti -1c
+.RI "static bool \fBsetPrefix\fP (const char *path)"
+.br
+.ti -1c
+.RI "static bool \fBgetPrefix\fP (char *path, size_t size=256)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A low level portable directory class. 
+
+Used to support ccstd Directory container. This provides a basic mechanism for allocating and accessing file entries.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> low level directory access class. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::Dir::Dir (const char * name = \fCNULL\fP)"
+.SS "virtual ost::Dir::~Dir ()\fC [virtual]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::Dir::close (void)"
+.SS "static bool ost::Dir::create (const char * path, \fBAttr\fP attr = \fCattrGroup\fP)\fC [static]\fP"
+.SS "const char* ost::Dir::getName (void)"
+.SS "static bool ost::Dir::getPrefix (char * path, size_t size = \fC256\fP)\fC [static]\fP"
+.SS "bool ost::Dir::isValid (void)"
+.SS "void ost::Dir::open (const char * name)"
+.SS "bool ost::Dir::operator! ()\fC [inline]\fP"
+.SS "const char* ost::Dir::operator* ()"
+.SS "const char* ost::Dir::operator++ (int)\fC [inline]\fP"
+.SS "const char* ost::Dir::operator++ ()\fC [inline]\fP"
+.SS "static bool ost::Dir::remove (const char * path)\fC [static]\fP"
+.SS "bool ost::Dir::rewind (void)"
+.SS "static bool ost::Dir::setPrefix (const char * path)\fC [static]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

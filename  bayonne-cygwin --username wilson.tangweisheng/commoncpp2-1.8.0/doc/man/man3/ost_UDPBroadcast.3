@@ -1,0 +1,65 @@
+.TH "ost::UDPBroadcast" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::UDPBroadcast \- 
+.PP
+Representing a UDP socket used for subnet broadcasts, this class provides an alternate binding and setPeer() capability for UDP sockets.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <socket.h>\fP
+.PP
+Inherits \fBost::UDPSocket\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUDPBroadcast\fP (const \fBIPV4Address\fP &ia, \fBtpport_t\fP port)"
+.br
+.RI "\fICreate and bind a subnet broadcast socket. \fP"
+.ti -1c
+.RI "void \fBsetPeer\fP (const \fBIPV4Broadcast\fP &subnet, \fBtpport_t\fP port)"
+.br
+.RI "\fISet peer by subnet rather than specific host. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Representing a UDP socket used for subnet broadcasts, this class provides an alternate binding and setPeer() capability for UDP sockets. 
+
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> Unreliable Datagram for subnet broadcasts. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::UDPBroadcast::UDPBroadcast (const \fBIPV4Address\fP & ia, \fBtpport_t\fP port)"
+.PP
+Create and bind a subnet broadcast socket. \fBParameters:\fP
+.RS 4
+\fIia\fP address to bind socket under locally. 
+.br
+\fIport\fP to bind socket under locally. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::UDPBroadcast::setPeer (const \fBIPV4Broadcast\fP & subnet, \fBtpport_t\fP port)"
+.PP
+Set peer by subnet rather than specific host. \fBParameters:\fP
+.RS 4
+\fIsubnet\fP of peer hosts to send to. 
+.br
+\fIport\fP number to use. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

@@ -1,0 +1,1125 @@
+.TH "ost::Socket" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::Socket \- 
+.PP
+The \fBSocket\fP is used as the base for all Internet protocol services under Common C++.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <socket.h>\fP
+.PP
+Inherited by \fBost::DCCPSocket\fP, \fBost::SimpleTCPStream\fP, \fBost::SocketPort\fP, \fBost::TCPSocket\fP\fC [protected]\fP, \fBost::TCPStream\fP, \fBost::TCPV6Socket\fP\fC [protected]\fP, \fBost::UDPSocket\fP, \fBost::UnixSocket\fP\fC [protected]\fP, and \fBost::UnixStream\fP.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBFamily\fP { \fBIPV6\fP =  AF_INET6, \fBIPV4\fP =  AF_INET }"
+.br
+.ti -1c
+.RI "enum \fBError\fP { \fBerrSuccess\fP =  0, \fBerrCreateFailed\fP, \fBerrCopyFailed\fP, \fBerrInput\fP, \fBerrInputInterrupt\fP, \fBerrResourceFailure\fP, \fBerrOutput\fP, \fBerrOutputInterrupt\fP, \fBerrNotConnected\fP, \fBerrConnectRefused\fP, \fBerrConnectRejected\fP, \fBerrConnectTimeout\fP, \fBerrConnectFailed\fP, \fBerrConnectInvalid\fP, \fBerrConnectBusy\fP, \fBerrConnectNoRoute\fP, \fBerrBindingFailed\fP, \fBerrBroadcastDenied\fP, \fBerrRoutingDenied\fP, \fBerrKeepaliveDenied\fP, \fBerrServiceDenied\fP, \fBerrServiceUnavailable\fP, \fBerrMulticastDisabled\fP, \fBerrTimeout\fP, \fBerrNoDelay\fP, \fBerrExtended\fP, \fBerrLookupFail\fP, \fBerrSearchErr\fP, \fBerrInvalidValue\fP }"
+.br
+.ti -1c
+.RI "enum \fBTos\fP { \fBtosLowDelay\fP =  0, \fBtosThroughput\fP, \fBtosReliability\fP, \fBtosMinCost\fP, \fBtosInvalid\fP }"
+.br
+.ti -1c
+.RI "enum \fBPending\fP { \fBpendingInput\fP, \fBpendingOutput\fP, \fBpendingError\fP }"
+.br
+.ti -1c
+.RI "typedef enum \fBFamily\fP \fBFamily\fP"
+.br
+.ti -1c
+.RI "typedef enum \fBError\fP \fBError\fP"
+.br
+.ti -1c
+.RI "typedef enum \fBTos\fP \fBTos\fP"
+.br
+.ti -1c
+.RI "typedef enum \fBPending\fP \fBPending\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~Socket\fP ()"
+.br
+.RI "\fIThe socket base class may be 'thrown' as a result of an error, and the 'catcher' may then choose to destroy the object. \fP"
+.ti -1c
+.RI "\fBSocket\fP & \fBoperator=\fP (const \fBSocket\fP &from)"
+.br
+.RI "\fISockets may also be duplicated by the assignment operator. \fP"
+.ti -1c
+.RI "virtual \fBIPV4Host\fP \fBgetIPV4Sender\fP (\fBtpport_t\fP *port=NULL) const "
+.br
+.RI "\fIMay be used to examine the origin of data waiting in the socket receive queue. \fP"
+.ti -1c
+.RI "\fBIPV4Host\fP \fBgetSender\fP (\fBtpport_t\fP *port=NULL) const "
+.br
+.ti -1c
+.RI "virtual \fBIPV6Host\fP \fBgetIPV6Sender\fP (\fBtpport_t\fP *port=NULL) const "
+.br
+.ti -1c
+.RI "\fBIPV4Host\fP \fBgetIPV4Peer\fP (\fBtpport_t\fP *port=NULL) const "
+.br
+.RI "\fIGet the host address and port of the socket this socket is connected to. \fP"
+.ti -1c
+.RI "\fBIPV4Host\fP \fBgetPeer\fP (\fBtpport_t\fP *port=NULL) const "
+.br
+.ti -1c
+.RI "\fBIPV6Host\fP \fBgetIPV6Peer\fP (\fBtpport_t\fP *port=NULL) const "
+.br
+.ti -1c
+.RI "\fBIPV4Host\fP \fBgetIPV4Local\fP (\fBtpport_t\fP *port=NULL) const "
+.br
+.RI "\fIGet the local address and port number this socket is currently bound to. \fP"
+.ti -1c
+.RI "\fBIPV4Host\fP \fBgetLocal\fP (\fBtpport_t\fP *port=NULL) const "
+.br
+.ti -1c
+.RI "\fBIPV6Host\fP \fBgetIPV6Local\fP (\fBtpport_t\fP *port=NULL) const "
+.br
+.ti -1c
+.RI "\fBIPV4Host\fP \fBgetIPV4NAT\fP (\fBtpport_t\fP *port=NULL) const "
+.br
+.RI "\fIPerform NAT table lookup for this socket. \fP"
+.ti -1c
+.RI "\fBIPV4Host\fP \fBgetNAT\fP (\fBtpport_t\fP *port) const "
+.br
+.ti -1c
+.RI "\fBIPV6Host\fP \fBgetIPV6NAT\fP (\fBtpport_t\fP *port=NULL) const "
+.br
+.ti -1c
+.RI "void \fBsetCompletion\fP (bool immediate)"
+.br
+.RI "\fIUsed to specify blocking mode for the socket. \fP"
+.ti -1c
+.RI "\fBError\fP \fBsetLinger\fP (bool \fBlinger\fP)"
+.br
+.RI "\fIEnable lingering sockets on close. \fP"
+.ti -1c
+.RI "\fBError\fP \fBsetKeepAlive\fP (bool enable)"
+.br
+.RI "\fISet the keep-alive status of this socket and if keep-alive messages will be sent. \fP"
+.ti -1c
+.RI "\fBError\fP \fBsetTypeOfService\fP (\fBTos\fP service)"
+.br
+.RI "\fISet packet scheduling on platforms which support ip quality of service conventions. \fP"
+.ti -1c
+.RI "bool \fBisConnected\fP (void) const "
+.br
+.RI "\fICan test to see if this socket is 'connected', and hence whether a 'catch' can safely call \fBgetPeer()\fP. \fP"
+.ti -1c
+.RI "bool \fBisActive\fP (void) const "
+.br
+.RI "\fITest to see if the socket is at least operating or if it is mearly initialized. \fP"
+.ti -1c
+.RI "bool \fBoperator!\fP () const "
+.br
+.RI "\fIOperator based testing to see if a socket is currently active. \fP"
+.ti -1c
+.RI "bool \fBisBroadcast\fP (void) const "
+.br
+.RI "\fIReturn if broadcast has been enabled for the specified socket. \fP"
+.ti -1c
+.RI "bool \fBisRouted\fP (void) const "
+.br
+.RI "\fIReturn if socket routing is enabled. \fP"
+.ti -1c
+.RI "\fBError\fP \fBgetErrorNumber\fP (void) const "
+.br
+.RI "\fIOften used by a 'catch' to fetch the last error of a thrown socket. \fP"
+.ti -1c
+.RI "const char * \fBgetErrorString\fP (void) const "
+.br
+.RI "\fIOften used by a 'catch' to fetch the user set error string of a thrown socket, but only if EXTENDED error codes are used. \fP"
+.ti -1c
+.RI "long \fBgetSystemError\fP (void) const "
+.br
+.ti -1c
+.RI "const char * \fBgetSystemErrorString\fP (void) const "
+.br
+.ti -1c
+.RI "virtual bool \fBisPending\fP (\fBPending\fP pend, \fBtimeout_t\fP timeout=TIMEOUT_INF)"
+.br
+.RI "\fIGet the status of pending operations. \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBcheck\fP (\fBFamily\fP fam)"
+.br
+.RI "\fISee if a specific protocol family is available in the current runtime environment. \fP"
+.in -1c
+.SS "Protected Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBState\fP { \fBINITIAL\fP, \fBAVAILABLE\fP, \fBBOUND\fP, \fBCONNECTED\fP, \fBCONNECTING\fP, \fBSTREAM\fP }"
+.br
+.ti -1c
+.RI "typedef enum \fBState\fP \fBState\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBError\fP \fBerror\fP (\fBError\fP error, const char *err=NULL, long systemError=0) const "
+.br
+.RI "\fIThis service is used to throw all socket errors which usually occur during the socket constructor. \fP"
+.ti -1c
+.RI "void \fBerror\fP (const char *err) const "
+.br
+.RI "\fIThis service is used to throw application defined socket errors where the application specific error code is a string. \fP"
+.ti -1c
+.RI "void \fBsetError\fP (bool enable)"
+.br
+.RI "\fIThis service is used to turn the error handler on or off for 'throwing' exceptions by manipulating the thrown flag. \fP"
+.ti -1c
+.RI "void \fBendSocket\fP (void)"
+.br
+.RI "\fIUsed as the default destructor for ending a socket. \fP"
+.ti -1c
+.RI "\fBError\fP \fBconnectError\fP (void)"
+.br
+.RI "\fIUsed as a common handler for connection failure processing. \fP"
+.ti -1c
+.RI "\fBError\fP \fBsendLimit\fP (int limit=2048)"
+.br
+.RI "\fISet the send limit. \fP"
+.ti -1c
+.RI "\fBError\fP \fBreceiveLimit\fP (int limit=1)"
+.br
+.RI "\fISet thr receive limit. \fP"
+.ti -1c
+.RI "\fBError\fP \fBsendTimeout\fP (\fBtimeout_t\fP timer)"
+.br
+.RI "\fISet the send timeout for sending raw network data. \fP"
+.ti -1c
+.RI "\fBError\fP \fBreceiveTimeout\fP (\fBtimeout_t\fP timer)"
+.br
+.RI "\fIReceive timeout for receiving raw network data. \fP"
+.ti -1c
+.RI "\fBError\fP \fBsendBuffer\fP (unsigned size)"
+.br
+.RI "\fISet the protocol stack network kernel send buffer size associated with the socket. \fP"
+.ti -1c
+.RI "\fBError\fP \fBreceiveBuffer\fP (unsigned size)"
+.br
+.RI "\fISet the protocol stack network kernel receive buffer size associated with the socket. \fP"
+.ti -1c
+.RI "\fBError\fP \fBbufferSize\fP (unsigned size)"
+.br
+.RI "\fISet the total protocol stack network kernel buffer size for both send and receive together. \fP"
+.ti -1c
+.RI "\fBError\fP \fBsetBroadcast\fP (bool enable)"
+.br
+.RI "\fISet the subnet broadcast flag for the socket. \fP"
+.ti -1c
+.RI "\fBError\fP \fBsetMulticastByFamily\fP (bool enable, \fBFamily\fP family=IPV4)"
+.br
+.RI "\fISetting multicast binds the multicast interface used for the socket to the interface the socket itself has been implicitly bound to. \fP"
+.ti -1c
+.RI "\fBError\fP \fBsetLoopbackByFamily\fP (bool enable, \fBFamily\fP family=IPV4)"
+.br
+.RI "\fISet the multicast loopback flag for the socket. \fP"
+.ti -1c
+.RI "\fBError\fP \fBsetTimeToLiveByFamily\fP (unsigned char \fBttl\fP, \fBFamily\fP fam=IPV4)"
+.br
+.RI "\fISet the multicast time to live for a multicast socket. \fP"
+.ti -1c
+.RI "\fBError\fP \fBjoin\fP (const \fBIPV4Multicast\fP &ia)"
+.br
+.RI "\fIJoin a multicast group. \fP"
+.ti -1c
+.RI "\fBError\fP \fBjoin\fP (const \fBIPV6Multicast\fP &ia)"
+.br
+.ti -1c
+.RI "\fBError\fP \fBdrop\fP (const \fBIPV4Multicast\fP &ia)"
+.br
+.RI "\fIDrop membership from a multicast group. \fP"
+.ti -1c
+.RI "\fBError\fP \fBdrop\fP (const \fBIPV6Multicast\fP &ia)"
+.br
+.ti -1c
+.RI "\fBError\fP \fBsetRouting\fP (bool enable)"
+.br
+.RI "\fISet the socket routing to indicate if outgoing messages should bypass normal routing (set false). \fP"
+.ti -1c
+.RI "\fBError\fP \fBsetNoDelay\fP (bool enable)"
+.br
+.RI "\fIEnable/disable delaying packets (Nagle algorithm). \fP"
+.ti -1c
+.RI "\fBSocket\fP (int domain, int type, int protocol=0)"
+.br
+.RI "\fIAn unconnected socket may be created directly on the local machine. \fP"
+.ti -1c
+.RI "\fBSocket\fP (\fBSOCKET\fP fd)"
+.br
+.RI "\fIA socket object may be created from a file descriptor when that descriptor was created either through a socket() or accept() call. \fP"
+.ti -1c
+.RI "\fBSocket\fP ()"
+.br
+.RI "\fICreate an inactive socket object for base constructors. \fP"
+.ti -1c
+.RI "\fBSocket\fP (const \fBSocket\fP &source)"
+.br
+.RI "\fIA socket can also be constructed from an already existing \fBSocket\fP object. \fP"
+.ti -1c
+.RI "ssize_t \fBreadLine\fP (char *buf, size_t len, \fBtimeout_t\fP timeout=0)"
+.br
+.RI "\fI\fBProcess\fP a logical input line from a socket descriptor directly. \fP"
+.ti -1c
+.RI "virtual ssize_t \fBreadData\fP (void *buf, size_t len, char separator=0, \fBtimeout_t\fP t=0)"
+.br
+.RI "\fIRead in a block of len bytes with specific separator. \fP"
+.ti -1c
+.RI "virtual ssize_t \fBwriteData\fP (const void *buf, size_t len, \fBtimeout_t\fP t=0)"
+.br
+.RI "\fIWrite a block of len bytes to socket. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   bool \fBthrown\fP: 1"
+.br
+.ti -1c
+.RI "   bool \fBbroadcast\fP: 1"
+.br
+.ti -1c
+.RI "   bool \fBroute\fP: 1"
+.br
+.ti -1c
+.RI "   bool \fBkeepalive\fP: 1"
+.br
+.ti -1c
+.RI "   bool \fBloopback\fP: 1"
+.br
+.ti -1c
+.RI "   bool \fBmulticast\fP: 1"
+.br
+.ti -1c
+.RI "   bool \fBcompletion\fP: 1"
+.br
+.ti -1c
+.RI "   bool \fBlinger\fP: 1"
+.br
+.ti -1c
+.RI "   unsigned \fBttl\fP: 8"
+.br
+.ti -1c
+.RI "} \fBflags\fP"
+.br
+.ti -1c
+.RI "\fBSOCKET\fP volatile \fBso\fP"
+.br
+.RI "\fIthe actual socket descriptor, in Windows, unlike posix it *cannot* be used as an file descriptor that way madness lies -- jfc \fP"
+.ti -1c
+.RI "\fBState\fP volatile \fBstate\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static \fBMutex\fP \fBmutex\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "\fBSOCKET\fP \fBdupSocket\fP (\fBSOCKET\fP s, \fBSocket::State\fP \fBstate\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBSocket\fP is used as the base for all Internet protocol services under Common C++. 
+
+A socket is a system resource (or winsock descriptor) that occupies a specific port address (and may be bound to a specific network interface) on the local machine. The socket may also be directly connected to a specific socket on a remote internet host.
+.PP
+This base class is not directly used, but is provided to offer properties common to other Common C++ socket classes, including the socket exception model and the ability to set socket properties such as QoS, 'sockopts' properties like Dont-Route and Keep-Alive, etc.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> base class of all sockets. 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+.PP
+\fBtcpthread.cpp\fP.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef enum \fBError\fP \fBost::Socket::Error\fP"
+.PP
+Reimplemented in \fBost::URLStream\fP.
+.SS "typedef enum \fBFamily\fP \fBost::Socket::Family\fP"
+.SS "typedef enum \fBPending\fP \fBost::Socket::Pending\fP"
+.SS "typedef enum \fBState\fP \fBost::Socket::State\fP\fC [protected]\fP"
+.SS "typedef enum \fBTos\fP \fBost::Socket::Tos\fP"
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBost::Socket::Error\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIerrSuccess \fP\fP
+.TP
+\fB\fIerrCreateFailed \fP\fP
+.TP
+\fB\fIerrCopyFailed \fP\fP
+.TP
+\fB\fIerrInput \fP\fP
+.TP
+\fB\fIerrInputInterrupt \fP\fP
+.TP
+\fB\fIerrResourceFailure \fP\fP
+.TP
+\fB\fIerrOutput \fP\fP
+.TP
+\fB\fIerrOutputInterrupt \fP\fP
+.TP
+\fB\fIerrNotConnected \fP\fP
+.TP
+\fB\fIerrConnectRefused \fP\fP
+.TP
+\fB\fIerrConnectRejected \fP\fP
+.TP
+\fB\fIerrConnectTimeout \fP\fP
+.TP
+\fB\fIerrConnectFailed \fP\fP
+.TP
+\fB\fIerrConnectInvalid \fP\fP
+.TP
+\fB\fIerrConnectBusy \fP\fP
+.TP
+\fB\fIerrConnectNoRoute \fP\fP
+.TP
+\fB\fIerrBindingFailed \fP\fP
+.TP
+\fB\fIerrBroadcastDenied \fP\fP
+.TP
+\fB\fIerrRoutingDenied \fP\fP
+.TP
+\fB\fIerrKeepaliveDenied \fP\fP
+.TP
+\fB\fIerrServiceDenied \fP\fP
+.TP
+\fB\fIerrServiceUnavailable \fP\fP
+.TP
+\fB\fIerrMulticastDisabled \fP\fP
+.TP
+\fB\fIerrTimeout \fP\fP
+.TP
+\fB\fIerrNoDelay \fP\fP
+.TP
+\fB\fIerrExtended \fP\fP
+.TP
+\fB\fIerrLookupFail \fP\fP
+.TP
+\fB\fIerrSearchErr \fP\fP
+.TP
+\fB\fIerrInvalidValue \fP\fP
+
+.PP
+Reimplemented in \fBost::URLStream\fP.
+.SS "enum \fBost::Socket::Family\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIIPV6 \fP\fP
+.TP
+\fB\fIIPV4 \fP\fP
+
+.SS "enum \fBost::Socket::Pending\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIpendingInput \fP\fP
+.TP
+\fB\fIpendingOutput \fP\fP
+.TP
+\fB\fIpendingError \fP\fP
+
+.SS "enum \fBost::Socket::State\fP\fC [protected]\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIINITIAL \fP\fP
+.TP
+\fB\fIAVAILABLE \fP\fP
+.TP
+\fB\fIBOUND \fP\fP
+.TP
+\fB\fICONNECTED \fP\fP
+.TP
+\fB\fICONNECTING \fP\fP
+.TP
+\fB\fISTREAM \fP\fP
+
+.SS "enum \fBost::Socket::Tos\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fItosLowDelay \fP\fP
+.TP
+\fB\fItosThroughput \fP\fP
+.TP
+\fB\fItosReliability \fP\fP
+.TP
+\fB\fItosMinCost \fP\fP
+.TP
+\fB\fItosInvalid \fP\fP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::Socket::Socket (int domain, int type, int protocol = \fC0\fP)\fC [protected]\fP"
+.PP
+An unconnected socket may be created directly on the local machine. Sockets can occupy both the internet domain (AF_INET) and UNIX socket domain (AF_UNIX) under unix. The socket type (SOCK_STREAM, SOCK_DGRAM) and protocol may also be specified. If the socket cannot be created, an exception is thrown.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdomain\fP socket domain to use. 
+.br
+\fItype\fP base type and protocol family of the socket. 
+.br
+\fIprotocol\fP specific protocol to apply. 
+.RE
+.PP
+
+.SS "ost::Socket::Socket (\fBSOCKET\fP fd)\fC [protected]\fP"
+.PP
+A socket object may be created from a file descriptor when that descriptor was created either through a socket() or accept() call. This constructor is mostly for internal use.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfd\fP file descriptor of an already existing socket. 
+.RE
+.PP
+
+.SS "ost::Socket::Socket ()\fC [protected]\fP"
+.PP
+Create an inactive socket object for base constructors. 
+.SS "ost::Socket::Socket (const \fBSocket\fP & source)\fC [protected]\fP"
+.PP
+A socket can also be constructed from an already existing \fBSocket\fP object. On POSIX systems, the socket file descriptor is dup()'d. On Win32, DuplicateHandle() is used.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsource\fP of existing socket to clone. 
+.RE
+.PP
+
+.SS "virtual ost::Socket::~Socket ()\fC [virtual]\fP"
+.PP
+The socket base class may be 'thrown' as a result of an error, and the 'catcher' may then choose to destroy the object. By assuring the socket base class is a virtual destructor, we can assure the full object is properly terminated. 
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBError\fP ost::Socket::bufferSize (unsigned size)\fC [protected]\fP"
+.PP
+Set the total protocol stack network kernel buffer size for both send and receive together. \fBReturns:\fP
+.RS 4
+errSuccess on success 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsize\fP of buffer. 
+.RE
+.PP
+
+.SS "static bool ost::Socket::check (\fBFamily\fP fam)\fC [static]\fP"
+.PP
+See if a specific protocol family is available in the current runtime environment. \fBReturns:\fP
+.RS 4
+true if family available. 
+.RE
+.PP
+
+.SS "\fBError\fP ost::Socket::connectError (void)\fC [protected]\fP"
+.PP
+Used as a common handler for connection failure processing. \fBReturns:\fP
+.RS 4
+correct failure code to apply. 
+.RE
+.PP
+
+.SS "\fBError\fP ost::Socket::drop (const \fBIPV6Multicast\fP & ia)\fC [protected]\fP"
+.PP
+Reimplemented in \fBost::UDPReceive\fP.
+.SS "\fBError\fP ost::Socket::drop (const \fBIPV4Multicast\fP & ia)\fC [protected]\fP"
+.PP
+Drop membership from a multicast group. \fBReturns:\fP
+.RS 4
+0 (errSuccess) on success, else error code. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIia\fP address of multicast group to drop. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBost::UDPReceive\fP.
+.PP
+Referenced by ost::UDPReceive::drop().
+.SS "void ost::Socket::endSocket (void)\fC [protected]\fP"
+.PP
+Used as the default destructor for ending a socket. This will cleanly terminate the socket connection. It is provided for use in derived virtual destructors. 
+.PP
+Referenced by ost::UDPReceive::endReceiver(), and ost::UDPTransmit::endTransmitter().
+.SS "void ost::Socket::error (const char * err) const\fC [inline, protected]\fP"
+.PP
+This service is used to throw application defined socket errors where the application specific error code is a string. \fBParameters:\fP
+.RS 4
+\fIerr\fP string or message to pass. 
+.RE
+.PP
+
+.PP
+References error().
+.PP
+Referenced by error().
+.SS "\fBError\fP ost::Socket::error (\fBError\fP error, const char * err = \fCNULL\fP, long systemError = \fC0\fP) const\fC [protected]\fP"
+.PP
+This service is used to throw all socket errors which usually occur during the socket constructor. \fBParameters:\fP
+.RS 4
+\fIerror\fP defined socket error id. 
+.br
+\fIerr\fP string or message to pass. 
+.br
+\fIsystemError\fP the system error# that caused the error 
+.RE
+.PP
+
+.SS "\fBError\fP ost::Socket::getErrorNumber (void) const\fC [inline]\fP"
+.PP
+Often used by a 'catch' to fetch the last error of a thrown socket. \fBReturns:\fP
+.RS 4
+error number of Error error. 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+\fBtcpthread.cpp\fP.
+.SS "const char* ost::Socket::getErrorString (void) const\fC [inline]\fP"
+.PP
+Often used by a 'catch' to fetch the user set error string of a thrown socket, but only if EXTENDED error codes are used. \fBReturns:\fP
+.RS 4
+string for error message. 
+.RE
+.PP
+
+.SS "\fBIPV4Host\fP ost::Socket::getIPV4Local (\fBtpport_t\fP * port = \fCNULL\fP) const"
+.PP
+Get the local address and port number this socket is currently bound to. \fBParameters:\fP
+.RS 4
+\fIport\fP ptr to port number on local host. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+host address of interface this socket is bound to. 
+.RE
+.PP
+
+.PP
+Referenced by ost::TCPSocket::getLocal().
+.SS "\fBIPV4Host\fP ost::Socket::getIPV4NAT (\fBtpport_t\fP * port = \fCNULL\fP) const"
+.PP
+Perform NAT table lookup for this socket. Used to allow an application to know the original ip:port pair the the client 'thinks' it is connecting to. Used mostly to transparently impersonate a remote server/service.
+.PP
+On error, 0.0.0.0:0 is returned and one of the following error codes is set: errServiceUnavailable - if nat is not supported on the current platform or if it was not compiled; errLookupFail - if the nat syscall failed for some reason (extended error code); errSearchErr - if the socket does not have nat information (i.e. is not nated).
+.PP
+NAT lookup is supported on NetFilter for ipv4 and ipv6 (Linux), IPFilter for ipv4 (Solaris, *BSD except OpenBSD, HP-UX, etc.) and Packet Filter for ipv4 and ipv6 (OpenBSD). When using IPFilter or Packet Filter, the first NAT lookup must be performed as root (the NAT device is read only for root and is opened once, unless an error occurs). Permissions on the nat device may be changed to solve this.
+.PP
+\fBWarning:\fP
+.RS 4
+When using IPFilter and Packet Filter, application data model must be the same as the running kernel (32/64 bits).
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIport\fP ptr to NATed port number on local host. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+NATed host address that this socket is related to. 
+.RE
+.PP
+
+.SS "\fBIPV4Host\fP ost::Socket::getIPV4Peer (\fBtpport_t\fP * port = \fCNULL\fP) const"
+.PP
+Get the host address and port of the socket this socket is connected to. If the socket is currently not in a connected state, then a host address of 0.0.0.0 is returned.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIport\fP ptr to port number of remote socket. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+host address of remote socket. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBost::UDPSocket\fP.
+.SS "virtual \fBIPV4Host\fP ost::Socket::getIPV4Sender (\fBtpport_t\fP * port = \fCNULL\fP) const\fC [virtual]\fP"
+.PP
+May be used to examine the origin of data waiting in the socket receive queue. This can tell a TCP server where pending 'connect' requests are coming from, or a UDP socket where it's next packet arrived from.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIport\fP ptr to port number of sender. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+host address, test with 'isInetAddress()'. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBost::DCCPSocket\fP.
+.PP
+Referenced by ost::TCPSocket::getRequest().
+.SS "\fBIPV6Host\fP ost::Socket::getIPV6Local (\fBtpport_t\fP * port = \fCNULL\fP) const"
+.PP
+Referenced by ost::TCPV6Socket::getLocal().
+.SS "\fBIPV6Host\fP ost::Socket::getIPV6NAT (\fBtpport_t\fP * port = \fCNULL\fP) const"
+.SS "\fBIPV6Host\fP ost::Socket::getIPV6Peer (\fBtpport_t\fP * port = \fCNULL\fP) const"
+.PP
+Reimplemented in \fBost::UDPSocket\fP.
+.SS "virtual \fBIPV6Host\fP ost::Socket::getIPV6Sender (\fBtpport_t\fP * port = \fCNULL\fP) const\fC [virtual]\fP"
+.PP
+Reimplemented in \fBost::DCCPSocket\fP.
+.PP
+Referenced by ost::TCPV6Socket::getRequest().
+.SS "\fBIPV4Host\fP ost::Socket::getLocal (\fBtpport_t\fP * port = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Reimplemented in \fBost::TCPSocket\fP, and \fBost::TCPV6Socket\fP.
+.SS "\fBIPV4Host\fP ost::Socket::getNAT (\fBtpport_t\fP * port) const\fC [inline]\fP"
+.SS "\fBIPV4Host\fP ost::Socket::getPeer (\fBtpport_t\fP * port = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Reimplemented in \fBost::UDPSocket\fP.
+.PP
+\fBExamples: \fP
+.in +1c
+\fBtcp.cpp\fP, \fBtcpservice.cpp\fP, and \fBtcpthread.cpp\fP.
+.SS "\fBIPV4Host\fP ost::Socket::getSender (\fBtpport_t\fP * port = \fCNULL\fP) const\fC [inline]\fP"
+.SS "long ost::Socket::getSystemError (void) const\fC [inline]\fP"
+.SS "const char* ost::Socket::getSystemErrorString (void) const"
+.SS "bool ost::Socket::isActive (void) const"
+.PP
+Test to see if the socket is at least operating or if it is mearly initialized. 'initialized' sockets may be the result of failed constructors.
+.PP
+\fBReturns:\fP
+.RS 4
+true if not in initial state. 
+.RE
+.PP
+
+.SS "bool ost::Socket::isBroadcast (void) const\fC [inline]\fP"
+.PP
+Return if broadcast has been enabled for the specified socket. \fBReturns:\fP
+.RS 4
+true if broadcast socket. 
+.RE
+.PP
+
+.SS "bool ost::Socket::isConnected (void) const"
+.PP
+Can test to see if this socket is 'connected', and hence whether a 'catch' can safely call \fBgetPeer()\fP. Of course, an unconnected socket will return a 0.0.0.0 address from \fBgetPeer()\fP as well.
+.PP
+\fBReturns:\fP
+.RS 4
+true when socket is connected to a peer. 
+.RE
+.PP
+
+.SS "virtual bool ost::Socket::isPending (\fBPending\fP pend, \fBtimeout_t\fP timeout = \fCTIMEOUT_INF\fP)\fC [virtual]\fP"
+.PP
+Get the status of pending operations. This can be used to examine if input or output is waiting, or if an error has occured on the descriptor.
+.PP
+\fBReturns:\fP
+.RS 4
+true if ready, false on timeout. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpend\fP ready check to perform. 
+.br
+\fItimeout\fP in milliseconds, inf. if not specified. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBost::TCPStream\fP, \fBost::SimpleTCPStream\fP, and \fBost::UnixStream\fP.
+.PP
+Referenced by ost::UDPReceive::isInputReady(), ost::UDPTransmit::isOutputReady(), ost::UnixSocket::isPendingConnection(), ost::TCPV6Socket::isPendingConnection(), ost::TCPSocket::isPendingConnection(), ost::DCCPSocket::isPendingConnection(), and ost::UDPReceive::isPendingReceive().
+.SS "bool ost::Socket::isRouted (void) const\fC [inline]\fP"
+.PP
+Return if socket routing is enabled. \fBReturns:\fP
+.RS 4
+true if routing enabled. 
+.RE
+.PP
+
+.SS "\fBError\fP ost::Socket::join (const \fBIPV6Multicast\fP & ia)\fC [protected]\fP"
+.PP
+Reimplemented in \fBost::UDPReceive\fP.
+.SS "\fBError\fP ost::Socket::join (const \fBIPV4Multicast\fP & ia)\fC [protected]\fP"
+.PP
+Join a multicast group. \fBReturns:\fP
+.RS 4
+0 (errSuccess) on success, else error code. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIia\fP address of multicast group to join. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBost::UDPReceive\fP.
+.PP
+Referenced by ost::UDPReceive::join().
+.SS "bool ost::Socket::operator! () const"
+.PP
+Operator based testing to see if a socket is currently active. 
+.PP
+Reimplemented in \fBost::unixstream\fP.
+.SS "\fBSocket\fP& ost::Socket::operator= (const \fBSocket\fP & from)"
+.PP
+Sockets may also be duplicated by the assignment operator. 
+.SS "virtual ssize_t ost::Socket::readData (void * buf, size_t len, char separator = \fC0\fP, \fBtimeout_t\fP t = \fC0\fP)\fC [protected, virtual]\fP"
+.PP
+Read in a block of len bytes with specific separator. Can be zero, or any other char. If \\n or \\r, it's treated just like a \fBreadLine()\fP. Otherwise it looks for the separator.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuf\fP pointer to byte allocation. 
+.br
+\fIlen\fP maximum length to read. 
+.br
+\fIseparator\fP separator for a particular ASCII character 
+.br
+\fIt\fP timeout for pending data in milliseconds. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+number of bytes actually read. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBost::SSLStream\fP.
+.SS "ssize_t ost::Socket::readLine (char * buf, size_t len, \fBtimeout_t\fP timeout = \fC0\fP)\fC [protected]\fP"
+.PP
+\fBProcess\fP a logical input line from a socket descriptor directly. \fBParameters:\fP
+.RS 4
+\fIbuf\fP pointer to string. 
+.br
+\fIlen\fP maximum length to read. 
+.br
+\fItimeout\fP for pending data in milliseconds. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+number of bytes actually read. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBost::SSLStream\fP.
+.SS "\fBError\fP ost::Socket::receiveBuffer (unsigned size)\fC [protected]\fP"
+.PP
+Set the protocol stack network kernel receive buffer size associated with the socket. \fBReturns:\fP
+.RS 4
+errSuccess on success, or error. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsize\fP of buffer in bytes. 
+.RE
+.PP
+
+.SS "\fBError\fP ost::Socket::receiveLimit (int limit = \fC1\fP)\fC [protected]\fP"
+.PP
+Set thr receive limit. 
+.SS "\fBError\fP ost::Socket::receiveTimeout (\fBtimeout_t\fP timer)\fC [protected]\fP"
+.PP
+Receive timeout for receiving raw network data. \fBReturns:\fP
+.RS 4
+errSuccess if set. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimer\fP value in milliseconds. 
+.RE
+.PP
+
+.SS "\fBError\fP ost::Socket::sendBuffer (unsigned size)\fC [protected]\fP"
+.PP
+Set the protocol stack network kernel send buffer size associated with the socket. \fBReturns:\fP
+.RS 4
+errSuccess on success, or error. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsize\fP of buffer in bytes. 
+.RE
+.PP
+
+.SS "\fBError\fP ost::Socket::sendLimit (int limit = \fC2048\fP)\fC [protected]\fP"
+.PP
+Set the send limit. 
+.SS "\fBError\fP ost::Socket::sendTimeout (\fBtimeout_t\fP timer)\fC [protected]\fP"
+.PP
+Set the send timeout for sending raw network data. \fBReturns:\fP
+.RS 4
+errSuccess if set. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimer\fP value in millisec. 
+.RE
+.PP
+
+.SS "\fBError\fP ost::Socket::setBroadcast (bool enable)\fC [protected]\fP"
+.PP
+Set the subnet broadcast flag for the socket. This enables sending to a subnet and may require special image privileges depending on the operating system.
+.PP
+\fBReturns:\fP
+.RS 4
+0 (errSuccess) on success, else error code. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIenable\fP when set to true. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBost::UDPTransmit\fP.
+.PP
+Referenced by ost::UDPTransmit::setBroadcast().
+.SS "void ost::Socket::setCompletion (bool immediate)"
+.PP
+Used to specify blocking mode for the socket. A socket can be made non-blocking by setting setCompletion(false) or set to block on all access with setCompletion(true). I do not believe this form of non-blocking socket I/O is supported in winsock, though it provides an alternate asynchronous set of socket services.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimmediate\fP mode specify socket I/O call blocking mode. 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+\fBtcpservice.cpp\fP.
+.SS "void ost::Socket::setError (bool enable)\fC [inline, protected]\fP"
+.PP
+This service is used to turn the error handler on or off for 'throwing' exceptions by manipulating the thrown flag. \fBParameters:\fP
+.RS 4
+\fIenable\fP true to enable handler. 
+.RE
+.PP
+
+.SS "\fBError\fP ost::Socket::setKeepAlive (bool enable)"
+.PP
+Set the keep-alive status of this socket and if keep-alive messages will be sent. \fBReturns:\fP
+.RS 4
+0 on success. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIenable\fP keep alive messages. 
+.RE
+.PP
+
+.SS "\fBError\fP ost::Socket::setLinger (bool linger)"
+.PP
+Enable lingering sockets on close. \fBParameters:\fP
+.RS 4
+\fIlinger\fP specify linger enable. 
+.RE
+.PP
+
+.SS "\fBError\fP ost::Socket::setLoopbackByFamily (bool enable, \fBFamily\fP family = \fCIPV4\fP)\fC [protected]\fP"
+.PP
+Set the multicast loopback flag for the socket. Loopback enables a socket to hear what it is sending.
+.PP
+\fBReturns:\fP
+.RS 4
+0 (errSuccess) on success, else error code. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIenable\fP when set to true. 
+.br
+\fIfamily\fP of protocol. 
+.RE
+.PP
+
+.PP
+Referenced by ost::UDPSocket::setLoopback().
+.SS "\fBError\fP ost::Socket::setMulticastByFamily (bool enable, \fBFamily\fP family = \fCIPV4\fP)\fC [protected]\fP"
+.PP
+Setting multicast binds the multicast interface used for the socket to the interface the socket itself has been implicitly bound to. It is also used as a check flag to make sure multicast is enabled before multicast operations are used.
+.PP
+\fBReturns:\fP
+.RS 4
+0 (errSuccess) on success, else error code. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIenable\fP when set to true. 
+.br
+\fIfamily\fP of protocol. 
+.RE
+.PP
+
+.PP
+Referenced by ost::UDPReceive::setMulticast(), ost::UDPTransmit::setMulticast(), and ost::UDPSocket::setMulticast().
+.SS "\fBError\fP ost::Socket::setNoDelay (bool enable)\fC [protected]\fP"
+.PP
+Enable/disable delaying packets (Nagle algorithm). \fBReturns:\fP
+.RS 4
+0 on success. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIenable\fP disable Nagle algorithm when set to true. 
+.RE
+.PP
+
+.SS "\fBError\fP ost::Socket::setRouting (bool enable)\fC [protected]\fP"
+.PP
+Set the socket routing to indicate if outgoing messages should bypass normal routing (set false). \fBReturns:\fP
+.RS 4
+0 on success. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIenable\fP normal routing when set to true. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBost::UDPTransmit\fP, and \fBost::UDPReceive\fP.
+.PP
+Referenced by ost::UDPReceive::setRouting(), and ost::UDPTransmit::setRouting().
+.SS "\fBError\fP ost::Socket::setTimeToLiveByFamily (unsigned char ttl, \fBFamily\fP fam = \fCIPV4\fP)\fC [protected]\fP"
+.PP
+Set the multicast time to live for a multicast socket. \fBReturns:\fP
+.RS 4
+0 (errSuccess) on success, else error code. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIttl\fP time to live. 
+.br
+\fIfam\fP family of protocol. 
+.RE
+.PP
+
+.PP
+Referenced by ost::UDPTransmit::setTimeToLive(), and ost::UDPSocket::setTimeToLive().
+.SS "\fBError\fP ost::Socket::setTypeOfService (\fBTos\fP service)"
+.PP
+Set packet scheduling on platforms which support ip quality of service conventions. This effects how packets in the queue are scheduled through the interface.
+.PP
+\fBReturns:\fP
+.RS 4
+0 on success, error code on failure. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIservice\fP type of service enumerated type. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBost::UDPTransmit\fP.
+.PP
+Referenced by ost::UDPTransmit::setTypeOfService().
+.SS "virtual ssize_t ost::Socket::writeData (const void * buf, size_t len, \fBtimeout_t\fP t = \fC0\fP)\fC [protected, virtual]\fP"
+.PP
+Write a block of len bytes to socket. \fBParameters:\fP
+.RS 4
+\fIbuf\fP pointer to byte allocation. 
+.br
+\fIlen\fP maximum length to write. 
+.br
+\fIt\fP timeout for pending data in milliseconds. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+number of bytes actually written. 
+.RE
+.PP
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "\fBSOCKET\fP dupSocket (\fBSOCKET\fP s, \fBSocket::State\fP state)\fC [friend]\fP"
+.SH "Member Data Documentation"
+.PP 
+.SS "bool \fBost::Socket::broadcast\fP"
+.SS "bool \fBost::Socket::completion\fP"
+.SS "struct { ... }   \fBost::Socket::flags\fP\fC [protected]\fP"
+.SS "bool \fBost::Socket::keepalive\fP"
+.SS "bool \fBost::Socket::linger\fP"
+.SS "bool \fBost::Socket::loopback\fP"
+.SS "bool \fBost::Socket::multicast\fP"
+.SS "\fBMutex\fP \fBost::Socket::mutex\fP\fC [static, protected]\fP"
+.SS "bool \fBost::Socket::route\fP"
+.SS "\fBSOCKET\fP volatile \fBost::Socket::so\fP\fC [protected]\fP"
+.PP
+the actual socket descriptor, in Windows, unlike posix it *cannot* be used as an file descriptor that way madness lies -- jfc 
+.SS "\fBState\fP volatile \fBost::Socket::state\fP\fC [protected]\fP"
+.SS "bool \fBost::Socket::thrown\fP"
+.SS "unsigned \fBost::Socket::ttl\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

@@ -1,0 +1,205 @@
+%% Copyright (C) 2005 Tycho Softworks.
+%%
+%% This file is free software; as a special exception the author gives
+%% unlimited permission to copy and/or distribute it, with or without
+%% modifications, as long as this notice is preserved.
+%%
+%% This program is distributed in the hope that it will be useful, but
+%% WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
+%% implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+%%
+%% This defines some macros specific to us location
+
+use time
+
+%% type def's used for telephone number, use with vartype command.
+var size=10 %phone.number
+var size=3  %phone.prefix
+
+%% input a date, mm/dd/yyyy format
+macro input-date
+	keywords results timeout interdigit
+	define timeout="10" interdigit="3"
+	date %date
+	input timeout=%timeout interdigit=%interdigit format="??/??/????" %date
+	set %results %date
+	if %date < 1700 then set %results "0000-00-00"
+	return
+
+%% input a phone number
+macro input-dialing
+	keyword results prefix timeout interdigit tone
+	define timeout="30" interdigit="5" prefix="" tone="none"
+	if #session.digits > 0 then signal ^dtmf
+
+	case %tone == "dial" or %tone == "dialtone"
+		dialtone timeout=%timeout location=us
+	otherwise
+		sleep %timeout
+	endif
+	set %results "timeout"
+	throw @dialing:timeout
+	return
+
+^dtmf
+	collect count=11 interdigit=%interdigit
+	throw @digits:default
+
+@digits:NXX0XXXX
+@digits:NXX1XXXX
+@digits:default
+@digits:456
+@digits:999
+@digits:1456
+@digits:1999
+	begin
+	case %session.digits == "0"
+		cleardigits
+		set %results "0"
+		throw @dialing:operator
+		return
+	case #session.digits == "7"
+		set %results %prefix %session.digits
+		cleardigits
+		throw @dialing:local
+		return
+	endcase
+	cleardigits
+	set %results "invalid"
+	throw @dialing:invalid
+	return
+
+@digits:1NXXNXXXXXX
+	set %results %session.digits offset=1
+	cleardigits
+	throw @dialing:national
+	return	
+
+@digits:NXXNXXXXXX
+	set %results %session.digits
+	cleardigits
+	throw @dialing:national
+	return	
+
+@digits:1700NXXXXXX
+@digits:1600NXXXXXX
+@digits:1500NXXXXXX
+        set %results %session.digits offset=1
+        cleardigits
+        throw @dialing:special
+	set %results invalid"
+	throw @dialing:invalid
+        return
+
+@digits:700NXXXXXX
+@digits:600NXXXXXX
+@digits:500NXXXXXX
+        set %results %session.digits offset
+        cleardigits
+        throw @dialing:special
+        set %results invalid"
+        throw @dialing:invalid
+        return
+
+@digits:1242XXXXXXX
+@digits:1246XXXXXXX
+@digits:1264XXXXXXX
+@digits:1268XXXXXXX
+@digits:1284XXXXXXX
+@digits:1473XXXXXXX
+@digits:1590XXXXXXX
+@digits:1767XXXXXXX
+@digits:1809XXXXXXX
+@digits:1900NXXXXXX
+@digits:1976NXXXXXX
+@digits:1880NXXXXXX
+@digits:1881NXXXXXX
+@digits:1882NXXXXXX
+	set %results %session.digits offset=1
+	cleardigits
+	throw @dialing:tollcall
+	return
+
+@digits:880NXXXXXX
+@digits:881NXXXXXX
+@digits:882NXXXXXX
+@digits:767XXXXXXX
+@digits:809XXXXXXX
+@digits:242XXXXXXX
+@digits:246XXXXXXX
+@digits:264XXXXXXX
+@digits:268XXXXXXX
+@digits:284XXXXXXX
+@digits:473XXXXXXX
+@digits:590XXXXXXX
+@digits:900NXXXXXX
+@digits:976NXXXXXX
+        set %results %session.digits
+        cleardigits
+        throw @dialing:tollcall
+        return
+
+@digits:1800NXXXXXX
+@digits:1822NXXXXXX
+@digits:1833NXXXXXX
+@digits:1844NXXXXXX
+@digits:1855NXXXXXX
+@digits:1866NXXXXXX
+@digits:1877NXXXXXX
+@digits:1888NXXXXXX
+        set %results %session.digits offset=1
+        cleardigits
+        throw @dialing:tollfree
+        return
+
+@digits:800NXXXXXX
+@digits:822NXXXXXX
+@digits:833NXXXXXX
+@digits:844NXXXXXX
+@digits:855NXXXXXX
+@digits:866NXXXXXX
+@digits:877NXXXXXX
+@digits:888NXXXXXX
+	set %results %session.digits
+	cleardigits
+	throw @dialing:tollfree
+	return
+
+@digits:1NXX5551212
+	set %results %session.digits offset=1
+	cleardigits
+	throw @dialing:directory
+	return
+
+@digits:5551212
+	set %results %prefix %session.digits
+	cleardigits
+	throw @dialing:directory
+	return
+
+@digits:011
+	cleardigits
+	set %results "foreign"
+	throw @dialing:international
+	return
+
+@digits:N11
+	set %results %session.digits
+	cleardigits
+	throw @dialing:special
+	return
+
+@digits:411
+	set %results "dir"
+	cleardigits
+	throw @dialing:directory
+	return
+
+@digits:911
+	set %results "alert"
+	cleardigits
+	throw @dialing:emergency
+	return
+
+
+

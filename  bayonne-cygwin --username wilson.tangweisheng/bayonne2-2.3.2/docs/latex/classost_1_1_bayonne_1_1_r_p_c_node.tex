@@ -1,0 +1,68 @@
+\section{ost::Bayonne::RPCNode Class Reference}
+\label{classost_1_1_bayonne_1_1_r_p_c_node}\index{ost::Bayonne::RPCNode@{ost::Bayonne::RPCNode}}
+
+
+This is a little class used to associate XMLRPC call method tables with our server.  
+
+
+{\ttfamily \#include $<$bayonne.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf RPCNode} $\ast$ {\bf getNext} (void)
+\item 
+const char $\ast$ {\bf getPrefix} (void)
+\item 
+{\bf RPCDefine} $\ast$ {\bf getMethods} (void)
+\item 
+{\bf RPCNode} (const char $\ast$prefix, {\bf RPCDefine} $\ast$dispatch)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf RPCNode} $\ast$ {\bf getFirst} (void)
+\item 
+static unsigned {\bf getCount} (void)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \_\-\_\-EXPORT {\bf BayonneRPC}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is a little class used to associate XMLRPC call method tables with our server. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::Bayonne::RPCNode@{ost::Bayonne::RPCNode}!RPCNode@{RPCNode}}
+\index{RPCNode@{RPCNode}!ost::Bayonne::RPCNode@{ost::Bayonne::RPCNode}}
+\subsubsection[{RPCNode}]{\setlength{\rightskip}{0pt plus 5cm}ost::Bayonne::RPCNode::RPCNode (const char $\ast$ {\em prefix}, \/  {\bf RPCDefine} $\ast$ {\em dispatch})}\label{classost_1_1_bayonne_1_1_r_p_c_node_a3a06452ebb85a897bbdf3012b1928fcd}
+
+
+\subsection{Member Function Documentation}
+\index{ost::Bayonne::RPCNode@{ost::Bayonne::RPCNode}!getCount@{getCount}}
+\index{getCount@{getCount}!ost::Bayonne::RPCNode@{ost::Bayonne::RPCNode}}
+\subsubsection[{getCount}]{\setlength{\rightskip}{0pt plus 5cm}static unsigned ost::Bayonne::RPCNode::getCount (void)\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classost_1_1_bayonne_1_1_r_p_c_node_afb1621f484cb7e336df14fe78e3ce891}
+\index{ost::Bayonne::RPCNode@{ost::Bayonne::RPCNode}!getFirst@{getFirst}}
+\index{getFirst@{getFirst}!ost::Bayonne::RPCNode@{ost::Bayonne::RPCNode}}
+\subsubsection[{getFirst}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf RPCNode}$\ast$ ost::Bayonne::RPCNode::getFirst (void)\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classost_1_1_bayonne_1_1_r_p_c_node_a2d938a862969d2daff7f76a53ef80cb1}
+\index{ost::Bayonne::RPCNode@{ost::Bayonne::RPCNode}!getMethods@{getMethods}}
+\index{getMethods@{getMethods}!ost::Bayonne::RPCNode@{ost::Bayonne::RPCNode}}
+\subsubsection[{getMethods}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RPCDefine}$\ast$ ost::Bayonne::RPCNode::getMethods (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_1_1_r_p_c_node_aaa9cc5d22cbb39b72a583f55ef4d276f}
+\index{ost::Bayonne::RPCNode@{ost::Bayonne::RPCNode}!getNext@{getNext}}
+\index{getNext@{getNext}!ost::Bayonne::RPCNode@{ost::Bayonne::RPCNode}}
+\subsubsection[{getNext}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RPCNode}$\ast$ ost::Bayonne::RPCNode::getNext (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_1_1_r_p_c_node_ad116af9798cbe72f9eaad3d464015c58}
+\index{ost::Bayonne::RPCNode@{ost::Bayonne::RPCNode}!getPrefix@{getPrefix}}
+\index{getPrefix@{getPrefix}!ost::Bayonne::RPCNode@{ost::Bayonne::RPCNode}}
+\subsubsection[{getPrefix}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::Bayonne::RPCNode::getPrefix (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_1_1_r_p_c_node_a379de395a9d073c9c6dff7ed724ab9ae}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{ost::Bayonne::RPCNode@{ost::Bayonne::RPCNode}!BayonneRPC@{BayonneRPC}}
+\index{BayonneRPC@{BayonneRPC}!ost::Bayonne::RPCNode@{ost::Bayonne::RPCNode}}
+\subsubsection[{BayonneRPC}]{\setlength{\rightskip}{0pt plus 5cm}friend class \_\-\_\-EXPORT {\bf BayonneRPC}\hspace{0.3cm}{\ttfamily  [friend]}}\label{classost_1_1_bayonne_1_1_r_p_c_node_a9cf2c28828ee33dff859039767aab59c}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf bayonne.h}\end{DoxyCompactItemize}

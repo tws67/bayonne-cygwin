@@ -1,0 +1,77 @@
+.TH "cmdoptns.h" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cmdoptns.h \- 
+.PP
+Command line option parsing interface.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cc++/string.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBost::CommandOption\fP"
+.br
+.RI "\fI\fBCommandOption\fP is the base class for all command line options. \fP"
+.ti -1c
+.RI "class \fBost::CommandOptionWithArg\fP"
+.br
+.RI "\fIDerived class of \fBCommandOption\fP for options that have a value associated with them. \fP"
+.ti -1c
+.RI "class \fBost::CommandOptionArg\fP"
+.br
+.RI "\fIClass for options with an argument e.g. \fP"
+.ti -1c
+.RI "class \fBost::CommandOptionRest\fP"
+.br
+.RI "\fIIt only makes sense to have a single one of these set and it is exclusive with \fBCommandOptionCollect\fP. \fP"
+.ti -1c
+.RI "class \fBost::CommandOptionCollect\fP"
+.br
+.RI "\fIIt only makes sense to have a single one of these set and it is also exclusive with \fBCommandOptionRest\fP. \fP"
+.ti -1c
+.RI "class \fBost::CommandOptionNoArg\fP"
+.br
+.RI "\fI\fBCommandOption\fP type for flags. \fP"
+.ti -1c
+.RI "class \fBost::CommandOptionParse\fP"
+.br
+.RI "\fIThis is the \fBCommandOptionParse\fP interface class. \fP"
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBost\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "__EXPORT CommandOptionParse * \fBost::makeCommandOptionParse\fP (int argc, char **argv, const char *comment, CommandOption *options=defaultCommandOptionList)"
+.br
+.RI "\fImakeCommandOptionParse will create an implementation of a \fBCommandOptionParse\fP object. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "__EXPORT CommandOption * \fBost::defaultCommandOptionList\fP"
+.br
+.RI "\fIThis defines a linked list head pointer for all the command line options that use the default list. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Command line option parsing interface. 
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

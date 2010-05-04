@@ -1,0 +1,199 @@
+.TH "ost::SerialPort" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::SerialPort \- 
+.PP
+The serial port is an internal class which is attached to and then serviced by a specified \fBSerialService\fP thread.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <serial.h>\fP
+.PP
+Inherits \fBost::Serial\fP, and \fBost::TimerPort\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetTimer\fP (\fBtimeout_t\fP timeout=0)"
+.br
+.RI "\fIDerived setTimer to notify the service thread pool of changes in expected timeout. \fP"
+.ti -1c
+.RI "void \fBincTimer\fP (\fBtimeout_t\fP timeout)"
+.br
+.RI "\fIDerived incTimer to notify the service thread pool of a change in expected timeout. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSerialPort\fP (\fBSerialService\fP *svc, const char *name)"
+.br
+.RI "\fIConstruct a tty serial port for a named serial device. \fP"
+.ti -1c
+.RI "virtual \fB~SerialPort\fP ()"
+.br
+.RI "\fIDisconnect the \fBSerial\fP Port from the service pool thread and shutdown the port. \fP"
+.ti -1c
+.RI "void \fBsetDetectPending\fP (bool)"
+.br
+.RI "\fIUsed to indicate if the service thread should monitor pending data for us. \fP"
+.ti -1c
+.RI "bool \fBgetDetectPending\fP (void) const "
+.br
+.RI "\fIGet the current state of the DetectPending flag. \fP"
+.ti -1c
+.RI "void \fBsetDetectOutput\fP (bool)"
+.br
+.RI "\fIUsed to indicate if output ready monitoring should be performed by the service thread. \fP"
+.ti -1c
+.RI "bool \fBgetDetectOutput\fP (void) const "
+.br
+.RI "\fIGet the current state of the DetectOutput flag. \fP"
+.ti -1c
+.RI "virtual void \fBexpired\fP (void)"
+.br
+.RI "\fICalled by the service thread when the objects timer has expired. \fP"
+.ti -1c
+.RI "virtual void \fBpending\fP (void)"
+.br
+.RI "\fICalled by the service thread when input data is pending for this tty port. \fP"
+.ti -1c
+.RI "virtual void \fBdisconnect\fP (void)"
+.br
+.RI "\fICalled by the service thread when an exception has occured such as a hangup. \fP"
+.ti -1c
+.RI "int \fBoutput\fP (void *buf, int len)"
+.br
+.RI "\fITransmit 'send' data to the serial port. \fP"
+.ti -1c
+.RI "virtual void \fBoutput\fP (void)"
+.br
+.RI "\fIPerform when output is available for sending data. \fP"
+.ti -1c
+.RI "int \fBinput\fP (void *buf, int len)"
+.br
+.RI "\fIReceive 'input' for pending data from the serial port. \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBSerialService\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The serial port is an internal class which is attached to and then serviced by a specified \fBSerialService\fP thread. 
+
+Derived versions of this class offer specific functionality such as serial integration protocols.
+.PP
+The TTYPort and TTYService classes are used to form thread-pool serviced serial I/O protocol sets. These can be used when one has a large number of serial devices to manage, and a single (or limited number of) thread(s) can then be used to service the tty port objects present. Each tty port supports a timer control and several virtual methods that the service thread can call when events occur. This model provides for 'callback' event management, whereby the service thread performs a 'callback' into the port object when events occur. Specific events supported include the expiration of a TTYPort timer, pending input data waiting to be read, and 'sighup' connection breaks.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> base class for thread pool serviced serial I/O. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::SerialPort::SerialPort (\fBSerialService\fP * svc, const char * name)\fC [protected]\fP"
+.PP
+Construct a tty serial port for a named serial device. \fBParameters:\fP
+.RS 4
+\fIsvc\fP pool thread object. 
+.br
+\fIname\fP of tty port. 
+.RE
+.PP
+
+.SS "virtual ost::SerialPort::~SerialPort ()\fC [protected, virtual]\fP"
+.PP
+Disconnect the \fBSerial\fP Port from the service pool thread and shutdown the port. 
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void ost::SerialPort::disconnect (void)\fC [protected, virtual]\fP"
+.PP
+Called by the service thread when an exception has occured such as a hangup. 
+.SS "virtual void ost::SerialPort::expired (void)\fC [protected, virtual]\fP"
+.PP
+Called by the service thread when the objects timer has expired. 
+.SS "bool ost::SerialPort::getDetectOutput (void) const\fC [inline, protected]\fP"
+.PP
+Get the current state of the DetectOutput flag. 
+.SS "bool ost::SerialPort::getDetectPending (void) const\fC [inline, protected]\fP"
+.PP
+Get the current state of the DetectPending flag. 
+.SS "void ost::SerialPort::incTimer (\fBtimeout_t\fP timeout)"
+.PP
+Derived incTimer to notify the service thread pool of a change in expected timeout. This allows \fBSerialService\fP to reschedule all timers. 
+.PP
+Reimplemented from \fBost::TimerPort\fP.
+.SS "int ost::SerialPort::input (void * buf, int len)\fC [inline, protected]\fP"
+.PP
+Receive 'input' for pending data from the serial port. This is not a public member since it's meant to support internal protocols rather than direct external access to the device.
+.PP
+\fBReturns:\fP
+.RS 4
+number of bytes received. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuf\fP address of buffer to input. 
+.br
+\fIlen\fP of input buffer used. 
+.RE
+.PP
+
+.SS "virtual void ost::SerialPort::output (void)\fC [protected, virtual]\fP"
+.PP
+Perform when output is available for sending data. 
+.SS "int ost::SerialPort::output (void * buf, int len)\fC [inline, protected]\fP"
+.PP
+Transmit 'send' data to the serial port. This is not public since it's meant to support internal protocols rather than direct public access to the device.
+.PP
+\fBReturns:\fP
+.RS 4
+number of bytes send. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuf\fP address of buffer to send. 
+.br
+\fIlen\fP of bytes to send. 
+.RE
+.PP
+
+.SS "virtual void ost::SerialPort::pending (void)\fC [protected, virtual]\fP"
+.PP
+Called by the service thread when input data is pending for this tty port. Effected by setPacketInput and by setLineInput. 
+.SS "void ost::SerialPort::setDetectOutput (bool)\fC [protected]\fP"
+.PP
+Used to indicate if output ready monitoring should be performed by the service thread. 
+.SS "void ost::SerialPort::setDetectPending (bool)\fC [protected]\fP"
+.PP
+Used to indicate if the service thread should monitor pending data for us. 
+.SS "void ost::SerialPort::setTimer (\fBtimeout_t\fP timeout = \fC0\fP)"
+.PP
+Derived setTimer to notify the service thread pool of changes in expected timeout. This allows \fBSerialService\fP to reschedule all timers.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimeout\fP in milliseconds. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBost::TimerPort\fP.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBSerialService\fP\fC [friend]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

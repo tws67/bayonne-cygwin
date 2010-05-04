@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="62">
+  <logicalFolder name="root" displayName="root" projectFiles="true">
+    <df name="bayonne2-2.3.2" root=".">
+      <df name="audio">
+        <df name="en">
+          <df name="deborah">
+          </df>
+        </df>
+        <df name="fr">
+          <df name="nicole">
+          </df>
+        </df>
+        <df name="none">
+          <df name="prompts">
+          </df>
+        </df>
+        <df name="ru">
+          <df name="dmitry">
+          </df>
+          <df name="natalia">
+          </df>
+        </df>
+      </df>
+      <df name="autoconf">
+      </df>
+      <df name="binders">
+        <df name="bayonnexml">
+          <in>binder.cpp</in>
+          <in>checks.cpp</in>
+          <in>image.cpp</in>
+          <in>methods.cpp</in>
+          <in>module.h</in>
+          <in>parse.cpp</in>
+          <in>property.cpp</in>
+          <in>xml.cpp</in>
+        </df>
+        <df name="ivrscript">
+          <in>binder.cpp</in>
+          <in>checks.cpp</in>
+          <in>methods.cpp</in>
+          <in>module.h</in>
+          <in>property.cpp</in>
+        </df>
+      </df>
+      <df name="config">
+      </df>
+      <df name="docs">
+        <df name="html">
+        </df>
+        <df name="latex">
+        </df>
+      </df>
+      <df name="engine">
+        <in>audio.cpp</in>
+        <in>bayonne.cpp</in>
+        <in>bayonne.h</in>
+        <in>binder.cpp</in>
+        <in>buffer.cpp</in>
+        <in>config.cpp</in>
+        <in>driver.cpp</in>
+        <in>engine.h</in>
+        <in>keydata.cpp</in>
+        <in>libbayonne.la</in>
+        <in>libexec.cpp</in>
+        <in>libexec.h</in>
+        <in>md5.cpp</in>
+        <in>msgport.cpp</in>
+        <in>posix.cpp</in>
+        <in>private.h</in>
+        <in>rpc.cpp</in>
+        <in>service.cpp</in>
+        <in>session.cpp</in>
+        <in>span.cpp</in>
+        <in>states.cpp</in>
+        <in>sysexec.cpp</in>
+        <in>translators.cpp</in>
+      </df>
+      <df name="modules">
+        <df name="capi20">
+          <in>driver.cpp</in>
+          <in>driver.h</in>
+          <in>session.cpp</in>
+        </df>
+        <df name="h323">
+          <in>audio.cpp</in>
+          <in>connection.cpp</in>
+          <in>driver.cpp</in>
+          <in>driver.h</in>
+          <in>endpoint.cpp</in>
+          <in>gatekeeper.cpp</in>
+          <in>session.cpp</in>
+        </df>
+        <df name="languages">
+          <in>de.cpp</in>
+          <in>en.cpp</in>
+          <in>es.cpp</in>
+          <in>fr.cpp</in>
+          <in>it.cpp</in>
+          <in>ru.cpp</in>
+        </df>
+        <df name="sangoma">
+          <in>audio.cpp</in>
+          <in>driver.cpp</in>
+          <in>driver.h</in>
+          <in>session.cpp</in>
+          <in>span.cpp</in>
+        </df>
+        <df name="sip">
+          <in>driver.cpp</in>
+          <in>driver.h</in>
+          <in>rtpstream.cpp</in>
+          <in>session.cpp</in>
+        </df>
+        <df name="snapshot">
+          <in>snapshot.cpp</in>
+        </df>
+        <df name="soundcard">
+          <in>audio.cpp</in>
+          <in>driver.cpp</in>
+          <in>driver.h</in>
+          <in>fox.cpp</in>
+          <in>keyboard.cpp</in>
+          <in>session.cpp</in>
+        </df>
+        <df name="sunrpc">
+          <in>bayonne_cl.c</in>
+          <in>bayonne_rpc.h</in>
+          <in>bayonne_svc.c</in>
+          <in>bayonne_xdr.c</in>
+          <in>calls.cpp</in>
+          <in>cancel.c</in>
+          <in>reload.c</in>
+          <in>server.cpp</in>
+          <in>start.c</in>
+          <in>uptime.c</in>
+        </df>
+        <df name="tcpmon">
+          <in>module.h</in>
+          <in>service.cpp</in>
+          <in>session.cpp</in>
+        </df>
+        <df name="voicetronix">
+          <in>audio.cpp</in>
+          <in>callerid.cpp</in>
+          <in>driver.cpp</in>
+          <in>driver.h</in>
+          <in>session.cpp</in>
+        </df>
+        <df name="webservice">
+          <in>event.cpp</in>
+          <in>html.cpp</in>
+          <in>module.h</in>
+          <in>service.cpp</in>
+          <in>session.cpp</in>
+          <in>tcp.cpp</in>
+          <in>xmlrpc.cpp</in>
+        </df>
+        <df name="xmlrpc">
+          <in>dir.cpp</in>
+          <in>driver.cpp</in>
+          <in>file.cpp</in>
+          <in>server.cpp</in>
+          <in>service.cpp</in>
+          <in>session.cpp</in>
+          <in>span.cpp</in>
+          <in>system.cpp</in>
+          <in>timeslot.cpp</in>
+        </df>
+        <df name="zeroconf">
+          <in>avahi.cpp</in>
+        </df>
+      </df>
+      <df name="scripts">
+      </df>
+      <df name="server">
+        <df name=".libs">
+        </df>
+        <in>checks.cpp</in>
+        <in>config.cpp</in>
+        <in>methods.cpp</in>
+        <in>property.cpp</in>
+        <in>runner.c</in>
+        <in>runtime.cpp</in>
+        <in>server.cpp</in>
+        <in>server.h</in>
+        <in>thread.cpp</in>
+      </df>
+      <df name="tests">
+      </df>
+      <df name="utils">
+        <in>btsencode.c</in>
+        <in>btsexec.c</in>
+        <in>testexec.c</in>
+      </df>
+      <df name="w32">
+      </df>
+    </df>
+    <logicalFolder name="ExternalFiles" displayName="重要文件" projectFiles="false">
+      <itemPath>Makefile-bayonne2-2.3.2.mk</itemPath>
+      <itemPath>makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile-bayonne2-2.3.2.mk</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <compilerSet>Cygwin_4.x|Cygwin_4.x</compilerSet>
+        <platform>3</platform>
+      </toolsSet>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>$(MAKE) -f Makefile</buildCommand>
+          <cleanCommand>$(MAKE) -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+          <cTool>
+            <incDir>
+              <pElem>engine</pElem>
+            </incDir>
+            <preprocessorList>
+              <Elem>HAVE_CONFIG_H</Elem>
+            </preprocessorList>
+          </cTool>
+          <ccTool>
+            <incDir>
+              <pElem>/usr/local/include</pElem>
+            </incDir>
+            <preprocessorList>
+              <Elem>_GNU_SOURCE</Elem>
+            </preprocessorList>
+          </ccTool>
+        </makeTool>
+      </makefileType>
+      <item path="binders/bayonnexml/binder.cpp" ex="true" tool="1">
+      </item>
+      <item path="binders/bayonnexml/checks.cpp" ex="true" tool="1">
+      </item>
+      <item path="binders/bayonnexml/methods.cpp" ex="true" tool="1">
+      </item>
+      <item path="binders/bayonnexml/module.h" ex="true" tool="3">
+      </item>
+      <item path="binders/bayonnexml/property.cpp" ex="true" tool="1">
+      </item>
+      <item path="binders/ivrscript/binder.cpp" ex="true" tool="1">
+      </item>
+      <item path="binders/ivrscript/checks.cpp" ex="true" tool="1">
+      </item>
+      <item path="binders/ivrscript/methods.cpp" ex="true" tool="1">
+      </item>
+      <item path="binders/ivrscript/module.h" ex="true" tool="3">
+      </item>
+      <item path="binders/ivrscript/property.cpp" ex="true" tool="1">
+      </item>
+      <item path="engine/audio.cpp" ex="false" tool="1">
+        <ccTool>
+          <incDir>
+            <pElem>engine</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="engine/bayonne.cpp" ex="false" tool="1">
+        <ccTool>
+          <incDir>
+            <pElem>engine</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="engine/bayonne.h" ex="true" tool="3">
+      </item>
+      <item path="engine/binder.cpp" ex="false" tool="1">
+        <ccTool>
+          <incDir>
+            <pElem>engine</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="engine/buffer.cpp" ex="false" tool="1">
+        <ccTool>
+          <incDir>
+            <pElem>engine</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="engine/config.cpp" ex="false" tool="1">
+        <ccTool>
+          <incDir>
+            <pElem>engine</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="engine/driver.cpp" ex="false" tool="1">
+        <ccTool>
+          <incDir>
+            <pElem>engine</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="engine/engine.h" ex="true" tool="3">
+      </item>
+      <item path="engine/keydata.cpp" ex="false" tool="1">
+        <ccTool>
+          <incDir>
+            <pElem>engine</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="engine/libbayonne.la" ex="false" tool="1">
+        <ccTool>
+          <incDir>
+            <pElem>server</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="engine/libexec.cpp" ex="false" tool="1">
+        <ccTool>
+          <incDir>
+            <pElem>engine</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="engine/libexec.h" ex="true" tool="3">
+      </item>
+      <item path="engine/md5.cpp" ex="false" tool="1">
+        <ccTool>
+          <incDir>
+            <pElem>engine</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="engine/msgport.cpp" ex="false" tool="1">
+        <ccTool>
+          <incDir>
+            <pElem>engine</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="engine/posix.cpp" ex="false" tool="1">
+        <ccTool>
+          <incDir>
+            <pElem>engine</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="engine/private.h" ex="true" tool="3">
+      </item>
+      <item path="engine/rpc.cpp" ex="false" tool="1">
+        <ccTool>
+          <incDir>
+            <pElem>engine</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="engine/service.cpp" ex="false" tool="1">
+        <ccTool>
+          <incDir>
+            <pElem>engine</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="engine/session.cpp" ex="false" tool="1">
+        <ccTool>
+          <incDir>
+            <pElem>engine</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="engine/span.cpp" ex="false" tool="1">
+        <ccTool>
+          <incDir>
+            <pElem>engine</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="engine/states.cpp" ex="false" tool="1">
+        <ccTool>
+          <incDir>
+            <pElem>engine</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="engine/sysexec.cpp" ex="false" tool="1">
+        <ccTool>
+          <incDir>
+            <pElem>engine</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="engine/translators.cpp" ex="false" tool="1">
+        <ccTool>
+          <incDir>
+            <pElem>engine</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <folder path="bayonne2-2.3.2/binders">
+        <ccTool>
+          <incDir>
+            <pElem>engine</pElem>
+            <pElem>binders/bayonnexml</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>PIC</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="bayonne2-2.3.2/modules">
+        <ccTool>
+          <incDir>
+            <pElem>engine</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>PIC</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="bayonne2-2.3.2/modules/languages">
+        <ccTool>
+          <incDir>
+            <pElem>modules/languages</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="bayonne2-2.3.2/modules/snapshot">
+        <ccTool>
+          <incDir>
+            <pElem>modules/snapshot</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="bayonne2-2.3.2/modules/soundcard">
+        <ccTool>
+          <incDir>
+            <pElem>modules/soundcard</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="bayonne2-2.3.2/modules/webservice">
+        <ccTool>
+          <incDir>
+            <pElem>modules/webservice</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="bayonne2-2.3.2/modules/xmlrpc">
+        <ccTool>
+          <incDir>
+            <pElem>modules/xmlrpc</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="bayonne2-2.3.2/server">
+        <cTool>
+          <incDir>
+            <pElem>server</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>engine</pElem>
+            <pElem>server</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="bayonne2-2.3.2/utils">
+        <cTool>
+          <incDir>
+            <pElem>utils</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <item path="modules/capi20/driver.cpp" ex="true" tool="1">
+      </item>
+      <item path="modules/capi20/driver.h" ex="true" tool="3">
+      </item>
+      <item path="modules/capi20/session.cpp" ex="true" tool="1">
+      </item>
+      <item path="modules/h323/audio.cpp" ex="true" tool="1">
+      </item>
+      <item path="modules/h323/connection.cpp" ex="true" tool="1">
+      </item>
+      <item path="modules/h323/driver.cpp" ex="true" tool="1">
+      </item>
+      <item path="modules/h323/driver.h" ex="true" tool="3">
+      </item>
+      <item path="modules/h323/endpoint.cpp" ex="true" tool="1">
+      </item>
+      <item path="modules/h323/gatekeeper.cpp" ex="true" tool="1">
+      </item>
+      <item path="modules/h323/session.cpp" ex="true" tool="1">
+      </item>
+      <item path="modules/sangoma/audio.cpp" ex="true" tool="1">
+      </item>
+      <item path="modules/sangoma/driver.cpp" ex="true" tool="1">
+      </item>
+      <item path="modules/sangoma/driver.h" ex="true" tool="3">
+      </item>
+      <item path="modules/sangoma/session.cpp" ex="true" tool="1">
+      </item>
+      <item path="modules/sangoma/span.cpp" ex="true" tool="1">
+      </item>
+      <item path="modules/sip/driver.cpp" ex="true" tool="1">
+      </item>
+      <item path="modules/sip/driver.h" ex="true" tool="3">
+      </item>
+      <item path="modules/sip/rtpstream.cpp" ex="true" tool="1">
+      </item>
+      <item path="modules/sip/session.cpp" ex="true" tool="1">
+      </item>
+      <item path="modules/soundcard/driver.cpp" ex="true" tool="1">
+      </item>
+      <item path="modules/soundcard/driver.h" ex="true" tool="3">
+      </item>
+      <item path="modules/sunrpc/bayonne_cl.c" ex="true" tool="0">
+      </item>
+      <item path="modules/sunrpc/bayonne_rpc.h" ex="true" tool="3">
+      </item>
+      <item path="modules/sunrpc/bayonne_svc.c" ex="true" tool="0">
+      </item>
+      <item path="modules/sunrpc/bayonne_xdr.c" ex="true" tool="0">
+      </item>
+      <item path="modules/sunrpc/calls.cpp" ex="true" tool="1">
+      </item>
+      <item path="modules/sunrpc/cancel.c" ex="true" tool="0">
+      </item>
+      <item path="modules/sunrpc/reload.c" ex="true" tool="0">
+      </item>
+      <item path="modules/sunrpc/server.cpp" ex="true" tool="1">
+      </item>
+      <item path="modules/sunrpc/start.c" ex="true" tool="0">
+      </item>
+      <item path="modules/sunrpc/uptime.c" ex="true" tool="0">
+      </item>
+      <item path="modules/tcpmon/module.h" ex="true" tool="3">
+      </item>
+      <item path="modules/tcpmon/service.cpp" ex="true" tool="1">
+      </item>
+      <item path="modules/tcpmon/session.cpp" ex="true" tool="1">
+      </item>
+      <item path="modules/voicetronix/audio.cpp" ex="true" tool="1">
+      </item>
+      <item path="modules/voicetronix/callerid.cpp" ex="true" tool="1">
+      </item>
+      <item path="modules/voicetronix/driver.cpp" ex="true" tool="1">
+      </item>
+      <item path="modules/voicetronix/driver.h" ex="true" tool="3">
+      </item>
+      <item path="modules/voicetronix/session.cpp" ex="true" tool="1">
+      </item>
+      <item path="modules/webservice/module.h" ex="true" tool="3">
+      </item>
+      <item path="modules/webservice/service.cpp" ex="true" tool="1">
+      </item>
+      <item path="modules/zeroconf/avahi.cpp" ex="true" tool="1">
+      </item>
+      <item path="server/server.h" ex="true" tool="3">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

@@ -1,0 +1,89 @@
+.TH "ost::RefObject" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::RefObject \- 
+.PP
+A reference countable object.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <object.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void * \fBgetObject\fP (void)=0"
+.br
+.RI "\fIThe actual object being managed can be returned by this method as a void and then recast to the actual type. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRefObject\fP ()"
+.br
+.RI "\fIThe constructor simply initializes the count. \fP"
+.ti -1c
+.RI "virtual \fB~RefObject\fP ()"
+.br
+.RI "\fIThe destructor is called when the reference count returns to zero. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "unsigned \fBrefCount\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBRefPointer\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A reference countable object. 
+
+This is used in association with smart pointers (\fBRefPointer\fP).
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@gnutelephony.org> Object managed by smart pointer reference count. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::RefObject::RefObject ()\fC [inline, protected]\fP"
+.PP
+The constructor simply initializes the count. 
+.SS "virtual ost::RefObject::~RefObject ()\fC [protected, virtual]\fP"
+.PP
+The destructor is called when the reference count returns to zero. This is done through a virtual destructor. 
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void* ost::RefObject::getObject (void)\fC [pure virtual]\fP"
+.PP
+The actual object being managed can be returned by this method as a void and then recast to the actual type. This removes the need to dynamic cast from \fBRefObject\fP and the dependence on rtti this implies.
+.PP
+\fBReturns:\fP
+.RS 4
+underlying object being referenced. 
+.RE
+.PP
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBRefPointer\fP\fC [friend]\fP"
+.SH "Member Data Documentation"
+.PP 
+.SS "unsigned \fBost::RefObject::refCount\fP\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

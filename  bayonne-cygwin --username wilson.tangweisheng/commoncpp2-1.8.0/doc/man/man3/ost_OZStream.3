@@ -1,0 +1,76 @@
+.TH "ost::OZStream" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::OZStream \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <zstream.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBOZStream\fP (bool throwflag=false)"
+.br
+.ti -1c
+.RI "\fBOZStream\fP (const char *name, int level=Z_DEFAULT_COMPRESSION, size_t size=512, bool tf=false)"
+.br
+.ti -1c
+.RI "bool \fBisOpen\fP (void)"
+.br
+.ti -1c
+.RI "void \fBclose\fP (void)"
+.br
+.ti -1c
+.RI "virtual \fB~OZStream\fP ()"
+.br
+.ti -1c
+.RI "void \fBopen\fP (const char *name, int level=Z_DEFAULT_COMPRESSION, size_t size=512)"
+.br
+.ti -1c
+.RI "size_t \fBgetBufferSize\fP (void)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBallocate\fP (size_t size)"
+.br
+.ti -1c
+.RI "int \fBoverflow\fP (int ch)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "size_t \fBbufsize\fP"
+.br
+.ti -1c
+.RI "char * \fBpbuf\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::OZStream::OZStream (bool throwflag = \fCfalse\fP)"
+.SS "ost::OZStream::OZStream (const char * name, int level = \fCZ_DEFAULT_COMPRESSION\fP, size_t size = \fC512\fP, bool tf = \fCfalse\fP)"
+.SS "virtual ost::OZStream::~OZStream ()\fC [virtual]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::OZStream::allocate (size_t size)\fC [protected]\fP"
+.SS "void ost::OZStream::close (void)"
+.SS "size_t ost::OZStream::getBufferSize (void)\fC [inline]\fP"
+.SS "bool ost::OZStream::isOpen (void)"
+.SS "void ost::OZStream::open (const char * name, int level = \fCZ_DEFAULT_COMPRESSION\fP, size_t size = \fC512\fP)"
+.SS "int ost::OZStream::overflow (int ch)\fC [protected]\fP"
+.SH "Member Data Documentation"
+.PP 
+.SS "size_t \fBost::OZStream::bufsize\fP\fC [protected]\fP"
+.SS "char* \fBost::OZStream::pbuf\fP\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

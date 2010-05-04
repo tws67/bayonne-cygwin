@@ -1,0 +1,102 @@
+.TH "ost::StringTokenizer::iterator" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::StringTokenizer::iterator \- 
+.PP
+The input forward \fBiterator\fP for tokens.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <tokenizer.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBiterator\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~iterator\fP ()"
+.br
+.ti -1c
+.RI "\fBiterator\fP (const \fBiterator\fP &i)"
+.br
+.RI "\fIcopy constructor. \fP"
+.ti -1c
+.RI "\fBiterator\fP & \fBoperator=\fP (const \fBiterator\fP &i)"
+.br
+.RI "\fIassignment operator. \fP"
+.ti -1c
+.RI "\fBiterator\fP & \fBoperator++\fP ()  throw ( NoSuchElementException )"
+.br
+.RI "\fIshifts this \fBiterator\fP to the next token in the string. \fP"
+.ti -1c
+.RI "const char * \fBoperator*\fP ()  throw ( NoSuchElementException )"
+.br
+.RI "\fIreturns the immutable string this \fBiterator\fP points to or '0' if no token is available (i.e. \fP"
+.ti -1c
+.RI "char \fBnextDelimiter\fP () const "
+.br
+.RI "\fIreturns the next delimiter after the current token or '\\0', if there are no following delimiters. \fP"
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBiterator\fP &other) const "
+.br
+.RI "\fIcompares to other \fBiterator\fP. \fP"
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBiterator\fP &other) const "
+.br
+.RI "\fIcompares to other \fBiterator\fP. \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBStringTokenizer\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The input forward \fBiterator\fP for tokens. 
+
+\fBAuthor:\fP
+.RS 4
+Henner Zeller 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::StringTokenizer::iterator::iterator ()\fC [inline]\fP"
+.SS "virtual ost::StringTokenizer::iterator::~iterator ()\fC [inline, virtual]\fP"
+.SS "ost::StringTokenizer::iterator::iterator (const \fBiterator\fP & i)\fC [inline]\fP"
+.PP
+copy constructor. 
+.SH "Member Function Documentation"
+.PP 
+.SS "char ost::StringTokenizer::iterator::nextDelimiter () const\fC [inline]\fP"
+.PP
+returns the next delimiter after the current token or '\\0', if there are no following delimiters. It returns the very next delimiter (even if skipAllDelim=true). 
+.SS "bool ost::StringTokenizer::iterator::operator!= (const \fBiterator\fP & other) const\fC [inline]\fP"
+.PP
+compares to other \fBiterator\fP. Usually used to compare against the \fBend()\fP \fBiterator\fP. 
+.SS "const char* ost::StringTokenizer::iterator::operator* ()  throw ( \fBNoSuchElementException\fP )"
+.PP
+returns the immutable string this \fBiterator\fP points to or '0' if no token is available (i.e. i == \fBend()\fP). Do not store pointers to this token, since it is invalidated for each iteration. If you need the token, copy it (e.g. with strdup()); 
+.SS "\fBiterator\fP& ost::StringTokenizer::iterator::operator++ ()  throw ( \fBNoSuchElementException\fP )"
+.PP
+shifts this \fBiterator\fP to the next token in the string. 
+.SS "\fBiterator\fP& ost::StringTokenizer::iterator::operator= (const \fBiterator\fP & i)\fC [inline]\fP"
+.PP
+assignment operator. 
+.SS "bool ost::StringTokenizer::iterator::operator== (const \fBiterator\fP & other) const\fC [inline]\fP"
+.PP
+compares to other \fBiterator\fP. Usually used to compare against the \fBend()\fP \fBiterator\fP. 
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBStringTokenizer\fP\fC [friend]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

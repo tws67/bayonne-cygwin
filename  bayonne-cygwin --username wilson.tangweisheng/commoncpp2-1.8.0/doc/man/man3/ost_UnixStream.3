@@ -1,0 +1,122 @@
+.TH "ost::unixstream" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::unixstream \- 
+.PP
+A more natural C++ 'unixstream' class for use by non-threaded applications.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <unix.h>\fP
+.PP
+Inherits \fBost::UnixStream\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBunixstream\fP ()"
+.br
+.RI "\fIConstruct an unopened 'tcpstream' object. \fP"
+.ti -1c
+.RI "\fBunixstream\fP (const char *pathname, int buffer=512)"
+.br
+.RI "\fIConstruct and 'open' (connect) the tcp stream to a remote socket. \fP"
+.ti -1c
+.RI "\fBunixstream\fP (\fBUnixSocket\fP &unixsock, int buffer=512)"
+.br
+.RI "\fIConstruct and 'accept' (connect) the tcp stream through a server. \fP"
+.ti -1c
+.RI "void \fBopen\fP (const char *pathname, int buffer=512)"
+.br
+.RI "\fIOpen a tcp stream connection. \fP"
+.ti -1c
+.RI "void \fBopen\fP (\fBUnixSocket\fP &unixsock, int buffer=512)"
+.br
+.RI "\fIOpen a tcp stream connection by accepting a tcp socket. \fP"
+.ti -1c
+.RI "void \fBclose\fP (void)"
+.br
+.RI "\fIClose the active tcp stream connection. \fP"
+.ti -1c
+.RI "bool \fBoperator!\fP () const "
+.br
+.RI "\fITest to see if stream is open. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A more natural C++ 'unixstream' class for use by non-threaded applications. 
+
+This class behaves a lot more like fstream and similar classes.
+.PP
+\fBAuthor:\fP
+.RS 4
+Alex Pavloff <alex@pavloff.net> C++ 'fstream' style \fBunixstream\fP class. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::unixstream::unixstream ()"
+.PP
+Construct an unopened 'tcpstream' object. 
+.SS "ost::unixstream::unixstream (const char * pathname, int buffer = \fC512\fP)"
+.PP
+Construct and 'open' (connect) the tcp stream to a remote socket. \fBParameters:\fP
+.RS 4
+\fIpathname\fP pathname to socket file 
+.br
+\fIbuffer\fP size for streaming (optional). 
+.RE
+.PP
+
+.SS "ost::unixstream::unixstream (\fBUnixSocket\fP & unixsock, int buffer = \fC512\fP)"
+.PP
+Construct and 'accept' (connect) the tcp stream through a server. \fBParameters:\fP
+.RS 4
+\fIunixsock\fP socket to accept from. 
+.br
+\fIbuffer\fP size for streaming (optional). 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::unixstream::close (void)"
+.PP
+Close the active tcp stream connection. 
+.SS "void ost::unixstream::open (\fBUnixSocket\fP & unixsock, int buffer = \fC512\fP)"
+.PP
+Open a tcp stream connection by accepting a tcp socket. \fBParameters:\fP
+.RS 4
+\fIunixsock\fP socket to accept from. 
+.br
+\fIbuffer\fP size for streaming (optional) 
+.RE
+.PP
+
+.SS "void ost::unixstream::open (const char * pathname, int buffer = \fC512\fP)\fC [inline]\fP"
+.PP
+Open a tcp stream connection. This will close the currently active connection first.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpathname\fP pathname to socket file 
+.br
+\fIbuffer\fP size for streaming (optional) 
+.RE
+.PP
+
+.PP
+References ost::UnixStream::connect().
+.SS "bool ost::unixstream::operator! () const"
+.PP
+Test to see if stream is open. 
+.PP
+Reimplemented from \fBost::Socket\fP.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

@@ -1,0 +1,107 @@
+.TH "ost::UnixSocket" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::UnixSocket \- 
+.PP
+Unix domain sockets are used for stream based connected sessions between processes on the same machine.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <unix.h>\fP
+.PP
+Inherits \fBost::Socket\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUnixSocket\fP (const char *pathname, int backlog=5)"
+.br
+.RI "\fIA Unix domain 'server' is created as a Unix domain socket that is bound to a pathname and that has a backlog queue to listen for connection requests. \fP"
+.ti -1c
+.RI "bool \fBisPendingConnection\fP (\fBtimeout_t\fP timeout=~((\fBtimeout_t\fP) 0))"
+.br
+.RI "\fIUsed to wait for pending connection requests. \fP"
+.ti -1c
+.RI "virtual \fB~UnixSocket\fP ()"
+.br
+.RI "\fIUse base socket handler for ending this socket. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBclose\fP (void)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "char * \fBpath\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBUnixStream\fP"
+.br
+.ti -1c
+.RI "class \fBSocketPort\fP"
+.br
+.ti -1c
+.RI "class \fBunixstream\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Unix domain sockets are used for stream based connected sessions between processes on the same machine. 
+
+An implicit and unique \fBUnixSocket\fP object exists in Common C++ to represent a bound Unix domain socket acting as a 'server' for receiving connection requests. This class is not part of \fBUnixStream\fP because such objects normally perform no physical I/O (read or write operations) other than to specify a listen backlog queue and perform 'accept' operations for pending connections.
+.PP
+\fBAuthor:\fP
+.RS 4
+Alex Pavloff <alex@pavloff.net> bound server for Unix domain streams and sessions. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::UnixSocket::UnixSocket (const char * pathname, int backlog = \fC5\fP)"
+.PP
+A Unix domain 'server' is created as a Unix domain socket that is bound to a pathname and that has a backlog queue to listen for connection requests. If the server cannot be created, an exception is thrown.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpathname\fP pathname to socket file 
+.br
+\fIbacklog\fP size of connection request queue. 
+.RE
+.PP
+
+.SS "virtual ost::UnixSocket::~UnixSocket ()\fC [virtual]\fP"
+.PP
+Use base socket handler for ending this socket. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::UnixSocket::close (void)\fC [protected]\fP"
+.SS "bool ost::UnixSocket::isPendingConnection (\fBtimeout_t\fP timeout = \fC~((\fBtimeout_t\fP) 0)\fP)\fC [inline]\fP"
+.PP
+Used to wait for pending connection requests. not const -- jfc 
+.PP
+References ost::Socket::isPending(), and ost::Socket::pendingInput.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBSocketPort\fP\fC [friend]\fP"
+.SS "friend class \fBunixstream\fP\fC [friend]\fP"
+.SS "friend class \fBUnixStream\fP\fC [friend]\fP"
+.SH "Member Data Documentation"
+.PP 
+.SS "char* \fBost::UnixSocket::path\fP\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

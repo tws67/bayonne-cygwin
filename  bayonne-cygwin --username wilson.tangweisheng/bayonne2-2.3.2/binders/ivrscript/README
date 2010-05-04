@@ -1,0 +1,5 @@
+This is the default directory for script files that use the ivrscript1
+bindings.  This way you can keep them safe in future releases where ivrscript
+is changed if backward compatibility is not offered in future ivrscriptX
+bindings.
+

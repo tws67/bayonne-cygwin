@@ -1,0 +1,17 @@
+<!DOCTYPE events [
+
+<!ELEMENT events (session*, span*)>
+<!ELEMENT session (position?,connection?,start?,caller?,display?,dialed?,reason?)>
+<!ELEMENT start (#PCDATA)>
+<!ELEMENT caller (#PCDATA)>
+<!ELEMENT display (#PCDATA)>
+<!ELEMENT dialed (#PCDATA)>
+<!ELEMENT connection (#PCDATA)>
+<!ELEMENT position (#PCDATA)>
+<!ELEMENT reason (#PCDATA)>
+
+<!ATTLIST session id CDATA #REQUIRED>
+<!ATTLIST session type (ring|call|join|break|exit) #REQUIRED>
+
+]>
+

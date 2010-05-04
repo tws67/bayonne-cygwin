@@ -1,0 +1,222 @@
+.TH "ost::XMLStream" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::XMLStream \- 
+.PP
+This class impliments a basic XML stream parser that can be used to examine an XML resource thru virtual I/O methods.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <xml.h>\fP
+.PP
+Inherited by \fBost::XMLRPC\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual bool \fBopen\fP (const char *resource)"
+.br
+.RI "\fIMay perform an open operation on behalf of a parsed resource. \fP"
+.ti -1c
+.RI "virtual void \fBclose\fP (void)"
+.br
+.RI "\fIMay perform a close operation of an i/o source when the parser has completed operation. \fP"
+.ti -1c
+.RI "virtual \fBSlog::Level\fP \fBgetLogging\fP (void)"
+.br
+.RI "\fIGet error logging level. \fP"
+.ti -1c
+.RI "virtual void \fBcomment\fP (const unsigned char *text, size_t len)"
+.br
+.RI "\fIVirtual to receive embedded comments in an XML document being parsed. \fP"
+.ti -1c
+.RI "virtual int \fBread\fP (unsigned char *buffer, size_t len)=0"
+.br
+.RI "\fIRead method to aquire data for the parser. \fP"
+.ti -1c
+.RI "virtual void \fBcharacters\fP (const unsigned char *text, size_t len)=0"
+.br
+.RI "\fIVirtual to receive character text extracted from the document in the current element. \fP"
+.ti -1c
+.RI "virtual void \fBstartDocument\fP (void)"
+.br
+.RI "\fIIdentify start of document event. \fP"
+.ti -1c
+.RI "virtual void \fBendDocument\fP (void)"
+.br
+.RI "\fIIdentify end of document event. \fP"
+.ti -1c
+.RI "virtual void \fBstartElement\fP (const unsigned char *name, const unsigned char **attr)=0"
+.br
+.RI "\fIIdentify start of an element in the document. \fP"
+.ti -1c
+.RI "virtual void \fBendElement\fP (const unsigned char *name)=0"
+.br
+.RI "\fIIdentify end of an element in the document. \fP"
+.ti -1c
+.RI "bool \fBparse\fP (const char *resource=NULL)"
+.br
+.RI "\fIParse a resource as a stream thru the virtual read method. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~XMLStream\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class impliments a basic XML stream parser that can be used to examine an XML resource thru virtual I/O methods. 
+
+This class must be derived into one that can impliment the physical I/O required to parse actual data. A mixer class using \fBXMLStream\fP and \fBURLStream\fP would seem a likely combination for this purpose.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> XML Stream Parser (SAX) 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+.PP
+\fBxmlfetch.cpp\fP.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual ost::XMLStream::~XMLStream ()\fC [protected, virtual]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void ost::XMLStream::characters (const unsigned char * text, size_t len)\fC [pure virtual]\fP"
+.PP
+Virtual to receive character text extracted from the document in the current element. \fBParameters:\fP
+.RS 4
+\fItext\fP received. 
+.br
+\fIlen\fP length of text received. 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+\fBxmlfetch.cpp\fP.
+.SS "virtual void ost::XMLStream::close (void)\fC [virtual]\fP"
+.PP
+May perform a close operation of an i/o source when the parser has completed operation. 
+.SS "virtual void ost::XMLStream::comment (const unsigned char * text, size_t len)\fC [virtual]\fP"
+.PP
+Virtual to receive embedded comments in an XML document being parsed. \fBParameters:\fP
+.RS 4
+\fItext\fP text comment extracted. 
+.br
+\fIlen\fP length of comment. 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+\fBxmlfetch.cpp\fP.
+.SS "virtual void ost::XMLStream::endDocument (void)\fC [virtual]\fP"
+.PP
+Identify end of document event. 
+.PP
+\fBExamples: \fP
+.in +1c
+\fBxmlfetch.cpp\fP.
+.SS "virtual void ost::XMLStream::endElement (const unsigned char * name)\fC [pure virtual]\fP"
+.PP
+Identify end of an element in the document. \fBParameters:\fP
+.RS 4
+\fIname\fP of element found. 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+\fBxmlfetch.cpp\fP.
+.SS "virtual \fBSlog::Level\fP ost::XMLStream::getLogging (void)\fC [virtual]\fP"
+.PP
+Get error logging level. \fBReturns:\fP
+.RS 4
+error logging level. 
+.RE
+.PP
+
+.SS "virtual bool ost::XMLStream::open (const char * resource)\fC [virtual]\fP"
+.PP
+May perform an open operation on behalf of a parsed resource. In some cases, the parser may be merged with a class that already has performed some kind of open, and this method can then be ignored.
+.PP
+\fBReturns:\fP
+.RS 4
+true if open is successful. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIresource\fP passed to Parse methods. 
+.RE
+.PP
+
+.SS "bool ost::XMLStream::parse (const char * resource = \fCNULL\fP)"
+.PP
+Parse a resource as a stream thru the virtual read method. \fBReturns:\fP
+.RS 4
+true if well formed document has been fully parsed. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIresource\fP optional name of resource. 
+.RE
+.PP
+
+.SS "virtual int ost::XMLStream::read (unsigned char * buffer, size_t len)\fC [pure virtual]\fP"
+.PP
+Read method to aquire data for the parser. \fBReturns:\fP
+.RS 4
+number of bytes actually read. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuffer\fP to read data into. 
+.br
+\fIlen\fP number of bytes to read. 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+\fBxmlfetch.cpp\fP.
+.SS "virtual void ost::XMLStream::startDocument (void)\fC [virtual]\fP"
+.PP
+Identify start of document event. 
+.PP
+\fBExamples: \fP
+.in +1c
+\fBxmlfetch.cpp\fP.
+.SS "virtual void ost::XMLStream::startElement (const unsigned char * name, const unsigned char ** attr)\fC [pure virtual]\fP"
+.PP
+Identify start of an element in the document. \fBParameters:\fP
+.RS 4
+\fIname\fP of element found. 
+.br
+\fIattr\fP list of attributes extracted. 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+\fBxmlfetch.cpp\fP.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

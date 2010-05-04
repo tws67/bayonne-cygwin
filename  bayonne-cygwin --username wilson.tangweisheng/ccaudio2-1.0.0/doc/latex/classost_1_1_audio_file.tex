@@ -1,0 +1,682 @@
+\section{ost::AudioFile Class Reference}
+\label{classost_1_1_audio_file}\index{ost::AudioFile@{ost::AudioFile}}
+
+
+A class used to manipulate audio data.  
+
+
+{\ttfamily \#include $<$audio2.h$>$}Inheritance diagram for ost::AudioFile::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{classost_1_1_audio_file}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf AudioFile} (const char $\ast$name, unsigned long offset=0)
+\begin{DoxyCompactList}\small\item\em Construct and open an existing audio file for read/write. \item\end{DoxyCompactList}\item 
+{\bf AudioFile} (const char $\ast$name, {\bf Info} $\ast${\bf info}, unsigned long {\bf minimum}=0)
+\begin{DoxyCompactList}\small\item\em Create and open a new audio file for writing. \item\end{DoxyCompactList}\item 
+{\bf AudioFile} ()
+\begin{DoxyCompactList}\small\item\em Construct an audio file without attaching to the filesystem. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$AudioFile} ()
+\item 
+void {\bf open} (const char $\ast$name, {\bf Mode} {\bf mode}=modeWrite, {\bf timeout\_\-t} framing=0)
+\begin{DoxyCompactList}\small\item\em Open an audio file and associate it with this object. \item\end{DoxyCompactList}\item 
+void {\bf create} (const char $\ast$name, {\bf Info} $\ast${\bf info}, bool exclusive=false, {\bf timeout\_\-t} framing=0)
+\begin{DoxyCompactList}\small\item\em Create a new audio file and associate it with this object. \item\end{DoxyCompactList}\item 
+time\_\-t {\bf getAge} (void)
+\begin{DoxyCompactList}\small\item\em Returns age since last prior access. \item\end{DoxyCompactList}\item 
+size\_\-t {\bf getSize} (void)
+\begin{DoxyCompactList}\small\item\em Get maximum size of frame buffer for data use. \item\end{DoxyCompactList}\item 
+void {\bf close} (void)
+\begin{DoxyCompactList}\small\item\em Close an object associated with an open file. \item\end{DoxyCompactList}\item 
+void {\bf clear} (void)
+\begin{DoxyCompactList}\small\item\em Clear the \doxyref{AudioFile}{p.}{classost_1_1_audio_file} structure. \item\end{DoxyCompactList}\item 
+ssize\_\-t {\bf getBuffer} ({\bf Encoded} buffer, size\_\-t len=0)
+\begin{DoxyCompactList}\small\item\em Retrieve bytes from the file into a memory buffer. \item\end{DoxyCompactList}\item 
+unsigned {\bf getLinear} ({\bf Linear} buffer, unsigned request=0)
+\begin{DoxyCompactList}\small\item\em Retrieve and convert content to linear encoded audio data from it's original form. \item\end{DoxyCompactList}\item 
+ssize\_\-t {\bf putBuffer} ({\bf Encoded} buffer, size\_\-t len=0)
+\begin{DoxyCompactList}\small\item\em Insert bytes into the file from a memory buffer. \item\end{DoxyCompactList}\item 
+unsigned {\bf putLinear} ({\bf Linear} buffer, unsigned request=0)
+\begin{DoxyCompactList}\small\item\em Convert and store content from linear encoded audio data to the format of the audio file. \item\end{DoxyCompactList}\item 
+{\bf Error} {\bf getSamples} (void $\ast$buffer, unsigned samples=0)
+\begin{DoxyCompactList}\small\item\em Retrieve samples from the file into a memory buffer. \item\end{DoxyCompactList}\item 
+{\bf Error} {\bf putSamples} (void $\ast$buffer, unsigned samples=0)
+\begin{DoxyCompactList}\small\item\em Insert samples into the file from a memory buffer. \item\end{DoxyCompactList}\item 
+{\bf Error} {\bf skip} (long number)
+\begin{DoxyCompactList}\small\item\em Change the file position by skipping a specified number of audio samples of audio data. \item\end{DoxyCompactList}\item 
+{\bf Error} {\bf setPosition} (unsigned long samples=$\sim$0l)
+\begin{DoxyCompactList}\small\item\em Seek a file position by sample count. \item\end{DoxyCompactList}\item 
+{\bf Error} {\bf position} (const char $\ast$timestamp)
+\begin{DoxyCompactList}\small\item\em Seek a file position by timestamp. \item\end{DoxyCompactList}\item 
+void {\bf getPosition} (char $\ast$timestamp, size\_\-t size)
+\begin{DoxyCompactList}\small\item\em Return the timestamp of the current absolute file position. \item\end{DoxyCompactList}\item 
+{\bf Error} {\bf setLimit} (unsigned long maximum=0l)
+\begin{DoxyCompactList}\small\item\em Set the maximum file position for reading and writing of audio data by samples. \item\end{DoxyCompactList}\item 
+{\bf Error} {\bf getInfo} ({\bf Info} $\ast${\bf info})
+\begin{DoxyCompactList}\small\item\em Copy the source description of the audio file into the specified object. \item\end{DoxyCompactList}\item 
+{\bf Error} {\bf setMinimum} (unsigned long {\bf minimum})
+\begin{DoxyCompactList}\small\item\em Set minimum file size for a created file. \item\end{DoxyCompactList}\item 
+unsigned long {\bf getAbsolutePosition} (void)
+\begin{DoxyCompactList}\small\item\em Get the current file pointer in bytes relative to the start of the file. \item\end{DoxyCompactList}\item 
+unsigned long {\bf getPosition} (void)
+\begin{DoxyCompactList}\small\item\em Get the current file pointer in samples relative to the start of the sample buffer. \item\end{DoxyCompactList}\item 
+virtual bool {\bf isOpen} (void)
+\begin{DoxyCompactList}\small\item\em Test if the file is opened. \item\end{DoxyCompactList}\item 
+virtual bool {\bf hasPositioning} (void)
+\begin{DoxyCompactList}\small\item\em Return true if underlying derived class supports direct access to file positioning. \item\end{DoxyCompactList}\item 
+{\bf Encoding} {\bf getEncoding} (void)
+\begin{DoxyCompactList}\small\item\em Return audio encoding format for this audio file. \item\end{DoxyCompactList}\item 
+{\bf Format} {\bf getFormat} (void)
+\begin{DoxyCompactList}\small\item\em Return base file format of containing audio file. \item\end{DoxyCompactList}\item 
+unsigned {\bf getSampleRate} (void)
+\begin{DoxyCompactList}\small\item\em Get audio encoding sample rate, in samples per second, for this audio file. \item\end{DoxyCompactList}\item 
+char $\ast$ {\bf getAnnotation} (void)
+\begin{DoxyCompactList}\small\item\em Get annotation extracted from header of containing file. \item\end{DoxyCompactList}\item 
+{\bf Error} {\bf getError} (void)
+\begin{DoxyCompactList}\small\item\em Get last error code. \item\end{DoxyCompactList}\item 
+bool {\bf operator!} (void)
+\item 
+bool {\bf isSigned} (void)
+\begin{DoxyCompactList}\small\item\em Return if the current content is signed or unsigned samples. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf initialize} (void)
+\item 
+void {\bf getWaveFormat} (int size)
+\item 
+void {\bf mp3info} ({\bf mpeg\_\-audio} $\ast$mp3)
+\item 
+virtual bool {\bf afCreate} (const char $\ast$path, bool exclusive=false)
+\item 
+virtual bool {\bf afOpen} (const char $\ast$path, {\bf Mode} m=modeWrite)
+\item 
+virtual bool {\bf afPeek} (unsigned char $\ast$data, unsigned size)
+\item 
+{\bf AudioCodec} $\ast$ {\bf getCodec} (void)
+\item 
+virtual int {\bf afRead} (unsigned char $\ast$data, unsigned size)
+\begin{DoxyCompactList}\small\item\em Read a given number of bytes from the file, starting from the current file pointer. \item\end{DoxyCompactList}\item 
+virtual int {\bf afWrite} (unsigned char $\ast$data, unsigned size)
+\begin{DoxyCompactList}\small\item\em Write a number of bytes into the file at the current file pointer. \item\end{DoxyCompactList}\item 
+virtual bool {\bf afSeek} (unsigned long pos)
+\begin{DoxyCompactList}\small\item\em Seek to the given position relative to the start of the file and set the file pointer. \item\end{DoxyCompactList}\item 
+virtual void {\bf afClose} (void)
+\begin{DoxyCompactList}\small\item\em Close the derived file handling system's file handle. \item\end{DoxyCompactList}\item 
+virtual char $\ast$ {\bf getContinuation} (void)
+\begin{DoxyCompactList}\small\item\em This function is used to splice multiple audio files together into a single stream of continues audio data. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getErrorStr} ({\bf Error} err)
+\begin{DoxyCompactList}\small\item\em Return a human-\/readable error message given a numeric error code of type \doxyref{Audio::Error}{p.}{classost_1_1_audio_a9b399c8c40f1c9c460490efeb3f86884}. \item\end{DoxyCompactList}\item 
+{\bf Error} {\bf setError} ({\bf Error} err)
+\item 
+unsigned long {\bf getHeader} (void)
+\begin{DoxyCompactList}\small\item\em Get number of bytes in the file header. \item\end{DoxyCompactList}\item 
+unsigned short {\bf getShort} (unsigned char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Convert binary 2 byte data stored in the order specified in the source description into a short variable. \item\end{DoxyCompactList}\item 
+void {\bf setShort} (unsigned char $\ast$data, unsigned short value)
+\begin{DoxyCompactList}\small\item\em Save a short as two byte binary data stored in the endian order specified in the source description. \item\end{DoxyCompactList}\item 
+unsigned long {\bf getLong} (unsigned char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Convert binary 4 byte data stored in the order specified in the source description into a long variable. \item\end{DoxyCompactList}\item 
+void {\bf setLong} (unsigned char $\ast$data, unsigned long value)
+\begin{DoxyCompactList}\small\item\em Save a long as four byte binary data stored in the endian order specified in the source description. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ {\bf pathname}
+\item 
+{\bf Error} {\bf error}
+\item 
+unsigned long {\bf header}
+\item 
+unsigned long {\bf minimum}
+\item 
+unsigned long {\bf length}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>int {\bf fd}\\
+\>void $\ast$ {\bf handle}\\
+\} {\bf file}\\
+
+\end{tabbing}\item 
+{\bf Mode} {\bf mode}
+\item 
+unsigned long {\bf iolimit}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class used to manipulate audio data. This class provides file level access to audio data stored in different formats. This class also provides the ability to write audio data into a disk file.
+
+\begin{DoxyAuthor}{Author}
+David Sugar $<${\tt dyfet@ostel.com}$>$ audio file access. 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::AudioFile@{ost::AudioFile}!AudioFile@{AudioFile}}
+\index{AudioFile@{AudioFile}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{AudioFile}]{\setlength{\rightskip}{0pt plus 5cm}ost::AudioFile::AudioFile (const char $\ast$ {\em name}, \/  unsigned long {\em offset} = {\ttfamily 0})}\label{classost_1_1_audio_file_ab01d1c7365320d331e854552ecc953a2}
+
+
+Construct and open an existing audio file for read/write. 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]of file to open. \item[{\em offset}]to start access. \end{DoxyParams}
+\index{ost::AudioFile@{ost::AudioFile}!AudioFile@{AudioFile}}
+\index{AudioFile@{AudioFile}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{AudioFile}]{\setlength{\rightskip}{0pt plus 5cm}ost::AudioFile::AudioFile (const char $\ast$ {\em name}, \/  {\bf Info} $\ast$ {\em info}, \/  unsigned long {\em minimum} = {\ttfamily 0})}\label{classost_1_1_audio_file_a112301bbb2b12e6a29e25437b1730aec}
+
+
+Create and open a new audio file for writing. 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]of file to create. \item[{\em info}]source description for new file. \item[{\em minimum}]file size to accept at close. \end{DoxyParams}
+\index{ost::AudioFile@{ost::AudioFile}!AudioFile@{AudioFile}}
+\index{AudioFile@{AudioFile}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{AudioFile}]{\setlength{\rightskip}{0pt plus 5cm}ost::AudioFile::AudioFile ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_audio_file_a83e800eddbffcdf45dc4b196a87bd584}
+
+
+Construct an audio file without attaching to the filesystem. \index{ost::AudioFile@{ost::AudioFile}!$\sim$AudioFile@{$\sim$AudioFile}}
+\index{$\sim$AudioFile@{$\sim$AudioFile}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{$\sim$AudioFile}]{\setlength{\rightskip}{0pt plus 5cm}virtual ost::AudioFile::$\sim$AudioFile ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_audio_file_acf8468ccbd7289cce50291e6f6ec0d53}
+
+
+\subsection{Member Function Documentation}
+\index{ost::AudioFile@{ost::AudioFile}!afClose@{afClose}}
+\index{afClose@{afClose}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{afClose}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::AudioFile::afClose (void)\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_audio_file_a22b33b82f3be60a5634617bf712bd39e}
+
+
+Close the derived file handling system's file handle. \index{ost::AudioFile@{ost::AudioFile}!afCreate@{afCreate}}
+\index{afCreate@{afCreate}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{afCreate}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::AudioFile::afCreate (const char $\ast$ {\em path}, \/  bool {\em exclusive} = {\ttfamily false})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_audio_file_a4a271372f5c71ed212a38bcbd6bc78f1}
+\index{ost::AudioFile@{ost::AudioFile}!afOpen@{afOpen}}
+\index{afOpen@{afOpen}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{afOpen}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::AudioFile::afOpen (const char $\ast$ {\em path}, \/  {\bf Mode} {\em m} = {\ttfamily modeWrite})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_audio_file_aac2bc808f80921302fab043b76e7fd1b}
+\index{ost::AudioFile@{ost::AudioFile}!afPeek@{afPeek}}
+\index{afPeek@{afPeek}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{afPeek}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::AudioFile::afPeek (unsigned char $\ast$ {\em data}, \/  unsigned {\em size})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_audio_file_a8e849ce99910b88c7ce7d6def2b09713}
+\index{ost::AudioFile@{ost::AudioFile}!afRead@{afRead}}
+\index{afRead@{afRead}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{afRead}]{\setlength{\rightskip}{0pt plus 5cm}virtual int ost::AudioFile::afRead (unsigned char $\ast$ {\em data}, \/  unsigned {\em size})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_audio_file_ad9ce6bffdc596b4131a0d2de1b9d3687}
+
+
+Read a given number of bytes from the file, starting from the current file pointer. May be overridden by derived classes.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]A pointer to the buffer to copy the bytes to. \item[{\em size}]The number of bytes to read. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes read, or -\/1 if an error occurs. On UNIX platforms, use strerror(errno) to get the human-\/readable error string or FormatMessage(GetLastError()) on Windows platforms. 
+\end{DoxyReturn}
+\index{ost::AudioFile@{ost::AudioFile}!afSeek@{afSeek}}
+\index{afSeek@{afSeek}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{afSeek}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::AudioFile::afSeek (unsigned long {\em pos})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_audio_file_abb103103800873c272940685d7d73bda}
+
+
+Seek to the given position relative to the start of the file and set the file pointer. This does not use 64-\/bit clean seek functions, so seeking to positions greater than (2$^\wedge$32)-\/1 will result in undefined behavior.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em pos}]The position to seek to. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful, false otherwise. 
+\end{DoxyReturn}
+\index{ost::AudioFile@{ost::AudioFile}!afWrite@{afWrite}}
+\index{afWrite@{afWrite}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{afWrite}]{\setlength{\rightskip}{0pt plus 5cm}virtual int ost::AudioFile::afWrite (unsigned char $\ast$ {\em data}, \/  unsigned {\em size})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_audio_file_a79a6020d043bf65659a114420af86c04}
+
+
+Write a number of bytes into the file at the current file pointer. May be overridden by derived classes.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]A pointer to the buffer with the bytes to write. \item[{\em size}]The number of bytes to write from the buffer. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes written, or -\/1 if an error occurs. On UNIX platforms, use strerror(errno) to get the human-\/readable error string or FormatMessage(GetLastError()) on Windows platforms. 
+\end{DoxyReturn}
+\index{ost::AudioFile@{ost::AudioFile}!clear@{clear}}
+\index{clear@{clear}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void ost::AudioFile::clear (void)}\label{classost_1_1_audio_file_a9ba09de7cf15f819a798fd10fed10060}
+
+
+Clear the \doxyref{AudioFile}{p.}{classost_1_1_audio_file} structure. Called by \doxyref{AudioFile::close()}{p.}{classost_1_1_audio_file_aba0e5a66e006c61aef1ddbd018e2e7ed}. Sets all fields to zero and deletes the dynamically allocated memory pointed to by the pathname and info.annotation members. See \doxyref{AudioFile::initialize()}{p.}{classost_1_1_audio_file_a4bf7f795b71403f7f9946c105b5b5c5d} for the dynamic allocation code. \index{ost::AudioFile@{ost::AudioFile}!close@{close}}
+\index{close@{close}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}void ost::AudioFile::close (void)}\label{classost_1_1_audio_file_aba0e5a66e006c61aef1ddbd018e2e7ed}
+
+
+Close an object associated with an open file. This updates the header metadata with the file length if the file length has changed. 
+
+Reimplemented in {\bf ost::AudioStream} \doxyref{}{p.}{classost_1_1_audio_stream_a823bf9a3d64dbae7117b6c29681017d3}.\index{ost::AudioFile@{ost::AudioFile}!create@{create}}
+\index{create@{create}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}void ost::AudioFile::create (const char $\ast$ {\em name}, \/  {\bf Info} $\ast$ {\em info}, \/  bool {\em exclusive} = {\ttfamily false}, \/  {\bf timeout\_\-t} {\em framing} = {\ttfamily 0})}\label{classost_1_1_audio_file_af536da5d45926c3f75075c76f12ecb51}
+
+
+Create a new audio file and associate it with this object. Called implicitly by the three-\/argument version of the constructor.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]The name of the file to open. \item[{\em info}]The type of the audio file to be created. \item[{\em exclusive}]create option. \item[{\em framing}]time in milliseconds. \end{DoxyParams}
+
+
+Reimplemented in {\bf ost::AudioStream} \doxyref{}{p.}{classost_1_1_audio_stream_a58fd6f03aff924fdd330919caf543623}.\index{ost::AudioFile@{ost::AudioFile}!getAbsolutePosition@{getAbsolutePosition}}
+\index{getAbsolutePosition@{getAbsolutePosition}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{getAbsolutePosition}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long ost::AudioFile::getAbsolutePosition (void)}\label{classost_1_1_audio_file_a50401a6a8ab481d4e9a80cc4788c8d6d}
+
+
+Get the current file pointer in bytes relative to the start of the file. See \doxyref{getPosition()}{p.}{classost_1_1_audio_file_affbf0d290dceff5b9974fd7b4f07eadc} to determine the position relative to the start of the sample buffer.
+
+\begin{DoxyReturn}{Returns}
+The current file pointer in bytes relative to the start of the file. Returns 0 if the file is not open, is empty, or an error has occured. 
+\end{DoxyReturn}
+\index{ost::AudioFile@{ost::AudioFile}!getAge@{getAge}}
+\index{getAge@{getAge}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{getAge}]{\setlength{\rightskip}{0pt plus 5cm}time\_\-t ost::AudioFile::getAge (void)}\label{classost_1_1_audio_file_a5239719e8411bf6ee7f71a9f42ec9643}
+
+
+Returns age since last prior access. Used for cache computations.
+
+\begin{DoxyReturn}{Returns}
+age in seconds. 
+\end{DoxyReturn}
+\index{ost::AudioFile@{ost::AudioFile}!getAnnotation@{getAnnotation}}
+\index{getAnnotation@{getAnnotation}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{getAnnotation}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ ost::AudioFile::getAnnotation (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_audio_file_ae5c1671337f9c9c00e677065aaed6b38}
+
+
+Get annotation extracted from header of containing file. \begin{DoxyReturn}{Returns}
+annotation text if any, else NULL. 
+\end{DoxyReturn}
+\index{ost::AudioFile@{ost::AudioFile}!getBuffer@{getBuffer}}
+\index{getBuffer@{getBuffer}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{getBuffer}]{\setlength{\rightskip}{0pt plus 5cm}ssize\_\-t ost::AudioFile::getBuffer ({\bf Encoded} {\em buffer}, \/  size\_\-t {\em len} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_audio_file_a40e6fcddf43df289fef2f66ccbe84bbd}
+
+
+Retrieve bytes from the file into a memory buffer. This increments the file pointer so subsequent calls read further bytes. If you want to read a number of samples rather than bytes, use \doxyref{getSamples()}{p.}{classost_1_1_audio_file_a9bb99aa5d59ef9414b8bac9b8086edad}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]area to copy the samples to. \item[{\em len}]The number of bytes (not samples) to copy or 0 for frame. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes (not samples) read. Returns -\/1 if no bytes are read and an error occurs. 
+\end{DoxyReturn}
+
+
+Implements {\bf ost::AudioBase} \doxyref{}{p.}{classost_1_1_audio_base_ac2efc5edeab71de84764796d4353a057}.
+
+Reimplemented in {\bf ost::AudioStream} \doxyref{}{p.}{classost_1_1_audio_stream_a32945278bd2fcb2b03c97f15d78f571b}.\index{ost::AudioFile@{ost::AudioFile}!getCodec@{getCodec}}
+\index{getCodec@{getCodec}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{getCodec}]{\setlength{\rightskip}{0pt plus 5cm}{\bf AudioCodec}$\ast$ ost::AudioFile::getCodec (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_file_a5a2a7d99d0b81e72b88cea73294de33b}
+
+
+Reimplemented in {\bf ost::AudioStream} \doxyref{}{p.}{classost_1_1_audio_stream_a47823d4a7bc81c6fd488af7df15ed755}.\index{ost::AudioFile@{ost::AudioFile}!getContinuation@{getContinuation}}
+\index{getContinuation@{getContinuation}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{getContinuation}]{\setlength{\rightskip}{0pt plus 5cm}virtual char$\ast$ ost::AudioFile::getContinuation (void)\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classost_1_1_audio_file_a776d3b9884e4138496ad5a1eedfdbc33}
+
+
+This function is used to splice multiple audio files together into a single stream of continues audio data. The continuation method returns the next audio file to open.
+
+\begin{DoxyReturn}{Returns}
+next file to open or NULL when done. 
+\end{DoxyReturn}
+\index{ost::AudioFile@{ost::AudioFile}!getEncoding@{getEncoding}}
+\index{getEncoding@{getEncoding}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{getEncoding}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Encoding} ost::AudioFile::getEncoding (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_audio_file_a7b9b5e2d9b8358477874aed0c610ee38}
+
+
+Return audio encoding format for this audio file. \begin{DoxyReturn}{Returns}
+audio encoding format. 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf ost::AudioBase} \doxyref{}{p.}{classost_1_1_audio_base_ac419b6c2407894a81147e05f5c5eed9c}.\index{ost::AudioFile@{ost::AudioFile}!getError@{getError}}
+\index{getError@{getError}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{getError}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Error} ost::AudioFile::getError (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_audio_file_aaa17fb3fc0909a04f407c2fad11eeb31}
+
+
+Get last error code. \begin{DoxyReturn}{Returns}
+alst error code. 
+\end{DoxyReturn}
+\index{ost::AudioFile@{ost::AudioFile}!getErrorStr@{getErrorStr}}
+\index{getErrorStr@{getErrorStr}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{getErrorStr}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::AudioFile::getErrorStr ({\bf Error} {\em err})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_file_ab5c5d566d756ac6c33b40a9555bdcfa5}
+
+
+Return a human-\/readable error message given a numeric error code of type \doxyref{Audio::Error}{p.}{classost_1_1_audio_a9b399c8c40f1c9c460490efeb3f86884}. 
+\begin{DoxyParams}{Parameters}
+\item[{\em err}]The numeric error code to translate. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to a character string containing the human-\/readable error message. 
+\end{DoxyReturn}
+\index{ost::AudioFile@{ost::AudioFile}!getFormat@{getFormat}}
+\index{getFormat@{getFormat}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{getFormat}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Format} ost::AudioFile::getFormat (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_audio_file_a8c44290b4185963301333e1605ab67d0}
+
+
+Return base file format of containing audio file. \begin{DoxyReturn}{Returns}
+audio file container format. 
+\end{DoxyReturn}
+\index{ost::AudioFile@{ost::AudioFile}!getHeader@{getHeader}}
+\index{getHeader@{getHeader}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{getHeader}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long ost::AudioFile::getHeader (void)\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classost_1_1_audio_file_a0332615031318a94f93272f59295f5e3}
+
+
+Get number of bytes in the file header. Data packets will begin after this header.
+
+\begin{DoxyReturn}{Returns}
+number of bytes in file header. 
+\end{DoxyReturn}
+\index{ost::AudioFile@{ost::AudioFile}!getInfo@{getInfo}}
+\index{getInfo@{getInfo}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{getInfo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Error} ost::AudioFile::getInfo ({\bf Info} $\ast$ {\em info})}\label{classost_1_1_audio_file_a2c684cf4a4cb6b6171d056ad3bc61c45}
+
+
+Copy the source description of the audio file into the specified object. 
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]pointer to object to copy source description into. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+errSucess. 
+\end{DoxyReturn}
+\index{ost::AudioFile@{ost::AudioFile}!getLinear@{getLinear}}
+\index{getLinear@{getLinear}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{getLinear}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::AudioFile::getLinear ({\bf Linear} {\em buffer}, \/  unsigned {\em request} = {\ttfamily 0})}\label{classost_1_1_audio_file_a77ddf4ca468cab1e60afd6240a134288}
+
+
+Retrieve and convert content to linear encoded audio data from it's original form. 
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]to copy linear data into. \item[{\em request}]number of linear samples to extract or 0 for frame. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of samples retrieved, 0 if no codec or eof. 
+\end{DoxyReturn}
+\index{ost::AudioFile@{ost::AudioFile}!getLong@{getLong}}
+\index{getLong@{getLong}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{getLong}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long ost::AudioFile::getLong (unsigned char $\ast$ {\em data})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_file_ace1ea2d5fd87a2b8be6e359f65de33b3}
+
+
+Convert binary 4 byte data stored in the order specified in the source description into a long variable. This is often used to manipulate header data.
+
+\begin{DoxyReturn}{Returns}
+long value. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]binary 4 byte data pointer. \end{DoxyParams}
+\index{ost::AudioFile@{ost::AudioFile}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{getPosition}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long ost::AudioFile::getPosition (void)}\label{classost_1_1_audio_file_affbf0d290dceff5b9974fd7b4f07eadc}
+
+
+Get the current file pointer in samples relative to the start of the sample buffer. Note that you must multiply this result by the result of a call to toBytes(info.encoding, 1) in order to determine the offset in bytes.
+
+\begin{DoxyReturn}{Returns}
+the current file pointer in samples relative to the start of the sample buffer. Returns 0 if the file is not open, is empty, or an error has occured. 
+\end{DoxyReturn}
+\index{ost::AudioFile@{ost::AudioFile}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{getPosition}]{\setlength{\rightskip}{0pt plus 5cm}void ost::AudioFile::getPosition (char $\ast$ {\em timestamp}, \/  size\_\-t {\em size})}\label{classost_1_1_audio_file_a5a993307ec0c18483dd455f79d0bcfd4}
+
+
+Return the timestamp of the current absolute file position. 
+\begin{DoxyParams}{Parameters}
+\item[{\em timestamp}]to save ascii position into. \item[{\em size}]of timestamp buffer. \end{DoxyParams}
+\index{ost::AudioFile@{ost::AudioFile}!getSampleRate@{getSampleRate}}
+\index{getSampleRate@{getSampleRate}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{getSampleRate}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::AudioFile::getSampleRate (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_audio_file_a3d271f6b81b9e9840150490d4725c620}
+
+
+Get audio encoding sample rate, in samples per second, for this audio file. \begin{DoxyReturn}{Returns}
+sample rate. 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf ost::AudioBase} \doxyref{}{p.}{classost_1_1_audio_base_a438fa2853fd7683b06a5939c115aaa4c}.\index{ost::AudioFile@{ost::AudioFile}!getSamples@{getSamples}}
+\index{getSamples@{getSamples}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{getSamples}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Error} ost::AudioFile::getSamples (void $\ast$ {\em buffer}, \/  unsigned {\em samples} = {\ttfamily 0})}\label{classost_1_1_audio_file_a9bb99aa5d59ef9414b8bac9b8086edad}
+
+
+Retrieve samples from the file into a memory buffer. This increments the file pointer so subsequent calls read further samples. If a limit has been set using \doxyref{setLimit()}{p.}{classost_1_1_audio_file_aefc09014ae763a526aff04c818147476}, the number of samples read will be truncated to the limit position. If you want to read a certain number of bytes rather than a certain number of samples, use \doxyref{getBuffer()}{p.}{classost_1_1_audio_file_a40e6fcddf43df289fef2f66ccbe84bbd}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]pointer to copy the samples to. \item[{\em samples}]The number of samples to read or 0 for frame. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+errSuccess if successful, !errSuccess if error. Use \doxyref{getErrorStr()}{p.}{classost_1_1_audio_file_ab5c5d566d756ac6c33b40a9555bdcfa5} to retrieve the human-\/readable error string. 
+\end{DoxyReturn}
+\index{ost::AudioFile@{ost::AudioFile}!getShort@{getShort}}
+\index{getShort@{getShort}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{getShort}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short ost::AudioFile::getShort (unsigned char $\ast$ {\em data})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_file_a948b62678f94efba102add295c7398bd}
+
+
+Convert binary 2 byte data stored in the order specified in the source description into a short variable. This is often used to manipulate header data.
+
+\begin{DoxyReturn}{Returns}
+short value. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]binary 2 byte data pointer. \end{DoxyParams}
+\index{ost::AudioFile@{ost::AudioFile}!getSize@{getSize}}
+\index{getSize@{getSize}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{getSize}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t ost::AudioFile::getSize (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_audio_file_ab7d003202eac30515f2a7f87b6186b36}
+
+
+Get maximum size of frame buffer for data use. \begin{DoxyReturn}{Returns}
+max frame size in bytes. 
+\end{DoxyReturn}
+\index{ost::AudioFile@{ost::AudioFile}!getWaveFormat@{getWaveFormat}}
+\index{getWaveFormat@{getWaveFormat}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{getWaveFormat}]{\setlength{\rightskip}{0pt plus 5cm}void ost::AudioFile::getWaveFormat (int {\em size})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_file_a681306f00673b11777bf8330eb4e533b}
+\index{ost::AudioFile@{ost::AudioFile}!hasPositioning@{hasPositioning}}
+\index{hasPositioning@{hasPositioning}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{hasPositioning}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::AudioFile::hasPositioning (void)\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classost_1_1_audio_file_ae536bde9ea42d58957880b26e35e19c3}
+
+
+Return true if underlying derived class supports direct access to file positioning. Derived classes based on URL's or fifo devices may not have this ability.
+
+\begin{DoxyReturn}{Returns}
+true if file positioning is supported. 
+\end{DoxyReturn}
+\index{ost::AudioFile@{ost::AudioFile}!initialize@{initialize}}
+\index{initialize@{initialize}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void ost::AudioFile::initialize (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_file_a4bf7f795b71403f7f9946c105b5b5c5d}
+\index{ost::AudioFile@{ost::AudioFile}!isOpen@{isOpen}}
+\index{isOpen@{isOpen}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{isOpen}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::AudioFile::isOpen (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_audio_file_a20643f6badb06c1993773f4341ef91e6}
+
+
+Test if the file is opened. \begin{DoxyReturn}{Returns}
+true if a file is open. 
+\end{DoxyReturn}
+\index{ost::AudioFile@{ost::AudioFile}!isSigned@{isSigned}}
+\index{isSigned@{isSigned}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{isSigned}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::AudioFile::isSigned (void)}\label{classost_1_1_audio_file_a8ed546acdfe452bb642364d486036f9f}
+
+
+Return if the current content is signed or unsigned samples. \begin{DoxyReturn}{Returns}
+true if signed. 
+\end{DoxyReturn}
+\index{ost::AudioFile@{ost::AudioFile}!mp3info@{mp3info}}
+\index{mp3info@{mp3info}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{mp3info}]{\setlength{\rightskip}{0pt plus 5cm}void ost::AudioFile::mp3info ({\bf mpeg\_\-audio} $\ast$ {\em mp3})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_file_a672f424a774eadfc8b5bf5c62903dc00}
+\index{ost::AudioFile@{ost::AudioFile}!open@{open}}
+\index{open@{open}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}void ost::AudioFile::open (const char $\ast$ {\em name}, \/  {\bf Mode} {\em mode} = {\ttfamily modeWrite}, \/  {\bf timeout\_\-t} {\em framing} = {\ttfamily 0})}\label{classost_1_1_audio_file_a6aa46c6af42e7155be4f92d1b7e0109b}
+
+
+Open an audio file and associate it with this object. Called implicitly by the two-\/argument version of the constructor.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]of the file to open. Don't forget to double your backslashes for DOS-\/style pathnames. \item[{\em mode}]to open file under. \item[{\em framing}]time in milliseconds. \end{DoxyParams}
+
+
+Reimplemented in {\bf ost::AudioStream} \doxyref{}{p.}{classost_1_1_audio_stream_a2dba2a15630314e4eb6a134ca82b5a60}.\index{ost::AudioFile@{ost::AudioFile}!operator!@{operator!}}
+\index{operator!@{operator!}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{operator!}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::AudioFile::operator! (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_audio_file_ab17b3dbcc1893d572efe92bfc0f15390}
+\index{ost::AudioFile@{ost::AudioFile}!position@{position}}
+\index{position@{position}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Error} ost::AudioFile::position (const char $\ast$ {\em timestamp})}\label{classost_1_1_audio_file_a46e8267b131d44140c3c0a559b03d29e}
+
+
+Seek a file position by timestamp. The actual position will be rounded by framing.
+
+\begin{DoxyReturn}{Returns}
+errSuccess if successful. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em timestamp}]position to seek. \end{DoxyParams}
+\index{ost::AudioFile@{ost::AudioFile}!putBuffer@{putBuffer}}
+\index{putBuffer@{putBuffer}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{putBuffer}]{\setlength{\rightskip}{0pt plus 5cm}ssize\_\-t ost::AudioFile::putBuffer ({\bf Encoded} {\em buffer}, \/  size\_\-t {\em len} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_audio_file_a6d53c942621cae134b021b57064b4004}
+
+
+Insert bytes into the file from a memory buffer. This increments the file pointer so subsequent calls append further samples. If you want to write a number of samples rather than bytes, use \doxyref{putSamples()}{p.}{classost_1_1_audio_file_a5ce6a635542e569fdbbc8edaf0272a5d}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]area to append the samples from. \item[{\em len}]The number of bytes (not samples) to append. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes (not samples) read. Returns -\/1 if an error occurs and no bytes are written. 
+\end{DoxyReturn}
+
+
+Implements {\bf ost::AudioBase} \doxyref{}{p.}{classost_1_1_audio_base_a4f8127866aad2198934215ea55e892a2}.\index{ost::AudioFile@{ost::AudioFile}!putLinear@{putLinear}}
+\index{putLinear@{putLinear}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{putLinear}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::AudioFile::putLinear ({\bf Linear} {\em buffer}, \/  unsigned {\em request} = {\ttfamily 0})}\label{classost_1_1_audio_file_ab941daafb0edc6e4d8e8dd24e02e2996}
+
+
+Convert and store content from linear encoded audio data to the format of the audio file. 
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]to copy linear data from. \item[{\em request}]Number of linear samples to save or 0 for frame. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of samples saved, 0 if no codec or eof. 
+\end{DoxyReturn}
+\index{ost::AudioFile@{ost::AudioFile}!putSamples@{putSamples}}
+\index{putSamples@{putSamples}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{putSamples}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Error} ost::AudioFile::putSamples (void $\ast$ {\em buffer}, \/  unsigned {\em samples} = {\ttfamily 0})}\label{classost_1_1_audio_file_a5ce6a635542e569fdbbc8edaf0272a5d}
+
+
+Insert samples into the file from a memory buffer. This increments the file pointer so subsequent calls append further samples. If you want to write a certain number of bytes rather than a certain number of samples, use \doxyref{putBuffer()}{p.}{classost_1_1_audio_file_a6d53c942621cae134b021b57064b4004}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]pointer to append the samples from. \item[{\em samples}]The number of samples (not bytes) to append. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+errSuccess if successful, !errSuccess if error. Use \doxyref{getErrorStr()}{p.}{classost_1_1_audio_file_ab5c5d566d756ac6c33b40a9555bdcfa5} to retrieve the human-\/readable error string. 
+\end{DoxyReturn}
+\index{ost::AudioFile@{ost::AudioFile}!setError@{setError}}
+\index{setError@{setError}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{setError}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Error} ost::AudioFile::setError ({\bf Error} {\em err})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_file_af99312145e575f1997fc3dd7fe358b23}
+\index{ost::AudioFile@{ost::AudioFile}!setLimit@{setLimit}}
+\index{setLimit@{setLimit}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{setLimit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Error} ost::AudioFile::setLimit (unsigned long {\em maximum} = {\ttfamily 0l})}\label{classost_1_1_audio_file_aefc09014ae763a526aff04c818147476}
+
+
+Set the maximum file position for reading and writing of audio data by samples. If 0, then no limit is set.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em maximum}]file i/o access size sample position. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+errSuccess if successful. 
+\end{DoxyReturn}
+\index{ost::AudioFile@{ost::AudioFile}!setLong@{setLong}}
+\index{setLong@{setLong}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{setLong}]{\setlength{\rightskip}{0pt plus 5cm}void ost::AudioFile::setLong (unsigned char $\ast$ {\em data}, \/  unsigned long {\em value})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_file_a328422764d2f68036d922767cf5b9e69}
+
+
+Save a long as four byte binary data stored in the endian order specified in the source description. This is often used to manipulate header data.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]binary 4 byte data pointer. \item[{\em value}]to convert. \end{DoxyParams}
+\index{ost::AudioFile@{ost::AudioFile}!setMinimum@{setMinimum}}
+\index{setMinimum@{setMinimum}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{setMinimum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Error} ost::AudioFile::setMinimum (unsigned long {\em minimum})}\label{classost_1_1_audio_file_aaf4e8c6db995e308d69a21d158cdea58}
+
+
+Set minimum file size for a created file. If the file is closed with fewer samples than this, it will also be deleted.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em minimum}]number of samples for new file. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+errSuccess if successful. 
+\end{DoxyReturn}
+\index{ost::AudioFile@{ost::AudioFile}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{setPosition}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Error} ost::AudioFile::setPosition (unsigned long {\em samples} = {\ttfamily $\sim$0l})}\label{classost_1_1_audio_file_a231e5107dd68988de78c38c8792a6af6}
+
+
+Seek a file position by sample count. If no position specified, then seeks to end of file.
+
+\begin{DoxyReturn}{Returns}
+errSuccess or error condition on failure. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em samples}]position to seek in file. \end{DoxyParams}
+\index{ost::AudioFile@{ost::AudioFile}!setShort@{setShort}}
+\index{setShort@{setShort}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{setShort}]{\setlength{\rightskip}{0pt plus 5cm}void ost::AudioFile::setShort (unsigned char $\ast$ {\em data}, \/  unsigned short {\em value})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_file_ad52aa34c45c18c949549e3f7a71c3412}
+
+
+Save a short as two byte binary data stored in the endian order specified in the source description. This is often used to manipulate header data.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]binary 2 byte data pointer. \item[{\em value}]to convert. \end{DoxyParams}
+\index{ost::AudioFile@{ost::AudioFile}!skip@{skip}}
+\index{skip@{skip}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{skip}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Error} ost::AudioFile::skip (long {\em number})}\label{classost_1_1_audio_file_ac8b03c353b059994588581765460e1de}
+
+
+Change the file position by skipping a specified number of audio samples of audio data. \begin{DoxyReturn}{Returns}
+errSuccess or error condition on failure. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em number}]of samples to skip. \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\index{ost::AudioFile@{ost::AudioFile}!error@{error}}
+\index{error@{error}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Error} {\bf ost::AudioFile::error}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_file_a77c0be5d7e5d485647dc4be6804bf9e0}
+\index{ost::AudioFile@{ost::AudioFile}!fd@{fd}}
+\index{fd@{fd}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{fd}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ost::AudioFile::fd}}\label{classost_1_1_audio_file_aebecf3ec38c4c0bac4ec9d6e73f8f45a}
+\index{ost::AudioFile@{ost::AudioFile}!file@{file}}
+\index{file@{file}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{file}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \}   {\bf ost::AudioFile::file}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_file_a6345e33f09bdee73f70cf7bd36034908}
+\index{ost::AudioFile@{ost::AudioFile}!handle@{handle}}
+\index{handle@{handle}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{handle}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf ost::AudioFile::handle}}\label{classost_1_1_audio_file_a609c920702b304e2f9fd8834aa92c789}
+\index{ost::AudioFile@{ost::AudioFile}!header@{header}}
+\index{header@{header}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{header}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long {\bf ost::AudioFile::header}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_file_a3e41041fca381f436c3dca571e82a10e}
+\index{ost::AudioFile@{ost::AudioFile}!iolimit@{iolimit}}
+\index{iolimit@{iolimit}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{iolimit}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long {\bf ost::AudioFile::iolimit}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_file_aec017418b5c61090fd8f45d5b29de0cf}
+\index{ost::AudioFile@{ost::AudioFile}!length@{length}}
+\index{length@{length}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{length}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long {\bf ost::AudioFile::length}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_file_a60bcd432e3ee53b06284b9dcbb9568dc}
+\index{ost::AudioFile@{ost::AudioFile}!minimum@{minimum}}
+\index{minimum@{minimum}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{minimum}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long {\bf ost::AudioFile::minimum}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_file_a95e71e5d7bc03fa97a8ccb21c89f5c98}
+\index{ost::AudioFile@{ost::AudioFile}!mode@{mode}}
+\index{mode@{mode}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mode} {\bf ost::AudioFile::mode}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_file_a8bda31d8252da3502844381bf6173f45}
+\index{ost::AudioFile@{ost::AudioFile}!pathname@{pathname}}
+\index{pathname@{pathname}!ost::AudioFile@{ost::AudioFile}}
+\subsubsection[{pathname}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf ost::AudioFile::pathname}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_file_a64e4bc2f136643948f96614f4d9a427c}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf audio2.h}\end{DoxyCompactItemize}

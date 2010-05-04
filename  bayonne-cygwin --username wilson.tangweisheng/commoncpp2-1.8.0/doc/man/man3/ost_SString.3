@@ -1,0 +1,56 @@
+.TH "ost::SString" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::SString \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <string.h>\fP
+.PP
+Inherits \fBost::String\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSString\fP ()"
+.br
+.RI "\fICreate an empty streamable string ready for input. \fP"
+.ti -1c
+.RI "\fBSString\fP (const \fBSString\fP &from)"
+.br
+.RI "\fICopy constructor. \fP"
+.ti -1c
+.RI "\fB~SString\fP ()"
+.br
+.RI "\fICancel out the object. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBoverflow\fP (int c)"
+.br
+.RI "\fIThis is the streambuf function that actually outputs the data to the string. \fP"
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::SString::SString ()"
+.PP
+Create an empty streamable string ready for input. 
+.SS "ost::SString::SString (const \fBSString\fP & from)"
+.PP
+Copy constructor. 
+.SS "ost::SString::~SString ()"
+.PP
+Cancel out the object. 
+.SH "Member Function Documentation"
+.PP 
+.SS "int ost::SString::overflow (int c)\fC [protected]\fP"
+.PP
+This is the streambuf function that actually outputs the data to the string. Since all output should be done with the standard ostream operators, this function should never be called directly. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

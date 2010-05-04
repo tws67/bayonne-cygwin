@@ -1,0 +1,73 @@
+\section{ost::AudioBuffer Class Reference}
+\label{classost_1_1_audio_buffer}\index{ost::AudioBuffer@{ost::AudioBuffer}}
+
+
+The \doxyref{AudioBuffer}{p.}{classost_1_1_audio_buffer} class is for mixing one-\/to-\/one soft joins.  
+
+
+{\ttfamily \#include $<$audio2.h$>$}Inheritance diagram for ost::AudioBuffer::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classost_1_1_audio_buffer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf AudioBuffer} ({\bf Info} $\ast${\bf info}, size\_\-t size=4096)
+\item 
+virtual {\bf $\sim$AudioBuffer} ()
+\item 
+ssize\_\-t {\bf getBuffer} ({\bf Encoded} data, size\_\-t number)
+\begin{DoxyCompactList}\small\item\em save audio data from buffer data. \item\end{DoxyCompactList}\item 
+ssize\_\-t {\bf putBuffer} ({\bf Encoded} data, size\_\-t number)
+\begin{DoxyCompactList}\small\item\em Put data into the audio buffer. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \doxyref{AudioBuffer}{p.}{classost_1_1_audio_buffer} class is for mixing one-\/to-\/one soft joins. \begin{DoxyAuthor}{Author}
+Mark Lipscombe $<${\tt markl@gasupnow.com}$>$ audio buffer mixer class 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::AudioBuffer@{ost::AudioBuffer}!AudioBuffer@{AudioBuffer}}
+\index{AudioBuffer@{AudioBuffer}!ost::AudioBuffer@{ost::AudioBuffer}}
+\subsubsection[{AudioBuffer}]{\setlength{\rightskip}{0pt plus 5cm}ost::AudioBuffer::AudioBuffer ({\bf Info} $\ast$ {\em info}, \/  size\_\-t {\em size} = {\ttfamily 4096})}\label{classost_1_1_audio_buffer_a39ddb2920d6b421dabca98ac92221996}
+\index{ost::AudioBuffer@{ost::AudioBuffer}!$\sim$AudioBuffer@{$\sim$AudioBuffer}}
+\index{$\sim$AudioBuffer@{$\sim$AudioBuffer}!ost::AudioBuffer@{ost::AudioBuffer}}
+\subsubsection[{$\sim$AudioBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual ost::AudioBuffer::$\sim$AudioBuffer ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_audio_buffer_a7829566cc5246824dcb670df9ae75233}
+
+
+\subsection{Member Function Documentation}
+\index{ost::AudioBuffer@{ost::AudioBuffer}!getBuffer@{getBuffer}}
+\index{getBuffer@{getBuffer}!ost::AudioBuffer@{ost::AudioBuffer}}
+\subsubsection[{getBuffer}]{\setlength{\rightskip}{0pt plus 5cm}ssize\_\-t ost::AudioBuffer::getBuffer ({\bf Encoded} {\em data}, \/  size\_\-t {\em number})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_audio_buffer_afd4bc8c265125e0809165c50ee2dac57}
+
+
+save audio data from buffer data. \begin{DoxyReturn}{Returns}
+number of bytes actually saved. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]save buffer. \item[{\em number}]of bytes to save. \end{DoxyParams}
+
+
+Implements {\bf ost::AudioBase} \doxyref{}{p.}{classost_1_1_audio_base_ac2efc5edeab71de84764796d4353a057}.\index{ost::AudioBuffer@{ost::AudioBuffer}!putBuffer@{putBuffer}}
+\index{putBuffer@{putBuffer}!ost::AudioBuffer@{ost::AudioBuffer}}
+\subsubsection[{putBuffer}]{\setlength{\rightskip}{0pt plus 5cm}ssize\_\-t ost::AudioBuffer::putBuffer ({\bf Encoded} {\em data}, \/  size\_\-t {\em number})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_audio_buffer_a398d028be8c691e8107073308f4507bc}
+
+
+Put data into the audio buffer. \begin{DoxyReturn}{Returns}
+number of bytes actually put. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]of data to load. \item[{\em number}]of bytes to load. \end{DoxyParams}
+
+
+Implements {\bf ost::AudioBase} \doxyref{}{p.}{classost_1_1_audio_base_a4f8127866aad2198934215ea55e892a2}.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf audio2.h}\end{DoxyCompactItemize}

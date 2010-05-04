@@ -1,0 +1,143 @@
+.TH "ost::Datetime" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::Datetime \- 
+.PP
+The \fBDatetime\fP class uses a julian date representation of the current year, month, and day and a integer representation of the current time.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <numbers.h>\fP
+.PP
+Inherits \fBost::Date\fP, and \fBost::Time\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDatetime\fP (time_t tm)"
+.br
+.ti -1c
+.RI "\fBDatetime\fP (tm *dt)"
+.br
+.ti -1c
+.RI "\fBDatetime\fP (const char *str, size_t size=0)"
+.br
+.ti -1c
+.RI "\fBDatetime\fP (int year, unsigned month, unsigned day, int hour, int minute, int second)"
+.br
+.ti -1c
+.RI "\fBDatetime\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Datetime\fP ()"
+.br
+.ti -1c
+.RI "char * \fBgetDatetime\fP (char *buffer) const "
+.br
+.ti -1c
+.RI "time_t \fBgetDatetime\fP (void) const "
+.br
+.ti -1c
+.RI "bool \fBisValid\fP (void) const "
+.br
+.ti -1c
+.RI "\fBDatetime\fP & \fBoperator=\fP (const \fBDatetime\fP datetime)"
+.br
+.ti -1c
+.RI "\fBDatetime\fP & \fBoperator+=\fP (const \fBDatetime\fP &datetime)"
+.br
+.ti -1c
+.RI "\fBDatetime\fP & \fBoperator-=\fP (const \fBDatetime\fP &datetime)"
+.br
+.ti -1c
+.RI "\fBDatetime\fP & \fBoperator+=\fP (const \fBTime\fP &time)"
+.br
+.ti -1c
+.RI "\fBDatetime\fP & \fBoperator-=\fP (const \fBTime\fP &time)"
+.br
+.ti -1c
+.RI "int \fBoperator==\fP (const \fBDatetime\fP &)"
+.br
+.ti -1c
+.RI "int \fBoperator!=\fP (const \fBDatetime\fP &)"
+.br
+.ti -1c
+.RI "int \fBoperator<\fP (const \fBDatetime\fP &)"
+.br
+.ti -1c
+.RI "int \fBoperator<=\fP (const \fBDatetime\fP &)"
+.br
+.ti -1c
+.RI "int \fBoperator>\fP (const \fBDatetime\fP &)"
+.br
+.ti -1c
+.RI "int \fBoperator>=\fP (const \fBDatetime\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator!\fP () const "
+.br
+.ti -1c
+.RI "\fBString\fP \fBstrftime\fP (const char *format) const "
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBDatetime\fP class uses a julian date representation of the current year, month, and day and a integer representation of the current time. 
+
+This is then manipulated in several forms and may be exported as needed.
+.PP
+\fBAuthor:\fP
+.RS 4
+Marcelo Dalmas <mad@brasmap.com.br> Integer based time class. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::Datetime::Datetime (time_t tm)"
+.SS "ost::Datetime::Datetime (tm * dt)"
+.SS "ost::Datetime::Datetime (const char * str, size_t size = \fC0\fP)"
+.SS "ost::Datetime::Datetime (int year, unsigned month, unsigned day, int hour, int minute, int second)"
+.SS "ost::Datetime::Datetime ()"
+.SS "virtual ost::Datetime::~Datetime ()\fC [virtual]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "time_t ost::Datetime::getDatetime (void) const"
+.SS "char* ost::Datetime::getDatetime (char * buffer) const"
+.SS "bool ost::Datetime::isValid (void) const"
+.PP
+Reimplemented from \fBost::Date\fP.
+.SS "bool ost::Datetime::operator! () const"
+.PP
+Reimplemented from \fBost::Date\fP.
+.SS "int ost::Datetime::operator!= (const \fBDatetime\fP &)"
+.PP
+Reimplemented from \fBost::Date\fP.
+.SS "\fBDatetime\fP& ost::Datetime::operator+= (const \fBTime\fP & time)"
+.SS "\fBDatetime\fP& ost::Datetime::operator+= (const \fBDatetime\fP & datetime)"
+.SS "\fBDatetime\fP& ost::Datetime::operator-= (const \fBTime\fP & time)"
+.SS "\fBDatetime\fP& ost::Datetime::operator-= (const \fBDatetime\fP & datetime)"
+.SS "int ost::Datetime::operator< (const \fBDatetime\fP &)"
+.PP
+Reimplemented from \fBost::Date\fP.
+.SS "int ost::Datetime::operator<= (const \fBDatetime\fP &)"
+.PP
+Reimplemented from \fBost::Date\fP.
+.SS "\fBDatetime\fP& ost::Datetime::operator= (const \fBDatetime\fP datetime)"
+.SS "int ost::Datetime::operator== (const \fBDatetime\fP &)"
+.PP
+Reimplemented from \fBost::Date\fP.
+.SS "int ost::Datetime::operator> (const \fBDatetime\fP &)"
+.PP
+Reimplemented from \fBost::Date\fP.
+.SS "int ost::Datetime::operator>= (const \fBDatetime\fP &)"
+.PP
+Reimplemented from \fBost::Date\fP.
+.SS "\fBString\fP ost::Datetime::strftime (const char * format) const"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

@@ -1,0 +1,139 @@
+.TH "ost::SerialService" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::SerialService \- 
+.PP
+The \fBSerialService\fP is a thead service object that is meant to service attached serial ports.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <serial.h>\fP
+.PP
+Inherits \fBost::Thread\fP, and \fBost::Mutex\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBupdate\fP (unsigned char flag=0xff)"
+.br
+.RI "\fINotify service thread that a port has been added or removed, or a timer changed, so that a new schedule can be computed for expiring attached ports. \fP"
+.ti -1c
+.RI "\fBSerialService\fP (int pri=0, size_t stack=0, const char *id=NULL)"
+.br
+.RI "\fICreate a service thread for attaching serial ports. \fP"
+.ti -1c
+.RI "virtual \fB~SerialService\fP ()"
+.br
+.RI "\fITerminate the service thread and update attached objects. \fP"
+.ti -1c
+.RI "int \fBgetCount\fP (void)"
+.br
+.RI "\fIGet current reference count. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBonUpdate\fP (unsigned char flag)"
+.br
+.RI "\fIA virtual handler for processing user defined update requests (1-254) which have been posted through Update. \fP"
+.ti -1c
+.RI "virtual void \fBonEvent\fP (void)"
+.br
+.RI "\fIA virtual handler for event loop calls. \fP"
+.ti -1c
+.RI "virtual void \fBonCallback\fP (\fBSerialPort\fP *port)"
+.br
+.RI "\fIA virtual handler for adding support for additional callback events into \fBSerialPort\fP. \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBSerialPort\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBSerialService\fP is a thead service object that is meant to service attached serial ports. 
+
+Multiple pool objects may be created and multiple serial ports may be attached to the same thread of of execution. This allows one to balance threads and the serial ports they service.
+.PP
+The TTYPort and TTYService classes are used to form thread-pool serviced serial I/O protocol sets. These can be used when one has a large number of serial devices to manage, and a single (or limited number of) thread(s) can then be used to service the tty port objects present. Each tty port supports a timer control and several virtual methods that the service thread can call when events occur. This model provides for 'callback' event management, whereby the service thread performs a 'callback' into the port object when events occur. Specific events supported include the expiration of a TTYPort timer, pending input data waiting to be read, and 'sighup' connection breaks.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> \fBThread\fP pool service for serial ports. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::SerialService::SerialService (int pri = \fC0\fP, size_t stack = \fC0\fP, const char * id = \fCNULL\fP)"
+.PP
+Create a service thread for attaching serial ports. The thread begins execution with the first attached port.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpri\fP of this thread to run under. 
+.br
+\fIstack\fP stack size. 
+.br
+\fIid\fP stack ID. 
+.RE
+.PP
+
+.SS "virtual ost::SerialService::~SerialService ()\fC [virtual]\fP"
+.PP
+Terminate the service thread and update attached objects. 
+.SH "Member Function Documentation"
+.PP 
+.SS "int ost::SerialService::getCount (void)\fC [inline]\fP"
+.PP
+Get current reference count. This can be used when selecting the lead used service handler from a pool.
+.PP
+\fBReturns:\fP
+.RS 4
+count of active ports. 
+.RE
+.PP
+
+.SS "virtual void ost::SerialService::onCallback (\fBSerialPort\fP * port)\fC [protected, virtual]\fP"
+.PP
+A virtual handler for adding support for additional callback events into \fBSerialPort\fP. \fBParameters:\fP
+.RS 4
+\fIport\fP serial port currently being evaluated. 
+.RE
+.PP
+
+.SS "virtual void ost::SerialService::onEvent (void)\fC [protected, virtual]\fP"
+.PP
+A virtual handler for event loop calls. This can be used to extend event loop processing. 
+.SS "virtual void ost::SerialService::onUpdate (unsigned char flag)\fC [protected, virtual]\fP"
+.PP
+A virtual handler for processing user defined update requests (1-254) which have been posted through Update. \fBParameters:\fP
+.RS 4
+\fIflag\fP of update request. 
+.RE
+.PP
+
+.SS "void ost::SerialService::update (unsigned char flag = \fC0xff\fP)"
+.PP
+Notify service thread that a port has been added or removed, or a timer changed, so that a new schedule can be computed for expiring attached ports. This can also be used to pass requests to the OnUpdate() event handler.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIflag\fP event for OnUpdate, termination, or reschedule. 
+.RE
+.PP
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBSerialPort\fP\fC [friend]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

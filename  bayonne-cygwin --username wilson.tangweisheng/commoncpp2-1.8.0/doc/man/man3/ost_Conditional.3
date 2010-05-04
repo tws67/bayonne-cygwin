@@ -1,0 +1,156 @@
+.TH "ost::Conditional" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::Conditional \- 
+.PP
+A conditional variable synchcronization object for one to one and one to many signal and control events between processes.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <thread.h>\fP
+.PP
+Inherited by \fBost::Buffer\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBConditional\fP (const char *id=NULL)"
+.br
+.RI "\fICreate an instance of a conditional. \fP"
+.ti -1c
+.RI "virtual \fB~Conditional\fP ()"
+.br
+.RI "\fIDestroy the conditional. \fP"
+.ti -1c
+.RI "void \fBsignal\fP (bool broadcast)"
+.br
+.RI "\fISignal a conditional object and a waiting threads. \fP"
+.ti -1c
+.RI "bool \fBwait\fP (\fBtimeout_t\fP timer=0, bool locked=false)"
+.br
+.RI "\fIWait to be signaled from another thread. \fP"
+.ti -1c
+.RI "void \fBenterMutex\fP (void)"
+.br
+.RI "\fILocks the conditional's mutex for this thread. \fP"
+.ti -1c
+.RI "void \fBlock\fP (void)"
+.br
+.RI "\fIIn the future we will use lock in place of enterMutex since the conditional composite is not a recursive mutex, and hence using enterMutex may cause confusion in expectation with the behavior of the \fBMutex\fP class. \fP"
+.ti -1c
+.RI "bool \fBtryEnterMutex\fP (void)"
+.br
+.RI "\fITries to lock the conditional for the current thread. \fP"
+.ti -1c
+.RI "bool \fBtest\fP (void)"
+.br
+.ti -1c
+.RI "void \fBleaveMutex\fP (void)"
+.br
+.RI "\fILeaving a mutex frees that mutex for use by another thread. \fP"
+.ti -1c
+.RI "void \fBunlock\fP (void)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A conditional variable synchcronization object for one to one and one to many signal and control events between processes. 
+
+\fBConditional\fP variables may wait for and receive signals to notify when to resume or perform operations. Multiple waiting threads may be woken with a broadcast signal.
+.PP
+\fBWarning:\fP
+.RS 4
+While this class inherits from \fBMutex\fP, the methods of the class \fBConditional\fP just handle the system conditional variable, so the user is responsible for calling enterMutex and leaveMutex so as to avoid race conditions. Another thing to note is that if you have several threads waiting on one condition, not uncommon in thread pools, each thread must take care to manually unlock the mutex if cancellation occurs. Otherwise the first thread cancelled will deadlock the rest of the thread.
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar conditional. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::Conditional::Conditional (const char * id = \fCNULL\fP)"
+.PP
+Create an instance of a conditional. \fBParameters:\fP
+.RS 4
+\fIid\fP name of conditional, optional for deadlock testing. 
+.RE
+.PP
+
+.SS "virtual ost::Conditional::~Conditional ()\fC [virtual]\fP"
+.PP
+Destroy the conditional. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::Conditional::enterMutex (void)"
+.PP
+Locks the conditional's mutex for this thread. Remember that Conditional's mutex is NOT a recursive mutex!
+.PP
+\fBSee also:\fP
+.RS 4
+\fBleaveMutex\fP 
+.RE
+.PP
+
+.SS "void ost::Conditional::leaveMutex (void)"
+.PP
+Leaving a mutex frees that mutex for use by another thread. \fBSee also:\fP
+.RS 4
+\fBenterMutex\fP 
+.RE
+.PP
+
+.SS "void ost::Conditional::lock (void)\fC [inline]\fP"
+.PP
+In the future we will use lock in place of enterMutex since the conditional composite is not a recursive mutex, and hence using enterMutex may cause confusion in expectation with the behavior of the \fBMutex\fP class. \fBSee also:\fP
+.RS 4
+\fBenterMutex\fP 
+.RE
+.PP
+
+.SS "void ost::Conditional::signal (bool broadcast)"
+.PP
+Signal a conditional object and a waiting threads. \fBParameters:\fP
+.RS 4
+\fIbroadcast\fP this signal to all waiting threads if true. 
+.RE
+.PP
+
+.SS "bool ost::Conditional::test (void)\fC [inline]\fP"
+.SS "bool ost::Conditional::tryEnterMutex (void)"
+.PP
+Tries to lock the conditional for the current thread. Behaves like \fBenterMutex\fP , except that it doesn't block the calling thread.
+.PP
+\fBReturns:\fP
+.RS 4
+true if locking the mutex was succesful otherwise false
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBenterMutex\fP 
+.PP
+\fBleaveMutex\fP 
+.RE
+.PP
+
+.SS "void ost::Conditional::unlock (void)\fC [inline]\fP"
+.SS "bool ost::Conditional::wait (\fBtimeout_t\fP timer = \fC0\fP, bool locked = \fCfalse\fP)"
+.PP
+Wait to be signaled from another thread. \fBParameters:\fP
+.RS 4
+\fItimer\fP time period to wait. 
+.br
+\fIlocked\fP flag if already locked the mutex. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

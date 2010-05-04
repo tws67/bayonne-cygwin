@@ -1,0 +1,43 @@
+# Directories...
+$prefix=@prefix@
+$exec_prefix=@exec_prefix@
+$bindir=@bindir@
+$confdir=@sysconfdir@
+$docdir=@prefix@/doc
+$mandir=@mandir@
+$datadir=@datadir@
+$libdir=@libdir@
+$srcdir=@top_srcdir@
+$includedir=@includedir@
+$infodir=@infodir@
+$codecdir=@codec_libdir@
+
+# Product information
+%product GNU ccAudio Framework
+%version @VERSION@ -100
+%copyright 1999-2003 Open Source Telecom Corporation
+%vendor Open Source Telecom Corp
+%license COPYING
+%readme README
+%description GNU ccAudio class library and AudioTool
+
+f 0755 root root ${bindir}/audiotool ./utils/.libs/audiotool
+f 0644 root root ${libdir}/pkgconfig/libccaudio2.pc libccaudio2.pc
+d 0755 root root ${includedir}/cc++
+f 0644 root root ${includedir}/cc++/audio2.h ./src/audio2.h
+f 0644 root root ${libdir} ./src/*.la
+f 0644 root root ${libdir} ./src/.libs/*.a
+d 0755 root root ${codecdir}
+f 0644 root root ${codecdir}/g.711 ./codecs/g.711
+%system darwin
+f 0644 root root ${libdir} ./src/.libs/libccaudio2-@VERSION@.dylib
+l 0644 root root ${libdir}/libccaudio2.dylib libccaudio2-@VERSION@.dylib
+l 0644 root root ${libdir}/libccaudio2.dylib-@VERSION@.@LT_SUBVER@.dylib libccaudio2-@VERSION@.dylib
+%system freebsd
+f 0644 root root ${libdir} ./src/.libs/libccaudio2-@LT_RELEASE@.so.*
+%system linux solaris
+f 0644 root root ${libdir} ./src/.libs/libccaudio2-@LT_RELEASE@.so.*.*.*
+%system linux freebsd
+%postinstall /sbin/ldconfig
+%postremove /sbin/ldconfig
+%system all

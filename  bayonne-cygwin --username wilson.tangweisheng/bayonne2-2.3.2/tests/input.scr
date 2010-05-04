@@ -1,0 +1,26 @@
+%% Copyright (C) 2005 Tycho Softworks.
+%%
+%% This file is free software; as a special exception the author gives
+%% unlimited permission to copy and/or distribute it, with or without
+%% modifications, as long as this notice is preserved.
+%%
+%% This program is distributed in the hope that it will be useful, but
+%% WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
+%% implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+%%
+%% Tests and demonstrates some of the features of Bayonne input processing,
+%% including the ability to process formatted input.
+
+	%% ignored if no sip driver loaded...
+	register.sip proxy=localhost uri=sip:test@localhost
+
+        string.12 %key
+%%       set %session.digits {123#456}  - use to prefeed
+        input %key timeout=5s format="????-??-??"
+        echo {input line } %key
+        echo %script.error
+%%        echo {remaining } %session.digits - used to show 456 remains
+        exit
+
+
+

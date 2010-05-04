@@ -1,0 +1,212 @@
+.TH "ost::TCPSocket" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::TCPSocket \- 
+.PP
+TCP sockets are used for stream based connected sessions between two sockets.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <socket.h>\fP
+.PP
+Inherits \fBost::Socket\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual bool \fBonAccept\fP (const \fBIPV4Host\fP &ia, \fBtpport_t\fP port)"
+.br
+.RI "\fIA method to call in a derived \fBTCPSocket\fP class that is acting as a server when a connection request is being accepted. \fP"
+.ti -1c
+.RI "\fBSOCKET\fP \fBgetSocket\fP (void)"
+.br
+.RI "\fIFetch out the socket. \fP"
+.ti -1c
+.RI "int \fBgetSegmentSize\fP (void)"
+.br
+.RI "\fIGet the buffer size for servers. \fP"
+.ti -1c
+.RI "\fBTCPSocket\fP (const \fBIPV4Address\fP &bind, \fBtpport_t\fP port, unsigned backlog=5, unsigned mss=536)"
+.br
+.RI "\fIA TCP 'server' is created as a TCP socket that is bound to a hardware address and port number on the local machine and that has a backlog queue to listen for remote connection requests. \fP"
+.ti -1c
+.RI "\fBTCPSocket\fP (const char *name, unsigned backlog=5, unsigned mss=536)"
+.br
+.RI "\fICreate a named tcp socket by service and/or interface id. \fP"
+.ti -1c
+.RI "\fBIPV4Host\fP \fBgetRequest\fP (\fBtpport_t\fP *port=NULL) const "
+.br
+.RI "\fIReturn address and port of next connection request. \fP"
+.ti -1c
+.RI "void \fBreject\fP (void)"
+.br
+.RI "\fIUsed to reject the next incoming connection request. \fP"
+.ti -1c
+.RI "\fBIPV4Host\fP \fBgetLocal\fP (\fBtpport_t\fP *port=NULL) const "
+.br
+.RI "\fIUsed to get local bound address. \fP"
+.ti -1c
+.RI "bool \fBisPendingConnection\fP (\fBtimeout_t\fP timeout=TIMEOUT_INF)"
+.br
+.RI "\fIUsed to wait for pending connection requests. \fP"
+.ti -1c
+.RI "virtual \fB~TCPSocket\fP ()"
+.br
+.RI "\fIUse base socket handler for ending this socket. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetSegmentSize\fP (unsigned mss)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBsegsize\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+TCP sockets are used for stream based connected sessions between two sockets. 
+
+Both error recovery and flow control operate transparently for a TCP socket connection. The TCP socket base class is primary used to bind a TCP 'server' for accepting TCP streams.
+.PP
+An implicit and unique \fBTCPSocket\fP object exists in Common C++ to represent a bound TCP socket acting as a 'server' for receiving connection requests. This class is not part of \fBTCPStream\fP because such objects normally perform no physical I/O (read or write operations) other than to specify a listen backlog queue and perform 'accept' operations for pending connections. The Common C++ \fBTCPSocket\fP offers a Peek method to examine where the next pending connection is coming from, and a Reject method to flush the next request from the queue without having to create a session.
+.PP
+The \fBTCPSocket\fP also supports a 'OnAccept' method which can be called when a \fBTCPStream\fP related object is created from a \fBTCPSocket\fP. By creating a \fBTCPStream\fP from a \fBTCPSocket\fP, an accept operation automatically occurs, and the \fBTCPSocket\fP can then still reject the client connection through the return status of it's OnAccept method.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@tycho.com> bound server for TCP streams and sessions. 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+.PP
+\fBtcp.cpp\fP, \fBtcpservice.cpp\fP, \fBtcpstr1.cpp\fP, and \fBtcpthread.cpp\fP.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::TCPSocket::TCPSocket (const \fBIPV4Address\fP & bind, \fBtpport_t\fP port, unsigned backlog = \fC5\fP, unsigned mss = \fC536\fP)"
+.PP
+A TCP 'server' is created as a TCP socket that is bound to a hardware address and port number on the local machine and that has a backlog queue to listen for remote connection requests. If the server cannot be created, an exception is thrown.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbind\fP local ip address or interface to use. 
+.br
+\fIport\fP number to bind socket under. 
+.br
+\fIbacklog\fP size of connection request queue. 
+.br
+\fImss\fP maximum segment size for accepted streams. 
+.RE
+.PP
+
+.SS "ost::TCPSocket::TCPSocket (const char * name, unsigned backlog = \fC5\fP, unsigned mss = \fC536\fP)"
+.PP
+Create a named tcp socket by service and/or interface id. For IPV4 we use [host:]svc or [host/]svc for the string. If we have getaddrinfo, we use that to obtain the addr to bind for.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP of host interface and service port to bind. 
+.br
+\fIbacklog\fP size of connection request queue. 
+.br
+\fImss\fP maximum segment size for streaming buffers. 
+.RE
+.PP
+
+.SS "virtual ost::TCPSocket::~TCPSocket ()\fC [virtual]\fP"
+.PP
+Use base socket handler for ending this socket. 
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBIPV4Host\fP ost::TCPSocket::getLocal (\fBtpport_t\fP * port = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Used to get local bound address. 
+.PP
+Reimplemented from \fBost::Socket\fP.
+.PP
+References ost::Socket::getIPV4Local().
+.SS "\fBIPV4Host\fP ost::TCPSocket::getRequest (\fBtpport_t\fP * port = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Return address and port of next connection request. This can be used instead of OnAccept() to pre-evaluate connection requests.
+.PP
+\fBReturns:\fP
+.RS 4
+host requesting a connection. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIport\fP number of requestor. 
+.RE
+.PP
+
+.PP
+References ost::Socket::getIPV4Sender().
+.SS "int ost::TCPSocket::getSegmentSize (void)\fC [inline]\fP"
+.PP
+Get the buffer size for servers. 
+.SS "\fBSOCKET\fP ost::TCPSocket::getSocket (void)\fC [inline]\fP"
+.PP
+Fetch out the socket. 
+.SS "bool ost::TCPSocket::isPendingConnection (\fBtimeout_t\fP timeout = \fCTIMEOUT_INF\fP)\fC [inline]\fP"
+.PP
+Used to wait for pending connection requests. \fBReturns:\fP
+.RS 4
+true if data packets available. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimeout\fP in milliseconds. TIMEOUT_INF if not specified. 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+\fBtcpstr1.cpp\fP, and \fBtcpthread.cpp\fP.
+.PP
+References ost::Socket::isPending(), and ost::Socket::pendingInput.
+.SS "virtual bool ost::TCPSocket::onAccept (const \fBIPV4Host\fP & ia, \fBtpport_t\fP port)\fC [virtual]\fP"
+.PP
+A method to call in a derived \fBTCPSocket\fP class that is acting as a server when a connection request is being accepted. The server can implement protocol specific rules to exclude the remote socket from being accepted by returning false. The Peek method can also be used for this purpose.
+.PP
+\fBReturns:\fP
+.RS 4
+true if client should be accepted. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIia\fP internet host address of the client. 
+.br
+\fIport\fP number of the client. 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+\fBtcp.cpp\fP, and \fBtcpthread.cpp\fP.
+.SS "void ost::TCPSocket::reject (void)"
+.PP
+Used to reject the next incoming connection request. 
+.SS "void ost::TCPSocket::setSegmentSize (unsigned mss)\fC [protected]\fP"
+.SH "Member Data Documentation"
+.PP 
+.SS "int \fBost::TCPSocket::segsize\fP\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

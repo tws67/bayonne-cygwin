@@ -1,0 +1,24 @@
+This is the first stable release of Bayonne 2.  This release is derived
+from the 0.9.5 release, with a number of features that were either still
+in active development or experimental removed, including Troll gateway
+support, and ivrscript job control.
+
+This release is mostly to offer a stable base platform for building script
+driven ivr applications using the Bayonne 2 ivrscript language and core
+runtime engine.  This distribution includes only those drivers which are
+themselves supplied on a free software license, including the Bayonne 2
+sip driver built from the GPL licensed eXosip package, the h323 driver
+built from the MPL licensed OpenH323 stack, the Voicetronix driver
+built from the LGPL licensed voicetronix sdk, and the CAPI soundcard
+driver for GNU/Linux CAPI support.  
+
+Other drivers are available separately in the "bayonne2-nonfree"
+package, which is freely offered, but includes drivers that are "non
+free" in terms of their licensing.  This separation is similar to the
+nonfree (as in freedom) debian repository, rather than non-free as in
+cost.  The nonfree drivers include Dialogic, Synway, and aculab drivers,
+all of which are also still in development.
+
+
+
+

@@ -1,0 +1,50 @@
+.TH "buffer.h" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+buffer.h \- 
+.PP
+object passing services between threads.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cc++/thread.h>\fP
+.br
+\fC#include <cc++/string.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBost::Buffer\fP"
+.br
+.RI "\fIThe buffer class represents an IPC service that is built upon a buffer of fixed capacity that can be used to transfer objects between one or more producer and consumer threads. \fP"
+.ti -1c
+.RI "class \fBost::FixedBuffer\fP"
+.br
+.RI "\fIA buffer class that holds a known capacity of fixed sized objects defined during creation. \fP"
+.ti -1c
+.RI "class \fBost::ThreadQueue\fP"
+.br
+.RI "\fISomewhat generic queue processing class to establish a producer consumer queue. \fP"
+.ti -1c
+.RI "struct \fBost::ThreadQueue::_data\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBost\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+object passing services between threads. 
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

@@ -1,0 +1,311 @@
+.TH "ost::UDPSocket" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::UDPSocket \- 
+.PP
+UDP sockets implement the TCP SOCK_DGRAM UDP protocol.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <socket.h>\fP
+.PP
+Inherits \fBost::Socket\fP.
+.PP
+Inherited by \fBost::UDPBroadcast\fP, \fBost::UDPReceive\fP\fC [protected]\fP, and \fBost::UDPTransmit\fP\fC [protected]\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUDPSocket\fP (\fBFamily\fP \fBfamily\fP=IPV4)"
+.br
+.RI "\fICreate an unbound UDP socket, mostly for internal use. \fP"
+.ti -1c
+.RI "\fBUDPSocket\fP (const char *name, \fBFamily\fP \fBfamily\fP=IPV4)"
+.br
+.RI "\fICreate a UDP socket bound by a service name. \fP"
+.ti -1c
+.RI "\fBUDPSocket\fP (const \fBIPV4Address\fP &bind, \fBtpport_t\fP port)"
+.br
+.RI "\fICreate a UDP socket and bind it to a specific interface and port address so that other UDP sockets on remote machines (or the same host) may find and send UDP messages to it. \fP"
+.ti -1c
+.RI "\fBUDPSocket\fP (const \fBIPV6Address\fP &bind, \fBtpport_t\fP port)"
+.br
+.ti -1c
+.RI "virtual \fB~UDPSocket\fP ()"
+.br
+.RI "\fIDestroy a UDP socket as a socket. \fP"
+.ti -1c
+.RI "\fBError\fP \fBsetLoopback\fP (bool enable)"
+.br
+.RI "\fISet the loopback. \fP"
+.ti -1c
+.RI "\fBError\fP \fBsetMulticast\fP (bool enable)"
+.br
+.RI "\fISet the multicast. \fP"
+.ti -1c
+.RI "\fBError\fP \fBsetTimeToLive\fP (char \fBttl\fP)"
+.br
+.RI "\fISet time to live. \fP"
+.ti -1c
+.RI "void \fBsetPeer\fP (const \fBIPV4Host\fP &host, \fBtpport_t\fP port)"
+.br
+.RI "\fIset the peer address to send message packets to. \fP"
+.ti -1c
+.RI "void \fBconnect\fP (const \fBIPV4Host\fP &host, \fBtpport_t\fP port)"
+.br
+.ti -1c
+.RI "void \fBsetPeer\fP (const \fBIPV6Host\fP &host, \fBtpport_t\fP port)"
+.br
+.ti -1c
+.RI "void \fBconnect\fP (const \fBIPV6Host\fP &host, \fBtpport_t\fP port)"
+.br
+.ti -1c
+.RI "\fBSocket::Error\fP \fBgetInterfaceIndex\fP (const char *ethX, int &InterfaceIndex)"
+.br
+.RI "\fIget the interface index for a named network device \fP"
+.ti -1c
+.RI "\fBSocket::Error\fP \fBjoin\fP (const \fBIPV4Multicast\fP &ia, int InterfaceIndex)"
+.br
+.RI "\fIjoin a multicast group on a particular interface \fP"
+.ti -1c
+.RI "ssize_t \fBsend\fP (const void *buf, size_t len)"
+.br
+.RI "\fISend a message packet to a peer host. \fP"
+.ti -1c
+.RI "ssize_t \fBreceive\fP (void *buf, size_t len, bool reply=false)"
+.br
+.RI "\fIReceive a message from any host. \fP"
+.ti -1c
+.RI "\fBIPV4Host\fP \fBgetIPV4Peer\fP (\fBtpport_t\fP *port=NULL) const "
+.br
+.RI "\fIExamine address of sender of next waiting packet. \fP"
+.ti -1c
+.RI "\fBIPV4Host\fP \fBgetPeer\fP (\fBtpport_t\fP *port=NULL) const "
+.br
+.ti -1c
+.RI "\fBIPV6Host\fP \fBgetIPV6Peer\fP (\fBtpport_t\fP *port=NULL) const "
+.br
+.ti -1c
+.RI "ssize_t \fBpeek\fP (void *buf, size_t len)"
+.br
+.RI "\fIExamine contents of next waiting packet. \fP"
+.ti -1c
+.RI "void \fBsetPeer\fP (const char *service)"
+.br
+.RI "\fIAssociate socket with a named connection. \fP"
+.ti -1c
+.RI "void \fBconnect\fP (const char *service)"
+.br
+.ti -1c
+.RI "\fBError\fP \fBdisconnect\fP (void)"
+.br
+.RI "\fIDisassociate this socket from any host connection. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "union {"
+.br
+.ti -1c
+.RI "   struct sockaddr_in6 \fBipv6\fP"
+.br
+.ti -1c
+.RI "   struct sockaddr_in \fBipv4\fP"
+.br
+.ti -1c
+.RI "} \fBpeer\fP"
+.br
+.ti -1c
+.RI "\fBFamily\fP \fBfamily\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+UDP sockets implement the TCP SOCK_DGRAM UDP protocol. 
+
+They can be used to pass unverified messages between hosts, or to broadcast a specific message to an entire subnet. Please note that Streaming of realtime data commonly use \fBUDPDuplex\fP related classes rather than \fBUDPSocket\fP.
+.PP
+In addition to connected TCP sessions, Common C++ supports UDP sockets and these also cover a range of functionality. Like a \fBTCPSocket\fP, A \fBUDPSocket\fP can be created bound to a specific network interface and/or port address, though this is not required. UDP sockets also are usually either connected or otherwise 'associated' with a specific 'peer' UDP socket. Since UDP sockets operate through discreet packets, there are no streaming operators used with UDP sockets.
+.PP
+In addition to the UDP 'socket' class, there is a 'UDPBroadcast' class. The \fBUDPBroadcast\fP is a socket that is set to send messages to a subnet as a whole rather than to an individual peer socket that it may be associated with.
+.PP
+UDP sockets are often used for building 'realtime' media streaming protocols and full duplex messaging services. When used in this manner, typically a pair of UDP sockets are used together; one socket is used to send and the other to receive data with an associated pair of UDP sockets on a 'peer' host. This concept is represented through the Common C++ \fBUDPDuplex\fP object, which is a pair of sockets that communicate with another \fBUDPDuplex\fP pair.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> Unreliable Datagram Protocol sockets. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::UDPSocket::UDPSocket (\fBFamily\fP family = \fCIPV4\fP)"
+.PP
+Create an unbound UDP socket, mostly for internal use. 
+.SS "ost::UDPSocket::UDPSocket (const char * name, \fBFamily\fP family = \fCIPV4\fP)"
+.PP
+Create a UDP socket bound by a service name. 
+.SS "ost::UDPSocket::UDPSocket (const \fBIPV4Address\fP & bind, \fBtpport_t\fP port)"
+.PP
+Create a UDP socket and bind it to a specific interface and port address so that other UDP sockets on remote machines (or the same host) may find and send UDP messages to it. On failure to bind, an exception is thrown.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbind\fP address to bind this socket to. 
+.br
+\fIport\fP number to bind this socket to. 
+.RE
+.PP
+
+.SS "ost::UDPSocket::UDPSocket (const \fBIPV6Address\fP & bind, \fBtpport_t\fP port)"
+.SS "virtual ost::UDPSocket::~UDPSocket ()\fC [virtual]\fP"
+.PP
+Destroy a UDP socket as a socket. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::UDPSocket::connect (const char * service)"
+.SS "void ost::UDPSocket::connect (const \fBIPV6Host\fP & host, \fBtpport_t\fP port)"
+.PP
+Reimplemented in \fBost::UDPReceive\fP, and \fBost::UDPDuplex\fP.
+.SS "void ost::UDPSocket::connect (const \fBIPV4Host\fP & host, \fBtpport_t\fP port)"
+.PP
+Reimplemented in \fBost::UDPTransmit\fP, \fBost::UDPReceive\fP, and \fBost::UDPDuplex\fP.
+.SS "\fBError\fP ost::UDPSocket::disconnect (void)"
+.PP
+Disassociate this socket from any host connection. No data should be read or written until a connection is established. 
+.PP
+Reimplemented in \fBost::UDPDuplex\fP.
+.SS "\fBSocket::Error\fP ost::UDPSocket::getInterfaceIndex (const char * ethX, int & InterfaceIndex)"
+.PP
+get the interface index for a named network device \fBParameters:\fP
+.RS 4
+\fIethX\fP is device name, like 'eth0' or 'eth1' 
+.br
+\fIInterfaceIndex\fP is the index value returned by os 
+.RE
+.PP
+
+.SS "\fBIPV4Host\fP ost::UDPSocket::getIPV4Peer (\fBtpport_t\fP * port = \fCNULL\fP) const"
+.PP
+Examine address of sender of next waiting packet. This also sets 'peer' address to the sender so that the next 'send' message acts as a 'reply'. This additional behavior overides the standard socket getSender behavior.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIport\fP pointer to hold port number. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBost::Socket\fP.
+.SS "\fBIPV6Host\fP ost::UDPSocket::getIPV6Peer (\fBtpport_t\fP * port = \fCNULL\fP) const"
+.PP
+Reimplemented from \fBost::Socket\fP.
+.SS "\fBIPV4Host\fP ost::UDPSocket::getPeer (\fBtpport_t\fP * port = \fCNULL\fP) const\fC [inline]\fP"
+.PP
+Reimplemented from \fBost::Socket\fP.
+.SS "\fBSocket::Error\fP ost::UDPSocket::join (const \fBIPV4Multicast\fP & ia, int InterfaceIndex)"
+.PP
+join a multicast group on a particular interface \fBParameters:\fP
+.RS 4
+\fIia\fP is the multicast address to use 
+.br
+\fIInterfaceIndex\fP is the index value returned by getInterfaceIndex 
+.RE
+.PP
+
+.SS "ssize_t ost::UDPSocket::peek (void * buf, size_t len)\fC [inline]\fP"
+.PP
+Examine contents of next waiting packet. \fBParameters:\fP
+.RS 4
+\fIbuf\fP pointer to packet buffer for contents. 
+.br
+\fIlen\fP of packet buffer. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+number of bytes examined. 
+.RE
+.PP
+
+.SS "ssize_t ost::UDPSocket::receive (void * buf, size_t len, bool reply = \fCfalse\fP)"
+.PP
+Receive a message from any host. \fBParameters:\fP
+.RS 4
+\fIbuf\fP pointer to packet buffer to receive. 
+.br
+\fIlen\fP of packet buffer to receive. 
+.br
+\fIreply\fP save sender address for reply if true. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+number of bytes received. 
+.RE
+.PP
+
+.SS "ssize_t ost::UDPSocket::send (const void * buf, size_t len)"
+.PP
+Send a message packet to a peer host. \fBParameters:\fP
+.RS 4
+\fIbuf\fP pointer to packet buffer to send. 
+.br
+\fIlen\fP of packet buffer to send. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+number of bytes sent. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBost::UDPTransmit\fP.
+.SS "\fBError\fP ost::UDPSocket::setLoopback (bool enable)\fC [inline]\fP"
+.PP
+Set the loopback. 
+.PP
+References ost::Socket::setLoopbackByFamily().
+.SS "\fBError\fP ost::UDPSocket::setMulticast (bool enable)\fC [inline]\fP"
+.PP
+Set the multicast. 
+.PP
+Reimplemented in \fBost::UDPTransmit\fP, and \fBost::UDPReceive\fP.
+.PP
+References ost::Socket::setMulticastByFamily().
+.SS "void ost::UDPSocket::setPeer (const char * service)"
+.PP
+Associate socket with a named connection. 
+.SS "void ost::UDPSocket::setPeer (const \fBIPV6Host\fP & host, \fBtpport_t\fP port)"
+.SS "void ost::UDPSocket::setPeer (const \fBIPV4Host\fP & host, \fBtpport_t\fP port)"
+.PP
+set the peer address to send message packets to. This can be set before every \fBsend()\fP call if nessisary.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIhost\fP address to send packets to. 
+.br
+\fIport\fP number to deliver packets to. 
+.RE
+.PP
+
+.SS "\fBError\fP ost::UDPSocket::setTimeToLive (char ttl)\fC [inline]\fP"
+.PP
+Set time to live. 
+.PP
+References ost::Socket::setTimeToLiveByFamily().
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBFamily\fP \fBost::UDPSocket::family\fP\fC [protected]\fP"
+.SS "struct sockaddr_in \fBost::UDPSocket::ipv4\fP\fC [read]\fP"
+.SS "struct sockaddr_in6 \fBost::UDPSocket::ipv6\fP\fC [read]\fP"
+.SS "union { ... } 	 \fBost::UDPSocket::peer\fP\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

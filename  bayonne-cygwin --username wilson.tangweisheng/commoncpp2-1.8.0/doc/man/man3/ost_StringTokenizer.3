@@ -1,0 +1,150 @@
+.TH "ost::StringTokenizer" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::StringTokenizer \- 
+.PP
+Splits delimited string into tokens.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <tokenizer.h>\fP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBiterator\fP"
+.br
+.RI "\fIThe input forward \fBiterator\fP for tokens. \fP"
+.ti -1c
+.RI "class \fBNoSuchElementException\fP"
+.br
+.RI "\fI\fBException\fP thrown, if someone tried to read beyond the end of the tokens. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBStringTokenizer\fP (const char *str, const char *delim, bool skipAllDelim=false, bool trim=false)"
+.br
+.RI "\fIcreates a new \fBStringTokenizer\fP for a string and a given set of delimiters. \fP"
+.ti -1c
+.RI "\fBStringTokenizer\fP (const char *s)"
+.br
+.RI "\fIcreate a new \fBStringTokenizer\fP which splits the input string at whitespaces. \fP"
+.ti -1c
+.RI "\fBiterator\fP \fBbegin\fP () const "
+.br
+.RI "\fIreturns the begin \fBiterator\fP \fP"
+.ti -1c
+.RI "void \fBsetDelimiters\fP (const char *d)"
+.br
+.RI "\fIchanges the set of delimiters used in subsequent iterations. \fP"
+.ti -1c
+.RI "\fBiterator\fP \fBbegin\fP (const char *d)"
+.br
+.RI "\fIreturns a begin \fBiterator\fP with an alternate set of delimiters. \fP"
+.ti -1c
+.RI "const \fBiterator\fP & \fBend\fP () const "
+.br
+.RI "\fIthe \fBiterator\fP marking the end. \fP"
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const char *const \fBSPACE\fP"
+.br
+.RI "\fIa delimiter string containing all usual whitespace delimiters. \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBStringTokenizer::iterator\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Splits delimited string into tokens. 
+
+The \fBStringTokenizer\fP takes a pointer to a string and a pointer to a string containing a number of possible delimiters. The \fBStringTokenizer\fP provides an input forward \fBiterator\fP which allows to iterate through all tokens. An \fBiterator\fP behaves like a logical pointer to the tokens, i.e. to shift to the next token, you've to increment the \fBiterator\fP, you get the token by dereferencing the \fBiterator\fP.
+.PP
+Memory consumption: This class operates on the original string and only allocates memory for the individual tokens actually requested, so this class allocates at maximum the space required for the longest token in the given string. Since for each iteration, memory is reclaimed for the last token, you MAY NOT store pointers to them; if you need them afterwards, copy them. You may not modify the original string while you operate on it with the \fBStringTokenizer\fP; the behaviour is undefined in that case.
+.PP
+The \fBiterator\fP has one special method 'nextDelimiter()' which returns a character containing the next delimiter following this tokenization process or '\\0', if there are no following delimiters. In case of skipAllDelim, it returns the FIRST delimiter.
+.PP
+With the method 'setDelimiters(const char*)' you may change the set of delimiters. It affects all running iterators.
+.PP
+Example: \fC
+.PP
+.nf
+
+  \fBStringTokenizer\fP st('mary had a little lamb;its fleece was..', ' ;');
+  \fBStringTokenizer::iterator\fP i;
+  for (i = st.begin() ; i != st.end() ; ++i) {
+        cout << 'Token: '' << *i << ''\\t';
+        cout << ' next Delim: '' << i.nextDelimiter() << ''' << endl;
+  }
+  
+.fi
+.PP
+\fP
+.PP
+\fBAuthor:\fP
+.RS 4
+Henner Zeller <H.Zeller@acm.org> 
+.RE
+.PP
+\fBLicense:\fP.RS 4
+LGPL 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::StringTokenizer::StringTokenizer (const char * str, const char * delim, bool skipAllDelim = \fCfalse\fP, bool trim = \fCfalse\fP)"
+.PP
+creates a new \fBStringTokenizer\fP for a string and a given set of delimiters. \fBParameters:\fP
+.RS 4
+\fIstr\fP \fBString\fP to be split up. This string will not be modified by this \fBStringTokenizer\fP, but you may as well not modfiy this string while tokenizing is in process, which may lead to undefined behaviour.
+.br
+\fIdelim\fP \fBString\fP containing the characters which should be regarded as delimiters.
+.br
+\fIskipAllDelim\fP OPTIONAL. true, if subsequent delimiters should be skipped at once or false, if empty tokens should be returned for two delimiters with no other text inbetween. The first behaviour may be desirable for whitespace skipping, the second for input with delimited entry e.g. /etc/passwd like files or CSV input. NOTE, that 'true' here resembles the ANSI-C strtok(char *s,char *d) behaviour. DEFAULT = false
+.br
+\fItrim\fP OPTIONAL. true, if the tokens returned should be trimmed, so that they don't have any whitespaces at the beginning or end. Whitespaces are any of the characters defined in \fBStringTokenizer::SPACE\fP. If delim itself is \fBStringTokenizer::SPACE\fP, this will result in a behaviour with skipAllDelim = true. DEFAULT = false 
+.RE
+.PP
+
+.SS "ost::StringTokenizer::StringTokenizer (const char * s)"
+.PP
+create a new \fBStringTokenizer\fP which splits the input string at whitespaces. The tokens are stripped from whitespaces. This means, if you change the set of delimiters in either the 'begin(const char *delim)' method or in 'setDelimiters()', you then get whitespace trimmed tokens, delimited by the new set. Behaves like StringTokenizer(s, StringTokenizer::SPACE,false,true); 
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBiterator\fP ost::StringTokenizer::begin (const char * d)\fC [inline]\fP"
+.PP
+returns a begin \fBiterator\fP with an alternate set of delimiters. 
+.SS "\fBiterator\fP ost::StringTokenizer::begin () const\fC [inline]\fP"
+.PP
+returns the begin \fBiterator\fP 
+.SS "const \fBiterator\fP& ost::StringTokenizer::end (void) const\fC [inline]\fP"
+.PP
+the \fBiterator\fP marking the end. 
+.SS "void ost::StringTokenizer::setDelimiters (const char * d)\fC [inline]\fP"
+.PP
+changes the set of delimiters used in subsequent iterations. 
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBStringTokenizer::iterator\fP\fC [friend]\fP"
+.SH "Member Data Documentation"
+.PP 
+.SS "const char* const \fBost::StringTokenizer::SPACE\fP\fC [static]\fP"
+.PP
+a delimiter string containing all usual whitespace delimiters. These are space, tab, newline, carriage return, formfeed and vertical tab. (see isspace() manpage). 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

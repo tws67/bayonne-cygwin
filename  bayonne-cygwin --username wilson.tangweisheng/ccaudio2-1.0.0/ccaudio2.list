@@ -1,0 +1,43 @@
+# Directories...
+$prefix=/usr/local
+$exec_prefix=${prefix}
+$bindir=${exec_prefix}/bin
+$confdir=${prefix}/etc
+$docdir=/usr/local/doc
+$mandir=${prefix}/share/man
+$datadir=${prefix}/share
+$libdir=${exec_prefix}/lib
+$srcdir=.
+$includedir=${prefix}/include
+$infodir=${prefix}/share/info
+$codecdir=${libdir}/ccaudio2-1.0
+
+# Product information
+%product GNU ccAudio Framework
+%version 1.0.0 -100
+%copyright 1999-2003 Open Source Telecom Corporation
+%vendor Open Source Telecom Corp
+%license COPYING
+%readme README
+%description GNU ccAudio class library and AudioTool
+
+f 0755 root root ${bindir}/audiotool ./utils/.libs/audiotool
+f 0644 root root ${libdir}/pkgconfig/libccaudio2.pc libccaudio2.pc
+d 0755 root root ${includedir}/cc++
+f 0644 root root ${includedir}/cc++/audio2.h ./src/audio2.h
+f 0644 root root ${libdir} ./src/*.la
+f 0644 root root ${libdir} ./src/.libs/*.a
+d 0755 root root ${codecdir}
+f 0644 root root ${codecdir}/g.711 ./codecs/g.711
+%system darwin
+f 0644 root root ${libdir} ./src/.libs/libccaudio2-1.0.0.dylib
+l 0644 root root ${libdir}/libccaudio2.dylib libccaudio2-1.0.0.dylib
+l 0644 root root ${libdir}/libccaudio2.dylib-1.0.0.@LT_SUBVER@.dylib libccaudio2-1.0.0.dylib
+%system freebsd
+f 0644 root root ${libdir} ./src/.libs/libccaudio2-1.0.so.*
+%system linux solaris
+f 0644 root root ${libdir} ./src/.libs/libccaudio2-1.0.so.*.*.*
+%system linux freebsd
+%postinstall /sbin/ldconfig
+%postremove /sbin/ldconfig
+%system all

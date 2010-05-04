@@ -1,0 +1,2194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="62">
+  <logicalFolder name="root" displayName="root" projectFiles="true">
+    <df name="libiodbc-3.52.7" root=".">
+      <df name="admin">
+      </df>
+      <df name="bin">
+      </df>
+      <df name="debian">
+      </df>
+      <df name="drvproxy">
+        <df name="gtk">
+          <in>gensetup.c</in>
+          <in>gui.h</in>
+          <in>loginbox.c</in>
+        </df>
+        <df name="macosx">
+          <in>confirm.c</in>
+          <in>gensetup.c</in>
+          <in>gui.h</in>
+          <in>loginbox.c</in>
+        </df>
+        <in>ConfigDSN.c</in>
+        <in>ConfigDriver.c</in>
+        <in>Info.c</in>
+        <in>drvconn.c</in>
+        <in>gui.h</in>
+      </df>
+      <df name="etc">
+      </df>
+      <df name="include">
+        <in>config.h</in>
+        <in>iodbc.h</in>
+        <in>iodbcext.h</in>
+        <in>iodbcinst.h</in>
+        <in>iodbcunix.h</in>
+        <in>isql.h</in>
+        <in>isqlext.h</in>
+        <in>isqltypes.h</in>
+        <in>odbcinst.h</in>
+        <in>sql.h</in>
+        <in>sqlext.h</in>
+        <in>sqltypes.h</in>
+        <in>sqlucode.h</in>
+      </df>
+      <df name="iodbc">
+        <df name="trace">
+          <df name=".libs">
+          </df>
+          <in>AllocConnect.c</in>
+          <in>AllocConnect.lo</in>
+          <in>AllocEnv.c</in>
+          <in>AllocHandle.c</in>
+          <in>AllocStmt.c</in>
+          <in>BindCol.c</in>
+          <in>BindParameter.c</in>
+          <in>BrowseConnect.c</in>
+          <in>BulkOperations.c</in>
+          <in>Cancel.c</in>
+          <in>CloseCursor.c</in>
+          <in>ColAttribute.c</in>
+          <in>ColumnPrivileges.c</in>
+          <in>Columns.c</in>
+          <in>Connect.c</in>
+          <in>CopyDesc.c</in>
+          <in>DataSources.c</in>
+          <in>DescribeCol.c</in>
+          <in>DescribeParam.c</in>
+          <in>Disconnect.c</in>
+          <in>DriverConnect.c</in>
+          <in>Drivers.c</in>
+          <in>EndTran.c</in>
+          <in>Error.c</in>
+          <in>ExecDirect.c</in>
+          <in>Execute.c</in>
+          <in>ExtendedFetch.c</in>
+          <in>Fetch.c</in>
+          <in>FetchScroll.c</in>
+          <in>ForeignKeys.c</in>
+          <in>FreeConnect.c</in>
+          <in>FreeEnv.c</in>
+          <in>FreeHandle.c</in>
+          <in>FreeStmt.c</in>
+          <in>GetConnectAttr.c</in>
+          <in>GetConnectOption.c</in>
+          <in>GetCursorName.c</in>
+          <in>GetData.c</in>
+          <in>GetDescField.c</in>
+          <in>GetDescRec.c</in>
+          <in>GetDiagField.c</in>
+          <in>GetDiagRec.c</in>
+          <in>GetEnvAttr.c</in>
+          <in>GetFunctions.c</in>
+          <in>GetStmtAttr.c</in>
+          <in>GetStmtOption.c</in>
+          <in>GetTypeInfo.c</in>
+          <in>Info.c</in>
+          <in>MoreResults.c</in>
+          <in>NativeSql.c</in>
+          <in>NumParams.c</in>
+          <in>NumResultCols.c</in>
+          <in>ParamData.c</in>
+          <in>ParamOptions.c</in>
+          <in>Prepare.c</in>
+          <in>PrimaryKeys.c</in>
+          <in>ProcedureColumns.c</in>
+          <in>Procedures.c</in>
+          <in>PutData.c</in>
+          <in>RowCount.c</in>
+          <in>SetConnectAttr.c</in>
+          <in>SetConnectOption.c</in>
+          <in>SetCursorName.c</in>
+          <in>SetDescField.c</in>
+          <in>SetDescRec.c</in>
+          <in>SetEnvAttr.c</in>
+          <in>SetPos.c</in>
+          <in>SetScrollOptions.c</in>
+          <in>SetStmtAttr.c</in>
+          <in>SetStmtOption.c</in>
+          <in>SpecialColumns.c</in>
+          <in>Statistics.c</in>
+          <in>TablePrivileges.c</in>
+          <in>Tables.c</in>
+          <in>Transact.c</in>
+          <in>proto.h</in>
+          <in>trace.c</in>
+          <in>trace.h</in>
+        </df>
+        <in>catalog.c</in>
+        <in>connect.c</in>
+        <in>dlproc.c</in>
+        <in>dlproc.h</in>
+        <in>execute.c</in>
+        <in>fetch.c</in>
+        <in>hdbc.c</in>
+        <in>hdbc.h</in>
+        <in>hdesc.h</in>
+        <in>henv.c</in>
+        <in>henv.h</in>
+        <in>herr.c</in>
+        <in>herr.h</in>
+        <in>hstmt.c</in>
+        <in>hstmt.h</in>
+        <in>info.c</in>
+        <in>iodbc_misc.h</in>
+        <in>ithread.h</in>
+        <in>itrace.h</in>
+        <in>main.c</in>
+        <in>misc.c</in>
+        <in>odbc3.c</in>
+        <in>prepare.c</in>
+        <in>result.c</in>
+      </df>
+      <df name="iodbcadm">
+        <df name="gtk">
+          <in>administrator.c</in>
+          <in>confirm.c</in>
+          <in>connectionpooling.c</in>
+          <in>driverchooser.c</in>
+          <in>driversetup.c</in>
+          <in>dsnchooser.c</in>
+          <in>errorbox.c</in>
+          <in>gensetup.c</in>
+          <in>gui.h</in>
+          <in>main.c</in>
+          <in>messagebox.c</in>
+          <in>translatorchooser.c</in>
+        </df>
+        <df name="macosx">
+          <in>administrator.c</in>
+          <in>confirm.c</in>
+          <in>driverchooser.c</in>
+          <in>driversetup.c</in>
+          <in>dsnchooser.c</in>
+          <in>errorbox.c</in>
+          <in>fdriverchoose.c</in>
+          <in>filedsn.c</in>
+          <in>gensetup.c</in>
+          <in>getfpn.c</in>
+          <in>getfpn.h</in>
+          <in>gui.h</in>
+          <in>keyval.c</in>
+          <in>main.c</in>
+          <in>messagebox.c</in>
+          <in>odbcdriverf.c</in>
+          <in>translatorchooser.c</in>
+        </df>
+        <in>Info.c</in>
+        <in>drvconn.c</in>
+        <in>error.c</in>
+        <in>gui.h</in>
+        <in>iodbcadm.h</in>
+      </df>
+      <df name="iodbcinst">
+        <in>Info.c</in>
+        <in>SQLConfigDataSource.c</in>
+        <in>SQLConfigDriver.c</in>
+        <in>SQLCreateDataSource.c</in>
+        <in>SQLGetAvailableDrivers.c</in>
+        <in>SQLGetConfigMode.c</in>
+        <in>SQLGetConfigMode.lo</in>
+        <in>SQLGetInstalledDrivers.c</in>
+        <in>SQLGetPrivateProfileString.c</in>
+        <in>SQLGetTranslator.c</in>
+        <in>SQLInstallDriver.c</in>
+        <in>SQLInstallDriverEx.c</in>
+        <in>SQLInstallDriverManager.c</in>
+        <in>SQLInstallODBC.c</in>
+        <in>SQLInstallTranslator.c</in>
+        <in>SQLInstallTranslatorEx.c</in>
+        <in>SQLInstallerError.c</in>
+        <in>SQLManageDataSource.c</in>
+        <in>SQLPostInstallerError.c</in>
+        <in>SQLReadFileDSN.c</in>
+        <in>SQLRemoveDSNFromIni.c</in>
+        <in>SQLRemoveDefaultDataSource.c</in>
+        <in>SQLRemoveDriver.c</in>
+        <in>SQLRemoveDriverManager.c</in>
+        <in>SQLRemoveTranslator.c</in>
+        <in>SQLSetConfigMode.c</in>
+        <in>SQLValidDSN.c</in>
+        <in>SQLWriteDSNToIni.c</in>
+        <in>SQLWriteFileDSN.c</in>
+        <in>SQLWritePrivateProfileString.c</in>
+        <in>dlf.c</in>
+        <in>dlf.h</in>
+        <in>inifile.c</in>
+        <in>inifile.h</in>
+        <in>iodbc_error.c</in>
+        <in>iodbc_error.h</in>
+        <in>misc.c</in>
+        <in>misc.h</in>
+        <in>unicode.c</in>
+        <in>unicode.h</in>
+      </df>
+      <df name="mac">
+        <df name="iODBC">
+          <df name="English.lproj">
+          </df>
+          <df name="iODBC.pbproj">
+          </df>
+          <df name="iODBC.xcodeproj">
+          </df>
+        </df>
+        <df name="iODBCadm">
+          <df name="English.lproj">
+            <df name="confirmation.nib">
+            </df>
+            <df name="connectionpool.nib">
+            </df>
+            <df name="driverremove.nib">
+            </df>
+            <df name="driversetup.nib">
+            </df>
+            <df name="dsnchooser.nib">
+            </df>
+            <df name="gensetup.nib">
+            </df>
+            <df name="keyval.nib">
+            </df>
+            <df name="odbcadmin.nib">
+            </df>
+            <df name="odbcdriver.nib">
+            </df>
+            <df name="odbcdriverf.nib">
+            </df>
+          </df>
+          <df name="iODBCadm.pbproj">
+          </df>
+          <df name="iODBCadm.xcodeproj">
+          </df>
+        </df>
+        <df name="iODBCadministrator">
+          <df name="English.lproj">
+            <df name="about.nib">
+            </df>
+            <df name="main.nib">
+            </df>
+          </df>
+          <df name="iODBCadministrator.pbproj">
+          </df>
+          <df name="iODBCadministrator.xcodeproj">
+          </df>
+        </df>
+        <df name="iODBCcfmbridge">
+          <in>Info.c</in>
+          <in>iodbccfm.c</in>
+          <in>iodbccfm.h</in>
+        </df>
+        <df name="iODBCdemo">
+          <df name="English.lproj">
+            <df name="ExecSQL.nib">
+            </df>
+            <df name="MainMenu.nib">
+            </df>
+          </df>
+          <df name="iodbcdemo.xcodeproj">
+          </df>
+          <in>ExecController.h</in>
+          <in>ExecController.m</in>
+          <in>NSResWindow.h</in>
+          <in>NSResWindow.m</in>
+          <in>TestController.h</in>
+          <in>TestController.m</in>
+          <in>main.m</in>
+        </df>
+        <df name="iODBCdrvproxy">
+          <df name="English.lproj">
+            <df name="confirmation.nib">
+            </df>
+            <df name="gensetup.nib">
+            </df>
+            <df name="login.nib">
+            </df>
+          </df>
+          <df name="iODBCdrvproxy.pbproj">
+          </df>
+          <df name="iODBCdrvproxy.xcodeproj">
+          </df>
+        </df>
+        <df name="iODBCinst">
+          <df name="English.lproj">
+          </df>
+          <df name="iODBCinst.pbproj">
+          </df>
+          <df name="iODBCinst.xcodeproj">
+          </df>
+        </df>
+        <df name="iODBCtest">
+          <df name="iODBCtest.pbproj">
+          </df>
+          <df name="iODBCtest.xcodeproj">
+          </df>
+        </df>
+        <df name="iODBCtestw">
+          <df name="iODBCtestw.pbproj">
+          </df>
+          <df name="iODBCtestw.xcodeproj">
+          </df>
+        </df>
+      </df>
+      <df name="man">
+      </df>
+      <df name="samples">
+        <in>iodbctest.c</in>
+      </df>
+    </df>
+    <logicalFolder name="ExternalFiles" displayName="重要文件" projectFiles="false">
+      <itemPath>Makefile-libiodbc-3.52.7.mk</itemPath>
+      <itemPath>makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile-libiodbc-3.52.7.mk</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <compilerSet>Cygwin_4.x|Cygwin_4.x</compilerSet>
+        <platform>3</platform>
+      </toolsSet>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>$(MAKE) -f Makefile</buildCommand>
+          <cleanCommand>$(MAKE) -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+          <cTool>
+            <preprocessorList>
+              <Elem>IODBC_BUILD=7090909</Elem>
+              <Elem>ODBCVER=0x0350</Elem>
+            </preprocessorList>
+          </cTool>
+        </makeTool>
+      </makefileType>
+      <item path="drvproxy/ConfigDSN.c" ex="true" tool="0">
+      </item>
+      <item path="drvproxy/ConfigDriver.c" ex="true" tool="0">
+      </item>
+      <item path="drvproxy/Info.c" ex="true" tool="0">
+      </item>
+      <item path="drvproxy/drvconn.c" ex="true" tool="0">
+      </item>
+      <item path="drvproxy/gtk/gensetup.c" ex="true" tool="0">
+      </item>
+      <item path="drvproxy/gtk/gui.h" ex="true" tool="3">
+      </item>
+      <item path="drvproxy/gtk/loginbox.c" ex="true" tool="0">
+      </item>
+      <item path="drvproxy/gui.h" ex="true" tool="3">
+      </item>
+      <item path="drvproxy/macosx/confirm.c" ex="true" tool="0">
+      </item>
+      <item path="drvproxy/macosx/gensetup.c" ex="true" tool="0">
+      </item>
+      <item path="drvproxy/macosx/gui.h" ex="true" tool="3">
+      </item>
+      <item path="drvproxy/macosx/loginbox.c" ex="true" tool="0">
+      </item>
+      <folder path="libiodbc-3.52.7/iodbc/trace">
+        <cTool>
+          <incDir>
+            <pElem>iodbc/trace</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="libiodbc-3.52.7/iodbcinst">
+        <cTool>
+          <incDir>
+            <pElem>iodbcinst</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <item path="include/iodbcinst.h" ex="true" tool="3">
+      </item>
+      <item path="include/isql.h" ex="true" tool="3">
+      </item>
+      <item path="include/isqlext.h" ex="true" tool="3">
+      </item>
+      <item path="include/isqltypes.h" ex="true" tool="3">
+      </item>
+      <item path="iodbc/catalog.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/connect.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/dlproc.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/execute.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/fetch.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/hdbc.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/henv.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/herr.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/hstmt.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/info.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/main.c" ex="true" tool="0">
+      </item>
+      <item path="iodbc/misc.c" ex="true" tool="0">
+      </item>
+      <item path="iodbc/odbc3.c" ex="true" tool="0">
+      </item>
+      <item path="iodbc/prepare.c" ex="true" tool="0">
+      </item>
+      <item path="iodbc/result.c" ex="true" tool="0">
+      </item>
+      <item path="iodbc/trace/AllocConnect.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/AllocConnect.lo" ex="false" tool="0">
+      </item>
+      <item path="iodbc/trace/AllocEnv.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/AllocHandle.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/AllocStmt.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/BindCol.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/BindParameter.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/BrowseConnect.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/BulkOperations.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/Cancel.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/CloseCursor.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/ColAttribute.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/ColumnPrivileges.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/Columns.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/Connect.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/CopyDesc.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/DataSources.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/DescribeCol.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/DescribeParam.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/Disconnect.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/DriverConnect.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/Drivers.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/EndTran.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/Error.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/ExecDirect.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/Execute.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/ExtendedFetch.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/Fetch.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/FetchScroll.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/ForeignKeys.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/FreeConnect.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/FreeEnv.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/FreeHandle.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/FreeStmt.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/GetConnectAttr.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/GetConnectOption.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/GetCursorName.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/GetData.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/GetDescField.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/GetDescRec.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/GetDiagField.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/GetDiagRec.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/GetEnvAttr.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/GetFunctions.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/GetStmtAttr.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/GetStmtOption.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/GetTypeInfo.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/Info.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/MoreResults.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/NativeSql.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/NumParams.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/NumResultCols.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/ParamData.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/ParamOptions.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/Prepare.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/PrimaryKeys.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/ProcedureColumns.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/Procedures.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/PutData.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/RowCount.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/SetConnectAttr.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/SetConnectOption.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/SetCursorName.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/SetDescField.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/SetDescRec.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/SetEnvAttr.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/SetPos.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/SetScrollOptions.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/SetStmtAttr.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/SetStmtOption.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/SpecialColumns.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/Statistics.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/TablePrivileges.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/Tables.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/Transact.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbc/trace/trace.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcinst</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcadm/Info.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/drvconn.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/error.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/gtk/administrator.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/gtk/confirm.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/gtk/connectionpooling.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/gtk/driverchooser.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/gtk/driversetup.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/gtk/dsnchooser.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/gtk/errorbox.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/gtk/gensetup.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/gtk/gui.h" ex="true" tool="3">
+      </item>
+      <item path="iodbcadm/gtk/main.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/gtk/messagebox.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/gtk/translatorchooser.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/gui.h" ex="true" tool="3">
+      </item>
+      <item path="iodbcadm/macosx/administrator.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/macosx/confirm.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/macosx/driverchooser.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/macosx/driversetup.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/macosx/dsnchooser.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/macosx/errorbox.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/macosx/fdriverchoose.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/macosx/filedsn.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/macosx/gensetup.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/macosx/getfpn.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/macosx/getfpn.h" ex="true" tool="3">
+      </item>
+      <item path="iodbcadm/macosx/gui.h" ex="true" tool="3">
+      </item>
+      <item path="iodbcadm/macosx/keyval.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/macosx/main.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/macosx/messagebox.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/macosx/odbcdriverf.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcadm/macosx/translatorchooser.c" ex="true" tool="0">
+      </item>
+      <item path="iodbcinst/Info.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLConfigDataSource.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLConfigDriver.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLCreateDataSource.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLGetAvailableDrivers.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLGetConfigMode.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLGetConfigMode.lo" ex="false" tool="0">
+      </item>
+      <item path="iodbcinst/SQLGetInstalledDrivers.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLGetPrivateProfileString.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLGetTranslator.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLInstallDriver.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLInstallDriverEx.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLInstallDriverManager.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLInstallODBC.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLInstallTranslator.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLInstallTranslatorEx.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLInstallerError.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLManageDataSource.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLPostInstallerError.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLReadFileDSN.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLRemoveDSNFromIni.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLRemoveDefaultDataSource.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLRemoveDriver.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLRemoveDriverManager.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLRemoveTranslator.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLSetConfigMode.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLValidDSN.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLWriteDSNToIni.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLWriteFileDSN.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/SQLWritePrivateProfileString.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/dlf.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/inifile.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/iodbc_error.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/misc.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="iodbcinst/unicode.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>iodbc</pElem>
+            <pElem>iodbcadm</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>WITH_PTHREADS</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="mac/iODBCcfmbridge/Info.c" ex="true" tool="0">
+      </item>
+      <item path="mac/iODBCcfmbridge/iodbccfm.c" ex="true" tool="0">
+      </item>
+      <item path="mac/iODBCcfmbridge/iodbccfm.h" ex="true" tool="3">
+      </item>
+      <item path="mac/iODBCdemo/ExecController.h" ex="true" tool="3">
+      </item>
+      <item path="mac/iODBCdemo/ExecController.m" ex="true" tool="0">
+      </item>
+      <item path="mac/iODBCdemo/NSResWindow.h" ex="true" tool="3">
+      </item>
+      <item path="mac/iODBCdemo/NSResWindow.m" ex="true" tool="0">
+      </item>
+      <item path="mac/iODBCdemo/TestController.h" ex="true" tool="3">
+      </item>
+      <item path="mac/iODBCdemo/TestController.m" ex="true" tool="0">
+      </item>
+      <item path="mac/iODBCdemo/main.m" ex="true" tool="0">
+      </item>
+      <item path="samples/iodbctest.c" ex="true" tool="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

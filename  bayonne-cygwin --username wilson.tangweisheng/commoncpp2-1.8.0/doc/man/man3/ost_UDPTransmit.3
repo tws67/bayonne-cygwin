@@ -1,0 +1,262 @@
+.TH "ost::UDPTransmit" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::UDPTransmit \- 
+.PP
+Representing half of a two-way UDP connection, the UDP transmitter can broadcast data to another selected peer host or to an entire subnet.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <socket.h>\fP
+.PP
+Inherits \fBost::UDPSocket\fP.
+.PP
+Inherited by \fBost::UDPDuplex\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "ssize_t \fBtransmit\fP (const char *buffer, size_t len)"
+.br
+.RI "\fITransmit 'send' to use 'connected' send rather than sendto. \fP"
+.ti -1c
+.RI "bool \fBisOutputReady\fP (unsigned long timeout=0l)"
+.br
+.RI "\fISee if output queue is empty for sending more packets. \fP"
+.ti -1c
+.RI "\fBError\fP \fBsetRouting\fP (bool enable)"
+.br
+.ti -1c
+.RI "\fBError\fP \fBsetTypeOfService\fP (\fBTos\fP tos)"
+.br
+.ti -1c
+.RI "\fBError\fP \fBsetBroadcast\fP (bool enable)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUDPTransmit\fP (\fBFamily\fP \fBfamily\fP=IPV4)"
+.br
+.RI "\fICreate a UDP transmitter. \fP"
+.ti -1c
+.RI "\fBUDPTransmit\fP (const \fBIPV4Address\fP &bind, \fBtpport_t\fP port=5005)"
+.br
+.RI "\fICreate a UDP transmitter, bind it to a specific interface and port address so that other UDP sockets on remote machines (or the same host) may find and send UDP messages to it, and associate it with a given port on a peer host. \fP"
+.ti -1c
+.RI "\fBUDPTransmit\fP (const \fBIPV6Address\fP &bind, \fBtpport_t\fP port=5005)"
+.br
+.ti -1c
+.RI "\fBError\fP \fBconnect\fP (const \fBIPV4Host\fP &host, \fBtpport_t\fP port)"
+.br
+.RI "\fIAssociate this socket with a specified peer host. \fP"
+.ti -1c
+.RI "\fBError\fP \fBconnect\fP (const \fBIPV6Address\fP &host, \fBtpport_t\fP port)"
+.br
+.ti -1c
+.RI "\fBError\fP \fBconnect\fP (const \fBIPV4Broadcast\fP &subnet, \fBtpport_t\fP port)"
+.br
+.RI "\fIAssociate this socket with a subnet of peer hosts for subnet broadcasting. \fP"
+.ti -1c
+.RI "\fBError\fP \fBconnect\fP (const \fBIPV4Multicast\fP &mgroup, \fBtpport_t\fP port)"
+.br
+.RI "\fIAssociate this socket with a multicast group. \fP"
+.ti -1c
+.RI "\fBError\fP \fBconnect\fP (const \fBIPV6Multicast\fP &mgroup, \fBtpport_t\fP port)"
+.br
+.ti -1c
+.RI "ssize_t \fBsend\fP (const void *buf, size_t len)"
+.br
+.RI "\fITransmit 'send' to use 'connected' send rather than sendto. \fP"
+.ti -1c
+.RI "void \fBendTransmitter\fP (void)"
+.br
+.RI "\fIStop transmitter. \fP"
+.ti -1c
+.RI "\fBSOCKET\fP \fBgetTransmitter\fP (void)"
+.br
+.ti -1c
+.RI "\fBError\fP \fBsetMulticast\fP (bool enable)"
+.br
+.ti -1c
+.RI "\fBError\fP \fBsetTimeToLive\fP (unsigned char \fBttl\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Representing half of a two-way UDP connection, the UDP transmitter can broadcast data to another selected peer host or to an entire subnet. 
+
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> Unreliable Datagram Peer Associations. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::UDPTransmit::UDPTransmit (\fBFamily\fP family = \fCIPV4\fP)\fC [protected]\fP"
+.PP
+Create a UDP transmitter. 
+.SS "ost::UDPTransmit::UDPTransmit (const \fBIPV4Address\fP & bind, \fBtpport_t\fP port = \fC5005\fP)\fC [protected]\fP"
+.PP
+Create a UDP transmitter, bind it to a specific interface and port address so that other UDP sockets on remote machines (or the same host) may find and send UDP messages to it, and associate it with a given port on a peer host. On failure to bind, an exception is thrown. This class is only used to build the UDP Duplex.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbind\fP address to bind this socket to. 
+.br
+\fIport\fP number to bind this socket to. 
+.RE
+.PP
+
+.SS "ost::UDPTransmit::UDPTransmit (const \fBIPV6Address\fP & bind, \fBtpport_t\fP port = \fC5005\fP)\fC [protected]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBError\fP ost::UDPTransmit::connect (const \fBIPV6Multicast\fP & mgroup, \fBtpport_t\fP port)\fC [protected]\fP"
+.SS "\fBError\fP ost::UDPTransmit::connect (const \fBIPV4Multicast\fP & mgroup, \fBtpport_t\fP port)\fC [protected]\fP"
+.PP
+Associate this socket with a multicast group. \fBReturns:\fP
+.RS 4
+0 on success, -1 on error. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fImgroup\fP address of the multicast group to send to. 
+.br
+\fIport\fP port number 
+.RE
+.PP
+
+.SS "\fBError\fP ost::UDPTransmit::connect (const \fBIPV4Broadcast\fP & subnet, \fBtpport_t\fP port)\fC [protected]\fP"
+.PP
+Associate this socket with a subnet of peer hosts for subnet broadcasting. The server must be able to assert broadcast permission for the socket.
+.PP
+\fBReturns:\fP
+.RS 4
+0 on success, -1 on error. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsubnet\fP subnet address to broadcast into. 
+.br
+\fIport\fP transport port to broadcast into. 
+.RE
+.PP
+
+.SS "\fBError\fP ost::UDPTransmit::connect (const \fBIPV6Address\fP & host, \fBtpport_t\fP port)\fC [protected]\fP"
+.SS "\fBError\fP ost::UDPTransmit::connect (const \fBIPV4Host\fP & host, \fBtpport_t\fP port)\fC [protected]\fP"
+.PP
+Associate this socket with a specified peer host. The port number from the constructor will be used. All UDP packets will be sent to and received from the specified host.
+.PP
+\fBReturns:\fP
+.RS 4
+0 on success, -1 on error. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIhost\fP address to connect socket to. 
+.br
+\fIport\fP to connect socket to. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBost::UDPSocket\fP.
+.PP
+Reimplemented in \fBost::UDPDuplex\fP.
+.SS "void ost::UDPTransmit::endTransmitter (void)\fC [inline, protected]\fP"
+.PP
+Stop transmitter. 
+.PP
+References ost::Socket::endSocket().
+.SS "\fBSOCKET\fP ost::UDPTransmit::getTransmitter (void)\fC [inline, protected]\fP"
+.SS "bool ost::UDPTransmit::isOutputReady (unsigned long timeout = \fC0l\fP)\fC [inline]\fP"
+.PP
+See if output queue is empty for sending more packets. \fBReturns:\fP
+.RS 4
+true if output available. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimeout\fP in milliseconds to wait. 
+.RE
+.PP
+
+.PP
+References ost::Socket::isPending(), and ost::Socket::pendingOutput.
+.SS "ssize_t ost::UDPTransmit::send (const void * buf, size_t len)\fC [inline, protected]\fP"
+.PP
+Transmit 'send' to use 'connected' send rather than sendto. \fBReturns:\fP
+.RS 4
+number of bytes sent. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuf\fP address of buffer to send. 
+.br
+\fIlen\fP of bytes to send. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBost::UDPSocket\fP.
+.PP
+References MSG_NOSIGNAL.
+.SS "\fBError\fP ost::UDPTransmit::setBroadcast (bool enable)\fC [inline]\fP"
+.PP
+Reimplemented from \fBost::Socket\fP.
+.PP
+References ost::Socket::setBroadcast().
+.SS "\fBError\fP ost::UDPTransmit::setMulticast (bool enable)\fC [inline, protected]\fP"
+.PP
+Reimplemented from \fBost::UDPSocket\fP.
+.PP
+References ost::Socket::setMulticastByFamily().
+.SS "\fBError\fP ost::UDPTransmit::setRouting (bool enable)\fC [inline]\fP"
+.PP
+Reimplemented from \fBost::Socket\fP.
+.PP
+References ost::Socket::setRouting().
+.SS "\fBError\fP ost::UDPTransmit::setTimeToLive (unsigned char ttl)\fC [inline, protected]\fP"
+.PP
+References ost::Socket::setTimeToLiveByFamily().
+.SS "\fBError\fP ost::UDPTransmit::setTypeOfService (\fBTos\fP tos)\fC [inline]\fP"
+.PP
+Reimplemented from \fBost::Socket\fP.
+.PP
+References ost::Socket::setTypeOfService().
+.SS "ssize_t ost::UDPTransmit::transmit (const char * buffer, size_t len)\fC [inline]\fP"
+.PP
+Transmit 'send' to use 'connected' send rather than sendto. \fBNote:\fP
+.RS 4
+Windows does not support MSG_DONTWAIT, so it is defined as 0 on that platform. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+number of bytes sent. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuffer\fP address of buffer to send. 
+.br
+\fIlen\fP of bytes to send. 
+.RE
+.PP
+
+.PP
+References MSG_DONTWAIT, and MSG_NOSIGNAL.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

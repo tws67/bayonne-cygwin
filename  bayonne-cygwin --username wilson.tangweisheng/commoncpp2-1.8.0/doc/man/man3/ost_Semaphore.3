@@ -1,0 +1,112 @@
+.TH "ost::Semaphore" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::Semaphore \- 
+.PP
+A semaphore is generally used as a synchronization object between multiple threads or to protect a limited and finite resource such as a memory or thread pool.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <thread.h>\fP
+.PP
+Inherited by \fBost::ThreadQueue\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSemaphore\fP (unsigned resource=0)"
+.br
+.RI "\fIThe initial value of the semaphore can be specified. \fP"
+.ti -1c
+.RI "virtual \fB~Semaphore\fP ()"
+.br
+.RI "\fIDestroying a semaphore also removes any system resources associated with it. \fP"
+.ti -1c
+.RI "bool \fBwait\fP (\fBtimeout_t\fP timeout=0)"
+.br
+.RI "\fIWait is used to keep a thread held until the semaphore counter is greater than 0. \fP"
+.ti -1c
+.RI "void \fBpost\fP (void)"
+.br
+.RI "\fIPosting to a semaphore increments its current value and releases the first thread waiting for the semaphore if it is currently at 0. \fP"
+.ti -1c
+.RI "void \fBforce_unlock_after_cancellation\fP ()"
+.br
+.RI "\fICall it after a deferred cancellation to avoid deadlocks. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A semaphore is generally used as a synchronization object between multiple threads or to protect a limited and finite resource such as a memory or thread pool. 
+
+The semaphore has a counter which only permits access by one or more threads when the value of the semaphore is non-zero. Each access reduces the current value of the semaphore by 1. One or more threads can wait on a semaphore until it is no longer 0, and hence the semaphore can be used as a simple thread synchronization object to enable one thread to pause others until the thread is ready or has provided data for them. Semaphores are typically used as a counter for protecting or limiting concurrent access to a given resource, such as to permitting at most 'x' number of threads to use resource 'y', for example.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> \fBSemaphore\fP counter for thread synchronization. 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+.PP
+\fBtcpservice.cpp\fP.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::Semaphore::Semaphore (unsigned resource = \fC0\fP)"
+.PP
+The initial value of the semaphore can be specified. An initial value is often used When used to lock a finite resource or to specify the maximum number of thread instances that can access a specified resource.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIresource\fP specify initial resource count or 0 default. 
+.RE
+.PP
+
+.SS "virtual ost::Semaphore::~Semaphore ()\fC [virtual]\fP"
+.PP
+Destroying a semaphore also removes any system resources associated with it. If a semaphore has threads currently waiting on it, those threads will all continue when a semaphore is destroyed. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::Semaphore::force_unlock_after_cancellation ()"
+.PP
+Call it after a deferred cancellation to avoid deadlocks. From PTHREAD_COND_TIMEDWAIT(3P): A condition wait (whether timed or not) is a cancellation point. When the cancelability enable state of a thread is set to PTHREAD_CANCEL_DEFERRED, a side effect of acting upon a cancellation request while in a condition wait is that the mutex is (in effect) re-acquired before calling the first cancellation cleanup handler. 
+.SS "void ost::Semaphore::post (void)"
+.PP
+Posting to a semaphore increments its current value and releases the first thread waiting for the semaphore if it is currently at 0. Interestingly, there is no support to increment a semaphore by any value greater than 1 to release multiple waiting threads in either pthread or the win32 API. Hence, if one wants to release a semaphore to enable multiple threads to execute, one must perform multiple post operations.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwait\fP 
+.RE
+.PP
+
+.SS "bool ost::Semaphore::wait (\fBtimeout_t\fP timeout = \fC0\fP)"
+.PP
+Wait is used to keep a thread held until the semaphore counter is greater than 0. If the current thread is held, then another thread must increment the semaphore. Once the thread is accepted, the semaphore is automatically decremented, and the thread continues execution.
+.PP
+The pthread semaphore object does not support a timed 'wait', and hence to maintain consistancy, neither the posix nor win32 source trees support 'timed' semaphore objects.
+.PP
+\fBReturns:\fP
+.RS 4
+false if timed out 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimeout\fP period in milliseconds to wait 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBpost\fP 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

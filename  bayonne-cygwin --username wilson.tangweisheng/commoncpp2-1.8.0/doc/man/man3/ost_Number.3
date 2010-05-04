@@ -1,0 +1,161 @@
+.TH "ost::Number" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::Number \- 
+.PP
+A number manipulation class.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <numbers.h>\fP
+.PP
+Inherited by \fBost::DateNumber\fP, and \fBost::ZNumber\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBNumber\fP (char *\fBbuffer\fP, unsigned \fBsize\fP)"
+.br
+.RI "\fICreate an instance of a number. \fP"
+.ti -1c
+.RI "void \fBsetValue\fP (long value)"
+.br
+.ti -1c
+.RI "const char * \fBgetBuffer\fP () const "
+.br
+.ti -1c
+.RI "long \fBgetValue\fP () const "
+.br
+.ti -1c
+.RI "long \fBoperator()\fP ()"
+.br
+.ti -1c
+.RI "\fBoperator long\fP ()"
+.br
+.ti -1c
+.RI "\fBoperator char *\fP ()"
+.br
+.ti -1c
+.RI "long \fBoperator=\fP (const long value)"
+.br
+.ti -1c
+.RI "long \fBoperator+=\fP (const long value)"
+.br
+.ti -1c
+.RI "long \fBoperator-=\fP (const long value)"
+.br
+.ti -1c
+.RI "long \fBoperator--\fP ()"
+.br
+.ti -1c
+.RI "long \fBoperator++\fP ()"
+.br
+.ti -1c
+.RI "int \fBoperator==\fP (const \fBNumber\fP &num)"
+.br
+.ti -1c
+.RI "int \fBoperator!=\fP (const \fBNumber\fP &num)"
+.br
+.ti -1c
+.RI "int \fBoperator<\fP (const \fBNumber\fP &num)"
+.br
+.ti -1c
+.RI "int \fBoperator<=\fP (const \fBNumber\fP &num)"
+.br
+.ti -1c
+.RI "int \fBoperator>\fP (const \fBNumber\fP &num)"
+.br
+.ti -1c
+.RI "int \fBoperator>=\fP (const \fBNumber\fP &num)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "char * \fBbuffer\fP"
+.br
+.ti -1c
+.RI "unsigned \fBsize\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "long \fBoperator+\fP (const \fBNumber\fP &num, const long val)"
+.br
+.ti -1c
+.RI "long \fBoperator+\fP (const long val, const \fBNumber\fP &num)"
+.br
+.ti -1c
+.RI "long \fBoperator-\fP (const \fBNumber\fP &num, long val)"
+.br
+.ti -1c
+.RI "long \fBoperator-\fP (const long val, const \fBNumber\fP &num)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A number manipulation class. 
+
+This is used to extract, convert, and manage simple numbers that are represented in C ascii strings in a very quick and optimal way.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> number manipulation. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::Number::Number (char * buffer, unsigned size)"
+.PP
+Create an instance of a number. \fBParameters:\fP
+.RS 4
+\fIbuffer\fP or NULL if created internally. 
+.br
+\fIsize\fP use - values for zero filled. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "const char* ost::Number::getBuffer () const\fC [inline]\fP"
+.SS "long ost::Number::getValue () const"
+.SS "ost::Number::operator char * ()\fC [inline]\fP"
+.SS "ost::Number::operator long ()\fC [inline]\fP"
+.SS "int ost::Number::operator!= (const \fBNumber\fP & num)"
+.SS "long ost::Number::operator() ()\fC [inline]\fP"
+.SS "long ost::Number::operator++ ()"
+.SS "long ost::Number::operator+= (const long value)"
+.SS "long ost::Number::operator-- ()"
+.SS "long ost::Number::operator-= (const long value)"
+.SS "int ost::Number::operator< (const \fBNumber\fP & num)"
+.SS "int ost::Number::operator<= (const \fBNumber\fP & num)"
+.SS "long ost::Number::operator= (const long value)"
+.PP
+Reimplemented in \fBost::ZNumber\fP.
+.SS "int ost::Number::operator== (const \fBNumber\fP & num)"
+.SS "int ost::Number::operator> (const \fBNumber\fP & num)"
+.SS "int ost::Number::operator>= (const \fBNumber\fP & num)"
+.SS "void ost::Number::setValue (long value)"
+.PP
+Reimplemented in \fBost::ZNumber\fP.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "long operator+ (const long val, const \fBNumber\fP & num)\fC [friend]\fP"
+.SS "long operator+ (const \fBNumber\fP & num, const long val)\fC [friend]\fP"
+.SS "long operator- (const long val, const \fBNumber\fP & num)\fC [friend]\fP"
+.SS "long operator- (const \fBNumber\fP & num, long val)\fC [friend]\fP"
+.SH "Member Data Documentation"
+.PP 
+.SS "char* \fBost::Number::buffer\fP\fC [protected]\fP"
+.SS "unsigned \fBost::Number::size\fP\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

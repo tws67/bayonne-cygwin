@@ -1,0 +1,221 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "ccscript3"=.\ccscript3.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "check"=.\check.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name ccscript3
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "csv"=.\csv.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name ccscript3
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "locker"=.\locker.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name ccscript3
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "math"=.\math.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name ccscript3
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "odbcrll"=.\odbcrll.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name ccscript3
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "property"=.\property.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name ccscript3
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "sort"=.\sort.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name ccscript3
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "string"=.\string.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name ccscript3
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "testscript"=.\testscript.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name ccscript3
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name math
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name odbcrll
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name time
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name check
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name sort
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name string
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "time"=.\time.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name ccscript3
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "url"=.\url.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "userauth"=.\userauth.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

@@ -1,0 +1,172 @@
+\section{ost::TelTone Class Reference}
+\label{classost_1_1_tel_tone}\index{ost::TelTone@{ost::TelTone}}
+
+
+An object that is used to sequence and extract telephony tones based on a telephony tone descriptor retrieved from the parsed international telephony tone database.  
+
+
+{\ttfamily \#include $<$audio2.h$>$}Inheritance diagram for ost::TelTone::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classost_1_1_tel_tone}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf \_\-tonedef}
+\item 
+struct {\bf \_\-tonekey}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct {\bf ost::TelTone::\_\-tonedef} {\bf tonedef\_\-t}
+\item 
+typedef struct {\bf ost::TelTone::\_\-tonekey} {\bf tonekey\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf TelTone} ({\bf tonekey\_\-t} $\ast$key, {\bf Level} {\bf level}, {\bf timeout\_\-t} {\bf frame}=20)
+\begin{DoxyCompactList}\small\item\em Create a tone sequencing object for a specific telephony tone key id. \item\end{DoxyCompactList}\item 
+{\bf $\sim$TelTone} ()
+\item 
+{\bf Linear} {\bf getFrame} (void)
+\begin{DoxyCompactList}\small\item\em Generate and retrieve one frame of linear audio data for the telephony tone sequence being created. \item\end{DoxyCompactList}\item 
+bool {\bf isComplete} (void)
+\begin{DoxyCompactList}\small\item\em Check if all audio frames for this tone has been created. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bf load} (const char $\ast$pathname, const char $\ast$locale=NULL)
+\begin{DoxyCompactList}\small\item\em Load a teltones database file into memory. \item\end{DoxyCompactList}\item 
+static {\bf tonekey\_\-t} $\ast$ {\bf find} (const char $\ast${\bf tone}, const char $\ast$locale=NULL)
+\begin{DoxyCompactList}\small\item\em find an entry in the teltones database. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf tonekey\_\-t} $\ast$ {\bf tone}
+\item 
+{\bf tonedef\_\-t} $\ast$ {\bf def}
+\item 
+unsigned {\bf remaining}
+\item 
+unsigned {\bf silent}
+\item 
+unsigned {\bf count}
+\item 
+{\bf timeout\_\-t} {\bf framing}
+\item 
+{\bf Level} {\bf level}
+\item 
+bool {\bf complete}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An object that is used to sequence and extract telephony tones based on a telephony tone descriptor retrieved from the parsed international telephony tone database. \begin{DoxyAuthor}{Author}
+David Sugar $<${\tt dyfet@ostel.com}$>$ telephony tone sequencing object. 
+\end{DoxyAuthor}
+
+
+\subsection{Member Typedef Documentation}
+\index{ost::TelTone@{ost::TelTone}!tonedef\_\-t@{tonedef\_\-t}}
+\index{tonedef\_\-t@{tonedef\_\-t}!ost::TelTone@{ost::TelTone}}
+\subsubsection[{tonedef\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf ost::TelTone::\_\-tonedef}  {\bf ost::TelTone::tonedef\_\-t}}\label{classost_1_1_tel_tone_a68db377979005fe801d50f07f0e03be5}
+\index{ost::TelTone@{ost::TelTone}!tonekey\_\-t@{tonekey\_\-t}}
+\index{tonekey\_\-t@{tonekey\_\-t}!ost::TelTone@{ost::TelTone}}
+\subsubsection[{tonekey\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf ost::TelTone::\_\-tonekey}  {\bf ost::TelTone::tonekey\_\-t}}\label{classost_1_1_tel_tone_af77f6282aa08dc65e4db2834bfeac473}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::TelTone@{ost::TelTone}!TelTone@{TelTone}}
+\index{TelTone@{TelTone}!ost::TelTone@{ost::TelTone}}
+\subsubsection[{TelTone}]{\setlength{\rightskip}{0pt plus 5cm}ost::TelTone::TelTone ({\bf tonekey\_\-t} $\ast$ {\em key}, \/  {\bf Level} {\em level}, \/  {\bf timeout\_\-t} {\em frame} = {\ttfamily 20})}\label{classost_1_1_tel_tone_a9a8adaa958dfa572f6d6f5c8e1d3b072}
+
+
+Create a tone sequencing object for a specific telephony tone key id. 
+\begin{DoxyParams}{Parameters}
+\item[{\em key}]for telephony tone. \item[{\em level}]for generated tones. \item[{\em frame}]timing to use in processing. \end{DoxyParams}
+\index{ost::TelTone@{ost::TelTone}!$\sim$TelTone@{$\sim$TelTone}}
+\index{$\sim$TelTone@{$\sim$TelTone}!ost::TelTone@{ost::TelTone}}
+\subsubsection[{$\sim$TelTone}]{\setlength{\rightskip}{0pt plus 5cm}ost::TelTone::$\sim$TelTone ()}\label{classost_1_1_tel_tone_a1ebc07f54bafd5b7d901b8bdbf201bab}
+
+
+\subsection{Member Function Documentation}
+\index{ost::TelTone@{ost::TelTone}!find@{find}}
+\index{find@{find}!ost::TelTone@{ost::TelTone}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf tonekey\_\-t}$\ast$ ost::TelTone::find (const char $\ast$ {\em tone}, \/  const char $\ast$ {\em locale} = {\ttfamily NULL})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_tel_tone_a20f6472d7864f980c2d6040ef5a38cc1}
+
+
+find an entry in the teltones database. \begin{DoxyReturn}{Returns}
+key of tone list if found, else NULL 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em tone}]name \item[{\em locale}]to optionally search under \end{DoxyParams}
+\index{ost::TelTone@{ost::TelTone}!getFrame@{getFrame}}
+\index{getFrame@{getFrame}!ost::TelTone@{ost::TelTone}}
+\subsubsection[{getFrame}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Linear} ost::TelTone::getFrame (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_tel_tone_a9fb42cc64137389c3033b58505a5a6d9}
+
+
+Generate and retrieve one frame of linear audio data for the telephony tone sequence being created. \begin{DoxyReturn}{Returns}
+pointer to samples generated. 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf ost::AudioTone} \doxyref{}{p.}{classost_1_1_audio_tone_a943d31930ce0f1318f42d6dc825200cb}.\index{ost::TelTone@{ost::TelTone}!isComplete@{isComplete}}
+\index{isComplete@{isComplete}!ost::TelTone@{ost::TelTone}}
+\subsubsection[{isComplete}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::TelTone::isComplete (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_tel_tone_ac9a38161400d6a843d4b38a819ae48e9}
+
+
+Check if all audio frames for this tone has been created. Some telephony tones, such as dialtone, may be infinite...
+
+\begin{DoxyReturn}{Returns}
+true if audio is complete. 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf ost::AudioTone} \doxyref{}{p.}{classost_1_1_audio_tone_afd2f4d74c504ff9f1638ac0097f7df8d}.\index{ost::TelTone@{ost::TelTone}!load@{load}}
+\index{load@{load}!ost::TelTone@{ost::TelTone}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}static bool ost::TelTone::load (const char $\ast$ {\em pathname}, \/  const char $\ast$ {\em locale} = {\ttfamily NULL})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_tel_tone_accdcf48f72d04bc79dc6ee2bfad38b35}
+
+
+Load a teltones database file into memory. \begin{DoxyReturn}{Returns}
+true if successful 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em pathname}]of file to load. \item[{\em locale}]to optionally load. \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\index{ost::TelTone@{ost::TelTone}!complete@{complete}}
+\index{complete@{complete}!ost::TelTone@{ost::TelTone}}
+\subsubsection[{complete}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::TelTone::complete}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_tel_tone_ab7bf2c032d956281a1ff8dd92eae2acd}
+\index{ost::TelTone@{ost::TelTone}!count@{count}}
+\index{count@{count}!ost::TelTone@{ost::TelTone}}
+\subsubsection[{count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::TelTone::count}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_tel_tone_ad83573418d7d66ee12ab7742a3427856}
+\index{ost::TelTone@{ost::TelTone}!def@{def}}
+\index{def@{def}!ost::TelTone@{ost::TelTone}}
+\subsubsection[{def}]{\setlength{\rightskip}{0pt plus 5cm}{\bf tonedef\_\-t}$\ast$ {\bf ost::TelTone::def}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_tel_tone_aa83d1aff24fd6bc422275f7f3e638b73}
+\index{ost::TelTone@{ost::TelTone}!framing@{framing}}
+\index{framing@{framing}!ost::TelTone@{ost::TelTone}}
+\subsubsection[{framing}]{\setlength{\rightskip}{0pt plus 5cm}{\bf timeout\_\-t} {\bf ost::TelTone::framing}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_tel_tone_a8b133fbb4fbffc680fccd894405acca0}
+\index{ost::TelTone@{ost::TelTone}!level@{level}}
+\index{level@{level}!ost::TelTone@{ost::TelTone}}
+\subsubsection[{level}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Level} {\bf ost::TelTone::level}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_tel_tone_ac64942aa5d5993948cb89115f2a0e203}
+\index{ost::TelTone@{ost::TelTone}!remaining@{remaining}}
+\index{remaining@{remaining}!ost::TelTone@{ost::TelTone}}
+\subsubsection[{remaining}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::TelTone::remaining}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_tel_tone_a063fcabcb8f53fda15619e590e3f5376}
+\index{ost::TelTone@{ost::TelTone}!silent@{silent}}
+\index{silent@{silent}!ost::TelTone@{ost::TelTone}}
+\subsubsection[{silent}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::TelTone::silent}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_tel_tone_a8992b8689dfc06bbeefce252c018aa7d}
+\index{ost::TelTone@{ost::TelTone}!tone@{tone}}
+\index{tone@{tone}!ost::TelTone@{ost::TelTone}}
+\subsubsection[{tone}]{\setlength{\rightskip}{0pt plus 5cm}{\bf tonekey\_\-t}$\ast$ {\bf ost::TelTone::tone}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_tel_tone_a91d5a785d8f665505d03eac002f246df}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf audio2.h}\end{DoxyCompactItemize}

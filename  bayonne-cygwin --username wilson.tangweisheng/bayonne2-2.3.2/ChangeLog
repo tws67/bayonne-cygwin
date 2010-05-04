@@ -1,0 +1,678 @@
+From Bayonne 2.3.1 to 2.3.2
+- service keyword to bind scripts to xmlrpc services
+- pending completion handlers in xmlrpc to allow services to
+  start and run and return response on completion
+- reorg of exit reason string to use %script.error if no reason set
+- restructure of session xmlrpc service/session creation around service
+  binding keyword and completion handling
+- xmlrpc server services to locate service binding and return keymap
+
+From Bayonne 2.3.0 to 2.3.1
+- xmlrpc server.isScript and server.isSelect added.
+- Some simplification for configuring the SIP driver and global
+  configure options for local, remote, and message formats for
+  building macros that assure re-invite is correct for playing.
+- Slightly updated default voice library.
+- reconnect (reinvite) control now part of core scripting
+- ivrscript1 binding renamed ivrscript.
+- dtmf keymap table added, and id[.xxx] commands to simplify path and
+  id based macro construction.
+
+From Bayonne 2.2.4 to 2.3.0
+- xml serverResponse webservice removed; use standard xmlrpc instead
+- /events method added to web service
+- xmlrpc session.getInfo now includes joined session reference
+- <selectors> parsing language for event filter selection
+- parametric session creation
+- support for script engine and libexec embedding
+- fix for init script for multi-config
+- proxy calling in call engine
+
+From Bayonne 2.2.3 to 2.2.4
+- tcpmon start of exit management
+- use of protocol(s) = in [engine] to load multiple protocol stacks and
+  optionally restrict protocol timeslot allocation by individual 
+  timeslot entries in engine.
+- start of audio streaming for bgm and conference mixing code
+- fix in typo in xmlrpc
+
+From Bayonne 2.2.2 to 2.2.3
+- manager can be authorized if user identity
+- completion of basic xmlrc call session management
+- exit manager handling and exit command with reply codes for xmlrpc
+  started sessions
+
+From Bayonne 2.2.1 to 2.2.2
+- fix protocol drivers to use addConfig
+- added _uid_ in caller:: for identity, do not use extensions for
+  callerid otherwise
+- sip driver encoding defaults reloadable
+- sip driver localnames to seperate non-authorized anonymous callers
+- multiple configs supported through BAYONNE_CONFIG
+- -pattern xxx test option
+
+From Bayonne 2.2.0 to 2.2.1
+- use of new keydata form of ccscript3 config
+
+From Bayonne 2.1.1 to 2.2.0
+- support for dynamic and static config keydata entries.  Dynamic 
+  keydata used to reload configuration keys during runtime!
+- SIP driver revised to reload timing parameters on server reload.
+- simplified inbound config file processing, no longer associated
+  with driver but rather with binding.
+- simplified and more consistent rules for parsing runlevel & caller
+  config options.  runlevel now supercedes protocol registration.
+- new service binding for inbound call handling overrides.
+- xmlrpc service setting now correct.
+
+From Bayonne 2.1.0 to 2.1.1
+- fix for xmlrpc bug!
+
+From Bayonne 2.0.2 to 2.1.0
+- extensible XMLRPC core engine library support, api bindings service 
+  module and web service transport
+- libosip2/exosip2 >= 3.0 support
+- new simpler method to account for entry and exit of co-joined "calls"
+
+From Bayonne 2.0.1 to 2.0.2
+- zeroconf binding support
+- avahi based zeroconf service plugin 
+- snmp trap support added
+
+From Bayonne 2.0.0 to 2.0.1
+- extras added back in for BayonneXML
+- restructuring of core RPC code in engine for XMLRPC parsing
+
+From Bayonne 1.5.29 to 2.0.0
+- new baseline libs; common c++ 1.5.0, ccscript 1.1.0, ccrtp 1.5.0
+
+From Bayonne 1.5.28 to 1.5.29
+- minor code cleanup
+- reorg of debug statements and usage
+- embedded webserver allows additional pages to be added, custom branding
+  with header & footer logos, launching java management applets, etc
+- sip registry group id
+- start of RPC services with possible inter-exchange to bindery for 
+  future soap and xmlrpc support.
+- tested with ccrtp/commoncpp 1.5.0
+
+From Bayonne 1.5.27 to 1.5.28
+- .ini config file binding
+- more sip registry properties
+- sip ptime attribute established
+- sip 183, 180 ringing, and other answering mode support options 
+- sip hangup sends 486 if never answered invite with 200
+- answer state and command for supporting drivers with delayed answer
+- sip autodetect a=inactive for 183 style (and ims/3gpp) answering
+- don't allow accidentel 0.0.0.0 address if host name unknown
+- some improvement in rtp audio sync, especially with filled silence
+
+From Bayonne 1.5.26 to 1.5.27
+- attributes for codecs in SIP sdp
+- fix for dtmf 2833 typo in sdp
+
+From Bayonne 1.5.25 to 1.5.26
+- sychronized ring operations to ring multiple extensions
+- restore encoding for recall reconnection
+- store audio encoding in call session record
+- script xfer state places call on hold first for SIP driver
+- accept timer property moved to register, default immediate rtp connect
+- feature command and feature.conf mapping
+
+From Bayonne 1.5.24 to 1.5.25
+- if disconnecting in holding state, release hold
+- change step timer in run so not always retiming when on hold
+- state engine infrastructure for refer redirection
+- fix for session version in re-invite
+- connect.norefer & join.norefer option to prevent transfering
+- SIP refer hops to join refer when bridged & permitted
+- recall to return if transfer script fails, release to drop refer
+- bridge performs @call:transfer or connect::transfer for peer refer
+- SIP reconnect failure restores session, prevents further reinvites
+- multi-segment report billing model replaced with Call object
+- session.status and isRefer()
+
+From Bayonne 1.5.23 to 1.5.24
+- Server default reply to SIP options request
+- get SIP register expires from contact if not in separate header; for 
+  twinkle
+- hold passing through joint call
+- active hold suspends audio & scripting
+- both RFC 2543 and 3264 supported for SIP station holding
+- hold support for external api's (tcpmon, webservice)
+
+From Bayonne 1.5.22 to 1.5.23
+- answer mode option in SIP registry, used for now to re-enable 180 reply
+- bridge entry/exit now a seperate call event for services (to generate
+  per bridged call cdr) and bindings.
+- new definition of gateway device/registration entry type for SIP
+- Can specify gateways with SIP registration record for associated gatways
+- Associated gateways create alias entries in SIP driver so they can be
+  directly dialable and referencable
+
+From Bayonne 1.5.21 to 1.5.22
+- small improvements in matching SIP codecs to reconnect names
+- more consistent codec name handling for SIP
+- skip reconnect if already using specified encoding in SIP
+
+From Bayonne 1.5.20 to 1.5.21
+- 3 and 5 bit adpcm codec support added to sip
+- some refinement on SIP peer calling and sipdevice ability to disable
+- some changes in [sip] to make encoding consistent
+- reconnect state for audio format switching
+- simplified sip driver sdp presentation
+- ability to change audio encoding mid-session with "reconnect"
+- ability to change audio encoding as part of destination connect!
+- session.sdp_reconnect and reconnect= format list for SIP registry
+  (for devices/endpoints that can accept re-invite...)
+
+From Bayonne 1.5.19 to 1.5.20
+- route/droute command copies route to %session.digits on match
+- route commands clear script.error and set "route-invalid" if failed to find
+- initial support for SIP native peer calling and use of peering= in 
+  place of encoding for devices and services that can be re-invited
+
+From Bayonne 1.5.18 to 1.5.19
+- use of "extension" keyword interchange with extern...
+- fix of bug if connect to extension list & all offline (select w/o tail null)
+- enable use of "include" to merge dialing plans in config files
+- separation of route into droute and sroute commands and fast mode
+- fix for expired extern appearing correctly in status.html
+- services receive call notification
+- script.error initialized for failed outbound calling errors; this will
+  help in future voice broadcast applications
+- added ext & uid mappings
+- instance management of registry & better registry instance limiting
+- local reports for registrations when remapped & register service= entry
+
+From Bayonne 1.5.17 to 1.5.18
+- automatic operations on timed expire in sip driver
+- smarter driver shutdown hangup timer management
+
+From Bayonne 1.5.16 to 1.5.17
+- reduced some use of global locks in sip driver for better efficiency
+- disconnect sip session if associated registry disconnects
+- cleaner shutdown while live
+- faster registration startup
+
+From Bayonne 1.5.15 to 1.5.16
+- publishing reinvite audio status accross join (bgm related...)
+- session timers from invite (refresh from re-invite?)
+- SIP re-invite support added, allows remote hold & transfer
+- use of new libeXosip2 2.2.3pl1/future option to not send SIP 101 answer
+  messages; needed for broken stacks on some snom and cisco ip phones
+
+From Bayonne 1.5.14 to 1.5.15
+- codec mismatch error reporting for child joins
+- away and other connect events for child joins
+- integration of presense into dialing & webservice status
+- new /etc/bayonne/sipdevice.conf for fast and easy registry config
+- added insecure option for sip devices that have broken publish
+- persistant sip call traffic stat nodes used for reload
+- drivers notified when Bayonne image is reloaded
+
+From Bayonne 1.5.13 to 1.5.14
+- use getProtocol rather than get for registration driver when not 
+  in .conf and none specified.  This is for when multiple driver and
+  protocol stacks are loaded together.
+- fix connect for inf timeout to not immediately abort
+- kill peer_encoding/old sync stuff as it interfers with multi-drivers
+- added parent/child encoding selection for all drivers with join
+
+From Bayonne 1.5.12 to 1.5.13
+- some fixes for w32 build
+- fix for timeout in connect cancelling and advancing
+- fix for connect state using dial response error codes
+- fix for start state cancelling child
+
+From Bayonne 1.5.11 to 1.5.12
+- some small fixups for ppc, prototypes, 64 bit, and java jar
+
+From Bayonne 1.5.10 to 1.5.11
+- added dnd to dial failure possibilities
+- fix for SIP seize state hangup; now calls sipHangup immediately
+
+From Bayonne 1.5.9 to 1.5.10
+- addition of server.pm for Perl Bayonne::Server module to invoke
+  serverResponse methods
+- start of server.py for Python serverResponse functions.
+- fix to webservice for not returning application level errors as
+  http 6xx errors.
+- no longer use send jitter/prebuffering if set when send immediate.
+- reduce inbound jitter time during join for less latency.
+- AUDIO_SYNC peering event when audio momentarily lost on one side
+- automatic numbering of BayonneXML blocks when unnamed, next= option
+- service bindings can create initial script image
+- new conditional tests for -external, -reachable, -available, -registered
+- support generic receiver scripts in startDialing (such as connect::transfer)
+
+From Bayonne 1.5.8 to 1.5.9
+- isExternal driver virtual added to improve startDialing to identify
+  easily when dialing an internal extension rather than external destination
+- relocation events defined
+- isReachable driver virtual added to improve startDialing by allow 
+  hunting to alternative proxy if multiple proxies are listed in select
+  and the first is not currently available.
+- support of startDialing of ext uri's as "ringing" inbound calls, uses
+  seize for protocol drivers, will eventually use new "ringing" state
+  for traditional drivers.
+- expansion state for developing station hunting.
+- integrated support for dialing sip extern call groups.
+
+From Bayonne 1.5.7 to 1.5.8
+- fix to use correct realm in sip authentication replies
+- new ThreadLock for reload control issues
+- select[.driver] option
+- g726-32 fix for sip
+- present registration uri rather than local uri to invite
+- ringback default for connect unless explicitly disabled (tone=none)
+- simplified @call modes added for scripting dialing plans
+- automatic @dialed:, @accept:, and @reject: removed; use route/sroute
+- simplified analog outbound dialing for consistency with other modes
+- connect.conf and outgoing vs incoming call handling
+- ringing to track extension inbound call type
+- anonymous calling possible by sip virtual host
+- aggregation of multipe extern SIP registrations under single uri
+- SIP passing of caller id through connect to invite
+- can update sip expiration based on reply
+- proper did tracking in SIP driver for hangup
+- copy active SIP registration state on reload
+- SIP driver event dispatch thread pooled for scaling 
+
+From Bayonne 1.5.6 to 1.5.7
+- Call traffic statistics and export in webservices
+- improved support for using self as outbound proxy
+- "outbound" sip setting now used to override self proxy
+- uri forwarding option for unregistered extensions
+- optional call limits for sip registry entries
+- option for anonymous sip calls in place of sip authentication
+- webservice basic authentication support
+
+From Bayonne 1.5.5 to 1.5.6
+- SIP driver proxy authentication and registrar functionality added
+- new "extern" keyword added for registering external SIP devices
+- md5_hash() added to engine library
+
+From Bayonne 1.5.4 to 1.5.5
+- fix in req_query parse in webservice!
+- md5 hashing added to bayonne engine
+- external SIP devices can register with Bayonne
+- accept proxy authentication and peering for type=extern
+
+From Bayonne 1.5.3 to 1.5.4
+- simplification of configuration management
+- virtual macros stuff removed
+- removal of old testing stuff
+- tts-festival added
+- New "WebService" plugin with html and serverResponse
+- introduction of serverResponse XML dialect
+
+From Bayonne 1.5.2 to 1.5.3
+- g721 for SIP
+- .adpcm phrasebook support and conditional testing of ccaudio2 codecs
+- support for audio rate resampler support in newest ccaudio2
+- BayonneXML returns through binding!
+- TTS integration returns through tts.def macros!
+- new voice for default library with missing prompts
+
+From Bayonne 1.5.1 to 1.5.2
+- logrotate.d file added
+- use /etc as primary prefix
+- sip registry mapped by resolved and given hostnames 
+- ccrtp 1.4.1 send immediate support (now default)
+- new sip driver rtp thread starting mode options to improve
+  high call capacity server performance
+- hiwater allocation of driver sessions possible
+
+From Bayonne 1.5.0 to 1.5.1
+- logical build system for Bayonne java support
+- logical build system for Bayonne mono support
+- lots of make install/build related fixes
+- portable statfs added to tcpmon
+- diskstat tcpmon function
+
+From Bayonne 1.2.1 to 1.5.0
+- reved to avoid confusion with past releases
+- 64 bit fixups, code cleaning
+- fix for gcc 4.1.
+- code cleanup
+- fix sangoma config
+
+From Bayonne 1.2.0 to 1.2.1
+- depreciated AudioFile::getSamples.
+- fix soundcard driver stuck key
+- additional sdp for linear
+- sdp negotiate by attribute
+
+From Bayonne 1.0.10 to 1.2.0
+- sangoma driver added
+- old exosip-1 driver removed
+- binding config key sets to engine
+- new config bindings for smtp, url
+- libexec "error" command
+- write command added
+- btsencode added for email encoding
+- url fetch and processing added
+- session based sip encoding format
+- connect/select/join scripting standardized
+
+From Bayonne 1.0.9 to 1.0.10
+- can dump per-driver registrations
+- tcpmon "reg" command
+- driver and server fixes for sip call transfer
+
+From Bayonne 1.0.8 to 1.0.9
+- fix for phrasebook builds
+- added &day shorter date phrase.
+- added &hour short time phrase
+- added link command for hard links
+- added plugins= to [server]
+
+From Bayonne 1.0.7 to 1.0.8
+- fix for partial digit match issues.
+- localized macro definitions introduced.
+
+From Bayonne 1.0.6 to 1.0.7
+- btsmusic script to copy & store mp3/ogg files as linear for Bayonne use.
+- definitions macros and keyword extension support.
+- record and append can trigger automatic rename on completion.
+- fix for english language module febuary.
+- initial definitions library.
+
+From Bayonne 1.0.5 to 1.0.6
+- auto delete short records.
+- libexec.mac, ifconfig and uptime stuff
+- fix for libexec script install
+- ignore CALL_DISCONNECT for idle or hangup
+- sip fix for pure proxy based call authentication, and "friend" becomes
+  either peer or proxy mode authentication based on call type. 
+- use of public= option to "register" command for sip when used behind port
+  forwarded NAT with a public proxy; also does automatic sdp rewrite.
+
+
+From Bayonne 1.0.4 to 1.0.5
+- %session.timestamp and %session.index added
+- binding can be set in sysconfig
+- fix for config path parsing
+- fix for en_us date
+- fix for multiprompt play when files missing
+- narrowed scope of HAVE_TESTING to allow useful server options
+- snapshot service introduced
+- priority fix for services
+- missing sip info methed added back for exosip2
+- msgbox example application added
+
+From Bayonne 1.0.3 to 1.0.4
+- env init fix for exports, no daemon if default is soundcard
+- fix for some dtmf input sequencing
+
+From Bayonne 1.0.2 to 1.0.3
+- env init from server init script possible again
+- autodetect and default config connections to driver selection
+- no daemon mode if autoconfig and default forced to soundcard
+- audiosync utility for prompts
+- after=[&]var in list command
+
+From Bayonne 1.0.1 to 1.0.2
+- set ccscript3 server prefix paths.
+- soundcard uses queEvent to avoid fox stackframes
+- proxy register using userid based on script name if not set in
+  register command.  Avoids segfault if userid missing.
+- Migration for libeXosip to libeXosip2 for SIP support!
+- cleanup of header documentation
+
+From Bayonne 1.0.0 to 1.0.1
+- fix for anticipated change in how synchronization object timeouts will
+  work in Common C++ 1.4.0 and future releases.
+- some fixes for w32
+
+From Bayonne 1.0.0-rc1 to 1.0.0
+- input lastdigit timeout...
+- read enables dtmf input
+- fix for collect state data capture
+
+From Bayonne 0.9.5 to 1.0.0-rc1
+- many unstable or incomplete features removed, including troll and
+  gateway operations.
+- fix for voice library installs
+- loadBinder part of server Runtime::
+- menudef/endmenu now form/endform with loop control
+- endinput to stop input in forms, etc...  
+- libexec async symbol post event handling
+
+From Bayonne 0.9.4 to 0.9.5
+- sip driver info method for sending dtmf added
+- dtmf setting in registry
+- new separate dtmf state so we can generate audio sync'd info messages or
+  2833 events in protocol drivers...
+- limits in trunking and driver setup
+- Audio feeder class for continues audio options
+- bgm command introduced
+- loadAudio() to load audio plugins for CAP
+- %session.uid, .mid for unique identifiers
+
+From Bayonne 0.9.3 to 0.9.4
+- fix for parsing troll config files, user path and ~/.troll option
+- fix for list command
+
+From Bayonne 0.9.2 to 0.9.3
+- use of [gateway] override on argv0 check to allow a gateway and app
+  server instance to co-exist.
+- troll commands to assign protocols and trunks for outbound selection
+- span tracking
+- destination check virtual for protocol drivers
+- troll dial and connect commands to interconnect ports!
+
+From Bayonne 0.9.1 to 0.9.2
+- start of mailbox macros...
+- change of troll handling for function macros
+- list command added
+- parse argument fix
+
+From Bayonne 0.9.0 to 0.9.1
+- move call event selection from engine into binders
+- service level management externalized to binders
+- start of troll voip-pstn gateway service binder
+- protocols post their ripple config files
+- make sure we do not override .conf files if already present on make install
+
+From Bayonne 0.8.8 to 0.9.0
+- new driver virtual for setPeering.
+- loadTrunking and loadProtocols separation for servers that will care.
+- provisioning for engine library directly test mode aware.
+- server binary image with no wrapper scripts or sysgen config
+- configure option --disable-testing to strip production builds
+- server reads provision.conf or startup.conf for fifo config commands
+- script/config file reload patterns moved out of libbayonne and into binder
+- better management and catagorization of plugins, and selection in config
+- server binder plugins to extend and control server properties
+
+From Bayonne 0.8.7 to 0.8.8
+- separation of phrasebook audio path
+- alternate server provisioning of drivers and plugins...
+
+From Bayonne 0.8.6 to 0.8.7
+- docs updated to be more current with recent developments...
+- caller and dialed reserved script names
+- simplify forward and pickup routing
+- ripple mode routing support
+- [config] section for server and provisioning...
+- config file binding and config script command option
+
+From Bayonne 0.8.5 to 0.8.6
+- event contexts and caller/dialed selection of incoming
+- session.auth made into session.info to match other things, info digits,
+  etc...
+- session.callref as billing reference id, usually session.gid unless
+  set externally...
+- assign.cid to assign scripts by callerid
+
+From Bayonne 0.8.4 to 0.8.5
+- make sure channel dialog id is set on outbound connect
+- payload negotation results now alterable at session level (for future
+  and more dynamic exosip2 negotated sessions...)
+- start of exosip2 splitoff in sip driver
+- some fixes for old gcc compiles...
+
+From Bayonne 0.8.3 to 0.8.4
+- install libbayonne.pc!
+- libbayonne.pc moved to engine subdir for easy make install of engine.
+- assign.sip to enable specified proxies to dial through us directly without
+  authentication!  use wisely...perhaps we also need sip session registrar...
+- fifo driver select script startup...
+- start of sip outbound invite (dialing) from start
+- %session.auth for call authorization type...
+- improvements in register.sip auto-uri generation if none given
+- register.sip type= and realm= keywords added
+
+From Bayonne 0.8.2 to 0.8.3
+- driver "type" field...
+- fix on default durations for sip, timeout now in seconds, not minutes,
+  default of 1 minute (60 seconds) used, not 1 hour.
+- can invoke .mac from shell just like .scr for single load testing, etc
+- scripts changable prefix --scripts= also useful for --check collections
+- some fixups for sip inbound parsing
+- %session.server for return server to contact...
+
+From Bayonne 0.8.1 to 0.8.2
+- fix for url for sip transfer and server= keyword
+- setting script.error before scheduled commands
+- ERROR_STATE to reset error handling on entry
+- libexec support for xfer call
+- theta.mac has ability to test for theta and smarter use of vars
+- support for ccscript 0.7.3 virtual macros!
+- --check option to only test compiled scripts!
+
+From Bayonne 0.8.0 to 0.8.1
+- driver property for optional transfer prefix
+- start of bayonne application (macro) library, some fixups for macros
+- SHELL_BTSEXEC for test mode/live shell, autolaunched for .sh files
+- theta synth macros
+- readpath and writepath assure path is "" if invalid
+
+From Bayonne 0.7.1 to 0.8.0
+- overrides from a provisioning file and better control as to when 
+  ~/.bayonnerc will be used.
+- call transfer operation and url's for inet driver support
+
+From Bayonne 0.7.0 to 0.7.1
+- slight change in audio in sip; hangup has "hang time" for remote endpoint
+  to complete pending audio frames before disconnect.  Interplay audio timer 
+  gap can now be much smaller, or even set to 0.
+- fix for using "encoded" silent frame when filler is specified.
+- sip inband only used when active session dtmf required
+- delay sip driver startup until initial compile completed
+- startup check on image loaded
+
+From Bayonne 0.6.4 to 0.7.0
+- correctness and strict for libexec.pm.
+- call driver virtual for PART_PEER to notify driver of disconnect.
+- libexec unit seperated by execv from main server, no longer has
+  server stuff dragged along into other processes.
+- embedding perl in libexec unit
+- fix for directory scanning
+- ttstool for generating prompts from various tts engines
+- btsexec for libexec shell scripts that need headers and arguments!
+- lot of fixups for pathname processing on write paths...
+- new readpath and writepath commands for pre-expanding libexec paths...
+- new "path" command to make path vars suitable for -file or local ref.
+- lots of work in rtp audio for sip!
+
+From Bayonne 0.6.3 to 0.6.4
+- pnet libexec support and C# Bayonne class library.
+- a small fix in join state code.
+- stuff related to config file install.
+- changes in audio prompt makefile layout because of automake incompats
+
+From Bayonne 0.6.2 to 0.6.3
+- start of Java libexec support.
+- java runtime launcher in libexec, uses bayonne.jar for classpath.
+- btsexec expanded to include tmp/tmpfs info.
+- libexec "tone", "stone", and "dtone" commands added
+
+From Bayonne 0.6.1 to 0.6.2
+- more stuff in libbayonne.pc
+- --dump-install also lists preferred bayonne "home" (real var path).
+- btsexec wrapper and exec detection.
+- more checks for voice options.
+- audio clr on far side of timer in hangup state.
+- alternate idle drop if thread waiting, some state code fixups.
+
+From Bayonne 0.6.0 to 0.6.1
+- libexec wrappers
+- russian phrasebook module
+- seperation of script and macro files
+- cleaner handling of undefined arguments for libexec
+- wait state and exec concurrent limit support in scripting 
+
+From Bayonne 0.5.2 to 0.6.0
+- automatic exec wrapper and ability to place perl, python, shell, and php
+  applications directly in script "compile" directory.
+- C++ Libexec client class rewritten as non-static to match python...
+
+From Bayonne 0.5.1 to 0.5.2
+- make sure SERVER_LIBEXEC is fully resolved, needed for php...
+- php support and libexec.php module.
+
+From Bayonne 0.5.0 to 0.5.1
+- python libexec class and test.
+- resume added for libexec in general.
+- loaded languages passed to libexec modules so they can verify availability.
+- local file manip commands in libexec which follow Bayonne name conventions.
+
+From Bayonne 0.4.1 to 0.5.0
+- fix for libexec args with keyword arguments.
+- fix for libexec prompt command thread exiting.
+- client process libexec interface class for C++ libexec's.
+- introduction of libexec 900 terminate message.
+- waitkey in scripting and libexec.
+- many other new libexec commands introduced.
+- split off of libexec subsystem under new libexec.h header.
+- removal of dialogic/aculab drivers from core package, now found in
+  seperate nonfree (for nonfree as in freedom in licensing, not cost)
+- server libexec support code moved to engine to assure consistency
+
+From Bayonne 0.4.0 to 0.4.1
+- compile time magic for voicelib command.
+- fox gui for soundcard driver.
+- new "console" pseudo-driver used to display soundcard gui.
+- voicetronix driver for w32.
+- cancel pid if fall to running state.
+- libexec audio prompting.
+
+From Bayonne2 0.3.1 to 0.4.0
+- small changes in demo soundcard driver sequencing.
+- valgrind stuff including bayonne --valgrind launch option.
+- fix for %global.xxx symbols!
+- use of "key" to create persistant key variables.
+- spanish and german phasebook modules completed.
+
+From Bayonne2 0.3.0 to 0.3.1
+- added batch files for server testing.
+- moved errlog to engine library.
+- fix for attach deadlock oddity.
+- added some deadlock tracing support to server.
+
+From Bayonne2 0.2.0 to 0.3.0
+- support for cdr command to bind per-script cdr format to call log files
+- core fixes to support new phrasebook system correctly
+- phrasebook language models for english, italian, and french complete
+- languages compile time command to set/load language modules
+
+From Bayonne2 0.1.3 to 0.2.0
+- data structures for driving phrasebook through libexec.
+- simplified libexec state coding in engine.
+- soundcard and sip drivers buildout for w32.
+- w32 config paths fixed.
+
+From Bayonne2 0.1.2 to 0.1.3
+- generic tone generation command to make single/dual tones on demand.
+- changed translation stuff to allow easier merge for libexec phrasebook.
+- removed conflicting member names for loading plugins.
+
+From Bayonne2 0.1.1 to 0.1.2
+- new server shell script options to trigger reload and down.
+- a bayonne services init script for /etc/init.d
+- libbayonne now has parts of loader support
+- audiotool used for conversion of installed voice libraries to gsm, alaw
+- configure --enable-voices option for full voice library install

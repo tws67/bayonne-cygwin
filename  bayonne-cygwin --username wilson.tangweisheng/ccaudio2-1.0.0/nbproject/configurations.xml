@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="62">
+  <logicalFolder name="root" displayName="root" projectFiles="true">
+    <df name="ccaudio2-1.0.0" root=".">
+      <df name="autoconf">
+      </df>
+      <df name="codecs">
+        <in>adpcm.cpp</in>
+        <in>codecs.h</in>
+        <in>g711.cpp</in>
+        <in>gsm.cpp</in>
+        <in>oki.cpp</in>
+        <in>speex.cpp</in>
+      </df>
+      <df name="doc">
+      </df>
+      <df name="m4">
+      </df>
+      <df name="src">
+        <in>audio2.h</in>
+        <in>audiobase.cpp</in>
+        <in>audiofile.cpp</in>
+        <in>buffer.cpp</in>
+        <in>codec.cpp</in>
+        <in>detect.cpp</in>
+        <in>dialers.cpp</in>
+        <in>fileio.cpp</in>
+        <in>friends.cpp</in>
+        <in>mapper.cpp</in>
+        <in>oss.cpp</in>
+        <in>osx.cpp</in>
+        <in>resample.cpp</in>
+        <in>stream.cpp</in>
+        <in>teltones.cpp</in>
+        <in>tone.cpp</in>
+        <in>w32.cpp</in>
+      </df>
+      <df name="utils">
+        <in>audiotool.cpp</in>
+        <in>audiotool.h</in>
+        <in>build.cpp</in>
+        <in>chart.cpp</in>
+        <in>info.cpp</in>
+        <in>notation.cpp</in>
+        <in>packetdump.cpp</in>
+        <in>play.cpp</in>
+        <in>rewrite.cpp</in>
+        <in>size.cpp</in>
+        <in>strip.cpp</in>
+        <in>tonedetect.cpp</in>
+        <in>tonelist.cpp</in>
+        <in>tonetool.cpp</in>
+        <in>tonetool.h</in>
+        <in>tonewrite.cpp</in>
+        <in>trim.cpp</in>
+      </df>
+      <df name="w32">
+        <in>private.h</in>
+      </df>
+      <in>private.h</in>
+    </df>
+    <logicalFolder name="ExternalFiles" displayName="重要文件" projectFiles="false">
+      <itemPath>Makefile-ccaudio2-1.0.0.mk</itemPath>
+      <itemPath>makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile-ccaudio2-1.0.0.mk</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <compilerSet>Cygwin_4.x|Cygwin_4.x</compilerSet>
+        <platform>3</platform>
+      </toolsSet>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>$(MAKE) -f Makefile</buildCommand>
+          <cleanCommand>$(MAKE) -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+          <ccTool>
+            <incDir>
+              <pElem>src</pElem>
+              <pElem>.</pElem>
+            </incDir>
+            <preprocessorList>
+              <Elem>HAVE_CONFIG_H</Elem>
+            </preprocessorList>
+          </ccTool>
+        </makeTool>
+      </makefileType>
+      <item path="codecs/adpcm.cpp" ex="true" tool="1">
+      </item>
+      <item path="codecs/codecs.h" ex="true" tool="3">
+      </item>
+      <item path="codecs/g711.cpp" ex="true" tool="1">
+      </item>
+      <item path="codecs/gsm.cpp" ex="true" tool="1">
+      </item>
+      <item path="codecs/oki.cpp" ex="true" tool="1">
+      </item>
+      <item path="codecs/speex.cpp" ex="true" tool="1">
+      </item>
+      <item path="src/audiobase.cpp" ex="true" tool="1">
+      </item>
+      <item path="src/detect.cpp" ex="true" tool="1">
+      </item>
+      <item path="src/dialers.cpp" ex="true" tool="1">
+      </item>
+      <item path="src/mapper.cpp" ex="true" tool="1">
+      </item>
+      <item path="src/osx.cpp" ex="true" tool="1">
+      </item>
+      <item path="src/resample.cpp" ex="true" tool="1">
+      </item>
+      <item path="src/teltones.cpp" ex="true" tool="1">
+      </item>
+      <item path="src/w32.cpp" ex="true" tool="1">
+      </item>
+      <item path="utils/audiotool.cpp" ex="true" tool="1">
+      </item>
+      <item path="utils/audiotool.h" ex="true" tool="3">
+      </item>
+      <item path="utils/build.cpp" ex="true" tool="1">
+      </item>
+      <item path="utils/chart.cpp" ex="true" tool="1">
+      </item>
+      <item path="utils/info.cpp" ex="true" tool="1">
+      </item>
+      <item path="utils/notation.cpp" ex="true" tool="1">
+      </item>
+      <item path="utils/packetdump.cpp" ex="true" tool="1">
+      </item>
+      <item path="utils/play.cpp" ex="true" tool="1">
+      </item>
+      <item path="utils/rewrite.cpp" ex="true" tool="1">
+      </item>
+      <item path="utils/size.cpp" ex="true" tool="1">
+      </item>
+      <item path="utils/strip.cpp" ex="true" tool="1">
+      </item>
+      <item path="utils/tonedetect.cpp" ex="true" tool="1">
+      </item>
+      <item path="utils/tonelist.cpp" ex="true" tool="1">
+      </item>
+      <item path="utils/tonetool.cpp" ex="true" tool="1">
+      </item>
+      <item path="utils/tonetool.h" ex="true" tool="3">
+      </item>
+      <item path="utils/tonewrite.cpp" ex="true" tool="1">
+      </item>
+      <item path="utils/trim.cpp" ex="true" tool="1">
+      </item>
+      <item path="w32/private.h" ex="true" tool="3">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

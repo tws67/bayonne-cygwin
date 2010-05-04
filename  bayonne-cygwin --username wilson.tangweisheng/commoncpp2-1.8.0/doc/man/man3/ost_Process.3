@@ -1,0 +1,337 @@
+.TH "ost::Process" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::Process \- 
+.PP
+A class for containing portable process related functions that help create portable code.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <process.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef void(* \fBTrap\fP )(int)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBlock\fP (bool future=true)"
+.br
+.RI "\fILock a process in memory. \fP"
+.ti -1c
+.RI "void \fBunlock\fP (void)"
+.br
+.RI "\fIUnlock process pages. \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBdetach\fP (void)"
+.br
+.RI "\fIDetach current process into a daemon, posix only. \fP"
+.ti -1c
+.RI "static void \fBattach\fP (const char *devname)"
+.br
+.RI "\fIAttach the current process to another device or i/o session. \fP"
+.ti -1c
+.RI "static \fBTrap\fP \fBsetPosixSignal\fP (int signo, \fBTrap\fP handler)"
+.br
+.RI "\fISet a posix compliant signal handler. \fP"
+.ti -1c
+.RI "static \fBTrap\fP \fBsetInterruptSignal\fP (int signo, \fBTrap\fP handler)"
+.br
+.RI "\fISet system call interuptable signal handler. \fP"
+.ti -1c
+.RI "static int \fBspawn\fP (const char *exec, const char **argv, bool wait=true)"
+.br
+.RI "\fISpawn a process and wait for it's exit code. \fP"
+.ti -1c
+.RI "static int \fBjoin\fP (int pid)"
+.br
+.RI "\fIGet the exit status of another process, waiting for it to exit. \fP"
+.ti -1c
+.RI "static bool \fBcancel\fP (int pid, int sig=0)"
+.br
+.RI "\fICancel a running child process. \fP"
+.ti -1c
+.RI "static const char * \fBgetEnv\fP (const char *name)"
+.br
+.RI "\fIGet system environment. \fP"
+.ti -1c
+.RI "static void \fBsetEnv\fP (const char *name, const char *value, bool overwrite)"
+.br
+.RI "\fISet system environment in a standard manner. \fP"
+.ti -1c
+.RI "static const char * \fBgetConfigDir\fP (void)"
+.br
+.RI "\fIGet etc prefix path. \fP"
+.ti -1c
+.RI "static const char * \fBgetHomeDir\fP (void)"
+.br
+.RI "\fIGet home directory. \fP"
+.ti -1c
+.RI "static const char * \fBgetUser\fP (void)"
+.br
+.RI "\fIGet user name. \fP"
+.ti -1c
+.RI "static bool \fBsetUser\fP (const char *id, bool grp=true)"
+.br
+.RI "\fISet user id by name. \fP"
+.ti -1c
+.RI "static bool \fBsetGroup\fP (const char *id)"
+.br
+.RI "\fISet the effective group id by name. \fP"
+.ti -1c
+.RI "static size_t \fBgetPageSize\fP (void)"
+.br
+.RI "\fIReturn the effective operating system page size. \fP"
+.ti -1c
+.RI "static void \fBsetPriority\fP (int pri)"
+.br
+.RI "\fIUsed to set process priority and optionally enable realtime. \fP"
+.ti -1c
+.RI "static void \fBsetScheduler\fP (const char *policy)"
+.br
+.RI "\fIUsed to set process scheduling policy. \fP"
+.ti -1c
+.RI "static void \fBsetRealtime\fP (int pri=0)"
+.br
+.RI "\fIPortable shortcut for setting realtime. \fP"
+.ti -1c
+.RI "static bool \fBisScheduler\fP (void)"
+.br
+.RI "\fIReturn true if scheduler settable. \fP"
+.ti -1c
+.RI "static bool \fBisRealtime\fP (void)"
+.br
+.RI "\fIReturn true if realtime scheduling. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A class for containing portable process related functions that help create portable code. 
+
+These are typically referenced thru Process::xxx static member functions. Many of these members are used both for win32 and posix systems although some may be platform specific.
+.PP
+Peocess wrapper class. 
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> 
+.RE
+.PP
+
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef void(* \fBost::Process::Trap\fP)(int)"
+.SH "Member Function Documentation"
+.PP 
+.SS "static void ost::Process::attach (const char * devname)\fC [static]\fP"
+.PP
+Attach the current process to another device or i/o session. It is deamonified and dissasociated with the prior parent process and controlling terminal.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdevname\fP path to attach to. 
+.RE
+.PP
+
+.SS "static bool ost::Process::cancel (int pid, int sig = \fC0\fP)\fC [static]\fP"
+.PP
+Cancel a running child process. \fBReturns:\fP
+.RS 4
+0 on success. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpid\fP process id. 
+.br
+\fIsig\fP cancel signal to apply. 
+.RE
+.PP
+
+.SS "static void ost::Process::detach (void)\fC [static]\fP"
+.PP
+Detach current process into a daemon, posix only. Perhaps a similar method can be used for creating win32 'services'? 
+.SS "static const char* ost::Process::getConfigDir (void)\fC [static]\fP"
+.PP
+Get etc prefix path. \fBReturns:\fP
+.RS 4
+etc prefix. 
+.RE
+.PP
+
+.SS "static const char* ost::Process::getEnv (const char * name)\fC [static]\fP"
+.PP
+Get system environment. \fBReturns:\fP
+.RS 4
+system environ symbol. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP of symbol. 
+.RE
+.PP
+
+.SS "static const char* ost::Process::getHomeDir (void)\fC [static]\fP"
+.PP
+Get home directory. \fBReturns:\fP
+.RS 4
+user home directory. 
+.RE
+.PP
+
+.SS "static size_t ost::Process::getPageSize (void)\fC [static]\fP"
+.PP
+Return the effective operating system page size. \fBReturns:\fP
+.RS 4
+system page size. 
+.RE
+.PP
+
+.SS "static const char* ost::Process::getUser (void)\fC [static]\fP"
+.PP
+Get user name. \fBReturns:\fP
+.RS 4
+user login id. 
+.RE
+.PP
+
+.SS "static bool ost::Process::isRealtime (void)\fC [inline, static]\fP"
+.PP
+Return true if realtime scheduling. 
+.SS "static bool ost::Process::isScheduler (void)\fC [static]\fP"
+.PP
+Return true if scheduler settable. 
+.SS "static int ost::Process::join (int pid)\fC [static]\fP"
+.PP
+Get the exit status of another process, waiting for it to exit. \fBReturns:\fP
+.RS 4
+exit code from process. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpid\fP process id. 
+.RE
+.PP
+
+.SS "bool ost::Process::lock (bool future = \fCtrue\fP)"
+.PP
+Lock a process in memory. Ideally you should be deep enough where additional memallocs for functions will not kill you, or use false for future.
+.PP
+\fBReturns:\fP
+.RS 4
+true if successful. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfuture\fP pages as well... 
+.RE
+.PP
+
+.SS "static void ost::Process::setEnv (const char * name, const char * value, bool overwrite)\fC [static]\fP"
+.PP
+Set system environment in a standard manner. \fBParameters:\fP
+.RS 4
+\fIname\fP of environment symbol to set. 
+.br
+\fIvalue\fP of environment symbol. 
+.br
+\fIoverwrite\fP true if replace existing symbol. 
+.RE
+.PP
+
+.SS "static bool ost::Process::setGroup (const char * id)\fC [static]\fP"
+.PP
+Set the effective group id by name. \fBReturns:\fP
+.RS 4
+true if successful. 
+.RE
+.PP
+
+.SS "static \fBTrap\fP ost::Process::setInterruptSignal (int signo, \fBTrap\fP handler)\fC [static]\fP"
+.PP
+Set system call interuptable signal handler. return previous handler. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsigno\fP signal no. 
+.br
+\fIhandler\fP trap handler. 
+.RE
+.PP
+
+.SS "static \fBTrap\fP ost::Process::setPosixSignal (int signo, \fBTrap\fP handler)\fC [static]\fP"
+.PP
+Set a posix compliant signal handler. \fBReturns:\fP
+.RS 4
+previous handler. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsigno\fP signal no. 
+.br
+\fIhandler\fP trap handler. 
+.RE
+.PP
+
+.SS "static void ost::Process::setPriority (int pri)\fC [static]\fP"
+.PP
+Used to set process priority and optionally enable realtime. 
+.SS "static void ost::Process::setRealtime (int pri = \fC0\fP)\fC [static]\fP"
+.PP
+Portable shortcut for setting realtime. .. 
+.SS "static void ost::Process::setScheduler (const char * policy)\fC [static]\fP"
+.PP
+Used to set process scheduling policy. 
+.SS "static bool ost::Process::setUser (const char * id, bool grp = \fCtrue\fP)\fC [static]\fP"
+.PP
+Set user id by name. \fBReturns:\fP
+.RS 4
+true if successful. 
+.RE
+.PP
+
+.SS "static int ost::Process::spawn (const char * exec, const char ** argv, bool wait = \fCtrue\fP)\fC [static]\fP"
+.PP
+Spawn a process and wait for it's exit code. In win32 this is done with the spawn system call. In posix, this is done with a fork, an execvp, and a waitpid.
+.PP
+\fBWarning:\fP
+.RS 4
+The implementation differences between posix and win32 systems may cause side effects. For instance, if you use atexit() and this spawn method, on posix systems the function set up with atexit() will be called when the parent process of the fork exits, which will not happen on Win32 systems.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+error code from process. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIexec\fP name of executable. 
+.br
+\fIargv\fP list of command arguments. 
+.br
+\fIwait\fP for process to exit before return. 
+.RE
+.PP
+
+.SS "void ost::Process::unlock (void)"
+.PP
+Unlock process pages. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

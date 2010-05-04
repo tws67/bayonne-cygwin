@@ -1,0 +1,142 @@
+.TH "file.h" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+file.h \- 
+.PP
+Files and dynamic loader services.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cc++/config.h>\fP
+.br
+\fC#include <cc++/missing.h>\fP
+.br
+\fC#include <cc++/thread.h>\fP
+.br
+\fC#include <cc++/exception.h>\fP
+.br
+\fC#include <cstdio>\fP
+.br
+\fC#include <dirent.h>\fP
+.br
+\fC#include <sys/stat.h>\fP
+.br
+\fC#include <sys/mman.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBost::File\fP"
+.br
+.ti -1c
+.RI "struct \fBost::File::_fcb\fP"
+.br
+.ti -1c
+.RI "class \fBost::Dir\fP"
+.br
+.RI "\fIA low level portable directory class. \fP"
+.ti -1c
+.RI "class \fBost::DirTree\fP"
+.br
+.RI "\fIA generic class to walk a hierarchical directory structure. \fP"
+.ti -1c
+.RI "class \fBost::RandomFile\fP"
+.br
+.RI "\fIThe purpose of this class is to define a base class for low level random file access that is portable between Win32 and Posix systems. \fP"
+.ti -1c
+.RI "class \fBost::ThreadFile\fP"
+.br
+.RI "\fIThis class defines a database I/O file service that can be shared by multiple threads. \fP"
+.ti -1c
+.RI "class \fBost::SharedFile\fP"
+.br
+.RI "\fIThis class defines a database I/O file service that can be shared by multiple processes. \fP"
+.ti -1c
+.RI "class \fBost::MappedFile\fP"
+.br
+.RI "\fICreate and map a disk file into memory. \fP"
+.ti -1c
+.RI "class \fBost::DSO\fP"
+.br
+.RI "\fIThe \fBDSO\fP dynamic loader class is used to load object files. \fP"
+.ti -1c
+.RI "class \fBost::DirException\fP"
+.br
+.ti -1c
+.RI "class \fBost::DSOException\fP"
+.br
+.ti -1c
+.RI "class \fBost::FileException\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBost\fP"
+.br
+.in -1c
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBcaddr_t\fP   char *"
+.br
+.ti -1c
+.RI "#define \fBPATH_MAX\fP   256"
+.br
+.ti -1c
+.RI "#define \fBNAME_MAX\fP   64"
+.br
+.ti -1c
+.RI "#define \fBS_IRUSR\fP   0400"
+.br
+.ti -1c
+.RI "#define \fBS_IWUSR\fP   0200"
+.br
+.ti -1c
+.RI "#define \fBS_IRGRP\fP   0040"
+.br
+.ti -1c
+.RI "#define \fBS_IWGRP\fP   0020"
+.br
+.ti -1c
+.RI "#define \fBS_IROTH\fP   0004"
+.br
+.ti -1c
+.RI "#define \fBS_IWOTH\fP   0002"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef unsigned long \fBost::pos_t\fP"
+.br
+.ti -1c
+.RI "typedef size_t \fBost::ccxx_size_t\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Files and dynamic loader services. 
+
+
+.SH "Define Documentation"
+.PP 
+.SS "#define caddr_t   char *"
+.SS "#define NAME_MAX   64"
+.SS "#define PATH_MAX   256"
+.SS "#define S_IRGRP   0040"
+.SS "#define S_IROTH   0004"
+.SS "#define S_IRUSR   0400"
+.SS "#define S_IWGRP   0020"
+.SS "#define S_IWOTH   0002"
+.SS "#define S_IWUSR   0200"
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

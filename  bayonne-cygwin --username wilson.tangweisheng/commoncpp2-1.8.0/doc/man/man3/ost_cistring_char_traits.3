@@ -1,0 +1,41 @@
+.TH "ost::cistring_char_traits" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::cistring_char_traits \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <oststring.h>\fP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBeq\fP (char c1, char c2)"
+.br
+.ti -1c
+.RI "static bool \fBne\fP (char c1, char c2)"
+.br
+.ti -1c
+.RI "static bool \fBlt\fP (char c1, char c2)"
+.br
+.ti -1c
+.RI "static int \fBcompare\fP (const char *s1, const char *s2, size_t n)"
+.br
+.in -1c
+
+.SS "template<class charT> struct ost::cistring_char_traits< charT >"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class charT > static int \fBost::cistring_char_traits\fP< charT >::compare (const char * s1, const char * s2, size_t n)\fC [inline, static]\fP"
+.PP
+References strnicmp.
+.SS "template<class charT > static bool \fBost::cistring_char_traits\fP< charT >::eq (char c1, char c2)\fC [inline, static]\fP"
+.SS "template<class charT > static bool \fBost::cistring_char_traits\fP< charT >::lt (char c1, char c2)\fC [inline, static]\fP"
+.SS "template<class charT > static bool \fBost::cistring_char_traits\fP< charT >::ne (char c1, char c2)\fC [inline, static]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

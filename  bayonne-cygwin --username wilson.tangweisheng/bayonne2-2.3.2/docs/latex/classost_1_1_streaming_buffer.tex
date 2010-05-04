@@ -1,0 +1,128 @@
+\section{ost::StreamingBuffer Class Reference}
+\label{classost_1_1_streaming_buffer}\index{ost::StreamingBuffer@{ost::StreamingBuffer}}
+
+
+Streaming buffer for audio, to be used in bgm audio sources.  
+
+
+{\ttfamily \#include $<$bayonne.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool {\bf isActive} (void)
+\begin{DoxyCompactList}\small\item\em Check if streaming source is active. \item\end{DoxyCompactList}\item 
+virtual unsigned long {\bf getPosition} (timeout\_\-t framing)
+\begin{DoxyCompactList}\small\item\em Get position marker we use in audio consumer. \item\end{DoxyCompactList}\item 
+virtual Linear {\bf getBuffer} (unsigned long $\ast$mark, timeout\_\-t duration)
+\begin{DoxyCompactList}\small\item\em Used by consumer to get a linear buffer of audio data. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf StreamingBuffer} $\ast$ {\bf get} (const char $\ast$id, Rate rate)
+\begin{DoxyCompactList}\small\item\em Find a streaming feed by identifier. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf cleanup} ()
+\item 
+{\bf StreamingBuffer} (const char $\ast$id, timeout\_\-t size=600, Rate rate=rate8khz)
+\item 
+virtual {\bf $\sim$StreamingBuffer} ()
+\item 
+virtual Linear {\bf putBuffer} (timeout\_\-t duration)
+\item 
+virtual void {\bf clearBuffer} (timeout\_\-t duration)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long {\bf position}
+\item 
+unsigned long {\bf count}
+\item 
+Linear {\bf data}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Streaming buffer for audio, to be used in bgm audio sources. \begin{DoxyAuthor}{Author}
+David Sugar $<${\tt dyfet@gnutelephony.org}$>$ audio buffering 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::StreamingBuffer@{ost::StreamingBuffer}!StreamingBuffer@{StreamingBuffer}}
+\index{StreamingBuffer@{StreamingBuffer}!ost::StreamingBuffer@{ost::StreamingBuffer}}
+\subsubsection[{StreamingBuffer}]{\setlength{\rightskip}{0pt plus 5cm}ost::StreamingBuffer::StreamingBuffer (const char $\ast$ {\em id}, \/  timeout\_\-t {\em size} = {\ttfamily 600}, \/  Rate {\em rate} = {\ttfamily rate8khz})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_streaming_buffer_a5fb88a5c94c6a5ef38afa5240b01815b}
+\index{ost::StreamingBuffer@{ost::StreamingBuffer}!$\sim$StreamingBuffer@{$\sim$StreamingBuffer}}
+\index{$\sim$StreamingBuffer@{$\sim$StreamingBuffer}!ost::StreamingBuffer@{ost::StreamingBuffer}}
+\subsubsection[{$\sim$StreamingBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual ost::StreamingBuffer::$\sim$StreamingBuffer ()\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_streaming_buffer_a225f8cbff0bfd610352ae5d06cb8243d}
+
+
+\subsection{Member Function Documentation}
+\index{ost::StreamingBuffer@{ost::StreamingBuffer}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!ost::StreamingBuffer@{ost::StreamingBuffer}}
+\subsubsection[{cleanup}]{\setlength{\rightskip}{0pt plus 5cm}void ost::StreamingBuffer::cleanup ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_streaming_buffer_aa00daa9a1d0813bbc423422fd95fd064}
+\index{ost::StreamingBuffer@{ost::StreamingBuffer}!clearBuffer@{clearBuffer}}
+\index{clearBuffer@{clearBuffer}!ost::StreamingBuffer@{ost::StreamingBuffer}}
+\subsubsection[{clearBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::StreamingBuffer::clearBuffer (timeout\_\-t {\em duration})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_streaming_buffer_a08ad12941ee594e607394c8e4391b582}
+\index{ost::StreamingBuffer@{ost::StreamingBuffer}!get@{get}}
+\index{get@{get}!ost::StreamingBuffer@{ost::StreamingBuffer}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf StreamingBuffer}$\ast$ ost::StreamingBuffer::get (const char $\ast$ {\em id}, \/  Rate {\em rate})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_streaming_buffer_a911284b4cdcd93886472b64fea99bd49}
+
+
+Find a streaming feed by identifier. \begin{DoxyReturn}{Returns}
+pointer to feed or NULL. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em identifer}]to search for. \item[{\em sample}]rate to use. \end{DoxyParams}
+\index{ost::StreamingBuffer@{ost::StreamingBuffer}!getBuffer@{getBuffer}}
+\index{getBuffer@{getBuffer}!ost::StreamingBuffer@{ost::StreamingBuffer}}
+\subsubsection[{getBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual Linear ost::StreamingBuffer::getBuffer (unsigned long $\ast$ {\em mark}, \/  timeout\_\-t {\em duration})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_streaming_buffer_a743f64a1e17a63227cc1044a960c25c1}
+
+
+Used by consumer to get a linear buffer of audio data. \begin{DoxyReturn}{Returns}
+data buffer of samples. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em consumer}]position. \item[{\em timeout}]of frame for updating position. \end{DoxyParams}
+\index{ost::StreamingBuffer@{ost::StreamingBuffer}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!ost::StreamingBuffer@{ost::StreamingBuffer}}
+\subsubsection[{getPosition}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned long ost::StreamingBuffer::getPosition (timeout\_\-t {\em framing})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_streaming_buffer_a5568122a2189dfc56e76c45aa007d698}
+
+
+Get position marker we use in audio consumer. 
+\begin{DoxyParams}{Parameters}
+\item[{\em framing}]size we will use. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+consumer position. 
+\end{DoxyReturn}
+\index{ost::StreamingBuffer@{ost::StreamingBuffer}!isActive@{isActive}}
+\index{isActive@{isActive}!ost::StreamingBuffer@{ost::StreamingBuffer}}
+\subsubsection[{isActive}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::StreamingBuffer::isActive (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_streaming_buffer_a8e0aaec1b441193496b8abaa8932e448}
+
+
+Check if streaming source is active. \begin{DoxyReturn}{Returns}
+true if active. 
+\end{DoxyReturn}
+\index{ost::StreamingBuffer@{ost::StreamingBuffer}!putBuffer@{putBuffer}}
+\index{putBuffer@{putBuffer}!ost::StreamingBuffer@{ost::StreamingBuffer}}
+\subsubsection[{putBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual Linear ost::StreamingBuffer::putBuffer (timeout\_\-t {\em duration})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_streaming_buffer_abc144a2a9d06e59c1e3c6147b9408407}
+
+
+\subsection{Member Data Documentation}
+\index{ost::StreamingBuffer@{ost::StreamingBuffer}!count@{count}}
+\index{count@{count}!ost::StreamingBuffer@{ost::StreamingBuffer}}
+\subsubsection[{count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long {\bf ost::StreamingBuffer::count}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_streaming_buffer_affe07faba8f3a0a5bf6f09d550800dcf}
+\index{ost::StreamingBuffer@{ost::StreamingBuffer}!data@{data}}
+\index{data@{data}!ost::StreamingBuffer@{ost::StreamingBuffer}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}Linear {\bf ost::StreamingBuffer::data}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_streaming_buffer_afd7fdfb51cecb4edd72d54db9cdbdca9}
+\index{ost::StreamingBuffer@{ost::StreamingBuffer}!position@{position}}
+\index{position@{position}!ost::StreamingBuffer@{ost::StreamingBuffer}}
+\subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long {\bf ost::StreamingBuffer::position}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_streaming_buffer_a1c341d942434d3358954527fec452ee6}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf bayonne.h}\end{DoxyCompactItemize}

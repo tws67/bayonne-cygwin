@@ -1,0 +1,231 @@
+.TH "ost::DCCPSocket" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::DCCPSocket \- 
+.PP
+DCCP sockets are used for stream based connected sessions between two sockets.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <socket.h>\fP
+.PP
+Inherits \fBost::Socket\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual bool \fBonAccept\fP (const \fBIPV4Host\fP &ia, \fBtpport_t\fP port)"
+.br
+.RI "\fIA method to call in a derived \fBDCCPSocket\fP class that is acting as a server when a connection request is being accepted. \fP"
+.ti -1c
+.RI "virtual bool \fBonAccept\fP (const \fBIPV6Host\fP &ia, \fBtpport_t\fP port)"
+.br
+.ti -1c
+.RI "virtual \fBIPV4Host\fP \fBgetIPV4Sender\fP (\fBtpport_t\fP *port=NULL) const "
+.br
+.ti -1c
+.RI "virtual \fBIPV6Host\fP \fBgetIPV6Sender\fP (\fBtpport_t\fP *port=NULL) const "
+.br
+.ti -1c
+.RI "\fBDCCPSocket\fP (const \fBIPV4Address\fP &bind, \fBtpport_t\fP port, unsigned backlog=5)"
+.br
+.RI "\fIA DCCP 'server' is created as a DCCP socket that is bound to a hardware address and port number on the local machine and that has a backlog queue to listen for remote connection requests. \fP"
+.ti -1c
+.RI "\fBDCCPSocket\fP (const \fBIPV6Address\fP &bind, \fBtpport_t\fP port, unsigned backlog=5)"
+.br
+.ti -1c
+.RI "\fBDCCPSocket\fP (const char *name, \fBFamily\fP family=IPV4, unsigned backlog=5)"
+.br
+.RI "\fICreate a named dccp socket by service and/or interface id. \fP"
+.ti -1c
+.RI "\fBDCCPSocket\fP (\fBFamily\fP family=IPV4)"
+.br
+.RI "\fICreate an unconnected ephemeral DCCP client socket. \fP"
+.ti -1c
+.RI "\fBDCCPSocket\fP (\fBDCCPSocket\fP &server, \fBtimeout_t\fP timeout=0)"
+.br
+.RI "\fICreate a server session by accepting a DCCP \fBSocket\fP. \fP"
+.ti -1c
+.RI "void \fBreject\fP (void)"
+.br
+.RI "\fIUsed to reject the next incoming connection request. \fP"
+.ti -1c
+.RI "void \fBdisconnect\fP (void)"
+.br
+.RI "\fIDisconnect active dccp connection (client use). \fP"
+.ti -1c
+.RI "bool \fBsetCCID\fP (\fBuint8\fP ccid)"
+.br
+.RI "\fISet CCID DCCP. \fP"
+.ti -1c
+.RI "int \fBgetTxCCID\fP ()"
+.br
+.RI "\fIGet TX CCID DCCP. \fP"
+.ti -1c
+.RI "int \fBgetRxCCID\fP ()"
+.br
+.RI "\fIGet RX CCID DCCP. \fP"
+.ti -1c
+.RI "size_t \fBavailable\fP ()"
+.br
+.RI "\fIReturn number of bytes to be read. \fP"
+.ti -1c
+.RI "void \fBconnect\fP (const \fBIPV4Host\fP &host, \fBtpport_t\fP port, \fBtimeout_t\fP timeout=0)"
+.br
+.RI "\fICreate a DCCP client connection to a DCCP socket (on a remote machine). \fP"
+.ti -1c
+.RI "void \fBconnect\fP (const \fBIPV6Host\fP &host, \fBtpport_t\fP port, \fBtimeout_t\fP timeout=0)"
+.br
+.ti -1c
+.RI "void \fBconnect\fP (const char *name)"
+.br
+.RI "\fIConnect to a named client. \fP"
+.ti -1c
+.RI "bool \fBisPendingConnection\fP (\fBtimeout_t\fP timeout=TIMEOUT_INF)"
+.br
+.RI "\fIUsed to wait for pending connection requests. \fP"
+.ti -1c
+.RI "virtual \fB~DCCPSocket\fP ()"
+.br
+.RI "\fIUse base socket handler for ending this socket. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+DCCP sockets are used for stream based connected sessions between two sockets. 
+
+Both error recovery and flow control operate transparently for a DCCP socket connection. The DCCP socket base class is used both for client connections and to bind a DCCP 'server' for accepting DCCP streams.
+.PP
+An implicit and unique \fBDCCPSocket\fP object exists in Common C++ to represent a bound DCCP socket acting as a 'server' for receiving connection requests. This class is not part of DCCPStream because such objects normally perform no physical I/O (read or write operations) other than to specify a listen backlog queue and perform 'accept' operations for pending connections. The Common C++ \fBDCCPSocket\fP offers a Peek method to examine where the next pending connection is coming from, and a Reject method to flush the next request from the queue without having to create a session.
+.PP
+The \fBDCCPSocket\fP also supports a 'OnAccept' method which can be called when a DCCPStream related object is created from a \fBDCCPSocket\fP. By creating a DCCPStream from a \fBDCCPSocket\fP, an accept operation automatically occurs, and the \fBDCCPSocket\fP can then still reject the client connection through the return status of it's OnAccept method.
+.PP
+\fBAuthor:\fP
+.RS 4
+Leandro Sales <leandroal@gmail.com> 
+.PP
+Heverton Stuart <hevertonsns@gmail.com> bound server for DCCP streams and sessions. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::DCCPSocket::DCCPSocket (const \fBIPV4Address\fP & bind, \fBtpport_t\fP port, unsigned backlog = \fC5\fP)"
+.PP
+A DCCP 'server' is created as a DCCP socket that is bound to a hardware address and port number on the local machine and that has a backlog queue to listen for remote connection requests. If the server cannot be created, an exception is thrown.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbind\fP local ip address or interface to use. 
+.br
+\fIport\fP number to bind socket under. 
+.br
+\fIbacklog\fP size of connection request queue. 
+.RE
+.PP
+
+.SS "ost::DCCPSocket::DCCPSocket (const \fBIPV6Address\fP & bind, \fBtpport_t\fP port, unsigned backlog = \fC5\fP)"
+.SS "ost::DCCPSocket::DCCPSocket (const char * name, \fBFamily\fP family = \fCIPV4\fP, unsigned backlog = \fC5\fP)"
+.PP
+Create a named dccp socket by service and/or interface id. For IPV4 we use [host:]svc or [host/]svc for the string. If we have getaddrinfo, we use that to obtain the addr to bind for.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP of host interface and service port to bind. 
+.br
+\fIbacklog\fP size of connection request queue. 
+.RE
+.PP
+
+.SS "ost::DCCPSocket::DCCPSocket (\fBFamily\fP family = \fCIPV4\fP)"
+.PP
+Create an unconnected ephemeral DCCP client socket. 
+.SS "ost::DCCPSocket::DCCPSocket (\fBDCCPSocket\fP & server, \fBtimeout_t\fP timeout = \fC0\fP)"
+.PP
+Create a server session by accepting a DCCP \fBSocket\fP. 
+.SS "virtual ost::DCCPSocket::~DCCPSocket ()\fC [virtual]\fP"
+.PP
+Use base socket handler for ending this socket. 
+.SH "Member Function Documentation"
+.PP 
+.SS "size_t ost::DCCPSocket::available ()"
+.PP
+Return number of bytes to be read. 
+.SS "void ost::DCCPSocket::connect (const char * name)"
+.PP
+Connect to a named client. 
+.SS "void ost::DCCPSocket::connect (const \fBIPV6Host\fP & host, \fBtpport_t\fP port, \fBtimeout_t\fP timeout = \fC0\fP)"
+.SS "void ost::DCCPSocket::connect (const \fBIPV4Host\fP & host, \fBtpport_t\fP port, \fBtimeout_t\fP timeout = \fC0\fP)"
+.PP
+Create a DCCP client connection to a DCCP socket (on a remote machine). \fBParameters:\fP
+.RS 4
+\fIhost\fP address of remote DCCP server. 
+.br
+\fIport\fP number to connect. 
+.RE
+.PP
+
+.SS "void ost::DCCPSocket::disconnect (void)"
+.PP
+Disconnect active dccp connection (client use). 
+.SS "virtual \fBIPV4Host\fP ost::DCCPSocket::getIPV4Sender (\fBtpport_t\fP * port = \fCNULL\fP) const\fC [virtual]\fP"
+.PP
+Reimplemented from \fBost::Socket\fP.
+.SS "virtual \fBIPV6Host\fP ost::DCCPSocket::getIPV6Sender (\fBtpport_t\fP * port = \fCNULL\fP) const\fC [virtual]\fP"
+.PP
+Reimplemented from \fBost::Socket\fP.
+.SS "int ost::DCCPSocket::getRxCCID ()"
+.PP
+Get RX CCID DCCP. 
+.SS "int ost::DCCPSocket::getTxCCID ()"
+.PP
+Get TX CCID DCCP. 
+.SS "bool ost::DCCPSocket::isPendingConnection (\fBtimeout_t\fP timeout = \fCTIMEOUT_INF\fP)\fC [inline]\fP"
+.PP
+Used to wait for pending connection requests. \fBReturns:\fP
+.RS 4
+true if data packets available. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimeout\fP in milliseconds. TIMEOUT_INF if not specified. 
+.RE
+.PP
+
+.PP
+References ost::Socket::isPending(), and ost::Socket::pendingInput.
+.SS "virtual bool ost::DCCPSocket::onAccept (const \fBIPV6Host\fP & ia, \fBtpport_t\fP port)\fC [virtual]\fP"
+.SS "virtual bool ost::DCCPSocket::onAccept (const \fBIPV4Host\fP & ia, \fBtpport_t\fP port)\fC [virtual]\fP"
+.PP
+A method to call in a derived \fBDCCPSocket\fP class that is acting as a server when a connection request is being accepted. The server can implement protocol specific rules to exclude the remote socket from being accepted by returning false. The Peek method can also be used for this purpose.
+.PP
+\fBReturns:\fP
+.RS 4
+true if client should be accepted. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIia\fP internet host address of the client. 
+.br
+\fIport\fP number of the client. 
+.RE
+.PP
+
+.SS "void ost::DCCPSocket::reject (void)"
+.PP
+Used to reject the next incoming connection request. 
+.SS "bool ost::DCCPSocket::setCCID (\fBuint8\fP ccid)"
+.PP
+Set CCID DCCP. 
+.SH "Member Data Documentation"
+.PP 
+.SS "struct sockaddr_in \fBost::DCCPSocket::ipv4\fP\fC [read]\fP"
+.SS "struct sockaddr_in6 \fBost::DCCPSocket::ipv6\fP\fC [read]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

@@ -1,0 +1,142 @@
+.TH "ost::DirTree" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::DirTree \- 
+.PP
+A generic class to walk a hierarchical directory structure.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <file.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDirTree\fP (const char *prefix, unsigned maxdepth)"
+.br
+.RI "\fIConstruct a directory tree walk starting at the specified prefix. \fP"
+.ti -1c
+.RI "\fBDirTree\fP (unsigned maxdepth)"
+.br
+.RI "\fIConstruct an un-opened directory tree of a known maximum depth. \fP"
+.ti -1c
+.RI "virtual \fB~DirTree\fP ()"
+.br
+.ti -1c
+.RI "void \fBopen\fP (const char *prefix)"
+.br
+.RI "\fIOpen a directory tree path. \fP"
+.ti -1c
+.RI "void \fBclose\fP (void)"
+.br
+.RI "\fIClose the directory path. \fP"
+.ti -1c
+.RI "char * \fBgetPath\fP (void)"
+.br
+.RI "\fIExtract the next full pathname from the directory walk. \fP"
+.ti -1c
+.RI "unsigned \fBperform\fP (const char *prefix)"
+.br
+.RI "\fIThis is used to step through the filter virtual for an entire subtree, and is used for cases where a derived \fBDirTree\fP class performs it's primary operations through filter rather than externally by calling \fBgetPath()\fP. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual bool \fBfilter\fP (const char *file, struct stat *ino)"
+.br
+.RI "\fIVirtual method to filter results. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A generic class to walk a hierarchical directory structure. 
+
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> Directory tree walking. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::DirTree::DirTree (const char * prefix, unsigned maxdepth)"
+.PP
+Construct a directory tree walk starting at the specified prefix. A maximum subdirectory depth is also specified.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprefix\fP to start walk. 
+.br
+\fImaxdepth\fP subdirectory depth to examine. 
+.RE
+.PP
+
+.SS "ost::DirTree::DirTree (unsigned maxdepth)"
+.PP
+Construct an un-opened directory tree of a known maximum depth. \fBParameters:\fP
+.RS 4
+\fImaxdepth\fP subdirectory subdirectory depth. 
+.RE
+.PP
+
+.SS "virtual ost::DirTree::~DirTree ()\fC [virtual]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::DirTree::close (void)"
+.PP
+Close the directory path. 
+.SS "virtual bool ost::DirTree::filter (const char * file, struct stat * ino)\fC [protected, virtual]\fP"
+.PP
+Virtual method to filter results. Virtual override methods should call baseclass method to assure . and .. names are stripped out.
+.PP
+\fBReturns:\fP
+.RS 4
+true if current filename is accepted. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP path to examine 
+.br
+\fIino\fP info of type, date, etc. 
+.RE
+.PP
+
+.SS "char* ost::DirTree::getPath (void)"
+.PP
+Extract the next full pathname from the directory walk. When returning directories, a '/' is appended. The returned string is a buffer of MAX_PATH size.
+.PP
+\fBReturns:\fP
+.RS 4
+path of next subdirectory entry or NULL. 
+.RE
+.PP
+
+.SS "void ost::DirTree::open (const char * prefix)"
+.PP
+Open a directory tree path. \fBParameters:\fP
+.RS 4
+\fIprefix\fP directory path to open. 
+.RE
+.PP
+
+.SS "unsigned ost::DirTree::perform (const char * prefix)"
+.PP
+This is used to step through the filter virtual for an entire subtree, and is used for cases where a derived \fBDirTree\fP class performs it's primary operations through filter rather than externally by calling \fBgetPath()\fP. \fBReturns:\fP
+.RS 4
+number of files and directories examined. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprefix\fP directory path to examine. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

@@ -1,0 +1,155 @@
+\section{ost::BayonneMsgport Class Reference}
+\label{classost_1_1_bayonne_msgport}\index{ost::BayonneMsgport@{ost::BayonneMsgport}}
+
+
+\doxyref{Bayonne}{p.}{classost_1_1_bayonne} Msgports are used to queue and post session events which normally have to be passed through another thread context.  
+
+
+{\ttfamily \#include $<$bayonne.h$>$}Inheritance diagram for ost::BayonneMsgport::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classost_1_1_bayonne_msgport}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$BayonneMsgport} ()
+\begin{DoxyCompactList}\small\item\em Destroy a msgport. \item\end{DoxyCompactList}\item 
+{\bf BayonneMsgport} ({\bf BayonneDriver} $\ast$driver)
+\begin{DoxyCompactList}\small\item\em Create a message port and optionally bind it to a given driver. \item\end{DoxyCompactList}\item 
+void {\bf update} (void)
+\begin{DoxyCompactList}\small\item\em Request retiming. \item\end{DoxyCompactList}\item 
+void {\bf initial} (void)
+\begin{DoxyCompactList}\small\item\em Initialize msgport, determine which sessions it will perform timing for based on the driver it is bound to. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf shutdown} (void)
+\begin{DoxyCompactList}\small\item\em Send shutdown event to the msgport. \item\end{DoxyCompactList}\item 
+virtual timeout\_\-t {\bf getTimeout} (Event $\ast$event)
+\begin{DoxyCompactList}\small\item\em Determine sleep time to schedule for waiting, unless an update occurs to force rescheduling. \item\end{DoxyCompactList}\item 
+void {\bf run} (void)
+\item 
+size\_\-t {\bf onWait} (void $\ast$buf)
+\item 
+size\_\-t {\bf onPost} (void $\ast$buf)
+\item 
+size\_\-t {\bf onPeek} (void $\ast$buf)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf BayonneDriver} $\ast$ {\bf msgdriver}
+\item 
+Event $\ast$ {\bf msglist}
+\item 
+unsigned {\bf msgsize}
+\item 
+unsigned {\bf msghead}
+\item 
+unsigned {\bf msgtail}
+\item 
+{\bf timeslot\_\-t} {\bf tsfirst}
+\item 
+{\bf timeslot\_\-t} {\bf tscount}
+\item 
+char {\bf msgname} [16]
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Bayonne}{p.}{classost_1_1_bayonne} Msgports are used to queue and post session events which normally have to be passed through another thread context. This can happen for a thread termination event, for example, since the thread terminating must be joined from another thread. Some drivers use session specific msgports to process all channel events.
+
+\begin{DoxyAuthor}{Author}
+David Sugar $<${\tt dyfet@gnutelephony.org}$>$ Msgport event queing and dispatch. 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::BayonneMsgport@{ost::BayonneMsgport}!$\sim$BayonneMsgport@{$\sim$BayonneMsgport}}
+\index{$\sim$BayonneMsgport@{$\sim$BayonneMsgport}!ost::BayonneMsgport@{ost::BayonneMsgport}}
+\subsubsection[{$\sim$BayonneMsgport}]{\setlength{\rightskip}{0pt plus 5cm}virtual ost::BayonneMsgport::$\sim$BayonneMsgport ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_msgport_ab13c8b9e809f7128a25660334d32ccec}
+
+
+Destroy a msgport. \index{ost::BayonneMsgport@{ost::BayonneMsgport}!BayonneMsgport@{BayonneMsgport}}
+\index{BayonneMsgport@{BayonneMsgport}!ost::BayonneMsgport@{ost::BayonneMsgport}}
+\subsubsection[{BayonneMsgport}]{\setlength{\rightskip}{0pt plus 5cm}ost::BayonneMsgport::BayonneMsgport ({\bf BayonneDriver} $\ast$ {\em driver})}\label{classost_1_1_bayonne_msgport_ade8f3bd9d8bc208a0fddb12edb200ee6}
+
+
+Create a message port and optionally bind it to a given driver. 
+\begin{DoxyParams}{Parameters}
+\item[{\em driver}]to bind msgport to. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{ost::BayonneMsgport@{ost::BayonneMsgport}!getTimeout@{getTimeout}}
+\index{getTimeout@{getTimeout}!ost::BayonneMsgport@{ost::BayonneMsgport}}
+\subsubsection[{getTimeout}]{\setlength{\rightskip}{0pt plus 5cm}virtual timeout\_\-t ost::BayonneMsgport::getTimeout (Event $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_msgport_a3fd75eaabb17d7741d98de23911bff29}
+
+
+Determine sleep time to schedule for waiting, unless an update occurs to force rescheduling. \begin{DoxyReturn}{Returns}
+shortest timeout based on session timers. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em event}]to pass when timeout occurs. \end{DoxyParams}
+\index{ost::BayonneMsgport@{ost::BayonneMsgport}!initial@{initial}}
+\index{initial@{initial}!ost::BayonneMsgport@{ost::BayonneMsgport}}
+\subsubsection[{initial}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneMsgport::initial (void)}\label{classost_1_1_bayonne_msgport_a36e15ec88fcdc259c63cfa13a93d2dfd}
+
+
+Initialize msgport, determine which sessions it will perform timing for based on the driver it is bound to. \index{ost::BayonneMsgport@{ost::BayonneMsgport}!onPeek@{onPeek}}
+\index{onPeek@{onPeek}!ost::BayonneMsgport@{ost::BayonneMsgport}}
+\subsubsection[{onPeek}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t ost::BayonneMsgport::onPeek (void $\ast$ {\em buf})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_msgport_a8e00c0d14705b34fe4b5130205b1ca14}
+\index{ost::BayonneMsgport@{ost::BayonneMsgport}!onPost@{onPost}}
+\index{onPost@{onPost}!ost::BayonneMsgport@{ost::BayonneMsgport}}
+\subsubsection[{onPost}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t ost::BayonneMsgport::onPost (void $\ast$ {\em buf})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_msgport_a412738ed81dcb492c7bcc62740514c6c}
+\index{ost::BayonneMsgport@{ost::BayonneMsgport}!onWait@{onWait}}
+\index{onWait@{onWait}!ost::BayonneMsgport@{ost::BayonneMsgport}}
+\subsubsection[{onWait}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t ost::BayonneMsgport::onWait (void $\ast$ {\em buf})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_msgport_af5b04eaed7b10774b914838a0fc95c00}
+\index{ost::BayonneMsgport@{ost::BayonneMsgport}!run@{run}}
+\index{run@{run}!ost::BayonneMsgport@{ost::BayonneMsgport}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneMsgport::run (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_msgport_a5e5a7f25a2a168521cd0f24ea2fd3f9c}
+\index{ost::BayonneMsgport@{ost::BayonneMsgport}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!ost::BayonneMsgport@{ost::BayonneMsgport}}
+\subsubsection[{shutdown}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneMsgport::shutdown (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_msgport_a73b359125424ace28f6f6e5a07d4a5c2}
+
+
+Send shutdown event to the msgport. \index{ost::BayonneMsgport@{ost::BayonneMsgport}!update@{update}}
+\index{update@{update}!ost::BayonneMsgport@{ost::BayonneMsgport}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneMsgport::update (void)}\label{classost_1_1_bayonne_msgport_ad57242256cdd2aa5ec9d715cf4425792}
+
+
+Request retiming. This is used for msgports that are per session to get the session to be retimed after an event has been directly posted outside the msgport. 
+
+\subsection{Member Data Documentation}
+\index{ost::BayonneMsgport@{ost::BayonneMsgport}!msgdriver@{msgdriver}}
+\index{msgdriver@{msgdriver}!ost::BayonneMsgport@{ost::BayonneMsgport}}
+\subsubsection[{msgdriver}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneDriver}$\ast$ {\bf ost::BayonneMsgport::msgdriver}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_msgport_a620fd9e7184ec33d372d0c11bfda3449}
+\index{ost::BayonneMsgport@{ost::BayonneMsgport}!msghead@{msghead}}
+\index{msghead@{msghead}!ost::BayonneMsgport@{ost::BayonneMsgport}}
+\subsubsection[{msghead}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::BayonneMsgport::msghead}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_msgport_ab1b82d6a41d27733a9ed1af4cbdd3eae}
+\index{ost::BayonneMsgport@{ost::BayonneMsgport}!msglist@{msglist}}
+\index{msglist@{msglist}!ost::BayonneMsgport@{ost::BayonneMsgport}}
+\subsubsection[{msglist}]{\setlength{\rightskip}{0pt plus 5cm}Event$\ast$ {\bf ost::BayonneMsgport::msglist}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_msgport_ab958555f2a9469db781ed33affce3231}
+\index{ost::BayonneMsgport@{ost::BayonneMsgport}!msgname@{msgname}}
+\index{msgname@{msgname}!ost::BayonneMsgport@{ost::BayonneMsgport}}
+\subsubsection[{msgname}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::BayonneMsgport::msgname}[16]\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_msgport_a9af3a9b8080c0ba50de301a19bd8e596}
+\index{ost::BayonneMsgport@{ost::BayonneMsgport}!msgsize@{msgsize}}
+\index{msgsize@{msgsize}!ost::BayonneMsgport@{ost::BayonneMsgport}}
+\subsubsection[{msgsize}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::BayonneMsgport::msgsize}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_msgport_aacecfb6e8428626361291fe91263218b}
+\index{ost::BayonneMsgport@{ost::BayonneMsgport}!msgtail@{msgtail}}
+\index{msgtail@{msgtail}!ost::BayonneMsgport@{ost::BayonneMsgport}}
+\subsubsection[{msgtail}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::BayonneMsgport::msgtail}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_msgport_a71d90f8e5629a0f42c7c124d3b5fee8f}
+\index{ost::BayonneMsgport@{ost::BayonneMsgport}!tscount@{tscount}}
+\index{tscount@{tscount}!ost::BayonneMsgport@{ost::BayonneMsgport}}
+\subsubsection[{tscount}]{\setlength{\rightskip}{0pt plus 5cm}{\bf timeslot\_\-t} {\bf ost::BayonneMsgport::tscount}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_msgport_aa01f0ed7ff4b7768ebde70a0f0e253a1}
+\index{ost::BayonneMsgport@{ost::BayonneMsgport}!tsfirst@{tsfirst}}
+\index{tsfirst@{tsfirst}!ost::BayonneMsgport@{ost::BayonneMsgport}}
+\subsubsection[{tsfirst}]{\setlength{\rightskip}{0pt plus 5cm}{\bf timeslot\_\-t} {\bf ost::BayonneMsgport::tsfirst}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_msgport_ae13842da8b2da2404a35559ed6451758}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf bayonne.h}\end{DoxyCompactItemize}

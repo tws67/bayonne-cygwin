@@ -1,0 +1,204 @@
+\section{ost::Bayonne::Event Struct Reference}
+\label{structost_1_1_bayonne_1_1_event}\index{ost::Bayonne::Event@{ost::Bayonne::Event}}
+
+
+The event data structure includes the event identifier and any paramaters.  
+
+
+{\ttfamily \#include $<$bayonne.h$>$}\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf event\_\-t} {\bf id}
+\item 
+{\bf timeslot\_\-t} {\bf timeslot}
+\item 
+uint16 {\bf seq}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>struct \{\\
+\>\>ScriptImage $\ast$ {\bf img}\\
+\>\>Script::Name $\ast$ {\bf scr}\\
+\>\>{\bf BayonneSession} $\ast$ {\bf parent}\\
+\>\>const char $\ast$ {\bf dialing}\\
+\>\} {\bf start}\\
+\>struct \{\\
+\>\>ScriptImage $\ast$ {\bf img}\\
+\>\>Script::Name $\ast$ {\bf scr}\\
+\>\>{\bf BayonneSession} $\ast$ {\bf parent}\\
+\>\>Line $\ast$ {\bf select}\\
+\>\} {\bf hunt}\\
+\>struct \{\\
+\>\>{\bf BayonneSession} $\ast$ {\bf current}\\
+\>\>{\bf BayonneSession} $\ast$ {\bf replace}\\
+\>\} {\bf relocate}\\
+\>struct \{\\
+\>\>const char $\ast$ {\bf tid}\\
+\>\>const char $\ast$ {\bf fname}\\
+\>\>int {\bf pid}\\
+\>\>int {\bf result}\\
+\>\} {\bf libexec}\\
+\>struct \{\\
+\>\>const char $\ast$ {\bf tid}\\
+\>\>const char $\ast$ {\bf errmsg}\\
+\>\} {\bf liberror}\\
+\>struct \{\\
+\>\>timeout\_t {\bf duration}\\
+\>\>int {\bf digit}\\
+\>\} {\bf dtmf}\\
+\>struct \{\\
+\>\>const char $\ast$ {\bf err}\\
+\>\>const char $\ast$ {\bf msg}\\
+\>\} {\bf cpa}\\
+\>struct \{\\
+\>\>const char $\ast$ {\bf name}\\
+\>\>bool {\bf exit}\\
+\>\} {\bf tone}\\
+\>struct \{\\
+\>\>std::ostream $\ast$ {\bf output}\\
+\>\>const char $\ast$ {\bf logstate}\\
+\>\} {\bf debug}\\
+\>struct \{\\
+\>\>const char $\ast$ {\bf encoding}\\
+\>\>timeout\_t {\bf framing}\\
+\>\} {\bf reconnect}\\
+\>const char $\ast$ {\bf dialing}\\
+\>const char $\ast$ {\bf name}\\
+\>const char $\ast$ {\bf errmsg}\\
+\>{\bf BayonneSession} $\ast$ {\bf pid}\\
+\>{\bf BayonneSession} $\ast$ {\bf peer}\\
+\>{\bf BayonneSession} $\ast$ {\bf child}\\
+\>void $\ast$ {\bf data}\\
+\}; \\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The event data structure includes the event identifier and any paramaters. Additional information is attached both to assist in debugging, and to track which timeslot a given event is being issued against when queued through a master msgport. 
+
+\subsection{Member Data Documentation}
+\subsubsection[{"@1}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \} }\label{structost_1_1_bayonne_1_1_event_a126bd2bd082fd7dcf3ac9b99ca45ed91}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!child@{child}}
+\index{child@{child}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{child}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneSession}$\ast$ {\bf ost::Bayonne::Event::child}}\label{structost_1_1_bayonne_1_1_event_a167e9899b9d7b6ad32b240c5e01b976f}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!cpa@{cpa}}
+\index{cpa@{cpa}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{cpa}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \} 	 {\bf ost::Bayonne::Event::cpa}}\label{structost_1_1_bayonne_1_1_event_a376c14c3879142d67c92abe895b8cd47}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!current@{current}}
+\index{current@{current}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{current}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneSession}$\ast$ {\bf ost::Bayonne::Event::current}}\label{structost_1_1_bayonne_1_1_event_a4d82f77461ee74ff70e4b9bfaf9ade3e}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!data@{data}}
+\index{data@{data}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf ost::Bayonne::Event::data}}\label{structost_1_1_bayonne_1_1_event_aba52002cc86938c0cc7ef6264b26b36c}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!debug@{debug}}
+\index{debug@{debug}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{debug}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \} 	 {\bf ost::Bayonne::Event::debug}}\label{structost_1_1_bayonne_1_1_event_a204f3a1e2d2edaf9b6535f38ef85e51a}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!dialing@{dialing}}
+\index{dialing@{dialing}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{dialing}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::Event::dialing}}\label{structost_1_1_bayonne_1_1_event_a4639b01661c0793f65929f88f809a850}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!digit@{digit}}
+\index{digit@{digit}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{digit}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ost::Bayonne::Event::digit}}\label{structost_1_1_bayonne_1_1_event_a7a44ef2ecc0b81204ecf2de86cefcbbc}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!dtmf@{dtmf}}
+\index{dtmf@{dtmf}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{dtmf}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \} 	 {\bf ost::Bayonne::Event::dtmf}}\label{structost_1_1_bayonne_1_1_event_a10c2c440e25adfdb22b2a446e1721c98}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!duration@{duration}}
+\index{duration@{duration}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{duration}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::Bayonne::Event::duration}}\label{structost_1_1_bayonne_1_1_event_a0188e330235143e602b7550e4387e838}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!encoding@{encoding}}
+\index{encoding@{encoding}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{encoding}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::Event::encoding}}\label{structost_1_1_bayonne_1_1_event_a753ecb1d5fb5651bf01d485f8a1b72f5}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!err@{err}}
+\index{err@{err}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{err}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::Event::err}}\label{structost_1_1_bayonne_1_1_event_abcd36b7453e63ff238a248d5e7636d3a}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!errmsg@{errmsg}}
+\index{errmsg@{errmsg}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{errmsg}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::Event::errmsg}}\label{structost_1_1_bayonne_1_1_event_a710150e32518880c0106d8263101d6ac}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!exit@{exit}}
+\index{exit@{exit}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{exit}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::Bayonne::Event::exit}}\label{structost_1_1_bayonne_1_1_event_a3b23208a7a36e37a246fbf5cb6bac96c}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!fname@{fname}}
+\index{fname@{fname}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{fname}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::Event::fname}}\label{structost_1_1_bayonne_1_1_event_ae40794468958f38a0336e125bd661597}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!framing@{framing}}
+\index{framing@{framing}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{framing}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::Bayonne::Event::framing}}\label{structost_1_1_bayonne_1_1_event_aeb11f8f221623406b5cc1ebae0506dfb}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!hunt@{hunt}}
+\index{hunt@{hunt}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{hunt}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \} 	 {\bf ost::Bayonne::Event::hunt}}\label{structost_1_1_bayonne_1_1_event_a094ea1b210c2981356d930ca168fdbfd}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!id@{id}}
+\index{id@{id}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf event\_\-t} {\bf ost::Bayonne::Event::id}}\label{structost_1_1_bayonne_1_1_event_af8463ad49a48d3f05b977f1eaaa02b13}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!img@{img}}
+\index{img@{img}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{img}]{\setlength{\rightskip}{0pt plus 5cm}ScriptImage$\ast$ {\bf ost::Bayonne::Event::img}}\label{structost_1_1_bayonne_1_1_event_a1e5c5b6b16a29012f420f3ccf63b25b5}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!liberror@{liberror}}
+\index{liberror@{liberror}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{liberror}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \} 	 {\bf ost::Bayonne::Event::liberror}}\label{structost_1_1_bayonne_1_1_event_a600320639319e096cb8842a8fed7d92d}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!libexec@{libexec}}
+\index{libexec@{libexec}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{libexec}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \} 	 {\bf ost::Bayonne::Event::libexec}}\label{structost_1_1_bayonne_1_1_event_a160140733a29bc4c5f33d41b6f149a75}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!logstate@{logstate}}
+\index{logstate@{logstate}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{logstate}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::Event::logstate}}\label{structost_1_1_bayonne_1_1_event_a413596e12dbce0a883762776f96aa2e5}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!msg@{msg}}
+\index{msg@{msg}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{msg}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::Event::msg}}\label{structost_1_1_bayonne_1_1_event_aead84ba1f7cd0cae138f7ead97a028d7}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!name@{name}}
+\index{name@{name}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::Event::name}}\label{structost_1_1_bayonne_1_1_event_aec9287d4d9a74c72b3b6bde2cf04ed25}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!output@{output}}
+\index{output@{output}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{output}]{\setlength{\rightskip}{0pt plus 5cm}std::ostream$\ast$ {\bf ost::Bayonne::Event::output}}\label{structost_1_1_bayonne_1_1_event_a1a2438142ac1b3d8263ece98f1d98e46}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!parent@{parent}}
+\index{parent@{parent}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneSession}$\ast$ {\bf ost::Bayonne::Event::parent}}\label{structost_1_1_bayonne_1_1_event_a45f06dc232e51cbc82aa7c9b6e6b649a}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!peer@{peer}}
+\index{peer@{peer}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{peer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneSession}$\ast$ {\bf ost::Bayonne::Event::peer}}\label{structost_1_1_bayonne_1_1_event_a2df40b41bb1840487292d090706de1d9}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!pid@{pid}}
+\index{pid@{pid}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{pid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneSession}$\ast$ {\bf ost::Bayonne::Event::pid}}\label{structost_1_1_bayonne_1_1_event_a94b6486d18e9790e7ed7495ca3b478ea}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!pid@{pid}}
+\index{pid@{pid}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{pid}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ost::Bayonne::Event::pid}}\label{structost_1_1_bayonne_1_1_event_a4cb45dee576f7454c234a35f038845f5}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!reconnect@{reconnect}}
+\index{reconnect@{reconnect}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{reconnect}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \} 	 {\bf ost::Bayonne::Event::reconnect}}\label{structost_1_1_bayonne_1_1_event_abc91143e2df0b8b0edd3e6789c884928}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!relocate@{relocate}}
+\index{relocate@{relocate}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{relocate}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \} 	 {\bf ost::Bayonne::Event::relocate}}\label{structost_1_1_bayonne_1_1_event_a86eb97e90a1edfd4b08c31b33991c889}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!replace@{replace}}
+\index{replace@{replace}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{replace}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneSession}$\ast$ {\bf ost::Bayonne::Event::replace}}\label{structost_1_1_bayonne_1_1_event_adac9ada36c332ee4c65465ccaa69f929}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!result@{result}}
+\index{result@{result}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{result}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ost::Bayonne::Event::result}}\label{structost_1_1_bayonne_1_1_event_afd6934c1886432c5046a2e7e7a08995d}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!scr@{scr}}
+\index{scr@{scr}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{scr}]{\setlength{\rightskip}{0pt plus 5cm}Script::Name$\ast$ {\bf ost::Bayonne::Event::scr}}\label{structost_1_1_bayonne_1_1_event_aced175498771b7acb25a3cc188fd10bd}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!select@{select}}
+\index{select@{select}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{select}]{\setlength{\rightskip}{0pt plus 5cm}Line$\ast$ {\bf ost::Bayonne::Event::select}}\label{structost_1_1_bayonne_1_1_event_a17398a0f8893a9dbf9b1e0447a4b6402}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!seq@{seq}}
+\index{seq@{seq}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{seq}]{\setlength{\rightskip}{0pt plus 5cm}uint16 {\bf ost::Bayonne::Event::seq}}\label{structost_1_1_bayonne_1_1_event_ae4b601d00e7efd1c816ef3d8bb58b10d}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!start@{start}}
+\index{start@{start}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \} 	 {\bf ost::Bayonne::Event::start}}\label{structost_1_1_bayonne_1_1_event_a6c689bd8776efaa100576925256bb465}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!tid@{tid}}
+\index{tid@{tid}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{tid}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::Event::tid}}\label{structost_1_1_bayonne_1_1_event_a216b44e913fe59b3f32b27c071f385cd}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!timeslot@{timeslot}}
+\index{timeslot@{timeslot}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{timeslot}]{\setlength{\rightskip}{0pt plus 5cm}{\bf timeslot\_\-t} {\bf ost::Bayonne::Event::timeslot}}\label{structost_1_1_bayonne_1_1_event_a82c37d88d69d0d712a43480e028b1f12}
+\index{ost::Bayonne::Event@{ost::Bayonne::Event}!tone@{tone}}
+\index{tone@{tone}!ost::Bayonne::Event@{ost::Bayonne::Event}}
+\subsubsection[{tone}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \} 	 {\bf ost::Bayonne::Event::tone}}\label{structost_1_1_bayonne_1_1_event_a6e6b60ab72d5e9bdd0ff08523b65a232}
+
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf bayonne.h}\end{DoxyCompactItemize}

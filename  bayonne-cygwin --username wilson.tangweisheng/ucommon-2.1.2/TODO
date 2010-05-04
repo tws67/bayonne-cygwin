@@ -1,0 +1,18 @@
+Proposed changes:
+
+	Use NSPR as an alternate thread runtime base like we do with GNU pth...
+	Especially convenient with common use of nss for future tls.  Do we
+	still keep GNU pth option if we do this?
+
+	Use NSPR code base for simulating msw conditional variables for direct
+	native msw threading if better than code we have in ucommon, or maybe
+	use NSPR in place of native msw threading entirely?
+
+	Add serialio class?
+
+Rejected changes:
+
+	DetachedThread delete this into dealloc() virtual...
+		- use Thread::exit() virtual for this purpose instead
+
+

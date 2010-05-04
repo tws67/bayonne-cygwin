@@ -1,0 +1,80 @@
+\section{ost::DTMFDetect Class Reference}
+\label{classost_1_1_d_t_m_f_detect}\index{ost::DTMFDetect@{ost::DTMFDetect}}
+
+
+\doxyref{DTMFDetect}{p.}{classost_1_1_d_t_m_f_detect} is used for detecting DTMF tones in a stream of audio.  
+
+
+{\ttfamily \#include $<$audio2.h$>$}Inheritance diagram for ost::DTMFDetect::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classost_1_1_d_t_m_f_detect}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf DTMFDetect} ()
+\item 
+{\bf $\sim$DTMFDetect} ()
+\item 
+int {\bf putSamples} ({\bf Linear} buffer, int count)
+\begin{DoxyCompactList}\small\item\em This routine is used to push linear audio data into the dtmf tone detection analysizer. \item\end{DoxyCompactList}\item 
+int {\bf getResult} (char $\ast$data, int size)
+\begin{DoxyCompactList}\small\item\em Copy detected dtmf results into a data buffer. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf goertzelInit} ({\bf goertzel\_\-state\_\-t} $\ast$s, tone\_\-detection\_\-descriptor\_\-t $\ast$t)
+\item 
+void {\bf goertzelUpdate} ({\bf goertzel\_\-state\_\-t} $\ast$s, {\bf Sample} x[$\,$], int samples)
+\item 
+float {\bf goertzelResult} ({\bf goertzel\_\-state\_\-t} $\ast$s)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{DTMFDetect}{p.}{classost_1_1_d_t_m_f_detect} is used for detecting DTMF tones in a stream of audio. It currently only supports 8000Hz input. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::DTMFDetect@{ost::DTMFDetect}!DTMFDetect@{DTMFDetect}}
+\index{DTMFDetect@{DTMFDetect}!ost::DTMFDetect@{ost::DTMFDetect}}
+\subsubsection[{DTMFDetect}]{\setlength{\rightskip}{0pt plus 5cm}ost::DTMFDetect::DTMFDetect ()}\label{classost_1_1_d_t_m_f_detect_a9761101bcc763ac4d33c992097482d46}
+\index{ost::DTMFDetect@{ost::DTMFDetect}!$\sim$DTMFDetect@{$\sim$DTMFDetect}}
+\index{$\sim$DTMFDetect@{$\sim$DTMFDetect}!ost::DTMFDetect@{ost::DTMFDetect}}
+\subsubsection[{$\sim$DTMFDetect}]{\setlength{\rightskip}{0pt plus 5cm}ost::DTMFDetect::$\sim$DTMFDetect ()}\label{classost_1_1_d_t_m_f_detect_a1f526ff1431080305aa0ac89601188f2}
+
+
+\subsection{Member Function Documentation}
+\index{ost::DTMFDetect@{ost::DTMFDetect}!getResult@{getResult}}
+\index{getResult@{getResult}!ost::DTMFDetect@{ost::DTMFDetect}}
+\subsubsection[{getResult}]{\setlength{\rightskip}{0pt plus 5cm}int ost::DTMFDetect::getResult (char $\ast$ {\em data}, \/  int {\em size})}\label{classost_1_1_d_t_m_f_detect_ae33af9f9b942d007b9303810a58be868}
+
+
+Copy detected dtmf results into a data buffer. 
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]buffer to copy into. \item[{\em size}]of data buffer to copy into. \end{DoxyParams}
+\index{ost::DTMFDetect@{ost::DTMFDetect}!goertzelInit@{goertzelInit}}
+\index{goertzelInit@{goertzelInit}!ost::DTMFDetect@{ost::DTMFDetect}}
+\subsubsection[{goertzelInit}]{\setlength{\rightskip}{0pt plus 5cm}void ost::DTMFDetect::goertzelInit ({\bf goertzel\_\-state\_\-t} $\ast$ {\em s}, \/  tone\_\-detection\_\-descriptor\_\-t $\ast$ {\em t})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_d_t_m_f_detect_a7613c6d1296fbc51263d6f7e9c50774d}
+\index{ost::DTMFDetect@{ost::DTMFDetect}!goertzelResult@{goertzelResult}}
+\index{goertzelResult@{goertzelResult}!ost::DTMFDetect@{ost::DTMFDetect}}
+\subsubsection[{goertzelResult}]{\setlength{\rightskip}{0pt plus 5cm}float ost::DTMFDetect::goertzelResult ({\bf goertzel\_\-state\_\-t} $\ast$ {\em s})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_d_t_m_f_detect_a225100c6ad08d7f6dcdf9b179bd84bff}
+\index{ost::DTMFDetect@{ost::DTMFDetect}!goertzelUpdate@{goertzelUpdate}}
+\index{goertzelUpdate@{goertzelUpdate}!ost::DTMFDetect@{ost::DTMFDetect}}
+\subsubsection[{goertzelUpdate}]{\setlength{\rightskip}{0pt plus 5cm}void ost::DTMFDetect::goertzelUpdate ({\bf goertzel\_\-state\_\-t} $\ast$ {\em s}, \/  {\bf Sample} {\em x}[$\,$], \/  int {\em samples})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_d_t_m_f_detect_ad6fb18bc0360d281917f8377d88c6871}
+\index{ost::DTMFDetect@{ost::DTMFDetect}!putSamples@{putSamples}}
+\index{putSamples@{putSamples}!ost::DTMFDetect@{ost::DTMFDetect}}
+\subsubsection[{putSamples}]{\setlength{\rightskip}{0pt plus 5cm}int ost::DTMFDetect::putSamples ({\bf Linear} {\em buffer}, \/  int {\em count})}\label{classost_1_1_d_t_m_f_detect_af12fa2c868462ff78e5326a620d98f7a}
+
+
+This routine is used to push linear audio data into the dtmf tone detection analysizer. It may be called multiple times and results fetched later.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]of audio data in native machine endian to analysize. \item[{\em count}]of samples to analysize from buffer. \end{DoxyParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf audio2.h}\end{DoxyCompactItemize}

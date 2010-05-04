@@ -1,0 +1,268 @@
+.TH "ost::Buffer" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::Buffer \- 
+.PP
+The buffer class represents an IPC service that is built upon a buffer of fixed capacity that can be used to transfer objects between one or more producer and consumer threads.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <buffer.h>\fP
+.PP
+Inherits \fBost::Conditional\fP.
+.PP
+Inherited by \fBost::FixedBuffer\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBuffer\fP (size_t capacity)"
+.br
+.RI "\fICreate a buffer object of known capacity. \fP"
+.ti -1c
+.RI "virtual \fB~Buffer\fP ()"
+.br
+.RI "\fIIn derived functions, may be used to free the actual memory used to hold buffered data. \fP"
+.ti -1c
+.RI "size_t \fBgetSize\fP (void)"
+.br
+.RI "\fIReturn the capacity of the buffer as specified at creation. \fP"
+.ti -1c
+.RI "size_t \fBgetUsed\fP (void)"
+.br
+.RI "\fIReturn the current capacity in use for the buffer. \fP"
+.ti -1c
+.RI "size_t \fBwait\fP (void *buf, \fBtimeout_t\fP \fBtimeout\fP=0)"
+.br
+.RI "\fILet one or more threads wait for an object to become available in the buffer. \fP"
+.ti -1c
+.RI "size_t \fBpost\fP (void *buf, \fBtimeout_t\fP \fBtimeout\fP=0)"
+.br
+.RI "\fIPost an object into the buffer and enable a waiting thread to receive it. \fP"
+.ti -1c
+.RI "size_t \fBpeek\fP (void *buf)"
+.br
+.RI "\fIPeek at the current content (first object) in the buffer. \fP"
+.ti -1c
+.RI "virtual bool \fBisValid\fP (void)"
+.br
+.RI "\fINew virtual to test if buffer is a valid object. \fP"
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const size_t \fBtimeout\fP"
+.br
+.RI "\fIvalue to return when a timed operation returned with a timeout. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual size_t \fBonPeek\fP (void *buf)=0"
+.br
+.RI "\fIInvoke derived class buffer peeking method. \fP"
+.ti -1c
+.RI "virtual size_t \fBonWait\fP (void *buf)=0"
+.br
+.RI "\fIInvoke derived class object request from buffer. \fP"
+.ti -1c
+.RI "virtual size_t \fBonPost\fP (void *buf)=0"
+.br
+.RI "\fIInvoke derived class posting of object to buffer. \fP"
+.in -1c
+.SS "Related Functions"
+(Note that these are not member functions.) 
+.in +1c
+.ti -1c
+.RI "size_t \fBget\fP (\fBBuffer\fP &b, void *o, \fBtimeout_t\fP t=0)"
+.br
+.ti -1c
+.RI "size_t \fBput\fP (\fBBuffer\fP &b, void *o, \fBtimeout_t\fP t=0)"
+.br
+.ti -1c
+.RI "size_t \fBpeek\fP (\fBBuffer\fP &b, void *o)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The buffer class represents an IPC service that is built upon a buffer of fixed capacity that can be used to transfer objects between one or more producer and consumer threads. 
+
+Producer threads post objects into the buffer, and consumer threads wait for and receive objects from the buffer. Semaphores are used to to block the buffer from overflowing and indicate when there is data available, and mutexes are used to protect multiple consumers and producer threads from stepping over each other.
+.PP
+The buffer class is an abstract class in that the actual data being buffered is not directly specified within the buffer class itself. The buffer class should be used as a base class for a class that actually impliments buffering and which may be aware of the data types actually are being buffered. A template class could be created based on buffer for this purpose. Another possibility is to create a class derived from both \fBThread\fP and \fBBuffer\fP which can be used to implement message passing threads.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> Producer/Consumer buffer for use between threads. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::Buffer::Buffer (size_t capacity)"
+.PP
+Create a buffer object of known capacity. \fBParameters:\fP
+.RS 4
+\fIcapacity\fP is the integer capacity of the buffer. 
+.RE
+.PP
+
+.SS "virtual ost::Buffer::~Buffer ()\fC [virtual]\fP"
+.PP
+In derived functions, may be used to free the actual memory used to hold buffered data. 
+.SH "Member Function Documentation"
+.PP 
+.SS "size_t ost::Buffer::getSize (void)\fC [inline]\fP"
+.PP
+Return the capacity of the buffer as specified at creation. \fBReturns:\fP
+.RS 4
+size of buffer. 
+.RE
+.PP
+
+.SS "size_t ost::Buffer::getUsed (void)\fC [inline]\fP"
+.PP
+Return the current capacity in use for the buffer. Free space is technically \fBgetSize()\fP - \fBgetUsed()\fP. 
+.PP
+\fBReturns:\fP
+.RS 4
+integer used capacity of the buffer. 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBgetSize\fP 
+.RE
+.PP
+
+.SS "virtual bool ost::Buffer::isValid (void)\fC [virtual]\fP"
+.PP
+New virtual to test if buffer is a valid object. \fBReturns:\fP
+.RS 4
+true if object is valid. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBost::FixedBuffer\fP.
+.SS "virtual size_t ost::Buffer::onPeek (void * buf)\fC [protected, pure virtual]\fP"
+.PP
+Invoke derived class buffer peeking method. \fBReturns:\fP
+.RS 4
+size of object found. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuf\fP pointer to copy contents of head of buffer to. 
+.RE
+.PP
+
+.PP
+Implemented in \fBost::FixedBuffer\fP.
+.SS "virtual size_t ost::Buffer::onPost (void * buf)\fC [protected, pure virtual]\fP"
+.PP
+Invoke derived class posting of object to buffer. \fBReturns:\fP
+.RS 4
+size of object posted. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuf\fP pointer to object being posted to the buffer. 
+.RE
+.PP
+
+.PP
+Implemented in \fBost::FixedBuffer\fP.
+.SS "virtual size_t ost::Buffer::onWait (void * buf)\fC [protected, pure virtual]\fP"
+.PP
+Invoke derived class object request from buffer. \fBReturns:\fP
+.RS 4
+size of object returned. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuf\fP pointer to hold object returned from the buffer. 
+.RE
+.PP
+
+.PP
+Implemented in \fBost::FixedBuffer\fP.
+.SS "size_t ost::Buffer::peek (void * buf)"
+.PP
+Peek at the current content (first object) in the buffer. \fBReturns:\fP
+.RS 4
+size of object in the buffer. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuf\fP pointer to store object found in the buffer. 
+.RE
+.PP
+
+.PP
+Referenced by peek().
+.SS "size_t ost::Buffer::post (void * buf, \fBtimeout_t\fP timeout = \fC0\fP)"
+.PP
+Post an object into the buffer and enable a waiting thread to receive it. \fBReturns:\fP
+.RS 4
+size of object posted in bytes. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuf\fP pointer to object to store in the buffer. 
+.br
+\fItimeout\fP time to wait. 
+.RE
+.PP
+
+.PP
+Referenced by put().
+.SS "size_t ost::Buffer::wait (void * buf, \fBtimeout_t\fP timeout = \fC0\fP)"
+.PP
+Let one or more threads wait for an object to become available in the buffer. The waiting thread(s) will wait forever if no object is ever placed into the buffer.
+.PP
+\fBReturns:\fP
+.RS 4
+size of object passed by buffer in bytes. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuf\fP pointer to store object retrieved from the buffer. 
+.br
+\fItimeout\fP time to wait. 
+.RE
+.PP
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "size_t get (\fBBuffer\fP & b, void * o, \fBtimeout_t\fP t = \fC0\fP)\fC [related]\fP"
+.SS "size_t peek (\fBBuffer\fP & b, void * o)\fC [related]\fP"
+.PP
+\fBExamples: \fP
+.in +1c
+\fBSampleSocketPort.cpp\fP.
+.PP
+References peek().
+.SS "size_t put (\fBBuffer\fP & b, void * o, \fBtimeout_t\fP t = \fC0\fP)\fC [related]\fP"
+.PP
+References post().
+.SH "Member Data Documentation"
+.PP 
+.SS "const size_t \fBost::Buffer::timeout\fP\fC [static]\fP"
+.PP
+value to return when a timed operation returned with a timeout. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

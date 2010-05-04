@@ -1,0 +1,75 @@
+Copyright (c) 2008 by David Sugar and Tycho Softworks.
+Verbatim copying and distribution of this entire article is permitted
+in any medium, provided this notice is preserved.
+
+Later versions of GNU ccAudio are completely stand-alone.  Starting with
+release 1.0.0, GNU ccAudio is now licensed using the GNU Lesser General
+Public License 3.0 or later.
+
+Starting with 0.5.1, GNU ccAudio now depends on GNU Common C++ for common 
+configuration.  This allows us to use GNU Common C++ macros for exporting
+win32 dll headers, and enables the use of GNU Common C++ services such as
+DSO loading and threads in GNU ccAudio.
+
+The GNU ccAudio library is a portable C++ class framework that I believe
+to be useful for developing applications that must process audio.  This
+library provides a class framework for accessing audio segments from
+various audio file formats (.au, .wav, etc) and for creation of audio
+frame buffers that are then passed to audio devices and/or DSP processing
+systems such as telephony cards.
+
+This library was started out because I could not find any suitable
+free C++ based "sound file access" library.  There are several very good C
+based GPL sound file access libraries, and in particular libsndfile and
+audiofile come to mind.  There are also several good free C++ "audio
+frameworks", but all were concerned with driving a soundcard device or
+specific set of devices rather than offering usable stand-alone general
+purpose audio manipulation services.  Rather than having the overhead
+of a "C++ wrapper" around an existing C based library, I choose to create
+a new one from scratch.
+
+This framework initially will provide a portable means to access sound
+files stored in various formats, and may well extend to supporting
+playback and recording through default audio devices such as 
+"OSS" soundcard drivers and win32 sound api's in the future.  While I am
+also the maintainer for GNU Common C++, ccaudio does not depend in any 
+manner on GNU Common C++ and can be used fully stand-alone as well as with 
+other class frameworks, including GNU Common C++.  However, ccaudio does 
+follow certain GNU Common C++ naming conventions, including the use of 
+-lccaudio for the library name and the placement of a header file in 
+"include/cc++".
+
+One important consideration to keep in mind when using this library is
+that most operations are performed on objects that are considered an array
+of "samples" that may be aligned in descreat groupings depending on
+the codec involved.  Most ccaudio operations treat audio as essentially
+an array of "sample" sized objects rather than providing byte aligned 
+operations.  This sometimes leads to confusion in other byte oriented
+operation libraries, such as when manipulating things that are chunked in
+peculiar size arrangements.  For example, ccaudio conceptually treats GSM
+encoded audio as 33 byte long collections of "160" samples.  This has
+important implications and alignment of audio file positioning functions
+such as setPosition and getPosition, as well as what it means to "read" or
+"write" x samples through the getSamples and putSamples member functions
+of AudioFile.
+
+Another unique aspect of this library is that it deals with and supports
+frame aligned operations.  This is based on the assumption that most
+"low level" sound resources and audio manipulations also will perform
+operations on discreat and aligned frames rather than samples of
+arbitrary size.  A good example of this kind of audio processing is found
+in Linux "/dev/phone" based devices such as the Quicknet card which aligns
+all physical I/O operations into samples that represent 30ms frames.  This
+means that ccaudio supports concepts for "joining" or concatinating
+multiple audio file sources when building a frame and the end of file has
+been reached early, and for automatically filling incomplete frames with
+"silent" data as needed to pad for something that is to be submitted to a
+frame oriented audio device or DSP processor.
+
+The GNU ccAudio library is designed to compile either on win32 (using 
+either mingw32 or Visual C++) or most "Posix" systems including the GNU 
+operating system itself, GNU/Linux systems, FreeBSD, etc, and it does so 
+in  a fairly simple manner.  This framework is free software and is 
+subject to the terms of the GNU Public License with explicit exceptions as 
+noted in the source similar to the exclusions offered by Guile.
+  

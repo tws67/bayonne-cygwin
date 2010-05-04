@@ -1,0 +1,1098 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="62">
+  <logicalFolder name="root" displayName="root" projectFiles="true">
+    <df name="libxml2-2.7.7" root=".">
+      <df name="bakefile">
+      </df>
+      <df name="doc">
+        <df name="devhelp">
+        </df>
+        <df name="examples">
+          <in>io1.c</in>
+          <in>io2.c</in>
+          <in>parse1.c</in>
+          <in>parse2.c</in>
+          <in>parse3.c</in>
+          <in>parse4.c</in>
+          <in>reader1.c</in>
+          <in>reader2.c</in>
+          <in>reader3.c</in>
+          <in>reader4.c</in>
+          <in>testWriter.c</in>
+          <in>tree1.c</in>
+          <in>tree2.c</in>
+          <in>xpath1.c</in>
+          <in>xpath2.c</in>
+        </df>
+        <df name="html">
+        </df>
+        <df name="tutorial">
+          <df name="images">
+            <df name="callouts">
+            </df>
+          </df>
+          <in>includeaddattribute.c</in>
+          <in>includeaddkeyword.c</in>
+          <in>includeconvert.c</in>
+          <in>includegetattribute.c</in>
+          <in>includekeyword.c</in>
+          <in>includexpath.c</in>
+        </df>
+      </df>
+      <df name="example">
+        <in>gjobread.c</in>
+      </df>
+      <df name="include">
+        <df name="libxml">
+          <in>DOCBparser.h</in>
+          <in>HTMLparser.h</in>
+          <in>HTMLtree.h</in>
+          <in>SAX.h</in>
+          <in>SAX2.h</in>
+          <in>c14n.h</in>
+          <in>catalog.h</in>
+          <in>chvalid.h</in>
+          <in>debugXML.h</in>
+          <in>dict.h</in>
+          <in>encoding.h</in>
+          <in>entities.h</in>
+          <in>globals.h</in>
+          <in>hash.h</in>
+          <in>list.h</in>
+          <in>nanoftp.h</in>
+          <in>nanohttp.h</in>
+          <in>parser.h</in>
+          <in>parserInternals.h</in>
+          <in>pattern.h</in>
+          <in>relaxng.h</in>
+          <in>schemasInternals.h</in>
+          <in>schematron.h</in>
+          <in>threads.h</in>
+          <in>tree.h</in>
+          <in>uri.h</in>
+          <in>valid.h</in>
+          <in>xinclude.h</in>
+          <in>xlink.h</in>
+          <in>xmlIO.h</in>
+          <in>xmlautomata.h</in>
+          <in>xmlerror.h</in>
+          <in>xmlexports.h</in>
+          <in>xmlmemory.h</in>
+          <in>xmlmodule.h</in>
+          <in>xmlreader.h</in>
+          <in>xmlregexp.h</in>
+          <in>xmlsave.h</in>
+          <in>xmlschemas.h</in>
+          <in>xmlschemastypes.h</in>
+          <in>xmlstring.h</in>
+          <in>xmlunicode.h</in>
+          <in>xmlversion.h</in>
+          <in>xmlwriter.h</in>
+          <in>xpath.h</in>
+          <in>xpathInternals.h</in>
+          <in>xpointer.h</in>
+        </df>
+        <in>win32config.h</in>
+        <in>wsockcompat.h</in>
+      </df>
+      <df name="m4">
+      </df>
+      <df name="macos">
+        <df name="src">
+          <in>XMLTestPrefix.h</in>
+          <in>XMLTestPrefix2.h</in>
+          <in>config-mac.h</in>
+          <in>macos_main.c</in>
+        </df>
+      </df>
+      <df name="python">
+        <df name=".libs">
+        </df>
+        <df name="tests">
+        </df>
+        <in>libxml.c</in>
+        <in>libxml2-export.c</in>
+        <in>libxml2-py.c</in>
+        <in>libxml2-py.h</in>
+        <in>libxml_wrap.h</in>
+        <in>types.c</in>
+      </df>
+      <df name="result">
+        <df name="automata">
+        </df>
+        <df name="c14n">
+          <df name="1-1-without-comments">
+          </df>
+          <df name="exc-without-comments">
+          </df>
+          <df name="with-comments">
+          </df>
+          <df name="without-comments">
+          </df>
+        </df>
+        <df name="catalogs">
+        </df>
+        <df name="errors">
+        </df>
+        <df name="expr">
+        </df>
+        <df name="HTML">
+        </df>
+        <df name="namespaces">
+        </df>
+        <df name="noent">
+        </df>
+        <df name="pattern">
+        </df>
+        <df name="regexp">
+        </df>
+        <df name="relaxng">
+        </df>
+        <df name="schemas">
+        </df>
+        <df name="schematron">
+        </df>
+        <df name="scripts">
+        </df>
+        <df name="SVG">
+        </df>
+        <df name="URI">
+        </df>
+        <df name="valid">
+        </df>
+        <df name="VC">
+        </df>
+        <df name="XInclude">
+        </df>
+        <df name="xmlid">
+        </df>
+        <df name="XPath">
+          <df name="expr">
+          </df>
+          <df name="tests">
+          </df>
+          <df name="xptr">
+          </df>
+        </df>
+      </df>
+      <df name="vms">
+      </df>
+      <df name="VxWorks">
+      </df>
+      <df name="win32">
+        <df name="wince">
+          <in>wincecompat.c</in>
+          <in>wincecompat.h</in>
+        </df>
+      </df>
+      <df name="xstc">
+      </df>
+      <in>DOCBparser.c</in>
+      <in>HTMLparser.c</in>
+      <in>HTMLtree.c</in>
+      <in>SAX.c</in>
+      <in>SAX2.c</in>
+      <in>acconfig.h</in>
+      <in>c14n.c</in>
+      <in>catalog.c</in>
+      <in>chvalid.c</in>
+      <in>config.h</in>
+      <in>debugXML.c</in>
+      <in>dict.c</in>
+      <in>elfgcchack.h</in>
+      <in>encoding.c</in>
+      <in>entities.c</in>
+      <in>error.c</in>
+      <in>globals.c</in>
+      <in>hash.c</in>
+      <in>legacy.c</in>
+      <in>libxml.h</in>
+      <in>libxml2.la</in>
+      <in>list.c</in>
+      <in>nanoftp.c</in>
+      <in>nanohttp.c</in>
+      <in>parser.c</in>
+      <in>parserInternals.c</in>
+      <in>pattern.c</in>
+      <in>relaxng.c</in>
+      <in>runsuite.c</in>
+      <in>runtest.c</in>
+      <in>runxmlconf.c</in>
+      <in>schematron.c</in>
+      <in>testAutomata.c</in>
+      <in>testC14N.c</in>
+      <in>testHTML.c</in>
+      <in>testModule.c</in>
+      <in>testReader.c</in>
+      <in>testRegexp.c</in>
+      <in>testRelax.c</in>
+      <in>testSAX.c</in>
+      <in>testSchemas.c</in>
+      <in>testThreads.c</in>
+      <in>testThreadsWin32.c</in>
+      <in>testURI.c</in>
+      <in>testXPath.c</in>
+      <in>testapi.c</in>
+      <in>testchar.c</in>
+      <in>testdict.c</in>
+      <in>testdso.c</in>
+      <in>testrecurse.c</in>
+      <in>threads.c</in>
+      <in>tree.c</in>
+      <in>trio.c</in>
+      <in>trio.h</in>
+      <in>triodef.h</in>
+      <in>trionan.c</in>
+      <in>trionan.h</in>
+      <in>triop.h</in>
+      <in>triostr.c</in>
+      <in>triostr.h</in>
+      <in>uri.c</in>
+      <in>valid.c</in>
+      <in>xinclude.c</in>
+      <in>xlink.c</in>
+      <in>xmlIO.c</in>
+      <in>xmlcatalog.c</in>
+      <in>xmllint.c</in>
+      <in>xmlmemory.c</in>
+      <in>xmlmodule.c</in>
+      <in>xmlreader.c</in>
+      <in>xmlregexp.c</in>
+      <in>xmlsave.c</in>
+      <in>xmlschemas.c</in>
+      <in>xmlschemastypes.c</in>
+      <in>xmlstring.c</in>
+      <in>xmlunicode.c</in>
+      <in>xmlwriter.c</in>
+      <in>xpath.c</in>
+      <in>xpointer.c</in>
+    </df>
+    <logicalFolder name="ExternalFiles" displayName="重要文件" projectFiles="false">
+      <itemPath>Makefile-libxml2-2.7.7.mk</itemPath>
+      <itemPath>makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile-libxml2-2.7.7.mk</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <compilerSet>Cygwin_4.x|Cygwin_4.x</compilerSet>
+        <platform>3</platform>
+      </toolsSet>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>$(MAKE) -f Makefile</buildCommand>
+          <cleanCommand>$(MAKE) -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+          <cTool>
+            <incDir>
+              <pElem>.</pElem>
+            </incDir>
+          </cTool>
+        </makeTool>
+      </makefileType>
+      <item path="DOCBparser.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="HTMLparser.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="HTMLtree.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="SAX.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="SAX2.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="acconfig.h" ex="true" tool="3">
+      </item>
+      <item path="c14n.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="catalog.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="chvalid.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="debugXML.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="dict.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="doc/tutorial/includeaddattribute.c" ex="true" tool="0">
+      </item>
+      <item path="doc/tutorial/includeaddkeyword.c" ex="true" tool="0">
+      </item>
+      <item path="doc/tutorial/includeconvert.c" ex="true" tool="0">
+      </item>
+      <item path="doc/tutorial/includegetattribute.c" ex="true" tool="0">
+      </item>
+      <item path="doc/tutorial/includekeyword.c" ex="true" tool="0">
+      </item>
+      <item path="doc/tutorial/includexpath.c" ex="true" tool="0">
+      </item>
+      <item path="encoding.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="entities.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="error.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <folder path="libxml2-2.7.7/doc">
+        <cTool>
+          <incDir>
+            <pElem>doc/examples</pElem>
+            <pElem>include</pElem>
+            <pElem>doc/examples/include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </folder>
+      <folder path="libxml2-2.7.7/example">
+        <cTool>
+          <incDir>
+            <pElem>example/include</pElem>
+            <pElem>example</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </folder>
+      <folder path="libxml2-2.7.7/python">
+        <cTool>
+          <incDir>
+            <pElem>python</pElem>
+            <pElem>/usr/include/python2.5</pElem>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+          </preprocessorList>
+        </cTool>
+      </folder>
+      <item path="globals.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="hash.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="include/win32config.h" ex="true" tool="3">
+      </item>
+      <item path="include/wsockcompat.h" ex="true" tool="3">
+      </item>
+      <item path="legacy.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="libxml2.la" ex="false" tool="0">
+      </item>
+      <item path="list.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="macos/src/XMLTestPrefix.h" ex="true" tool="3">
+      </item>
+      <item path="macos/src/XMLTestPrefix2.h" ex="true" tool="3">
+      </item>
+      <item path="macos/src/config-mac.h" ex="true" tool="3">
+      </item>
+      <item path="macos/src/macos_main.c" ex="true" tool="0">
+      </item>
+      <item path="nanoftp.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="nanohttp.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="parser.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="parserInternals.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="pattern.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="relaxng.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="runsuite.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="runtest.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="runxmlconf.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="schematron.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="testAutomata.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="testC14N.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="testHTML.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="testModule.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="testReader.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="testRegexp.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="testRelax.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="testSAX.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="testSchemas.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="testThreads.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="testThreadsWin32.c" ex="true" tool="0">
+      </item>
+      <item path="testURI.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="testXPath.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="testapi.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="testchar.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="testdict.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="testdso.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="testrecurse.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="threads.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="tree.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="trio.c" ex="true" tool="0">
+      </item>
+      <item path="trio.h" ex="true" tool="3">
+      </item>
+      <item path="triop.h" ex="true" tool="3">
+      </item>
+      <item path="triostr.c" ex="true" tool="0">
+      </item>
+      <item path="triostr.h" ex="true" tool="3">
+      </item>
+      <item path="uri.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="valid.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="win32/wince/wincecompat.c" ex="true" tool="0">
+      </item>
+      <item path="win32/wince/wincecompat.h" ex="true" tool="3">
+      </item>
+      <item path="xinclude.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="xlink.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="xmlIO.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="xmlcatalog.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="xmllint.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="xmlmemory.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="xmlmodule.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="xmlreader.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="xmlregexp.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="xmlsave.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="xmlschemas.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="xmlschemastypes.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="xmlstring.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="xmlunicode.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="xmlwriter.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="xpath.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+      <item path="xpointer.c" ex="false" tool="0">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </cTool>
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

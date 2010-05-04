@@ -1,0 +1,195 @@
+.TH "ost::MemPager" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::MemPager \- 
+.PP
+The memory pager is used to allocate cumulative memory pages for storing object specific 'persistant' data that is presumed to persist during the life of a given derived object.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <misc.h>\fP
+.PP
+Inherited by \fBost::Keydata\fP\fC [protected]\fP, \fBost::SharedMemPager\fP, and \fBost::StackPager\fP\fC [protected]\fP.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fB_page\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBgetPages\fP (void)"
+.br
+.RI "\fIReturn the total number of pages that have been allocated for this memory pool. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void * \fBfirst\fP (size_t size)"
+.br
+.RI "\fIAllocate first workspace from paged memory. \fP"
+.ti -1c
+.RI "virtual void * \fBalloc\fP (size_t size)"
+.br
+.RI "\fIAllocate memory from either the currently active page, or allocate a new page for the object. \fP"
+.ti -1c
+.RI "char * \fBfirst\fP (char *str)"
+.br
+.RI "\fIAllocate a string from the memory pager pool and copy the string into it's new memory area. \fP"
+.ti -1c
+.RI "char * \fBalloc\fP (const char *str)"
+.br
+.RI "\fIAllocate a string from the memory pager pool and copy the string inti it's new memory area. \fP"
+.ti -1c
+.RI "\fBMemPager\fP (size_t pagesize=4096)"
+.br
+.RI "\fICreate a paged memory pool for cumulative storage. \fP"
+.ti -1c
+.RI "void \fBpurge\fP (void)"
+.br
+.RI "\fIpurge the current memory pool. \fP"
+.ti -1c
+.RI "void \fBclean\fP (void)"
+.br
+.RI "\fIClean for memory cleanup before exiting. \fP"
+.ti -1c
+.RI "virtual \fB~MemPager\fP ()"
+.br
+.RI "\fIDelete the memory pool and all allocated memory. \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBString\fP"
+.br
+.ti -1c
+.RI "class \fBMemPagerObject\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The memory pager is used to allocate cumulative memory pages for storing object specific 'persistant' data that is presumed to persist during the life of a given derived object. 
+
+When the object is destroyed, all accumulated data is automatically purged.
+.PP
+There are a number of odd and specialized utility classes found in Common C++. The most common of these is the 'MemPager' class. This is basically a class to enable page-grouped 'cumulative' memory allocation; all accumulated allocations are dropped during the destructor. This class has found it's way in a lot of other utility classes in Common C++.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> Accumulative object memory allocator. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::MemPager::MemPager (size_t pagesize = \fC4096\fP)\fC [protected]\fP"
+.PP
+Create a paged memory pool for cumulative storage. This pool allocates memory in fixed 'pagesize' chunks. Ideal performance is achived when the pool size matches the system page size. This pool can only exist in derived objects.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpagesize\fP page size to allocate chunks. 
+.RE
+.PP
+
+.SS "virtual ost::MemPager::~MemPager ()\fC [protected, virtual]\fP"
+.PP
+Delete the memory pool and all allocated memory. 
+.SH "Member Function Documentation"
+.PP 
+.SS "char* ost::MemPager::alloc (const char * str)\fC [protected]\fP"
+.PP
+Allocate a string from the memory pager pool and copy the string inti it's new memory area. This checks only the last active page for available space before allocating a new page.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP string to allocate and copy into paged memory pool. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+copy of string from allocated memory. 
+.RE
+.PP
+
+.SS "virtual void* ost::MemPager::alloc (size_t size)\fC [protected, virtual]\fP"
+.PP
+Allocate memory from either the currently active page, or allocate a new page for the object. \fBParameters:\fP
+.RS 4
+\fIsize\fP size of memory to allocate. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+pointer to allocated memory. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBost::SharedMemPager\fP.
+.PP
+Referenced by ost::MemPagerObject::operator new(), and ost::MemPagerObject::operator new[]().
+.SS "void ost::MemPager::clean (void)\fC [protected]\fP"
+.PP
+Clean for memory cleanup before exiting. 
+.SS "char* ost::MemPager::first (char * str)\fC [protected]\fP"
+.PP
+Allocate a string from the memory pager pool and copy the string into it's new memory area. This method allocates memory by first searching for an available page, and then allocating a new page if no space is found.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP string to allocate and copy into paged memory pool. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+copy of string from allocated memory. 
+.RE
+.PP
+
+.SS "virtual void* ost::MemPager::first (size_t size)\fC [protected, virtual]\fP"
+.PP
+Allocate first workspace from paged memory. This method scans all currently allocated blocks for available space before adding new pages and hence is both slower and more efficient.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsize\fP size of memory to allocate. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+pointer to allocated memory. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBost::SharedMemPager\fP.
+.SS "int ost::MemPager::getPages (void)\fC [inline]\fP"
+.PP
+Return the total number of pages that have been allocated for this memory pool. \fBReturns:\fP
+.RS 4
+number of pages allocated. 
+.RE
+.PP
+
+.SS "void ost::MemPager::purge (void)\fC [protected]\fP"
+.PP
+purge the current memory pool. 
+.PP
+Reimplemented in \fBost::StackPager\fP, and \fBost::SharedMemPager\fP.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBMemPagerObject\fP\fC [friend]\fP"
+.SS "friend class \fBString\fP\fC [friend]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

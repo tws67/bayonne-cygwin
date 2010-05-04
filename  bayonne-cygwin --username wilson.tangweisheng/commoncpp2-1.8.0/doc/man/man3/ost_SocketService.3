@@ -1,0 +1,144 @@
+.TH "ost::SocketService" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::SocketService \- 
+.PP
+The \fBSocketService\fP is a thread pool object that is meant to service attached socket ports.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <socketport.h>\fP
+.PP
+Inherits \fBost::Thread\fP, and \fBost::Mutex\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBupdate\fP (unsigned char flag=0xff)"
+.br
+.RI "\fINotify service thread that a port has been added or removed, or a timer changed, so that a new schedule can be computed for expiring attached ports. \fP"
+.ti -1c
+.RI "\fBSocketService\fP (int pri=0, size_t stack=0, const char *id=NULL)"
+.br
+.RI "\fICreate a service thread for attaching socket ports. \fP"
+.ti -1c
+.RI "virtual \fB~SocketService\fP ()"
+.br
+.RI "\fITerminate the thread pool and eliminate any attached socket ports. \fP"
+.ti -1c
+.RI "int \fBgetCount\fP (void) const "
+.br
+.RI "\fIGet current reference count. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBonUpdate\fP (unsigned char buf)"
+.br
+.RI "\fIHandles all requests other than 'termination'. \fP"
+.ti -1c
+.RI "virtual void \fBonEvent\fP (void)"
+.br
+.RI "\fICalled once each time the service thread is rescheduled. \fP"
+.ti -1c
+.RI "virtual void \fBonCallback\fP (\fBSocketPort\fP *port)"
+.br
+.RI "\fICalled for each port that is being processed in response to an event. \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBSocketPort\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBSocketService\fP is a thread pool object that is meant to service attached socket ports. 
+
+Multiple pool objects may be created and multiple socket ports may be attached to the same thread of execution. This allows one to balance threads and sockets they service rather than either using a single thread for all connections or a seperate thread for each connection. Features can be added through supported virtual methods.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> \fBThread\fP pool service object for socket ports. 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+.PP
+\fBtcpservice.cpp\fP.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::SocketService::SocketService (int pri = \fC0\fP, size_t stack = \fC0\fP, const char * id = \fCNULL\fP)"
+.PP
+Create a service thread for attaching socket ports. The thread begins execution with the first attached socket.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpri\fP of this thread to run under. 
+.br
+\fIstack\fP stack size. 
+.br
+\fIid\fP thread ID. 
+.RE
+.PP
+
+.SS "virtual ost::SocketService::~SocketService ()\fC [virtual]\fP"
+.PP
+Terminate the thread pool and eliminate any attached socket ports. 
+.SH "Member Function Documentation"
+.PP 
+.SS "int ost::SocketService::getCount (void) const\fC [inline]\fP"
+.PP
+Get current reference count. This can be used when selecting the least used service handler from a pool.
+.PP
+\fBReturns:\fP
+.RS 4
+count of active ports. 
+.RE
+.PP
+
+.SS "virtual void ost::SocketService::onCallback (\fBSocketPort\fP * port)\fC [protected, virtual]\fP"
+.PP
+Called for each port that is being processed in response to an event. This can be used to add additional notification options during callback in combination with \fBupdate()\fP.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIport\fP \fBSocketPort\fP who's callback events are being evaluated. 
+.RE
+.PP
+
+.SS "virtual void ost::SocketService::onEvent (void)\fC [protected, virtual]\fP"
+.PP
+Called once each time the service thread is rescheduled. This is called after the mutex is locked and can be used to slip in additional processing. 
+.SS "virtual void ost::SocketService::onUpdate (unsigned char buf)\fC [protected, virtual]\fP"
+.PP
+Handles all requests other than 'termination'. \fBParameters:\fP
+.RS 4
+\fIbuf\fP request id as posted from \fBupdate()\fP. 
+.RE
+.PP
+
+.SS "void ost::SocketService::update (unsigned char flag = \fC0xff\fP)"
+.PP
+Notify service thread that a port has been added or removed, or a timer changed, so that a new schedule can be computed for expiring attached ports. A '0' is used to terminate the service thread, and additional values can be specified which will be 'caught' in the \fBonUpdate()\fP handler.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIflag\fP update flag value. 
+.RE
+.PP
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBSocketPort\fP\fC [friend]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

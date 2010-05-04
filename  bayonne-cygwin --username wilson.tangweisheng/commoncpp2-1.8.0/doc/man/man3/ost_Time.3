@@ -1,0 +1,223 @@
+.TH "ost::Time" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::Time \- 
+.PP
+The \fBTime\fP class uses a integer representation of the current time.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <numbers.h>\fP
+.PP
+Inherited by \fBost::Datetime\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTime\fP (time_t tm)"
+.br
+.ti -1c
+.RI "\fBTime\fP (tm *dt)"
+.br
+.ti -1c
+.RI "\fBTime\fP (char *str, size_t size=0)"
+.br
+.ti -1c
+.RI "\fBTime\fP (int hour, int minute, int second)"
+.br
+.ti -1c
+.RI "\fBTime\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Time\fP ()"
+.br
+.ti -1c
+.RI "long \fBgetValue\fP (void) const "
+.br
+.ti -1c
+.RI "int \fBgetHour\fP (void) const "
+.br
+.ti -1c
+.RI "int \fBgetMinute\fP (void) const "
+.br
+.ti -1c
+.RI "int \fBgetSecond\fP (void) const "
+.br
+.ti -1c
+.RI "char * \fBgetTime\fP (char *buffer) const "
+.br
+.ti -1c
+.RI "time_t \fBgetTime\fP (void) const "
+.br
+.ti -1c
+.RI "tm * \fBgetTime\fP (tm *buf) const "
+.br
+.ti -1c
+.RI "void \fBsetTime\fP (char *str, size_t size=0)"
+.br
+.ti -1c
+.RI "bool \fBisValid\fP (void) const "
+.br
+.ti -1c
+.RI "\fBoperator long\fP ()"
+.br
+.ti -1c
+.RI "\fBString\fP \fBoperator()\fP () const "
+.br
+.ti -1c
+.RI "\fBTime\fP & \fBoperator++\fP ()"
+.br
+.ti -1c
+.RI "\fBTime\fP & \fBoperator--\fP ()"
+.br
+.ti -1c
+.RI "\fBTime\fP & \fBoperator+=\fP (const int val)"
+.br
+.ti -1c
+.RI "\fBTime\fP & \fBoperator-=\fP (const int val)"
+.br
+.ti -1c
+.RI "int \fBoperator==\fP (const \fBTime\fP &time)"
+.br
+.ti -1c
+.RI "int \fBoperator!=\fP (const \fBTime\fP &time)"
+.br
+.ti -1c
+.RI "int \fBoperator<\fP (const \fBTime\fP &time)"
+.br
+.ti -1c
+.RI "int \fBoperator<=\fP (const \fBTime\fP &time)"
+.br
+.ti -1c
+.RI "int \fBoperator>\fP (const \fBTime\fP &time)"
+.br
+.ti -1c
+.RI "int \fBoperator>=\fP (const \fBTime\fP &time)"
+.br
+.ti -1c
+.RI "bool \fBoperator!\fP () const "
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBtoSeconds\fP (int hour, int minute, int second)"
+.br
+.ti -1c
+.RI "void \fBfromSeconds\fP (char *buf) const "
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP (void)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "long \fBseconds\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "\fBTime\fP \fBoperator+\fP (const \fBTime\fP &time1, const \fBTime\fP &time2)"
+.br
+.ti -1c
+.RI "\fBTime\fP \fBoperator-\fP (const \fBTime\fP &time1, const \fBTime\fP &time2)"
+.br
+.ti -1c
+.RI "\fBTime\fP \fBoperator+\fP (const \fBTime\fP &time, const int val)"
+.br
+.ti -1c
+.RI "\fBTime\fP \fBoperator-\fP (const \fBTime\fP &time, const int val)"
+.br
+.ti -1c
+.RI "\fBTime\fP \fBoperator+\fP (const int val, const \fBTime\fP &time)"
+.br
+.ti -1c
+.RI "\fBTime\fP \fBoperator-\fP (const int val, const \fBTime\fP &time)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBTime\fP class uses a integer representation of the current time. 
+
+This is then manipulated in several forms and may be exported as needed.
+.PP
+\fBAuthor:\fP
+.RS 4
+Marcelo Dalmas <mad@brasmap.com.br> Integer based time class. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::Time::Time (time_t tm)"
+.SS "ost::Time::Time (tm * dt)"
+.SS "ost::Time::Time (char * str, size_t size = \fC0\fP)"
+.SS "ost::Time::Time (int hour, int minute, int second)"
+.SS "ost::Time::Time ()"
+.SS "virtual ost::Time::~Time ()\fC [virtual]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::Time::fromSeconds (char * buf) const\fC [protected]\fP"
+.SS "int ost::Time::getHour (void) const"
+.SS "int ost::Time::getMinute (void) const"
+.SS "int ost::Time::getSecond (void) const"
+.SS "tm* ost::Time::getTime (tm * buf) const"
+.SS "time_t ost::Time::getTime (void) const"
+.SS "char* ost::Time::getTime (char * buffer) const"
+.SS "long ost::Time::getValue (void) const"
+.SS "bool ost::Time::isValid (void) const"
+.PP
+Reimplemented in \fBost::Datetime\fP.
+.SS "ost::Time::operator long ()\fC [inline]\fP"
+.SS "bool ost::Time::operator! (void) const\fC [inline]\fP"
+.PP
+Reimplemented in \fBost::Datetime\fP.
+.SS "int ost::Time::operator!= (const \fBTime\fP & time)"
+.PP
+Reimplemented in \fBost::Datetime\fP.
+.SS "\fBString\fP ost::Time::operator() () const"
+.SS "\fBTime\fP& ost::Time::operator++ ()"
+.SS "\fBTime\fP& ost::Time::operator+= (const int val)"
+.SS "\fBTime\fP& ost::Time::operator-- ()"
+.SS "\fBTime\fP& ost::Time::operator-= (const int val)"
+.SS "int ost::Time::operator< (const \fBTime\fP & time)"
+.PP
+Reimplemented in \fBost::Datetime\fP.
+.SS "int ost::Time::operator<= (const \fBTime\fP & time)"
+.PP
+Reimplemented in \fBost::Datetime\fP.
+.SS "int ost::Time::operator== (const \fBTime\fP & time)"
+.PP
+Reimplemented in \fBost::Datetime\fP.
+.SS "int ost::Time::operator> (const \fBTime\fP & time)"
+.PP
+Reimplemented in \fBost::Datetime\fP.
+.SS "int ost::Time::operator>= (const \fBTime\fP & time)"
+.PP
+Reimplemented in \fBost::Datetime\fP.
+.SS "void ost::Time::setTime (char * str, size_t size = \fC0\fP)"
+.SS "void ost::Time::toSeconds (int hour, int minute, int second)\fC [protected]\fP"
+.SS "virtual void ost::Time::update (void)\fC [protected, virtual]\fP"
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "\fBTime\fP operator+ (const int val, const \fBTime\fP & time)\fC [friend]\fP"
+.SS "\fBTime\fP operator+ (const \fBTime\fP & time, const int val)\fC [friend]\fP"
+.SS "\fBTime\fP operator+ (const \fBTime\fP & time1, const \fBTime\fP & time2)\fC [friend]\fP"
+.SS "\fBTime\fP operator- (const int val, const \fBTime\fP & time)\fC [friend]\fP"
+.SS "\fBTime\fP operator- (const \fBTime\fP & time, const int val)\fC [friend]\fP"
+.SS "\fBTime\fP operator- (const \fBTime\fP & time1, const \fBTime\fP & time2)\fC [friend]\fP"
+.SH "Member Data Documentation"
+.PP 
+.SS "long \fBost::Time::seconds\fP\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

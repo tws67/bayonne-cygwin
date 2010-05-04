@@ -1,0 +1,546 @@
+.TH "ost::Serial" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::Serial \- 
+.PP
+The \fBSerial\fP class is used as the base for all serial I/O services under APE.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <serial.h>\fP
+.PP
+Inherited by \fBost::SerialPort\fP, and \fBost::TTYStream\fP.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBError\fP { \fBerrSuccess\fP =  0, \fBerrOpenNoTty\fP, \fBerrOpenFailed\fP, \fBerrSpeedInvalid\fP, \fBerrFlowInvalid\fP, \fBerrParityInvalid\fP, \fBerrCharsizeInvalid\fP, \fBerrStopbitsInvalid\fP, \fBerrOptionInvalid\fP, \fBerrResourceFailure\fP, \fBerrOutput\fP, \fBerrInput\fP, \fBerrTimeout\fP, \fBerrExtended\fP }"
+.br
+.ti -1c
+.RI "enum \fBFlow\fP { \fBflowNone\fP, \fBflowSoft\fP, \fBflowHard\fP, \fBflowBoth\fP }"
+.br
+.ti -1c
+.RI "enum \fBParity\fP { \fBparityNone\fP, \fBparityOdd\fP, \fBparityEven\fP }"
+.br
+.ti -1c
+.RI "enum \fBPending\fP { \fBpendingInput\fP, \fBpendingOutput\fP, \fBpendingError\fP }"
+.br
+.ti -1c
+.RI "typedef enum \fBError\fP \fBError\fP"
+.br
+.ti -1c
+.RI "typedef enum \fBFlow\fP \fBFlow\fP"
+.br
+.ti -1c
+.RI "typedef enum \fBParity\fP \fBParity\fP"
+.br
+.ti -1c
+.RI "typedef enum \fBPending\fP \fBPending\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~Serial\fP ()"
+.br
+.RI "\fIThe serial base class may be 'thrown' as a result on an error, and the 'catcher' may then choose to destory the object. \fP"
+.ti -1c
+.RI "\fBSerial\fP & \fBoperator=\fP (const \fBSerial\fP &from)"
+.br
+.RI "\fI\fBSerial\fP ports may also be duplecated by the assignment operator. \fP"
+.ti -1c
+.RI "\fBError\fP \fBsetSpeed\fP (unsigned long speed)"
+.br
+.RI "\fISet serial port speed for both input and output. \fP"
+.ti -1c
+.RI "\fBError\fP \fBsetCharBits\fP (int bits)"
+.br
+.RI "\fISet character size. \fP"
+.ti -1c
+.RI "\fBError\fP \fBsetParity\fP (\fBParity\fP parity)"
+.br
+.RI "\fISet parity mode. \fP"
+.ti -1c
+.RI "\fBError\fP \fBsetStopBits\fP (int bits)"
+.br
+.RI "\fISet number of stop bits. \fP"
+.ti -1c
+.RI "\fBError\fP \fBsetFlowControl\fP (\fBFlow\fP flow)"
+.br
+.RI "\fISet flow control. \fP"
+.ti -1c
+.RI "void \fBtoggleDTR\fP (\fBtimeout_t\fP millisec)"
+.br
+.RI "\fISet the DTR mode off momentarily. \fP"
+.ti -1c
+.RI "void \fBsendBreak\fP (void)"
+.br
+.RI "\fISend the 'break' signal. \fP"
+.ti -1c
+.RI "\fBError\fP \fBgetErrorNumber\fP (void)"
+.br
+.RI "\fIOften used by a 'catch' to fetch the last error of a thrown serial. \fP"
+.ti -1c
+.RI "char * \fBgetErrorString\fP (void)"
+.br
+.RI "\fIOften used by a 'catch' to fetch the user set error string of a thrown serial. \fP"
+.ti -1c
+.RI "int \fBgetBufferSize\fP (void)"
+.br
+.RI "\fIGet the 'buffer' size for buffered operations. \fP"
+.ti -1c
+.RI "virtual bool \fBisPending\fP (\fBPending\fP pend, \fBtimeout_t\fP timeout=TIMEOUT_INF)"
+.br
+.RI "\fIGet the status of pending operations. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBopen\fP (const char *fname)"
+.br
+.RI "\fIOpens the serial device. \fP"
+.ti -1c
+.RI "void \fBclose\fP (void)"
+.br
+.RI "\fICloses the serial device. \fP"
+.ti -1c
+.RI "virtual int \fBaRead\fP (char *Data, const int Length)"
+.br
+.RI "\fIReads from serial device. \fP"
+.ti -1c
+.RI "virtual int \fBaWrite\fP (const char *Data, const int Length)"
+.br
+.RI "\fIWrites to serial device. \fP"
+.ti -1c
+.RI "\fBError\fP \fBerror\fP (\fBError\fP error, char *errstr=NULL)"
+.br
+.RI "\fIThis service is used to throw all serial errors which usually occur during the serial constructor. \fP"
+.ti -1c
+.RI "void \fBerror\fP (char *err)"
+.br
+.RI "\fIThis service is used to thow application defined serial errors where the application specific error code is a string. \fP"
+.ti -1c
+.RI "void \fBsetError\fP (bool enable)"
+.br
+.RI "\fIThis method is used to turn the error handler on or off for 'throwing' execptions by manipulating the thrown flag. \fP"
+.ti -1c
+.RI "int \fBsetPacketInput\fP (int size, unsigned char btimer=0)"
+.br
+.RI "\fISet packet read mode and 'size' of packet read buffer. \fP"
+.ti -1c
+.RI "int \fBsetLineInput\fP (char newline=13, char nl1=0)"
+.br
+.RI "\fISet 'line buffering' read mode and specifies the newline character to be used in seperating line records. \fP"
+.ti -1c
+.RI "void \fBrestore\fP (void)"
+.br
+.RI "\fIRestore serial device to the original settings at time of open. \fP"
+.ti -1c
+.RI "void \fBflushInput\fP (void)"
+.br
+.RI "\fIUsed to flush the input waiting queue. \fP"
+.ti -1c
+.RI "void \fBflushOutput\fP (void)"
+.br
+.RI "\fIUsed to flush any pending output data. \fP"
+.ti -1c
+.RI "void \fBwaitOutput\fP (void)"
+.br
+.RI "\fIUsed to wait until all output has been sent. \fP"
+.ti -1c
+.RI "void \fBendSerial\fP (void)"
+.br
+.RI "\fIUsed as the default destructor for ending serial I/O services. \fP"
+.ti -1c
+.RI "void \fBinitConfig\fP (void)"
+.br
+.RI "\fIUsed to initialize a newly opened serial file handle. \fP"
+.ti -1c
+.RI "\fBSerial\fP ()"
+.br
+.RI "\fIThis allows later \fBttystream\fP class to open and close a serial device. \fP"
+.ti -1c
+.RI "\fBSerial\fP (const char *name)"
+.br
+.RI "\fIA serial object may be constructed from a named file on the file system. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBHANDLE\fP \fBdev\fP"
+.br
+.ti -1c
+.RI "int \fBbufsize\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBSerial\fP class is used as the base for all serial I/O services under APE. 
+
+A serial is a system serial port that is used either for line or packet based data input. \fBSerial\fP ports may also be 'streamable' in a derived form.
+.PP
+Common C++ serial I/O classes are used to manage serial devices and implement serial device protocols. From the point of view of Common C++, serial devices are supported by the underlying Posix specified 'termios' call interface.
+.PP
+The serial I/O base class is used to hold a descriptor to a serial device and to provide an exception handling interface for all serial I/O classes. The base class is also used to specify serial I/O properties such as communication speed, flow control, data size, and parity. The 'Serial' base class is not itself directly used in application development, however.
+.PP
+Common C++ \fBSerial\fP I/O is itself divided into two conceptual modes; frame oriented and line oriented I/O. Both frame and line oriented I/O makes use of the ability of the underlying tty driver to buffer data and return 'ready' status from when select either a specified number of bytes or newline record has been reached by manipulating termios c_cc fields appropriately. This provides some advantage in that a given thread servicing a serial port can block and wait rather than have to continually poll or read each and every byte as soon as it appears at the serial port.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> base class for all serial I/O services. 
+.RE
+.PP
+
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef enum \fBError\fP \fBost::Serial::Error\fP"
+.SS "typedef enum \fBFlow\fP \fBost::Serial::Flow\fP"
+.SS "typedef enum \fBParity\fP \fBost::Serial::Parity\fP"
+.SS "typedef enum \fBPending\fP \fBost::Serial::Pending\fP"
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBost::Serial::Error\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIerrSuccess \fP\fP
+.TP
+\fB\fIerrOpenNoTty \fP\fP
+.TP
+\fB\fIerrOpenFailed \fP\fP
+.TP
+\fB\fIerrSpeedInvalid \fP\fP
+.TP
+\fB\fIerrFlowInvalid \fP\fP
+.TP
+\fB\fIerrParityInvalid \fP\fP
+.TP
+\fB\fIerrCharsizeInvalid \fP\fP
+.TP
+\fB\fIerrStopbitsInvalid \fP\fP
+.TP
+\fB\fIerrOptionInvalid \fP\fP
+.TP
+\fB\fIerrResourceFailure \fP\fP
+.TP
+\fB\fIerrOutput \fP\fP
+.TP
+\fB\fIerrInput \fP\fP
+.TP
+\fB\fIerrTimeout \fP\fP
+.TP
+\fB\fIerrExtended \fP\fP
+
+.SS "enum \fBost::Serial::Flow\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIflowNone \fP\fP
+.TP
+\fB\fIflowSoft \fP\fP
+.TP
+\fB\fIflowHard \fP\fP
+.TP
+\fB\fIflowBoth \fP\fP
+
+.SS "enum \fBost::Serial::Parity\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIparityNone \fP\fP
+.TP
+\fB\fIparityOdd \fP\fP
+.TP
+\fB\fIparityEven \fP\fP
+
+.SS "enum \fBost::Serial::Pending\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIpendingInput \fP\fP
+.TP
+\fB\fIpendingOutput \fP\fP
+.TP
+\fB\fIpendingError \fP\fP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::Serial::Serial ()\fC [inline, protected]\fP"
+.PP
+This allows later \fBttystream\fP class to open and close a serial device. 
+.SS "ost::Serial::Serial (const char * name)\fC [protected]\fP"
+.PP
+A serial object may be constructed from a named file on the file system. This named device must be 'isatty()'.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP of file. 
+.RE
+.PP
+
+.SS "virtual ost::Serial::~Serial ()\fC [virtual]\fP"
+.PP
+The serial base class may be 'thrown' as a result on an error, and the 'catcher' may then choose to destory the object. By assuring the socket base class is a virtual destructor, we can assure the full object is properly terminated. 
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual int ost::Serial::aRead (char * Data, const int Length)\fC [protected, virtual]\fP"
+.PP
+Reads from serial device. \fBParameters:\fP
+.RS 4
+\fIData\fP Point to character buffer to receive data. Buffers MUST be at least Length + 1 bytes in size. 
+.br
+\fILength\fP \fBNumber\fP of bytes to read. 
+.RE
+.PP
+
+.SS "virtual int ost::Serial::aWrite (const char * Data, const int Length)\fC [protected, virtual]\fP"
+.PP
+Writes to serial device. \fBParameters:\fP
+.RS 4
+\fIData\fP Point to character buffer containing data to write. Buffers MUST 
+.br
+\fILength\fP \fBNumber\fP of bytes to write. 
+.RE
+.PP
+
+.SS "void ost::Serial::close (void)\fC [protected]\fP"
+.PP
+Closes the serial device. 
+.PP
+Reimplemented in \fBost::ttystream\fP.
+.SS "void ost::Serial::endSerial (void)\fC [protected]\fP"
+.PP
+Used as the default destructor for ending serial I/O services. It will restore the port to it's original state. 
+.SS "void ost::Serial::error (char * err)\fC [inline, protected]\fP"
+.PP
+This service is used to thow application defined serial errors where the application specific error code is a string. \fBParameters:\fP
+.RS 4
+\fIerr\fP string or message to pass. 
+.RE
+.PP
+
+.PP
+References error().
+.PP
+Referenced by error().
+.SS "\fBError\fP ost::Serial::error (\fBError\fP error, char * errstr = \fCNULL\fP)\fC [protected]\fP"
+.PP
+This service is used to throw all serial errors which usually occur during the serial constructor. \fBParameters:\fP
+.RS 4
+\fIerror\fP defined serial error id. 
+.br
+\fIerrstr\fP string or message to optionally pass. 
+.RE
+.PP
+
+.SS "void ost::Serial::flushInput (void)\fC [protected]\fP"
+.PP
+Used to flush the input waiting queue. 
+.SS "void ost::Serial::flushOutput (void)\fC [protected]\fP"
+.PP
+Used to flush any pending output data. 
+.SS "int ost::Serial::getBufferSize (void)\fC [inline]\fP"
+.PP
+Get the 'buffer' size for buffered operations. This can be used when setting packet or line read modes to determine how many bytes to wait for in a given read call.
+.PP
+\fBReturns:\fP
+.RS 4
+number of bytes used for buffering. 
+.RE
+.PP
+
+.SS "\fBError\fP ost::Serial::getErrorNumber (void)\fC [inline]\fP"
+.PP
+Often used by a 'catch' to fetch the last error of a thrown serial. \fBReturns:\fP
+.RS 4
+error numbr of last Error. 
+.RE
+.PP
+
+.SS "char* ost::Serial::getErrorString (void)\fC [inline]\fP"
+.PP
+Often used by a 'catch' to fetch the user set error string of a thrown serial. \fBReturns:\fP
+.RS 4
+string for error message. 
+.RE
+.PP
+
+.SS "void ost::Serial::initConfig (void)\fC [protected]\fP"
+.PP
+Used to initialize a newly opened serial file handle. You should set serial properties and DTR manually before first use. 
+.SS "virtual bool ost::Serial::isPending (\fBPending\fP pend, \fBtimeout_t\fP timeout = \fCTIMEOUT_INF\fP)\fC [virtual]\fP"
+.PP
+Get the status of pending operations. This can be used to examine if input or output is waiting, or if an error has occured on the serial device.
+.PP
+\fBReturns:\fP
+.RS 4
+true if ready, false if timeout. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpend\fP ready check to perform. 
+.br
+\fItimeout\fP in milliseconds. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBost::TTYStream\fP.
+.SS "void ost::Serial::open (const char * fname)\fC [protected]\fP"
+.PP
+Opens the serial device. \fBParameters:\fP
+.RS 4
+\fIfname\fP Pathname of device to open 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBost::ttystream\fP.
+.SS "\fBSerial\fP& ost::Serial::operator= (const \fBSerial\fP & from)"
+.PP
+\fBSerial\fP ports may also be duplecated by the assignment operator. 
+.SS "void ost::Serial::restore (void)\fC [protected]\fP"
+.PP
+Restore serial device to the original settings at time of open. 
+.SS "void ost::Serial::sendBreak (void)"
+.PP
+Send the 'break' signal. 
+.SS "\fBError\fP ost::Serial::setCharBits (int bits)"
+.PP
+Set character size. \fBReturns:\fP
+.RS 4
+0 on success. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbits\fP character size to use (usually 7 or 8). 
+.RE
+.PP
+
+.SS "void ost::Serial::setError (bool enable)\fC [inline, protected]\fP"
+.PP
+This method is used to turn the error handler on or off for 'throwing' execptions by manipulating the thrown flag. \fBParameters:\fP
+.RS 4
+\fIenable\fP true to enable handler. 
+.RE
+.PP
+
+.SS "\fBError\fP ost::Serial::setFlowControl (\fBFlow\fP flow)"
+.PP
+Set flow control. \fBReturns:\fP
+.RS 4
+0 on success. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIflow\fP control mode. 
+.RE
+.PP
+
+.SS "int ost::Serial::setLineInput (char newline = \fC13\fP, char nl1 = \fC0\fP)\fC [protected]\fP"
+.PP
+Set 'line buffering' read mode and specifies the newline character to be used in seperating line records. isPending can then be used to wait for an entire line of input.
+.PP
+\fBParameters:\fP
+.RS 4
+\fInewline\fP newline character. 
+.br
+\fInl1\fP EOL2 control character. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+size of conical input buffer. 
+.RE
+.PP
+
+.SS "int ost::Serial::setPacketInput (int size, unsigned char btimer = \fC0\fP)\fC [protected]\fP"
+.PP
+Set packet read mode and 'size' of packet read buffer. This sets VMIN to x. VTIM is normally set to '0' so that 'isPending()' can wait for an entire packet rather than just the first byte.
+.PP
+\fBReturns:\fP
+.RS 4
+actual buffer size set. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsize\fP of packet read request. 
+.br
+\fIbtimer\fP optional inter-byte data packet timeout. 
+.RE
+.PP
+
+.SS "\fBError\fP ost::Serial::setParity (\fBParity\fP parity)"
+.PP
+Set parity mode. \fBReturns:\fP
+.RS 4
+0 on success. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparity\fP mode. 
+.RE
+.PP
+
+.SS "\fBError\fP ost::Serial::setSpeed (unsigned long speed)"
+.PP
+Set serial port speed for both input and output. \fBReturns:\fP
+.RS 4
+0 on success. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIspeed\fP to select. 0 signifies modem 'hang up'. 
+.RE
+.PP
+
+.SS "\fBError\fP ost::Serial::setStopBits (int bits)"
+.PP
+Set number of stop bits. \fBReturns:\fP
+.RS 4
+0 on success. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbits\fP stop bits. 
+.RE
+.PP
+
+.SS "void ost::Serial::toggleDTR (\fBtimeout_t\fP millisec)"
+.PP
+Set the DTR mode off momentarily. \fBParameters:\fP
+.RS 4
+\fImillisec\fP number of milliseconds. 
+.RE
+.PP
+
+.SS "void ost::Serial::waitOutput (void)\fC [protected]\fP"
+.PP
+Used to wait until all output has been sent. 
+.SH "Member Data Documentation"
+.PP 
+.SS "int \fBost::Serial::bufsize\fP\fC [protected]\fP"
+.SS "\fBHANDLE\fP \fBost::Serial::dev\fP\fC [protected]\fP"
+.SS "bool \fBost::Serial::linebuf\fP"
+.SS "bool \fBost::Serial::thrown\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

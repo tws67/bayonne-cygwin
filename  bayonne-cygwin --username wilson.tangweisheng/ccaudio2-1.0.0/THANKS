@@ -1,0 +1,8 @@
+Thanks to Peter Wang <tjaden@psynet.net> for libcda which gave me the
+idea for structuring a C++ CDAudio class and a lot of useful portable
+code to start from.
+
+Jason Spence <jrs@ostel.com> fixed wave/RIFF support, added the
+getErrorStr() and getAbsolutePosition() APIs, and began documenting
+the API for use by programmers with no prior experience dealing with
+digital audio.

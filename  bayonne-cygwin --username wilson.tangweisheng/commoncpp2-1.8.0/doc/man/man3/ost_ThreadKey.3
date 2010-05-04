@@ -1,0 +1,89 @@
+.TH "ost::ThreadKey" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::ThreadKey \- 
+.PP
+This class allows the creation of a thread context unique 'pointer' that can be set and retrieved and can be used to create thread specific data areas for implementing 'thread safe' library routines.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <thread.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBThreadKey\fP ()"
+.br
+.RI "\fICreate a unique thread specific container. \fP"
+.ti -1c
+.RI "virtual \fB~ThreadKey\fP ()"
+.br
+.RI "\fIDestroy a thread specific container and any contents reserved. \fP"
+.ti -1c
+.RI "void * \fBgetKey\fP (void)"
+.br
+.RI "\fIGet the value of the pointer for the thread specific data container. \fP"
+.ti -1c
+.RI "void \fBsetKey\fP (void *)"
+.br
+.RI "\fISet the value of the pointer for the current thread specific execution context. \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBThreadImpl\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class allows the creation of a thread context unique 'pointer' that can be set and retrieved and can be used to create thread specific data areas for implementing 'thread safe' library routines. 
+
+Finally, Common C++ supports a thread-safe 'AtomicCounter' class. This can often be used for reference counting without having to protect the counter with a separate \fBMutex\fP counter. This lends to lighter-weight code.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> container for thread specific data storage. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::ThreadKey::ThreadKey ()"
+.PP
+Create a unique thread specific container. 
+.SS "virtual ost::ThreadKey::~ThreadKey ()\fC [virtual]\fP"
+.PP
+Destroy a thread specific container and any contents reserved. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void* ost::ThreadKey::getKey (void)"
+.PP
+Get the value of the pointer for the thread specific data container. A unique pointer can be set for each execution context.
+.PP
+\fBReturns:\fP
+.RS 4
+a unique void * for each execution context. 
+.RE
+.PP
+
+.SS "void ost::ThreadKey::setKey (void *)"
+.PP
+Set the value of the pointer for the current thread specific execution context. This can be used to store thread context specific data.
+.PP
+\fBParameters:\fP
+.RS 4
+\fI-\fP ptr to thread context specific data. 
+.RE
+.PP
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class ThreadImpl\fC [friend]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

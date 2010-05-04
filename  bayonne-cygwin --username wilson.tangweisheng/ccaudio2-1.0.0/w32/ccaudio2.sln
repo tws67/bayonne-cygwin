@@ -1,0 +1,56 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "audiotool", "audiotool.vcproj", "{82A192B6-CCF1-4296-B5EC-1AD626A6ADB3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F204C839-80EC-45BC-B8CA-EE7ABA3705B9} = {F204C839-80EC-45BC-B8CA-EE7ABA3705B9}
+		{448A1260-D7F6-4395-9CF1-EF7439095C4D} = {448A1260-D7F6-4395-9CF1-EF7439095C4D}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ccaudio2", "ccaudio2.vcproj", "{F204C839-80EC-45BC-B8CA-EE7ABA3705B9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "g711", "g711.vcproj", "{448A1260-D7F6-4395-9CF1-EF7439095C4D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F204C839-80EC-45BC-B8CA-EE7ABA3705B9} = {F204C839-80EC-45BC-B8CA-EE7ABA3705B9}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tonetool", "tonetool.vcproj", "{6210882E-F86B-4895-BDF8-714AC87AB9CA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F204C839-80EC-45BC-B8CA-EE7ABA3705B9} = {F204C839-80EC-45BC-B8CA-EE7ABA3705B9}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gsm", "gsm.vcproj", "{BCC92C68-2F27-4407-ADCF-2543A6930313}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F204C839-80EC-45BC-B8CA-EE7ABA3705B9} = {F204C839-80EC-45BC-B8CA-EE7ABA3705B9}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82A192B6-CCF1-4296-B5EC-1AD626A6ADB3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{82A192B6-CCF1-4296-B5EC-1AD626A6ADB3}.Debug|Win32.Build.0 = Debug|Win32
+		{82A192B6-CCF1-4296-B5EC-1AD626A6ADB3}.Release|Win32.ActiveCfg = Release|Win32
+		{82A192B6-CCF1-4296-B5EC-1AD626A6ADB3}.Release|Win32.Build.0 = Release|Win32
+		{F204C839-80EC-45BC-B8CA-EE7ABA3705B9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F204C839-80EC-45BC-B8CA-EE7ABA3705B9}.Debug|Win32.Build.0 = Debug|Win32
+		{F204C839-80EC-45BC-B8CA-EE7ABA3705B9}.Release|Win32.ActiveCfg = Release|Win32
+		{F204C839-80EC-45BC-B8CA-EE7ABA3705B9}.Release|Win32.Build.0 = Release|Win32
+		{448A1260-D7F6-4395-9CF1-EF7439095C4D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{448A1260-D7F6-4395-9CF1-EF7439095C4D}.Debug|Win32.Build.0 = Debug|Win32
+		{448A1260-D7F6-4395-9CF1-EF7439095C4D}.Release|Win32.ActiveCfg = Release|Win32
+		{448A1260-D7F6-4395-9CF1-EF7439095C4D}.Release|Win32.Build.0 = Release|Win32
+		{6210882E-F86B-4895-BDF8-714AC87AB9CA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6210882E-F86B-4895-BDF8-714AC87AB9CA}.Debug|Win32.Build.0 = Debug|Win32
+		{6210882E-F86B-4895-BDF8-714AC87AB9CA}.Release|Win32.ActiveCfg = Release|Win32
+		{6210882E-F86B-4895-BDF8-714AC87AB9CA}.Release|Win32.Build.0 = Release|Win32
+		{BCC92C68-2F27-4407-ADCF-2543A6930313}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BCC92C68-2F27-4407-ADCF-2543A6930313}.Debug|Win32.Build.0 = Debug|Win32
+		{BCC92C68-2F27-4407-ADCF-2543A6930313}.Release|Win32.ActiveCfg = Release|Win32
+		{BCC92C68-2F27-4407-ADCF-2543A6930313}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

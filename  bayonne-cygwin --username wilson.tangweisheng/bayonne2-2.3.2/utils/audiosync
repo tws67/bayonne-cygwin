@@ -1,0 +1,44 @@
+#!/bin/sh
+
+if test -z "$*" ; then
+	echo "audiosync: missing root directory"
+	exit -1
+fi
+
+if test ! -d "$*" ; then
+	echo "audiosync: $*: root directory invalid"
+	exit -1
+fi
+
+EXTENSION=".au"
+ENCODING="gsm alaw"
+PADDING=""
+FRAMING="10"
+
+if test -f ~/.audiosync ; then
+	source ~/.audiosync ; fi
+
+pwd=`pwd`
+dirlist=`find $* -type d`
+for dir in $dirlist ; do
+	cd=${pwd}
+	echo "scanning $dir..."
+	cd ${dir}
+	for voice in *$EXTENSION ; do
+		base=`basename $voice $EXTENSION`
+		if test ! -z "$PADDING" ; then
+			audiotool -trim -padding=$PADDING -framing=$FRAMING $voice ; fi
+
+		for enc in $ENCODING ; do
+			case $enc in
+			gsm)
+				audiotool -build -encoding=gsm $base.gsm $voice
+				;;
+			alaw)
+				audiotool -build -encoding=alaw $base.al $voice
+				;;
+			esac
+		done		
+	done
+done
+

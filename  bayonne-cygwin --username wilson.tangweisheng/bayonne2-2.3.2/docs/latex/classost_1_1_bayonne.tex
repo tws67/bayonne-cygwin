@@ -1,0 +1,1665 @@
+\section{ost::Bayonne Class Reference}
+\label{classost_1_1_bayonne}\index{ost::Bayonne@{ost::Bayonne}}
+
+
+Generic \doxyref{Bayonne}{p.}{classost_1_1_bayonne} master class to reference various useful data types and core static members used for locating resources found in libbayonne.  
+
+
+{\ttfamily \#include $<$bayonne.h$>$}Inheritance diagram for ost::Bayonne::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=11cm]{classost_1_1_bayonne}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf Event}
+\begin{DoxyCompactList}\small\item\em The event data structure includes the event identifier and any paramaters. \item\end{DoxyCompactList}\item 
+struct {\bf libaudio\_\-t}
+\item 
+struct {\bf regauth\_\-t}
+\item 
+class {\bf Ring}
+\begin{DoxyCompactList}\small\item\em This is an internal ring class for synchronized ringing. \item\end{DoxyCompactList}\item 
+struct {\bf RPCDefine}
+\begin{DoxyCompactList}\small\item\em This is a structure used to initialize XMLRPC method tables. \item\end{DoxyCompactList}\item 
+class {\bf RPCNode}
+\begin{DoxyCompactList}\small\item\em This is a little class used to associate XMLRPC call method tables with our server. \item\end{DoxyCompactList}\item 
+struct {\bf State}
+\begin{DoxyCompactList}\small\item\em The primary state data structure. \item\end{DoxyCompactList}\item 
+struct {\bf statetab}
+\begin{DoxyCompactList}\small\item\em A list of each state and a description. \item\end{DoxyCompactList}\item 
+class {\bf Traffic}
+\begin{DoxyCompactList}\small\item\em This is a class used for collecting statistics for call traffic measurement, such as might be used by MRTG. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf interface\_\-t} \{ \par
+{\bf IF\_\-PSTN}, 
+{\bf IF\_\-SPAN}, 
+{\bf IF\_\-ISDN}, 
+{\bf IF\_\-SS7}, 
+\par
+{\bf IF\_\-INET}, 
+{\bf IF\_\-NONE}, 
+{\bf IF\_\-POTS} = IF\_\-PSTN
+ \}
+\begin{DoxyCompactList}\small\item\em Telephony endpoint interface identifiers. \item\end{DoxyCompactList}\item 
+enum {\bf calltype\_\-t} \{ \par
+{\bf NONE}, 
+{\bf INCOMING}, 
+{\bf OUTGOING}, 
+{\bf PICKUP}, 
+\par
+{\bf FORWARDED}, 
+{\bf RECALL}, 
+{\bf DIRECT}, 
+{\bf RINGING}, 
+\par
+{\bf VIRTUAL}
+ \}
+\begin{DoxyCompactList}\small\item\em Type of call session being processed. \item\end{DoxyCompactList}\item 
+enum {\bf bridge\_\-t} \{ \par
+{\bf BR\_\-TDM}, 
+{\bf BR\_\-INET}, 
+{\bf BR\_\-SOFT}, 
+{\bf BR\_\-GATE}, 
+\par
+{\bf BR\_\-NONE}
+ \}
+\begin{DoxyCompactList}\small\item\em Type of bridge used for joining ports. \item\end{DoxyCompactList}\item 
+enum {\bf state\_\-t} \{ \par
+{\bf STATE\_\-INITIAL} =  0, 
+{\bf STATE\_\-IDLE}, 
+{\bf STATE\_\-RESET}, 
+{\bf STATE\_\-RELEASE}, 
+\par
+{\bf STATE\_\-BUSY}, 
+{\bf STATE\_\-DOWN}, 
+{\bf STATE\_\-RING}, 
+{\bf STATE\_\-PICKUP}, 
+\par
+{\bf STATE\_\-SEIZE}, 
+{\bf STATE\_\-ANSWER}, 
+{\bf STATE\_\-STEP}, 
+{\bf STATE\_\-EXEC}, 
+\par
+{\bf STATE\_\-THREAD}, 
+{\bf STATE\_\-CLEAR}, 
+{\bf STATE\_\-INKEY}, 
+{\bf STATE\_\-INPUT}, 
+\par
+{\bf STATE\_\-READ}, 
+{\bf STATE\_\-COLLECT}, 
+{\bf STATE\_\-DIAL}, 
+{\bf STATE\_\-XFER}, 
+\par
+{\bf STATE\_\-REFER}, 
+{\bf STATE\_\-HOLD}, 
+{\bf STATE\_\-RECALL}, 
+{\bf STATE\_\-TONE}, 
+\par
+{\bf STATE\_\-DTMF}, 
+{\bf STATE\_\-PLAY}, 
+{\bf STATE\_\-RECORD}, 
+{\bf STATE\_\-JOIN}, 
+\par
+{\bf STATE\_\-WAIT}, 
+{\bf STATE\_\-CALLING}, 
+{\bf STATE\_\-CONNECT}, 
+{\bf STATE\_\-RECONNECT}, 
+\par
+{\bf STATE\_\-HUNTING}, 
+{\bf STATE\_\-SLEEP}, 
+{\bf STATE\_\-START}, 
+{\bf STATE\_\-HANGUP}, 
+\par
+{\bf STATE\_\-LIBRESET}, 
+{\bf STATE\_\-WAITKEY}, 
+{\bf STATE\_\-LIBWAIT}, 
+{\bf STATE\_\-IRESET}, 
+\par
+{\bf STATE\_\-FINAL}, 
+{\bf STATE\_\-SUSPEND} =  STATE\_\-DOWN, 
+{\bf STATE\_\-STANDBY} =  STATE\_\-DOWN, 
+{\bf STATE\_\-LIBEXEC} =  STATE\_\-EXEC, 
+\par
+{\bf STATE\_\-RINGING} =  STATE\_\-RING, 
+{\bf STATE\_\-RUNNING} =  STATE\_\-STEP, 
+{\bf STATE\_\-THREADING} =  STATE\_\-THREAD
+ \}
+\begin{DoxyCompactList}\small\item\em Call processing states offered in core library. \item\end{DoxyCompactList}\item 
+enum {\bf signal\_\-t} \{ \par
+{\bf SIGNAL\_\-EXIT} =  0, 
+{\bf SIGNAL\_\-ERROR}, 
+{\bf SIGNAL\_\-TIMEOUT}, 
+{\bf SIGNAL\_\-DTMF}, 
+\par
+{\bf SIGNAL\_\-0}, 
+{\bf SIGNAL\_\-1}, 
+{\bf SIGNAL\_\-2}, 
+{\bf SIGNAL\_\-3}, 
+\par
+{\bf SIGNAL\_\-4}, 
+{\bf SIGNAL\_\-5}, 
+{\bf SIGNAL\_\-6}, 
+{\bf SIGNAL\_\-7}, 
+\par
+{\bf SIGNAL\_\-8}, 
+{\bf SIGNAL\_\-9}, 
+{\bf SIGNAL\_\-STAR}, 
+{\bf SIGNAL\_\-POUND}, 
+\par
+{\bf SIGNAL\_\-A}, 
+{\bf SIGNAL\_\-OVERRIDE} =  SIGNAL\_\-A, 
+{\bf SIGNAL\_\-B}, 
+{\bf SIGNAL\_\-FLASH} =  SIGNAL\_\-B, 
+\par
+{\bf SIGNAL\_\-C}, 
+{\bf SIGNAL\_\-IMMEDIATE} =  SIGNAL\_\-C, 
+{\bf SIGNAL\_\-D}, 
+{\bf SIGNAL\_\-PRIORITY} =  SIGNAL\_\-D, 
+\par
+{\bf SIGNAL\_\-RING}, 
+{\bf SIGNAL\_\-TONE}, 
+{\bf SIGNAL\_\-EVENT}, 
+{\bf SIGNAL\_\-WINK}, 
+\par
+{\bf SIGNAL\_\-CHILD}, 
+{\bf SIGNAL\_\-FAIL}, 
+{\bf SIGNAL\_\-PICKUP}, 
+{\bf SIGNAL\_\-PART}, 
+\par
+{\bf SIGNAL\_\-INVALID}, 
+{\bf SIGNAL\_\-PARENT}, 
+{\bf SIGNAL\_\-WAIT}, 
+{\bf SIGNAL\_\-HANGUP} =  SIGNAL\_\-EXIT
+ \}
+\begin{DoxyCompactList}\small\item\em Signaled interpreter events. \item\end{DoxyCompactList}\item 
+enum {\bf event\_\-t} \{ \par
+{\bf MSGPORT\_\-WAKEUP} =  0, 
+{\bf MSGPORT\_\-SHUTDOWN}, 
+{\bf MSGPORT\_\-LOGGING}, 
+{\bf MSGPORT\_\-REGISTER}, 
+\par
+{\bf ENTER\_\-STATE} =  100, 
+{\bf EXIT\_\-STATE}, 
+{\bf EXIT\_\-THREAD}, 
+{\bf EXIT\_\-TIMER}, 
+\par
+{\bf EXIT\_\-PARTING}, 
+{\bf NULL\_\-EVENT}, 
+{\bf ERROR\_\-STATE}, 
+{\bf ENTER\_\-HUNTING}, 
+\par
+{\bf EXIT\_\-HUNTING}, 
+{\bf ENTER\_\-RECONNECT}, 
+{\bf EXIT\_\-RECONNECT}, 
+{\bf RECALL\_\-RECONNECT}, 
+\par
+{\bf EXIT\_\-SCRIPT}, 
+{\bf STEP\_\-SCRIPT}, 
+{\bf START\_\-DIRECT} =  200, 
+{\bf START\_\-INCOMING}, 
+\par
+{\bf START\_\-OUTGOING}, 
+{\bf START\_\-RECALL}, 
+{\bf START\_\-FORWARDED}, 
+{\bf START\_\-RINGING}, 
+\par
+{\bf START\_\-HUNTING}, 
+{\bf START\_\-REFER}, 
+{\bf STOP\_\-SCRIPT}, 
+{\bf STOP\_\-DISCONNECT}, 
+\par
+{\bf STOP\_\-PARENT}, 
+{\bf CANCEL\_\-CHILD}, 
+{\bf DETACH\_\-CHILD}, 
+{\bf CHILD\_\-RUNNING}, 
+\par
+{\bf CHILD\_\-FAILED}, 
+{\bf CHILD\_\-INVALID}, 
+{\bf CHILD\_\-EXPIRED}, 
+{\bf CHILD\_\-BUSY}, 
+\par
+{\bf CHILD\_\-FAX}, 
+{\bf CHILD\_\-DND}, 
+{\bf CHILD\_\-AWAY}, 
+{\bf CHILD\_\-NOCODEC}, 
+\par
+{\bf CHILD\_\-OFFLINE}, 
+{\bf START\_\-SCRIPT} =  START\_\-INCOMING, 
+{\bf START\_\-SELECTED} =  START\_\-OUTGOING, 
+{\bf START\_\-TRANSFER} =  START\_\-REFER, 
+\par
+{\bf ENTER\_\-LIBEXEC} =  300, 
+{\bf EXIT\_\-LIBEXEC}, 
+{\bf HEAD\_\-LIBEXEC}, 
+{\bf ARGS\_\-LIBEXEC}, 
+\par
+{\bf GOT\_\-LIBEXEC}, 
+{\bf READ\_\-LIBEXEC}, 
+{\bf DROP\_\-LIBEXEC}, 
+{\bf STAT\_\-LIBEXEC}, 
+\par
+{\bf PROMPT\_\-LIBEXEC}, 
+{\bf CLEAR\_\-LIBEXEC}, 
+{\bf WAIT\_\-LIBEXEC}, 
+{\bf RECORD\_\-LIBEXEC}, 
+\par
+{\bf REPLAY\_\-LIBEXEC}, 
+{\bf RESTART\_\-LIBEXEC}, 
+{\bf TONE\_\-LIBEXEC}, 
+{\bf XFER\_\-LIBEXEC}, 
+\par
+{\bf POST\_\-LIBEXEC}, 
+{\bf ERROR\_\-LIBEXEC}, 
+{\bf TIMER\_\-EXPIRED} =  400, 
+{\bf LINE\_\-WINK}, 
+\par
+{\bf LINE\_\-PICKUP}, 
+{\bf LINE\_\-HANGUP}, 
+{\bf LINE\_\-DISCONNECT}, 
+{\bf LINE\_\-ON\_\-HOOK}, 
+\par
+{\bf LINE\_\-OFF\_\-HOOK}, 
+{\bf RING\_\-ON}, 
+{\bf RING\_\-OFF}, 
+{\bf RING\_\-STOP}, 
+\par
+{\bf LINE\_\-CALLER\_\-ID}, 
+{\bf RINGING\_\-DID}, 
+{\bf DEVICE\_\-BLOCKED}, 
+{\bf DEVICE\_\-UNBLOCKED}, 
+\par
+{\bf DEVICE\_\-OPEN}, 
+{\bf DEVICE\_\-CLOSE}, 
+{\bf DSP\_\-READY}, 
+{\bf RING\_\-SYNC}, 
+\par
+{\bf CALL\_\-DETECT} =  500, 
+{\bf CALL\_\-CONNECTED}, 
+{\bf CALL\_\-RELEASED}, 
+{\bf CALL\_\-ACCEPTED}, 
+\par
+{\bf CALL\_\-ANSWERED}, 
+{\bf CALL\_\-HOLD}, 
+{\bf CALL\_\-HOLDING} = CALL\_\-HOLD, 
+{\bf CALL\_\-NOHOLD}, 
+\par
+{\bf CALL\_\-DIGITS}, 
+{\bf CALL\_\-OFFERED}, 
+{\bf CALL\_\-ANI}, 
+{\bf CALL\_\-ACTIVE}, 
+\par
+{\bf CALL\_\-NOACTIVE}, 
+{\bf CALL\_\-BILLING}, 
+{\bf CALL\_\-RESTART}, 
+{\bf CALL\_\-SETSTATE}, 
+\par
+{\bf CALL\_\-FAILURE}, 
+{\bf CALL\_\-ALERTING}, 
+{\bf CALL\_\-INFO}, 
+{\bf CALL\_\-BUSY}, 
+\par
+{\bf CALL\_\-DIVERT}, 
+{\bf CALL\_\-FACILITY}, 
+{\bf CALL\_\-FRAME}, 
+{\bf CALL\_\-NOTIFY}, 
+\par
+{\bf CALL\_\-NSI}, 
+{\bf CALL\_\-RINGING}, 
+{\bf CALL\_\-DISCONNECT}, 
+{\bf CALL\_\-CLEARED}, 
+\par
+{\bf CALL\_\-PROCEEDING}, 
+{\bf RESTART\_\-FAILED}, 
+{\bf RELEASE\_\-FAILED}, 
+{\bf START\_\-RING} =  600, 
+\par
+{\bf STOP\_\-RING}, 
+{\bf CLEAR\_\-TIMESLOT}, 
+{\bf START\_\-FLASH}, 
+{\bf STOP\_\-FLASH}, 
+\par
+{\bf DIAL\_\-CONNECT}, 
+{\bf DIAL\_\-TIMEOUT}, 
+{\bf DIAL\_\-FAILED}, 
+{\bf DIAL\_\-INVALID}, 
+\par
+{\bf DIAL\_\-BUSY}, 
+{\bf DIAL\_\-FAX}, 
+{\bf DIAL\_\-PAM}, 
+{\bf DIAL\_\-DND}, 
+\par
+{\bf DIAL\_\-AWAY}, 
+{\bf DIAL\_\-OFFLINE}, 
+{\bf DIAL\_\-NOCODEC}, 
+{\bf DIAL\_\-MACHINE} =  DIAL\_\-PAM, 
+\par
+{\bf AUDIO\_\-IDLE} =  700, 
+{\bf AUDIO\_\-ACTIVE}, 
+{\bf AUDIO\_\-EXPIRED}, 
+{\bf INPUT\_\-PENDING}, 
+\par
+{\bf OUTPUT\_\-PENDING}, 
+{\bf AUDIO\_\-BUFFER}, 
+{\bf TONE\_\-IDLE}, 
+{\bf DTMF\_\-KEYDOWN}, 
+\par
+{\bf DTMF\_\-KEYSYNC}, 
+{\bf DTMF\_\-KEYUP}, 
+{\bf TONE\_\-START}, 
+{\bf TONE\_\-STOP}, 
+\par
+{\bf AUDIO\_\-START}, 
+{\bf AUDIO\_\-STOP}, 
+{\bf DTMF\_\-GENDOWN}, 
+{\bf DTMF\_\-GENUP}, 
+\par
+{\bf AUDIO\_\-SYNC}, 
+{\bf AUDIO\_\-RECONNECT}, 
+{\bf AUDIO\_\-DISCONNECT}, 
+{\bf PEER\_\-RECONNECT}, 
+\par
+{\bf PEER\_\-DISCONNECT}, 
+{\bf PEER\_\-REFER}, 
+{\bf DTMF\_\-GENTONE} =  DTMF\_\-GENUP, 
+{\bf MAKE\_\-TEST} =  800, 
+\par
+{\bf MAKE\_\-BUSY}, 
+{\bf MAKE\_\-IDLE}, 
+{\bf MAKE\_\-DOWN}, 
+{\bf MAKE\_\-UP}, 
+\par
+{\bf MAKE\_\-EXPIRED}, 
+{\bf ENABLE\_\-LOGGING}, 
+{\bf DISABLE\_\-LOGGING}, 
+{\bf PART\_\-EXPIRED}, 
+\par
+{\bf PART\_\-EXITING}, 
+{\bf PART\_\-DISCONNECT}, 
+{\bf JOIN\_\-PEER}, 
+{\bf PEER\_\-WAITING}, 
+\par
+{\bf RELOCATE\_\-REQUEST}, 
+{\bf RELOCATE\_\-ACCEPT}, 
+{\bf RELOCATE\_\-REJECT}, 
+{\bf START\_\-RELOCATE}, 
+\par
+{\bf STREAM\_\-ACTIVE}, 
+{\bf STREAM\_\-PASSIVE}, 
+{\bf JOIN\_\-RECALL}, 
+{\bf DROP\_\-RECALL}, 
+\par
+{\bf DROP\_\-REFER}, 
+{\bf ENTER\_\-RESUME} =  MAKE\_\-UP, 
+{\bf ENTER\_\-SUSPEND} =  MAKE\_\-DOWN, 
+{\bf SYSTEM\_\-DOWN} =  900, 
+\par
+{\bf DRIVER\_\-SPECIFIC} =  1000
+ \}
+\begin{DoxyCompactList}\small\item\em Primary event identifiers. \item\end{DoxyCompactList}\item 
+enum {\bf result\_\-t} \{ \par
+{\bf RESULT\_\-SUCCESS} =  0, 
+{\bf RESULT\_\-TIMEOUT}, 
+{\bf RESULT\_\-INVALID}, 
+{\bf RESULT\_\-PENDING}, 
+\par
+{\bf RESULT\_\-COMPLETE}, 
+{\bf RESULT\_\-FAILED}, 
+{\bf RESULT\_\-BADPATH} =  254, 
+{\bf RESULT\_\-OFFLINE} =  255
+ \}
+\item 
+typedef uint16\_\-t {\bf timeslot\_\-t}
+\item 
+typedef int32\_\-t {\bf rpcint\_\-t}
+\item 
+typedef {\bf rpcint\_\-t} {\bf rpcbool\_\-t}
+\item 
+typedef void($\ast$ {\bf rpcmethod\_\-t} )({\bf BayonneRPC} $\ast$rpc)
+\begin{DoxyCompactList}\small\item\em A rpc method handler. \item\end{DoxyCompactList}\item 
+typedef bool(BayonneSession::$\ast$ {\bf Handler} )({\bf Event} $\ast$event)
+\begin{DoxyCompactList}\small\item\em The current state handler in effect for a given channel to receive events. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf md5\_\-hash} (char $\ast$out, const char $\ast$source)
+\begin{DoxyCompactList}\small\item\em Compute md5 hashes. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf snmptrap} (unsigned id, const char $\ast$descr=NULL)
+\item 
+static void {\bf allocate} ({\bf timeslot\_\-t} {\bf timeslots}, ScriptCommand $\ast$pointer=NULL, {\bf timeslot\_\-t} overdraft=0)
+\begin{DoxyCompactList}\small\item\em Allocates the maximum number of timeslots the server will use as a whole and attaches a given server to the library. \item\end{DoxyCompactList}\item 
+static const char $\ast$ {\bf getRegistryId} (const char $\ast$id)
+\item 
+static {\bf BayonneDriver} $\ast$ {\bf getDriverTag} (const char $\ast$id)
+\item 
+static Audio::Encoding {\bf getEncoding} (const char $\ast$cp)
+\item 
+static void {\bf allocateLocal} (void)
+\begin{DoxyCompactList}\small\item\em Allocate local script engine sessions, if needed. \item\end{DoxyCompactList}\item 
+static void {\bf addConfig} (const char $\ast$cfgfile)
+\begin{DoxyCompactList}\small\item\em Add config file entry. \item\end{DoxyCompactList}\item 
+static void {\bf waitLoaded} (void)
+\begin{DoxyCompactList}\small\item\em Wait for live flag. \item\end{DoxyCompactList}\item 
+static unsigned long {\bf uptime} (void)
+\begin{DoxyCompactList}\small\item\em Get server uptime. \item\end{DoxyCompactList}\item 
+static ScriptCompiler $\ast$ {\bf reload} (void)
+\begin{DoxyCompactList}\small\item\em Request active scripts to be recompiled from the library. \item\end{DoxyCompactList}\item 
+static void {\bf down} (void)
+\begin{DoxyCompactList}\small\item\em Used to down the server from the library. \item\end{DoxyCompactList}\item 
+static bool {\bf service} (const char $\ast$service)
+\begin{DoxyCompactList}\small\item\em Sets server service level from the library. \item\end{DoxyCompactList}\item 
+static const char $\ast$ {\bf getRunLevel} (void)
+\begin{DoxyCompactList}\small\item\em Get service level. \item\end{DoxyCompactList}\item 
+static {\bf BayonneSession} $\ast$ {\bf getSession} ({\bf timeslot\_\-t} timeslot)
+\begin{DoxyCompactList}\small\item\em Returns a session pointer for a server timeslot. \item\end{DoxyCompactList}\item 
+static ScriptImage $\ast$$\ast$ {\bf getLocalImage} ({\bf timeslot\_\-t} timeslot)
+\begin{DoxyCompactList}\small\item\em Returns a local image pointer for a server timeslot. \item\end{DoxyCompactList}\item 
+static {\bf BayonneSession} $\ast$ {\bf startDialing} (const char $\ast$dial, const char $\ast$name, const char $\ast$caller, const char $\ast$display, {\bf BayonneSession} $\ast$parent=NULL, const char $\ast$manager=NULL, const char $\ast$secret=NULL)
+\begin{DoxyCompactList}\small\item\em Start a dialing session. \item\end{DoxyCompactList}\item 
+static {\bf BayonneSession} $\ast$ {\bf getSid} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em Returns a session pointer for a string identifier. \item\end{DoxyCompactList}\item 
+static {\bf timeslot\_\-t} {\bf toTimeslot} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em Returns a server timeslot number for a string identifier. \item\end{DoxyCompactList}\item 
+static {\bf timeslot\_\-t} {\bf getTimeslotsUsed} (void)
+\begin{DoxyCompactList}\small\item\em Return total library timeslots used (highest used). \item\end{DoxyCompactList}\item 
+static {\bf timeslot\_\-t} {\bf getTimeslotCount} (void)
+\begin{DoxyCompactList}\small\item\em Return total timeslots allocated for the server. \item\end{DoxyCompactList}\item 
+static {\bf timeslot\_\-t} {\bf getAvailTimeslots} (void)
+\begin{DoxyCompactList}\small\item\em Return remaining timeslots available to allocate driver ports into. \item\end{DoxyCompactList}\item 
+static {\bf Handler} {\bf getState} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Map a state name into a handler. \item\end{DoxyCompactList}\item 
+static int {\bf getDigit} (char dtmf)
+\begin{DoxyCompactList}\small\item\em Convert a dtmf character into a 0-\/15 number reference. \item\end{DoxyCompactList}\item 
+static char {\bf getChar} (int dtmf)
+\begin{DoxyCompactList}\small\item\em Convert a dtmf digit number into it's ascii code. \item\end{DoxyCompactList}\item 
+static bool {\bf matchDigits} (const char $\ast$digits, const char $\ast$match, bool partial=false)
+\begin{DoxyCompactList}\small\item\em A function to support pattern matching and templates for digit strings. \item\end{DoxyCompactList}\item 
+static ScriptImage $\ast$ {\bf useImage} (void)
+\begin{DoxyCompactList}\small\item\em Use the current compiled script image; mark as in use. \item\end{DoxyCompactList}\item 
+static void {\bf endImage} (ScriptImage $\ast$image)
+\begin{DoxyCompactList}\small\item\em Release a script image in use. \item\end{DoxyCompactList}\item 
+static bool {\bf loadPlugin} (const char $\ast$path)
+\begin{DoxyCompactList}\small\item\em Load a plugin module. \item\end{DoxyCompactList}\item 
+static bool {\bf loadMonitor} (const char $\ast$path)
+\begin{DoxyCompactList}\small\item\em Load a monitoring/management module. \item\end{DoxyCompactList}\item 
+static bool {\bf loadAudio} (const char $\ast$path)
+\begin{DoxyCompactList}\small\item\em Load a bgm/audio processing module for continues audio. \item\end{DoxyCompactList}\item 
+static void {\bf errlog} (const char $\ast$level, const char $\ast$fmt,...)
+\item 
+static bool {\bf getUserdata} (void)
+\item 
+static void {\bf addTrap4} (const char $\ast$addr)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static char {\bf dtmf\_\-keymap} [256]
+\item 
+static timeout\_\-t {\bf step\_\-timer}
+\item 
+static timeout\_\-t {\bf reset\_\-timer}
+\item 
+static timeout\_\-t {\bf exec\_\-timer}
+\item 
+static unsigned {\bf compile\_\-count}
+\item 
+static volatile bool {\bf image\_\-loaded}
+\item 
+static {\bf BayonneTranslator} $\ast$ {\bf init\_\-translator}
+\item 
+static const char $\ast$ {\bf init\_\-voicelib}
+\item 
+static const char $\ast$ {\bf trap\_\-community}
+\item 
+static AtomicCounter {\bf libexec\_\-count}
+\item 
+static {\bf statetab} {\bf states} [$\,$]
+\begin{DoxyCompactList}\small\item\em Table of states ordered by id. \item\end{DoxyCompactList}\item 
+static Mutex {\bf serialize}
+\begin{DoxyCompactList}\small\item\em A mutex to serialize any direct console I/O operations. \item\end{DoxyCompactList}\item 
+static ThreadLock {\bf reloading}
+\begin{DoxyCompactList}\small\item\em A mutex to serialize reload requests. \item\end{DoxyCompactList}\item 
+static {\bf Traffic} {\bf total\_\-call\_\-attempts}
+\begin{DoxyCompactList}\small\item\em master traffic counters for call attempts and call completions. \item\end{DoxyCompactList}\item 
+static {\bf Traffic} {\bf total\_\-call\_\-complete}
+\item 
+static volatile unsigned short {\bf total\_\-active\_\-calls}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf BayonneSession} $\ast$$\ast$ {\bf timeslots}
+\item 
+static ScriptImage $\ast$$\ast$ {\bf localimages}
+\item 
+static char $\ast$ {\bf status}
+\item 
+static ScriptCommand $\ast$ {\bf server}
+\item 
+static unsigned {\bf ts\_\-trk}
+\item 
+static unsigned {\bf ts\_\-ext}
+\item 
+static {\bf timeslot\_\-t} {\bf ts\_\-limit}
+\item 
+static {\bf timeslot\_\-t} {\bf ts\_\-count}
+\item 
+static {\bf timeslot\_\-t} {\bf ts\_\-used}
+\item 
+static std::ostream $\ast$ {\bf logging}
+\item 
+static const char $\ast$ {\bf path\_\-prompts}
+\item 
+static const char $\ast$ {\bf path\_\-tmpfs}
+\item 
+static const char $\ast$ {\bf path\_\-tmp}
+\item 
+static unsigned {\bf idle\_\-count}
+\item 
+static unsigned {\bf idle\_\-limit}
+\item 
+static bool {\bf shutdown\_\-flag}
+\item 
+static char {\bf sla} [64]
+\item 
+static time\_\-t {\bf start\_\-time}
+\item 
+static time\_\-t {\bf reload\_\-time}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Generic \doxyref{Bayonne}{p.}{classost_1_1_bayonne} master class to reference various useful data types and core static members used for locating resources found in libbayonne. \begin{DoxyAuthor}{Author}
+David Sugar $<${\tt dyfet@gnutelephony.org}$>$ Master bayonne library class. 
+\end{DoxyAuthor}
+
+
+\subsection{Member Typedef Documentation}
+\index{ost::Bayonne@{ost::Bayonne}!Handler@{Handler}}
+\index{Handler@{Handler}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{Handler}]{\setlength{\rightskip}{0pt plus 5cm}typedef bool(BayonneSession::$\ast$ {\bf ost::Bayonne::Handler})({\bf Event} $\ast$event)}\label{classost_1_1_bayonne_aafc8f439c9abdca3436f212fa37ceb79}
+
+
+The current state handler in effect for a given channel to receive events. This is done by a direct method pointer for fast processing. \index{ost::Bayonne@{ost::Bayonne}!rpcbool\_\-t@{rpcbool\_\-t}}
+\index{rpcbool\_\-t@{rpcbool\_\-t}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{rpcbool\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf rpcint\_\-t} {\bf ost::Bayonne::rpcbool\_\-t}}\label{classost_1_1_bayonne_a7b6451c321678a6e5a140b246dda3e67}
+\index{ost::Bayonne@{ost::Bayonne}!rpcint\_\-t@{rpcint\_\-t}}
+\index{rpcint\_\-t@{rpcint\_\-t}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{rpcint\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef int32\_\-t {\bf ost::Bayonne::rpcint\_\-t}}\label{classost_1_1_bayonne_a79bdcaa9842773badbecf2a5162a28ba}
+\index{ost::Bayonne@{ost::Bayonne}!rpcmethod\_\-t@{rpcmethod\_\-t}}
+\index{rpcmethod\_\-t@{rpcmethod\_\-t}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{rpcmethod\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ {\bf ost::Bayonne::rpcmethod\_\-t})({\bf BayonneRPC} $\ast$rpc)}\label{classost_1_1_bayonne_a489869976af01521b422ddab526b0812}
+
+
+A rpc method handler. \index{ost::Bayonne@{ost::Bayonne}!timeslot\_\-t@{timeslot\_\-t}}
+\index{timeslot\_\-t@{timeslot\_\-t}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{timeslot\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint16\_\-t {\bf ost::Bayonne::timeslot\_\-t}}\label{classost_1_1_bayonne_adca9d31fae289a1bce257472f0f21a75}
+
+
+\subsection{Member Enumeration Documentation}
+\index{ost::Bayonne@{ost::Bayonne}!bridge\_\-t@{bridge\_\-t}}
+\index{bridge\_\-t@{bridge\_\-t}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{bridge\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ost::Bayonne::bridge\_\-t}}\label{classost_1_1_bayonne_aafd1244f296b00b603f4301d984e191b}
+
+
+Type of bridge used for joining ports. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{BR\_\-TDM@{BR\_\-TDM}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!BR\_\-TDM@{BR\_\-TDM}}\item[{\em 
+BR\_\-TDM\label{classost_1_1_bayonne_aafd1244f296b00b603f4301d984e191bac947cf572ffdc4520f4164398454e992}
+}]\index{BR\_\-INET@{BR\_\-INET}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!BR\_\-INET@{BR\_\-INET}}\item[{\em 
+BR\_\-INET\label{classost_1_1_bayonne_aafd1244f296b00b603f4301d984e191baff3158b885dec2a3e8f4c82b0caca736}
+}]\index{BR\_\-SOFT@{BR\_\-SOFT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!BR\_\-SOFT@{BR\_\-SOFT}}\item[{\em 
+BR\_\-SOFT\label{classost_1_1_bayonne_aafd1244f296b00b603f4301d984e191ba94175f4b9ba81b81ceada0b10c2bcabb}
+}]\index{BR\_\-GATE@{BR\_\-GATE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!BR\_\-GATE@{BR\_\-GATE}}\item[{\em 
+BR\_\-GATE\label{classost_1_1_bayonne_aafd1244f296b00b603f4301d984e191bab159bc3b8ae5f67e983e9a5a1cde8cc4}
+}]\index{BR\_\-NONE@{BR\_\-NONE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!BR\_\-NONE@{BR\_\-NONE}}\item[{\em 
+BR\_\-NONE\label{classost_1_1_bayonne_aafd1244f296b00b603f4301d984e191ba485e68d87e331a14b4503336ee891698}
+}]\end{description}
+\end{Desc}
+
+\index{ost::Bayonne@{ost::Bayonne}!calltype\_\-t@{calltype\_\-t}}
+\index{calltype\_\-t@{calltype\_\-t}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{calltype\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ost::Bayonne::calltype\_\-t}}\label{classost_1_1_bayonne_a62f38935764af60738cc411752d37a4d}
+
+
+Type of call session being processed. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{NONE@{NONE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!NONE@{NONE}}\item[{\em 
+NONE\label{classost_1_1_bayonne_a62f38935764af60738cc411752d37a4da75346627d8dc91327f37c3db6e220238}
+}]\index{INCOMING@{INCOMING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!INCOMING@{INCOMING}}\item[{\em 
+INCOMING\label{classost_1_1_bayonne_a62f38935764af60738cc411752d37a4da99283b4a9a4fee7ac519921ca580f4c0}
+}]\index{OUTGOING@{OUTGOING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!OUTGOING@{OUTGOING}}\item[{\em 
+OUTGOING\label{classost_1_1_bayonne_a62f38935764af60738cc411752d37a4daab5ed02f5a3079bae1d7176a33cd7f76}
+}]\index{PICKUP@{PICKUP}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!PICKUP@{PICKUP}}\item[{\em 
+PICKUP\label{classost_1_1_bayonne_a62f38935764af60738cc411752d37a4da822632cb2236055531c07beab0b5f62a}
+}]\index{FORWARDED@{FORWARDED}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!FORWARDED@{FORWARDED}}\item[{\em 
+FORWARDED\label{classost_1_1_bayonne_a62f38935764af60738cc411752d37a4da2fdfddba99f1bf6dd29819868afdd11f}
+}]\index{RECALL@{RECALL}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!RECALL@{RECALL}}\item[{\em 
+RECALL\label{classost_1_1_bayonne_a62f38935764af60738cc411752d37a4dab9bc9448ba7682cccafb2c74ab3b375a}
+}]\index{DIRECT@{DIRECT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DIRECT@{DIRECT}}\item[{\em 
+DIRECT\label{classost_1_1_bayonne_a62f38935764af60738cc411752d37a4da63ecce271248204c439be21fc8a267e5}
+}]\index{RINGING@{RINGING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!RINGING@{RINGING}}\item[{\em 
+RINGING\label{classost_1_1_bayonne_a62f38935764af60738cc411752d37a4da7a95bc9a68e19ba7afd86529a1fcd31f}
+}]\index{VIRTUAL@{VIRTUAL}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!VIRTUAL@{VIRTUAL}}\item[{\em 
+VIRTUAL\label{classost_1_1_bayonne_a62f38935764af60738cc411752d37a4dae0c6504a33c98aa05e510302a28ed332}
+}]\end{description}
+\end{Desc}
+
+\index{ost::Bayonne@{ost::Bayonne}!event\_\-t@{event\_\-t}}
+\index{event\_\-t@{event\_\-t}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{event\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ost::Bayonne::event\_\-t}}\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176}
+
+
+Primary event identifiers. These are the events that can be passed into the \doxyref{Bayonne}{p.}{classost_1_1_bayonne} state machine. They are broken into categories. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{MSGPORT\_\-WAKEUP@{MSGPORT\_\-WAKEUP}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!MSGPORT\_\-WAKEUP@{MSGPORT\_\-WAKEUP}}\item[{\em 
+MSGPORT\_\-WAKEUP\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a3b7c104243add6fb79b2347cce5586a3}
+}]\index{MSGPORT\_\-SHUTDOWN@{MSGPORT\_\-SHUTDOWN}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!MSGPORT\_\-SHUTDOWN@{MSGPORT\_\-SHUTDOWN}}\item[{\em 
+MSGPORT\_\-SHUTDOWN\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a4058f70614d5cb6608bd32fd2b5e96b8}
+}]\index{MSGPORT\_\-LOGGING@{MSGPORT\_\-LOGGING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!MSGPORT\_\-LOGGING@{MSGPORT\_\-LOGGING}}\item[{\em 
+MSGPORT\_\-LOGGING\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a0d5a8baf12d034a51a5b96ffab76a0df}
+}]\index{MSGPORT\_\-REGISTER@{MSGPORT\_\-REGISTER}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!MSGPORT\_\-REGISTER@{MSGPORT\_\-REGISTER}}\item[{\em 
+MSGPORT\_\-REGISTER\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176aa45c9e400c299a508b5aadccca0ff991}
+}]\index{ENTER\_\-STATE@{ENTER\_\-STATE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!ENTER\_\-STATE@{ENTER\_\-STATE}}\item[{\em 
+ENTER\_\-STATE\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a50afe4ef2047c23e74a0e2d5dc11fe39}
+}]\index{EXIT\_\-STATE@{EXIT\_\-STATE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!EXIT\_\-STATE@{EXIT\_\-STATE}}\item[{\em 
+EXIT\_\-STATE\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176ad1026c7ca7d6262194e319a1578b9751}
+}]\index{EXIT\_\-THREAD@{EXIT\_\-THREAD}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!EXIT\_\-THREAD@{EXIT\_\-THREAD}}\item[{\em 
+EXIT\_\-THREAD\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a24607565a7fccf900321f68d01e7a198}
+}]\index{EXIT\_\-TIMER@{EXIT\_\-TIMER}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!EXIT\_\-TIMER@{EXIT\_\-TIMER}}\item[{\em 
+EXIT\_\-TIMER\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176aff25e78a7de8543b6e72a7264f1b6687}
+}]\index{EXIT\_\-PARTING@{EXIT\_\-PARTING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!EXIT\_\-PARTING@{EXIT\_\-PARTING}}\item[{\em 
+EXIT\_\-PARTING\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176af7d535e5e1fe6ffe8b209584b4150c34}
+}]\index{NULL\_\-EVENT@{NULL\_\-EVENT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!NULL\_\-EVENT@{NULL\_\-EVENT}}\item[{\em 
+NULL\_\-EVENT\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a9d442e375077a5271cb82bfb22d43bfb}
+}]\index{ERROR\_\-STATE@{ERROR\_\-STATE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!ERROR\_\-STATE@{ERROR\_\-STATE}}\item[{\em 
+ERROR\_\-STATE\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176aedbb6936f7e06ec2f5e1de09357f5531}
+}]\index{ENTER\_\-HUNTING@{ENTER\_\-HUNTING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!ENTER\_\-HUNTING@{ENTER\_\-HUNTING}}\item[{\em 
+ENTER\_\-HUNTING\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a847ec0f6fe5cec2391e838dead427821}
+}]\index{EXIT\_\-HUNTING@{EXIT\_\-HUNTING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!EXIT\_\-HUNTING@{EXIT\_\-HUNTING}}\item[{\em 
+EXIT\_\-HUNTING\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a2f65317d5234260b83431544239a4ca6}
+}]\index{ENTER\_\-RECONNECT@{ENTER\_\-RECONNECT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!ENTER\_\-RECONNECT@{ENTER\_\-RECONNECT}}\item[{\em 
+ENTER\_\-RECONNECT\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176aa32b769ed1f55e585d91482d6e811900}
+}]\index{EXIT\_\-RECONNECT@{EXIT\_\-RECONNECT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!EXIT\_\-RECONNECT@{EXIT\_\-RECONNECT}}\item[{\em 
+EXIT\_\-RECONNECT\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a2323b46659bf880c9ca19408d882437e}
+}]\index{RECALL\_\-RECONNECT@{RECALL\_\-RECONNECT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!RECALL\_\-RECONNECT@{RECALL\_\-RECONNECT}}\item[{\em 
+RECALL\_\-RECONNECT\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176adcf5811217921472d7fcb9081f26e16d}
+}]\index{EXIT\_\-SCRIPT@{EXIT\_\-SCRIPT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!EXIT\_\-SCRIPT@{EXIT\_\-SCRIPT}}\item[{\em 
+EXIT\_\-SCRIPT\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176ac522fb905b28024c12f322c56f84ecec}
+}]\index{STEP\_\-SCRIPT@{STEP\_\-SCRIPT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STEP\_\-SCRIPT@{STEP\_\-SCRIPT}}\item[{\em 
+STEP\_\-SCRIPT\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a5c4bbcf504839fe8de6986885af4d760}
+}]\index{START\_\-DIRECT@{START\_\-DIRECT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!START\_\-DIRECT@{START\_\-DIRECT}}\item[{\em 
+START\_\-DIRECT\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a67e0154c8336005972d58457429b6184}
+}]\index{START\_\-INCOMING@{START\_\-INCOMING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!START\_\-INCOMING@{START\_\-INCOMING}}\item[{\em 
+START\_\-INCOMING\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a37f5c2af3d9686de00fa51e3a4893014}
+}]\index{START\_\-OUTGOING@{START\_\-OUTGOING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!START\_\-OUTGOING@{START\_\-OUTGOING}}\item[{\em 
+START\_\-OUTGOING\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176aa61743d7402eea930d34e8dde1d72670}
+}]\index{START\_\-RECALL@{START\_\-RECALL}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!START\_\-RECALL@{START\_\-RECALL}}\item[{\em 
+START\_\-RECALL\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a3eef2060069cfe8f60b19857856c9b92}
+}]\index{START\_\-FORWARDED@{START\_\-FORWARDED}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!START\_\-FORWARDED@{START\_\-FORWARDED}}\item[{\em 
+START\_\-FORWARDED\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176aba13b67963363989d3b84d892f0f9066}
+}]\index{START\_\-RINGING@{START\_\-RINGING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!START\_\-RINGING@{START\_\-RINGING}}\item[{\em 
+START\_\-RINGING\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a2dc0ef245adcf5eb7e94b73bbb93ac91}
+}]\index{START\_\-HUNTING@{START\_\-HUNTING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!START\_\-HUNTING@{START\_\-HUNTING}}\item[{\em 
+START\_\-HUNTING\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176aa89efa7256410282aa1e369fdd894c7d}
+}]\index{START\_\-REFER@{START\_\-REFER}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!START\_\-REFER@{START\_\-REFER}}\item[{\em 
+START\_\-REFER\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a2c0247bda9497f795be99d753fb7d144}
+}]\index{STOP\_\-SCRIPT@{STOP\_\-SCRIPT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STOP\_\-SCRIPT@{STOP\_\-SCRIPT}}\item[{\em 
+STOP\_\-SCRIPT\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a3338e6f46ebd86ac8db071eb9d394fea}
+}]\index{STOP\_\-DISCONNECT@{STOP\_\-DISCONNECT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STOP\_\-DISCONNECT@{STOP\_\-DISCONNECT}}\item[{\em 
+STOP\_\-DISCONNECT\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a5907e351e4613de37bbfdb027372fa91}
+}]\index{STOP\_\-PARENT@{STOP\_\-PARENT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STOP\_\-PARENT@{STOP\_\-PARENT}}\item[{\em 
+STOP\_\-PARENT\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a99ebcad221e37d800bde5dfa756b5e44}
+}]\index{CANCEL\_\-CHILD@{CANCEL\_\-CHILD}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CANCEL\_\-CHILD@{CANCEL\_\-CHILD}}\item[{\em 
+CANCEL\_\-CHILD\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a7420a2148f6861c689b375d81fc0c729}
+}]\index{DETACH\_\-CHILD@{DETACH\_\-CHILD}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DETACH\_\-CHILD@{DETACH\_\-CHILD}}\item[{\em 
+DETACH\_\-CHILD\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a86f1d9cd3c40b2d2f2fe648d0f73a531}
+}]\index{CHILD\_\-RUNNING@{CHILD\_\-RUNNING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CHILD\_\-RUNNING@{CHILD\_\-RUNNING}}\item[{\em 
+CHILD\_\-RUNNING\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a20a6dd57b6d8ef8d27b2119250618ee4}
+}]\index{CHILD\_\-FAILED@{CHILD\_\-FAILED}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CHILD\_\-FAILED@{CHILD\_\-FAILED}}\item[{\em 
+CHILD\_\-FAILED\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176adbca97a924cec890f3c88d86c11eb7dd}
+}]\index{CHILD\_\-INVALID@{CHILD\_\-INVALID}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CHILD\_\-INVALID@{CHILD\_\-INVALID}}\item[{\em 
+CHILD\_\-INVALID\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176ae979a22b28e62c68a18183b6f30be0fe}
+}]\index{CHILD\_\-EXPIRED@{CHILD\_\-EXPIRED}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CHILD\_\-EXPIRED@{CHILD\_\-EXPIRED}}\item[{\em 
+CHILD\_\-EXPIRED\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a3ba284cdb2627eff5e78f1358c7fdea3}
+}]\index{CHILD\_\-BUSY@{CHILD\_\-BUSY}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CHILD\_\-BUSY@{CHILD\_\-BUSY}}\item[{\em 
+CHILD\_\-BUSY\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a22ee7d3c66a4928fb1678d22436f1fe9}
+}]\index{CHILD\_\-FAX@{CHILD\_\-FAX}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CHILD\_\-FAX@{CHILD\_\-FAX}}\item[{\em 
+CHILD\_\-FAX\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a62ec17cde832920b3846ad9c65071917}
+}]\index{CHILD\_\-DND@{CHILD\_\-DND}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CHILD\_\-DND@{CHILD\_\-DND}}\item[{\em 
+CHILD\_\-DND\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176aab11945cbf7d968a58249a5e7f6f6d9c}
+}]\index{CHILD\_\-AWAY@{CHILD\_\-AWAY}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CHILD\_\-AWAY@{CHILD\_\-AWAY}}\item[{\em 
+CHILD\_\-AWAY\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a0e9a6795a1fd9b034ba1effa2bb8fafd}
+}]\index{CHILD\_\-NOCODEC@{CHILD\_\-NOCODEC}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CHILD\_\-NOCODEC@{CHILD\_\-NOCODEC}}\item[{\em 
+CHILD\_\-NOCODEC\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a1386586c18e86e4c53ea0f5683fc9fce}
+}]\index{CHILD\_\-OFFLINE@{CHILD\_\-OFFLINE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CHILD\_\-OFFLINE@{CHILD\_\-OFFLINE}}\item[{\em 
+CHILD\_\-OFFLINE\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176afaaedb20a9c66e3cd645e97f12087574}
+}]\index{START\_\-SCRIPT@{START\_\-SCRIPT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!START\_\-SCRIPT@{START\_\-SCRIPT}}\item[{\em 
+START\_\-SCRIPT\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a28ddce866a4e212c81a7c733cd954d1b}
+}]\index{START\_\-SELECTED@{START\_\-SELECTED}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!START\_\-SELECTED@{START\_\-SELECTED}}\item[{\em 
+START\_\-SELECTED\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a10fbab0fd8ec874f25e3ec2cf92c8eef}
+}]\index{START\_\-TRANSFER@{START\_\-TRANSFER}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!START\_\-TRANSFER@{START\_\-TRANSFER}}\item[{\em 
+START\_\-TRANSFER\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176afd7cab4b2b0a7fac2090a33a7a253c1a}
+}]\index{ENTER\_\-LIBEXEC@{ENTER\_\-LIBEXEC}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!ENTER\_\-LIBEXEC@{ENTER\_\-LIBEXEC}}\item[{\em 
+ENTER\_\-LIBEXEC\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a46bd1145f3a5a549293ecce11c39117b}
+}]\index{EXIT\_\-LIBEXEC@{EXIT\_\-LIBEXEC}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!EXIT\_\-LIBEXEC@{EXIT\_\-LIBEXEC}}\item[{\em 
+EXIT\_\-LIBEXEC\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176adab4d53f736b7c2fc4efa4cbca6dbc07}
+}]\index{HEAD\_\-LIBEXEC@{HEAD\_\-LIBEXEC}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!HEAD\_\-LIBEXEC@{HEAD\_\-LIBEXEC}}\item[{\em 
+HEAD\_\-LIBEXEC\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176ae4262df62f045110cdca7aaa6a5b15d2}
+}]\index{ARGS\_\-LIBEXEC@{ARGS\_\-LIBEXEC}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!ARGS\_\-LIBEXEC@{ARGS\_\-LIBEXEC}}\item[{\em 
+ARGS\_\-LIBEXEC\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176ae7a59e4e4ffddc4154e07fb5a9d286e1}
+}]\index{GOT\_\-LIBEXEC@{GOT\_\-LIBEXEC}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!GOT\_\-LIBEXEC@{GOT\_\-LIBEXEC}}\item[{\em 
+GOT\_\-LIBEXEC\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176abbefb3b18281d52ca54d306f353b9182}
+}]\index{READ\_\-LIBEXEC@{READ\_\-LIBEXEC}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!READ\_\-LIBEXEC@{READ\_\-LIBEXEC}}\item[{\em 
+READ\_\-LIBEXEC\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a9d2eaecb1d88466407636e6bd645709c}
+}]\index{DROP\_\-LIBEXEC@{DROP\_\-LIBEXEC}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DROP\_\-LIBEXEC@{DROP\_\-LIBEXEC}}\item[{\em 
+DROP\_\-LIBEXEC\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a196011b2af79579cc5517a9027684a18}
+}]\index{STAT\_\-LIBEXEC@{STAT\_\-LIBEXEC}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STAT\_\-LIBEXEC@{STAT\_\-LIBEXEC}}\item[{\em 
+STAT\_\-LIBEXEC\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a56bc03c410cc8954b6fc3aaff0026907}
+}]\index{PROMPT\_\-LIBEXEC@{PROMPT\_\-LIBEXEC}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!PROMPT\_\-LIBEXEC@{PROMPT\_\-LIBEXEC}}\item[{\em 
+PROMPT\_\-LIBEXEC\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a2eeb9dc63c5b7920cc56305aa3a61912}
+}]\index{CLEAR\_\-LIBEXEC@{CLEAR\_\-LIBEXEC}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CLEAR\_\-LIBEXEC@{CLEAR\_\-LIBEXEC}}\item[{\em 
+CLEAR\_\-LIBEXEC\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176aa6e819d8da8099453409a9ed10b915fc}
+}]\index{WAIT\_\-LIBEXEC@{WAIT\_\-LIBEXEC}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!WAIT\_\-LIBEXEC@{WAIT\_\-LIBEXEC}}\item[{\em 
+WAIT\_\-LIBEXEC\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176adb9abc16f7c58154b934965c5dd1fe90}
+}]\index{RECORD\_\-LIBEXEC@{RECORD\_\-LIBEXEC}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!RECORD\_\-LIBEXEC@{RECORD\_\-LIBEXEC}}\item[{\em 
+RECORD\_\-LIBEXEC\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a328994f7d5caccc71f64783932a29cf5}
+}]\index{REPLAY\_\-LIBEXEC@{REPLAY\_\-LIBEXEC}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!REPLAY\_\-LIBEXEC@{REPLAY\_\-LIBEXEC}}\item[{\em 
+REPLAY\_\-LIBEXEC\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176ae1522ca4faeabf5b3d09876ad1f65d81}
+}]\index{RESTART\_\-LIBEXEC@{RESTART\_\-LIBEXEC}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!RESTART\_\-LIBEXEC@{RESTART\_\-LIBEXEC}}\item[{\em 
+RESTART\_\-LIBEXEC\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176ab5c6d4e635cef8092cf859be25bd841d}
+}]\index{TONE\_\-LIBEXEC@{TONE\_\-LIBEXEC}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!TONE\_\-LIBEXEC@{TONE\_\-LIBEXEC}}\item[{\em 
+TONE\_\-LIBEXEC\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a33b30c7e8f494aa7759e3349eb83d349}
+}]\index{XFER\_\-LIBEXEC@{XFER\_\-LIBEXEC}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!XFER\_\-LIBEXEC@{XFER\_\-LIBEXEC}}\item[{\em 
+XFER\_\-LIBEXEC\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a3bc476e993eb9a66096850f12e5e51b3}
+}]\index{POST\_\-LIBEXEC@{POST\_\-LIBEXEC}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!POST\_\-LIBEXEC@{POST\_\-LIBEXEC}}\item[{\em 
+POST\_\-LIBEXEC\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a967b006a5af837830f1a838f93d485a0}
+}]\index{ERROR\_\-LIBEXEC@{ERROR\_\-LIBEXEC}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!ERROR\_\-LIBEXEC@{ERROR\_\-LIBEXEC}}\item[{\em 
+ERROR\_\-LIBEXEC\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a0a8a17110bcffb032870cf52e8454619}
+}]\index{TIMER\_\-EXPIRED@{TIMER\_\-EXPIRED}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!TIMER\_\-EXPIRED@{TIMER\_\-EXPIRED}}\item[{\em 
+TIMER\_\-EXPIRED\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a8aed3e5ece2b260faab824f93621fbd5}
+}]\index{LINE\_\-WINK@{LINE\_\-WINK}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!LINE\_\-WINK@{LINE\_\-WINK}}\item[{\em 
+LINE\_\-WINK\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176ab3eb5812bb3ad37089b4aa32bae88355}
+}]\index{LINE\_\-PICKUP@{LINE\_\-PICKUP}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!LINE\_\-PICKUP@{LINE\_\-PICKUP}}\item[{\em 
+LINE\_\-PICKUP\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a77d9da908f1251c325384bbea3933037}
+}]\index{LINE\_\-HANGUP@{LINE\_\-HANGUP}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!LINE\_\-HANGUP@{LINE\_\-HANGUP}}\item[{\em 
+LINE\_\-HANGUP\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176af1a441d10814846d936ce85db64e838d}
+}]\index{LINE\_\-DISCONNECT@{LINE\_\-DISCONNECT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!LINE\_\-DISCONNECT@{LINE\_\-DISCONNECT}}\item[{\em 
+LINE\_\-DISCONNECT\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a4afe67330a019ee4e777637c3d8f6329}
+}]\index{LINE\_\-ON\_\-HOOK@{LINE\_\-ON\_\-HOOK}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!LINE\_\-ON\_\-HOOK@{LINE\_\-ON\_\-HOOK}}\item[{\em 
+LINE\_\-ON\_\-HOOK\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176ad34fb74ba2d2ad7e621dd03f07e41b3b}
+}]\index{LINE\_\-OFF\_\-HOOK@{LINE\_\-OFF\_\-HOOK}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!LINE\_\-OFF\_\-HOOK@{LINE\_\-OFF\_\-HOOK}}\item[{\em 
+LINE\_\-OFF\_\-HOOK\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176ab10b9b72686ec0dc893ab6b1c26e7b9f}
+}]\index{RING\_\-ON@{RING\_\-ON}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!RING\_\-ON@{RING\_\-ON}}\item[{\em 
+RING\_\-ON\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a4104b5b3ba727a7ff5059ead779ac90c}
+}]\index{RING\_\-OFF@{RING\_\-OFF}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!RING\_\-OFF@{RING\_\-OFF}}\item[{\em 
+RING\_\-OFF\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176ad9a89257cfa60dbfbe707aed14880334}
+}]\index{RING\_\-STOP@{RING\_\-STOP}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!RING\_\-STOP@{RING\_\-STOP}}\item[{\em 
+RING\_\-STOP\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176ae5bd867b25de52001dfb9008d12d5825}
+}]\index{LINE\_\-CALLER\_\-ID@{LINE\_\-CALLER\_\-ID}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!LINE\_\-CALLER\_\-ID@{LINE\_\-CALLER\_\-ID}}\item[{\em 
+LINE\_\-CALLER\_\-ID\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a51a727c8b1eb788ebb2931182c26c181}
+}]\index{RINGING\_\-DID@{RINGING\_\-DID}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!RINGING\_\-DID@{RINGING\_\-DID}}\item[{\em 
+RINGING\_\-DID\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a8b143908dc63d8a78047c4b40e372b20}
+}]\index{DEVICE\_\-BLOCKED@{DEVICE\_\-BLOCKED}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DEVICE\_\-BLOCKED@{DEVICE\_\-BLOCKED}}\item[{\em 
+DEVICE\_\-BLOCKED\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a7fdb8243c3e47a3e3819d528016b6506}
+}]\index{DEVICE\_\-UNBLOCKED@{DEVICE\_\-UNBLOCKED}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DEVICE\_\-UNBLOCKED@{DEVICE\_\-UNBLOCKED}}\item[{\em 
+DEVICE\_\-UNBLOCKED\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176ae595255b21769ba815f26d84d40da74d}
+}]\index{DEVICE\_\-OPEN@{DEVICE\_\-OPEN}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DEVICE\_\-OPEN@{DEVICE\_\-OPEN}}\item[{\em 
+DEVICE\_\-OPEN\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176aae8bcccb5a0c815fab35319eba4dea5b}
+}]\index{DEVICE\_\-CLOSE@{DEVICE\_\-CLOSE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DEVICE\_\-CLOSE@{DEVICE\_\-CLOSE}}\item[{\em 
+DEVICE\_\-CLOSE\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176aa713f6e792738dcf8d5c1f18548cfc3d}
+}]\index{DSP\_\-READY@{DSP\_\-READY}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DSP\_\-READY@{DSP\_\-READY}}\item[{\em 
+DSP\_\-READY\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a504c6e01208b5f3815c013368a4032d4}
+}]\index{RING\_\-SYNC@{RING\_\-SYNC}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!RING\_\-SYNC@{RING\_\-SYNC}}\item[{\em 
+RING\_\-SYNC\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a71e2e6de125bc1304cabd7264a5abd05}
+}]\index{CALL\_\-DETECT@{CALL\_\-DETECT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-DETECT@{CALL\_\-DETECT}}\item[{\em 
+CALL\_\-DETECT\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176ad01c1860187fd7b8071f00bb34d4380a}
+}]\index{CALL\_\-CONNECTED@{CALL\_\-CONNECTED}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-CONNECTED@{CALL\_\-CONNECTED}}\item[{\em 
+CALL\_\-CONNECTED\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a2b161cc1dcb607e4ab942ed1766e4a03}
+}]\index{CALL\_\-RELEASED@{CALL\_\-RELEASED}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-RELEASED@{CALL\_\-RELEASED}}\item[{\em 
+CALL\_\-RELEASED\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a8391cbe56f7a621ce0334bfad415fdb4}
+}]\index{CALL\_\-ACCEPTED@{CALL\_\-ACCEPTED}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-ACCEPTED@{CALL\_\-ACCEPTED}}\item[{\em 
+CALL\_\-ACCEPTED\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a4f099f977cffa5f2d3e2d18fd23fbe11}
+}]\index{CALL\_\-ANSWERED@{CALL\_\-ANSWERED}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-ANSWERED@{CALL\_\-ANSWERED}}\item[{\em 
+CALL\_\-ANSWERED\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a739e577ee5f882df01e630168fb21fb6}
+}]\index{CALL\_\-HOLD@{CALL\_\-HOLD}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-HOLD@{CALL\_\-HOLD}}\item[{\em 
+CALL\_\-HOLD\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a869282d3266cbd94f398bedf43c62a97}
+}]\index{CALL\_\-HOLDING@{CALL\_\-HOLDING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-HOLDING@{CALL\_\-HOLDING}}\item[{\em 
+CALL\_\-HOLDING\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a33e8b9ae52498dfc2dad6252119a013b}
+}]\index{CALL\_\-NOHOLD@{CALL\_\-NOHOLD}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-NOHOLD@{CALL\_\-NOHOLD}}\item[{\em 
+CALL\_\-NOHOLD\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a73f8b633b057f4f1a1e39d23638fed93}
+}]\index{CALL\_\-DIGITS@{CALL\_\-DIGITS}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-DIGITS@{CALL\_\-DIGITS}}\item[{\em 
+CALL\_\-DIGITS\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a6014aabd87f864b3fe9bc18f7081f3ee}
+}]\index{CALL\_\-OFFERED@{CALL\_\-OFFERED}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-OFFERED@{CALL\_\-OFFERED}}\item[{\em 
+CALL\_\-OFFERED\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a098848bd6aa51ec7824d82b92af98544}
+}]\index{CALL\_\-ANI@{CALL\_\-ANI}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-ANI@{CALL\_\-ANI}}\item[{\em 
+CALL\_\-ANI\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176afd5230ab642bd66e5a3124845ea99faa}
+}]\index{CALL\_\-ACTIVE@{CALL\_\-ACTIVE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-ACTIVE@{CALL\_\-ACTIVE}}\item[{\em 
+CALL\_\-ACTIVE\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a1fba16ddb49c1f546adf79d252ac815b}
+}]\index{CALL\_\-NOACTIVE@{CALL\_\-NOACTIVE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-NOACTIVE@{CALL\_\-NOACTIVE}}\item[{\em 
+CALL\_\-NOACTIVE\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a37119bdd385d8f5869d54f4fd2013c27}
+}]\index{CALL\_\-BILLING@{CALL\_\-BILLING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-BILLING@{CALL\_\-BILLING}}\item[{\em 
+CALL\_\-BILLING\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a925b5ff897ff70b6aa0b8762f7fc1c2e}
+}]\index{CALL\_\-RESTART@{CALL\_\-RESTART}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-RESTART@{CALL\_\-RESTART}}\item[{\em 
+CALL\_\-RESTART\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a638bf1d9bcefdbbc59402683216d5e58}
+}]\index{CALL\_\-SETSTATE@{CALL\_\-SETSTATE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-SETSTATE@{CALL\_\-SETSTATE}}\item[{\em 
+CALL\_\-SETSTATE\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176aca2d34efa4fe46056322303de6016846}
+}]\index{CALL\_\-FAILURE@{CALL\_\-FAILURE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-FAILURE@{CALL\_\-FAILURE}}\item[{\em 
+CALL\_\-FAILURE\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a1a6e17c9a5f43504d5cf0356a680ae2f}
+}]\index{CALL\_\-ALERTING@{CALL\_\-ALERTING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-ALERTING@{CALL\_\-ALERTING}}\item[{\em 
+CALL\_\-ALERTING\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a3bc7bdd35f3d9991ef23b650fc1fea45}
+}]\index{CALL\_\-INFO@{CALL\_\-INFO}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-INFO@{CALL\_\-INFO}}\item[{\em 
+CALL\_\-INFO\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a9cdfde9d989737fbaeeb636aa87425d1}
+}]\index{CALL\_\-BUSY@{CALL\_\-BUSY}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-BUSY@{CALL\_\-BUSY}}\item[{\em 
+CALL\_\-BUSY\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a72b8cc5fdb07359608e4c491dd431396}
+}]\index{CALL\_\-DIVERT@{CALL\_\-DIVERT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-DIVERT@{CALL\_\-DIVERT}}\item[{\em 
+CALL\_\-DIVERT\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a5256dc9fd8cb92f623dffc96fbefe9ad}
+}]\index{CALL\_\-FACILITY@{CALL\_\-FACILITY}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-FACILITY@{CALL\_\-FACILITY}}\item[{\em 
+CALL\_\-FACILITY\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a4e6f401b84702528cbe1ce66c8de6350}
+}]\index{CALL\_\-FRAME@{CALL\_\-FRAME}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-FRAME@{CALL\_\-FRAME}}\item[{\em 
+CALL\_\-FRAME\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176aa281b09a0c467a732f2a05203aa79775}
+}]\index{CALL\_\-NOTIFY@{CALL\_\-NOTIFY}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-NOTIFY@{CALL\_\-NOTIFY}}\item[{\em 
+CALL\_\-NOTIFY\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176afbccdee22dd5ebb8113abc240729da68}
+}]\index{CALL\_\-NSI@{CALL\_\-NSI}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-NSI@{CALL\_\-NSI}}\item[{\em 
+CALL\_\-NSI\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176ae7be6b39a346bb51127baca2e9644f87}
+}]\index{CALL\_\-RINGING@{CALL\_\-RINGING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-RINGING@{CALL\_\-RINGING}}\item[{\em 
+CALL\_\-RINGING\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a900a1d4ab4571d306405a96d6d9b17fc}
+}]\index{CALL\_\-DISCONNECT@{CALL\_\-DISCONNECT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-DISCONNECT@{CALL\_\-DISCONNECT}}\item[{\em 
+CALL\_\-DISCONNECT\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a5345c2f1fd3907ad6caef325a468da19}
+}]\index{CALL\_\-CLEARED@{CALL\_\-CLEARED}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-CLEARED@{CALL\_\-CLEARED}}\item[{\em 
+CALL\_\-CLEARED\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a4d40a1acce9cf23c096de28616aa95d4}
+}]\index{CALL\_\-PROCEEDING@{CALL\_\-PROCEEDING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CALL\_\-PROCEEDING@{CALL\_\-PROCEEDING}}\item[{\em 
+CALL\_\-PROCEEDING\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a5fb478ecf76ab77d76f8c5c3dfd11beb}
+}]\index{RESTART\_\-FAILED@{RESTART\_\-FAILED}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!RESTART\_\-FAILED@{RESTART\_\-FAILED}}\item[{\em 
+RESTART\_\-FAILED\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176aabd4efcc1c183c0a95ca5e89fd5badce}
+}]\index{RELEASE\_\-FAILED@{RELEASE\_\-FAILED}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!RELEASE\_\-FAILED@{RELEASE\_\-FAILED}}\item[{\em 
+RELEASE\_\-FAILED\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a4ca30086e1e7e879d4460d7d227602bf}
+}]\index{START\_\-RING@{START\_\-RING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!START\_\-RING@{START\_\-RING}}\item[{\em 
+START\_\-RING\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a9901a8c695e7a6f6dbabc670d0535a89}
+}]\index{STOP\_\-RING@{STOP\_\-RING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STOP\_\-RING@{STOP\_\-RING}}\item[{\em 
+STOP\_\-RING\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a9f021c175607e232e62d87eebd211957}
+}]\index{CLEAR\_\-TIMESLOT@{CLEAR\_\-TIMESLOT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!CLEAR\_\-TIMESLOT@{CLEAR\_\-TIMESLOT}}\item[{\em 
+CLEAR\_\-TIMESLOT\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a31dcfa473a7de07215e440f7e5943b4a}
+}]\index{START\_\-FLASH@{START\_\-FLASH}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!START\_\-FLASH@{START\_\-FLASH}}\item[{\em 
+START\_\-FLASH\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a4c8457b4616164120b53d41585d4beb2}
+}]\index{STOP\_\-FLASH@{STOP\_\-FLASH}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STOP\_\-FLASH@{STOP\_\-FLASH}}\item[{\em 
+STOP\_\-FLASH\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a22febd33c935180ab1fd322fbb3d56f0}
+}]\index{DIAL\_\-CONNECT@{DIAL\_\-CONNECT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DIAL\_\-CONNECT@{DIAL\_\-CONNECT}}\item[{\em 
+DIAL\_\-CONNECT\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176acf3ca2450689d94e479547baa1fb8c98}
+}]\index{DIAL\_\-TIMEOUT@{DIAL\_\-TIMEOUT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DIAL\_\-TIMEOUT@{DIAL\_\-TIMEOUT}}\item[{\em 
+DIAL\_\-TIMEOUT\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176aed39172ce9a448d9d3321b642dfcb761}
+}]\index{DIAL\_\-FAILED@{DIAL\_\-FAILED}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DIAL\_\-FAILED@{DIAL\_\-FAILED}}\item[{\em 
+DIAL\_\-FAILED\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176aef339db382e587393bb71c03f00a45a4}
+}]\index{DIAL\_\-INVALID@{DIAL\_\-INVALID}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DIAL\_\-INVALID@{DIAL\_\-INVALID}}\item[{\em 
+DIAL\_\-INVALID\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a64e711c4479d82ba8b0e683b1472f52b}
+}]\index{DIAL\_\-BUSY@{DIAL\_\-BUSY}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DIAL\_\-BUSY@{DIAL\_\-BUSY}}\item[{\em 
+DIAL\_\-BUSY\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a8f58bc63e52a8656d174225973c69104}
+}]\index{DIAL\_\-FAX@{DIAL\_\-FAX}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DIAL\_\-FAX@{DIAL\_\-FAX}}\item[{\em 
+DIAL\_\-FAX\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a4f990306a00a93ec7092d6d880706aa0}
+}]\index{DIAL\_\-PAM@{DIAL\_\-PAM}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DIAL\_\-PAM@{DIAL\_\-PAM}}\item[{\em 
+DIAL\_\-PAM\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176aafc2216cfcdd15aa0cf14730d468e689}
+}]\index{DIAL\_\-DND@{DIAL\_\-DND}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DIAL\_\-DND@{DIAL\_\-DND}}\item[{\em 
+DIAL\_\-DND\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a5400c970d39f72feb6059a39e4a0b0eb}
+}]\index{DIAL\_\-AWAY@{DIAL\_\-AWAY}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DIAL\_\-AWAY@{DIAL\_\-AWAY}}\item[{\em 
+DIAL\_\-AWAY\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a1d079e776428410f8437abac0110ca3e}
+}]\index{DIAL\_\-OFFLINE@{DIAL\_\-OFFLINE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DIAL\_\-OFFLINE@{DIAL\_\-OFFLINE}}\item[{\em 
+DIAL\_\-OFFLINE\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176af3002c58ccfa2bde4e396bff1669e3d9}
+}]\index{DIAL\_\-NOCODEC@{DIAL\_\-NOCODEC}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DIAL\_\-NOCODEC@{DIAL\_\-NOCODEC}}\item[{\em 
+DIAL\_\-NOCODEC\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a548f73ae55f474ae11ed042c1adac61e}
+}]\index{DIAL\_\-MACHINE@{DIAL\_\-MACHINE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DIAL\_\-MACHINE@{DIAL\_\-MACHINE}}\item[{\em 
+DIAL\_\-MACHINE\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a141ebdac2480b000b6169c441be4bc5f}
+}]\index{AUDIO\_\-IDLE@{AUDIO\_\-IDLE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!AUDIO\_\-IDLE@{AUDIO\_\-IDLE}}\item[{\em 
+AUDIO\_\-IDLE\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a53ca5efeac36727768d812d36312b242}
+}]\index{AUDIO\_\-ACTIVE@{AUDIO\_\-ACTIVE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!AUDIO\_\-ACTIVE@{AUDIO\_\-ACTIVE}}\item[{\em 
+AUDIO\_\-ACTIVE\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a88d83c9bb4385da4c98b53c80126f9fb}
+}]\index{AUDIO\_\-EXPIRED@{AUDIO\_\-EXPIRED}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!AUDIO\_\-EXPIRED@{AUDIO\_\-EXPIRED}}\item[{\em 
+AUDIO\_\-EXPIRED\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a5803283ac024923c29ba748e887eda78}
+}]\index{INPUT\_\-PENDING@{INPUT\_\-PENDING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!INPUT\_\-PENDING@{INPUT\_\-PENDING}}\item[{\em 
+INPUT\_\-PENDING\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a472a0d0705a77b7af2540a68b12122ba}
+}]\index{OUTPUT\_\-PENDING@{OUTPUT\_\-PENDING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!OUTPUT\_\-PENDING@{OUTPUT\_\-PENDING}}\item[{\em 
+OUTPUT\_\-PENDING\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176ac2e95a9f61efb2a99865bcc5214a5c37}
+}]\index{AUDIO\_\-BUFFER@{AUDIO\_\-BUFFER}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!AUDIO\_\-BUFFER@{AUDIO\_\-BUFFER}}\item[{\em 
+AUDIO\_\-BUFFER\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a42852804565c63cde3eb78e33d269088}
+}]\index{TONE\_\-IDLE@{TONE\_\-IDLE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!TONE\_\-IDLE@{TONE\_\-IDLE}}\item[{\em 
+TONE\_\-IDLE\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a1eba102c9dd7307f28d2cc69f059d6c5}
+}]\index{DTMF\_\-KEYDOWN@{DTMF\_\-KEYDOWN}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DTMF\_\-KEYDOWN@{DTMF\_\-KEYDOWN}}\item[{\em 
+DTMF\_\-KEYDOWN\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a8677256ded5c0afc47418ffc455e7810}
+}]\index{DTMF\_\-KEYSYNC@{DTMF\_\-KEYSYNC}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DTMF\_\-KEYSYNC@{DTMF\_\-KEYSYNC}}\item[{\em 
+DTMF\_\-KEYSYNC\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a610dd23e84a46f9f8819afcd9396e2ba}
+}]\index{DTMF\_\-KEYUP@{DTMF\_\-KEYUP}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DTMF\_\-KEYUP@{DTMF\_\-KEYUP}}\item[{\em 
+DTMF\_\-KEYUP\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a9d03ddb75a4f3daf6b98fc31d4663756}
+}]\index{TONE\_\-START@{TONE\_\-START}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!TONE\_\-START@{TONE\_\-START}}\item[{\em 
+TONE\_\-START\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a1734d1a171089e00ef42c854ea7df1ae}
+}]\index{TONE\_\-STOP@{TONE\_\-STOP}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!TONE\_\-STOP@{TONE\_\-STOP}}\item[{\em 
+TONE\_\-STOP\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176af006dde9133d09977523b3edc452eb15}
+}]\index{AUDIO\_\-START@{AUDIO\_\-START}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!AUDIO\_\-START@{AUDIO\_\-START}}\item[{\em 
+AUDIO\_\-START\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176aba7d96718e6b4b173ea8d25ab4fd247c}
+}]\index{AUDIO\_\-STOP@{AUDIO\_\-STOP}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!AUDIO\_\-STOP@{AUDIO\_\-STOP}}\item[{\em 
+AUDIO\_\-STOP\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176aeb7ec86df3aed62f290b85e58d929f1e}
+}]\index{DTMF\_\-GENDOWN@{DTMF\_\-GENDOWN}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DTMF\_\-GENDOWN@{DTMF\_\-GENDOWN}}\item[{\em 
+DTMF\_\-GENDOWN\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a713c9f8d06154d3813e93edb5e936d4e}
+}]\index{DTMF\_\-GENUP@{DTMF\_\-GENUP}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DTMF\_\-GENUP@{DTMF\_\-GENUP}}\item[{\em 
+DTMF\_\-GENUP\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a7fbffc5b5bf212a49fa7fcb61341ef33}
+}]\index{AUDIO\_\-SYNC@{AUDIO\_\-SYNC}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!AUDIO\_\-SYNC@{AUDIO\_\-SYNC}}\item[{\em 
+AUDIO\_\-SYNC\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176adf9ca1a59cc667547e1b499833493257}
+}]\index{AUDIO\_\-RECONNECT@{AUDIO\_\-RECONNECT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!AUDIO\_\-RECONNECT@{AUDIO\_\-RECONNECT}}\item[{\em 
+AUDIO\_\-RECONNECT\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176ae8a9cea98dc0dc5e0646763ed5da3eeb}
+}]\index{AUDIO\_\-DISCONNECT@{AUDIO\_\-DISCONNECT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!AUDIO\_\-DISCONNECT@{AUDIO\_\-DISCONNECT}}\item[{\em 
+AUDIO\_\-DISCONNECT\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a7af6b862dffc54d286d89cc52b059c61}
+}]\index{PEER\_\-RECONNECT@{PEER\_\-RECONNECT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!PEER\_\-RECONNECT@{PEER\_\-RECONNECT}}\item[{\em 
+PEER\_\-RECONNECT\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a87aaa64c261cb96c7f9948afa3831697}
+}]\index{PEER\_\-DISCONNECT@{PEER\_\-DISCONNECT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!PEER\_\-DISCONNECT@{PEER\_\-DISCONNECT}}\item[{\em 
+PEER\_\-DISCONNECT\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176acacd9d1f191390b01e157a542a2a079e}
+}]\index{PEER\_\-REFER@{PEER\_\-REFER}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!PEER\_\-REFER@{PEER\_\-REFER}}\item[{\em 
+PEER\_\-REFER\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176aa3f88da3e1d33cfeb3d8ce189b8825da}
+}]\index{DTMF\_\-GENTONE@{DTMF\_\-GENTONE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DTMF\_\-GENTONE@{DTMF\_\-GENTONE}}\item[{\em 
+DTMF\_\-GENTONE\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176aaef065247b332f29f53d1e174326d023}
+}]\index{MAKE\_\-TEST@{MAKE\_\-TEST}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!MAKE\_\-TEST@{MAKE\_\-TEST}}\item[{\em 
+MAKE\_\-TEST\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176af6410f9d4cc121412e0b082fc7ffbe7d}
+}]\index{MAKE\_\-BUSY@{MAKE\_\-BUSY}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!MAKE\_\-BUSY@{MAKE\_\-BUSY}}\item[{\em 
+MAKE\_\-BUSY\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a4080cbed7398e65f0ba7e0365fe60693}
+}]\index{MAKE\_\-IDLE@{MAKE\_\-IDLE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!MAKE\_\-IDLE@{MAKE\_\-IDLE}}\item[{\em 
+MAKE\_\-IDLE\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176ad12e7dbbe29a8cfea0918b0109b99ba6}
+}]\index{MAKE\_\-DOWN@{MAKE\_\-DOWN}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!MAKE\_\-DOWN@{MAKE\_\-DOWN}}\item[{\em 
+MAKE\_\-DOWN\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a11d20bde54dc7d78714c3cfdb4173a86}
+}]\index{MAKE\_\-UP@{MAKE\_\-UP}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!MAKE\_\-UP@{MAKE\_\-UP}}\item[{\em 
+MAKE\_\-UP\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a6e21b8a745ced8b362f95e434b339041}
+}]\index{MAKE\_\-EXPIRED@{MAKE\_\-EXPIRED}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!MAKE\_\-EXPIRED@{MAKE\_\-EXPIRED}}\item[{\em 
+MAKE\_\-EXPIRED\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176ae845e45085a65e82de86011aec57f500}
+}]\index{ENABLE\_\-LOGGING@{ENABLE\_\-LOGGING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!ENABLE\_\-LOGGING@{ENABLE\_\-LOGGING}}\item[{\em 
+ENABLE\_\-LOGGING\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a02b26e337854fd00c0db9b19b842d165}
+}]\index{DISABLE\_\-LOGGING@{DISABLE\_\-LOGGING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DISABLE\_\-LOGGING@{DISABLE\_\-LOGGING}}\item[{\em 
+DISABLE\_\-LOGGING\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176acf405db1ee81457505b2ea0be7f9ac9f}
+}]\index{PART\_\-EXPIRED@{PART\_\-EXPIRED}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!PART\_\-EXPIRED@{PART\_\-EXPIRED}}\item[{\em 
+PART\_\-EXPIRED\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a1e3c4b5624d72897ac8e08abde4a9729}
+}]\index{PART\_\-EXITING@{PART\_\-EXITING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!PART\_\-EXITING@{PART\_\-EXITING}}\item[{\em 
+PART\_\-EXITING\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a766ee46ec452b772f5dfbefd6ab6146d}
+}]\index{PART\_\-DISCONNECT@{PART\_\-DISCONNECT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!PART\_\-DISCONNECT@{PART\_\-DISCONNECT}}\item[{\em 
+PART\_\-DISCONNECT\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a0c06e435ad1186477c7236b9def76315}
+}]\index{JOIN\_\-PEER@{JOIN\_\-PEER}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!JOIN\_\-PEER@{JOIN\_\-PEER}}\item[{\em 
+JOIN\_\-PEER\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176ad135b16fc043687d4c77588fe06c043b}
+}]\index{PEER\_\-WAITING@{PEER\_\-WAITING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!PEER\_\-WAITING@{PEER\_\-WAITING}}\item[{\em 
+PEER\_\-WAITING\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a70fc68c74a7005c60d89f957e1625317}
+}]\index{RELOCATE\_\-REQUEST@{RELOCATE\_\-REQUEST}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!RELOCATE\_\-REQUEST@{RELOCATE\_\-REQUEST}}\item[{\em 
+RELOCATE\_\-REQUEST\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a8fc65abb1be9208f7546852deebdc3dc}
+}]\index{RELOCATE\_\-ACCEPT@{RELOCATE\_\-ACCEPT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!RELOCATE\_\-ACCEPT@{RELOCATE\_\-ACCEPT}}\item[{\em 
+RELOCATE\_\-ACCEPT\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a15e1c3053d1092b8560cc50d8cbf6475}
+}]\index{RELOCATE\_\-REJECT@{RELOCATE\_\-REJECT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!RELOCATE\_\-REJECT@{RELOCATE\_\-REJECT}}\item[{\em 
+RELOCATE\_\-REJECT\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a5a78373aa91a69daca76bb7d0ccd541a}
+}]\index{START\_\-RELOCATE@{START\_\-RELOCATE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!START\_\-RELOCATE@{START\_\-RELOCATE}}\item[{\em 
+START\_\-RELOCATE\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a7597eb72d2710d56804dc89d93c39cf7}
+}]\index{STREAM\_\-ACTIVE@{STREAM\_\-ACTIVE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STREAM\_\-ACTIVE@{STREAM\_\-ACTIVE}}\item[{\em 
+STREAM\_\-ACTIVE\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176aaf774d6cf11319cbf0af8ebf4a6ac15a}
+}]\index{STREAM\_\-PASSIVE@{STREAM\_\-PASSIVE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STREAM\_\-PASSIVE@{STREAM\_\-PASSIVE}}\item[{\em 
+STREAM\_\-PASSIVE\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a275ea151a72651edf0194883dd28e381}
+}]\index{JOIN\_\-RECALL@{JOIN\_\-RECALL}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!JOIN\_\-RECALL@{JOIN\_\-RECALL}}\item[{\em 
+JOIN\_\-RECALL\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a339ff0134c1f26b619c0e62cad67599f}
+}]\index{DROP\_\-RECALL@{DROP\_\-RECALL}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DROP\_\-RECALL@{DROP\_\-RECALL}}\item[{\em 
+DROP\_\-RECALL\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a4ad7edf227db419bb151a322c6de86aa}
+}]\index{DROP\_\-REFER@{DROP\_\-REFER}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DROP\_\-REFER@{DROP\_\-REFER}}\item[{\em 
+DROP\_\-REFER\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a525369e08fdff2bfd278c0c07573b63b}
+}]\index{ENTER\_\-RESUME@{ENTER\_\-RESUME}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!ENTER\_\-RESUME@{ENTER\_\-RESUME}}\item[{\em 
+ENTER\_\-RESUME\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a444f414994fdd6d1844b41c320600e68}
+}]\index{ENTER\_\-SUSPEND@{ENTER\_\-SUSPEND}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!ENTER\_\-SUSPEND@{ENTER\_\-SUSPEND}}\item[{\em 
+ENTER\_\-SUSPEND\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176ab7d92ac36853c4a11ecfeab623963926}
+}]\index{SYSTEM\_\-DOWN@{SYSTEM\_\-DOWN}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SYSTEM\_\-DOWN@{SYSTEM\_\-DOWN}}\item[{\em 
+SYSTEM\_\-DOWN\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176a786471b23571152e96ed9c07e7e45ec6}
+}]\index{DRIVER\_\-SPECIFIC@{DRIVER\_\-SPECIFIC}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!DRIVER\_\-SPECIFIC@{DRIVER\_\-SPECIFIC}}\item[{\em 
+DRIVER\_\-SPECIFIC\label{classost_1_1_bayonne_aaa45b5714b023014f82bf50ff9a10176ab3523a880f3d759e175e31be9fcc7de3}
+}]\end{description}
+\end{Desc}
+
+\index{ost::Bayonne@{ost::Bayonne}!interface\_\-t@{interface\_\-t}}
+\index{interface\_\-t@{interface\_\-t}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{interface\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ost::Bayonne::interface\_\-t}}\label{classost_1_1_bayonne_aecc98745c5ea128d50f8fff4ba33d74e}
+
+
+Telephony endpoint interface identifiers. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{IF\_\-PSTN@{IF\_\-PSTN}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!IF\_\-PSTN@{IF\_\-PSTN}}\item[{\em 
+IF\_\-PSTN\label{classost_1_1_bayonne_aecc98745c5ea128d50f8fff4ba33d74ea4a024e47266af7b029351818f72334c8}
+}]\index{IF\_\-SPAN@{IF\_\-SPAN}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!IF\_\-SPAN@{IF\_\-SPAN}}\item[{\em 
+IF\_\-SPAN\label{classost_1_1_bayonne_aecc98745c5ea128d50f8fff4ba33d74eafea09fdade124f04b2397f6b4cd0bb62}
+}]\index{IF\_\-ISDN@{IF\_\-ISDN}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!IF\_\-ISDN@{IF\_\-ISDN}}\item[{\em 
+IF\_\-ISDN\label{classost_1_1_bayonne_aecc98745c5ea128d50f8fff4ba33d74ea2f2041dea3b90bbecd31f8c58f8269db}
+}]\index{IF\_\-SS7@{IF\_\-SS7}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!IF\_\-SS7@{IF\_\-SS7}}\item[{\em 
+IF\_\-SS7\label{classost_1_1_bayonne_aecc98745c5ea128d50f8fff4ba33d74ea994f1c3e6b1219528e4ce070db1d3903}
+}]\index{IF\_\-INET@{IF\_\-INET}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!IF\_\-INET@{IF\_\-INET}}\item[{\em 
+IF\_\-INET\label{classost_1_1_bayonne_aecc98745c5ea128d50f8fff4ba33d74ea66502d287dc026fd53f326f3615e83a2}
+}]\index{IF\_\-NONE@{IF\_\-NONE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!IF\_\-NONE@{IF\_\-NONE}}\item[{\em 
+IF\_\-NONE\label{classost_1_1_bayonne_aecc98745c5ea128d50f8fff4ba33d74eace4f71bada70df48af70c10d3614f02f}
+}]\index{IF\_\-POTS@{IF\_\-POTS}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!IF\_\-POTS@{IF\_\-POTS}}\item[{\em 
+IF\_\-POTS\label{classost_1_1_bayonne_aecc98745c5ea128d50f8fff4ba33d74ead3a834ee2537b49892718d5ab1adaa6b}
+}]\end{description}
+\end{Desc}
+
+\index{ost::Bayonne@{ost::Bayonne}!result\_\-t@{result\_\-t}}
+\index{result\_\-t@{result\_\-t}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{result\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ost::Bayonne::result\_\-t}}\label{classost_1_1_bayonne_a8dbf59ad7d64738ef201660709b5b4f1}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{RESULT\_\-SUCCESS@{RESULT\_\-SUCCESS}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!RESULT\_\-SUCCESS@{RESULT\_\-SUCCESS}}\item[{\em 
+RESULT\_\-SUCCESS\label{classost_1_1_bayonne_a8dbf59ad7d64738ef201660709b5b4f1a25baa241c510edfdbe780fa61f820eef}
+}]\index{RESULT\_\-TIMEOUT@{RESULT\_\-TIMEOUT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!RESULT\_\-TIMEOUT@{RESULT\_\-TIMEOUT}}\item[{\em 
+RESULT\_\-TIMEOUT\label{classost_1_1_bayonne_a8dbf59ad7d64738ef201660709b5b4f1abe29480ba8f4ac661c4d0a1788968cf4}
+}]\index{RESULT\_\-INVALID@{RESULT\_\-INVALID}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!RESULT\_\-INVALID@{RESULT\_\-INVALID}}\item[{\em 
+RESULT\_\-INVALID\label{classost_1_1_bayonne_a8dbf59ad7d64738ef201660709b5b4f1a989e8da65f2bc131ea48a49644510418}
+}]\index{RESULT\_\-PENDING@{RESULT\_\-PENDING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!RESULT\_\-PENDING@{RESULT\_\-PENDING}}\item[{\em 
+RESULT\_\-PENDING\label{classost_1_1_bayonne_a8dbf59ad7d64738ef201660709b5b4f1a0fc2e0f7bb7badbb0cd580d169cb28eb}
+}]\index{RESULT\_\-COMPLETE@{RESULT\_\-COMPLETE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!RESULT\_\-COMPLETE@{RESULT\_\-COMPLETE}}\item[{\em 
+RESULT\_\-COMPLETE\label{classost_1_1_bayonne_a8dbf59ad7d64738ef201660709b5b4f1ae5213ca925df657499a1831d83d1cfa6}
+}]\index{RESULT\_\-FAILED@{RESULT\_\-FAILED}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!RESULT\_\-FAILED@{RESULT\_\-FAILED}}\item[{\em 
+RESULT\_\-FAILED\label{classost_1_1_bayonne_a8dbf59ad7d64738ef201660709b5b4f1a0ccca27720a996c359f2e40c09b519a5}
+}]\index{RESULT\_\-BADPATH@{RESULT\_\-BADPATH}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!RESULT\_\-BADPATH@{RESULT\_\-BADPATH}}\item[{\em 
+RESULT\_\-BADPATH\label{classost_1_1_bayonne_a8dbf59ad7d64738ef201660709b5b4f1a28b5dcc858558eedca4b6ad57e9b0c67}
+}]\index{RESULT\_\-OFFLINE@{RESULT\_\-OFFLINE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!RESULT\_\-OFFLINE@{RESULT\_\-OFFLINE}}\item[{\em 
+RESULT\_\-OFFLINE\label{classost_1_1_bayonne_a8dbf59ad7d64738ef201660709b5b4f1a6eb89a236f130b51eccf59b07c584caa}
+}]\end{description}
+\end{Desc}
+
+\index{ost::Bayonne@{ost::Bayonne}!signal\_\-t@{signal\_\-t}}
+\index{signal\_\-t@{signal\_\-t}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{signal\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ost::Bayonne::signal\_\-t}}\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6}
+
+
+Signaled interpreter events. These can be masked and accessed through $^\wedge$xxx handlers in the scripting language. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{SIGNAL\_\-EXIT@{SIGNAL\_\-EXIT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-EXIT@{SIGNAL\_\-EXIT}}\item[{\em 
+SIGNAL\_\-EXIT\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6a542daa2bb62a149bb31898153ec96c81}
+}]\index{SIGNAL\_\-ERROR@{SIGNAL\_\-ERROR}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-ERROR@{SIGNAL\_\-ERROR}}\item[{\em 
+SIGNAL\_\-ERROR\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6a7b2461f0ba80d815490221b3aaa4cdaa}
+}]\index{SIGNAL\_\-TIMEOUT@{SIGNAL\_\-TIMEOUT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-TIMEOUT@{SIGNAL\_\-TIMEOUT}}\item[{\em 
+SIGNAL\_\-TIMEOUT\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6a57fb180ff76be83c32551bb83e2b2095}
+}]\index{SIGNAL\_\-DTMF@{SIGNAL\_\-DTMF}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-DTMF@{SIGNAL\_\-DTMF}}\item[{\em 
+SIGNAL\_\-DTMF\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6af954a27b5e1de9a3d057649ec33913e3}
+}]\index{SIGNAL\_\-0@{SIGNAL\_\-0}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-0@{SIGNAL\_\-0}}\item[{\em 
+SIGNAL\_\-0\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6abd531539cace19fdee23faa90c1e5941}
+}]\index{SIGNAL\_\-1@{SIGNAL\_\-1}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-1@{SIGNAL\_\-1}}\item[{\em 
+SIGNAL\_\-1\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6a741d074a4e0ed51c198782cffc148ef5}
+}]\index{SIGNAL\_\-2@{SIGNAL\_\-2}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-2@{SIGNAL\_\-2}}\item[{\em 
+SIGNAL\_\-2\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6ae35b178098df6290a1bc0b4e6a1560d1}
+}]\index{SIGNAL\_\-3@{SIGNAL\_\-3}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-3@{SIGNAL\_\-3}}\item[{\em 
+SIGNAL\_\-3\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6af3a8c16997f984b2982f3c00ed5e8c85}
+}]\index{SIGNAL\_\-4@{SIGNAL\_\-4}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-4@{SIGNAL\_\-4}}\item[{\em 
+SIGNAL\_\-4\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6ac579a385b109cfb03c0ef5cb63f2ebdf}
+}]\index{SIGNAL\_\-5@{SIGNAL\_\-5}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-5@{SIGNAL\_\-5}}\item[{\em 
+SIGNAL\_\-5\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6a60f4a263b72f221ee6a297ff21323fc6}
+}]\index{SIGNAL\_\-6@{SIGNAL\_\-6}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-6@{SIGNAL\_\-6}}\item[{\em 
+SIGNAL\_\-6\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6ae53455f3a2605fbb56d7d8a58aa84a2b}
+}]\index{SIGNAL\_\-7@{SIGNAL\_\-7}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-7@{SIGNAL\_\-7}}\item[{\em 
+SIGNAL\_\-7\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6ab52caddda1bca4ddaa590509c6ea75d3}
+}]\index{SIGNAL\_\-8@{SIGNAL\_\-8}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-8@{SIGNAL\_\-8}}\item[{\em 
+SIGNAL\_\-8\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6a26eea6dad8d2ed4826f35b838727f75c}
+}]\index{SIGNAL\_\-9@{SIGNAL\_\-9}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-9@{SIGNAL\_\-9}}\item[{\em 
+SIGNAL\_\-9\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6ab8773c576567d8deba56d09958d695b8}
+}]\index{SIGNAL\_\-STAR@{SIGNAL\_\-STAR}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-STAR@{SIGNAL\_\-STAR}}\item[{\em 
+SIGNAL\_\-STAR\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6a23e2ba70b79d02dd71c37c281b5fa203}
+}]\index{SIGNAL\_\-POUND@{SIGNAL\_\-POUND}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-POUND@{SIGNAL\_\-POUND}}\item[{\em 
+SIGNAL\_\-POUND\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6a1295c05016ce4b964cb9d99cc39f7ae9}
+}]\index{SIGNAL\_\-A@{SIGNAL\_\-A}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-A@{SIGNAL\_\-A}}\item[{\em 
+SIGNAL\_\-A\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6a08c94b32a332546a3c34e91c14d91098}
+}]\index{SIGNAL\_\-OVERRIDE@{SIGNAL\_\-OVERRIDE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-OVERRIDE@{SIGNAL\_\-OVERRIDE}}\item[{\em 
+SIGNAL\_\-OVERRIDE\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6acee11362d764f4cd1279d5f75db31793}
+}]\index{SIGNAL\_\-B@{SIGNAL\_\-B}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-B@{SIGNAL\_\-B}}\item[{\em 
+SIGNAL\_\-B\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6aafc7b153edda62c85c8265876f03fb70}
+}]\index{SIGNAL\_\-FLASH@{SIGNAL\_\-FLASH}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-FLASH@{SIGNAL\_\-FLASH}}\item[{\em 
+SIGNAL\_\-FLASH\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6aca5ec1410364ad1f7153cae22973d3cf}
+}]\index{SIGNAL\_\-C@{SIGNAL\_\-C}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-C@{SIGNAL\_\-C}}\item[{\em 
+SIGNAL\_\-C\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6ac05c5058742b4b4688ee9be4c2281653}
+}]\index{SIGNAL\_\-IMMEDIATE@{SIGNAL\_\-IMMEDIATE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-IMMEDIATE@{SIGNAL\_\-IMMEDIATE}}\item[{\em 
+SIGNAL\_\-IMMEDIATE\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6a2847b0e9bd3fcbee52f2b078f5a5d96c}
+}]\index{SIGNAL\_\-D@{SIGNAL\_\-D}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-D@{SIGNAL\_\-D}}\item[{\em 
+SIGNAL\_\-D\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6a1f096a895925cc93ba127d6213bb9d86}
+}]\index{SIGNAL\_\-PRIORITY@{SIGNAL\_\-PRIORITY}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-PRIORITY@{SIGNAL\_\-PRIORITY}}\item[{\em 
+SIGNAL\_\-PRIORITY\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6a487f72d18a06129b8be81eab156f2f0b}
+}]\index{SIGNAL\_\-RING@{SIGNAL\_\-RING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-RING@{SIGNAL\_\-RING}}\item[{\em 
+SIGNAL\_\-RING\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6a9b54ad0fcfb3b9db59cc0f7977ea8cef}
+}]\index{SIGNAL\_\-TONE@{SIGNAL\_\-TONE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-TONE@{SIGNAL\_\-TONE}}\item[{\em 
+SIGNAL\_\-TONE\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6a5d2bf8afa30d47d74d0ea2e233556370}
+}]\index{SIGNAL\_\-EVENT@{SIGNAL\_\-EVENT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-EVENT@{SIGNAL\_\-EVENT}}\item[{\em 
+SIGNAL\_\-EVENT\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6a8ad2f82b658d309256b42778f180685a}
+}]\index{SIGNAL\_\-WINK@{SIGNAL\_\-WINK}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-WINK@{SIGNAL\_\-WINK}}\item[{\em 
+SIGNAL\_\-WINK\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6a4e01b8fcb44dccde19a6abc36ca39aeb}
+}]\index{SIGNAL\_\-CHILD@{SIGNAL\_\-CHILD}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-CHILD@{SIGNAL\_\-CHILD}}\item[{\em 
+SIGNAL\_\-CHILD\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6ac9cb46cdd6cf783a1102ebe999180b8c}
+}]\index{SIGNAL\_\-FAIL@{SIGNAL\_\-FAIL}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-FAIL@{SIGNAL\_\-FAIL}}\item[{\em 
+SIGNAL\_\-FAIL\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6ac37eac754f504d637fa334623229ce72}
+}]\index{SIGNAL\_\-PICKUP@{SIGNAL\_\-PICKUP}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-PICKUP@{SIGNAL\_\-PICKUP}}\item[{\em 
+SIGNAL\_\-PICKUP\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6a9c7af2734693ff142513004b63e956ee}
+}]\index{SIGNAL\_\-PART@{SIGNAL\_\-PART}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-PART@{SIGNAL\_\-PART}}\item[{\em 
+SIGNAL\_\-PART\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6ad5fd11f37d8070a4f4db5e367b3a4555}
+}]\index{SIGNAL\_\-INVALID@{SIGNAL\_\-INVALID}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-INVALID@{SIGNAL\_\-INVALID}}\item[{\em 
+SIGNAL\_\-INVALID\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6aab72e2c8b493f22bb971a649a60a2a50}
+}]\index{SIGNAL\_\-PARENT@{SIGNAL\_\-PARENT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-PARENT@{SIGNAL\_\-PARENT}}\item[{\em 
+SIGNAL\_\-PARENT\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6a733c76bcb0ad2467b7b043822bbb367b}
+}]\index{SIGNAL\_\-WAIT@{SIGNAL\_\-WAIT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-WAIT@{SIGNAL\_\-WAIT}}\item[{\em 
+SIGNAL\_\-WAIT\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6a6673a16c78bde0a3c767120a1aff2317}
+}]\index{SIGNAL\_\-HANGUP@{SIGNAL\_\-HANGUP}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!SIGNAL\_\-HANGUP@{SIGNAL\_\-HANGUP}}\item[{\em 
+SIGNAL\_\-HANGUP\label{classost_1_1_bayonne_a63f5e1a7f808840f590d2a84beecadb6a005f63e1cb3339e5a69056bacb05b624}
+}]\end{description}
+\end{Desc}
+
+\index{ost::Bayonne@{ost::Bayonne}!state\_\-t@{state\_\-t}}
+\index{state\_\-t@{state\_\-t}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{state\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ost::Bayonne::state\_\-t}}\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865b}
+
+
+Call processing states offered in core library. This list must be ordered to match the entries in the state table (\doxyref{statetab}{p.}{structost_1_1_bayonne_1_1statetab}). \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{STATE\_\-INITIAL@{STATE\_\-INITIAL}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-INITIAL@{STATE\_\-INITIAL}}\item[{\em 
+STATE\_\-INITIAL\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba57b443c8858bb5e58a4d833d232bdf51}
+}]\index{STATE\_\-IDLE@{STATE\_\-IDLE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-IDLE@{STATE\_\-IDLE}}\item[{\em 
+STATE\_\-IDLE\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865baa83c0f70bd5c21866f3314bffdbf1297}
+}]\index{STATE\_\-RESET@{STATE\_\-RESET}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-RESET@{STATE\_\-RESET}}\item[{\em 
+STATE\_\-RESET\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba0c60bccd584447c724f61768f3a3ea54}
+}]\index{STATE\_\-RELEASE@{STATE\_\-RELEASE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-RELEASE@{STATE\_\-RELEASE}}\item[{\em 
+STATE\_\-RELEASE\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba1f871a196d64594e3a1b8db017e4261d}
+}]\index{STATE\_\-BUSY@{STATE\_\-BUSY}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-BUSY@{STATE\_\-BUSY}}\item[{\em 
+STATE\_\-BUSY\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865bad8d95ee77e0220c9df083999352e9296}
+}]\index{STATE\_\-DOWN@{STATE\_\-DOWN}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-DOWN@{STATE\_\-DOWN}}\item[{\em 
+STATE\_\-DOWN\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865bae118d40359ae9e94b819109acbdb24d0}
+}]\index{STATE\_\-RING@{STATE\_\-RING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-RING@{STATE\_\-RING}}\item[{\em 
+STATE\_\-RING\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba24fb5d194783123012cabe0b708eb16f}
+}]\index{STATE\_\-PICKUP@{STATE\_\-PICKUP}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-PICKUP@{STATE\_\-PICKUP}}\item[{\em 
+STATE\_\-PICKUP\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865baa3db9a07e38a4db77561778f37878c11}
+}]\index{STATE\_\-SEIZE@{STATE\_\-SEIZE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-SEIZE@{STATE\_\-SEIZE}}\item[{\em 
+STATE\_\-SEIZE\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba67995355a2e50cca5bee87ae2b9cf244}
+}]\index{STATE\_\-ANSWER@{STATE\_\-ANSWER}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-ANSWER@{STATE\_\-ANSWER}}\item[{\em 
+STATE\_\-ANSWER\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba2b49cfeb75b0e1e9fd2fba8963c9a7f1}
+}]\index{STATE\_\-STEP@{STATE\_\-STEP}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-STEP@{STATE\_\-STEP}}\item[{\em 
+STATE\_\-STEP\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865bafd8f849016a429734b482bf4e47d9a68}
+}]\index{STATE\_\-EXEC@{STATE\_\-EXEC}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-EXEC@{STATE\_\-EXEC}}\item[{\em 
+STATE\_\-EXEC\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba2c3b2e6e32da57e1b255e5836734395e}
+}]\index{STATE\_\-THREAD@{STATE\_\-THREAD}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-THREAD@{STATE\_\-THREAD}}\item[{\em 
+STATE\_\-THREAD\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba9fb4db15853033433a1456387b1268eb}
+}]\index{STATE\_\-CLEAR@{STATE\_\-CLEAR}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-CLEAR@{STATE\_\-CLEAR}}\item[{\em 
+STATE\_\-CLEAR\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865bacb264fdb3ab38784c40779b4747929c3}
+}]\index{STATE\_\-INKEY@{STATE\_\-INKEY}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-INKEY@{STATE\_\-INKEY}}\item[{\em 
+STATE\_\-INKEY\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba86476a9b34dc26053a8b40c3d050ebad}
+}]\index{STATE\_\-INPUT@{STATE\_\-INPUT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-INPUT@{STATE\_\-INPUT}}\item[{\em 
+STATE\_\-INPUT\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba57953e63b546d583f24e096746fce0f4}
+}]\index{STATE\_\-READ@{STATE\_\-READ}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-READ@{STATE\_\-READ}}\item[{\em 
+STATE\_\-READ\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba14b4056af5991db2bd164ddb7a292506}
+}]\index{STATE\_\-COLLECT@{STATE\_\-COLLECT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-COLLECT@{STATE\_\-COLLECT}}\item[{\em 
+STATE\_\-COLLECT\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba079b3094fddab2b149a54fb13dbf66ff}
+}]\index{STATE\_\-DIAL@{STATE\_\-DIAL}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-DIAL@{STATE\_\-DIAL}}\item[{\em 
+STATE\_\-DIAL\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865bac903e61827988999000af6dfd94e3773}
+}]\index{STATE\_\-XFER@{STATE\_\-XFER}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-XFER@{STATE\_\-XFER}}\item[{\em 
+STATE\_\-XFER\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba23e9bb818c57baa031e205693e7000be}
+}]\index{STATE\_\-REFER@{STATE\_\-REFER}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-REFER@{STATE\_\-REFER}}\item[{\em 
+STATE\_\-REFER\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba6e398450fe3bb8f88d33a87d92850164}
+}]\index{STATE\_\-HOLD@{STATE\_\-HOLD}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-HOLD@{STATE\_\-HOLD}}\item[{\em 
+STATE\_\-HOLD\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865baeb578074e64ab54466ca5f5b7171a88e}
+}]\index{STATE\_\-RECALL@{STATE\_\-RECALL}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-RECALL@{STATE\_\-RECALL}}\item[{\em 
+STATE\_\-RECALL\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba05a76d2638e5416e075e9a770a253c15}
+}]\index{STATE\_\-TONE@{STATE\_\-TONE}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-TONE@{STATE\_\-TONE}}\item[{\em 
+STATE\_\-TONE\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba67a0ff4bd95e068973aec3ae32b31d47}
+}]\index{STATE\_\-DTMF@{STATE\_\-DTMF}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-DTMF@{STATE\_\-DTMF}}\item[{\em 
+STATE\_\-DTMF\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba9ff4a13e8fee5e8eb27b449c22f91ca1}
+}]\index{STATE\_\-PLAY@{STATE\_\-PLAY}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-PLAY@{STATE\_\-PLAY}}\item[{\em 
+STATE\_\-PLAY\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba3672255eb38599bec98fe8b4ca68907b}
+}]\index{STATE\_\-RECORD@{STATE\_\-RECORD}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-RECORD@{STATE\_\-RECORD}}\item[{\em 
+STATE\_\-RECORD\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba9ef1f854b3213f5a6951b00ce2fd2b0d}
+}]\index{STATE\_\-JOIN@{STATE\_\-JOIN}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-JOIN@{STATE\_\-JOIN}}\item[{\em 
+STATE\_\-JOIN\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba930e4442f3faa90874f62aa3018f365d}
+}]\index{STATE\_\-WAIT@{STATE\_\-WAIT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-WAIT@{STATE\_\-WAIT}}\item[{\em 
+STATE\_\-WAIT\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba5bf33a05f17a0315edb880eb1ea421b4}
+}]\index{STATE\_\-CALLING@{STATE\_\-CALLING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-CALLING@{STATE\_\-CALLING}}\item[{\em 
+STATE\_\-CALLING\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba030f59f9bfeea0be874d2733ea9bf53d}
+}]\index{STATE\_\-CONNECT@{STATE\_\-CONNECT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-CONNECT@{STATE\_\-CONNECT}}\item[{\em 
+STATE\_\-CONNECT\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba30cf9946d7ee17c4dfd6bf46fe55458b}
+}]\index{STATE\_\-RECONNECT@{STATE\_\-RECONNECT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-RECONNECT@{STATE\_\-RECONNECT}}\item[{\em 
+STATE\_\-RECONNECT\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba2ed0be9ecccb886838930abd09b314cc}
+}]\index{STATE\_\-HUNTING@{STATE\_\-HUNTING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-HUNTING@{STATE\_\-HUNTING}}\item[{\em 
+STATE\_\-HUNTING\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba9000ac52e65cc19122c767baff1853f9}
+}]\index{STATE\_\-SLEEP@{STATE\_\-SLEEP}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-SLEEP@{STATE\_\-SLEEP}}\item[{\em 
+STATE\_\-SLEEP\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba78b51a32b2c3c3ff173004d09066330f}
+}]\index{STATE\_\-START@{STATE\_\-START}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-START@{STATE\_\-START}}\item[{\em 
+STATE\_\-START\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba5ed2e73b10259d087210dced9c2ba506}
+}]\index{STATE\_\-HANGUP@{STATE\_\-HANGUP}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-HANGUP@{STATE\_\-HANGUP}}\item[{\em 
+STATE\_\-HANGUP\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba778fb1dcc15601ea60abb6b79542c2a4}
+}]\index{STATE\_\-LIBRESET@{STATE\_\-LIBRESET}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-LIBRESET@{STATE\_\-LIBRESET}}\item[{\em 
+STATE\_\-LIBRESET\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba24b2a2901ef88389bd820f952402197f}
+}]\index{STATE\_\-WAITKEY@{STATE\_\-WAITKEY}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-WAITKEY@{STATE\_\-WAITKEY}}\item[{\em 
+STATE\_\-WAITKEY\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba8315c65d584af6e2a45d2f599cec04d5}
+}]\index{STATE\_\-LIBWAIT@{STATE\_\-LIBWAIT}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-LIBWAIT@{STATE\_\-LIBWAIT}}\item[{\em 
+STATE\_\-LIBWAIT\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba272e3290db8b05279df993a5fba21c33}
+}]\index{STATE\_\-IRESET@{STATE\_\-IRESET}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-IRESET@{STATE\_\-IRESET}}\item[{\em 
+STATE\_\-IRESET\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba35017a13142b69ee1fa737c3d4feaaa3}
+}]\index{STATE\_\-FINAL@{STATE\_\-FINAL}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-FINAL@{STATE\_\-FINAL}}\item[{\em 
+STATE\_\-FINAL\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba1e3adca543d8d417b9c7cbc42c7db8e1}
+}]\index{STATE\_\-SUSPEND@{STATE\_\-SUSPEND}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-SUSPEND@{STATE\_\-SUSPEND}}\item[{\em 
+STATE\_\-SUSPEND\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865baa5e56b2fe33a0837fc410690722a5d74}
+}]\index{STATE\_\-STANDBY@{STATE\_\-STANDBY}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-STANDBY@{STATE\_\-STANDBY}}\item[{\em 
+STATE\_\-STANDBY\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865baee4c6b6a0bcbdc7aca2569dc3fe4cd03}
+}]\index{STATE\_\-LIBEXEC@{STATE\_\-LIBEXEC}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-LIBEXEC@{STATE\_\-LIBEXEC}}\item[{\em 
+STATE\_\-LIBEXEC\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865ba664e279cc09095594e6bd0c44b43f90c}
+}]\index{STATE\_\-RINGING@{STATE\_\-RINGING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-RINGING@{STATE\_\-RINGING}}\item[{\em 
+STATE\_\-RINGING\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865baec1333c72c15965d7878369796f21954}
+}]\index{STATE\_\-RUNNING@{STATE\_\-RUNNING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-RUNNING@{STATE\_\-RUNNING}}\item[{\em 
+STATE\_\-RUNNING\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865bacac4ac9c3eb254d40418b61ffe2d431d}
+}]\index{STATE\_\-THREADING@{STATE\_\-THREADING}!ost::Bayonne@{ost::Bayonne}}\index{ost::Bayonne@{ost::Bayonne}!STATE\_\-THREADING@{STATE\_\-THREADING}}\item[{\em 
+STATE\_\-THREADING\label{classost_1_1_bayonne_a979ef68560dfa2b2f17680ada3e8865bafdb5f056c08a60dfddc049bd4239aeee}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Member Function Documentation}
+\index{ost::Bayonne@{ost::Bayonne}!addConfig@{addConfig}}
+\index{addConfig@{addConfig}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{addConfig}]{\setlength{\rightskip}{0pt plus 5cm}static void ost::Bayonne::addConfig (const char $\ast$ {\em cfgfile})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_a9bcf1d70c4dfcb915968dfcb7ab87543}
+
+
+Add config file entry. \index{ost::Bayonne@{ost::Bayonne}!addTrap4@{addTrap4}}
+\index{addTrap4@{addTrap4}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{addTrap4}]{\setlength{\rightskip}{0pt plus 5cm}static void ost::Bayonne::addTrap4 (const char $\ast$ {\em addr})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_a535710ce47bacf066266229a1932831b}
+\index{ost::Bayonne@{ost::Bayonne}!allocate@{allocate}}
+\index{allocate@{allocate}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{allocate}]{\setlength{\rightskip}{0pt plus 5cm}static void ost::Bayonne::allocate ({\bf timeslot\_\-t} {\em timeslots}, \/  ScriptCommand $\ast$ {\em pointer} = {\ttfamily NULL}, \/  {\bf timeslot\_\-t} {\em overdraft} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_a572fb319b98330a2f2cec8747aaa2adc}
+
+
+Allocates the maximum number of timeslots the server will use as a whole and attaches a given server to the library. 
+\begin{DoxyParams}{Parameters}
+\item[{\em timeslots}]to allocate. \item[{\em pointer}]to server shell. \end{DoxyParams}
+\index{ost::Bayonne@{ost::Bayonne}!allocateLocal@{allocateLocal}}
+\index{allocateLocal@{allocateLocal}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{allocateLocal}]{\setlength{\rightskip}{0pt plus 5cm}static void ost::Bayonne::allocateLocal (void)\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_adfdc88db19644cc0f8307dcfec065753}
+
+
+Allocate local script engine sessions, if needed. \index{ost::Bayonne@{ost::Bayonne}!down@{down}}
+\index{down@{down}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{down}]{\setlength{\rightskip}{0pt plus 5cm}static void ost::Bayonne::down (void)\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_ab99120e8c7cab939c0c7c28795ba7f5e}
+
+
+Used to down the server from the library. \index{ost::Bayonne@{ost::Bayonne}!endImage@{endImage}}
+\index{endImage@{endImage}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{endImage}]{\setlength{\rightskip}{0pt plus 5cm}static void ost::Bayonne::endImage (ScriptImage $\ast$ {\em image})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_ae490a598981dfca97debc32ecf454ad4}
+
+
+Release a script image in use. If no active calls are using it and it's no longer the top active image, purge from memory.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em image}]to compiled script from useImage. \end{DoxyParams}
+\index{ost::Bayonne@{ost::Bayonne}!errlog@{errlog}}
+\index{errlog@{errlog}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{errlog}]{\setlength{\rightskip}{0pt plus 5cm}static void ost::Bayonne::errlog (const char $\ast$ {\em level}, \/  const char $\ast$ {\em fmt}, \/   {\em ...})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_ab9567324c4ca92f4694a5aa59e6db92a}
+\index{ost::Bayonne@{ost::Bayonne}!getAvailTimeslots@{getAvailTimeslots}}
+\index{getAvailTimeslots@{getAvailTimeslots}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{getAvailTimeslots}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf timeslot\_\-t} ost::Bayonne::getAvailTimeslots (void)\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classost_1_1_bayonne_ab53b20d14e146540c4ddfdd699f23546}
+
+
+Return remaining timeslots available to allocate driver ports into. \begin{DoxyReturn}{Returns}
+remaining timeslots. 
+\end{DoxyReturn}
+\index{ost::Bayonne@{ost::Bayonne}!getChar@{getChar}}
+\index{getChar@{getChar}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{getChar}]{\setlength{\rightskip}{0pt plus 5cm}static char ost::Bayonne::getChar (int {\em dtmf})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_a141ac8465f1ed5baaa9c3ffffb7754df}
+
+
+Convert a dtmf digit number into it's ascii code. 
+\begin{DoxyParams}{Parameters}
+\item[{\em dtmf}]digit number. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+dtmf character code. 
+\end{DoxyReturn}
+\index{ost::Bayonne@{ost::Bayonne}!getDigit@{getDigit}}
+\index{getDigit@{getDigit}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{getDigit}]{\setlength{\rightskip}{0pt plus 5cm}static int ost::Bayonne::getDigit (char {\em dtmf})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_a7ff8cd04ce67991f6151e17618250cd1}
+
+
+Convert a dtmf character into a 0-\/15 number reference. 
+\begin{DoxyParams}{Parameters}
+\item[{\em dtmf}]digit as ascii \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+dtmf digit number. 
+\end{DoxyReturn}
+\index{ost::Bayonne@{ost::Bayonne}!getDriverTag@{getDriverTag}}
+\index{getDriverTag@{getDriverTag}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{getDriverTag}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf BayonneDriver}$\ast$ ost::Bayonne::getDriverTag (const char $\ast$ {\em id})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_acc462dd7e538d58742befe867fae5b15}
+\index{ost::Bayonne@{ost::Bayonne}!getEncoding@{getEncoding}}
+\index{getEncoding@{getEncoding}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{getEncoding}]{\setlength{\rightskip}{0pt plus 5cm}static Audio::Encoding ost::Bayonne::getEncoding (const char $\ast$ {\em cp})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_a66dcdbea3c025a5232dc71bc790506f8}
+\index{ost::Bayonne@{ost::Bayonne}!getLocalImage@{getLocalImage}}
+\index{getLocalImage@{getLocalImage}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{getLocalImage}]{\setlength{\rightskip}{0pt plus 5cm}static ScriptImage$\ast$$\ast$ ost::Bayonne::getLocalImage ({\bf timeslot\_\-t} {\em timeslot})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_abf513b68c96a8694c35c4d47eaaaf680}
+
+
+Returns a local image pointer for a server timeslot. 
+\begin{DoxyParams}{Parameters}
+\item[{\em timeslot}]number in server. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to image pointer or NULL if empty/invalid. 
+\end{DoxyReturn}
+\index{ost::Bayonne@{ost::Bayonne}!getRegistryId@{getRegistryId}}
+\index{getRegistryId@{getRegistryId}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{getRegistryId}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ ost::Bayonne::getRegistryId (const char $\ast$ {\em id})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_ab01fb8606a711c4260e4a69f7e4c827b}
+\index{ost::Bayonne@{ost::Bayonne}!getRunLevel@{getRunLevel}}
+\index{getRunLevel@{getRunLevel}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{getRunLevel}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ ost::Bayonne::getRunLevel (void)\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_ae10a30d38acc17a9fbaf36ea72c21c1c}
+
+
+Get service level. 
+\begin{DoxyParams}{Parameters}
+\item[{\em return}]service level \end{DoxyParams}
+\index{ost::Bayonne@{ost::Bayonne}!getSession@{getSession}}
+\index{getSession@{getSession}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{getSession}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf BayonneSession}$\ast$ ost::Bayonne::getSession ({\bf timeslot\_\-t} {\em timeslot})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_ae8ac5c938bd442274ae8aa6ccf613de8}
+
+
+Returns a session pointer for a server timeslot. Each server timeslot can map to a single session object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em timeslot}]number in server. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+session object or NULL if timeslot empty/invalid. 
+\end{DoxyReturn}
+\index{ost::Bayonne@{ost::Bayonne}!getSid@{getSid}}
+\index{getSid@{getSid}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{getSid}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf BayonneSession}$\ast$ ost::Bayonne::getSid (const char $\ast$ {\em id})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_a2444ee7692f54f007f8a39052a93f31c}
+
+
+Returns a session pointer for a string identifier. This can be for a transaction id, a call id, or other unique identifiers which can be mapped into a single timeslot.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]session identifier string. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+session object or NULL if not found. 
+\end{DoxyReturn}
+\index{ost::Bayonne@{ost::Bayonne}!getState@{getState}}
+\index{getState@{getState}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{getState}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Handler} ost::Bayonne::getState (const char $\ast$ {\em name})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_a908d810c4a9d2f95b58919517c6a9334}
+
+
+Map a state name into a handler. Used for logging requests. Uses the \doxyref{statetab}{p.}{structost_1_1_bayonne_1_1statetab}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]of state to lookup. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+handler method for state if found. 
+\end{DoxyReturn}
+\index{ost::Bayonne@{ost::Bayonne}!getTimeslotCount@{getTimeslotCount}}
+\index{getTimeslotCount@{getTimeslotCount}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{getTimeslotCount}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf timeslot\_\-t} ost::Bayonne::getTimeslotCount (void)\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classost_1_1_bayonne_a5d8fad4c3963437976c592f73a0e9f63}
+
+
+Return total timeslots allocated for the server. \begin{DoxyReturn}{Returns}
+total number of timeslots, max + 1. 
+\end{DoxyReturn}
+\index{ost::Bayonne@{ost::Bayonne}!getTimeslotsUsed@{getTimeslotsUsed}}
+\index{getTimeslotsUsed@{getTimeslotsUsed}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{getTimeslotsUsed}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf timeslot\_\-t} ost::Bayonne::getTimeslotsUsed (void)\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classost_1_1_bayonne_a870a153a2a7067be5b7d9f15feaf95c3}
+
+
+Return total library timeslots used (highest used). \begin{DoxyReturn}{Returns}
+highest server timeslot in use. 
+\end{DoxyReturn}
+\index{ost::Bayonne@{ost::Bayonne}!getUserdata@{getUserdata}}
+\index{getUserdata@{getUserdata}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{getUserdata}]{\setlength{\rightskip}{0pt plus 5cm}static bool ost::Bayonne::getUserdata (void)\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_a6e5e370d344ed81af84e692750519705}
+\index{ost::Bayonne@{ost::Bayonne}!loadAudio@{loadAudio}}
+\index{loadAudio@{loadAudio}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{loadAudio}]{\setlength{\rightskip}{0pt plus 5cm}static bool ost::Bayonne::loadAudio (const char $\ast$ {\em path})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_a0426cfa3e51891cbdfd5c7da4e9f1dc2}
+
+
+Load a bgm/audio processing module for continues audio. 
+\begin{DoxyParams}{Parameters}
+\item[{\em path}]id of plugin. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful. 
+\end{DoxyReturn}
+\index{ost::Bayonne@{ost::Bayonne}!loadMonitor@{loadMonitor}}
+\index{loadMonitor@{loadMonitor}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{loadMonitor}]{\setlength{\rightskip}{0pt plus 5cm}static bool ost::Bayonne::loadMonitor (const char $\ast$ {\em path})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_adc786d14654fbe6fc806cbced0ddfe48}
+
+
+Load a monitoring/management module. 
+\begin{DoxyParams}{Parameters}
+\item[{\em path}]id of plugin. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful. 
+\end{DoxyReturn}
+\index{ost::Bayonne@{ost::Bayonne}!loadPlugin@{loadPlugin}}
+\index{loadPlugin@{loadPlugin}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{loadPlugin}]{\setlength{\rightskip}{0pt plus 5cm}static bool ost::Bayonne::loadPlugin (const char $\ast$ {\em path})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_a06e8eff1673b591613b5aedb492c8b3d}
+
+
+Load a plugin module. 
+\begin{DoxyParams}{Parameters}
+\item[{\em path}]id of plugin. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful. 
+\end{DoxyReturn}
+\index{ost::Bayonne@{ost::Bayonne}!matchDigits@{matchDigits}}
+\index{matchDigits@{matchDigits}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{matchDigits}]{\setlength{\rightskip}{0pt plus 5cm}static bool ost::Bayonne::matchDigits (const char $\ast$ {\em digits}, \/  const char $\ast$ {\em match}, \/  bool {\em partial} = {\ttfamily false})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_af9d25f83c158652f4599db533bbfa09d}
+
+
+A function to support pattern matching and templates for digit strings. This is used for digit @xxx:... entries and the route command.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em digits}]to use. \item[{\em match}]digit pattern to match against. \item[{\em partial}]accept match if true. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if digits match to pattern. 
+\end{DoxyReturn}
+\index{ost::Bayonne@{ost::Bayonne}!md5\_\-hash@{md5\_\-hash}}
+\index{md5\_\-hash@{md5\_\-hash}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{md5\_\-hash}]{\setlength{\rightskip}{0pt plus 5cm}void ost::Bayonne::md5\_\-hash (char $\ast$ {\em out}, \/  const char $\ast$ {\em source})}\label{classost_1_1_bayonne_a7a89ff0f72d23939f7325dc92ac9cd50}
+
+
+Compute md5 hashes. ..
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em md5}]output string \item[{\em string}]to hash \end{DoxyParams}
+\index{ost::Bayonne@{ost::Bayonne}!reload@{reload}}
+\index{reload@{reload}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{reload}]{\setlength{\rightskip}{0pt plus 5cm}static ScriptCompiler$\ast$ ost::Bayonne::reload (void)\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_afeb912c5b797e018bc93f041be82b3ed}
+
+
+Request active scripts to be recompiled from the library. \begin{DoxyReturn}{Returns}
+script image that was created, or NULL. 
+\end{DoxyReturn}
+
+
+Reimplemented in {\bf ost::BayonneDriver} \doxyref{}{p.}{classost_1_1_bayonne_driver_af9b934ae174e32235ac2e6ea04dc55db}.\index{ost::Bayonne@{ost::Bayonne}!service@{service}}
+\index{service@{service}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{service}]{\setlength{\rightskip}{0pt plus 5cm}static bool ost::Bayonne::service (const char $\ast$ {\em service})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_a1e7481b7c995e1788ba91c450237a626}
+
+
+Sets server service level from the library. 
+\begin{DoxyParams}{Parameters}
+\item[{\em service}]level or NULL to clear. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if set. 
+\end{DoxyReturn}
+\index{ost::Bayonne@{ost::Bayonne}!snmptrap@{snmptrap}}
+\index{snmptrap@{snmptrap}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{snmptrap}]{\setlength{\rightskip}{0pt plus 5cm}static void ost::Bayonne::snmptrap (unsigned {\em id}, \/  const char $\ast$ {\em descr} = {\ttfamily NULL})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_aecfbf8e2ef4c357d52231cf91512d6af}
+\index{ost::Bayonne@{ost::Bayonne}!startDialing@{startDialing}}
+\index{startDialing@{startDialing}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{startDialing}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf BayonneSession}$\ast$ ost::Bayonne::startDialing (const char $\ast$ {\em dial}, \/  const char $\ast$ {\em name}, \/  const char $\ast$ {\em caller}, \/  const char $\ast$ {\em display}, \/  {\bf BayonneSession} $\ast$ {\em parent} = {\ttfamily NULL}, \/  const char $\ast$ {\em manager} = {\ttfamily NULL}, \/  const char $\ast$ {\em secret} = {\ttfamily NULL})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_a1015628798390c833ced8999ae883f8c}
+
+
+Start a dialing session. WARNING: this function leaves the channel locked so it can be examined by the returning task.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em dialing}]string or uri. \item[{\em script}]to run or start. \item[{\em caller}]id for this call. \item[{\em display}]name for this call. \item[{\em parent}]to join to. \end{DoxyParams}
+\index{ost::Bayonne@{ost::Bayonne}!toTimeslot@{toTimeslot}}
+\index{toTimeslot@{toTimeslot}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{toTimeslot}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf timeslot\_\-t} ost::Bayonne::toTimeslot (const char $\ast$ {\em id})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_ab4878b83db8747df31bed3a90f09f643}
+
+
+Returns a server timeslot number for a string identifier. \begin{DoxyReturn}{Returns}
+timeslot number or invalid value. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]for a session. \end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxyref{getSid}{p.}{classost_1_1_bayonne_a2444ee7692f54f007f8a39052a93f31c} 
+\end{DoxySeeAlso}
+\index{ost::Bayonne@{ost::Bayonne}!uptime@{uptime}}
+\index{uptime@{uptime}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{uptime}]{\setlength{\rightskip}{0pt plus 5cm}static unsigned long ost::Bayonne::uptime (void)\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_aae5c15637b7783d4553af6f8d3272b96}
+
+
+Get server uptime. \begin{DoxyReturn}{Returns}
+uptime in seconds. 
+\end{DoxyReturn}
+\index{ost::Bayonne@{ost::Bayonne}!useImage@{useImage}}
+\index{useImage@{useImage}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{useImage}]{\setlength{\rightskip}{0pt plus 5cm}static ScriptImage$\ast$ ost::Bayonne::useImage (void)\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_ac5a4188aa758130f7e8080d3ad7da7d3}
+
+
+Use the current compiled script image; mark as in use. \begin{DoxyReturn}{Returns}
+current script image to pass to new calls. 
+\end{DoxyReturn}
+\index{ost::Bayonne@{ost::Bayonne}!waitLoaded@{waitLoaded}}
+\index{waitLoaded@{waitLoaded}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{waitLoaded}]{\setlength{\rightskip}{0pt plus 5cm}static void ost::Bayonne::waitLoaded (void)\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_ae5aba6b26ae9679e618cefac20265585}
+
+
+Wait for live flag. .. 
+
+\subsection{Member Data Documentation}
+\index{ost::Bayonne@{ost::Bayonne}!compile\_\-count@{compile\_\-count}}
+\index{compile\_\-count@{compile\_\-count}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{compile\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::Bayonne::compile\_\-count}\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_a9cf0a8d14a14f83e9371ec99c1974b37}
+\index{ost::Bayonne@{ost::Bayonne}!dtmf\_\-keymap@{dtmf\_\-keymap}}
+\index{dtmf\_\-keymap@{dtmf\_\-keymap}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{dtmf\_\-keymap}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::Bayonne::dtmf\_\-keymap}[256]\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_aed1caee6416daaaa9406c875a1d88580}
+\index{ost::Bayonne@{ost::Bayonne}!exec\_\-timer@{exec\_\-timer}}
+\index{exec\_\-timer@{exec\_\-timer}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{exec\_\-timer}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::Bayonne::exec\_\-timer}\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_aa5314432b8df61b4ed96c1242349df9e}
+\index{ost::Bayonne@{ost::Bayonne}!idle\_\-count@{idle\_\-count}}
+\index{idle\_\-count@{idle\_\-count}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{idle\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::Bayonne::idle\_\-count}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_a86c212ad0ffaadfc531c7e8717a21120}
+\index{ost::Bayonne@{ost::Bayonne}!idle\_\-limit@{idle\_\-limit}}
+\index{idle\_\-limit@{idle\_\-limit}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{idle\_\-limit}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::Bayonne::idle\_\-limit}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_ab985d540ebc2542ff9778e5f9705f8d5}
+\index{ost::Bayonne@{ost::Bayonne}!image\_\-loaded@{image\_\-loaded}}
+\index{image\_\-loaded@{image\_\-loaded}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{image\_\-loaded}]{\setlength{\rightskip}{0pt plus 5cm}volatile bool {\bf ost::Bayonne::image\_\-loaded}\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_a6de89c658d8fbb016d0ad1006d258755}
+\index{ost::Bayonne@{ost::Bayonne}!init\_\-translator@{init\_\-translator}}
+\index{init\_\-translator@{init\_\-translator}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{init\_\-translator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneTranslator}$\ast$ {\bf ost::Bayonne::init\_\-translator}\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_aa68bcd016f514549d7e4110ecabd8911}
+\index{ost::Bayonne@{ost::Bayonne}!init\_\-voicelib@{init\_\-voicelib}}
+\index{init\_\-voicelib@{init\_\-voicelib}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{init\_\-voicelib}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::init\_\-voicelib}\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_af651e03821b3d9356ff13ca6cac3ecd2}
+\index{ost::Bayonne@{ost::Bayonne}!libexec\_\-count@{libexec\_\-count}}
+\index{libexec\_\-count@{libexec\_\-count}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{libexec\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}AtomicCounter {\bf ost::Bayonne::libexec\_\-count}\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_a9233d9da14e5e48b7aba6a761081bebb}
+\index{ost::Bayonne@{ost::Bayonne}!localimages@{localimages}}
+\index{localimages@{localimages}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{localimages}]{\setlength{\rightskip}{0pt plus 5cm}ScriptImage$\ast$$\ast$ {\bf ost::Bayonne::localimages}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_aad3d4e4e016b00cb6e8a3ff3a2996e9d}
+\index{ost::Bayonne@{ost::Bayonne}!logging@{logging}}
+\index{logging@{logging}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{logging}]{\setlength{\rightskip}{0pt plus 5cm}std::ostream$\ast$ {\bf ost::Bayonne::logging}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_aac098ddcba58cdc0cef9a1ca3971e75d}
+\index{ost::Bayonne@{ost::Bayonne}!path\_\-prompts@{path\_\-prompts}}
+\index{path\_\-prompts@{path\_\-prompts}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{path\_\-prompts}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::path\_\-prompts}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_ad6a2e849782edd9d9c09339559e98e1a}
+\index{ost::Bayonne@{ost::Bayonne}!path\_\-tmp@{path\_\-tmp}}
+\index{path\_\-tmp@{path\_\-tmp}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{path\_\-tmp}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::path\_\-tmp}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_a088887e2ffb6dbe7e08778e6b6f4dc14}
+\index{ost::Bayonne@{ost::Bayonne}!path\_\-tmpfs@{path\_\-tmpfs}}
+\index{path\_\-tmpfs@{path\_\-tmpfs}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{path\_\-tmpfs}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::path\_\-tmpfs}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_aacbe6265d671222b56d684fd8de21849}
+\index{ost::Bayonne@{ost::Bayonne}!reload\_\-time@{reload\_\-time}}
+\index{reload\_\-time@{reload\_\-time}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{reload\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}time\_\-t {\bf ost::Bayonne::reload\_\-time}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_aa040e4d29a37dced27bf88f3ceeb32fb}
+\index{ost::Bayonne@{ost::Bayonne}!reloading@{reloading}}
+\index{reloading@{reloading}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{reloading}]{\setlength{\rightskip}{0pt plus 5cm}ThreadLock {\bf ost::Bayonne::reloading}\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_acd55d801965ee26b0a1e9f1ca23a2278}
+
+
+A mutex to serialize reload requests. \index{ost::Bayonne@{ost::Bayonne}!reset\_\-timer@{reset\_\-timer}}
+\index{reset\_\-timer@{reset\_\-timer}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{reset\_\-timer}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::Bayonne::reset\_\-timer}\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_abe26ac4a6d8851d514db53f2e9b24e00}
+
+
+Reimplemented in {\bf ost::BayonneDriver} \doxyref{}{p.}{classost_1_1_bayonne_driver_ab7747bf02cb9eddeafac1728d8da556f}.\index{ost::Bayonne@{ost::Bayonne}!serialize@{serialize}}
+\index{serialize@{serialize}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}Mutex {\bf ost::Bayonne::serialize}\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_afbf6209e2d4827bc3f52da1bc0d0c48d}
+
+
+A mutex to serialize any direct console I/O operations. Sometimes used to serialize other kinds of time insensitive requests. \index{ost::Bayonne@{ost::Bayonne}!server@{server}}
+\index{server@{server}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{server}]{\setlength{\rightskip}{0pt plus 5cm}ScriptCommand$\ast$ {\bf ost::Bayonne::server}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_a61f10aec597472ff49aab88b378ad09f}
+\index{ost::Bayonne@{ost::Bayonne}!shutdown\_\-flag@{shutdown\_\-flag}}
+\index{shutdown\_\-flag@{shutdown\_\-flag}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{shutdown\_\-flag}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::Bayonne::shutdown\_\-flag}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_a002a25bade19f85645811e9e0f173541}
+\index{ost::Bayonne@{ost::Bayonne}!sla@{sla}}
+\index{sla@{sla}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{sla}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::Bayonne::sla}[64]\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_a3229855267e125117e021ed94030771c}
+\index{ost::Bayonne@{ost::Bayonne}!start\_\-time@{start\_\-time}}
+\index{start\_\-time@{start\_\-time}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{start\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}time\_\-t {\bf ost::Bayonne::start\_\-time}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_aacdc4e6718b84bbc11b5d8e91026e3a7}
+\index{ost::Bayonne@{ost::Bayonne}!states@{states}}
+\index{states@{states}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{states}]{\setlength{\rightskip}{0pt plus 5cm}{\bf statetab} {\bf ost::Bayonne::states}[$\,$]\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_a3bd54f5938ce72fc7ca297559ab76f02}
+
+
+Table of states ordered by id. \index{ost::Bayonne@{ost::Bayonne}!status@{status}}
+\index{status@{status}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{status}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf ost::Bayonne::status}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_a6e8f6847f8f4a522f3384c695dea7e06}
+\index{ost::Bayonne@{ost::Bayonne}!step\_\-timer@{step\_\-timer}}
+\index{step\_\-timer@{step\_\-timer}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{step\_\-timer}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::Bayonne::step\_\-timer}\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_af12ab4f603cbdf7d3b3e390e1bcd03a7}
+\index{ost::Bayonne@{ost::Bayonne}!timeslots@{timeslots}}
+\index{timeslots@{timeslots}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{timeslots}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneSession}$\ast$$\ast$ {\bf ost::Bayonne::timeslots}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_a89281d69ebf48f6efa0ccad7a3472bd6}
+\index{ost::Bayonne@{ost::Bayonne}!total\_\-active\_\-calls@{total\_\-active\_\-calls}}
+\index{total\_\-active\_\-calls@{total\_\-active\_\-calls}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{total\_\-active\_\-calls}]{\setlength{\rightskip}{0pt plus 5cm}volatile unsigned short {\bf ost::Bayonne::total\_\-active\_\-calls}\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_a074700fea7baf1d850a3865dddd9207c}
+\index{ost::Bayonne@{ost::Bayonne}!total\_\-call\_\-attempts@{total\_\-call\_\-attempts}}
+\index{total\_\-call\_\-attempts@{total\_\-call\_\-attempts}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{total\_\-call\_\-attempts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Traffic} {\bf ost::Bayonne::total\_\-call\_\-attempts}\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_ab2376c8b2050e0173b0bdbf87339ec25}
+
+
+master traffic counters for call attempts and call completions. \index{ost::Bayonne@{ost::Bayonne}!total\_\-call\_\-complete@{total\_\-call\_\-complete}}
+\index{total\_\-call\_\-complete@{total\_\-call\_\-complete}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{total\_\-call\_\-complete}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Traffic} {\bf ost::Bayonne::total\_\-call\_\-complete}\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_a2d52088db68506cd880eab5e6edf2142}
+\index{ost::Bayonne@{ost::Bayonne}!trap\_\-community@{trap\_\-community}}
+\index{trap\_\-community@{trap\_\-community}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{trap\_\-community}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Bayonne::trap\_\-community}\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_a8887e5c19f9c7292cc1ebd066f8a5b33}
+\index{ost::Bayonne@{ost::Bayonne}!ts\_\-count@{ts\_\-count}}
+\index{ts\_\-count@{ts\_\-count}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{ts\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf timeslot\_\-t} {\bf ost::Bayonne::ts\_\-count}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_a1c6de111cc25d70c2847d35d4776cb44}
+\index{ost::Bayonne@{ost::Bayonne}!ts\_\-ext@{ts\_\-ext}}
+\index{ts\_\-ext@{ts\_\-ext}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{ts\_\-ext}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::Bayonne::ts\_\-ext}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_ad682cf366fa53e7052ac4d987de2e337}
+\index{ost::Bayonne@{ost::Bayonne}!ts\_\-limit@{ts\_\-limit}}
+\index{ts\_\-limit@{ts\_\-limit}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{ts\_\-limit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf timeslot\_\-t} {\bf ost::Bayonne::ts\_\-limit}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_aa309878bb6409ae5ee61f6d8e8756c2b}
+\index{ost::Bayonne@{ost::Bayonne}!ts\_\-trk@{ts\_\-trk}}
+\index{ts\_\-trk@{ts\_\-trk}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{ts\_\-trk}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::Bayonne::ts\_\-trk}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_afcbb70bc6e84d7a9ad2b54121dd00e89}
+\index{ost::Bayonne@{ost::Bayonne}!ts\_\-used@{ts\_\-used}}
+\index{ts\_\-used@{ts\_\-used}!ost::Bayonne@{ost::Bayonne}}
+\subsubsection[{ts\_\-used}]{\setlength{\rightskip}{0pt plus 5cm}{\bf timeslot\_\-t} {\bf ost::Bayonne::ts\_\-used}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_a4842edc43393647c080e6f9e49977300}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf bayonne.h}\end{DoxyCompactItemize}

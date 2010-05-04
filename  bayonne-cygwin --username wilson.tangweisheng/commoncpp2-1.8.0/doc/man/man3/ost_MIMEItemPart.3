@@ -1,0 +1,113 @@
+.TH "ost::MIMEItemPart" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::MIMEItemPart \- 
+.PP
+This is used to attach an item part to a MIME multipart document that is being streamed.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <mime.h>\fP
+.PP
+Inherited by \fBost::MIMEFormData\fP.
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBhead\fP (std::ostream *output)"
+.br
+.RI "\fIStream the header(s) for the current document part. \fP"
+.ti -1c
+.RI "virtual void \fBbody\fP (std::ostream *output)=0"
+.br
+.RI "\fIStream the content of this document part. \fP"
+.ti -1c
+.RI "\fBMIMEItemPart\fP (\fBMIMEMultipart\fP *top, const char *ct)"
+.br
+.RI "\fIConstruct and attach a document part to a multipart document. \fP"
+.ti -1c
+.RI "virtual \fB~MIMEItemPart\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBMIMEMultipart\fP * \fBbase\fP"
+.br
+.ti -1c
+.RI "\fBMIMEItemPart\fP * \fBnext\fP"
+.br
+.ti -1c
+.RI "const char * \fBctype\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBMIMEMultipart\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This is used to attach an item part to a MIME multipart document that is being streamed. 
+
+The base item part class is used by all derived items.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> item or part of a multi-part object. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::MIMEItemPart::MIMEItemPart (\fBMIMEMultipart\fP * top, const char * ct)\fC [protected]\fP"
+.PP
+Construct and attach a document part to a multipart document. \fBParameters:\fP
+.RS 4
+\fItop\fP multipart document to attach to. 
+.br
+\fIct\fP Content-Type to use. 
+.RE
+.PP
+
+.SS "virtual ost::MIMEItemPart::~MIMEItemPart ()\fC [protected, virtual]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void ost::MIMEItemPart::body (std::ostream * output)\fC [protected, pure virtual]\fP"
+.PP
+Stream the content of this document part. \fBParameters:\fP
+.RS 4
+\fIoutput\fP to stream document body into. 
+.RE
+.PP
+
+.PP
+Implemented in \fBost::MIMEFormData\fP.
+.SS "virtual void ost::MIMEItemPart::head (std::ostream * output)\fC [protected, virtual]\fP"
+.PP
+Stream the header(s) for the current document part. \fBParameters:\fP
+.RS 4
+\fIoutput\fP to stream header into. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBost::MIMEFormData\fP.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBMIMEMultipart\fP\fC [friend]\fP"
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBMIMEMultipart\fP* \fBost::MIMEItemPart::base\fP\fC [protected]\fP"
+.SS "const char* \fBost::MIMEItemPart::ctype\fP\fC [protected]\fP"
+.SS "\fBMIMEItemPart\fP* \fBost::MIMEItemPart::next\fP\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

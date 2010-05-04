@@ -1,0 +1,184 @@
+.TH "ost::ThreadQueue" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::ThreadQueue \- 
+.PP
+Somewhat generic queue processing class to establish a producer consumer queue.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <buffer.h>\fP
+.PP
+Inherits \fBost::Mutex\fP, \fBost::Thread\fP, and \fBost::Semaphore\fP.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fB_data\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBThreadQueue\fP (const char *id, int pri, size_t stack=0)"
+.br
+.RI "\fICreate instance of our queue and give it a process priority. \fP"
+.ti -1c
+.RI "virtual \fB~ThreadQueue\fP ()"
+.br
+.RI "\fIDestroy the queue. \fP"
+.ti -1c
+.RI "void \fBsetTimer\fP (\fBtimeout_t\fP \fBtimeout\fP)"
+.br
+.RI "\fISet the queue timeout. \fP"
+.ti -1c
+.RI "void \fBpost\fP (const void *data, unsigned len)"
+.br
+.RI "\fIPut some unspecified data into this queue. \fP"
+.in -1c
+.SS "Protected Types"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBost::ThreadQueue::_data\fP \fBdata_t\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBfinal\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBstartQueue\fP (void)"
+.br
+.RI "\fIStart of dequeing. \fP"
+.ti -1c
+.RI "virtual void \fBstopQueue\fP (void)"
+.br
+.RI "\fIEnd of dequeing, we expect the queue is empty for now. \fP"
+.ti -1c
+.RI "virtual void \fBonTimer\fP (void)"
+.br
+.RI "\fIA derivable method to call when the timout is expired. \fP"
+.ti -1c
+.RI "virtual void \fBrunQueue\fP (void *data)=0"
+.br
+.RI "\fIVirtual callback method to handle processing of a queued data items. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBtimeout_t\fP \fBtimeout\fP"
+.br
+.ti -1c
+.RI "bool \fBstarted\fP"
+.br
+.ti -1c
+.RI "\fBdata_t\fP * \fBfirst\fP"
+.br
+.ti -1c
+.RI "\fBdata_t\fP * \fBlast\fP"
+.br
+.ti -1c
+.RI "\fBString\fP \fBname\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Somewhat generic queue processing class to establish a producer consumer queue. 
+
+This may be used to buffer cdr records, or for other purposes where an in-memory queue is needed for rapid posting. This class is derived from \fBMutex\fP and maintains a linked list. A thread is used to dequeue data and pass it to a callback method that is used in place of 'run' for each item present on the queue. The conditional is used to signal the run thread when new data is posted.
+.PP
+This class was changed by Angelo Naselli to have a timeout on the queue
+.PP
+in memory data queue interface. 
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> 
+.RE
+.PP
+
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef struct \fBost::ThreadQueue::_data\fP	 \fBost::ThreadQueue::data_t\fP\fC [protected]\fP"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::ThreadQueue::ThreadQueue (const char * id, int pri, size_t stack = \fC0\fP)"
+.PP
+Create instance of our queue and give it a process priority. \fBParameters:\fP
+.RS 4
+\fIid\fP queue ID. 
+.br
+\fIpri\fP process priority. 
+.br
+\fIstack\fP stack size. 
+.RE
+.PP
+
+.SS "virtual ost::ThreadQueue::~ThreadQueue ()\fC [virtual]\fP"
+.PP
+Destroy the queue. 
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void ost::ThreadQueue::final ()\fC [protected, virtual]\fP"
+.PP
+Reimplemented from \fBost::Thread\fP.
+.SS "virtual void ost::ThreadQueue::onTimer (void)\fC [protected, virtual]\fP"
+.PP
+A derivable method to call when the timout is expired. 
+.SS "void ost::ThreadQueue::post (const void * data, unsigned len)"
+.PP
+Put some unspecified data into this queue. A new qd structure is created and sized to contain a copy of the actual content.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata\fP pointer to data. 
+.br
+\fIlen\fP size of data. 
+.RE
+.PP
+
+.SS "virtual void ost::ThreadQueue::runQueue (void * data)\fC [protected, pure virtual]\fP"
+.PP
+Virtual callback method to handle processing of a queued data items. After the item is processed, it is deleted from memory. We can call multiple instances of runQueue in order if multiple items are waiting.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata\fP item being dequed. 
+.RE
+.PP
+
+.SS "void ost::ThreadQueue::setTimer (\fBtimeout_t\fP timeout)"
+.PP
+Set the queue timeout. When the timer expires, the \fBonTimer()\fP method is called for the thread
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimeout\fP timeout in milliseconds. 
+.RE
+.PP
+
+.SS "virtual void ost::ThreadQueue::startQueue (void)\fC [protected, virtual]\fP"
+.PP
+Start of dequeing. Maybe we need to connect a database or something, so we have a virtual... 
+.SS "virtual void ost::ThreadQueue::stopQueue (void)\fC [protected, virtual]\fP"
+.PP
+End of dequeing, we expect the queue is empty for now. Maybe we need to disconnect a database or something, so we have another virtual. 
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBdata_t\fP* \fBost::ThreadQueue::first\fP\fC [protected]\fP"
+.SS "\fBdata_t\fP * \fBost::ThreadQueue::last\fP\fC [protected]\fP"
+.SS "\fBString\fP \fBost::ThreadQueue::name\fP\fC [protected]\fP"
+.SS "bool \fBost::ThreadQueue::started\fP\fC [protected]\fP"
+.SS "\fBtimeout_t\fP \fBost::ThreadQueue::timeout\fP\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

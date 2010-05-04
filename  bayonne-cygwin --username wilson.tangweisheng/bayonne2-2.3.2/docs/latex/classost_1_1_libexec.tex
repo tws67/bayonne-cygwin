@@ -1,0 +1,432 @@
+\section{ost::Libexec Class Reference}
+\label{classost_1_1_libexec}\index{ost::Libexec@{ost::Libexec}}
+
+
+Container class for applications implimenting the libexec process method of \doxyref{Bayonne}{p.}{classost_1_1_bayonne} interfacing.  
+
+
+{\ttfamily \#include $<$libexec.h$>$}Inheritance diagram for ost::Libexec::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classost_1_1_libexec}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Libexec} ()
+\begin{DoxyCompactList}\small\item\em Initialize libexec. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getEnv} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em Get a header record item. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getArg} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em Get a named libexec command line argument. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getPath} (const char $\ast$filename, char $\ast$buffer, unsigned size)
+\begin{DoxyCompactList}\small\item\em Get a fully qualified and resolved pathname. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getFile} (const char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em Get and verify partial pathname for file oriented libexec commands. \item\end{DoxyCompactList}\item 
+void {\bf setVoice} (const char $\ast${\bf voice})
+\begin{DoxyCompactList}\small\item\em Set the effective voice library to use. \item\end{DoxyCompactList}\item 
+void {\bf setLevel} (Audio::Level {\bf level})
+\begin{DoxyCompactList}\small\item\em Set the effective audio level for tones. \item\end{DoxyCompactList}\item 
+void {\bf hangupSession} (void)
+\begin{DoxyCompactList}\small\item\em Hangup running session. \item\end{DoxyCompactList}\item 
+void {\bf detachSession} (unsigned code)
+\begin{DoxyCompactList}\small\item\em Resume server session, libexec continues detached. \item\end{DoxyCompactList}\item 
+{\bf result\_\-t} {\bf sendCommand} (const char $\ast$text, char $\ast$buffer=NULL, unsigned size=0)
+\begin{DoxyCompactList}\small\item\em Send a command through to server and capture result. \item\end{DoxyCompactList}\item 
+{\bf result\_\-t} {\bf sendResult} (const char $\ast$text)
+\begin{DoxyCompactList}\small\item\em Send a result to the server. \item\end{DoxyCompactList}\item 
+void {\bf sendError} (const char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Send an error to the server. \item\end{DoxyCompactList}\item 
+{\bf result\_\-t} {\bf xferCall} (const char $\ast$dest)
+\begin{DoxyCompactList}\small\item\em Transfer a call. \item\end{DoxyCompactList}\item 
+{\bf result\_\-t} {\bf replayFile} (const char $\ast$file)
+\begin{DoxyCompactList}\small\item\em Replay an audio file. \item\end{DoxyCompactList}\item 
+{\bf result\_\-t} {\bf replayOffset} (const char $\ast$file, const char $\ast$offset)
+\begin{DoxyCompactList}\small\item\em Replay an audio file from a specified offset. \item\end{DoxyCompactList}\item 
+{\bf result\_\-t} {\bf recordFile} (const char $\ast$file, timeout\_\-t duration, timeout\_\-t silence=0)
+\begin{DoxyCompactList}\small\item\em Record an audio file. \item\end{DoxyCompactList}\item 
+{\bf result\_\-t} {\bf speak} (const char $\ast$format,...)
+\begin{DoxyCompactList}\small\item\em Play a phrase. \item\end{DoxyCompactList}\item 
+{\bf result\_\-t} {\bf playTone} (const char $\ast$name, timeout\_\-t duration=0, unsigned {\bf level}=0)
+\begin{DoxyCompactList}\small\item\em Play a tone. \item\end{DoxyCompactList}\item 
+{\bf result\_\-t} {\bf playSingleTone} (short f1, timeout\_\-t duration, unsigned {\bf level}=0)
+\item 
+{\bf result\_\-t} {\bf playDualTone} (short f1, short f2, timeout\_\-t duration, unsigned {\bf level}=0)
+\item 
+{\bf result\_\-t} {\bf recordOffset} (const char $\ast$file, const char $\ast$offset, timeout\_\-t duration, timeout\_\-t silence=0)
+\begin{DoxyCompactList}\small\item\em Record an audio file to a specified offset. \item\end{DoxyCompactList}\item 
+{\bf result\_\-t} {\bf eraseFile} (const char $\ast$file)
+\begin{DoxyCompactList}\small\item\em Erase an audio file. \item\end{DoxyCompactList}\item 
+{\bf result\_\-t} {\bf moveFile} (const char $\ast$file1, const char $\ast$file2)
+\begin{DoxyCompactList}\small\item\em Move an audio file. \item\end{DoxyCompactList}\item 
+{\bf result\_\-t} {\bf clearInput} (void)
+\begin{DoxyCompactList}\small\item\em Flush input. \item\end{DoxyCompactList}\item 
+bool {\bf waitInput} (timeout\_\-t timeout)
+\begin{DoxyCompactList}\small\item\em Wait for input. \item\end{DoxyCompactList}\item 
+{\bf result\_\-t} {\bf readInput} (char $\ast$buffer, unsigned size, timeout\_\-t timeout)
+\begin{DoxyCompactList}\small\item\em Read a line of input. \item\end{DoxyCompactList}\item 
+char {\bf readKey} (timeout\_\-t timeout)
+\begin{DoxyCompactList}\small\item\em Read a single key of input. \item\end{DoxyCompactList}\item 
+{\bf result\_\-t} {\bf sizeSym} (const char $\ast$id, unsigned size)
+\item 
+{\bf result\_\-t} {\bf addSym} (const char $\ast$id, const char $\ast$value)
+\item 
+{\bf result\_\-t} {\bf setSym} (const char $\ast$id, const char $\ast$value)
+\item 
+{\bf result\_\-t} {\bf getSym} (const char $\ast$id, char $\ast$buf, unsigned size)
+\item 
+void {\bf postSym} (const char $\ast$id, const char $\ast$value)
+\begin{DoxyCompactList}\small\item\em Post a symbol asychrononous event to server. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf result\_\-t} {\bf result}
+\item 
+char {\bf digits} [64]
+\item 
+char {\bf query} [512]
+\item 
+char {\bf position} [32]
+\item 
+unsigned {\bf exitcode}
+\item 
+unsigned {\bf reply}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Keydata {\bf head}
+\item 
+Keydata {\bf args}
+\item 
+const char $\ast$ {\bf tsid}
+\item 
+const char $\ast$ {\bf voice}
+\item 
+Audio::Level {\bf level}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Container class for applications implimenting the libexec process method of \doxyref{Bayonne}{p.}{classost_1_1_bayonne} interfacing. This is intended for writing external apps and is neatly tucked away into libbayonne as well.
+
+\begin{DoxyAuthor}{Author}
+David Sugar $<${\tt dyfet@gnutelephony.org}$>$ \doxyref{Libexec}{p.}{classost_1_1_libexec} process interface class. 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::Libexec@{ost::Libexec}!Libexec@{Libexec}}
+\index{Libexec@{Libexec}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{Libexec}]{\setlength{\rightskip}{0pt plus 5cm}ost::Libexec::Libexec ()}\label{classost_1_1_libexec_aec1377cdd29eb9c1f84077ea41afab24}
+
+
+Initialize libexec. 
+
+\subsection{Member Function Documentation}
+\index{ost::Libexec@{ost::Libexec}!addSym@{addSym}}
+\index{addSym@{addSym}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{addSym}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\_\-t} ost::Libexec::addSym (const char $\ast$ {\em id}, \/  const char $\ast$ {\em value})}\label{classost_1_1_libexec_a66da06a395c081f0487bb579ff5d3667}
+\index{ost::Libexec@{ost::Libexec}!clearInput@{clearInput}}
+\index{clearInput@{clearInput}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{clearInput}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\_\-t} ost::Libexec::clearInput (void)}\label{classost_1_1_libexec_a74579af8af7373ae36e8ba90c5ec1dba}
+
+
+Flush input. \index{ost::Libexec@{ost::Libexec}!detachSession@{detachSession}}
+\index{detachSession@{detachSession}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{detachSession}]{\setlength{\rightskip}{0pt plus 5cm}void ost::Libexec::detachSession (unsigned {\em code})}\label{classost_1_1_libexec_ae29b34d1e8d17883271a1bcacdc53715}
+
+
+Resume server session, libexec continues detached. \index{ost::Libexec@{ost::Libexec}!eraseFile@{eraseFile}}
+\index{eraseFile@{eraseFile}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{eraseFile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\_\-t} ost::Libexec::eraseFile (const char $\ast$ {\em file})}\label{classost_1_1_libexec_ac3669ba456567e49cf7d9f50d567c5d3}
+
+
+Erase an audio file. \begin{DoxyReturn}{Returns}
+result code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]of file to erase. \end{DoxyParams}
+\index{ost::Libexec@{ost::Libexec}!getArg@{getArg}}
+\index{getArg@{getArg}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{getArg}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::Libexec::getArg (const char $\ast$ {\em id})}\label{classost_1_1_libexec_a8d957abcb470ec556389349c5b552e6b}
+
+
+Get a named libexec command line argument. 
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]of libexec argument. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string value of requested argument or NULL. 
+\end{DoxyReturn}
+\index{ost::Libexec@{ost::Libexec}!getEnv@{getEnv}}
+\index{getEnv@{getEnv}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{getEnv}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::Libexec::getEnv (const char $\ast$ {\em id})}\label{classost_1_1_libexec_aae0cd99dfcc7ff0ff0210c51e136bcf2}
+
+
+Get a header record item. 
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]of header or sys env item. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string value of requested item or NULL. 
+\end{DoxyReturn}
+\index{ost::Libexec@{ost::Libexec}!getFile@{getFile}}
+\index{getFile@{getFile}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{getFile}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::Libexec::getFile (const char $\ast$ {\em filename})}\label{classost_1_1_libexec_aa6a4d321c147aef5927dd9bea2f17798}
+
+
+Get and verify partial pathname for file oriented libexec commands. \begin{DoxyReturn}{Returns}
+pointer to buffer or NULL if invalid. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em filename}]path to evaluate. \end{DoxyParams}
+\index{ost::Libexec@{ost::Libexec}!getPath@{getPath}}
+\index{getPath@{getPath}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{getPath}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::Libexec::getPath (const char $\ast$ {\em filename}, \/  char $\ast$ {\em buffer}, \/  unsigned {\em size})}\label{classost_1_1_libexec_a0a9b8c24216cf02fdbec2563952ab176}
+
+
+Get a fully qualified and resolved pathname. \begin{DoxyReturn}{Returns}
+pointer to buffer or NULL if invalid. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em filename}]path to evaluate. \item[{\em buffer}]to save into. \item[{\em size}]of buffer. \end{DoxyParams}
+\index{ost::Libexec@{ost::Libexec}!getSym@{getSym}}
+\index{getSym@{getSym}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{getSym}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\_\-t} ost::Libexec::getSym (const char $\ast$ {\em id}, \/  char $\ast$ {\em buf}, \/  unsigned {\em size})}\label{classost_1_1_libexec_a05fd94232fbaeeede50f78ec00b22c0b}
+\index{ost::Libexec@{ost::Libexec}!hangupSession@{hangupSession}}
+\index{hangupSession@{hangupSession}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{hangupSession}]{\setlength{\rightskip}{0pt plus 5cm}void ost::Libexec::hangupSession (void)}\label{classost_1_1_libexec_aeb037543e27ecc986ead437ddb6be194}
+
+
+Hangup running session. .. \index{ost::Libexec@{ost::Libexec}!moveFile@{moveFile}}
+\index{moveFile@{moveFile}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{moveFile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\_\-t} ost::Libexec::moveFile (const char $\ast$ {\em file1}, \/  const char $\ast$ {\em file2})}\label{classost_1_1_libexec_a92be105a89ee5b91636f4fbf2039741d}
+
+
+Move an audio file. \begin{DoxyReturn}{Returns}
+result code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]of file to move. \item[{\em destination}]of move. \end{DoxyParams}
+\index{ost::Libexec@{ost::Libexec}!playDualTone@{playDualTone}}
+\index{playDualTone@{playDualTone}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{playDualTone}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\_\-t} ost::Libexec::playDualTone (short {\em f1}, \/  short {\em f2}, \/  timeout\_\-t {\em duration}, \/  unsigned {\em level} = {\ttfamily 0})}\label{classost_1_1_libexec_a4bc30fdeb04d047348d58cae0a2300a9}
+\index{ost::Libexec@{ost::Libexec}!playSingleTone@{playSingleTone}}
+\index{playSingleTone@{playSingleTone}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{playSingleTone}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\_\-t} ost::Libexec::playSingleTone (short {\em f1}, \/  timeout\_\-t {\em duration}, \/  unsigned {\em level} = {\ttfamily 0})}\label{classost_1_1_libexec_a0c58a70ad1e15ac19885185242a14a14}
+\index{ost::Libexec@{ost::Libexec}!playTone@{playTone}}
+\index{playTone@{playTone}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{playTone}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\_\-t} ost::Libexec::playTone (const char $\ast$ {\em name}, \/  timeout\_\-t {\em duration} = {\ttfamily 0}, \/  unsigned {\em level} = {\ttfamily 0})}\label{classost_1_1_libexec_a725488a1b479b1ee5c780ab878060315}
+
+
+Play a tone. \begin{DoxyReturn}{Returns}
+result code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]of tone to play. \item[{\em duration}]for tone. \item[{\em audio}]level of tone. \end{DoxyParams}
+\index{ost::Libexec@{ost::Libexec}!postSym@{postSym}}
+\index{postSym@{postSym}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{postSym}]{\setlength{\rightskip}{0pt plus 5cm}void ost::Libexec::postSym (const char $\ast$ {\em id}, \/  const char $\ast$ {\em value})}\label{classost_1_1_libexec_abd659d8d6c9f2c36203cdfc03563b83f}
+
+
+Post a symbol asychrononous event to server. This sets the symbol value, and also generates a :symname event.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]of symbol to post. \item[{\em value}]of symbol. \end{DoxyParams}
+\index{ost::Libexec@{ost::Libexec}!readInput@{readInput}}
+\index{readInput@{readInput}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{readInput}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\_\-t} ost::Libexec::readInput (char $\ast$ {\em buffer}, \/  unsigned {\em size}, \/  timeout\_\-t {\em timeout})}\label{classost_1_1_libexec_aab5543829200ed67e37183456c77481a}
+
+
+Read a line of input. \begin{DoxyReturn}{Returns}
+result code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]buffer. \item[{\em size}]of input buffer. \item[{\em timeout}]for input. \end{DoxyParams}
+\index{ost::Libexec@{ost::Libexec}!readKey@{readKey}}
+\index{readKey@{readKey}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{readKey}]{\setlength{\rightskip}{0pt plus 5cm}char ost::Libexec::readKey (timeout\_\-t {\em timeout})}\label{classost_1_1_libexec_a7ddc702df0f11bd960fd29838429c51a}
+
+
+Read a single key of input. \begin{DoxyReturn}{Returns}
+key input or 0. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em timeout}]for read. \end{DoxyParams}
+\index{ost::Libexec@{ost::Libexec}!recordFile@{recordFile}}
+\index{recordFile@{recordFile}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{recordFile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\_\-t} ost::Libexec::recordFile (const char $\ast$ {\em file}, \/  timeout\_\-t {\em duration}, \/  timeout\_\-t {\em silence} = {\ttfamily 0})}\label{classost_1_1_libexec_a57bacfe93adb8f79dab78872c6b9e187}
+
+
+Record an audio file. \begin{DoxyReturn}{Returns}
+result code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]of file to record. \item[{\em total}]duration of file. \item[{\em optional}]silence detect. \end{DoxyParams}
+\index{ost::Libexec@{ost::Libexec}!recordOffset@{recordOffset}}
+\index{recordOffset@{recordOffset}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{recordOffset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\_\-t} ost::Libexec::recordOffset (const char $\ast$ {\em file}, \/  const char $\ast$ {\em offset}, \/  timeout\_\-t {\em duration}, \/  timeout\_\-t {\em silence} = {\ttfamily 0})}\label{classost_1_1_libexec_aa7805cdcb53e48f9783f269ccba54bee}
+
+
+Record an audio file to a specified offset. \begin{DoxyReturn}{Returns}
+result code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]of file to record. \item[{\em offset}]to record info. \item[{\em total}]duration of file. \item[{\em optional}]silence detect. \end{DoxyParams}
+\index{ost::Libexec@{ost::Libexec}!replayFile@{replayFile}}
+\index{replayFile@{replayFile}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{replayFile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\_\-t} ost::Libexec::replayFile (const char $\ast$ {\em file})}\label{classost_1_1_libexec_a64764e873bb76682a7e61a2942d9fd2a}
+
+
+Replay an audio file. \begin{DoxyReturn}{Returns}
+result code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]of file to play. \end{DoxyParams}
+\index{ost::Libexec@{ost::Libexec}!replayOffset@{replayOffset}}
+\index{replayOffset@{replayOffset}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{replayOffset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\_\-t} ost::Libexec::replayOffset (const char $\ast$ {\em file}, \/  const char $\ast$ {\em offset})}\label{classost_1_1_libexec_aa5ebf8b1d90a5d051239ae0587b281ee}
+
+
+Replay an audio file from a specified offset. \begin{DoxyReturn}{Returns}
+result code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]of file to play. \item[{\em offset}]to play from. \end{DoxyParams}
+\index{ost::Libexec@{ost::Libexec}!sendCommand@{sendCommand}}
+\index{sendCommand@{sendCommand}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{sendCommand}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\_\-t} ost::Libexec::sendCommand (const char $\ast$ {\em text}, \/  char $\ast$ {\em buffer} = {\ttfamily NULL}, \/  unsigned {\em size} = {\ttfamily 0})}\label{classost_1_1_libexec_a7354167b090b25eb230e4a6fd3f4e462}
+
+
+Send a command through to server and capture result. \begin{DoxyReturn}{Returns}
+result code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em command}]to send. \item[{\em optional}]query buffer. \item[{\em optional}]query size. \end{DoxyParams}
+\index{ost::Libexec@{ost::Libexec}!sendError@{sendError}}
+\index{sendError@{sendError}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{sendError}]{\setlength{\rightskip}{0pt plus 5cm}void ost::Libexec::sendError (const char $\ast$ {\em msg})}\label{classost_1_1_libexec_a39a328fefe5a329d5f624bd218ec37ff}
+
+
+Send an error to the server. 
+\begin{DoxyParams}{Parameters}
+\item[{\em error}]msg to send. \end{DoxyParams}
+\index{ost::Libexec@{ost::Libexec}!sendResult@{sendResult}}
+\index{sendResult@{sendResult}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{sendResult}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\_\-t} ost::Libexec::sendResult (const char $\ast$ {\em text})}\label{classost_1_1_libexec_a42d18b0db608a9900445ca745023b006}
+
+
+Send a result to the server. \begin{DoxyReturn}{Returns}
+result code from server. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em result}]to send. \end{DoxyParams}
+\index{ost::Libexec@{ost::Libexec}!setLevel@{setLevel}}
+\index{setLevel@{setLevel}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{setLevel}]{\setlength{\rightskip}{0pt plus 5cm}void ost::Libexec::setLevel (Audio::Level {\em level})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_libexec_a685d42a093006259e5b89cfff5e373db}
+
+
+Set the effective audio level for tones. ..
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em level}]to set. \end{DoxyParams}
+\index{ost::Libexec@{ost::Libexec}!setSym@{setSym}}
+\index{setSym@{setSym}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{setSym}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\_\-t} ost::Libexec::setSym (const char $\ast$ {\em id}, \/  const char $\ast$ {\em value})}\label{classost_1_1_libexec_a633880b254ac781ea382934b91768d23}
+\index{ost::Libexec@{ost::Libexec}!setVoice@{setVoice}}
+\index{setVoice@{setVoice}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{setVoice}]{\setlength{\rightskip}{0pt plus 5cm}void ost::Libexec::setVoice (const char $\ast$ {\em voice})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_libexec_a97f4983a3babee380f25b7fea440d535}
+
+
+Set the effective voice library to use. 
+\begin{DoxyParams}{Parameters}
+\item[{\em voice}]to set or NULL for default. \end{DoxyParams}
+\index{ost::Libexec@{ost::Libexec}!sizeSym@{sizeSym}}
+\index{sizeSym@{sizeSym}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{sizeSym}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\_\-t} ost::Libexec::sizeSym (const char $\ast$ {\em id}, \/  unsigned {\em size})}\label{classost_1_1_libexec_ac9133c0f1a023ed75272030d1aefe12a}
+\index{ost::Libexec@{ost::Libexec}!speak@{speak}}
+\index{speak@{speak}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{speak}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\_\-t} ost::Libexec::speak (const char $\ast$ {\em format}, \/   {\em ...})}\label{classost_1_1_libexec_ac927c7c90c44b2e1c2055e52fc507bac}
+
+
+Play a phrase. \begin{DoxyReturn}{Returns}
+result code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em text}]of phrase to play. \end{DoxyParams}
+\index{ost::Libexec@{ost::Libexec}!waitInput@{waitInput}}
+\index{waitInput@{waitInput}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{waitInput}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::Libexec::waitInput (timeout\_\-t {\em timeout})}\label{classost_1_1_libexec_a1bd808277808939e0276f5de163b7c49}
+
+
+Wait for input. \begin{DoxyReturn}{Returns}
+true if input waiting. 
+\end{DoxyReturn}
+\index{ost::Libexec@{ost::Libexec}!xferCall@{xferCall}}
+\index{xferCall@{xferCall}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{xferCall}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\_\-t} ost::Libexec::xferCall (const char $\ast$ {\em dest})}\label{classost_1_1_libexec_ad20d97d1b930ac9741e9df13db345660}
+
+
+Transfer a call. \begin{DoxyReturn}{Returns}
+result code from server. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em destination}]to transfer. \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\index{ost::Libexec@{ost::Libexec}!args@{args}}
+\index{args@{args}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{args}]{\setlength{\rightskip}{0pt plus 5cm}Keydata {\bf ost::Libexec::args}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_libexec_a74e29898c59b2ba875f0b46319969d13}
+\index{ost::Libexec@{ost::Libexec}!digits@{digits}}
+\index{digits@{digits}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{digits}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::Libexec::digits}[64]}\label{classost_1_1_libexec_a72864bce15680d66322ba8118dd04314}
+\index{ost::Libexec@{ost::Libexec}!exitcode@{exitcode}}
+\index{exitcode@{exitcode}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{exitcode}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::Libexec::exitcode}}\label{classost_1_1_libexec_a9ce38cd5331268abd7640628186bee83}
+\index{ost::Libexec@{ost::Libexec}!head@{head}}
+\index{head@{head}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{head}]{\setlength{\rightskip}{0pt plus 5cm}Keydata {\bf ost::Libexec::head}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_libexec_ad64e4d1ab359a3cb3861cfd034bf1bf9}
+\index{ost::Libexec@{ost::Libexec}!level@{level}}
+\index{level@{level}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{level}]{\setlength{\rightskip}{0pt plus 5cm}Audio::Level {\bf ost::Libexec::level}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_libexec_a173be0c77e6b16e8c604ac83aa11afe4}
+\index{ost::Libexec@{ost::Libexec}!position@{position}}
+\index{position@{position}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::Libexec::position}[32]}\label{classost_1_1_libexec_a517832d97070bc944e19e3a3dc06c6c8}
+\index{ost::Libexec@{ost::Libexec}!query@{query}}
+\index{query@{query}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{query}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf ost::Libexec::query}[512]}\label{classost_1_1_libexec_ae3b0f14f99301263f6fa8b6e8dc00d1d}
+\index{ost::Libexec@{ost::Libexec}!reply@{reply}}
+\index{reply@{reply}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{reply}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::Libexec::reply}}\label{classost_1_1_libexec_a71fca7fa18d3bac5e11d2c4611c0a3cd}
+\index{ost::Libexec@{ost::Libexec}!result@{result}}
+\index{result@{result}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{result}]{\setlength{\rightskip}{0pt plus 5cm}{\bf result\_\-t} {\bf ost::Libexec::result}}\label{classost_1_1_libexec_a14ce98c15a6dd3285ba0b1e9d76fb715}
+\index{ost::Libexec@{ost::Libexec}!tsid@{tsid}}
+\index{tsid@{tsid}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{tsid}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Libexec::tsid}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_libexec_a7784bac37225f09f82b48054a51f3659}
+\index{ost::Libexec@{ost::Libexec}!voice@{voice}}
+\index{voice@{voice}!ost::Libexec@{ost::Libexec}}
+\subsubsection[{voice}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::Libexec::voice}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_libexec_a5e18258beaa75e42d3beb25584a13a1b}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf libexec.h}\end{DoxyCompactItemize}

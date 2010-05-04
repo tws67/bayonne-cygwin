@@ -1,0 +1,98 @@
+\section{ost::ScriptEngine Class Reference}
+\label{classost_1_1_script_engine}\index{ost::ScriptEngine@{ost::ScriptEngine}}
+
+
+Offers interface bridge for embedded scripting engines through an abstract interface.  
+
+
+{\ttfamily \#include $<$bayonne.h$>$}\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool {\bf signalEngine} ({\bf Bayonne::signal\_\-t} signal)=0
+\begin{DoxyCompactList}\small\item\em Signal bridge about \doxyref{Bayonne}{p.}{classost_1_1_bayonne} signal event. \item\end{DoxyCompactList}\item 
+virtual void {\bf releaseEngine} (void)=0
+\begin{DoxyCompactList}\small\item\em Release bridge session because we moved. \item\end{DoxyCompactList}\item 
+virtual void {\bf disconnectEngine} (void)=0
+\begin{DoxyCompactList}\small\item\em Disconnect bridge session for hangup/stopping of processing. \item\end{DoxyCompactList}\item 
+virtual bool {\bf stepEngine} (void)=0
+\begin{DoxyCompactList}\small\item\em Step notification, often used to signal completion handler so bridge can change state of \doxyref{Bayonne}{p.}{classost_1_1_bayonne} engine and then wait for completion by notification at running state again. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$ScriptEngine} ()=0
+\begin{DoxyCompactList}\small\item\em If not detached thread we may delete it ourselves. \item\end{DoxyCompactList}\item 
+void {\bf clearEngine} ({\bf BayonneSession} $\ast$s)
+\item 
+void {\bf setEngine} ({\bf BayonneSession} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Set vm session. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \_\-\_\-EXPORT {\bf BayonneSession}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Offers interface bridge for embedded scripting engines through an abstract interface. This may be used to support calling of integrated virtual machines, etc.
+
+\begin{DoxyAuthor}{Author}
+David Sugar $<${\tt dyfet@gnutelephony.org}$>$ vm scripting interface bridge. 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::ScriptEngine@{ost::ScriptEngine}!$\sim$ScriptEngine@{$\sim$ScriptEngine}}
+\index{$\sim$ScriptEngine@{$\sim$ScriptEngine}!ost::ScriptEngine@{ost::ScriptEngine}}
+\subsubsection[{$\sim$ScriptEngine}]{\setlength{\rightskip}{0pt plus 5cm}virtual ost::ScriptEngine::$\sim$ScriptEngine ()\hspace{0.3cm}{\ttfamily  [protected, pure virtual]}}\label{classost_1_1_script_engine_a4c117736ce572497dcea56c81f202a0e}
+
+
+If not detached thread we may delete it ourselves. 
+
+\subsection{Member Function Documentation}
+\index{ost::ScriptEngine@{ost::ScriptEngine}!clearEngine@{clearEngine}}
+\index{clearEngine@{clearEngine}!ost::ScriptEngine@{ost::ScriptEngine}}
+\subsubsection[{clearEngine}]{\setlength{\rightskip}{0pt plus 5cm}void ost::ScriptEngine::clearEngine ({\bf BayonneSession} $\ast$ {\em s})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classost_1_1_script_engine_a2f854921987756d1b01ae66146cfb27f}
+\index{ost::ScriptEngine@{ost::ScriptEngine}!disconnectEngine@{disconnectEngine}}
+\index{disconnectEngine@{disconnectEngine}!ost::ScriptEngine@{ost::ScriptEngine}}
+\subsubsection[{disconnectEngine}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::ScriptEngine::disconnectEngine (void)\hspace{0.3cm}{\ttfamily  [protected, pure virtual]}}\label{classost_1_1_script_engine_a25e2dd7beb3022cd6b046ac69177cfd4}
+
+
+Disconnect bridge session for hangup/stopping of processing. If detached thread, then should also NULL the vm pointer. \index{ost::ScriptEngine@{ost::ScriptEngine}!releaseEngine@{releaseEngine}}
+\index{releaseEngine@{releaseEngine}!ost::ScriptEngine@{ost::ScriptEngine}}
+\subsubsection[{releaseEngine}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::ScriptEngine::releaseEngine (void)\hspace{0.3cm}{\ttfamily  [protected, pure virtual]}}\label{classost_1_1_script_engine_ab1464c984ae4049a616f42e780caf1d8}
+
+
+Release bridge session because we moved. If detached thread then should also NULL the vm pointer. \index{ost::ScriptEngine@{ost::ScriptEngine}!setEngine@{setEngine}}
+\index{setEngine@{setEngine}!ost::ScriptEngine@{ost::ScriptEngine}}
+\subsubsection[{setEngine}]{\setlength{\rightskip}{0pt plus 5cm}void ost::ScriptEngine::setEngine ({\bf BayonneSession} $\ast$ {\em s})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classost_1_1_script_engine_a36a15940e98b8cc0c3237e84db44e6e1}
+
+
+Set vm session. \index{ost::ScriptEngine@{ost::ScriptEngine}!signalEngine@{signalEngine}}
+\index{signalEngine@{signalEngine}!ost::ScriptEngine@{ost::ScriptEngine}}
+\subsubsection[{signalEngine}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::ScriptEngine::signalEngine ({\bf Bayonne::signal\_\-t} {\em signal})\hspace{0.3cm}{\ttfamily  [protected, pure virtual]}}\label{classost_1_1_script_engine_a81d003e1e0a829c345f636bebc2955d2}
+
+
+Signal bridge about \doxyref{Bayonne}{p.}{classost_1_1_bayonne} signal event. 
+\begin{DoxyParams}{Parameters}
+\item[{\em bayonne}]signal event \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if claimed by scripting engine 
+\end{DoxyReturn}
+\index{ost::ScriptEngine@{ost::ScriptEngine}!stepEngine@{stepEngine}}
+\index{stepEngine@{stepEngine}!ost::ScriptEngine@{ost::ScriptEngine}}
+\subsubsection[{stepEngine}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::ScriptEngine::stepEngine (void)\hspace{0.3cm}{\ttfamily  [protected, pure virtual]}}\label{classost_1_1_script_engine_a53a32f537699367cc56bd33e326c17c3}
+
+
+Step notification, often used to signal completion handler so bridge can change state of \doxyref{Bayonne}{p.}{classost_1_1_bayonne} engine and then wait for completion by notification at running state again. Hence we often use a Common C++ \char`\"{}Event\char`\"{} object for completion notify.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em true}]if to continue step counter also. \end{DoxyParams}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{ost::ScriptEngine@{ost::ScriptEngine}!BayonneSession@{BayonneSession}}
+\index{BayonneSession@{BayonneSession}!ost::ScriptEngine@{ost::ScriptEngine}}
+\subsubsection[{BayonneSession}]{\setlength{\rightskip}{0pt plus 5cm}friend class \_\-\_\-EXPORT {\bf BayonneSession}\hspace{0.3cm}{\ttfamily  [friend]}}\label{classost_1_1_script_engine_a59728bba507bfe559a76d72b50766072}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf bayonne.h}\end{DoxyCompactItemize}

@@ -1,0 +1,120 @@
+%% Copyright (C) 2005 Tycho Softworks.
+%%
+%% This file is free software; as a special exception the author gives
+%% unlimited permission to copy and/or distribute it, with or without
+%% modifications, as long as this notice is preserved.
+%%
+%% This program is distributed in the hope that it will be useful, but
+%% WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
+%% implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+%%
+%% This is libexec script definitions
+
+%% strip silence from audio file
+macro audiostrip
+	keywords file prefix extension
+	define %extension="" %prefix="" 
+
+	case !defined %file
+		error "file-missing"
+		return
+	endcase
+	writepath %path %file prefix=%prefix extension=%extension
+	if !empty %path then libexec lib::audio_strip.sh %path
+	return
+
+%% annotate an audio file
+macro annotate
+	keywords text file prefix extension
+	define %extension="" %prefix=""
+	
+	begin
+	case !defined %text
+		error "text-missing"
+		return 
+	case !defined %file
+		error "file-missing"
+		return
+	otherwise
+		writepath %path %file prefix=%prefix extension=%extension
+	endcase
+	if !empty %path then libexec lib::audio_note.sh %path %text
+	return
+
+%% trim audio file
+macro audiotrim
+	keywords padding file prefix extension
+	define %padding=2 %extension="" %prefix=""
+	begin
+	case !defined %file
+		error "file-missing"
+		return
+	otherwise
+		writepath %path %file prefix=%prefix extension=%extension
+	endcase
+	if !empty %path then libexec lib::audio_trim.sh %path %padding
+	return
+
+%% send short email message, optional file attachment
+macro sendmail
+	keywords text from to cc subject reply file extension prefix
+	define %from=$smtp.from %extension="" %prefix="" %tmp:96 \
+		%cc="" %subject="Bayonne Server" %reply=""
+
+	begin
+		const %msg "tmp:msg-" %session.index {.txt}
+		writepath %tmp %msg 
+	case !defined %text 
+		error "text-missing"
+		return
+	case !defined %to
+		error "to-missing"
+		return
+	endcase
+	begin
+	case !defined %file
+		const %path ""
+	otherwise
+		writepath %path %file extension=%extension prefix=%prefix
+		if -empty %path then return
+	endcase
+	erase %msg
+	write %msg %text
+	libexec limit=$smtp.limit lib::sys_sendmail.sh \
+		%tmp %to %cc %from %subject  %reply %path
+	return
+
+%% convert a Bayonne audio file into an ogg
+macro ogg
+	keywords prefix file extension
+	define %index=%session.index %extension="" %prefix=""
+
+	begin
+	case !defined %file
+		error "file-missing"
+		return
+	endcase
+	writepath %path %file prefix=%prefix extension=%extension
+	if !empty %path then libexec limit=$libexec.limit lib::sox_ogg.sh %path %index
+	return
+
+%% use uptime results=&xx call by value
+macro uptime
+	keywords results
+	libexec lib::sys_uptime.sh results=&results
+	return
+
+%% use ifconfig results=&xx iface=ethx [address=aaa.bbb.ccc.ddd]
+macro ifconfig
+	keywords results iface address
+	define %address %iface=$libexec.interface
+	libexec lib::sys_ifconfig.sh results=&results %iface %address
+	return
+
+%% use diskspace results=&xx filesystem=/path
+macro diskspace
+	keywords results filesystem
+	define %filesystem=$libexec.filesystem
+	libexec lib::sys_df.sh results=&results %filesystem
+	return
+

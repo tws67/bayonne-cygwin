@@ -1,0 +1,102 @@
+\section{ost Namespace Reference}
+\label{namespaceost}\index{ost@{ost}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf StreamingBuffer}
+\begin{DoxyCompactList}\small\item\em Streaming buffer for audio, to be used in bgm audio sources. \item\end{DoxyCompactList}\item 
+class {\bf StaticKeydata}
+\begin{DoxyCompactList}\small\item\em Bayonnne specific static keydata class. \item\end{DoxyCompactList}\item 
+class {\bf DynamicKeydata}
+\begin{DoxyCompactList}\small\item\em \doxyref{Bayonne}{p.}{classost_1_1_bayonne} specific dynamic keydata class. \item\end{DoxyCompactList}\item 
+class {\bf ReconfigKeydata}
+\begin{DoxyCompactList}\small\item\em \doxyref{Bayonne}{p.}{classost_1_1_bayonne} specific reloaded keydata class. \item\end{DoxyCompactList}\item 
+class {\bf Bayonne}
+\begin{DoxyCompactList}\small\item\em Generic \doxyref{Bayonne}{p.}{classost_1_1_bayonne} master class to reference various useful data types and core static members used for locating resources found in libbayonne. \item\end{DoxyCompactList}\item 
+class {\bf BayonneZeroconf}
+\begin{DoxyCompactList}\small\item\em This class is used to bind services that are to be published with zeroconf, such as by the avahi module. \item\end{DoxyCompactList}\item 
+class {\bf BayonneConfig}
+\begin{DoxyCompactList}\small\item\em A bayonne config class, used for special purposes, especially during script compiles. \item\end{DoxyCompactList}\item 
+class {\bf BayonneTranslator}
+\begin{DoxyCompactList}\small\item\em A core class to support language translation services in \doxyref{Bayonne}{p.}{classost_1_1_bayonne} phrasebook. \item\end{DoxyCompactList}\item 
+class {\bf BayonneAudio}
+\begin{DoxyCompactList}\small\item\em Offers core \doxyref{Bayonne}{p.}{classost_1_1_bayonne} audio processing in a self contained class. \item\end{DoxyCompactList}\item 
+class {\bf BayonneMsgport}
+\begin{DoxyCompactList}\small\item\em \doxyref{Bayonne}{p.}{classost_1_1_bayonne} Msgports are used to queue and post session events which normally have to be passed through another thread context. \item\end{DoxyCompactList}\item 
+class {\bf BayonneDriver}
+\begin{DoxyCompactList}\small\item\em The principle driver node for a given collection of spans and sessions of a given \doxyref{Bayonne}{p.}{classost_1_1_bayonne} driver family type. \item\end{DoxyCompactList}\item 
+class {\bf BayonneSpan}
+\begin{DoxyCompactList}\small\item\em A span is a collection of ports under a single control interface or communication channel, such as a T1/E1/PRI/BRI span. \item\end{DoxyCompactList}\item 
+class {\bf BayonneBinder}
+\begin{DoxyCompactList}\small\item\em An intermediary binder class for \doxyref{Bayonne}{p.}{classost_1_1_bayonne} engine. \item\end{DoxyCompactList}\item 
+class {\bf BayonneSession}
+\begin{DoxyCompactList}\small\item\em The primary session object representing a server timeslot and active communication endpoint in \doxyref{Bayonne}{p.}{classost_1_1_bayonne}. \item\end{DoxyCompactList}\item 
+class {\bf BayonneRPC}
+\begin{DoxyCompactList}\small\item\em \doxyref{Bayonne}{p.}{classost_1_1_bayonne} RPC arguments, may be passed through to binders from webservice sessions for extensions to soap \& xmlrpc services. \item\end{DoxyCompactList}\item 
+class {\bf BayonneService}
+\begin{DoxyCompactList}\small\item\em \doxyref{Bayonne}{p.}{classost_1_1_bayonne} services are used for threaded modules which may be installed at runtime. \item\end{DoxyCompactList}\item 
+class {\bf ScriptEngine}
+\begin{DoxyCompactList}\small\item\em Offers interface bridge for embedded scripting engines through an abstract interface. \item\end{DoxyCompactList}\item 
+class {\bf Libexec}
+\begin{DoxyCompactList}\small\item\em Container class for applications implimenting the libexec process method of \doxyref{Bayonne}{p.}{classost_1_1_bayonne} interfacing. \item\end{DoxyCompactList}\item 
+class {\bf BayonneTSession}
+\item 
+class {\bf BayonneSysexec}
+\begin{DoxyCompactList}\small\item\em Core class for any server which impliments libexec functionality. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\_\-t {\bf xmlwrite} (char $\ast$$\ast$buf, size\_\-t $\ast$max, const char $\ast$fmt,...)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+class \_\-\_\-EXPORT {\bf BayonneMsgport}
+\item 
+class \_\-\_\-EXPORT {\bf BayonneDriver}
+\item 
+class \_\-\_\-EXPORT {\bf BayonneSession}
+\item 
+class \_\-\_\-EXPORT {\bf BayonneSpan}
+\item 
+class \_\-\_\-EXPORT {\bf BayonneService}
+\item 
+class \_\-\_\-EXPORT {\bf BayonneTranslator}
+\item 
+class \_\-\_\-EXPORT {\bf BayonneRPC}
+\item 
+class \_\-\_\-EXPORT {\bf ScriptEngine}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{ost@{ost}!xmlwrite@{xmlwrite}}
+\index{xmlwrite@{xmlwrite}!ost@{ost}}
+\subsubsection[{xmlwrite}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t ost::xmlwrite (char $\ast$$\ast$ {\em buf}, \/  size\_\-t $\ast$ {\em max}, \/  const char $\ast$ {\em fmt}, \/   {\em ...})}\label{namespaceost_a5d65529911dfec883a735e8607b5d57b}
+
+
+\subsection{Variable Documentation}
+\index{ost@{ost}!BayonneDriver@{BayonneDriver}}
+\index{BayonneDriver@{BayonneDriver}!ost@{ost}}
+\subsubsection[{BayonneDriver}]{\setlength{\rightskip}{0pt plus 5cm}class \_\-\_\-EXPORT {\bf ost::BayonneDriver}}\label{namespaceost_a8f88d538e1ecc3a627cf4ad347448af6}
+\index{ost@{ost}!BayonneMsgport@{BayonneMsgport}}
+\index{BayonneMsgport@{BayonneMsgport}!ost@{ost}}
+\subsubsection[{BayonneMsgport}]{\setlength{\rightskip}{0pt plus 5cm}class \_\-\_\-EXPORT {\bf ost::BayonneMsgport}}\label{namespaceost_a3542a21749dbddc24a5726be1b0734a7}
+\index{ost@{ost}!BayonneRPC@{BayonneRPC}}
+\index{BayonneRPC@{BayonneRPC}!ost@{ost}}
+\subsubsection[{BayonneRPC}]{\setlength{\rightskip}{0pt plus 5cm}class \_\-\_\-EXPORT {\bf ost::BayonneRPC}}\label{namespaceost_ad9081a33d9f90c4ae1f1584520eab67a}
+\index{ost@{ost}!BayonneService@{BayonneService}}
+\index{BayonneService@{BayonneService}!ost@{ost}}
+\subsubsection[{BayonneService}]{\setlength{\rightskip}{0pt plus 5cm}class \_\-\_\-EXPORT {\bf ost::BayonneService}}\label{namespaceost_aa6c7aaf8a9ed3308a55c09c01557f1e6}
+\index{ost@{ost}!BayonneSession@{BayonneSession}}
+\index{BayonneSession@{BayonneSession}!ost@{ost}}
+\subsubsection[{BayonneSession}]{\setlength{\rightskip}{0pt plus 5cm}class \_\-\_\-EXPORT {\bf ost::BayonneSession}}\label{namespaceost_ae264ee831272078cc2559ab34eac31b7}
+\index{ost@{ost}!BayonneSpan@{BayonneSpan}}
+\index{BayonneSpan@{BayonneSpan}!ost@{ost}}
+\subsubsection[{BayonneSpan}]{\setlength{\rightskip}{0pt plus 5cm}class \_\-\_\-EXPORT {\bf ost::BayonneSpan}}\label{namespaceost_a73ebdecb9f943b2fcc98ef25e0779357}
+\index{ost@{ost}!BayonneTranslator@{BayonneTranslator}}
+\index{BayonneTranslator@{BayonneTranslator}!ost@{ost}}
+\subsubsection[{BayonneTranslator}]{\setlength{\rightskip}{0pt plus 5cm}class \_\-\_\-EXPORT {\bf ost::BayonneTranslator}}\label{namespaceost_a9f0e8d4daa013b818e54a11b8bdeb01a}
+\index{ost@{ost}!ScriptEngine@{ScriptEngine}}
+\index{ScriptEngine@{ScriptEngine}!ost@{ost}}
+\subsubsection[{ScriptEngine}]{\setlength{\rightskip}{0pt plus 5cm}class \_\-\_\-EXPORT {\bf ost::ScriptEngine}}\label{namespaceost_a28e099ec0a0ac96d4507d03e620ebc35}

@@ -1,0 +1,103 @@
+.TH "ost::HEXdump" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::HEXdump \- 
+.PP
+Produces a dump of a buffer in a hexdump way with its code Ascii translation and relative buffer address.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <applog.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHEXdump\fP (const unsigned char *buffer, int buff_len, int max_len=200)"
+.br
+.RI "\fI\fBHEXdump\fP constructor. \fP"
+.ti -1c
+.RI "virtual \fB~HEXdump\fP ()"
+.br
+.RI "\fI\fBHEXdump\fP destructor. \fP"
+.ti -1c
+.RI "const char * \fBc_str\fP () const "
+.br
+.RI "\fIconst char* cast provided for conveneince. \fP"
+.ti -1c
+.RI "std::string \fBstr\fP ()"
+.br
+.RI "\fIstring cast provided for conveneince. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fB_str\fP"
+.br
+.RI "\fIoutput string \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &out, const \fBHEXdump\fP &hd)"
+.br
+.RI "\fIoperator << \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Produces a dump of a buffer in a hexdump way with its code Ascii translation and relative buffer address. 
+
+For instance: 0000000 - 77 98 21 49 0e 00 05 00 40 1c 01 1c 2f 00 00 00 w.!I....@.../... 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::HEXdump::HEXdump (const unsigned char * buffer, int buff_len, int max_len = \fC200\fP)"
+.PP
+\fBHEXdump\fP constructor. \fBParameters:\fP
+.RS 4
+\fIbuffer\fP buffer to be 'hexdumped' 
+.br
+\fIbuff_len\fP buffer length 
+.br
+\fImax_len\fP max number of bytes to be 'hexdumped'. Usefull to truncate output. mas_len=0 does prints all. 
+.RE
+.PP
+
+.SS "virtual ost::HEXdump::~HEXdump ()\fC [inline, virtual]\fP"
+.PP
+\fBHEXdump\fP destructor. 
+.SH "Member Function Documentation"
+.PP 
+.SS "const char* ost::HEXdump::c_str () const\fC [inline]\fP"
+.PP
+const char* cast provided for conveneince. 
+.SS "std::string ost::HEXdump::str ()\fC [inline]\fP"
+.PP
+string cast provided for conveneince. 
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream & out, const \fBHEXdump\fP & hd)\fC [friend]\fP"
+.PP
+operator << \fBParameters:\fP
+.RS 4
+\fIhd\fP hexdump. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+application logger stream 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::string \fBost::HEXdump::_str\fP\fC [protected]\fP"
+.PP
+output string 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

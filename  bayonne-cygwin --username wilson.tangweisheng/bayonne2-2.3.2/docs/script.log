@@ -1,0 +1,450 @@
+This is pdfeTeXk, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2010.5.2)  3 MAY 2010 19:31
+entering extended mode
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**./script.tex
+(./script.tex
+LaTeX2e <2003/12/01>
+Babel <v3.8d> and hyphenation patterns for american, french, german, ngerman, b
+ahasa, basque, bulgarian, catalan, croatian, czech, danish, dutch, esperanto, e
+stonian, finnish, greek, icelandic, irish, italian, latin, magyar, norsk, polis
+h, portuges, romanian, russian, serbian, slovak, slovene, spanish, swedish, tur
+kish, ukrainian, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2004/02/16 v1.4f Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size12.clo
+File: size12.clo 2004/02/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+
+! LaTeX Error: File `html.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+(/usr/share/texmf/tex/latex/ntgclass/a4.sty
+Package: a4 2004/04/15 v1.2g A4 based page layout
+)
+(/usr/share/texmf/tex/generic/babel/babel.sty
+Package: babel 2004/11/20 v3.8d The Babel package
+
+(/usr/share/texmf/tex/generic/babel/english.ldf
+Language: english 2004/06/14 v3.3o English support from the babel system
+
+(/usr/share/texmf/tex/generic/babel/babel.def
+File: babel.def 2004/11/20 v3.8d Babel common definitions
+\babel@savecnt=\count87
+\U@D=\dimen103
+)
+\l@british = a dialect from \language\l@english 
+\l@UKenglish = a dialect from \language\l@english 
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+(/usr/share/texmf/tex/latex/supertabular/supertabular.sty
+Package: supertabular 2004/02/20 v4.1e the supertabular environment
+\c@tracingst=\count88
+\ST@wd=\dimen104
+\ST@rightskip=\skip43
+\ST@leftskip=\skip44
+\ST@parfillskip=\skip45
+\ST@pageleft=\dimen105
+\ST@headht=\dimen106
+\ST@tailht=\dimen107
+\ST@pagesofar=\dimen108
+\ST@pboxht=\dimen109
+\ST@lineht=\dimen110
+\ST@stretchht=\dimen111
+\ST@prevht=\dimen112
+\ST@toadd=\dimen113
+\ST@dimen=\dimen114
+\ST@pbox=\box26
+)
+(/usr/share/texmf/tex/latex/base/makeidx.sty
+Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
+)
+\@indexfile=\write3
+\openout3 = `script.idx'.
+
+
+Writing index file script.idx
+No file script.aux.
+\openout1 = `script.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 31.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 31.
+No file script.toc.
+\tf@toc=\write4
+\openout4 = `script.toc'.
+
+[1
+
+{/home/WILSON/.texmf/var/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 39--43
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--49
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--58
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--68
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--76
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--90
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 93--99
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--120
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 121--124
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--130
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--140
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--149
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--159
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 162--168
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--175
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--182
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--187
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--195
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 198--203
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--216
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--225
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--235
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 236--244
+
+ []
+
+[6]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 252.
+
+ (/usr/share/texmf/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 252.
+
+Underfull \hbox (badness 10000) in paragraph at lines 247--253
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--262
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--269
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--276
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 277--290
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 291--293
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 300--309
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
+
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 312.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 312.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 312.
+[8] [9]
+Underfull \hbox (badness 10000) in paragraph at lines 359--364
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 365--372
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 375--383
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--389
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 390--395
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--399
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 400--407
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 408--415
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 416--423
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 424--432
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 433--440
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 443--451
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 452--459
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 460--466
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--473
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--478
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 481--488
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 489--493
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--498
+
+ []
+
+[13] [14] [15] [16] [17] [18] [19] [20] [21]
+Overfull \hbox (73.67517pt too wide) in paragraph at lines 966--973
+\OT1/cmr/m/n/12 mean-ing. When us-ing ``pre-fix=memory'', rather then us-ing au
+-dio for /var/lib/bayonne/memory,
+ []
+
+[22] [23] [24]
+Overfull \hbox (35.37329pt too wide) in paragraph at lines 1114--1114
+[]\OT1/cmr/bx/n/12 register.sip \OT1/cmr/m/it/12 [type=mode] [realm=realm] [ser
+ver=proxy] [user=userid] [se-cret=password] 
+ []
+
+[25] [26] [27] [28] [29] [30] [31] [32] [33]
+LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1505.
+
+ [34]
+Overfull \hbox (1.79132pt too wide) in paragraph at lines 1547--1547
+[]\OT1/cmr/bx/it/12 input[] \OT1/cmr/m/it/12 %var [for-mat=mask] [exit=keys] [t
+ime-out=timer] [in-ter-digit=waitafterfirst]
+ []
+
+[35] [36]
+Overfull \hbox (30.90749pt too wide) in paragraph at lines 1658--1658
+[]\OT1/cmr/bx/it/12 record[.vox][] \OT1/cmr/m/it/12 [pre-fix=[path] [off-set=ti
+mestamp] [en-cod-ing=format] [du-ra-tion=maxtime]
+ []
+
+
+Overfull \hbox (7.6372pt too wide) in paragraph at lines 1659--1659
+[]\OT1/cmr/bx/it/12 append[.vox][] \OT1/cmr/m/it/12 [pre-fix=[path] [ex-ten-sio
+n=.ext] [si-lence=detect] [du-ra-tion=maxtime]
+ []
+
+[37]
+Overfull \hbox (48.7747pt too wide) in paragraph at lines 1685--1685
+[]\OT1/cmr/bx/it/12 connect[] \OT1/cmr/m/it/12 num-ber script [caller=num] [dis
+-play="text"] [time-out=timer] [du-ra-tion=jointime]
+ []
+
+[38] [39] [40] [41] [42] [43] [44] [45] [46] [47]
+No file script.ind.
+[48] (./script.aux) )
+(\end occurred inside a group at level 8)
+
+### simple group (level 8) entered at line 1566 ({)
+### simple group (level 7) entered at line 1557 ({)
+### simple group (level 6) entered at line 1328 ({)
+### simple group (level 5) entered at line 1321 ({)
+### simple group (level 4) entered at line 1316 ({)
+### simple group (level 3) entered at line 1309 ({)
+### simple group (level 2) entered at line 1297 ({)
+### simple group (level 1) entered at line 1270 ({)
+### bottom level 
+Here is how much of TeX's memory you used:
+ 708 strings out of 94500
+ 8250 string characters out of 1176767
+ 60394 words of memory out of 1000000
+ 3921 multiletter control sequences out of 10000+50000
+ 10198 words of font info for 36 fonts, out of 500000 for 2000
+ 580 hyphenation exceptions out of 1000
+ 24i,7n,19p,216b,385s stack positions out of 1500i,500n,5000p,200000b,5000s
+PDF statistics:
+ 176 PDF objects out of 300000
+ 0 named destinations out of 131072
+ 1 words of extra memory for PDF output out of 65536
+</usr/share/texmf/fonts/type1/bluesky/cm/cmitt10.pfb></usr/shar
+e/texmf/fonts/type1/bluesky/cm/cmbxti10.pfb></usr/share/texmf/fonts/type1/blues
+ky/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy10.pfb></usr/shar
+e/texmf/fonts/type1/bluesky/cm/cmbx12.pfb></usr/share/texmf/fonts/type1/bluesky
+/cm/cmti12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr12.pfb></usr/share/t
+exmf/fonts/type1/bluesky/cm/cmr17.pfb>
+Output written on script.pdf (48 pages, 197679 bytes).

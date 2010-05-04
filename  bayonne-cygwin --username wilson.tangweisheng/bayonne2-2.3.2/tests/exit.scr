@@ -1,0 +1,30 @@
+%% Copyright (C) 2005 Tycho Softworks.
+%%
+%% This file is free software; as a special exception the author gives
+%% unlimited permission to copy and/or distribute it, with or without
+%% modifications, as long as this notice is preserved.
+%%
+%% This program is distributed in the hope that it will be useful, but
+%% WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
+%% implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+%%
+%% This is used to test various exit processing scenarios
+
+	%% ignored if no sip driver loaded...
+	register.sip proxy=localhost uri=sip:test@localhost
+
+program main
+        echo hi
+        signal ^exit
+        echo bye
+        exit
+
+# ^exit
+#       echo "exit handler"
+#       exit
+
+program exit
+        echo "exiting redirect"
+        exit
+
+

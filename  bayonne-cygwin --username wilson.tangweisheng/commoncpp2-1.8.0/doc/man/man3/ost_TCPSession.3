@@ -1,0 +1,127 @@
+.TH "ost::TCPSession" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::TCPSession \- 
+.PP
+The TCP session is used to primarily to represent a client connection that can be managed on a seperate thread.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <socket.h>\fP
+.PP
+Inherits \fBost::Thread\fP, and \fBost::TCPStream\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTCPSession\fP (const \fBIPV4Host\fP &host, \fBtpport_t\fP port, size_t size=536, int pri=0, size_t stack=0)"
+.br
+.RI "\fICreate a TCP socket that will be connected to a remote TCP server and that will execute under it's own thread. \fP"
+.ti -1c
+.RI "\fBTCPSession\fP (const \fBIPV6Host\fP &host, \fBtpport_t\fP port, size_t size=536, int pri=0, size_t stack=0)"
+.br
+.ti -1c
+.RI "\fBTCPSession\fP (\fBTCPSocket\fP &server, int pri=0, size_t stack=0)"
+.br
+.RI "\fICreate a TCP socket from a bound TCP server by accepting a pending connection from that server and execute a thread for the accepted connection. \fP"
+.ti -1c
+.RI "\fBTCPSession\fP (\fBTCPV6Socket\fP &server, int pri=0, size_t stack=0)"
+.br
+.ti -1c
+.RI "virtual \fB~TCPSession\fP ()"
+.br
+.RI "\fIMake sure destruction happens through a virtual. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBwaitConnection\fP (\fBtimeout_t\fP \fBtimeout\fP=TIMEOUT_INF)"
+.br
+.RI "\fINormally called during the thread Initial() method by default, this will wait for the socket connection to complete when connecting to a remote socket. \fP"
+.ti -1c
+.RI "void \fBinitial\fP (void)"
+.br
+.RI "\fIThe initial method is used to esablish a connection when delayed completion is used. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The TCP session is used to primarily to represent a client connection that can be managed on a seperate thread. 
+
+The TCP session also supports a non-blocking connection scheme which prevents blocking during the constructor and moving the process of completing a connection into the thread that executes for the session.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> Threaded streamable socket with non-blocking constructor. 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+.PP
+\fBtcpthread.cpp\fP.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::TCPSession::TCPSession (const \fBIPV4Host\fP & host, \fBtpport_t\fP port, size_t size = \fC536\fP, int pri = \fC0\fP, size_t stack = \fC0\fP)"
+.PP
+Create a TCP socket that will be connected to a remote TCP server and that will execute under it's own thread. \fBParameters:\fP
+.RS 4
+\fIhost\fP internet address of remote TCP server. 
+.br
+\fIport\fP number of remote server. 
+.br
+\fIsize\fP of streaming buffer. 
+.br
+\fIpri\fP execution priority relative to parent. 
+.br
+\fIstack\fP allocation needed on some platforms. 
+.RE
+.PP
+
+.SS "ost::TCPSession::TCPSession (const \fBIPV6Host\fP & host, \fBtpport_t\fP port, size_t size = \fC536\fP, int pri = \fC0\fP, size_t stack = \fC0\fP)"
+.SS "ost::TCPSession::TCPSession (\fBTCPSocket\fP & server, int pri = \fC0\fP, size_t stack = \fC0\fP)"
+.PP
+Create a TCP socket from a bound TCP server by accepting a pending connection from that server and execute a thread for the accepted connection. \fBParameters:\fP
+.RS 4
+\fIserver\fP tcp socket to accept a connection from. 
+.br
+\fIpri\fP execution priority relative to parent. 
+.br
+\fIstack\fP allocation needed on some platforms. 
+.RE
+.PP
+
+.SS "ost::TCPSession::TCPSession (\fBTCPV6Socket\fP & server, int pri = \fC0\fP, size_t stack = \fC0\fP)"
+.SS "virtual ost::TCPSession::~TCPSession ()\fC [virtual]\fP"
+.PP
+Make sure destruction happens through a virtual. .. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::TCPSession::initial (void)\fC [protected, virtual]\fP"
+.PP
+The initial method is used to esablish a connection when delayed completion is used. This assures the constructor terminates without having to wait for a connection request to complete. 
+.PP
+Reimplemented from \fBost::Thread\fP.
+.SS "int ost::TCPSession::waitConnection (\fBtimeout_t\fP timeout = \fCTIMEOUT_INF\fP)\fC [protected]\fP"
+.PP
+Normally called during the thread Initial() method by default, this will wait for the socket connection to complete when connecting to a remote socket. One might wish to use \fBsetCompletion()\fP to change the socket back to blocking I/O calls after the connection completes. To implement the session one must create a derived class which implements \fBrun()\fP.
+.PP
+\fBReturns:\fP
+.RS 4
+0 if successful, -1 if timed out. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimeout\fP to wait for completion in milliseconds. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

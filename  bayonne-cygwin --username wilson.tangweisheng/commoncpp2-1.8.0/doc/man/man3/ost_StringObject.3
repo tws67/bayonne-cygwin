@@ -1,0 +1,49 @@
+.TH "ost::StringObject" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::StringObject \- 
+.PP
+The \fBStringObject\fP class is used to derive subclasses that use the \fBString\fP managed memory pool for all space allocations by overriding new and delete operators.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <string.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void * \fBoperator new\fP (size_t size)  throw ()"
+.br
+.RI "\fICreate a new object in string managed space. \fP"
+.ti -1c
+.RI "void \fBoperator delete\fP (void *obj)"
+.br
+.RI "\fIDelete object from string managed space. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBStringObject\fP class is used to derive subclasses that use the \fBString\fP managed memory pool for all space allocations by overriding new and delete operators. 
+
+Due to size limits, \fBStringObject\fP should not hold very large objects.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> Objects managed in reusable \fBString\fP memory pools 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::StringObject::operator delete (void * obj)"
+.PP
+Delete object from string managed space. 
+.SS "void* ost::StringObject::operator new (size_t size)  throw ()"
+.PP
+Create a new object in string managed space. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

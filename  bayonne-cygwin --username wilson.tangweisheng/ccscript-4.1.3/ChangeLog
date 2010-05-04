@@ -1,0 +1,62 @@
+From ccscript 4.1.2 to 4.1.3
+- added support for cmake builds.
+
+From ccscript 4.1.1 to 4.1.2
+- abi expansion to accomidate both const and non-const string processing.
+
+From ccscript 4.1.0 to 4.1.1
+- fixed install of scripts.
+- man page for ccscript-config.
+
+From ccscript 4.0.5 to 4.1.0
+- use of %var[xx] for array access!  Internally same as $find/xx:var for
+  named dictionaries and $offset/xx:var for numeric offsets.
+- use of %var(xx) for offset access.  Interally becomes $index/xx:var.
+- use of %var<xx> for "mapping" %xx as array index.
+- new $map/xx:var dictionary/offset search using the value of mapped sym xx.
+- correct compiler restrictions when using special if-then clauses.
+- pre-increment and pre-decrement can now be done with ++%var and --%var.
+- pull/pop declation as <<%xx and >>%var (same as $pull:var and $pop:var).
+- local method calls added, very useful in templates for common code blocks.
+- expr handling fixed and extended for direct symbol assignment.
+- "immediate expressions" shortcut for format operations by reference.
+- '#' is now a "mod" operator; cannot be used as comment, only %% and // now.
+
+From ccscript 4.0.5 to 4.0.6
+- merged compile member function to compose images.
+
+From ccscript 4.0.4 to 4.0.5
+- perl style expression operators for strings (eq, ne, gt, lt, ge, le).
+- support for nested tuples (parenthetic).
+- new expand keyword to unpack tuples into variables.
+- for & foreach consolidated into for with foreach behavior.
+
+From ccscript 4.0.3 to 4.0.4
+- $key: to extract tuple key, $val: can get a tuple value as well as numeric.
+- basic tuple list manipulation, including push, $pop: and $pull:.
+- push keyword to add tuple to end of list cleanly.
+
+From ccscript 4.0.2 to 4.0.3
+- added "requires" to conditionally compile based on keywords available.
+- improved comment extraction with tabs.
+- added list management convenience functions.
+- special symbol "%index" to get index count of current for/foreach loop.
+- added "previous" and "repeat" for use in "for" and "foreach" loops.
+- added "index" command to set index offset in "for" and "foreach" loops. 
+- added optional offset argument to "foreach" command, can auto-reset.
+
+From ccscript 4.0.1 to 4.0.2
+- added "expr" for simple math expressions.
+- simplified internal list processing.
+- added new $offset/x:var expansion for list processing.  If "x" is not pure
+  numeric, then is symbol indexed offset.
+- allow assignment expression syntax with set, for := and +=, for consistency
+  with "expr" command.
+
+From ccscript 4.0.0 to 4.0.1
+- apply command added to allow script "templating".
+- fix for bug when accessing event that does not exist.
+- use of local ^exit to override global @exit
+
+Initial Release 4.0.0
+

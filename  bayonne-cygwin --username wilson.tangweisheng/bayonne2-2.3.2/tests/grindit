@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if test -z "$*" ; then
+	../server/bayonne --valgrind soundcard test.scr
+else
+	../server/bayonne --valgrind soundcard $*
+fi
+
+	

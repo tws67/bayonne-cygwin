@@ -1,0 +1,22 @@
+%% Copyright (C) 2005 Tycho Softworks.
+%%
+%% This file is free software; as a special exception the author gives
+%% unlimited permission to copy and/or distribute it, with or without
+%% modifications, as long as this notice is preserved.
+%%
+%% This program is distributed in the hope that it will be useful, but
+%% WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
+%% implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+%%
+%% Tests virtual tts engine macro from latest ccscript3!  Will not work
+%% with ccscript < 0.7.3 unless symlinks are used...
+
+	virtual tts		%% this becomes tts_theta, tts_xxx...
+	tts::test
+	case %tts.status == "live"
+		tts::speak text="this is a test of t t s"
+		exit
+	otherwise
+		echo "tts %tts.engine status %tts.status"	
+		exit
+

@@ -1,0 +1,53 @@
+.TH "ost::SemaphoreLock" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::SemaphoreLock \- 
+.PP
+The \fBSemaphoreLock\fP class is used to protect a section of code through a semaphore so that only x instances of the member function may execute concurrently.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <thread.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSemaphoreLock\fP (\fBSemaphore\fP &_sem)"
+.br
+.RI "\fIWait for the semaphore. \fP"
+.ti -1c
+.RI "\fB~SemaphoreLock\fP ()"
+.br
+.RI "\fIPost the semaphore automatically. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBSemaphoreLock\fP class is used to protect a section of code through a semaphore so that only x instances of the member function may execute concurrently. 
+
+A common use is
+.PP
+void func_to_protect() { \fBSemaphoreLock\fP lock(semaphore); ... operation ... }
+.PP
+NOTE: do not declare variable as 'SemaohoreLock (semaphore)', the mutex will be released at statement end.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@gnu.org> \fBSemaphore\fP automatic locker for protected access. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::SemaphoreLock::SemaphoreLock (\fBSemaphore\fP & _sem)\fC [inline]\fP"
+.PP
+Wait for the semaphore. 
+.SS "ost::SemaphoreLock::~SemaphoreLock ()\fC [inline]\fP"
+.PP
+Post the semaphore automatically. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

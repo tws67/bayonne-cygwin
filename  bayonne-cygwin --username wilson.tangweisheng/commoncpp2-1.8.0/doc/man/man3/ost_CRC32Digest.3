@@ -1,0 +1,108 @@
+.TH "ost::CRC32Digest" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::CRC32Digest \- 
+.PP
+A crc32 collection/computation hash accumulator class.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <digest.h>\fP
+.PP
+Inherits \fBost::Digest\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCRC32Digest\fP ()"
+.br
+.ti -1c
+.RI "\fBCRC32Digest\fP (const \fBCRC32Digest\fP &crc)"
+.br
+.ti -1c
+.RI "void \fBinitDigest\fP (void)"
+.br
+.ti -1c
+.RI "unsigned \fBgetSize\fP (void)"
+.br
+.ti -1c
+.RI "\fBoperator const uint32\fP () const "
+.br
+.ti -1c
+.RI "\fBuint32\fP \fBgetDigest\fP (void)"
+.br
+.ti -1c
+.RI "unsigned \fBgetDigest\fP (unsigned char *buffer)"
+.br
+.ti -1c
+.RI "void \fBputDigest\fP (const unsigned char *buffer, unsigned length)"
+.br
+.ti -1c
+.RI "\fBCRC32Digest\fP & \fBoperator=\fP (const \fBCRC32Digest\fP &right)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "unsigned char \fBoverflow\fP (unsigned char octet)"
+.br
+.ti -1c
+.RI "std::ostream & \fBstrDigest\fP (std::ostream &os)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A crc32 collection/computation hash accumulator class. 
+
+\fBAuthor:\fP
+.RS 4
+Kevin Kraatz <kraatz@arlut.utexas.edu> crc32 computation hash. 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+.PP
+\fBcrc32.cpp\fP.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::CRC32Digest::CRC32Digest ()"
+.SS "ost::CRC32Digest::CRC32Digest (const \fBCRC32Digest\fP & crc)"
+.SH "Member Function Documentation"
+.PP 
+.SS "unsigned ost::CRC32Digest::getDigest (unsigned char * buffer)\fC [virtual]\fP"
+.PP
+Implements \fBost::Digest\fP.
+.SS "\fBuint32\fP ost::CRC32Digest::getDigest (void)\fC [inline]\fP"
+.PP
+\fBExamples: \fP
+.in +1c
+\fBcrc32.cpp\fP.
+.SS "unsigned ost::CRC32Digest::getSize (void)\fC [inline, virtual]\fP"
+.PP
+Implements \fBost::Digest\fP.
+.SS "void ost::CRC32Digest::initDigest (void)\fC [virtual]\fP"
+.PP
+Implements \fBost::Digest\fP.
+.SS "ost::CRC32Digest::operator const \fBuint32\fP () const\fC [inline]\fP"
+.SS "\fBCRC32Digest\fP& ost::CRC32Digest::operator= (const \fBCRC32Digest\fP & right)"
+.SS "unsigned char ost::CRC32Digest::overflow (unsigned char octet)\fC [protected]\fP"
+.SS "void ost::CRC32Digest::putDigest (const unsigned char * buffer, unsigned length)\fC [virtual]\fP"
+.PP
+Implements \fBost::Digest\fP.
+.PP
+\fBExamples: \fP
+.in +1c
+\fBcrc32.cpp\fP.
+.SS "std::ostream& ost::CRC32Digest::strDigest (std::ostream & os)\fC [protected, virtual]\fP"
+.PP
+Implements \fBost::Digest\fP.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

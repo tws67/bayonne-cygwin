@@ -1,0 +1,145 @@
+\section{ost::BayonneZeroconf Class Reference}
+\label{classost_1_1_bayonne_zeroconf}\index{ost::BayonneZeroconf@{ost::BayonneZeroconf}}
+
+
+This class is used to bind services that are to be published with zeroconf, such as by the avahi module.  
+
+
+{\ttfamily \#include $<$bayonne.h$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf zeroconf\_\-family\_\-t} \{ {\bf ZEROCONF\_\-IPANY}, 
+{\bf ZEROCONF\_\-IPV6}, 
+{\bf ZEROCONF\_\-IPV4}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf BayonneZeroconf} $\ast$ {\bf getNext} (void)
+\begin{DoxyCompactList}\small\item\em Get the next zeroconf binding to iterate an object list. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getType} (void)
+\begin{DoxyCompactList}\small\item\em Get the binding protocol description, usually \char`\"{}\_\-svc.\_\-proto\char`\"{}. \item\end{DoxyCompactList}\item 
+tpport\_\-t {\bf getPort} (void)
+\begin{DoxyCompactList}\small\item\em Get the binding service port number. \item\end{DoxyCompactList}\item 
+{\bf zeroconf\_\-family\_\-t} {\bf getFamily} (void)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf BayonneZeroconf} $\ast$ {\bf getFirst} (void)
+\begin{DoxyCompactList}\small\item\em Get the first zeroconf binding, used by zeroconf plugins. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf BayonneZeroconf} (const char $\ast$type, {\bf zeroconf\_\-family\_\-t} family=ZEROCONF\_\-IPANY)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf BayonneZeroconf} $\ast$ {\bf zeroconf\_\-next}
+\item 
+const char $\ast$ {\bf zeroconf\_\-type}
+\item 
+tpport\_\-t {\bf zeroconf\_\-port}
+\item 
+{\bf zeroconf\_\-family\_\-t} {\bf zeroconf\_\-family}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf BayonneZeroconf} $\ast$ {\bf zeroconf\_\-first}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used to bind services that are to be published with zeroconf, such as by the avahi module. \begin{DoxyAuthor}{Author}
+David Sugar $<${\tt dyfet@gnutelephony.org}$>$ \doxyref{Bayonne}{p.}{classost_1_1_bayonne} zerconf binding class. 
+\end{DoxyAuthor}
+
+
+\subsection{Member Enumeration Documentation}
+\index{ost::BayonneZeroconf@{ost::BayonneZeroconf}!zeroconf\_\-family\_\-t@{zeroconf\_\-family\_\-t}}
+\index{zeroconf\_\-family\_\-t@{zeroconf\_\-family\_\-t}!ost::BayonneZeroconf@{ost::BayonneZeroconf}}
+\subsubsection[{zeroconf\_\-family\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ost::BayonneZeroconf::zeroconf\_\-family\_\-t}}\label{classost_1_1_bayonne_zeroconf_a60296a693d01077f88280dd8dfea5c27}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{ZEROCONF\_\-IPANY@{ZEROCONF\_\-IPANY}!ost::BayonneZeroconf@{ost::BayonneZeroconf}}\index{ost::BayonneZeroconf@{ost::BayonneZeroconf}!ZEROCONF\_\-IPANY@{ZEROCONF\_\-IPANY}}\item[{\em 
+ZEROCONF\_\-IPANY\label{classost_1_1_bayonne_zeroconf_a60296a693d01077f88280dd8dfea5c27a07af802a2d3a29f14d2b761da386352e}
+}]\index{ZEROCONF\_\-IPV6@{ZEROCONF\_\-IPV6}!ost::BayonneZeroconf@{ost::BayonneZeroconf}}\index{ost::BayonneZeroconf@{ost::BayonneZeroconf}!ZEROCONF\_\-IPV6@{ZEROCONF\_\-IPV6}}\item[{\em 
+ZEROCONF\_\-IPV6\label{classost_1_1_bayonne_zeroconf_a60296a693d01077f88280dd8dfea5c27aa1d92d53bf1deddabd410fcaef92f312}
+}]\index{ZEROCONF\_\-IPV4@{ZEROCONF\_\-IPV4}!ost::BayonneZeroconf@{ost::BayonneZeroconf}}\index{ost::BayonneZeroconf@{ost::BayonneZeroconf}!ZEROCONF\_\-IPV4@{ZEROCONF\_\-IPV4}}\item[{\em 
+ZEROCONF\_\-IPV4\label{classost_1_1_bayonne_zeroconf_a60296a693d01077f88280dd8dfea5c27aae232b98416cde126771c62c9776d8ca}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::BayonneZeroconf@{ost::BayonneZeroconf}!BayonneZeroconf@{BayonneZeroconf}}
+\index{BayonneZeroconf@{BayonneZeroconf}!ost::BayonneZeroconf@{ost::BayonneZeroconf}}
+\subsubsection[{BayonneZeroconf}]{\setlength{\rightskip}{0pt plus 5cm}ost::BayonneZeroconf::BayonneZeroconf (const char $\ast$ {\em type}, \/  {\bf zeroconf\_\-family\_\-t} {\em family} = {\ttfamily ZEROCONF\_\-IPANY})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_zeroconf_a37b1e5b215894352d63ebd7bdb4cd959}
+
+
+\subsection{Member Function Documentation}
+\index{ost::BayonneZeroconf@{ost::BayonneZeroconf}!getFamily@{getFamily}}
+\index{getFamily@{getFamily}!ost::BayonneZeroconf@{ost::BayonneZeroconf}}
+\subsubsection[{getFamily}]{\setlength{\rightskip}{0pt plus 5cm}{\bf zeroconf\_\-family\_\-t} ost::BayonneZeroconf::getFamily (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_zeroconf_a57879bcf977e9eac8e30e64fdc2158cf}
+\index{ost::BayonneZeroconf@{ost::BayonneZeroconf}!getFirst@{getFirst}}
+\index{getFirst@{getFirst}!ost::BayonneZeroconf@{ost::BayonneZeroconf}}
+\subsubsection[{getFirst}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf BayonneZeroconf}$\ast$ ost::BayonneZeroconf::getFirst (void)\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classost_1_1_bayonne_zeroconf_a0bbb6c5f25befb0aa70cdda7c116894a}
+
+
+Get the first zeroconf binding, used by zeroconf plugins. \begin{DoxyReturn}{Returns}
+first zeroconf binding. 
+\end{DoxyReturn}
+\index{ost::BayonneZeroconf@{ost::BayonneZeroconf}!getNext@{getNext}}
+\index{getNext@{getNext}!ost::BayonneZeroconf@{ost::BayonneZeroconf}}
+\subsubsection[{getNext}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneZeroconf}$\ast$ ost::BayonneZeroconf::getNext (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_zeroconf_ae5877feaeb0f619bf900cac7cec48fe7}
+
+
+Get the next zeroconf binding to iterate an object list. \begin{DoxyReturn}{Returns}
+next zerconf binding. 
+\end{DoxyReturn}
+\index{ost::BayonneZeroconf@{ost::BayonneZeroconf}!getPort@{getPort}}
+\index{getPort@{getPort}!ost::BayonneZeroconf@{ost::BayonneZeroconf}}
+\subsubsection[{getPort}]{\setlength{\rightskip}{0pt plus 5cm}tpport\_\-t ost::BayonneZeroconf::getPort (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_zeroconf_a91f10aeca3868b15528d838012e388e8}
+
+
+Get the binding service port number. If 0, then disabled.
+
+\begin{DoxyReturn}{Returns}
+0 or port number. 
+\end{DoxyReturn}
+\index{ost::BayonneZeroconf@{ost::BayonneZeroconf}!getType@{getType}}
+\index{getType@{getType}!ost::BayonneZeroconf@{ost::BayonneZeroconf}}
+\subsubsection[{getType}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::BayonneZeroconf::getType (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_zeroconf_a69c729d3cb1a0e566b954e4015c4e370}
+
+
+Get the binding protocol description, usually \char`\"{}\_\-svc.\_\-proto\char`\"{}. \begin{DoxyReturn}{Returns}
+binding description. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\index{ost::BayonneZeroconf@{ost::BayonneZeroconf}!zeroconf\_\-family@{zeroconf\_\-family}}
+\index{zeroconf\_\-family@{zeroconf\_\-family}!ost::BayonneZeroconf@{ost::BayonneZeroconf}}
+\subsubsection[{zeroconf\_\-family}]{\setlength{\rightskip}{0pt plus 5cm}{\bf zeroconf\_\-family\_\-t} {\bf ost::BayonneZeroconf::zeroconf\_\-family}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_zeroconf_a95fea6c2ab00f2219082db19298e67f8}
+\index{ost::BayonneZeroconf@{ost::BayonneZeroconf}!zeroconf\_\-first@{zeroconf\_\-first}}
+\index{zeroconf\_\-first@{zeroconf\_\-first}!ost::BayonneZeroconf@{ost::BayonneZeroconf}}
+\subsubsection[{zeroconf\_\-first}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneZeroconf}$\ast$ {\bf ost::BayonneZeroconf::zeroconf\_\-first}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_zeroconf_ad68e0253d31d16c7d6b96c3df1bcfc88}
+\index{ost::BayonneZeroconf@{ost::BayonneZeroconf}!zeroconf\_\-next@{zeroconf\_\-next}}
+\index{zeroconf\_\-next@{zeroconf\_\-next}!ost::BayonneZeroconf@{ost::BayonneZeroconf}}
+\subsubsection[{zeroconf\_\-next}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneZeroconf}$\ast$ {\bf ost::BayonneZeroconf::zeroconf\_\-next}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_zeroconf_a017726188eaec41ac3ae7894584fdda0}
+\index{ost::BayonneZeroconf@{ost::BayonneZeroconf}!zeroconf\_\-port@{zeroconf\_\-port}}
+\index{zeroconf\_\-port@{zeroconf\_\-port}!ost::BayonneZeroconf@{ost::BayonneZeroconf}}
+\subsubsection[{zeroconf\_\-port}]{\setlength{\rightskip}{0pt plus 5cm}tpport\_\-t {\bf ost::BayonneZeroconf::zeroconf\_\-port}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_zeroconf_a72cdd752f229676174a3ad532427fa04}
+\index{ost::BayonneZeroconf@{ost::BayonneZeroconf}!zeroconf\_\-type@{zeroconf\_\-type}}
+\index{zeroconf\_\-type@{zeroconf\_\-type}!ost::BayonneZeroconf@{ost::BayonneZeroconf}}
+\subsubsection[{zeroconf\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::BayonneZeroconf::zeroconf\_\-type}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_zeroconf_a0fa0ccce5ddcc3f84f4668ae9b64a25a}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf bayonne.h}\end{DoxyCompactItemize}

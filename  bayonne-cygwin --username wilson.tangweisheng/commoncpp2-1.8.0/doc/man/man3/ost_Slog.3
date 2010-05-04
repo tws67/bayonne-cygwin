@@ -1,0 +1,395 @@
+.TH "ost::Slog" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::Slog \- 
+.PP
+The slog class is used to stream messages to the system's logging facility (syslogd).  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <slog.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBClass\fP { \fBclassSecurity\fP, \fBclassAudit\fP, \fBclassDaemon\fP, \fBclassUser\fP, \fBclassDefault\fP, \fBclassLocal0\fP, \fBclassLocal1\fP, \fBclassLocal2\fP, \fBclassLocal3\fP, \fBclassLocal4\fP, \fBclassLocal5\fP, \fBclassLocal6\fP, \fBclassLocal7\fP }"
+.br
+.ti -1c
+.RI "enum \fBLevel\fP { \fBlevelEmergency\fP =  1, \fBlevelAlert\fP, \fBlevelCritical\fP, \fBlevelError\fP, \fBlevelWarning\fP, \fBlevelNotice\fP, \fBlevelInfo\fP, \fBlevelDebug\fP }"
+.br
+.ti -1c
+.RI "typedef enum \fBost::Slog::Class\fP \fBClass\fP"
+.br
+.ti -1c
+.RI "typedef enum \fBost::Slog::Level\fP \fBLevel\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSlog\fP (void)"
+.br
+.RI "\fIDefault (and only) constructor. \fP"
+.ti -1c
+.RI "virtual \fB~Slog\fP (void)"
+.br
+.ti -1c
+.RI "void \fBclose\fP (void)"
+.br
+.ti -1c
+.RI "void \fBopen\fP (const char *ident, \fBClass\fP grp=classUser)"
+.br
+.RI "\fI(re)opens the output stream. \fP"
+.ti -1c
+.RI "\fBSlog\fP & \fBoperator()\fP (const char *ident, \fBClass\fP grp=classUser, \fBLevel\fP level=levelError)"
+.br
+.RI "\fISets the log identifier, level, and class to use for subsequent output. \fP"
+.ti -1c
+.RI "\fBSlog\fP & \fBoperator()\fP (\fBLevel\fP level, \fBClass\fP grp=classDefault)"
+.br
+.RI "\fIChanges the log level and class to use for subsequent output. \fP"
+.ti -1c
+.RI "\fBSlog\fP & \fBoperator()\fP (void)"
+.br
+.RI "\fIDoes nothing except return *this. \fP"
+.ti -1c
+.RI "void \fBerror\fP (const char *format,...)"
+.br
+.RI "\fIPrint a formatted syslog string. \fP"
+.ti -1c
+.RI "void \fBwarn\fP (const char *format,...)"
+.br
+.RI "\fIPrint a formatted syslog string. \fP"
+.ti -1c
+.RI "void \fBdebug\fP (const char *format,...)"
+.br
+.RI "\fIPrint a formatted syslog string. \fP"
+.ti -1c
+.RI "void \fBemerg\fP (const char *format,...)"
+.br
+.RI "\fIPrint a formatted syslog string. \fP"
+.ti -1c
+.RI "void \fBalert\fP (const char *format,...)"
+.br
+.RI "\fIPrint a formatted syslog string. \fP"
+.ti -1c
+.RI "void \fBcritical\fP (const char *format,...)"
+.br
+.RI "\fIPrint a formatted syslog string. \fP"
+.ti -1c
+.RI "void \fBnotice\fP (const char *format,...)"
+.br
+.RI "\fIPrint a formatted syslog string. \fP"
+.ti -1c
+.RI "void \fBinfo\fP (const char *format,...)"
+.br
+.RI "\fIPrint a formatted syslog string. \fP"
+.ti -1c
+.RI "void \fBlevel\fP (\fBLevel\fP enable)"
+.br
+.RI "\fISets the logging level. \fP"
+.ti -1c
+.RI "void \fBclogEnable\fP (bool f=true)"
+.br
+.RI "\fIEnables or disables the echoing of the messages to clog in addition to the syslog daemon. \fP"
+.ti -1c
+.RI "\fBSlog\fP & \fBwarn\fP (void)"
+.br
+.ti -1c
+.RI "\fBSlog\fP & \fBerror\fP (void)"
+.br
+.ti -1c
+.RI "\fBSlog\fP & \fBdebug\fP (void)"
+.br
+.ti -1c
+.RI "\fBSlog\fP & \fBemerg\fP (void)"
+.br
+.ti -1c
+.RI "\fBSlog\fP & \fBalert\fP (void)"
+.br
+.ti -1c
+.RI "\fBSlog\fP & \fBcritical\fP (void)"
+.br
+.ti -1c
+.RI "\fBSlog\fP & \fBnotice\fP (void)"
+.br
+.ti -1c
+.RI "\fBSlog\fP & \fBinfo\fP (void)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBoverflow\fP (int c)"
+.br
+.RI "\fIThis is the streambuf function that actually outputs the data to the device. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The slog class is used to stream messages to the system's logging facility (syslogd). 
+
+A default \fCslog\fP object is used to avoid confusion with the native syslog facility and to imply a logical relationship to the C++ \fCclog()\fP.
+.PP
+The key difference is that the \fCslog\fP object sends it's output to the system logging daemon (typically syslogd) rather than through stderr. \fCslog\fP can be streamed with the \fC<<\fP operator just like \fCclog\fP; a default slog object is pre-initialized, and you stream character data to it.
+.PP
+The \fCslog\fP allows one to specify logging levels and other properties through the \fC()\fP operators. Hence, once can do:
+.PP
+\fC
+.PP
+.nf
+
+ slog('mydaemon', SLOG_DAEMON, SLOG_EMERGENCY) << I just died << endl; 
+.fi
+.PP
+\fP
+.PP
+or things like:
+.PP
+\fC
+.PP
+.nf
+
+ slog('mydaemon', SLOG_DAEMON);
+ slog(SLOG_INFO) << 'daemon initalized' << endl; 
+.fi
+.PP
+\fP
+.PP
+The intent is to be as common-place and as convenient to use as the stderr based clog facility found in C++, and this is especially useful for C++ daemons.
+.PP
+The \fCstd::flush\fP manipulator doesn't work. Either the \fCstd::endl\fP or \fCstd::ends\fP manipulators must be used to cause the output to be sent to the daemon.
+.PP
+When this class is used on a system that doesn't have the syslog headers (i.e. a non-posix win32 box), the output goes to the a file with the same name as the syslog identifier string with '.log' appended to it. If the identifier string ends in '.exe', the '.exe' is removed before the '.log' is appened. (e.g. the identifier foo.exe will generate a log file named foo.log)
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> 
+.br
+Minor docs & hacks by Jon Little <littlej@arlut.utexas.edu>
+.RE
+.PP
+system logging facility class. 
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef enum \fBost::Slog::Class\fP  \fBost::Slog::Class\fP"
+.SS "typedef enum \fBost::Slog::Level\fP  \fBost::Slog::Level\fP"
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBost::Slog::Class\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIclassSecurity \fP\fP
+.TP
+\fB\fIclassAudit \fP\fP
+.TP
+\fB\fIclassDaemon \fP\fP
+.TP
+\fB\fIclassUser \fP\fP
+.TP
+\fB\fIclassDefault \fP\fP
+.TP
+\fB\fIclassLocal0 \fP\fP
+.TP
+\fB\fIclassLocal1 \fP\fP
+.TP
+\fB\fIclassLocal2 \fP\fP
+.TP
+\fB\fIclassLocal3 \fP\fP
+.TP
+\fB\fIclassLocal4 \fP\fP
+.TP
+\fB\fIclassLocal5 \fP\fP
+.TP
+\fB\fIclassLocal6 \fP\fP
+.TP
+\fB\fIclassLocal7 \fP\fP
+
+.SS "enum \fBost::Slog::Level\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIlevelEmergency \fP\fP
+.TP
+\fB\fIlevelAlert \fP\fP
+.TP
+\fB\fIlevelCritical \fP\fP
+.TP
+\fB\fIlevelError \fP\fP
+.TP
+\fB\fIlevelWarning \fP\fP
+.TP
+\fB\fIlevelNotice \fP\fP
+.TP
+\fB\fIlevelInfo \fP\fP
+.TP
+\fB\fIlevelDebug \fP\fP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::Slog::Slog (void)"
+.PP
+Default (and only) constructor. The default log level is set to SLOG_DEBUG. There is no default log facility set. One should be set before attempting any output. This is done by the \fC\fBopen()\fP\fP or the \fC\fBoperator()(const char*, Class, Level)\fP\fP functions. 
+.SS "virtual ost::Slog::~Slog (void)\fC [virtual]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBSlog\fP& ost::Slog::alert (void)\fC [inline]\fP"
+.PP
+References levelAlert.
+.SS "void ost::Slog::alert (const char * format,  ...)"
+.PP
+Print a formatted syslog string. \fBParameters:\fP
+.RS 4
+\fIformat\fP string. 
+.RE
+.PP
+
+.SS "void ost::Slog::clogEnable (bool f = \fCtrue\fP)\fC [inline]\fP"
+.PP
+Enables or disables the echoing of the messages to clog in addition to the syslog daemon. This is enabled by the default class constructor. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIf\fP true to enable, false to disable clog output 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+\fBslogTest.cpp\fP.
+.SS "void ost::Slog::close (void)"
+.SS "\fBSlog\fP& ost::Slog::critical (void)\fC [inline]\fP"
+.PP
+References levelCritical.
+.SS "void ost::Slog::critical (const char * format,  ...)"
+.PP
+Print a formatted syslog string. \fBParameters:\fP
+.RS 4
+\fIformat\fP string. 
+.RE
+.PP
+
+.SS "\fBSlog\fP& ost::Slog::debug (void)\fC [inline]\fP"
+.PP
+References levelDebug.
+.SS "void ost::Slog::debug (const char * format,  ...)"
+.PP
+Print a formatted syslog string. \fBParameters:\fP
+.RS 4
+\fIformat\fP string. 
+.RE
+.PP
+
+.SS "\fBSlog\fP& ost::Slog::emerg (void)\fC [inline]\fP"
+.PP
+References levelEmergency.
+.SS "void ost::Slog::emerg (const char * format,  ...)"
+.PP
+Print a formatted syslog string. \fBParameters:\fP
+.RS 4
+\fIformat\fP string. 
+.RE
+.PP
+
+.SS "\fBSlog\fP& ost::Slog::error (void)\fC [inline]\fP"
+.PP
+References levelError.
+.SS "void ost::Slog::error (const char * format,  ...)"
+.PP
+Print a formatted syslog string. \fBParameters:\fP
+.RS 4
+\fIformat\fP string. 
+.RE
+.PP
+
+.SS "\fBSlog\fP& ost::Slog::info (void)\fC [inline]\fP"
+.PP
+References levelInfo.
+.SS "void ost::Slog::info (const char * format,  ...)"
+.PP
+Print a formatted syslog string. \fBParameters:\fP
+.RS 4
+\fIformat\fP string. 
+.RE
+.PP
+
+.SS "void ost::Slog::level (\fBLevel\fP enable)\fC [inline]\fP"
+.PP
+Sets the logging level. \fBParameters:\fP
+.RS 4
+\fIenable\fP is the logging level to use for further output 
+.RE
+.PP
+
+.SS "\fBSlog\fP& ost::Slog::notice (void)\fC [inline]\fP"
+.PP
+References levelNotice.
+.SS "void ost::Slog::notice (const char * format,  ...)"
+.PP
+Print a formatted syslog string. \fBParameters:\fP
+.RS 4
+\fIformat\fP string. 
+.RE
+.PP
+
+.SS "void ost::Slog::open (const char * ident, \fBClass\fP grp = \fCclassUser\fP)"
+.PP
+(re)opens the output stream. \fBParameters:\fP
+.RS 4
+\fIident\fP The identifier portion of the message sent to the syslog daemon. 
+.br
+\fIgrp\fP The log facility the message is sent to 
+.RE
+.PP
+
+.SS "\fBSlog\fP& ost::Slog::operator() (void)"
+.PP
+Does nothing except return *this. 
+.SS "\fBSlog\fP& ost::Slog::operator() (\fBLevel\fP level, \fBClass\fP grp = \fCclassDefault\fP)"
+.PP
+Changes the log level and class to use for subsequent output. \fBParameters:\fP
+.RS 4
+\fIlevel\fP The log level of the message 
+.br
+\fIgrp\fP The log facility the message is sent to 
+.RE
+.PP
+
+.SS "\fBSlog\fP& ost::Slog::operator() (const char * ident, \fBClass\fP grp = \fCclassUser\fP, \fBLevel\fP level = \fClevelError\fP)"
+.PP
+Sets the log identifier, level, and class to use for subsequent output. \fBParameters:\fP
+.RS 4
+\fIident\fP The identifier portion of the message 
+.br
+\fIgrp\fP The log facility the message is sent to 
+.br
+\fIlevel\fP The log level of the message 
+.RE
+.PP
+
+.SS "int ost::Slog::overflow (int c)\fC [protected]\fP"
+.PP
+This is the streambuf function that actually outputs the data to the device. Since all output should be done with the standard ostream operators, this function should never be called directly. 
+.SS "\fBSlog\fP& ost::Slog::warn (void)\fC [inline]\fP"
+.PP
+References levelWarning.
+.SS "void ost::Slog::warn (const char * format,  ...)"
+.PP
+Print a formatted syslog string. \fBParameters:\fP
+.RS 4
+\fIformat\fP string. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

@@ -1,0 +1,205 @@
+.TH "address.h" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+address.h \- 
+.PP
+Network addresses and sockets related classes.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cc++/config.h>\fP
+.br
+\fC#include <cc++/missing.h>\fP
+.br
+\fC#include <cc++/thread.h>\fP
+.br
+\fC#include <cc++/exception.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBost::IPV4Validator\fP"
+.br
+.RI "\fIClasses derived from \fBIPV4Address\fP would require an specific validator to pass to the \fBIPV4Address\fP constructor. \fP"
+.ti -1c
+.RI "class \fBost::IPV4MulticastValidator\fP"
+.br
+.RI "\fIClass for the function object that validates multicast addresses. \fP"
+.ti -1c
+.RI "class \fBost::IPV4Cidr\fP"
+.br
+.RI "\fIThe CIDR class is used to support routing tables and validate address policies. \fP"
+.ti -1c
+.RI "class \fBost::IPV6Cidr\fP"
+.br
+.RI "\fIThe CIDR class is used to support routing tables and validate address policies. \fP"
+.ti -1c
+.RI "class \fBost::IPV4Address\fP"
+.br
+.RI "\fIThe network name and address objects are all derived from a common \fBIPV4Address\fP base class. \fP"
+.ti -1c
+.RI "class \fBost::IPV4Mask\fP"
+.br
+.RI "\fIInternet addresses used specifically as masking addresses (such as '
+ 255.255.255.0') are held in the \fBIPV4Mask\fP derived object. \fP"
+.ti -1c
+.RI "class \fBost::IPV4Host\fP"
+.br
+.RI "\fIThis object is used to hold the actual and valid internet address of a specific host machine that will be accessed through a socket. \fP"
+.ti -1c
+.RI "class \fBost::IPV4Broadcast\fP"
+.br
+.RI "\fIThe broadcast address object is used to store the broadcast address for a specific subnet. \fP"
+.ti -1c
+.RI "class \fBost::IPV4Multicast\fP"
+.br
+.RI "\fIA specialization of \fBIPV4Address\fP that provides address validation for multicast addresses. \fP"
+.ti -1c
+.RI "class \fBost::IPV6Validator\fP"
+.br
+.RI "\fIClasses derived from \fBIPV6Address\fP would require an specific validator to pass to the \fBIPV6Address\fP constructor. \fP"
+.ti -1c
+.RI "class \fBost::IPV6MulticastValidator\fP"
+.br
+.RI "\fIClass for the function object that validates multicast addresses. \fP"
+.ti -1c
+.RI "class \fBost::IPV6Address\fP"
+.br
+.RI "\fIThe network name and address objects are all derived from a common \fBIPV6Address\fP base class. \fP"
+.ti -1c
+.RI "class \fBost::IPV6Mask\fP"
+.br
+.RI "\fIInternet addresses used specifically as masking addresses (such as '
+ 255.255.255.0') are held in the \fBIPV6Mask\fP derived object. \fP"
+.ti -1c
+.RI "class \fBost::IPV6Host\fP"
+.br
+.RI "\fIThis object is used to hold the actual and valid internet address of a specific host machine that will be accessed through a socket. \fP"
+.ti -1c
+.RI "class \fBost::IPV6Broadcast\fP"
+.br
+.RI "\fIThe broadcast address object is used to store the broadcast address for a specific subnet. \fP"
+.ti -1c
+.RI "class \fBost::IPV6Multicast\fP"
+.br
+.RI "\fIA specialization of \fBIPV6Address\fP that provides address validation for multicast addresses. \fP"
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBost\fP"
+.br
+.in -1c
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBINET_IPV4_ADDRESS_SIZE\fP   16"
+.br
+.ti -1c
+.RI "#define \fBCIDR_IPV4_ADDRESS_SIZE\fP   32"
+.br
+.ti -1c
+.RI "#define \fBINET_IPV6_ADDRESS_SIZE\fP   40"
+.br
+.ti -1c
+.RI "#define \fBCIDR_IPV6_ADDRESS_SIZE\fP   45"
+.br
+.ti -1c
+.RI "#define \fBCIDR\fP   IPV4Cidr"
+.br
+.ti -1c
+.RI "#define \fBInetAddress\fP   IPV4Address"
+.br
+.ti -1c
+.RI "#define \fBInetHostAddress\fP   IPV4Host"
+.br
+.ti -1c
+.RI "#define \fBInetMaskAddress\fP   IPV4Mask"
+.br
+.ti -1c
+.RI "#define \fBInetMcastAddress\fP   IPV4Multicast"
+.br
+.ti -1c
+.RI "#define \fBInetMcastAddressValidator\fP   IPV4MulticastValidator"
+.br
+.ti -1c
+.RI "#define \fBInetAddrValidator\fP   IPV4Validator"
+.br
+.ti -1c
+.RI "#define \fBBroadcastAddress\fP   IPV4Broadcast"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef unsigned short \fBost::tpport_t\fP"
+.br
+.RI "\fITransport Protocol Ports. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "__EXPORT std::ostream & \fBost::operator<<\fP (std::ostream &os, const IPV4Address &ia)"
+.br
+.ti -1c
+.RI "struct in_addr \fBost::getaddress\fP (const IPV4Address &ia)"
+.br
+.ti -1c
+.RI "__EXPORT std::ostream & \fBost::operator<<\fP (std::ostream &os, const IPV6Address &ia)"
+.br
+.ti -1c
+.RI "struct in6_addr \fBost::getaddress\fP (const IPV6Address &ia)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "class __EXPORT \fBost::IPV4Host\fP"
+.br
+.ti -1c
+.RI "class __EXPORT \fBost::IPV6Host\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Network addresses and sockets related classes. 
+
+
+.SH "Define Documentation"
+.PP 
+.SS "#define BroadcastAddress   IPV4Broadcast"
+.PP
+\fBExamples: \fP
+.in +1c
+\fBtcpthread.cpp\fP.
+.SS "#define CIDR   IPV4Cidr"
+.SS "#define CIDR_IPV4_ADDRESS_SIZE   32"
+.SS "#define CIDR_IPV6_ADDRESS_SIZE   45"
+.SS "#define INET_IPV4_ADDRESS_SIZE   16"
+.SS "#define INET_IPV6_ADDRESS_SIZE   40"
+.SS "#define InetAddress   IPV4Address"
+.PP
+\fBExamples: \fP
+.in +1c
+\fBtcp.cpp\fP, \fBtcpstr1.cpp\fP, and \fBtcpthread.cpp\fP.
+.SS "#define InetAddrValidator   IPV4Validator"
+.SS "#define InetHostAddress   IPV4Host"
+.PP
+\fBExamples: \fP
+.in +1c
+\fBSampleSocketPort.cpp\fP, \fBtcp.cpp\fP, \fBtcpservice.cpp\fP, and \fBtcpthread.cpp\fP.
+.SS "#define InetMaskAddress   IPV4Mask"
+.SS "#define InetMcastAddress   IPV4Multicast"
+.SS "#define InetMcastAddressValidator   IPV4MulticastValidator"
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

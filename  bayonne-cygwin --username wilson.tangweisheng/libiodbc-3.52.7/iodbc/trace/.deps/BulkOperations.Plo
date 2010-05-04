@@ -1,0 +1,143 @@
+BulkOperations.lo: BulkOperations.c trace.h /usr/include/stdlib.h \
+  /usr/include/machine/ieeefp.h /usr/include/_ansi.h \
+  /usr/include/newlib.h /usr/include/sys/config.h \
+  /usr/include/sys/features.h /usr/include/cygwin/config.h \
+  /usr/lib/gcc/i686-pc-cygwin/4.3.4/include/stddef.h \
+  /usr/include/sys/reent.h /usr/include/_ansi.h /usr/include/sys/_types.h \
+  /usr/include/machine/_types.h /usr/include/machine/_default_types.h \
+  /usr/include/sys/lock.h /usr/include/machine/stdlib.h \
+  /usr/include/alloca.h /usr/include/cygwin/stdlib.h \
+  /usr/include/cygwin/wait.h /usr/include/stdio.h \
+  /usr/lib/gcc/i686-pc-cygwin/4.3.4/include/stdarg.h \
+  /usr/include/sys/types.h /usr/include/machine/types.h \
+  /usr/include/cygwin/types.h /usr/include/sys/sysmacros.h \
+  /usr/include/stdint.h /usr/include/endian.h /usr/include/sys/stdio.h \
+  /usr/include/sys/cdefs.h /usr/include/ctype.h /usr/include/pwd.h \
+  /usr/include/unistd.h /usr/include/sys/unistd.h /usr/include/getopt.h \
+  ../../include/sql.h ../../include/sqltypes.h ../../include/iodbcunix.h \
+  /usr/include/wchar.h ../../include/sqlext.h ../../include/sqlucode.h \
+  ../../iodbc/herr.h ../../iodbc/henv.h ../../include/iodbc.h \
+  ../../include/config.h /usr/include/string.h /usr/include/sys/string.h \
+  ../../iodbc/dlproc.h ../../iodbcinst/dlf.h /usr/include/dlfcn.h \
+  ../../iodbc/ithread.h /usr/include/pthread.h /usr/include/signal.h \
+  /usr/include/sys/signal.h /usr/include/cygwin/signal.h \
+  /usr/include/sched.h /usr/include/sys/sched.h ../../iodbc/henv.ci \
+  ../../iodbcinst/unicode.h proto.h
+
+trace.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/machine/ieeefp.h:
+
+/usr/include/_ansi.h:
+
+/usr/include/newlib.h:
+
+/usr/include/sys/config.h:
+
+/usr/include/sys/features.h:
+
+/usr/include/cygwin/config.h:
+
+/usr/lib/gcc/i686-pc-cygwin/4.3.4/include/stddef.h:
+
+/usr/include/sys/reent.h:
+
+/usr/include/_ansi.h:
+
+/usr/include/sys/_types.h:
+
+/usr/include/machine/_types.h:
+
+/usr/include/machine/_default_types.h:
+
+/usr/include/sys/lock.h:
+
+/usr/include/machine/stdlib.h:
+
+/usr/include/alloca.h:
+
+/usr/include/cygwin/stdlib.h:
+
+/usr/include/cygwin/wait.h:
+
+/usr/include/stdio.h:
+
+/usr/lib/gcc/i686-pc-cygwin/4.3.4/include/stdarg.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/machine/types.h:
+
+/usr/include/cygwin/types.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/stdint.h:
+
+/usr/include/endian.h:
+
+/usr/include/sys/stdio.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/ctype.h:
+
+/usr/include/pwd.h:
+
+/usr/include/unistd.h:
+
+/usr/include/sys/unistd.h:
+
+/usr/include/getopt.h:
+
+../../include/sql.h:
+
+../../include/sqltypes.h:
+
+../../include/iodbcunix.h:
+
+/usr/include/wchar.h:
+
+../../include/sqlext.h:
+
+../../include/sqlucode.h:
+
+../../iodbc/herr.h:
+
+../../iodbc/henv.h:
+
+../../include/iodbc.h:
+
+../../include/config.h:
+
+/usr/include/string.h:
+
+/usr/include/sys/string.h:
+
+../../iodbc/dlproc.h:
+
+../../iodbcinst/dlf.h:
+
+/usr/include/dlfcn.h:
+
+../../iodbc/ithread.h:
+
+/usr/include/pthread.h:
+
+/usr/include/signal.h:
+
+/usr/include/sys/signal.h:
+
+/usr/include/cygwin/signal.h:
+
+/usr/include/sched.h:
+
+/usr/include/sys/sched.h:
+
+../../iodbc/henv.ci:
+
+../../iodbcinst/unicode.h:
+
+proto.h:

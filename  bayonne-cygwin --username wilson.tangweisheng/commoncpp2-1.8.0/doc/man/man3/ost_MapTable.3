@@ -1,0 +1,272 @@
+.TH "ost::MapTable" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::MapTable \- 
+.PP
+A map table allows for entities to be mapped (hash index) onto it.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <object.h>\fP
+.PP
+Inherits \fBost::Mutex\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMapTable\fP (unsigned size)"
+.br
+.RI "\fICreate a map table with a specified number of slots. \fP"
+.ti -1c
+.RI "virtual \fB~MapTable\fP ()"
+.br
+.RI "\fIDestroy the table, calls cleanup. \fP"
+.ti -1c
+.RI "virtual unsigned \fBgetIndex\fP (const char *id)"
+.br
+.RI "\fIGet index value from id string. \fP"
+.ti -1c
+.RI "unsigned \fBgetRange\fP (void)"
+.br
+.RI "\fIReturn range of this table. \fP"
+.ti -1c
+.RI "unsigned \fBgetSize\fP (void)"
+.br
+.RI "\fIReturn the number of object stored in this table. \fP"
+.ti -1c
+.RI "void * \fBgetObject\fP (const char *id)"
+.br
+.RI "\fILookup an object by id key. \fP"
+.ti -1c
+.RI "void \fBaddObject\fP (\fBMapObject\fP &obj)"
+.br
+.RI "\fIMap an object to our table. \fP"
+.ti -1c
+.RI "void * \fBgetFirst\fP ()"
+.br
+.RI "\fIGet the first element into table, it is returned as void * for easy re-cast. \fP"
+.ti -1c
+.RI "void * \fBgetLast\fP ()"
+.br
+.RI "\fIGet the last element into table, it is returned as void * for easy re-cast. \fP"
+.ti -1c
+.RI "void * \fBgetEnd\fP ()"
+.br
+.RI "\fIGet table's end, useful for cycle control; it is returned as void * for easy re-cast. \fP"
+.ti -1c
+.RI "void * \fBgetFree\fP (void)"
+.br
+.RI "\fIGet next object from managed free list. \fP"
+.ti -1c
+.RI "void \fBaddFree\fP (\fBMapObject\fP *obj)"
+.br
+.RI "\fIAdd an object to the managed free list. \fP"
+.ti -1c
+.RI "\fBMapTable\fP & \fBoperator+=\fP (\fBMapObject\fP &obj)"
+.br
+.RI "\fIAn operator to map an object to the table. \fP"
+.ti -1c
+.RI "virtual \fBMapTable\fP & \fBoperator-=\fP (\fBMapObject\fP &obj)"
+.br
+.RI "\fIThis operator is virtual in case it must also add the object to a managed free list. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcleanup\fP (void)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "unsigned \fBrange\fP"
+.br
+.ti -1c
+.RI "unsigned \fBcount\fP"
+.br
+.ti -1c
+.RI "\fBMapObject\fP ** \fBmap\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBMapObject\fP"
+.br
+.ti -1c
+.RI "class \fBMapIndex\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A map table allows for entities to be mapped (hash index) onto it. 
+
+Unlike with \fBAssoc\fP, This form of map table also allows objects to be removed from the table. This table also includes a mutex lock for thread safety. A free list is also optionally maintained for reusable maps.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@gnutelephony.org> Table to hold hash indexed objects. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::MapTable::MapTable (unsigned size)"
+.PP
+Create a map table with a specified number of slots. \fBParameters:\fP
+.RS 4
+\fInumber\fP of slots. 
+.RE
+.PP
+
+.SS "virtual ost::MapTable::~MapTable ()\fC [virtual]\fP"
+.PP
+Destroy the table, calls cleanup. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::MapTable::addFree (\fBMapObject\fP * obj)"
+.PP
+Add an object to the managed free list. Some MapObject's may override delete operator to detach and do this.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIobject\fP to add. 
+.RE
+.PP
+
+.SS "void ost::MapTable::addObject (\fBMapObject\fP & obj)"
+.PP
+Map an object to our table. If it is in another table already, it is removed there first.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIobject\fP to map. 
+.RE
+.PP
+
+.SS "void ost::MapTable::cleanup (void)\fC [protected]\fP"
+.SS "void* ost::MapTable::getEnd ()\fC [inline]\fP"
+.PP
+Get table's end, useful for cycle control; it is returned as void * for easy re-cast. \fBReturns:\fP
+.RS 4
+pointer to found object or NULL. 
+.RE
+.PP
+
+.SS "void* ost::MapTable::getFirst ()"
+.PP
+Get the first element into table, it is returned as void * for easy re-cast. \fBReturns:\fP
+.RS 4
+pointer to found object or NULL. 
+.RE
+.PP
+
+.SS "void* ost::MapTable::getFree (void)"
+.PP
+Get next object from managed free list. This returns as a void so it can be recast into the actual type being used in derived MapObject's. A derived version of \fBMapTable\fP may well offer an explicit type version of this. Some derived MapObject's may override new to use managed list.
+.PP
+\fBReturns:\fP
+.RS 4
+next object on free list. 
+.RE
+.PP
+
+.SS "virtual unsigned ost::MapTable::getIndex (const char * id)\fC [virtual]\fP"
+.PP
+Get index value from id string. This function can be changed as needed to provide better collision avoidence for specific tables.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIid\fP string 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+index slot in table. 
+.RE
+.PP
+
+.SS "void* ost::MapTable::getLast ()"
+.PP
+Get the last element into table, it is returned as void * for easy re-cast. \fBReturns:\fP
+.RS 4
+pointer to found object or NULL. 
+.RE
+.PP
+
+.SS "void* ost::MapTable::getObject (const char * id)"
+.PP
+Lookup an object by id key. It is returned as void * for easy re-cast.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkey\fP to find. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+pointer to found object or NULL. 
+.RE
+.PP
+
+.SS "unsigned ost::MapTable::getRange (void)\fC [inline]\fP"
+.PP
+Return range of this table. \fBReturns:\fP
+.RS 4
+table range. 
+.RE
+.PP
+
+.SS "unsigned ost::MapTable::getSize (void)\fC [inline]\fP"
+.PP
+Return the number of object stored in this table. \fBReturns:\fP
+.RS 4
+table size. 
+.RE
+.PP
+
+.SS "\fBMapTable\fP& ost::MapTable::operator+= (\fBMapObject\fP & obj)"
+.PP
+An operator to map an object to the table. \fBReturns:\fP
+.RS 4
+table being used. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIobject\fP being mapped. 
+.RE
+.PP
+
+.SS "virtual \fBMapTable\fP& ost::MapTable::operator-= (\fBMapObject\fP & obj)\fC [virtual]\fP"
+.PP
+This operator is virtual in case it must also add the object to a managed free list. \fBReturns:\fP
+.RS 4
+current table. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIobject\fP entity to remove. 
+.RE
+.PP
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBMapIndex\fP\fC [friend]\fP"
+.SS "friend class \fBMapObject\fP\fC [friend]\fP"
+.SH "Member Data Documentation"
+.PP 
+.SS "unsigned \fBost::MapTable::count\fP\fC [protected]\fP"
+.SS "\fBMapObject\fP** \fBost::MapTable::map\fP\fC [protected]\fP"
+.SS "unsigned \fBost::MapTable::range\fP\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

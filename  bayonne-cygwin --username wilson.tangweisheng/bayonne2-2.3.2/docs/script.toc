@@ -1,0 +1,42 @@
+\select@language {english}
+\select@language {english}
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {section}{\numberline {2}Script and Module Files}{3}
+\contentsline {section}{\numberline {3}Statements and syntax}{3}
+\contentsline {section}{\numberline {4}Labels}{5}
+\contentsline {section}{\numberline {5}Functions}{6}
+\contentsline {section}{\numberline {6}Symbols}{7}
+\contentsline {subsection}{\numberline {6.1}Symbol Types and Properties}{10}
+\contentsline {subsection}{\numberline {6.2}Session Ids and References}{12}
+\contentsline {section}{\numberline {7}Events}{13}
+\contentsline {section}{\numberline {8}Named Events}{14}
+\contentsline {section}{\numberline {9}Loops and conditionals}{17}
+\contentsline {section}{\numberline {10}Subroutines and symbol scope}{19}
+\contentsline {section}{\numberline {11}Keywords and Reference Scope}{20}
+\contentsline {section}{\numberline {12}Transaction Blocks}{21}
+\contentsline {section}{\numberline {13}Files, paths, prompts, extensions, and directories}{22}
+\contentsline {section}{\numberline {14}Reserved names and namespace collisions}{23}
+\contentsline {section}{\numberline {15}Compile Time Effects}{24}
+\contentsline {section}{\numberline {16}Database Connectivity}{26}
+\contentsline {section}{\numberline {17}Command Reference}{27}
+\contentsline {subsection}{\numberline {17.1}Variable declarations}{27}
+\contentsline {subsection}{\numberline {17.2}Symbol manipulation}{29}
+\contentsline {subsection}{\numberline {17.3}Script and Execution Manipulation}{30}
+\contentsline {subsection}{\numberline {17.4}Looping, Branching, and Conditionals}{31}
+\contentsline {subsection}{\numberline {17.5}Basic data sets and logging}{34}
+\contentsline {subsection}{\numberline {17.6}Bayonne input processing commands}{34}
+\contentsline {subsection}{\numberline {17.7}Bayonne tone processing commands}{35}
+\contentsline {subsection}{\numberline {17.8}Bayonne call processing commands}{36}
+\contentsline {subsection}{\numberline {17.9}Bayonne session management commands}{38}
+\contentsline {subsection}{\numberline {17.10}File command extensions}{38}
+\contentsline {subsection}{\numberline {17.11}Defined macros}{39}
+\contentsline {subsection}{\numberline {17.12}Other commands}{41}
+\contentsline {section}{\numberline {18}Troubleshooting ccScripts and TGIs}{41}
+\contentsline {section}{\numberline {19}Phrasebook Rules}{45}
+\contentsline {subsection}{\numberline {19.1}Introduction}{45}
+\contentsline {subsection}{\numberline {19.2}English}{46}
+\contentsline {subsubsection}{\numberline {19.2.1}Number Prompts}{47}
+\contentsline {subsubsection}{\numberline {19.2.2}Order Prompts}{47}
+\contentsline {subsubsection}{\numberline {19.2.3}Date/Time Prompts}{47}
+\contentsline {subsubsection}{\numberline {19.2.4}Currency Prompts}{48}
+\contentsline {section}{\numberline {20}Copyright}{48}

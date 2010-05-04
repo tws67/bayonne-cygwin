@@ -1,0 +1,127 @@
+\section{ost::BayonneBinder Class Reference}
+\label{classost_1_1_bayonne_binder}\index{ost::BayonneBinder@{ost::BayonneBinder}}
+
+
+An intermediary binder class for \doxyref{Bayonne}{p.}{classost_1_1_bayonne} engine.  
+
+
+{\ttfamily \#include $<$bayonne.h$>$}Inheritance diagram for ost::BayonneBinder::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classost_1_1_bayonne_binder}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Image}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf submitRequest} (const char $\ast$$\ast$data)
+\item 
+static ScriptCompiler $\ast$ {\bf getCompiler} (void)
+\item 
+static unsigned {\bf gatherDestinations} (ScriptImage $\ast$img, const char $\ast$$\ast$index, unsigned max)
+\item 
+static bool {\bf isDestination} (const char $\ast$name)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const char $\ast$ {\bf submit} (const char $\ast$$\ast$data)
+\item 
+virtual ScriptCompiler $\ast$ {\bf compiler} (void)
+\item 
+virtual unsigned {\bf destinations} (Image $\ast$img, const char $\ast$$\ast$array, unsigned max)
+\item 
+virtual bool {\bf isDestination} (Image $\ast$img, const char $\ast$name)
+\item 
+{\bf BayonneSession} $\ast$ {\bf session} (ScriptInterp $\ast$interp)
+\item 
+bool {\bf scriptEvent} (ScriptInterp $\ast$interp, const char $\ast$evt)
+\item 
+bool {\bf digitEvent} (ScriptInterp $\ast$interp, const char $\ast$evt)
+\item 
+{\bf BayonneBinder} (const char $\ast$id)
+\item 
+virtual void {\bf makeCall} ({\bf BayonneSession} $\ast$child)
+\item 
+virtual void {\bf dropCall} ({\bf BayonneSession} $\ast$child)
+\item 
+virtual Name $\ast$ {\bf getIncoming} (ScriptImage $\ast$img, {\bf BayonneSession} $\ast$s, {\bf Event} $\ast$event)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \_\-\_\-EXPORT {\bf BayonneSession}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An intermediary binder class for \doxyref{Bayonne}{p.}{classost_1_1_bayonne} engine. \begin{DoxyAuthor}{Author}
+David Sugar $<${\tt dyfet@gnutelephony.org}$>$ Binder class. 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::BayonneBinder@{ost::BayonneBinder}!BayonneBinder@{BayonneBinder}}
+\index{BayonneBinder@{BayonneBinder}!ost::BayonneBinder@{ost::BayonneBinder}}
+\subsubsection[{BayonneBinder}]{\setlength{\rightskip}{0pt plus 5cm}ost::BayonneBinder::BayonneBinder (const char $\ast$ {\em id})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_binder_a21fe20e9b068501e8da632992dd663a6}
+
+
+\subsection{Member Function Documentation}
+\index{ost::BayonneBinder@{ost::BayonneBinder}!compiler@{compiler}}
+\index{compiler@{compiler}!ost::BayonneBinder@{ost::BayonneBinder}}
+\subsubsection[{compiler}]{\setlength{\rightskip}{0pt plus 5cm}virtual ScriptCompiler$\ast$ ost::BayonneBinder::compiler (void)\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_binder_a429ad066355066fd2959161f575ae057}
+\index{ost::BayonneBinder@{ost::BayonneBinder}!destinations@{destinations}}
+\index{destinations@{destinations}!ost::BayonneBinder@{ost::BayonneBinder}}
+\subsubsection[{destinations}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned ost::BayonneBinder::destinations (Image $\ast$ {\em img}, \/  const char $\ast$$\ast$ {\em array}, \/  unsigned {\em max})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_binder_a584fa6d7df9ebb9ab0f9446a6c4a2621}
+\index{ost::BayonneBinder@{ost::BayonneBinder}!digitEvent@{digitEvent}}
+\index{digitEvent@{digitEvent}!ost::BayonneBinder@{ost::BayonneBinder}}
+\subsubsection[{digitEvent}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneBinder::digitEvent (ScriptInterp $\ast$ {\em interp}, \/  const char $\ast$ {\em evt})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_binder_a03c8a849d1a90bd841bdb6fc36352eed}
+\index{ost::BayonneBinder@{ost::BayonneBinder}!dropCall@{dropCall}}
+\index{dropCall@{dropCall}!ost::BayonneBinder@{ost::BayonneBinder}}
+\subsubsection[{dropCall}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::BayonneBinder::dropCall ({\bf BayonneSession} $\ast$ {\em child})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_binder_ad722ec4202b5066a767a8d0beacb192b}
+\index{ost::BayonneBinder@{ost::BayonneBinder}!gatherDestinations@{gatherDestinations}}
+\index{gatherDestinations@{gatherDestinations}!ost::BayonneBinder@{ost::BayonneBinder}}
+\subsubsection[{gatherDestinations}]{\setlength{\rightskip}{0pt plus 5cm}static unsigned ost::BayonneBinder::gatherDestinations (ScriptImage $\ast$ {\em img}, \/  const char $\ast$$\ast$ {\em index}, \/  unsigned {\em max})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_binder_ad9fbc22c81ed6a8ed55372511ad7069c}
+\index{ost::BayonneBinder@{ost::BayonneBinder}!getCompiler@{getCompiler}}
+\index{getCompiler@{getCompiler}!ost::BayonneBinder@{ost::BayonneBinder}}
+\subsubsection[{getCompiler}]{\setlength{\rightskip}{0pt plus 5cm}static ScriptCompiler$\ast$ ost::BayonneBinder::getCompiler (void)\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_binder_af50f13b05da900e62c3ac4c4c4b6c8f3}
+\index{ost::BayonneBinder@{ost::BayonneBinder}!getIncoming@{getIncoming}}
+\index{getIncoming@{getIncoming}!ost::BayonneBinder@{ost::BayonneBinder}}
+\subsubsection[{getIncoming}]{\setlength{\rightskip}{0pt plus 5cm}virtual Name$\ast$ ost::BayonneBinder::getIncoming (ScriptImage $\ast$ {\em img}, \/  {\bf BayonneSession} $\ast$ {\em s}, \/  {\bf Event} $\ast$ {\em event})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_binder_a28a8e100673ac1fcf20bfa8a02789541}
+\index{ost::BayonneBinder@{ost::BayonneBinder}!isDestination@{isDestination}}
+\index{isDestination@{isDestination}!ost::BayonneBinder@{ost::BayonneBinder}}
+\subsubsection[{isDestination}]{\setlength{\rightskip}{0pt plus 5cm}static bool ost::BayonneBinder::isDestination (const char $\ast$ {\em name})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_binder_a70dbb57be707f3f3966bbeb47d4b00b2}
+\index{ost::BayonneBinder@{ost::BayonneBinder}!isDestination@{isDestination}}
+\index{isDestination@{isDestination}!ost::BayonneBinder@{ost::BayonneBinder}}
+\subsubsection[{isDestination}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneBinder::isDestination (Image $\ast$ {\em img}, \/  const char $\ast$ {\em name})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_binder_a5808d8acba3513b128b1f15e7e7e7b01}
+\index{ost::BayonneBinder@{ost::BayonneBinder}!makeCall@{makeCall}}
+\index{makeCall@{makeCall}!ost::BayonneBinder@{ost::BayonneBinder}}
+\subsubsection[{makeCall}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::BayonneBinder::makeCall ({\bf BayonneSession} $\ast$ {\em child})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_binder_ab3707b3a92cc48db93427658e511315c}
+\index{ost::BayonneBinder@{ost::BayonneBinder}!scriptEvent@{scriptEvent}}
+\index{scriptEvent@{scriptEvent}!ost::BayonneBinder@{ost::BayonneBinder}}
+\subsubsection[{scriptEvent}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneBinder::scriptEvent (ScriptInterp $\ast$ {\em interp}, \/  const char $\ast$ {\em evt})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_binder_a9f4487d73d05eae81dc6c8ff5f91d507}
+\index{ost::BayonneBinder@{ost::BayonneBinder}!session@{session}}
+\index{session@{session}!ost::BayonneBinder@{ost::BayonneBinder}}
+\subsubsection[{session}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneSession}$\ast$ ost::BayonneBinder::session (ScriptInterp $\ast$ {\em interp})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_binder_a5ef36481cc9246f685379ef24b8fef48}
+\index{ost::BayonneBinder@{ost::BayonneBinder}!submit@{submit}}
+\index{submit@{submit}!ost::BayonneBinder@{ost::BayonneBinder}}
+\subsubsection[{submit}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ ost::BayonneBinder::submit (const char $\ast$$\ast$ {\em data})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_binder_a59d36fdad9e25e3e0721a8cd4a8d6c9a}
+\index{ost::BayonneBinder@{ost::BayonneBinder}!submitRequest@{submitRequest}}
+\index{submitRequest@{submitRequest}!ost::BayonneBinder@{ost::BayonneBinder}}
+\subsubsection[{submitRequest}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ ost::BayonneBinder::submitRequest (const char $\ast$$\ast$ {\em data})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_binder_a73f77ee32eca36e2b99fda7cdaafab8f}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{ost::BayonneBinder@{ost::BayonneBinder}!BayonneSession@{BayonneSession}}
+\index{BayonneSession@{BayonneSession}!ost::BayonneBinder@{ost::BayonneBinder}}
+\subsubsection[{BayonneSession}]{\setlength{\rightskip}{0pt plus 5cm}friend class \_\-\_\-EXPORT {\bf BayonneSession}\hspace{0.3cm}{\ttfamily  [friend]}}\label{classost_1_1_bayonne_binder_a59728bba507bfe559a76d72b50766072}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf bayonne.h}\end{DoxyCompactItemize}

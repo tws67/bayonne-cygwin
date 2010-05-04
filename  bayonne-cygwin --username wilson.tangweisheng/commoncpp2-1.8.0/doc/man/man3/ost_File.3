@@ -1,0 +1,205 @@
+.TH "ost::File" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::File \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <file.h>\fP
+.PP
+Inherited by \fBost::Dir\fP, and \fBost::RandomFile\fP.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fB_fcb\fP"
+.br
+.in -1c
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBError\fP { \fBerrSuccess\fP =  0, \fBerrNotOpened\fP, \fBerrMapFailed\fP, \fBerrInitFailed\fP, \fBerrOpenDenied\fP, \fBerrOpenFailed\fP, \fBerrOpenInUse\fP, \fBerrReadInterrupted\fP, \fBerrReadIncomplete\fP, \fBerrReadFailure\fP, \fBerrWriteInterrupted\fP, \fBerrWriteIncomplete\fP, \fBerrWriteFailure\fP, \fBerrLockFailure\fP, \fBerrExtended\fP }"
+.br
+.ti -1c
+.RI "enum \fBAccess\fP { \fBaccessReadOnly\fP =  O_RDONLY, \fBaccessWriteOnly\fP =  O_WRONLY, \fBaccessReadWrite\fP =  O_RDWR }"
+.br
+.ti -1c
+.RI "enum \fBOpen\fP { \fBopenReadOnly\fP =  O_RDONLY, \fBopenWriteOnly\fP =  O_WRONLY, \fBopenReadWrite\fP =  O_RDWR, \fBopenAppend\fP =  O_WRONLY | O_APPEND, \fBopenSync\fP =  O_RDWR, \fBopenTruncate\fP =  O_RDWR | O_TRUNC }"
+.br
+.ti -1c
+.RI "enum \fBAttr\fP { \fBattrInvalid\fP =  0, \fBattrPrivate\fP =  0400 | 0200, \fBattrGroup\fP =  attrPrivate | 0040 | 0020, \fBattrPublic\fP =  attrGroup | 0004 | 0002 }"
+.br
+.ti -1c
+.RI "enum \fBMapping\fP { \fBmappedRead\fP =  accessReadOnly, \fBmappedWrite\fP =  accessWriteOnly, \fBmappedReadWrite\fP =  accessReadWrite }"
+.br
+.ti -1c
+.RI "enum \fBComplete\fP { \fBcompletionImmediate\fP, \fBcompletionDelayed\fP, \fBcompletionDeferred\fP }"
+.br
+.ti -1c
+.RI "typedef enum \fBError\fP \fBError\fP"
+.br
+.ti -1c
+.RI "typedef enum \fBAccess\fP \fBAccess\fP"
+.br
+.ti -1c
+.RI "typedef enum \fBOpen\fP \fBOpen\fP"
+.br
+.ti -1c
+.RI "typedef enum \fBAttr\fP \fBAttr\fP"
+.br
+.ti -1c
+.RI "typedef enum \fBComplete\fP \fBComplete\fP"
+.br
+.ti -1c
+.RI "typedef enum \fBMapping\fP \fBMapping\fP"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static const char * \fBgetExtension\fP (const char *path)"
+.br
+.ti -1c
+.RI "static const char * \fBgetFilename\fP (const char *path)"
+.br
+.ti -1c
+.RI "static char * \fBgetFilename\fP (const char *path, char *buffer, size_t size=64)"
+.br
+.ti -1c
+.RI "static char * \fBgetDirname\fP (const char *path, char *buffer, size_t size=256)"
+.br
+.ti -1c
+.RI "static char * \fBgetRealpath\fP (const char *path, char *buffer, size_t size=256)"
+.br
+.in -1c
+.SS "Protected Types"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBost::File::_fcb\fP \fBfcb_t\fP"
+.br
+.in -1c
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef enum \fBAccess\fP \fBost::File::Access\fP"
+.SS "typedef enum \fBAttr\fP \fBost::File::Attr\fP"
+.SS "typedef enum \fBComplete\fP \fBost::File::Complete\fP"
+.SS "typedef enum \fBError\fP \fBost::File::Error\fP"
+.SS "typedef struct \fBost::File::_fcb\fP  \fBost::File::fcb_t\fP\fC [protected]\fP"
+.SS "typedef enum \fBMapping\fP \fBost::File::Mapping\fP"
+.SS "typedef enum \fBOpen\fP \fBost::File::Open\fP"
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBost::File::Access\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIaccessReadOnly \fP\fP
+.TP
+\fB\fIaccessWriteOnly \fP\fP
+.TP
+\fB\fIaccessReadWrite \fP\fP
+
+.SS "enum \fBost::File::Attr\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIattrInvalid \fP\fP
+.TP
+\fB\fIattrPrivate \fP\fP
+.TP
+\fB\fIattrGroup \fP\fP
+.TP
+\fB\fIattrPublic \fP\fP
+
+.SS "enum \fBost::File::Complete\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIcompletionImmediate \fP\fP
+.TP
+\fB\fIcompletionDelayed \fP\fP
+.TP
+\fB\fIcompletionDeferred \fP\fP
+
+.SS "enum \fBost::File::Error\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIerrSuccess \fP\fP
+.TP
+\fB\fIerrNotOpened \fP\fP
+.TP
+\fB\fIerrMapFailed \fP\fP
+.TP
+\fB\fIerrInitFailed \fP\fP
+.TP
+\fB\fIerrOpenDenied \fP\fP
+.TP
+\fB\fIerrOpenFailed \fP\fP
+.TP
+\fB\fIerrOpenInUse \fP\fP
+.TP
+\fB\fIerrReadInterrupted \fP\fP
+.TP
+\fB\fIerrReadIncomplete \fP\fP
+.TP
+\fB\fIerrReadFailure \fP\fP
+.TP
+\fB\fIerrWriteInterrupted \fP\fP
+.TP
+\fB\fIerrWriteIncomplete \fP\fP
+.TP
+\fB\fIerrWriteFailure \fP\fP
+.TP
+\fB\fIerrLockFailure \fP\fP
+.TP
+\fB\fIerrExtended \fP\fP
+
+.SS "enum \fBost::File::Mapping\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fImappedRead \fP\fP
+.TP
+\fB\fImappedWrite \fP\fP
+.TP
+\fB\fImappedReadWrite \fP\fP
+
+.SS "enum \fBost::File::Open\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIopenReadOnly \fP\fP
+.TP
+\fB\fIopenWriteOnly \fP\fP
+.TP
+\fB\fIopenReadWrite \fP\fP
+.TP
+\fB\fIopenAppend \fP\fP
+.TP
+\fB\fIopenSync \fP\fP
+.TP
+\fB\fIopenTruncate \fP\fP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "static char* ost::File::getDirname (const char * path, char * buffer, size_t size = \fC256\fP)\fC [static]\fP"
+.SS "static const char* ost::File::getExtension (const char * path)\fC [static]\fP"
+.SS "static char* ost::File::getFilename (const char * path, char * buffer, size_t size = \fC64\fP)\fC [static]\fP"
+.SS "static const char* ost::File::getFilename (const char * path)\fC [static]\fP"
+.SS "static char* ost::File::getRealpath (const char * path, char * buffer, size_t size = \fC256\fP)\fC [static]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

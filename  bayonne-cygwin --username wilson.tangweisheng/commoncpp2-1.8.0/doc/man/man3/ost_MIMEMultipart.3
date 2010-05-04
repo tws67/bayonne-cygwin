@@ -1,0 +1,135 @@
+.TH "ost::MIMEMultipart" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::MIMEMultipart \- 
+.PP
+A container class for multi-part MIME document objects which can be streamed to a std::ostream destination.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <mime.h>\fP
+.PP
+Inherited by \fBost::MIMEMultipartForm\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMIMEMultipart\fP (const char *document)"
+.br
+.RI "\fIContruct a multi-part document, and describe it's type. \fP"
+.ti -1c
+.RI "virtual void \fBhead\fP (std::ostream *output)"
+.br
+.RI "\fIStream the headers of the multi-part document. \fP"
+.ti -1c
+.RI "virtual void \fBbody\fP (std::ostream *output)"
+.br
+.RI "\fIStream the 'body' of the multi-part document. \fP"
+.ti -1c
+.RI "char ** \fBgetHeaders\fP (void)"
+.br
+.RI "\fIGet a string array of the headers to use. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~MIMEMultipart\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "char \fBboundry\fP [8]"
+.br
+.ti -1c
+.RI "char \fBmtype\fP [80]"
+.br
+.ti -1c
+.RI "char * \fBheader\fP [16]"
+.br
+.ti -1c
+.RI "\fBMIMEItemPart\fP * \fBfirst\fP"
+.br
+.ti -1c
+.RI "\fBMIMEItemPart\fP * \fBlast\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBMIMEItemPart\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A container class for multi-part MIME document objects which can be streamed to a std::ostream destination. 
+
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> container for streamable multi-part MIME documents. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual ost::MIMEMultipart::~MIMEMultipart ()\fC [protected, virtual]\fP"
+.SS "ost::MIMEMultipart::MIMEMultipart (const char * document)"
+.PP
+Contruct a multi-part document, and describe it's type. \fBParameters:\fP
+.RS 4
+\fIdocument\fP (content) type. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void ost::MIMEMultipart::body (std::ostream * output)\fC [virtual]\fP"
+.PP
+Stream the 'body' of the multi-part document. This involves streaming the headers and body of each document part.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoutput\fP to stream document body into. 
+.RE
+.PP
+
+.SS "char** ost::MIMEMultipart::getHeaders (void)\fC [inline]\fP"
+.PP
+Get a string array of the headers to use. This is used to assist \fBURLStream::post\fP.
+.PP
+\fBReturns:\fP
+.RS 4
+array of headers. 
+.RE
+.PP
+
+.SS "virtual void ost::MIMEMultipart::head (std::ostream * output)\fC [virtual]\fP"
+.PP
+Stream the headers of the multi-part document. The headers of individual entities are streamed as part of the body.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoutput\fP to stream document header into. 
+.RE
+.PP
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBMIMEItemPart\fP\fC [friend]\fP"
+.SH "Member Data Documentation"
+.PP 
+.SS "char \fBost::MIMEMultipart::boundry\fP[8]\fC [protected]\fP"
+.SS "\fBMIMEItemPart\fP* \fBost::MIMEMultipart::first\fP\fC [protected]\fP"
+.SS "char* \fBost::MIMEMultipart::header\fP[16]\fC [protected]\fP"
+.SS "\fBMIMEItemPart\fP * \fBost::MIMEMultipart::last\fP\fC [protected]\fP"
+.SS "char \fBost::MIMEMultipart::mtype\fP[80]\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

@@ -1,0 +1,21 @@
+ccaudio Library NEWS -- history of visible user changes. 2000-04-25
+
+Release 0.4.1
+
+ccaudio becomes GNU ccAudio, a package in the GNU project.
+
+Release 0.2.2
+
+The most notable change is support for "in memory" sample objects and the
+ability to generate single and dual frequency tones in memory.  Eventually
+support for merging samples, fft analsys, and scaling will be added.
+
+Release 0.2.0
+
+Introduced CDAudio class for portable access to cd audio 
+playback.  Support for RIFF (.wav) audio files has also been added.
+
+Release 0.1
+
+This is the initial release of the ccaudio library.
+

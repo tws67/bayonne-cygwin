@@ -1,0 +1,573 @@
+.TH "ost::AppLog" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::AppLog \- 
+.PP
+Application logger is a class that implements a logger that can be used by applications to save log file somewhere on the system.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <applog.h>\fP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBIdent\fP"
+.br
+.RI "\fI\fBIdent\fP class that represents module name. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAppLog\fP (const char *logFileName=NULL, bool logDirectly=false, bool usePipe=false)"
+.br
+.RI "\fIConstructor for a customized logger. \fP"
+.ti -1c
+.RI "virtual \fB~AppLog\fP ()"
+.br
+.RI "\fIDestructor. \fP"
+.ti -1c
+.RI "void \fBsubscribe\fP ()"
+.br
+.RI "\fISubscribes the current thread to logger, it reserves thread safe buffer for it. \fP"
+.ti -1c
+.RI "void \fBunsubscribe\fP ()"
+.br
+.RI "\fIUnsubscribes the current thread from logger. \fP"
+.ti -1c
+.RI "void \fBlogFileName\fP (const char *FileName, bool logDirectly=false, bool usePipe=false)"
+.br
+.RI "\fIAllows to set up \fBost::alog\fP parameters. \fP"
+.ti -1c
+.RI "void \fBclose\fP (void)"
+.br
+.RI "\fIif logDirectly is set it closes the file. \fP"
+.ti -1c
+.RI "void \fBlevel\fP (\fBSlog::Level\fP enable)"
+.br
+.RI "\fISets the log level. \fP"
+.ti -1c
+.RI "void \fBclogEnable\fP (bool en=true)"
+.br
+.RI "\fIEnables clog output. \fP"
+.ti -1c
+.RI "void \fBslogEnable\fP (bool en=true)"
+.br
+.RI "\fIEnables slog output for error level messages. \fP"
+.ti -1c
+.RI "void \fBidentLevel\fP (const char *ident, \fBSlog::Level\fP level)"
+.br
+.RI "\fISets the level for that ident. \fP"
+.ti -1c
+.RI "void \fBopen\fP (const char *ident)"
+.br
+.RI "\fIOpens the file if not already and sets ident. \fP"
+.ti -1c
+.RI "virtual int \fBoverflow\fP (int c)"
+.br
+.RI "\fIstream \fBoverflow()\fP overload. \fP"
+.ti -1c
+.RI "virtual int \fBsync\fP ()"
+.br
+.RI "\fIstream \fBsync()\fP overload \fP"
+.ti -1c
+.RI "void \fBemerg\fP (const char *format,...)"
+.br
+.RI "\fIemerg level printf style method, provided for convenience. \fP"
+.ti -1c
+.RI "void \fBalert\fP (const char *format,...)"
+.br
+.RI "\fIalert level printf style method, provided for convenience. \fP"
+.ti -1c
+.RI "void \fBcritical\fP (const char *format,...)"
+.br
+.RI "\fIcritical level printf style method, provided for convenience. \fP"
+.ti -1c
+.RI "void \fBerror\fP (const char *format,...)"
+.br
+.RI "\fIerror level printf style method, provided for convenience. \fP"
+.ti -1c
+.RI "void \fBwarn\fP (const char *format,...)"
+.br
+.RI "\fIwarn level printf style method, provided for convenience. \fP"
+.ti -1c
+.RI "void \fBnotice\fP (const char *format,...)"
+.br
+.RI "\fInotice level printf style method, provided for convenience. \fP"
+.ti -1c
+.RI "void \fBinfo\fP (const char *format,...)"
+.br
+.RI "\fIinfo level printf style method, provided for convenience. \fP"
+.ti -1c
+.RI "void \fBdebug\fP (const char *format,...)"
+.br
+.RI "\fIdebug level printf style method, provided for convenience. \fP"
+.ti -1c
+.RI "\fBAppLog\fP & \fBoperator()\fP (const char *ident, \fBSlog::Level\fP level=Slog::levelError)"
+.br
+.RI "\fIoperator to change ident and log level \fP"
+.ti -1c
+.RI "\fBAppLog\fP & \fBoperator()\fP (\fBIdent\fP &ident)"
+.br
+.RI "\fIoperator to change ident \fP"
+.ti -1c
+.RI "\fBAppLog\fP & \fBoperator()\fP (\fBSlog::Level\fP level)"
+.br
+.RI "\fIoperator to change logging level \fP"
+.ti -1c
+.RI "\fBAppLog\fP & \fBoperator<<\fP (\fBAppLog\fP &(*pfManipulator)(\fBAppLog\fP &))"
+.br
+.RI "\fImanipulator operator, to change print levels. \fP"
+.ti -1c
+.RI "\fBAppLog\fP & \fBoperator<<\fP (ostream &(*pfManipulator)(ostream &))"
+.br
+.RI "\fImanipulator operator, to use ostream manipulators (i.e. \fP"
+.ti -1c
+.RI "\fBAppLog\fP & \fBoperator<<\fP (\fBIdent\fP &ident)"
+.br
+.RI "\fIoperator << \fP"
+.ti -1c
+.RI "\fBAppLog\fP & \fBwarn\fP (void)"
+.br
+.RI "\fIwarn level \fP"
+.ti -1c
+.RI "\fBAppLog\fP & \fBerror\fP (void)"
+.br
+.RI "\fIerror level \fP"
+.ti -1c
+.RI "\fBAppLog\fP & \fBdebug\fP (void)"
+.br
+.RI "\fIdebug level \fP"
+.ti -1c
+.RI "\fBAppLog\fP & \fBemerg\fP (void)"
+.br
+.RI "\fIemerg level \fP"
+.ti -1c
+.RI "\fBAppLog\fP & \fBalert\fP (void)"
+.br
+.RI "\fIalert level \fP"
+.ti -1c
+.RI "\fBAppLog\fP & \fBcritical\fP (void)"
+.br
+.RI "\fIcritical level \fP"
+.ti -1c
+.RI "\fBAppLog\fP & \fBnotice\fP (void)"
+.br
+.RI "\fInotice level \fP"
+.ti -1c
+.RI "\fBAppLog\fP & \fBinfo\fP (void)"
+.br
+.RI "\fIinfo level \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBSlog::Level\fP \fBlevelTranslate\fP (string name)"
+.br
+.RI "\fITranslates level from string to \fBSlog::Level\fP, useful for configuration files for instance. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBwriteLog\fP (bool endOfLine=true)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "AppLogPrivate * \fBd\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static map< string, \fBSlog::Level\fP > * \fBassoc\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &out, \fBAppLog\fP &al)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Application logger is a class that implements a logger that can be used by applications to save log file somewhere on the system. 
+
+It uses \fBost::slog\fP to write to syslog and std::clog to write to standard output.
+.PP
+It provides either a stream oriented logger or a old printf style one.
+.PP
+It can be used to log directly on a file or in a spooler like way. Latter uses a \fBost::ThreadQueue\fP to implement a thread safe access to logger.
+.PP
+It provides a global stream variable called \fBost::alog\fP.
+.PP
+It provides an \fBAppLog::Ident\fP class that represents a module name for instance that can be used to tag logs. Logging levels are the same defined into \fBost::Slog\fP: \fBSlog::levelEmergency\fP \fBSlog::levelAlert\fP \fBSlog::levelCritical\fP \fBSlog::levelError\fP \fBSlog::levelWarning\fP \fBSlog::levelNotice\fP \fBSlog::levelInfo\fP Slog::levelDebugfrom.
+.PP
+Example of usage: alog << mod_name << debug << 'Hello world!' << std::endl; 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::AppLog::AppLog (const char * logFileName = \fCNULL\fP, bool logDirectly = \fCfalse\fP, bool usePipe = \fCfalse\fP)"
+.PP
+Constructor for a customized logger. \fBParameters:\fP
+.RS 4
+\fIlogFileName\fP log file name. 
+.br
+\fIlogDirectly\fP true to write directly to file, false to use a spooler like logger. 
+.br
+\fIusePipe\fP true to use pipe instead of file, false otherwise 
+.RE
+.PP
+
+.SS "virtual ost::AppLog::~AppLog ()\fC [virtual]\fP"
+.PP
+Destructor. 
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBAppLog\fP& ost::AppLog::alert (void)\fC [inline]\fP"
+.PP
+alert level \fBReturns:\fP
+.RS 4
+application logger stream 
+.RE
+.PP
+
+.PP
+References ost::Slog::levelAlert.
+.SS "void ost::AppLog::alert (const char * format,  ...)"
+.PP
+alert level printf style method, provided for convenience. \fBParameters:\fP
+.RS 4
+\fIformat\fP printf format 
+.RE
+.PP
+
+.SS "void ost::AppLog::clogEnable (bool en = \fCtrue\fP)"
+.PP
+Enables clog output. \fBParameters:\fP
+.RS 4
+\fIen\fP true to enable clog output. 
+.RE
+.PP
+
+.SS "void ost::AppLog::close (void)"
+.PP
+if logDirectly is set it closes the file. 
+.SS "\fBAppLog\fP& ost::AppLog::critical (void)\fC [inline]\fP"
+.PP
+critical level \fBReturns:\fP
+.RS 4
+application logger stream 
+.RE
+.PP
+
+.PP
+References ost::Slog::levelCritical.
+.SS "void ost::AppLog::critical (const char * format,  ...)"
+.PP
+critical level printf style method, provided for convenience. \fBParameters:\fP
+.RS 4
+\fIformat\fP printf format 
+.RE
+.PP
+
+.SS "\fBAppLog\fP& ost::AppLog::debug (void)\fC [inline]\fP"
+.PP
+debug level \fBReturns:\fP
+.RS 4
+application logger stream 
+.RE
+.PP
+
+.PP
+References ost::Slog::levelDebug.
+.SS "void ost::AppLog::debug (const char * format,  ...)"
+.PP
+debug level printf style method, provided for convenience. \fBParameters:\fP
+.RS 4
+\fIformat\fP printf format 
+.RE
+.PP
+
+.SS "\fBAppLog\fP& ost::AppLog::emerg (void)\fC [inline]\fP"
+.PP
+emerg level \fBReturns:\fP
+.RS 4
+application logger stream 
+.RE
+.PP
+
+.PP
+References ost::Slog::levelEmergency.
+.SS "void ost::AppLog::emerg (const char * format,  ...)"
+.PP
+emerg level printf style method, provided for convenience. \fBParameters:\fP
+.RS 4
+\fIformat\fP printf format 
+.RE
+.PP
+
+.SS "\fBAppLog\fP& ost::AppLog::error (void)\fC [inline]\fP"
+.PP
+error level \fBReturns:\fP
+.RS 4
+application logger stream 
+.RE
+.PP
+
+.PP
+References ost::Slog::levelError.
+.SS "void ost::AppLog::error (const char * format,  ...)"
+.PP
+error level printf style method, provided for convenience. \fBParameters:\fP
+.RS 4
+\fIformat\fP printf format 
+.RE
+.PP
+
+.SS "void ost::AppLog::identLevel (const char * ident, \fBSlog::Level\fP level)"
+.PP
+Sets the level for that ident. \fBParameters:\fP
+.RS 4
+\fIident\fP ident (module name for instance). 
+.br
+\fIlevel\fP level 
+.RE
+.PP
+
+.SS "\fBAppLog\fP& ost::AppLog::info (void)\fC [inline]\fP"
+.PP
+info level \fBReturns:\fP
+.RS 4
+application logger stream 
+.RE
+.PP
+
+.PP
+References ost::Slog::levelInfo.
+.SS "void ost::AppLog::info (const char * format,  ...)"
+.PP
+info level printf style method, provided for convenience. \fBParameters:\fP
+.RS 4
+\fIformat\fP printf format 
+.RE
+.PP
+
+.SS "void ost::AppLog::level (\fBSlog::Level\fP enable)"
+.PP
+Sets the log level. \fBParameters:\fP
+.RS 4
+\fIenable\fP log level. 
+.RE
+.PP
+
+.SS "static \fBSlog::Level\fP ost::AppLog::levelTranslate (string name)\fC [inline, static]\fP"
+.PP
+Translates level from string to \fBSlog::Level\fP, useful for configuration files for instance. Valid level names are: 'emerg' for \fBSlog::levelEmergency\fP 'alert' for \fBSlog::levelAlert\fP 'critical' for \fBSlog::levelCritical\fP 'error' for \fBSlog::levelError\fP 'warn' for \fBSlog::levelWarning\fP 'notice' for \fBSlog::levelNotice\fP 'info' for \fBSlog::levelInfo\fP 'debug' for \fBSlog::levelDebug\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP \fBSlog\fP Level name 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBSlog\fP level value 
+.RE
+.PP
+
+.PP
+References ost::Slog::levelEmergency.
+.SS "void ost::AppLog::logFileName (const char * FileName, bool logDirectly = \fCfalse\fP, bool usePipe = \fCfalse\fP)"
+.PP
+Allows to set up \fBost::alog\fP parameters. \fBParameters:\fP
+.RS 4
+\fIFileName\fP log file name. 
+.br
+\fIlogDirectly\fP true to write directly to file, false to use a spooler like logger. 
+.br
+\fIusePipe\fP true to use pipe instead of file, false otherwise 
+.RE
+.PP
+
+.SS "\fBAppLog\fP& ost::AppLog::notice (void)\fC [inline]\fP"
+.PP
+notice level \fBReturns:\fP
+.RS 4
+application logger stream 
+.RE
+.PP
+
+.PP
+References ost::Slog::levelNotice.
+.SS "void ost::AppLog::notice (const char * format,  ...)"
+.PP
+notice level printf style method, provided for convenience. \fBParameters:\fP
+.RS 4
+\fIformat\fP printf format 
+.RE
+.PP
+
+.SS "void ost::AppLog::open (const char * ident)"
+.PP
+Opens the file if not already and sets ident. \fBParameters:\fP
+.RS 4
+\fIident\fP module name for instance. 
+.RE
+.PP
+
+.SS "\fBAppLog\fP& ost::AppLog::operator() (\fBSlog::Level\fP level)"
+.PP
+operator to change logging level \fBParameters:\fP
+.RS 4
+\fIlevel\fP new log level 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+application logger stream 
+.RE
+.PP
+
+.SS "\fBAppLog\fP& ost::AppLog::operator() (\fBIdent\fP & ident)\fC [inline]\fP"
+.PP
+operator to change ident \fBParameters:\fP
+.RS 4
+\fIident\fP ident (module name for instance) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+application logger stream 
+.RE
+.PP
+
+.PP
+References ost::AppLog::Ident::c_str().
+.SS "\fBAppLog\fP& ost::AppLog::operator() (const char * ident, \fBSlog::Level\fP level = \fCSlog::levelError\fP)"
+.PP
+operator to change ident and log level \fBParameters:\fP
+.RS 4
+\fIident\fP ident (module name for instance) 
+.br
+\fIlevel\fP new log level 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+application logger stream 
+.RE
+.PP
+
+.SS "\fBAppLog\fP& ost::AppLog::operator<< (\fBIdent\fP & ident)\fC [inline]\fP"
+.PP
+operator << \fBParameters:\fP
+.RS 4
+\fIident\fP module name for instance. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+application logger stream 
+.RE
+.PP
+
+.PP
+References ost::AppLog::Ident::c_str().
+.SS "\fBAppLog\fP& ost::AppLog::operator<< (ostream &(*)(ostream &) pfManipulator)"
+.PP
+manipulator operator, to use ostream manipulators (i.e. std::endl,...) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI(*\fP pfManipulator)(\fBAppLog\fP &) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+application logger stream 
+.RE
+.PP
+
+.SS "\fBAppLog\fP& ost::AppLog::operator<< (\fBAppLog\fP &(*)(\fBAppLog\fP &) pfManipulator)"
+.PP
+manipulator operator, to change print levels. \fBParameters:\fP
+.RS 4
+\fI(*\fP pfManipulator)(\fBAppLog\fP &) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+application logger stream 
+.RE
+.PP
+
+.SS "virtual int ost::AppLog::overflow (int c)\fC [virtual]\fP"
+.PP
+stream \fBoverflow()\fP overload. \fBParameters:\fP
+.RS 4
+\fIc\fP character to be managed 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+c 
+.RE
+.PP
+
+.SS "void ost::AppLog::slogEnable (bool en = \fCtrue\fP)"
+.PP
+Enables slog output for error level messages. \fBParameters:\fP
+.RS 4
+\fIen\fP true to enable slog output. 
+.RE
+.PP
+
+.SS "void ost::AppLog::subscribe ()"
+.PP
+Subscribes the current thread to logger, it reserves thread safe buffer for it. 
+.SS "virtual int ost::AppLog::sync ()\fC [virtual]\fP"
+.PP
+stream \fBsync()\fP overload 
+.SS "void ost::AppLog::unsubscribe ()"
+.PP
+Unsubscribes the current thread from logger. 
+.SS "\fBAppLog\fP& ost::AppLog::warn (void)\fC [inline]\fP"
+.PP
+warn level \fBReturns:\fP
+.RS 4
+application logger stream 
+.RE
+.PP
+
+.PP
+References ost::Slog::levelWarning.
+.SS "void ost::AppLog::warn (const char * format,  ...)"
+.PP
+warn level printf style method, provided for convenience. \fBParameters:\fP
+.RS 4
+\fIformat\fP printf format 
+.RE
+.PP
+
+.SS "void ost::AppLog::writeLog (bool endOfLine = \fCtrue\fP)\fC [protected]\fP"
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "ostream& operator<< (ostream & out, \fBAppLog\fP & al)\fC [friend]\fP"
+.SH "Member Data Documentation"
+.PP 
+.SS "map<string, \fBSlog::Level\fP>* \fBost::AppLog::assoc\fP\fC [static, protected]\fP"
+.SS "AppLogPrivate* \fBost::AppLog::d\fP\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

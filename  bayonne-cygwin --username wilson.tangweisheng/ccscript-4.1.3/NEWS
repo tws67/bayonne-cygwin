@@ -1,0 +1,73 @@
+ccscript Library NEWS -- history of visible user changes.
+
+GNU ccscript - version IV
+
+The 4th major release of ccscript brings with it both a complete rewrite
+of the core engine and many enhancements in the process.  The goals of this
+rewrite were performance, embeddability, and simplicity.
+
+The engine is now lockfree to maximize performance.  Locking schemes, if
+they are needed for thread synchronization, are now entirely external to
+the scripting core.
+
+Heap usage, especially for scoped symbols, has been greatly reduced.  Hence
+there are far fewer private heap pages created, and far less dynamic heap
+allocations at runtime for subfunction calls and symbol scopting.  This was
+done by eliminating the use of private symbols on private stack frame heaps.
+One side effect is that one cannot recursivily call function definitions,
+but on the other hand, the stack was never very large anyway, and the
+overall runtime performance and memory gains (for embedded targets) were 
+worth this sacrifice.  All symbol space is now in a scoped global hash
+indexed heap.
+
+Image sets are now reference counted individually per script through smart
+pointers.  This means individual scripts can be recompiled at runtime
+selectivily, rather than all at once.
+
+Specialized symbol types and other confusing automatic symbol actions were
+removed.  This also means the complex overhead of commit() methods for setting
+variables was also removed.  Again, this improves performance.
+
+Extensive compile-time support has been added to validate scripts.  Usage of
+conditional expressions is now compile-time validated, along with looping
+statements and loop completion.  The new "strict" command can be used to force
+validation of all symbol references at compile-time, thereby eliminating typos.
+More extensive compile-time support means far less processing overhead for
+error checking is needed at runtime, as well as assuring that scripts are
+correctly coded.  This also means there are no strange "side-effect" syntaxes.
+
+All traps are now dynamically "named" traps and can be created on the fly as
+is.  A script now is composed of "initialization" statements followed by
+defines and their individual "^event" handlers, followed by "@script" sections,
+each with their own "^handlers". "^error" is assumed the default handler for
+errors, and "^exit" for termination.   All others are freeform.  The "@main"
+section is called for startup if not attached differently, and the "@exit"
+section, if it exists, is called when the script exits.
+
+The duplicative and complex signal handling and dispatch system has been
+removed now that generically named traps can now handle both original signalled
+and named events. Resource masks have replaced signals.  This is used by
+systems like Bayonne that can allocate dsp resources dynamically. In fact,
+scripting interaction with dynamic dsp resource allocation was the primary
+reason signals were originally introduced for ccscript.
+
+No compatibility exists with previous incarnations of the engine.  There was
+always huge overhead for legacy support, which involved supporting redundent
+statements, behaviors, and coding patterns, and these are now ALL gone.
+
+No "generic" plugin modules are distributed as part of the core engine library.
+Module handling and plugin extensions are now entirely a matter of the derived
+application service.
+
+ccscript release IV is offered under the GNU General Public License, version
+3 or later.
+
+An automated unit test for library was added.  
+
+We have validated the engine on several different platforms, including
+Microsoft Windows compiled via mingw32.
+
+Documentation for the core scripting language is now distributed as part of GNU
+ccScript itself, rather than just the derived Bayonne dialect described in the
+separate GNU Bayonne package.
+

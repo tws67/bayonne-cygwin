@@ -1,0 +1,160 @@
+\section{ost::AudioBase Class Reference}
+\label{classost_1_1_audio_base}\index{ost::AudioBase@{ost::AudioBase}}
+
+
+\doxyref{AudioBase}{p.}{classost_1_1_audio_base} base class for many other audio classes which stream data.  
+
+
+{\ttfamily \#include $<$audio2.h$>$}Inheritance diagram for ost::AudioBase::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{classost_1_1_audio_base}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf AudioBase} ()
+\begin{DoxyCompactList}\small\item\em Create audio base object with no info. \item\end{DoxyCompactList}\item 
+{\bf AudioBase} (Info $\ast${\bf info})
+\begin{DoxyCompactList}\small\item\em Create audio base object with audio source description. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$AudioBase} ()
+\begin{DoxyCompactList}\small\item\em Destroy an audio base object. \item\end{DoxyCompactList}\item 
+{\bf Encoding} {\bf getEncoding} (void)
+\begin{DoxyCompactList}\small\item\em Generic get encoding. \item\end{DoxyCompactList}\item 
+unsigned {\bf getSampleRate} (void)
+\begin{DoxyCompactList}\small\item\em Generic sample rate. \item\end{DoxyCompactList}\item 
+virtual ssize\_\-t {\bf putBuffer} ({\bf Encoded} data, size\_\-t size)=0
+\begin{DoxyCompactList}\small\item\em Abstract interface to put raw data. \item\end{DoxyCompactList}\item 
+ssize\_\-t {\bf putNative} ({\bf Encoded} data, size\_\-t size)
+\begin{DoxyCompactList}\small\item\em Puts raw data and does native to refined endian swapping if needed based on encoding type and local machine endian. \item\end{DoxyCompactList}\item 
+virtual ssize\_\-t {\bf getBuffer} ({\bf Encoded} data, size\_\-t size)=0
+\begin{DoxyCompactList}\small\item\em Abstract interface to get raw data. \item\end{DoxyCompactList}\item 
+ssize\_\-t {\bf getPacket} ({\bf Encoded} data)
+\begin{DoxyCompactList}\small\item\em Get's a packet of audio data. \item\end{DoxyCompactList}\item 
+ssize\_\-t {\bf getNative} ({\bf Encoded} data, size\_\-t size)
+\begin{DoxyCompactList}\small\item\em Get raw data and assure is in native machine endian. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Info {\bf info}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{AudioBase}{p.}{classost_1_1_audio_base} base class for many other audio classes which stream data. common audio stream base. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::AudioBase@{ost::AudioBase}!AudioBase@{AudioBase}}
+\index{AudioBase@{AudioBase}!ost::AudioBase@{ost::AudioBase}}
+\subsubsection[{AudioBase}]{\setlength{\rightskip}{0pt plus 5cm}ost::AudioBase::AudioBase ()}\label{classost_1_1_audio_base_a78b761e7276b8c6ea542130aa3a6fde6}
+
+
+Create audio base object with no info. \index{ost::AudioBase@{ost::AudioBase}!AudioBase@{AudioBase}}
+\index{AudioBase@{AudioBase}!ost::AudioBase@{ost::AudioBase}}
+\subsubsection[{AudioBase}]{\setlength{\rightskip}{0pt plus 5cm}ost::AudioBase::AudioBase (Info $\ast$ {\em info})}\label{classost_1_1_audio_base_a4f33a17bc5d215b5a5c6dac3758971d7}
+
+
+Create audio base object with audio source description. 
+\begin{DoxyParams}{Parameters}
+\item[{\em info}]source description. \end{DoxyParams}
+\index{ost::AudioBase@{ost::AudioBase}!$\sim$AudioBase@{$\sim$AudioBase}}
+\index{$\sim$AudioBase@{$\sim$AudioBase}!ost::AudioBase@{ost::AudioBase}}
+\subsubsection[{$\sim$AudioBase}]{\setlength{\rightskip}{0pt plus 5cm}virtual ost::AudioBase::$\sim$AudioBase ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_audio_base_a932477ed1dab1f1251a22b3c75f0e745}
+
+
+Destroy an audio base object. 
+
+\subsection{Member Function Documentation}
+\index{ost::AudioBase@{ost::AudioBase}!getBuffer@{getBuffer}}
+\index{getBuffer@{getBuffer}!ost::AudioBase@{ost::AudioBase}}
+\subsubsection[{getBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual ssize\_\-t ost::AudioBase::getBuffer ({\bf Encoded} {\em data}, \/  size\_\-t {\em size})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classost_1_1_audio_base_ac2efc5edeab71de84764796d4353a057}
+
+
+Abstract interface to get raw data. \begin{DoxyReturn}{Returns}
+data received in buffer. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]to get. \item[{\em size}]of data to get. \end{DoxyParams}
+
+
+Implemented in {\bf ost::AudioBuffer} \doxyref{}{p.}{classost_1_1_audio_buffer_afd4bc8c265125e0809165c50ee2dac57}, {\bf ost::AudioFile} \doxyref{}{p.}{classost_1_1_audio_file_a40e6fcddf43df289fef2f66ccbe84bbd}, {\bf ost::AudioStream} \doxyref{}{p.}{classost_1_1_audio_stream_a32945278bd2fcb2b03c97f15d78f571b}, and {\bf ost::AudioDevice} \doxyref{}{p.}{classost_1_1_audio_device_a93d1081a88acc1cb9da1ab2e98a8c791}.\index{ost::AudioBase@{ost::AudioBase}!getEncoding@{getEncoding}}
+\index{getEncoding@{getEncoding}!ost::AudioBase@{ost::AudioBase}}
+\subsubsection[{getEncoding}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Encoding} ost::AudioBase::getEncoding (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_audio_base_ac419b6c2407894a81147e05f5c5eed9c}
+
+
+Generic get encoding. \begin{DoxyReturn}{Returns}
+audio encoding of this object. 
+\end{DoxyReturn}
+
+
+Reimplemented in {\bf ost::AudioFile} \doxyref{}{p.}{classost_1_1_audio_file_a7b9b5e2d9b8358477874aed0c610ee38}.\index{ost::AudioBase@{ost::AudioBase}!getNative@{getNative}}
+\index{getNative@{getNative}!ost::AudioBase@{ost::AudioBase}}
+\subsubsection[{getNative}]{\setlength{\rightskip}{0pt plus 5cm}ssize\_\-t ost::AudioBase::getNative ({\bf Encoded} {\em data}, \/  size\_\-t {\em size})}\label{classost_1_1_audio_base_a8333d7f0135dad5eaf515895c08dbfbd}
+
+
+Get raw data and assure is in native machine endian. \begin{DoxyReturn}{Returns}
+data received in buffer. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]to get. \item[{\em size}]of data to get. \end{DoxyParams}
+\index{ost::AudioBase@{ost::AudioBase}!getPacket@{getPacket}}
+\index{getPacket@{getPacket}!ost::AudioBase@{ost::AudioBase}}
+\subsubsection[{getPacket}]{\setlength{\rightskip}{0pt plus 5cm}ssize\_\-t ost::AudioBase::getPacket ({\bf Encoded} {\em data})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_audio_base_a26a26fef0bcc5a158dab9cdf5a0d772e}
+
+
+Get's a packet of audio data. \begin{DoxyReturn}{Returns}
+count of data received. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]to get. \end{DoxyParams}
+
+
+Reimplemented in {\bf ost::AudioStream} \doxyref{}{p.}{classost_1_1_audio_stream_aab3a8568a6e1b3c9660a6c63b049ccd6}.\index{ost::AudioBase@{ost::AudioBase}!getSampleRate@{getSampleRate}}
+\index{getSampleRate@{getSampleRate}!ost::AudioBase@{ost::AudioBase}}
+\subsubsection[{getSampleRate}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::AudioBase::getSampleRate (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_audio_base_a438fa2853fd7683b06a5939c115aaa4c}
+
+
+Generic sample rate. \begin{DoxyReturn}{Returns}
+audio sample rate of this object. 
+\end{DoxyReturn}
+
+
+Reimplemented in {\bf ost::AudioFile} \doxyref{}{p.}{classost_1_1_audio_file_a3d271f6b81b9e9840150490d4725c620}.\index{ost::AudioBase@{ost::AudioBase}!putBuffer@{putBuffer}}
+\index{putBuffer@{putBuffer}!ost::AudioBase@{ost::AudioBase}}
+\subsubsection[{putBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual ssize\_\-t ost::AudioBase::putBuffer ({\bf Encoded} {\em data}, \/  size\_\-t {\em size})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classost_1_1_audio_base_a4f8127866aad2198934215ea55e892a2}
+
+
+Abstract interface to put raw data. 
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]to put. \item[{\em size}]of data to put. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of bytes actually put. 
+\end{DoxyReturn}
+
+
+Implemented in {\bf ost::AudioBuffer} \doxyref{}{p.}{classost_1_1_audio_buffer_a398d028be8c691e8107073308f4507bc}, {\bf ost::AudioFile} \doxyref{}{p.}{classost_1_1_audio_file_a6d53c942621cae134b021b57064b4004}, and {\bf ost::AudioDevice} \doxyref{}{p.}{classost_1_1_audio_device_af385b8b82740059b92e115082247a613}.\index{ost::AudioBase@{ost::AudioBase}!putNative@{putNative}}
+\index{putNative@{putNative}!ost::AudioBase@{ost::AudioBase}}
+\subsubsection[{putNative}]{\setlength{\rightskip}{0pt plus 5cm}ssize\_\-t ost::AudioBase::putNative ({\bf Encoded} {\em data}, \/  size\_\-t {\em size})}\label{classost_1_1_audio_base_a4f515f81fd2079b74ab93eee4947d9fb}
+
+
+Puts raw data and does native to refined endian swapping if needed based on encoding type and local machine endian. 
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]to put. \item[{\em size}]of data to put. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of bytes actually put. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\index{ost::AudioBase@{ost::AudioBase}!info@{info}}
+\index{info@{info}!ost::AudioBase@{ost::AudioBase}}
+\subsubsection[{info}]{\setlength{\rightskip}{0pt plus 5cm}Info {\bf ost::AudioBase::info}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_audio_base_aaf541ba0c6e8285e961d551454aa63a1}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf audio2.h}\end{DoxyCompactItemize}

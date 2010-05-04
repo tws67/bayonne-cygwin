@@ -1,0 +1,117 @@
+.TH "ost::RefPointer" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::RefPointer \- 
+.PP
+\fBPointer\fP to reference counted objects.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <object.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRefPointer\fP ()"
+.br
+.RI "\fICreate an unattached pointer. \fP"
+.ti -1c
+.RI "\fBRefPointer\fP (\fBRefObject\fP *obj)"
+.br
+.RI "\fICreate a pointer attached to a reference counted object. \fP"
+.ti -1c
+.RI "\fBRefPointer\fP (const \fBRefPointer\fP &ptr)"
+.br
+.RI "\fIA copy constructor. \fP"
+.ti -1c
+.RI "virtual \fB~RefPointer\fP ()"
+.br
+.ti -1c
+.RI "\fBRefPointer\fP & \fBoperator=\fP (const \fBRefObject\fP &\fBref\fP)"
+.br
+.ti -1c
+.RI "void * \fBoperator*\fP () const "
+.br
+.ti -1c
+.RI "void * \fBoperator->\fP () const "
+.br
+.ti -1c
+.RI "void * \fBgetObject\fP (void) const "
+.br
+.ti -1c
+.RI "bool \fBoperator!\fP () const "
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBdetach\fP (void)"
+.br
+.RI "\fIDetach current object, for example, when changing pointer. \fP"
+.ti -1c
+.RI "virtual void \fBenterLock\fP (void)"
+.br
+.RI "\fIPatch point for mutex in derived class. \fP"
+.ti -1c
+.RI "virtual void \fBleaveLock\fP (void)"
+.br
+.RI "\fIPatch point for a mutex in derived class. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBRefObject\fP * \fBref\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBPointer\fP to reference counted objects. 
+
+This is a non-template form of a reference count smart pointer, and so uses common code. This can be subclassed to return explicit object types.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@gnutelephony.org> \fBPointer\fP to reference count managed objects. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::RefPointer::RefPointer ()\fC [inline]\fP"
+.PP
+Create an unattached pointer. 
+.SS "ost::RefPointer::RefPointer (\fBRefObject\fP * obj)"
+.PP
+Create a pointer attached to a reference counted object. Object being referenced. 
+.SS "ost::RefPointer::RefPointer (const \fBRefPointer\fP & ptr)"
+.PP
+A copy constructor. \fBPointer\fP being copied. 
+.SS "virtual ost::RefPointer::~RefPointer ()\fC [virtual]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::RefPointer::detach (void)\fC [protected]\fP"
+.PP
+Detach current object, for example, when changing pointer. 
+.SS "virtual void ost::RefPointer::enterLock (void)\fC [protected, virtual]\fP"
+.PP
+Patch point for mutex in derived class. This may often be a single static mutex shared by a managed type. 
+.SS "void* ost::RefPointer::getObject (void) const"
+.SS "virtual void ost::RefPointer::leaveLock (void)\fC [protected, virtual]\fP"
+.PP
+Patch point for a mutex in derived class. This may often be a single static mutex shared by a managed type. 
+.SS "bool ost::RefPointer::operator! () const"
+.SS "void* ost::RefPointer::operator* () const\fC [inline]\fP"
+.SS "void* ost::RefPointer::operator-> () const\fC [inline]\fP"
+.SS "\fBRefPointer\fP& ost::RefPointer::operator= (const \fBRefObject\fP & ref)"
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBRefObject\fP* \fBost::RefPointer::ref\fP\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

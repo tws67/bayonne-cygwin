@@ -1,0 +1,81 @@
+.TH "ost::MemPagerObject" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::MemPagerObject \- 
+.PP
+This class is used to create derived classes which are constructed within a memory pager pool.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <misc.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void * \fBoperator new\fP (size_t size, \fBMemPager\fP &pager)"
+.br
+.RI "\fIAllocate memory from a memory pager. \fP"
+.ti -1c
+.RI "void * \fBoperator new[]\fP (size_t size, \fBMemPager\fP &pager)"
+.br
+.RI "\fIAllocate array from a memory pager. \fP"
+.ti -1c
+.RI "void \fBoperator delete\fP (void *)"
+.br
+.RI "\fIMempager delete does nothing; the pool purges. \fP"
+.ti -1c
+.RI "void \fBoperator delete[]\fP (void *)"
+.br
+.RI "\fIArray mempager delete does nothing; the pool purges. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class is used to create derived classes which are constructed within a memory pager pool. 
+
+create objects in a memory pager. 
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::MemPagerObject::operator delete (void *)\fC [inline]\fP"
+.PP
+Mempager delete does nothing; the pool purges. 
+.SS "void ost::MemPagerObject::operator delete[] (void *)\fC [inline]\fP"
+.PP
+Array mempager delete does nothing; the pool purges. 
+.SS "void* ost::MemPagerObject::operator new (size_t size, \fBMemPager\fP & pager)\fC [inline]\fP"
+.PP
+Allocate memory from a memory pager. \fBParameters:\fP
+.RS 4
+\fIsize\fP of new passed from operator. 
+.br
+\fIpager\fP to allocate from. 
+.RE
+.PP
+
+.PP
+References ost::MemPager::alloc().
+.SS "void* ost::MemPagerObject::operator new[] (size_t size, \fBMemPager\fP & pager)\fC [inline]\fP"
+.PP
+Allocate array from a memory pager. \fBParameters:\fP
+.RS 4
+\fIsize\fP of new passed from operator. 
+.br
+\fIpager\fP to allocate from. 
+.RE
+.PP
+
+.PP
+References ost::MemPager::alloc().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

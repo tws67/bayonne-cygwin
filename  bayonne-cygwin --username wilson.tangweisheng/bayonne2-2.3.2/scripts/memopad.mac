@@ -1,0 +1,72 @@
+%% Copyright (C) 2005 David Sugar, Tycho Softworks.
+%%
+%% This file is free software; as a special exception the author gives
+%% unlimited permission to copy and/or distribute it, with or without
+%% modifications, as long as this notice is preserved.
+%%
+%% This program is distributed in the hope that it will be useful, but
+%% WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
+%% implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+%%
+%% A simple memopad system, used to distribute system memos.
+%%
+%% Primary macros:
+%%	memopad::record		record a new memo
+%%	memopad::play		play unplayed memo's for given user
+%%	memopad::name		used to record name/heading for memos
+
+	dir memopad
+	use property
+	use sort
+	use time
+	property .after:32 .order:1
+
+macro name
+	keywords user limit
+	define %user="system" %limit="10s"
+	const %temp "temp-" %user {.au}
+	const %name "name-" %user {.au}
+	record %temp timeout=%limit prefix=memopad
+	move %temp %name
+	return
+
+macro record
+	keywords user limit
+	define %user="system" %limit="600s"
+	date %today
+	const %stamp %session.uid {.au}
+	const %temp "memopad/temp-" %stamp
+	const %memo "memopad/memo-" %stamp
+	const %name "memopad/name-" %user {.au}
+	build %temp %name &date %today
+	append %temp timeout=%limit
+	move %temp %memo
+	return
+
+macro play
+	keywords user after
+	define %user="none" %after="none"
+	array size=32 count=20 %memo
+	begin
+	case %after != "none"
+		set .after %after
+	case %user != "none"
+		load id=%user
+	otherwise
+		set .after ""
+	endcase
+	list %memo memopad after=&.after match="memo-" extension={.au}
+	if #memo -lt 1 then return
+	sort %memo
+	if .order == "r" then revsort %memo
+	foreach %item %memo 
+		play %item prefix=memopad
+	loop
+	begin
+	case %after != "none"
+		set %after .after
+	case %user != "none"
+		save id=%user
+	endcase
+	return
+

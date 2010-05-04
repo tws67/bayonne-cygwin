@@ -1,0 +1,881 @@
+\section{ost::BayonneDriver Class Reference}
+\label{classost_1_1_bayonne_driver}\index{ost::BayonneDriver@{ost::BayonneDriver}}
+
+
+The principle driver node for a given collection of spans and sessions of a given \doxyref{Bayonne}{p.}{classost_1_1_bayonne} driver family type.  
+
+
+{\ttfamily \#include $<$bayonne.h$>$}Inheritance diagram for ost::BayonneDriver::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classost_1_1_bayonne_driver}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool {\bf isAuthorized} (const char $\ast$userid, const char $\ast$secret)
+\begin{DoxyCompactList}\small\item\em Determine if user id and secret is authorized for this driver subsystem (registry). \item\end{DoxyCompactList}\item 
+virtual bool {\bf deregister} (const char $\ast$id)
+\item 
+virtual bool {\bf reregister} (const char $\ast$id, const char $\ast$uri, const char $\ast$secret, timeout\_\-t expires)
+\item 
+{\bf BayonneDriver} (Keydata::Define $\ast$pairs, const char $\ast$key, const char $\ast$id, bool virt=false)
+\begin{DoxyCompactList}\small\item\em Create a driver instance. \item\end{DoxyCompactList}\item 
+{\bf $\sim$BayonneDriver} ()
+\begin{DoxyCompactList}\small\item\em Destroy driver instance. \item\end{DoxyCompactList}\item 
+{\bf BayonneDriver} $\ast$ {\bf getNext} (void)
+\begin{DoxyCompactList}\small\item\em Get next driver. \item\end{DoxyCompactList}\item 
+{\bf BayonneSession} $\ast$ {\bf getIdle} (void)
+\begin{DoxyCompactList}\small\item\em Get longest idle session to active for call processing. \item\end{DoxyCompactList}\item 
+virtual bool {\bf suspend} (void)
+\begin{DoxyCompactList}\small\item\em Suspend a driver. \item\end{DoxyCompactList}\item 
+virtual bool {\bf resume} (void)
+\begin{DoxyCompactList}\small\item\em Resume a driver. \item\end{DoxyCompactList}\item 
+virtual void {\bf reregister} (void)
+\begin{DoxyCompactList}\small\item\em Re-\/register. \item\end{DoxyCompactList}\item 
+virtual const char $\ast$ {\bf registerScript} (ScriptImage $\ast$image, Line $\ast$line)
+\begin{DoxyCompactList}\small\item\em Process driver protocol specific proxy registration requests. \item\end{DoxyCompactList}\item 
+virtual const char $\ast$ {\bf assignScript} (ScriptImage $\ast$image, Line $\ast$line)
+\begin{DoxyCompactList}\small\item\em Process driver specific assign requests. \item\end{DoxyCompactList}\item 
+{\bf timeslot\_\-t} {\bf getFirst} (void)
+\begin{DoxyCompactList}\small\item\em Get first server timeslot this driver uses. \item\end{DoxyCompactList}\item 
+{\bf timeslot\_\-t} {\bf getCount} (void)
+\begin{DoxyCompactList}\small\item\em Get the total number of timeslots this driver uses. \item\end{DoxyCompactList}\item 
+unsigned {\bf getSpanFirst} (void)
+\begin{DoxyCompactList}\small\item\em Get the first span id used. \item\end{DoxyCompactList}\item 
+unsigned {\bf getSpansUsed} (void)
+\begin{DoxyCompactList}\small\item\em Get the number of span objects used by driver. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getName} (void)
+\begin{DoxyCompactList}\small\item\em Get the name of the driver. \item\end{DoxyCompactList}\item 
+timeout\_\-t {\bf getResetTimer} (void)
+\begin{DoxyCompactList}\small\item\em Get the reset timer for this driver when resetting a thread in the step state. \item\end{DoxyCompactList}\item 
+timeout\_\-t {\bf getReleaseTimer} (void)
+\begin{DoxyCompactList}\small\item\em Get the release timer when releasing a trunk. \item\end{DoxyCompactList}\item 
+timeout\_\-t {\bf getHangupTimer} (void)
+\begin{DoxyCompactList}\small\item\em Get the hangup timer for hang time before going idle. \item\end{DoxyCompactList}\item 
+timeout\_\-t {\bf getPickupTimer} (void)
+\begin{DoxyCompactList}\small\item\em Get the pickup timer to wait for channel pickup. \item\end{DoxyCompactList}\item 
+timeout\_\-t {\bf getSeizeTimer} (void)
+\begin{DoxyCompactList}\small\item\em Get the sieze time to wait for dialtone on outbound call. \item\end{DoxyCompactList}\item 
+timeout\_\-t {\bf getHuntTimer} (void)
+\begin{DoxyCompactList}\small\item\em Get the hunting timer. \item\end{DoxyCompactList}\item 
+timeout\_\-t {\bf getFlashTimer} (void)
+\begin{DoxyCompactList}\small\item\em Get the programmed flash timer to signal trunk flash. \item\end{DoxyCompactList}\item 
+timeout\_\-t {\bf getInterdigit} (void)
+\begin{DoxyCompactList}\small\item\em Get default dtmf interdigit timer to use. \item\end{DoxyCompactList}\item 
+timeout\_\-t {\bf getRingTimer} (void)
+\begin{DoxyCompactList}\small\item\em Get the timer to wait for next ring before deciding a call has dissapeared. \item\end{DoxyCompactList}\item 
+unsigned {\bf getAnswerCount} (void)
+\begin{DoxyCompactList}\small\item\em Get the number of rings to wait before answering. \item\end{DoxyCompactList}\item 
+{\bf BayonneSpan} $\ast$ {\bf getSpan} (unsigned id)
+\begin{DoxyCompactList}\small\item\em Get the nth span object associated with this driver. \item\end{DoxyCompactList}\item 
+{\bf BayonneSession} $\ast$ {\bf getTimeslot} ({\bf timeslot\_\-t} id)
+\begin{DoxyCompactList}\small\item\em Get the session associated with the nth timeslot for this driver. \item\end{DoxyCompactList}\item 
+{\bf BayonneMsgport} $\ast$ {\bf getMsgport} (void)
+\begin{DoxyCompactList}\small\item\em Return the message port bound with this driver. \item\end{DoxyCompactList}\item 
+size\_\-t {\bf getAudioStack} (void)
+\begin{DoxyCompactList}\small\item\em Get the size of the stack for audio threads. \item\end{DoxyCompactList}\item 
+int {\bf getAudioPriority} (void)
+\begin{DoxyCompactList}\small\item\em Get the thread priority to use for audio threads for this driver. \item\end{DoxyCompactList}\item 
+Audio::Level {\bf getAudioLevel} (void)
+\begin{DoxyCompactList}\small\item\em Get the audio level for silence detection. \item\end{DoxyCompactList}\item 
+void {\bf setLogging} (std::ostream $\ast$output)
+\begin{DoxyCompactList}\small\item\em Set driver logging. \item\end{DoxyCompactList}\item 
+bool {\bf isSpanable} (unsigned {\bf span})
+\begin{DoxyCompactList}\small\item\em Determine if a span is available. \item\end{DoxyCompactList}\item 
+virtual bool {\bf getDestination} (const char $\ast$target, const char $\ast$dial, char $\ast$output, size\_\-t size)
+\begin{DoxyCompactList}\small\item\em Deterime if a network destination is reachable through this driver, and convert dialing string into network reference. \item\end{DoxyCompactList}\item 
+unsigned {\bf getAvail} (void)
+\begin{DoxyCompactList}\small\item\em Get available timeslots. \item\end{DoxyCompactList}\item 
+virtual bool {\bf isExternal} (const char $\ast$dest)
+\begin{DoxyCompactList}\small\item\em See if a given potential dialed number is an external entry in our registrar. \item\end{DoxyCompactList}\item 
+virtual bool {\bf isRegistered} (const char $\ast$dest)
+\begin{DoxyCompactList}\small\item\em See if a given potential dialed number is registered. \item\end{DoxyCompactList}\item 
+virtual bool {\bf isAvailable} (const char $\ast$dest)
+\begin{DoxyCompactList}\small\item\em See if a given potential dialed number is available. \item\end{DoxyCompactList}\item 
+virtual bool {\bf isReachable} (const char $\ast$proxy)
+\begin{DoxyCompactList}\small\item\em See if a given selected server is currently considered reachable. \item\end{DoxyCompactList}\item 
+virtual unsigned {\bf getRegistration} ({\bf regauth\_\-t} $\ast$data, unsigned {\bf count}, const char $\ast$id=NULL)
+\begin{DoxyCompactList}\small\item\em Fill registration data. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bf useProtocols} (void)
+\begin{DoxyCompactList}\small\item\em Return flag for protocols active. \item\end{DoxyCompactList}\item 
+static bool {\bf isStopping} (void)
+\begin{DoxyCompactList}\small\item\em Return is stopping flag. \item\end{DoxyCompactList}\item 
+static {\bf BayonneDriver} $\ast$ {\bf getTrunking} (void)
+\begin{DoxyCompactList}\small\item\em Return primary trunk driver, if driver trunking. \item\end{DoxyCompactList}\item 
+static {\bf BayonneDriver} $\ast$ {\bf getPrimary} (void)
+\begin{DoxyCompactList}\small\item\em Return the first loaded driver. \item\end{DoxyCompactList}\item 
+static {\bf BayonneDriver} $\ast$ {\bf authorize} (const char $\ast$userid, const char $\ast$secret)
+\begin{DoxyCompactList}\small\item\em Authorize a user and return associated driver. \item\end{DoxyCompactList}\item 
+static {\bf BayonneDriver} $\ast$ {\bf getRoot} (void)
+\item 
+static {\bf BayonneDriver} $\ast$ {\bf getProtocol} (void)
+\begin{DoxyCompactList}\small\item\em Return primary protocol driver. \item\end{DoxyCompactList}\item 
+static {\bf BayonneDriver} $\ast$ {\bf get} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em Find and return driver object from id name. \item\end{DoxyCompactList}\item 
+static {\bf BayonneDriver} $\ast$ {\bf loadDriver} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em Load a bayonne driver into memory. \item\end{DoxyCompactList}\item 
+static {\bf BayonneDriver} $\ast$ {\bf loadTrunking} (const char $\ast$id)
+\begin{DoxyCompactList}\small\item\em Load a bayonne trunking driver into memory, set protocols. \item\end{DoxyCompactList}\item 
+static {\bf BayonneDriver} $\ast$ {\bf loadProtocol} (const char $\ast$id, unsigned {\bf timeslots}=0)
+\begin{DoxyCompactList}\small\item\em Load a protocol driver into memory, set timeslots. \item\end{DoxyCompactList}\item 
+static unsigned {\bf list} (char $\ast$$\ast$items, unsigned max)
+\begin{DoxyCompactList}\small\item\em Get list of driver names into string array. \item\end{DoxyCompactList}\item 
+static void {\bf start} (void)
+\begin{DoxyCompactList}\small\item\em Start all loaded drivers. \item\end{DoxyCompactList}\item 
+static void {\bf stop} (void)
+\begin{DoxyCompactList}\small\item\em Stop all loaded drivers. \item\end{DoxyCompactList}\item 
+static void {\bf reload} (void)
+\begin{DoxyCompactList}\small\item\em Notify all drivers about reload. \item\end{DoxyCompactList}\item 
+static void {\bf add} ({\bf BayonneSession} $\ast$session)
+\begin{DoxyCompactList}\small\item\em Add session to driver idle list for getIdle, usually during stateIdle. \item\end{DoxyCompactList}\item 
+static void {\bf del} ({\bf BayonneSession} $\ast$session)
+\begin{DoxyCompactList}\small\item\em Remove session from driver idle list if still present. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Traffic} {\bf call\_\-attempts}
+\item 
+{\bf Traffic} {\bf call\_\-complete}
+\item 
+volatile unsigned short {\bf active\_\-calls}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf reloadDriver} (void)
+\begin{DoxyCompactList}\small\item\em Virtual to notify driver that a server image reload is in progress. \item\end{DoxyCompactList}\item 
+virtual void {\bf startDriver} (void)
+\begin{DoxyCompactList}\small\item\em Virtual to override method for activating the driver and creating all session and span objects associated with it. \item\end{DoxyCompactList}\item 
+virtual void {\bf stopDriver} (void)
+\begin{DoxyCompactList}\small\item\em Virtual to override method for clean shutdown of the driver. \item\end{DoxyCompactList}\item 
+void {\bf relistIdle} (void)
+\begin{DoxyCompactList}\small\item\em Relist idle drivers on high idle list, for drivers which do highwater marking allocation. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf BayonneSession} $\ast$ {\bf firstIdle}
+\item 
+{\bf BayonneSession} $\ast$ {\bf lastIdle}
+\item 
+{\bf BayonneSession} $\ast$ {\bf highIdle}
+\item 
+{\bf BayonneMsgport} $\ast$ {\bf msgport}
+\item 
+{\bf BayonneDriver} $\ast$ {\bf nextDriver}
+\item 
+const char $\ast$ {\bf name}
+\item 
+{\bf timeslot\_\-t} {\bf timeslot}
+\item 
+{\bf timeslot\_\-t} {\bf count}
+\item 
+unsigned {\bf avail}
+\item 
+unsigned {\bf span}
+\item 
+unsigned {\bf spans}
+\item 
+bool {\bf running}
+\item 
+std::ostream $\ast$ {\bf logevents}
+\item 
+int {\bf audio\_\-priority}
+\item 
+size\_\-t {\bf audio\_\-stack}
+\item 
+Audio::Level {\bf audio\_\-level}
+\item 
+timeout\_\-t {\bf pickup\_\-timer}
+\item 
+timeout\_\-t {\bf hangup\_\-timer}
+\item 
+timeout\_\-t {\bf seize\_\-timer}
+\item 
+timeout\_\-t {\bf ring\_\-timer}
+\item 
+timeout\_\-t {\bf hunt\_\-timer}
+\item 
+timeout\_\-t {\bf reset\_\-timer}
+\item 
+timeout\_\-t {\bf release\_\-timer}
+\item 
+timeout\_\-t {\bf flash\_\-timer}
+\item 
+timeout\_\-t {\bf interdigit\_\-timer}
+\item 
+unsigned {\bf answer\_\-count}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf BayonneDriver} $\ast$ {\bf firstDriver}
+\item 
+static {\bf BayonneDriver} $\ast$ {\bf lastDriver}
+\item 
+static {\bf BayonneDriver} $\ast$ {\bf trunkDriver}
+\item 
+static {\bf BayonneDriver} $\ast$ {\bf protoDriver}
+\item 
+static Semaphore {\bf oink}
+\item 
+static bool {\bf protocols}
+\item 
+static bool {\bf stopping}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \_\-\_\-EXPORT {\bf BayonneSession}
+\item 
+class \_\-\_\-EXPORT {\bf BayonneMsgport}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The principle driver node for a given collection of spans and sessions of a given \doxyref{Bayonne}{p.}{classost_1_1_bayonne} driver family type. \begin{DoxyAuthor}{Author}
+David Sugar $<${\tt dyfet@gnutelephony.org}$>$ \doxyref{Bayonne}{p.}{classost_1_1_bayonne} driver node class. 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!BayonneDriver@{BayonneDriver}}
+\index{BayonneDriver@{BayonneDriver}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{BayonneDriver}]{\setlength{\rightskip}{0pt plus 5cm}ost::BayonneDriver::BayonneDriver (Keydata::Define $\ast$ {\em pairs}, \/  const char $\ast$ {\em key}, \/  const char $\ast$ {\em id}, \/  bool {\em virt} = {\ttfamily false})}\label{classost_1_1_bayonne_driver_a285b3ffed9f3ca6ce11b4975ce09b358}
+
+
+Create a driver instance. 
+\begin{DoxyParams}{Parameters}
+\item[{\em pairs}]of default keyword entries for config. \item[{\em key}]name of config key. \item[{\em id}]string of driver. \item[{\em whether}]virtual driver of some sort or real. \end{DoxyParams}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!$\sim$BayonneDriver@{$\sim$BayonneDriver}}
+\index{$\sim$BayonneDriver@{$\sim$BayonneDriver}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{$\sim$BayonneDriver}]{\setlength{\rightskip}{0pt plus 5cm}ost::BayonneDriver::$\sim$BayonneDriver ()}\label{classost_1_1_bayonne_driver_a3ef79799cd2046fa4dd85969a29d6511}
+
+
+Destroy driver instance. 
+
+\subsection{Member Function Documentation}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!add@{add}}
+\index{add@{add}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}static void ost::BayonneDriver::add ({\bf BayonneSession} $\ast$ {\em session})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_driver_a70cfa2fb916668b13c7c46b21f4f168c}
+
+
+Add session to driver idle list for getIdle, usually during stateIdle. 
+\begin{DoxyParams}{Parameters}
+\item[{\em session}]being added. \end{DoxyParams}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!assignScript@{assignScript}}
+\index{assignScript@{assignScript}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{assignScript}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ ost::BayonneDriver::assignScript (ScriptImage $\ast$ {\em image}, \/  Line $\ast$ {\em line})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_driver_a94c26485db31aece393b54d7ce9ad904}
+
+
+Process driver specific assign requests. \begin{DoxyReturn}{Returns}
+error message if invalid request, NULL if ok. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em image}]of script being compiled. \item[{\em line}]record of \char`\"{}assign\char`\"{} command. \end{DoxyParams}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!authorize@{authorize}}
+\index{authorize@{authorize}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{authorize}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf BayonneDriver}$\ast$ ost::BayonneDriver::authorize (const char $\ast$ {\em userid}, \/  const char $\ast$ {\em secret})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_driver_aa4d4c72c8d8495801f20bd4b6bc98f01}
+
+
+Authorize a user and return associated driver. 
+\begin{DoxyParams}{Parameters}
+\item[{\em userid}]to authorize. \item[{\em secret}]to use. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+driver authorized under or NULL. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!del@{del}}
+\index{del@{del}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{del}]{\setlength{\rightskip}{0pt plus 5cm}static void ost::BayonneDriver::del ({\bf BayonneSession} $\ast$ {\em session})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_driver_a366551d48e978554575c01c77ce6ee36}
+
+
+Remove session from driver idle list if still present. Usually when changing from idle to an active state.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em session}]being removed. \end{DoxyParams}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!deregister@{deregister}}
+\index{deregister@{deregister}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{deregister}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneDriver::deregister (const char $\ast$ {\em id})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_driver_aabc9efc38a42c6751e368287b883aa01}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!get@{get}}
+\index{get@{get}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf BayonneDriver}$\ast$ ost::BayonneDriver::get (const char $\ast$ {\em id})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_driver_aae99d8cf5e445ece80379ad777fb2860}
+
+
+Find and return driver object from id name. 
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]driver name. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+associated driver node. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getAnswerCount@{getAnswerCount}}
+\index{getAnswerCount@{getAnswerCount}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getAnswerCount}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::BayonneDriver::getAnswerCount (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_driver_ae69f32404ef6e5784b764bad19459fb3}
+
+
+Get the number of rings to wait before answering. \begin{DoxyReturn}{Returns}
+number of rings before answer. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getAudioLevel@{getAudioLevel}}
+\index{getAudioLevel@{getAudioLevel}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getAudioLevel}]{\setlength{\rightskip}{0pt plus 5cm}Audio::Level ost::BayonneDriver::getAudioLevel (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_driver_a5865ade6a1aedcd9de1d97952c5c5d5f}
+
+
+Get the audio level for silence detection. \begin{DoxyReturn}{Returns}
+audio threashold for silence. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getAudioPriority@{getAudioPriority}}
+\index{getAudioPriority@{getAudioPriority}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getAudioPriority}]{\setlength{\rightskip}{0pt plus 5cm}int ost::BayonneDriver::getAudioPriority (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_driver_a338f25a992e449b45df54e1bf2ea43ca}
+
+
+Get the thread priority to use for audio threads for this driver. \begin{DoxyReturn}{Returns}
+thread priority. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getAudioStack@{getAudioStack}}
+\index{getAudioStack@{getAudioStack}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getAudioStack}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t ost::BayonneDriver::getAudioStack (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_driver_a4a3e41c327f82f09e8b65dc07aeb8f7c}
+
+
+Get the size of the stack for audio threads. \begin{DoxyReturn}{Returns}
+stack size in bytes. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getAvail@{getAvail}}
+\index{getAvail@{getAvail}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getAvail}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::BayonneDriver::getAvail (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_driver_a87673b093e70875479aeb4f288c8d9f1}
+
+
+Get available timeslots. \begin{DoxyReturn}{Returns}
+available slots. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getCount@{getCount}}
+\index{getCount@{getCount}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getCount}]{\setlength{\rightskip}{0pt plus 5cm}{\bf timeslot\_\-t} ost::BayonneDriver::getCount (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_driver_adba9fdba27e15adf07fa10bcd299bbb6}
+
+
+Get the total number of timeslots this driver uses. \begin{DoxyReturn}{Returns}
+total timeslots for driver. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getDestination@{getDestination}}
+\index{getDestination@{getDestination}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getDestination}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneDriver::getDestination (const char $\ast$ {\em target}, \/  const char $\ast$ {\em dial}, \/  char $\ast$ {\em output}, \/  size\_\-t {\em size})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_driver_a27a13b956df3d69b7753a36f5ab61303}
+
+
+Deterime if a network destination is reachable through this driver, and convert dialing string into network reference. 
+\begin{DoxyParams}{Parameters}
+\item[{\em target}]network destination \item[{\em dial}]string \item[{\em output}]buffer \item[{\em size}]of output buffer \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if reachable 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getFirst@{getFirst}}
+\index{getFirst@{getFirst}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getFirst}]{\setlength{\rightskip}{0pt plus 5cm}{\bf timeslot\_\-t} ost::BayonneDriver::getFirst (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_driver_a805a15e74a2496672532f2519583c74f}
+
+
+Get first server timeslot this driver uses. \begin{DoxyReturn}{Returns}
+first server timeslot for driver. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getFlashTimer@{getFlashTimer}}
+\index{getFlashTimer@{getFlashTimer}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getFlashTimer}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t ost::BayonneDriver::getFlashTimer (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_driver_a448e4758f4c94cc6639627cfd412f128}
+
+
+Get the programmed flash timer to signal trunk flash. \begin{DoxyReturn}{Returns}
+flash timer in milliseconds. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getHangupTimer@{getHangupTimer}}
+\index{getHangupTimer@{getHangupTimer}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getHangupTimer}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t ost::BayonneDriver::getHangupTimer (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_driver_a2f6b46e9630b5f68153a18c4243c0181}
+
+
+Get the hangup timer for hang time before going idle. \begin{DoxyReturn}{Returns}
+hangup timer in milliseconds. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getHuntTimer@{getHuntTimer}}
+\index{getHuntTimer@{getHuntTimer}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getHuntTimer}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t ost::BayonneDriver::getHuntTimer (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_driver_a7fd3d08eae4e37e1b135c85d2ae0a168}
+
+
+Get the hunting timer. \begin{DoxyReturn}{Returns}
+hunt timer in milliseconds. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getIdle@{getIdle}}
+\index{getIdle@{getIdle}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getIdle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneSession}$\ast$ ost::BayonneDriver::getIdle (void)}\label{classost_1_1_bayonne_driver_a459fb6cc1704a7870fb013645efbe023}
+
+
+Get longest idle session to active for call processing. \begin{DoxyReturn}{Returns}
+handle to longest idle session, if none idle, NULL. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getInterdigit@{getInterdigit}}
+\index{getInterdigit@{getInterdigit}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getInterdigit}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t ost::BayonneDriver::getInterdigit (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_driver_ad3d47204028396d68921bec2f09b35c2}
+
+
+Get default dtmf interdigit timer to use. \begin{DoxyReturn}{Returns}
+interdigit timer in milliseconds. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getMsgport@{getMsgport}}
+\index{getMsgport@{getMsgport}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getMsgport}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneMsgport}$\ast$ ost::BayonneDriver::getMsgport (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_driver_ac2ef1de5528e7c8cdd8d4005323d93ba}
+
+
+Return the message port bound with this driver. \begin{DoxyReturn}{Returns}
+bound msgport for driver. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getName@{getName}}
+\index{getName@{getName}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getName}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ost::BayonneDriver::getName (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_driver_a649e35bd8924b839af587507b9932551}
+
+
+Get the name of the driver. \begin{DoxyReturn}{Returns}
+name of driver. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getNext@{getNext}}
+\index{getNext@{getNext}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getNext}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneDriver}$\ast$ ost::BayonneDriver::getNext (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_driver_a6da97dff8c43a9390752fcfc8ad2dea8}
+
+
+Get next driver. .. \index{ost::BayonneDriver@{ost::BayonneDriver}!getPickupTimer@{getPickupTimer}}
+\index{getPickupTimer@{getPickupTimer}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getPickupTimer}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t ost::BayonneDriver::getPickupTimer (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_driver_a27b845661183e5ca3cebcb9e22be2e6c}
+
+
+Get the pickup timer to wait for channel pickup. \begin{DoxyReturn}{Returns}
+pickup timer in milliseconds. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getPrimary@{getPrimary}}
+\index{getPrimary@{getPrimary}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getPrimary}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf BayonneDriver}$\ast$ ost::BayonneDriver::getPrimary (void)\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classost_1_1_bayonne_driver_a52b746cdf248ce9ddaaca26716840ef1}
+
+
+Return the first loaded driver. \index{ost::BayonneDriver@{ost::BayonneDriver}!getProtocol@{getProtocol}}
+\index{getProtocol@{getProtocol}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getProtocol}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf BayonneDriver}$\ast$ ost::BayonneDriver::getProtocol (void)\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classost_1_1_bayonne_driver_a9f07ab42cec012572cde69e392f14325}
+
+
+Return primary protocol driver. .. \index{ost::BayonneDriver@{ost::BayonneDriver}!getRegistration@{getRegistration}}
+\index{getRegistration@{getRegistration}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getRegistration}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned ost::BayonneDriver::getRegistration ({\bf regauth\_\-t} $\ast$ {\em data}, \/  unsigned {\em count}, \/  const char $\ast$ {\em id} = {\ttfamily NULL})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_driver_a384b823b0cefff341f06ddd86730e05d}
+
+
+Fill registration data. \begin{DoxyReturn}{Returns}
+number of records filled. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]array to fill. \item[{\em number}]of entries available. \item[{\em optional}]id to match. \item[{\em optional}]flag if only extensions. \end{DoxyParams}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getReleaseTimer@{getReleaseTimer}}
+\index{getReleaseTimer@{getReleaseTimer}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getReleaseTimer}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t ost::BayonneDriver::getReleaseTimer (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_driver_a0c0a4c8b2bb97ff064926d39755121d5}
+
+
+Get the release timer when releasing a trunk. \begin{DoxyReturn}{Returns}
+release timer in milliseconds. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getResetTimer@{getResetTimer}}
+\index{getResetTimer@{getResetTimer}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getResetTimer}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t ost::BayonneDriver::getResetTimer (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_driver_a11f5434e84b6d1ca3c50fd44c94e0102}
+
+
+Get the reset timer for this driver when resetting a thread in the step state. \begin{DoxyReturn}{Returns}
+reset timer in milliseconds. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getRingTimer@{getRingTimer}}
+\index{getRingTimer@{getRingTimer}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getRingTimer}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t ost::BayonneDriver::getRingTimer (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_driver_ae8d0d7fb054313f17c4f44e54d8e4dbb}
+
+
+Get the timer to wait for next ring before deciding a call has dissapeared. Used when set to answer on nth ring.
+
+\begin{DoxyReturn}{Returns}
+ring timer in milliseconds. see getAnswerCount. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getRoot@{getRoot}}
+\index{getRoot@{getRoot}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getRoot}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf BayonneDriver}$\ast$ ost::BayonneDriver::getRoot (void)\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classost_1_1_bayonne_driver_a9844f682e0f66abf5308ebcaa08bd1bd}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getSeizeTimer@{getSeizeTimer}}
+\index{getSeizeTimer@{getSeizeTimer}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getSeizeTimer}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t ost::BayonneDriver::getSeizeTimer (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_driver_ae3c28e14e61e21850b0bb3fa5377b1d6}
+
+
+Get the sieze time to wait for dialtone on outbound call. \begin{DoxyReturn}{Returns}
+seize timer in milliseconds. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getSpan@{getSpan}}
+\index{getSpan@{getSpan}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getSpan}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneSpan}$\ast$ ost::BayonneDriver::getSpan (unsigned {\em id})}\label{classost_1_1_bayonne_driver_a20f39da8fedfeeba8bfbffcb3e7ee426}
+
+
+Get the nth span object associated with this driver. 
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]of nth span to return. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+span object or NULL if past limit/no spans. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getSpanFirst@{getSpanFirst}}
+\index{getSpanFirst@{getSpanFirst}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getSpanFirst}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::BayonneDriver::getSpanFirst (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_driver_af97162c7af183f24b3a22b62896f4947}
+
+
+Get the first span id used. \begin{DoxyReturn}{Returns}
+span id. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getSpansUsed@{getSpansUsed}}
+\index{getSpansUsed@{getSpansUsed}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getSpansUsed}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ost::BayonneDriver::getSpansUsed (void)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_driver_a57371f1704b212075a371ed9cc92c341}
+
+
+Get the number of span objects used by driver. \begin{DoxyReturn}{Returns}
+span count. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getTimeslot@{getTimeslot}}
+\index{getTimeslot@{getTimeslot}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getTimeslot}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneSession}$\ast$ ost::BayonneDriver::getTimeslot ({\bf timeslot\_\-t} {\em id})}\label{classost_1_1_bayonne_driver_a64a98dbb8c07944c965d97002b12d7cd}
+
+
+Get the session associated with the nth timeslot for this driver. 
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]of nth timeslot of driver. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+session object. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!getTrunking@{getTrunking}}
+\index{getTrunking@{getTrunking}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{getTrunking}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf BayonneDriver}$\ast$ ost::BayonneDriver::getTrunking (void)\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classost_1_1_bayonne_driver_ac4c1520a77e182f1260a66e3788ab724}
+
+
+Return primary trunk driver, if driver trunking. .. \index{ost::BayonneDriver@{ost::BayonneDriver}!isAuthorized@{isAuthorized}}
+\index{isAuthorized@{isAuthorized}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{isAuthorized}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneDriver::isAuthorized (const char $\ast$ {\em userid}, \/  const char $\ast$ {\em secret})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_driver_a63102deadb022052dc7eeaeff5d0255a}
+
+
+Determine if user id and secret is authorized for this driver subsystem (registry). 
+\begin{DoxyParams}{Parameters}
+\item[{\em userid}]to check \item[{\em secret}]to check \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if authorized 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!isAvailable@{isAvailable}}
+\index{isAvailable@{isAvailable}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{isAvailable}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneDriver::isAvailable (const char $\ast$ {\em dest})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_driver_a3603fe2f2c2c689b23240923b63eb1af}
+
+
+See if a given potential dialed number is available. \begin{DoxyReturn}{Returns}
+true if extern and available. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em destination}]to test. \end{DoxyParams}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!isExternal@{isExternal}}
+\index{isExternal@{isExternal}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{isExternal}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneDriver::isExternal (const char $\ast$ {\em dest})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_driver_a571c487343ebe4c7f9a9f6003b74e259}
+
+
+See if a given potential dialed number is an external entry in our registrar. \begin{DoxyReturn}{Returns}
+true if external. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em destination}]to test. \end{DoxyParams}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!isReachable@{isReachable}}
+\index{isReachable@{isReachable}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{isReachable}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneDriver::isReachable (const char $\ast$ {\em proxy})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_driver_aaa6ab4d3883320188777271e43d0b857}
+
+
+See if a given selected server is currently considered reachable. This could be used for failover.
+
+\begin{DoxyReturn}{Returns}
+true if reachable. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em server}]to test. \end{DoxyParams}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!isRegistered@{isRegistered}}
+\index{isRegistered@{isRegistered}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{isRegistered}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneDriver::isRegistered (const char $\ast$ {\em dest})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_driver_a9edbcf0351433294d6d82f5229f3df79}
+
+
+See if a given potential dialed number is registered. \begin{DoxyReturn}{Returns}
+true if extern and registered. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em destination}]to test. \end{DoxyParams}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!isSpanable@{isSpanable}}
+\index{isSpanable@{isSpanable}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{isSpanable}]{\setlength{\rightskip}{0pt plus 5cm}bool ost::BayonneDriver::isSpanable (unsigned {\em span})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_driver_ad0e743140e3e82c7095d111ac4603a30}
+
+
+Determine if a span is available. 
+\begin{DoxyParams}{Parameters}
+\item[{\em span}]associated with driver to check. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if available ports. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!isStopping@{isStopping}}
+\index{isStopping@{isStopping}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{isStopping}]{\setlength{\rightskip}{0pt plus 5cm}static bool ost::BayonneDriver::isStopping (void)\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classost_1_1_bayonne_driver_a2fc91b5770006e48bddbe3c1c617946b}
+
+
+Return is stopping flag. \index{ost::BayonneDriver@{ost::BayonneDriver}!list@{list}}
+\index{list@{list}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{list}]{\setlength{\rightskip}{0pt plus 5cm}static unsigned ost::BayonneDriver::list (char $\ast$$\ast$ {\em items}, \/  unsigned {\em max})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_driver_aa96e1dd8dc5729397932e5db68d78f35}
+
+
+Get list of driver names into string array. 
+\begin{DoxyParams}{Parameters}
+\item[{\em items}]array to save in. \item[{\em max}]count of elements available. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of drivers. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!loadDriver@{loadDriver}}
+\index{loadDriver@{loadDriver}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{loadDriver}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf BayonneDriver}$\ast$ ost::BayonneDriver::loadDriver (const char $\ast$ {\em id})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_driver_aa7cec31c47821cbeedcb216faf989e8e}
+
+
+Load a bayonne driver into memory. 
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]driver name to load. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NULL or pointer to loaded driver. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!loadProtocol@{loadProtocol}}
+\index{loadProtocol@{loadProtocol}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{loadProtocol}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf BayonneDriver}$\ast$ ost::BayonneDriver::loadProtocol (const char $\ast$ {\em id}, \/  unsigned {\em timeslots} = {\ttfamily 0})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_driver_ad8e8a825c3b4682e7a2f54076cc7b641}
+
+
+Load a protocol driver into memory, set timeslots. \begin{DoxyReturn}{Returns}
+NULL or pointer to loaded protocol. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]of protocol driver to load. \item[{\em timeslots}]of protocol. \end{DoxyParams}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!loadTrunking@{loadTrunking}}
+\index{loadTrunking@{loadTrunking}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{loadTrunking}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf BayonneDriver}$\ast$ ost::BayonneDriver::loadTrunking (const char $\ast$ {\em id})\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_driver_a8a97bc9fec5d590958dbccd3a7bfbf69}
+
+
+Load a bayonne trunking driver into memory, set protocols. \begin{DoxyReturn}{Returns}
+NULL or pointer to loaded driver. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]of trunking driver to load. \end{DoxyParams}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!registerScript@{registerScript}}
+\index{registerScript@{registerScript}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{registerScript}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ ost::BayonneDriver::registerScript (ScriptImage $\ast$ {\em image}, \/  Line $\ast$ {\em line})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_driver_a1a0e0fc342009cc2ec59b8b4f84afc30}
+
+
+Process driver protocol specific proxy registration requests. \begin{DoxyReturn}{Returns}
+error message if invalid request, NULL if ok. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em image}]of script being compiled. \item[{\em line}]record of \char`\"{}register\char`\"{} command. \end{DoxyParams}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!relistIdle@{relistIdle}}
+\index{relistIdle@{relistIdle}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{relistIdle}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneDriver::relistIdle (void)\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_ace8a0e87f84e1b0fbb150371f1a18344}
+
+
+Relist idle drivers on high idle list, for drivers which do highwater marking allocation. \index{ost::BayonneDriver@{ost::BayonneDriver}!reload@{reload}}
+\index{reload@{reload}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{reload}]{\setlength{\rightskip}{0pt plus 5cm}static void ost::BayonneDriver::reload (void)\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_driver_af9b934ae174e32235ac2e6ea04dc55db}
+
+
+Notify all drivers about reload. 
+
+Reimplemented from {\bf ost::Bayonne} \doxyref{}{p.}{classost_1_1_bayonne_afeb912c5b797e018bc93f041be82b3ed}.\index{ost::BayonneDriver@{ost::BayonneDriver}!reloadDriver@{reloadDriver}}
+\index{reloadDriver@{reloadDriver}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{reloadDriver}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::BayonneDriver::reloadDriver (void)\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_driver_a58aa41070748a0570676717e71590b8f}
+
+
+Virtual to notify driver that a server image reload is in progress. \index{ost::BayonneDriver@{ost::BayonneDriver}!reregister@{reregister}}
+\index{reregister@{reregister}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{reregister}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::BayonneDriver::reregister (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_driver_af6543ae10b5495b538ef89742d3dedde}
+
+
+Re-\/register. \index{ost::BayonneDriver@{ost::BayonneDriver}!reregister@{reregister}}
+\index{reregister@{reregister}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{reregister}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneDriver::reregister (const char $\ast$ {\em id}, \/  const char $\ast$ {\em uri}, \/  const char $\ast$ {\em secret}, \/  timeout\_\-t {\em expires})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_driver_a6a4041db5206be3f82017029eb95ecfc}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!resume@{resume}}
+\index{resume@{resume}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{resume}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneDriver::resume (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_driver_afa106620bcb680832c4cfe308dde28a8}
+
+
+Resume a driver. \begin{DoxyReturn}{Returns}
+true if successful. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!setLogging@{setLogging}}
+\index{setLogging@{setLogging}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{setLogging}]{\setlength{\rightskip}{0pt plus 5cm}void ost::BayonneDriver::setLogging (std::ostream $\ast$ {\em output})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classost_1_1_bayonne_driver_a79e1d07a416b6f6563b91b6e045c9fa3}
+
+
+Set driver logging. 
+\begin{DoxyParams}{Parameters}
+\item[{\em output}]stream to log driver. \end{DoxyParams}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!start@{start}}
+\index{start@{start}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}static void ost::BayonneDriver::start (void)\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_driver_a610deb3573559ce5cce9bf5db62c5488}
+
+
+Start all loaded drivers. \index{ost::BayonneDriver@{ost::BayonneDriver}!startDriver@{startDriver}}
+\index{startDriver@{startDriver}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{startDriver}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::BayonneDriver::startDriver (void)\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_driver_a63b7dc9c80bebb7582aed50b2444b643}
+
+
+Virtual to override method for activating the driver and creating all session and span objects associated with it. \index{ost::BayonneDriver@{ost::BayonneDriver}!stop@{stop}}
+\index{stop@{stop}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}static void ost::BayonneDriver::stop (void)\hspace{0.3cm}{\ttfamily  [static]}}\label{classost_1_1_bayonne_driver_a2f41d2c8f3132cd3358d57a1b5496ff2}
+
+
+Stop all loaded drivers. \index{ost::BayonneDriver@{ost::BayonneDriver}!stopDriver@{stopDriver}}
+\index{stopDriver@{stopDriver}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{stopDriver}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ost::BayonneDriver::stopDriver (void)\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classost_1_1_bayonne_driver_aa12dc45e1637ca3caf218f13e44bfd17}
+
+
+Virtual to override method for clean shutdown of the driver. \index{ost::BayonneDriver@{ost::BayonneDriver}!suspend@{suspend}}
+\index{suspend@{suspend}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{suspend}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ost::BayonneDriver::suspend (void)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classost_1_1_bayonne_driver_a9c55bdb0460f25422eff5ef9aebf1cae}
+
+
+Suspend a driver. \begin{DoxyReturn}{Returns}
+true if successful. 
+\end{DoxyReturn}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!useProtocols@{useProtocols}}
+\index{useProtocols@{useProtocols}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{useProtocols}]{\setlength{\rightskip}{0pt plus 5cm}static bool ost::BayonneDriver::useProtocols (void)\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classost_1_1_bayonne_driver_ac858176bc9ad9c4899f51e71909e2f8f}
+
+
+Return flag for protocols active. 
+
+\subsection{Friends And Related Function Documentation}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!BayonneMsgport@{BayonneMsgport}}
+\index{BayonneMsgport@{BayonneMsgport}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{BayonneMsgport}]{\setlength{\rightskip}{0pt plus 5cm}friend class \_\-\_\-EXPORT {\bf BayonneMsgport}\hspace{0.3cm}{\ttfamily  [friend]}}\label{classost_1_1_bayonne_driver_a83079b615a076a23b1f9362ebd29d758}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!BayonneSession@{BayonneSession}}
+\index{BayonneSession@{BayonneSession}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{BayonneSession}]{\setlength{\rightskip}{0pt plus 5cm}friend class \_\-\_\-EXPORT {\bf BayonneSession}\hspace{0.3cm}{\ttfamily  [friend]}}\label{classost_1_1_bayonne_driver_a59728bba507bfe559a76d72b50766072}
+
+
+\subsection{Member Data Documentation}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!active\_\-calls@{active\_\-calls}}
+\index{active\_\-calls@{active\_\-calls}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{active\_\-calls}]{\setlength{\rightskip}{0pt plus 5cm}volatile unsigned short {\bf ost::BayonneDriver::active\_\-calls}}\label{classost_1_1_bayonne_driver_a3afb4fba90d5697d69f3e65a1465e120}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!answer\_\-count@{answer\_\-count}}
+\index{answer\_\-count@{answer\_\-count}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{answer\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::BayonneDriver::answer\_\-count}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_a2eef8c6d06b6e739c3c482222118e33c}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!audio\_\-level@{audio\_\-level}}
+\index{audio\_\-level@{audio\_\-level}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{audio\_\-level}]{\setlength{\rightskip}{0pt plus 5cm}Audio::Level {\bf ost::BayonneDriver::audio\_\-level}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_aa9c37b1e688b8bfaaa1b4fd066e2633d}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!audio\_\-priority@{audio\_\-priority}}
+\index{audio\_\-priority@{audio\_\-priority}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{audio\_\-priority}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ost::BayonneDriver::audio\_\-priority}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_a1fd34c0219fe0c81ed4e20110e77928d}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!audio\_\-stack@{audio\_\-stack}}
+\index{audio\_\-stack@{audio\_\-stack}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{audio\_\-stack}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf ost::BayonneDriver::audio\_\-stack}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_a8584487184e9840de6ed4aea72cf5985}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!avail@{avail}}
+\index{avail@{avail}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{avail}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::BayonneDriver::avail}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_a49b3980937de0c32df34fe1fdc7a42cd}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!call\_\-attempts@{call\_\-attempts}}
+\index{call\_\-attempts@{call\_\-attempts}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{call\_\-attempts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Traffic} {\bf ost::BayonneDriver::call\_\-attempts}}\label{classost_1_1_bayonne_driver_a5a2581ab3f451d0b2293d4af81bee6d7}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!call\_\-complete@{call\_\-complete}}
+\index{call\_\-complete@{call\_\-complete}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{call\_\-complete}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Traffic} {\bf ost::BayonneDriver::call\_\-complete}}\label{classost_1_1_bayonne_driver_a5fc47d120b48c2b1678f8aec616f0958}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!count@{count}}
+\index{count@{count}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf timeslot\_\-t} {\bf ost::BayonneDriver::count}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_a2817722dc8fa784165c464063b0a461f}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!firstDriver@{firstDriver}}
+\index{firstDriver@{firstDriver}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{firstDriver}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneDriver}$\ast$ {\bf ost::BayonneDriver::firstDriver}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_driver_acca69c98fbc0f45a2d44d65e5031e200}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!firstIdle@{firstIdle}}
+\index{firstIdle@{firstIdle}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{firstIdle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneSession}$\ast$ {\bf ost::BayonneDriver::firstIdle}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_a6cb0e0649708801155cca6d72f1c00fb}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!flash\_\-timer@{flash\_\-timer}}
+\index{flash\_\-timer@{flash\_\-timer}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{flash\_\-timer}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::BayonneDriver::flash\_\-timer}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_a4daef2cf826ed949f9a0544769424d4a}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!hangup\_\-timer@{hangup\_\-timer}}
+\index{hangup\_\-timer@{hangup\_\-timer}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{hangup\_\-timer}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::BayonneDriver::hangup\_\-timer}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_ab34320d44c35c167382894ba61376d3e}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!highIdle@{highIdle}}
+\index{highIdle@{highIdle}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{highIdle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneSession} $\ast$ {\bf ost::BayonneDriver::highIdle}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_a2ec1bfcfcf3ccec33da41b8af1cf7319}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!hunt\_\-timer@{hunt\_\-timer}}
+\index{hunt\_\-timer@{hunt\_\-timer}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{hunt\_\-timer}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::BayonneDriver::hunt\_\-timer}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_af604f939a1d0ba50f0df8d7d91fea630}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!interdigit\_\-timer@{interdigit\_\-timer}}
+\index{interdigit\_\-timer@{interdigit\_\-timer}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{interdigit\_\-timer}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::BayonneDriver::interdigit\_\-timer}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_a2e362641fd6f423205da930d67299c28}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!lastDriver@{lastDriver}}
+\index{lastDriver@{lastDriver}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{lastDriver}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneDriver}$\ast$ {\bf ost::BayonneDriver::lastDriver}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_driver_a41204217ddb5a19b5b3380f28b27af5b}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!lastIdle@{lastIdle}}
+\index{lastIdle@{lastIdle}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{lastIdle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneSession} $\ast$ {\bf ost::BayonneDriver::lastIdle}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_a21ccfced1fe9b00f1727a7ed9ff952fb}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!logevents@{logevents}}
+\index{logevents@{logevents}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{logevents}]{\setlength{\rightskip}{0pt plus 5cm}std::ostream$\ast$ {\bf ost::BayonneDriver::logevents}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_a2f76388006da4de239aa800c5e780aed}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!msgport@{msgport}}
+\index{msgport@{msgport}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{msgport}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneMsgport}$\ast$ {\bf ost::BayonneDriver::msgport}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_aaa52649413eb28502a980cf36133d498}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!name@{name}}
+\index{name@{name}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf ost::BayonneDriver::name}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_ab63d2803de0f39fd2b3823ce13909ce4}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!nextDriver@{nextDriver}}
+\index{nextDriver@{nextDriver}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{nextDriver}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneDriver}$\ast$ {\bf ost::BayonneDriver::nextDriver}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_a1b057c55296bfe22f852ed8213c6e17c}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!oink@{oink}}
+\index{oink@{oink}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{oink}]{\setlength{\rightskip}{0pt plus 5cm}Semaphore {\bf ost::BayonneDriver::oink}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_driver_adf4642c2b03b9ce387c43e0607a89a38}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!pickup\_\-timer@{pickup\_\-timer}}
+\index{pickup\_\-timer@{pickup\_\-timer}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{pickup\_\-timer}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::BayonneDriver::pickup\_\-timer}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_ab876f24c15272e2abcefe38603d82666}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!protocols@{protocols}}
+\index{protocols@{protocols}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{protocols}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::BayonneDriver::protocols}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_driver_adf4461e05461fd62674fc65ab3dcb18c}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!protoDriver@{protoDriver}}
+\index{protoDriver@{protoDriver}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{protoDriver}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneDriver}$\ast$ {\bf ost::BayonneDriver::protoDriver}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_driver_ac54a1c29f7ebacea782c4d1fd846bab5}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!release\_\-timer@{release\_\-timer}}
+\index{release\_\-timer@{release\_\-timer}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{release\_\-timer}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::BayonneDriver::release\_\-timer}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_a3a1ce1216bebb1e999921fd56fac6e8d}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!reset\_\-timer@{reset\_\-timer}}
+\index{reset\_\-timer@{reset\_\-timer}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{reset\_\-timer}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::BayonneDriver::reset\_\-timer}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_ab7747bf02cb9eddeafac1728d8da556f}
+
+
+Reimplemented from {\bf ost::Bayonne} \doxyref{}{p.}{classost_1_1_bayonne_abe26ac4a6d8851d514db53f2e9b24e00}.\index{ost::BayonneDriver@{ost::BayonneDriver}!ring\_\-timer@{ring\_\-timer}}
+\index{ring\_\-timer@{ring\_\-timer}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{ring\_\-timer}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::BayonneDriver::ring\_\-timer}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_a5034a779c03c67a3ce4d47bbbca52d14}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!running@{running}}
+\index{running@{running}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{running}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::BayonneDriver::running}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_a316533f686b8d31358dbe7b3f363e4a8}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!seize\_\-timer@{seize\_\-timer}}
+\index{seize\_\-timer@{seize\_\-timer}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{seize\_\-timer}]{\setlength{\rightskip}{0pt plus 5cm}timeout\_\-t {\bf ost::BayonneDriver::seize\_\-timer}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_abe4733a603231601df9f8ff194094a78}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!span@{span}}
+\index{span@{span}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{span}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::BayonneDriver::span}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_ab639887a485a8856f8d2afca2e1ed66b}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!spans@{spans}}
+\index{spans@{spans}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{spans}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf ost::BayonneDriver::spans}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_a74e0b2101843b6b0d2f361c8fb1b63f6}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!stopping@{stopping}}
+\index{stopping@{stopping}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{stopping}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ost::BayonneDriver::stopping}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_driver_ad96eb99c20c87f74045fac992c7eabd0}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!timeslot@{timeslot}}
+\index{timeslot@{timeslot}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{timeslot}]{\setlength{\rightskip}{0pt plus 5cm}{\bf timeslot\_\-t} {\bf ost::BayonneDriver::timeslot}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classost_1_1_bayonne_driver_a1d255799241c82f03465434635c545de}
+\index{ost::BayonneDriver@{ost::BayonneDriver}!trunkDriver@{trunkDriver}}
+\index{trunkDriver@{trunkDriver}!ost::BayonneDriver@{ost::BayonneDriver}}
+\subsubsection[{trunkDriver}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BayonneDriver}$\ast$ {\bf ost::BayonneDriver::trunkDriver}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classost_1_1_bayonne_driver_a4245829f7acd5b951e6894068e61eed4}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+{\bf bayonne.h}\end{DoxyCompactItemize}

@@ -1,0 +1,9 @@
+clink= -lc
+model=CXX
+
+Name: ucommon
+Description: 
+Version: 2.1.2
+Libs:  -lucommon -L/usr/local/lib     -lpthread -no-undefined 
+Cflags:  -Wno-long-long -DNEW_STDCPP -fno-check-new -finline -DUCOMMON_VISIBILITY=0 -I/usr/local/include 
+ 

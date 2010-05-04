@@ -1,0 +1,125 @@
+.TH "ost::Pointer" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::Pointer \- 
+.PP
+Used to create and manage referece counted pointers.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <pointer.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPointer\fP (T *ptr=NULL)"
+.br
+.ti -1c
+.RI "\fBPointer\fP (const \fBPointer\fP< T > &ref)"
+.br
+.ti -1c
+.RI "virtual \fB~Pointer\fP ()"
+.br
+.ti -1c
+.RI "\fBPointer\fP & \fBoperator=\fP (const \fBPointer\fP< T > &ref)"
+.br
+.ti -1c
+.RI "T & \fBoperator*\fP () const "
+.br
+.ti -1c
+.RI "T * \fBgetObject\fP () const "
+.br
+.ti -1c
+.RI "T * \fBoperator->\fP () const "
+.br
+.ti -1c
+.RI "bool \fBoperator!\fP () const "
+.br
+.ti -1c
+.RI "int \fBoperator++\fP () const "
+.br
+.ti -1c
+.RI "int \fBoperator--\fP () const "
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBptrDetach\fP (void)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "unsigned * \fBptrCount\fP"
+.br
+.ti -1c
+.RI "T * \fBptrObject\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class T> class ost::Pointer< T >"
+Used to create and manage referece counted pointers. 
+
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@gnutelephony.org> reference counted pointer template. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class T> \fBost::Pointer\fP< T >::\fBPointer\fP (T * ptr = \fCNULL\fP)\fC [inline, explicit]\fP"
+.PP
+References ost::Pointer< T >::ptrCount.
+.SS "template<class T> \fBost::Pointer\fP< T >::\fBPointer\fP (const \fBPointer\fP< T > & ref)\fC [inline]\fP"
+.PP
+References ost::Pointer< T >::ptrCount, and ost::Pointer< T >::ptrObject.
+.SS "template<class T> virtual \fBost::Pointer\fP< T >::~\fBPointer\fP ()\fC [inline, virtual]\fP"
+.PP
+References ost::Pointer< T >::ptrDetach().
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class T> T* \fBost::Pointer\fP< T >::getObject (void) const\fC [inline]\fP"
+.PP
+References ost::Pointer< T >::ptrObject.
+.SS "template<class T> bool \fBost::Pointer\fP< T >::operator! (void) const\fC [inline]\fP"
+.PP
+References ost::Pointer< T >::ptrCount.
+.SS "template<class T> T& \fBost::Pointer\fP< T >::operator* () const\fC [inline]\fP"
+.PP
+References ost::Pointer< T >::ptrObject.
+.SS "template<class T> int \fBost::Pointer\fP< T >::operator++ (void) const\fC [inline]\fP"
+.SS "template<class T> int \fBost::Pointer\fP< T >::operator-- (void) const\fC [inline]\fP"
+.PP
+References ost::Pointer< T >::ptrCount.
+.SS "template<class T> T* \fBost::Pointer\fP< T >::operator-> () const\fC [inline]\fP"
+.PP
+References ost::Pointer< T >::ptrObject.
+.SS "template<class T> \fBPointer\fP& \fBost::Pointer\fP< T >::operator= (const \fBPointer\fP< T > & ref)\fC [inline]\fP"
+.PP
+References ost::Pointer< T >::ptrCount, ost::Pointer< T >::ptrDetach(), and ost::Pointer< T >::ptrObject.
+.SS "template<class T> void \fBost::Pointer\fP< T >::ptrDetach (void)\fC [inline, protected]\fP"
+.PP
+References ost::Pointer< T >::ptrCount, and ost::Pointer< T >::ptrObject.
+.PP
+Referenced by ost::Pointer< T >::operator=(), and ost::Pointer< T >::~Pointer().
+.SH "Member Data Documentation"
+.PP 
+.SS "template<class T> unsigned* \fBost::Pointer\fP< T >::\fBptrCount\fP\fC [protected]\fP"
+.PP
+Referenced by ost::Pointer< T >::operator!(), ost::Pointer< T >::operator--(), ost::Pointer< T >::operator=(), ost::Pointer< T >::Pointer(), and ost::Pointer< T >::ptrDetach().
+.SS "template<class T> T* \fBost::Pointer\fP< T >::\fBptrObject\fP\fC [protected]\fP"
+.PP
+Referenced by ost::Pointer< T >::getObject(), ost::Pointer< T >::operator*(), ost::Pointer< T >::operator->(), ost::Pointer< T >::operator=(), ost::Pointer< T >::Pointer(), and ost::Pointer< T >::ptrDetach().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

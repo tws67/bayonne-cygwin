@@ -1,0 +1,80 @@
+.TH "ost::IZStream" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::IZStream \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <zstream.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIZStream\fP (bool throwflag=false)"
+.br
+.ti -1c
+.RI "\fBIZStream\fP (const char *name, size_t size=512, bool tf=false)"
+.br
+.ti -1c
+.RI "bool \fBisOpen\fP (void)"
+.br
+.ti -1c
+.RI "void \fBclose\fP (void)"
+.br
+.ti -1c
+.RI "virtual \fB~IZStream\fP ()"
+.br
+.ti -1c
+.RI "void \fBopen\fP (const char *name, size_t size=512)"
+.br
+.ti -1c
+.RI "size_t \fBgetBufferSize\fP (void)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBallocate\fP (size_t size)"
+.br
+.ti -1c
+.RI "int \fBunderflow\fP ()"
+.br
+.ti -1c
+.RI "int \fBuflow\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "size_t \fBbufsize\fP"
+.br
+.ti -1c
+.RI "char * \fBgbuf\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::IZStream::IZStream (bool throwflag = \fCfalse\fP)"
+.SS "ost::IZStream::IZStream (const char * name, size_t size = \fC512\fP, bool tf = \fCfalse\fP)"
+.SS "virtual ost::IZStream::~IZStream ()\fC [virtual]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::IZStream::allocate (size_t size)\fC [protected]\fP"
+.SS "void ost::IZStream::close (void)"
+.SS "size_t ost::IZStream::getBufferSize (void)\fC [inline]\fP"
+.SS "bool ost::IZStream::isOpen (void)"
+.SS "void ost::IZStream::open (const char * name, size_t size = \fC512\fP)"
+.SS "int ost::IZStream::uflow ()\fC [protected]\fP"
+.SS "int ost::IZStream::underflow ()\fC [protected]\fP"
+.SH "Member Data Documentation"
+.PP 
+.SS "size_t \fBost::IZStream::bufsize\fP\fC [protected]\fP"
+.SS "char* \fBost::IZStream::gbuf\fP\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

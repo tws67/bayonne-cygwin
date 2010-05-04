@@ -1,0 +1,172 @@
+.TH "ost::Mutex" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::Mutex \- 
+.PP
+The \fBMutex\fP class is used to protect a section of code so that at any given time only a single thread can perform the protected operation.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <thread.h>\fP
+.PP
+Inherited by \fBost::MapTable\fP, \fBost::MutexCounter\fP, \fBost::RandomFile\fP\fC [protected]\fP, \fBost::Runlist\fP, \fBost::SerialService\fP\fC [private]\fP, \fBost::SharedMemPager\fP, \fBost::SocketService\fP\fC [private]\fP, and \fBost::ThreadQueue\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMutex\fP (const char *name=NULL)"
+.br
+.RI "\fIThe mutex is always initialized as a recursive entity. \fP"
+.ti -1c
+.RI "virtual \fB~Mutex\fP ()"
+.br
+.RI "\fIDestroying the mutex removes any system resources associated with it. \fP"
+.ti -1c
+.RI "void \fBnameMutex\fP (const char *name)"
+.br
+.RI "\fIEnable setting of mutex name for deadlock debug. \fP"
+.ti -1c
+.RI "void \fBenterMutex\fP (void)"
+.br
+.RI "\fIEntering a \fBMutex\fP locks the mutex for the current thread. \fP"
+.ti -1c
+.RI "void \fBenter\fP (void)"
+.br
+.RI "\fIFuture abi will use enter/leave/test members. \fP"
+.ti -1c
+.RI "void \fBleave\fP (void)"
+.br
+.RI "\fIFuture abi will use enter/leave/test members. \fP"
+.ti -1c
+.RI "bool \fBtest\fP (void)"
+.br
+.RI "\fIFuture abi will use enter/leave/test members. \fP"
+.ti -1c
+.RI "bool \fBtryEnterMutex\fP (void)"
+.br
+.RI "\fITries to lock the mutex for the current thread. \fP"
+.ti -1c
+.RI "void \fBleaveMutex\fP (void)"
+.br
+.RI "\fILeaving a mutex frees that mutex for use by another thread. \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBsetDebug\fP (bool mode)"
+.br
+.RI "\fIEnable or disable deadlock debugging. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBMutex\fP class is used to protect a section of code so that at any given time only a single thread can perform the protected operation. 
+
+The \fBMutex\fP can be used as a base class to protect access in a derived class. When used in this manner, the ENTER_CRITICAL and LEAVE_CRITICAL macros can be used to specify when code written for the derived class needs to be protected by the default \fBMutex\fP of the derived class, and hence is presumed to be 'thread safe' from multiple instance execution. One of the most basic Common C++ synchronization object is the \fBMutex\fP class. A \fBMutex\fP only allows one thread to continue execution at a given time over a specific section of code. Mutex's have a enter and leave method; only one thread can continue from the Enter until the Leave is called. The next thread waiting can then get through. Mutex's are also known as 'CRITICAL SECTIONS' in win32-speak.
+.PP
+The \fBMutex\fP is always recursive in that if the same thread invokes the same mutex lock multiple times, it must release it multiple times. This allows a function to call another function which also happens to use the same mutex lock when called directly. This was deemed essential because a mutex might be used to block individual file requests in say, a database, but the same mutex might be needed to block a whole series of database updates that compose a 'transaction' for one thread to complete together without having to write alternate non-locking member functions to invoke for each part of a transaction.
+.PP
+Strangely enough, the original pthread draft standard does not directly support recursive mutexes. In fact this is the most common 'NP' extension for most pthread implementations. Common C++ emulates recursive mutex behavior when the target platform does not directly support it.
+.PP
+In addition to the \fBMutex\fP, Common C++ supports a rwlock class. This implements the X/Open recommended 'rwlock'. On systems which do not support rwlock's, the behavior is emulated with a \fBMutex\fP; however, the advantage of a rwlock over a mutex is then entirely lost. There has been some suggested clever hacks for 'emulating' the behavior of a rwlock with a pair of mutexes and a semaphore, and one of these will be adapted for Common C++ in the future for platforms that do not support rwlock's directly.
+.PP
+\fBAuthor:\fP
+.RS 4
+David Sugar <dyfet@ostel.com> \fBMutex\fP lock for protected access. 
+.RE
+.PP
+
+.PP
+\fBExamples: \fP
+.in +1c
+.PP
+\fBtcpservice.cpp\fP, and \fBtcpthread.cpp\fP.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::Mutex::Mutex (const char * name = \fCNULL\fP)"
+.PP
+The mutex is always initialized as a recursive entity. \fBParameters:\fP
+.RS 4
+\fIname\fP of mutex for optional deadlock detection 
+.RE
+.PP
+
+.SS "virtual ost::Mutex::~Mutex ()\fC [virtual]\fP"
+.PP
+Destroying the mutex removes any system resources associated with it. If a mutex lock is currently in place, it is presumed to terminate when the \fBMutex\fP is destroyed. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void ost::Mutex::enter (void)\fC [inline]\fP"
+.PP
+Future abi will use enter/leave/test members. 
+.SS "void ost::Mutex::enterMutex (void)"
+.PP
+Entering a \fBMutex\fP locks the mutex for the current thread. This also can be done using the ENTER_CRITICAL macro or by using the ++ operator on a mutex.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBleaveMutex\fP 
+.RE
+.PP
+
+.SS "void ost::Mutex::leave (void)\fC [inline]\fP"
+.PP
+Future abi will use enter/leave/test members. 
+.SS "void ost::Mutex::leaveMutex (void)"
+.PP
+Leaving a mutex frees that mutex for use by another thread. If the mutex has been entered (invoked) multiple times (recursivily) by the same thread, then it will need to be exited the same number of instances before it is free for re-use. This operation can also be done using the LEAVE_CRITICAL macro or by the -- operator on a mutex.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBenterMutex\fP 
+.RE
+.PP
+
+.SS "void ost::Mutex::nameMutex (const char * name)\fC [inline]\fP"
+.PP
+Enable setting of mutex name for deadlock debug. \fBParameters:\fP
+.RS 4
+\fIname\fP for mutex. 
+.RE
+.PP
+
+.SS "static void ost::Mutex::setDebug (bool mode)\fC [inline, static]\fP"
+.PP
+Enable or disable deadlock debugging. \fBParameters:\fP
+.RS 4
+\fImode\fP debug mode. 
+.RE
+.PP
+
+.SS "bool ost::Mutex::test (void)\fC [inline]\fP"
+.PP
+Future abi will use enter/leave/test members. \fBReturns:\fP
+.RS 4
+true if entered. 
+.RE
+.PP
+
+.SS "bool ost::Mutex::tryEnterMutex (void)"
+.PP
+Tries to lock the mutex for the current thread. Behaves like \fBenterMutex\fP , except that it doesn't block the calling thread if the mutex is already locked by another thread.
+.PP
+\fBReturns:\fP
+.RS 4
+true if locking the mutex was succesful otherwise false
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBenterMutex\fP 
+.PP
+\fBleaveMutex\fP 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.

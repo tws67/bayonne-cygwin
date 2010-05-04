@@ -1,0 +1,61 @@
+.TH "ost::CommandOptionArg" 3 "2 May 2010" "GNU CommonC++" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ost::CommandOptionArg \- 
+.PP
+Class for options with an argument e.g.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cmdoptns.h>\fP
+.PP
+Inherits \fBost::CommandOptionWithArg\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCommandOptionArg\fP (const char *inOptionName, const char *inOptionLetter, const char *inDescription, bool inRequired=false, \fBCommandOption\fP **ppNext=&\fBdefaultCommandOptionList\fP)"
+.br
+.RI "\fI\fBCommandOptionArg\fP contructor. \fP"
+.ti -1c
+.RI "virtual \fB~CommandOptionArg\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class for options with an argument e.g. 
+
+--option value . 
+.PP
+\fBExamples: \fP
+.in +1c
+.PP
+\fBcmdlineopt.cpp\fP.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ost::CommandOptionArg::CommandOptionArg (const char * inOptionName, const char * inOptionLetter, const char * inDescription, bool inRequired = \fCfalse\fP, \fBCommandOption\fP ** ppNext = \fC&\fBdefaultCommandOptionList\fP\fP)"
+.PP
+\fBCommandOptionArg\fP contructor. This sets the optionType for this object to HasArg.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinOptionName\fP long option name 
+.br
+\fIinOptionLetter\fP short letter name 
+.br
+\fIinDescription\fP short description of the option 
+.br
+\fIinRequired\fP true if option is required 
+.br
+\fIppNext\fP the linked list header 
+.RE
+.PP
+
+.SS "virtual ost::CommandOptionArg::~CommandOptionArg ()\fC [virtual]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GNU CommonC++ from the source code.
